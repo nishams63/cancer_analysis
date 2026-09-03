@@ -8,13 +8,20 @@ Endpoints:
 - POST /predict/batch  : Batch patient encounter toxicity prediction
 """
 
+import os
+import sys
 from contextlib import asynccontextmanager
 from datetime import datetime
 from typing import List, Dict, Any
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+if CURRENT_DIR not in sys.path:
+    sys.path.insert(0, CURRENT_DIR)
+
 from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
+from ui import get_ui_html
 
 from schemas import (
     PatientToxicityInput,
@@ -75,15 +82,29 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 
 
 @app.get("/", tags=["Info"])
-async def root():
-    """Service metadata and documentation pointer."""
+async def root(request: Request):
+    """
+    Returns the interactive web UI if accessed from a web browser,
+    or service JSON metadata if accessed via programmatic API clients.
+    """
+    accept = request.headers.get("accept", "")
+    if "text/html" in accept:
+        return HTMLResponse(content=get_ui_html())
+
     return {
         "service": "Oncology Toxicity Risk Prediction Service",
         "stage": "Stage 1 ML",
         "model_version": "V4",
         "status": "online" if engine and engine.is_healthy() else "degraded",
+        "ui_url": "/ui",
         "docs_url": "/docs"
     }
+
+
+@app.get("/ui", response_class=HTMLResponse, tags=["UI"])
+async def ui():
+    """Serves the interactive web interface."""
+    return HTMLResponse(content=get_ui_html())
 
 
 @app.get("/health", response_model=HealthResponse, tags=["Health"])
