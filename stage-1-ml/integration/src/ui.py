@@ -409,10 +409,6 @@ def get_ui_html() -> str:
           </div>
         </div>
       </div>
-
-      <div class="disclaimer-alert">
-        <strong>Decision Support Prototype:</strong> <span id="disclaimer-text"></span>
-      </div>
     </div>
 
     <form id="toxicity-form" onsubmit="handlePredict(event)">
@@ -445,7 +441,7 @@ def get_ui_html() -> str:
           </div>
           <div class="form-group">
             <label for="oxygen_saturation">Oxygen Saturation SpO2 (%)</label>
-            <input type="number" step="0.5" id="oxygen_saturation" name="oxygen_saturation" required value="96.5">
+            <input type="number" step="any" id="oxygen_saturation" name="oxygen_saturation" required value="96.5">
           </div>
           <div class="form-group">
             <label for="smoking_history">Smoking History</label>
@@ -500,15 +496,15 @@ def get_ui_html() -> str:
           </div>
           <div class="form-group">
             <label for="mutation_burden">Tumor Mutation Burden (TMB)</label>
-            <input type="number" step="0.1" id="mutation_burden" name="mutation_burden" required value="6.8">
+            <input type="number" step="any" id="mutation_burden" name="mutation_burden" required value="6.8">
           </div>
           <div class="form-group">
             <label for="gene_expression_score">Gene Expression Score</label>
-            <input type="number" step="0.1" id="gene_expression_score" name="gene_expression_score" required value="49.8">
+            <input type="number" step="any" id="gene_expression_score" name="gene_expression_score" required value="49.8">
           </div>
           <div class="form-group">
             <label for="ctdna_level">ctDNA Level (ng/mL)</label>
-            <input type="number" step="0.1" id="ctdna_level" name="ctdna_level" required value="1.4">
+            <input type="number" step="any" id="ctdna_level" name="ctdna_level" required value="1.4">
           </div>
         </div>
 
@@ -517,31 +513,31 @@ def get_ui_html() -> str:
           <div class="card-title"><span>🧪</span> Biomarkers & Laboratory</div>
           <div class="form-group">
             <label for="hemoglobin">Hemoglobin (g/dL)</label>
-            <input type="number" step="0.1" id="hemoglobin" name="hemoglobin" required value="12.5">
+            <input type="number" step="any" id="hemoglobin" name="hemoglobin" required value="12.5">
           </div>
           <div class="form-group">
             <label for="white_blood_cell_count">WBC Count (k/uL)</label>
-            <input type="number" step="0.01" id="white_blood_cell_count" name="white_blood_cell_count" required value="7.41">
+            <input type="number" step="any" id="white_blood_cell_count" name="white_blood_cell_count" required value="7.41">
           </div>
           <div class="form-group">
             <label for="platelet_count">Platelet Count (k/uL)</label>
-            <input type="number" step="1" id="platelet_count" name="platelet_count" required value="231">
+            <input type="number" step="any" id="platelet_count" name="platelet_count" required value="231">
           </div>
           <div class="form-group">
             <label for="creatinine_level">Creatinine (mg/dL)</label>
-            <input type="number" step="0.1" id="creatinine_level" name="creatinine_level" required value="1.0">
+            <input type="number" step="any" id="creatinine_level" name="creatinine_level" required value="1.0">
           </div>
           <div class="form-group">
             <label for="liver_function_marker">Liver Marker ALT/AST (U/L)</label>
-            <input type="number" step="0.1" id="liver_function_marker" name="liver_function_marker" required value="17.3">
+            <input type="number" step="any" id="liver_function_marker" name="liver_function_marker" required value="17.3">
           </div>
           <div class="form-group">
             <label for="inflammation_marker">Inflammation CRP (mg/L)</label>
-            <input type="number" step="0.1" id="inflammation_marker" name="inflammation_marker" required value="4.2">
+            <input type="number" step="any" id="inflammation_marker" name="inflammation_marker" required value="4.2">
           </div>
           <div class="form-group">
             <label for="tumor_marker_level">Tumor Marker (ng/mL)</label>
-            <input type="number" step="0.1" id="tumor_marker_level" name="tumor_marker_level" required value="24.7">
+            <input type="number" step="any" id="tumor_marker_level" name="tumor_marker_level" required value="24.7">
           </div>
           <div class="form-group">
             <label for="biomarker_trend">Biomarker Trend</label>
@@ -577,7 +573,7 @@ def get_ui_html() -> str:
           </div>
           <div class="form-group">
             <label for="drug_dose">Drug Dose (mg)</label>
-            <input type="number" step="1" id="drug_dose" name="drug_dose" required value="150">
+            <input type="number" step="any" id="drug_dose" name="drug_dose" required value="150">
           </div>
           <div class="form-group">
             <label for="treatment_cycle">Treatment Cycle Number</label>
@@ -596,11 +592,11 @@ def get_ui_html() -> str:
           </div>
           <div class="form-group">
             <label for="previous_toxicity_grade">Prior Toxicity Grade (0.0 - 5.0)</label>
-            <input type="number" step="0.5" id="previous_toxicity_grade" name="previous_toxicity_grade" required min="0" max="5" value="0.0">
+            <input type="number" step="any" id="previous_toxicity_grade" name="previous_toxicity_grade" required min="0" max="5" value="0.0">
           </div>
           <div class="form-group">
             <label for="comorbidity_count">Comorbidity Count</label>
-            <input type="number" step="1" id="comorbidity_count" name="comorbidity_count" required value="1">
+            <input type="number" step="any" id="comorbidity_count" name="comorbidity_count" required value="1">
           </div>
         </div>
       </div>
@@ -625,13 +621,13 @@ def get_ui_html() -> str:
         previous_treatment_count: 0, previous_adverse_event: "false", previous_toxicity_grade: 0.0, comorbidity_count: 0
       },
       moderate: {
-        age: 64, sex: "Male", heart_rate: 84, systolic_bp: 138, diastolic_bp: 88, oxygen_saturation: 95, smoking_history: "Former",
-        cancer_type: "Colorectal", cancer_stage: "Stage III", mutation_primary: "KRAS", mutation_secondary: "TP53",
-        mutation_burden: 7.5, gene_expression_score: 48.0, ctdna_level: 2.1,
-        hemoglobin: 11.2, white_blood_cell_count: 8.9, platelet_count: 195, creatinine_level: 1.3, liver_function_marker: 42.0,
-        inflammation_marker: 6.8, tumor_marker_level: 38.0, biomarker_trend: "Increasing",
-        treatment_type: "Chemotherapy", drug_name: "Oxaliplatin", drug_dose: 180, treatment_cycle: 5,
-        previous_treatment_count: 1, previous_adverse_event: "true", previous_toxicity_grade: 1.5, comorbidity_count: 2
+        age: 61, sex: "Male", heart_rate: 88, systolic_bp: 127, diastolic_bp: 65, oxygen_saturation: 90, smoking_history: "Former",
+        cancer_type: "NSCLC", cancer_stage: "Stage III", mutation_primary: "KRAS", mutation_secondary: "None",
+        mutation_burden: 0.11, gene_expression_score: 47.32, ctdna_level: 0.11,
+        hemoglobin: 11.0, white_blood_cell_count: 8.67, platelet_count: 114, creatinine_level: 1.01, liver_function_marker: 5.0,
+        inflammation_marker: 6.77, tumor_marker_level: 0.77, biomarker_trend: "Stable",
+        treatment_type: "Immunotherapy", drug_name: "Pembrolizumab", drug_dose: 148, treatment_cycle: 1,
+        previous_treatment_count: 0, previous_adverse_event: "true", previous_toxicity_grade: 0.0, comorbidity_count: 0
       },
       high: {
         age: 76, sex: "Male", heart_rate: 98, systolic_bp: 154, diastolic_bp: 96, oxygen_saturation: 92, smoking_history: "Current",
@@ -732,7 +728,6 @@ def get_ui_html() -> str:
       document.getElementById('pct-high').innerText = highPct + '%';
       document.getElementById('bar-high').style.width = highPct + '%';
 
-      document.getElementById('disclaimer-text').innerText = data.disclaimer || '';
       resContainer.style.display = 'block';
       resContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
