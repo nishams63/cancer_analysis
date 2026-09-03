@@ -123,7 +123,7 @@ All experiments adhered strictly to the project's zero-leakage constraints:
 
 ---
 
-## 7. Final Decision Verdict
+## 7. Final Decision Verdict & Interpretation
 
 ### Pre-Registered V5 Promotion Criteria:
 1. CV Macro F1 $\ge 0.5470$ (+0.0043 margin over V4) $\rightarrow$ **NO strategy achieved this**.
@@ -132,9 +132,11 @@ All experiments adhered strictly to the project's zero-leakage constraints:
 4. Train/Val Gap $\le 0.1200$ $\rightarrow$ Satisfied by all.
 
 ### Official Verdict:
-**RETAIN CANDIDATE V4 AS THE FROZEN STAGE 1 MODEL.**
+**Candidate V5 was not promoted. Candidate V4 remains the preferred Stage 1 ML model.**
 
-### Conclusion on Class Imbalance:
-Class imbalance is **not** the primary limiting factor for Moderate-risk classification. Moderate risk constitutes 27.6% of patient encounters, which is ample sample density for gradient boosted trees. The true barrier is **biological and clinical ambiguity**: moderate toxicities (e.g. Grade 1–2 nausea, mild lab elevations) frequently present with biomarker profiles that overlap both mild baseline conditions and developing severe reactions. 
+### Required Interpretation & Scientific Synthesis:
+The results do not support class scarcity as the primary explanation for the weaker Moderate-risk performance. Moderate risk represents approximately 27.6% of training encounters and therefore is not an extremely rare class. 
 
-Artificial balancing techniques merely shift the classification boundary, trading High-risk safety for Moderate recall. Candidate V4 with balanced class weights and conservative probability multipliers achieves the optimal empirical Pareto frontier.
+The training-data evidence demonstrates that increasing Moderate weighting improved Moderate-risk sensitivity (raising Moderate Recall up to 73.90%), but this came at the severe expense of High-Risk Recall (which collapsed down to 41.11%) and overall predictive generalization behavior (Macro F1 dropped to 45.22%). Because missing High-risk toxicity encounters introduces critical clinical risks, trading High-risk Recall to artificially inflate Moderate Recall is unacceptable.
+
+Therefore, the completed B0–B11 cross-validation experiments do not justify replacing V4 with a balancing-based V5. Candidate V4 is retained based on patient-aware CV evidence as the official Stage 1 ML model.
