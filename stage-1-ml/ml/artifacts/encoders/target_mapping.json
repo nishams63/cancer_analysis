@@ -35,7 +35,12 @@
     "comorbidity_age_interaction",
     "tumor_biomarker_index",
     "hematologic_risk_flag",
-    "prior_toxicity_risk_flag"
+    "prior_toxicity_risk_flag",
+    "cumulative_treatment_load",
+    "organ_impairment_index",
+    "vital_instability_score",
+    "genomic_instability_score",
+    "biomarker_severity_weight"
   ],
   "categorical_features": [
     "sex",

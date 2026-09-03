@@ -16,7 +16,41 @@ from sklearn.metrics import (
     classification_report
 )
 
+from sklearn.base import BaseEstimator
+
 CLASS_NAMES = ["Low", "Moderate", "High"]
+
+
+class ThresholdAdjustedClassifier(BaseEstimator):
+    """
+    Wrapper around an estimator that applies post-processing decision multipliers W = [w0, w1, w2]
+    to class prediction probabilities before taking argmax.
+    Decision multipliers MUST be fitted on out-of-fold training predictions ONLY.
+    """
+    def __init__(self, base_estimator, decision_multipliers=None):
+        self.base_estimator = base_estimator
+        self.decision_multipliers = list(decision_multipliers) if decision_multipliers is not None else [1.0, 1.0, 1.0]
+
+    def fit(self, X, y):
+        self.base_estimator.fit(X, y)
+        return self
+
+    def predict_proba(self, X):
+        return self.base_estimator.predict_proba(X)
+
+    def predict(self, X):
+        probs = self.predict_proba(X)
+        mults = np.array(self.decision_multipliers)
+        scaled_probs = probs * mults
+        return np.argmax(scaled_probs, axis=1)
+
+    @property
+    def classes_(self):
+        return getattr(self.base_estimator, "classes_", np.array([0, 1, 2]))
+
+    @property
+    def feature_importances_(self):
+        return getattr(self.base_estimator, "feature_importances_", None)
 
 
 def patient_level_split(

@@ -59,7 +59,7 @@ class ToxicityRiskPredictor:
         self.numerical_features = meta["numerical_features"]
         self.categorical_features = meta["categorical_features"]
         
-        self.feature_engineer = FeatureEngineer(include_engineered=True)
+        self.feature_engineer = FeatureEngineer(include_engineered=True, include_expanded=True)
 
     def predict_single(self, patient_dict: Dict[str, Any]) -> Dict[str, Any]:
         """
