@@ -1,0 +1,27 @@
+subgroup_category,subgroup_value,sample_size,sample_proportion,accuracy,macro_f1,high_risk_recall
+Sex,Female,614,0.3509,0.5863,0.5453,0.6496
+Sex,Male,688,0.3931,0.5901,0.5342,0.6165
+Sex,Unknown,448,0.256,0.5424,0.4978,0.619
+Cancer Type,Breast Cancer,219,0.1251,0.6301,0.5717,0.6087
+Cancer Type,Colorectal Cancer,168,0.096,0.5595,0.5365,0.72
+Cancer Type,Melanoma,125,0.0714,0.544,0.5078,0.6087
+Cancer Type,NSCLC,900,0.5143,0.5789,0.531,0.6611
+Cancer Type,Prostate Cancer,81,0.0463,0.642,0.5445,0.4615
+Cancer Type,SCLC,164,0.0937,0.5122,0.4467,0.4667
+Cancer Type,Unknown,93,0.0531,0.5591,0.5374,0.6471
+Cancer Stage,Stage I,268,0.1531,0.6007,0.4909,0.5682
+Cancer Stage,Stage II,345,0.1971,0.6087,0.5113,0.551
+Cancer Stage,Stage III,635,0.3629,0.5843,0.5286,0.6491
+Cancer Stage,Stage IV,502,0.2869,0.5319,0.529,0.6614
+Treatment Type,Chemotherapy,504,0.288,0.6071,0.5505,0.65
+Treatment Type,Combination,264,0.1509,0.5833,0.5334,0.64
+Treatment Type,Immunotherapy,446,0.2549,0.5919,0.5295,0.5789
+Treatment Type,Radiation,173,0.0989,0.4798,0.4764,0.5882
+Treatment Type,Targeted Therapy,363,0.2074,0.5565,0.517,0.6622
+Smoking History,Current,417,0.2383,0.5707,0.5127,0.5915
+Smoking History,Former,700,0.4,0.5829,0.5451,0.6573
+Smoking History,Never,574,0.328,0.5749,0.5271,0.6455
+Smoking History,Unknown,59,0.0337,0.5593,0.4454,0.3
+Age Group,<50 years,282,0.1611,0.5745,0.5292,0.5862
+Age Group,50-65 years,836,0.4777,0.5778,0.5267,0.6554
+Age Group,>65 years,631,0.3606,0.5769,0.5325,0.6172

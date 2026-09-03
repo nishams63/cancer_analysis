@@ -1,0 +1,145 @@
+{
+  "candidate": "Candidate V4",
+  "selected_model": "V4-Conservative (W=[1.0, 1.05, 1.05])",
+  "evaluation_timestamp": "2026-09-03 11:15:56",
+  "test_records": 1750,
+  "test_patients": 1200,
+  "overall_metrics": {
+    "macro_f1": 0.5288,
+    "high_risk_recall": 0.6287,
+    "accuracy": 0.5766,
+    "macro_precision": 0.5209,
+    "macro_recall": 0.544,
+    "weighted_f1": 0.5766,
+    "weighted_precision": 0.5816,
+    "weighted_recall": 0.5766,
+    "log_loss": 0.9129,
+    "brier_score": 0.1817
+  },
+  "bootstrap_95_ci": {
+    "macro_f1": {
+      "mean": 0.5282653888896364,
+      "std": 0.012241783931953742,
+      "ci_95_lower": 0.5035174444981736,
+      "ci_95_upper": 0.5521195573873353
+    },
+    "high_risk_recall": {
+      "mean": 0.6280991358015654,
+      "std": 0.026376735836288513,
+      "ci_95_lower": 0.5758513931888545,
+      "ci_95_upper": 0.6782868551147166
+    },
+    "accuracy": {
+      "mean": 0.5766091428571428,
+      "std": 0.011978860890956951,
+      "ci_95_lower": 0.552,
+      "ci_95_upper": 0.6
+    }
+  },
+  "per_class_metrics": {
+    "Low": {
+      "precision": 0.7364,
+      "recall": 0.6911,
+      "f1": 0.713,
+      "support": 942,
+      "brier_score": 0.218
+    },
+    "Moderate": {
+      "precision": 0.3434,
+      "recall": 0.3122,
+      "f1": 0.3271,
+      "support": 474,
+      "brier_score": 0.2011
+    },
+    "High": {
+      "precision": 0.4828,
+      "recall": 0.6287,
+      "f1": 0.5462,
+      "support": 334,
+      "brier_score": 0.126
+    }
+  },
+  "confusion_matrix": {
+    "raw": [
+      [
+        651,
+        209,
+        82
+      ],
+      [
+        183,
+        148,
+        143
+      ],
+      [
+        50,
+        74,
+        210
+      ]
+    ],
+    "normalized": [
+      [
+        0.6911,
+        0.2219,
+        0.087
+      ],
+      [
+        0.3861,
+        0.3122,
+        0.3017
+      ],
+      [
+        0.1497,
+        0.2216,
+        0.6287
+      ]
+    ]
+  },
+  "error_transitions": {
+    "Low -> Moderate (False Mod)": 209,
+    "Low -> High (False Alarm)": 82,
+    "Moderate -> Low (Under-triage)": 183,
+    "Moderate -> High (Over-triage)": 143,
+    "High -> Moderate (Missed High - Partial)": 74,
+    "High -> Low (Critical Miss)": 50
+  },
+  "high_risk_breakdown": {
+    "actual": 334,
+    "detected": 210,
+    "missed": 124,
+    "missed_as_moderate": 74,
+    "missed_as_low": 50,
+    "false_high_predictions": 225
+  },
+  "generalization_gap": {
+    "cv_macro_f1": 0.5427,
+    "test_macro_f1": 0.5288,
+    "macro_f1_gap": 0.0139,
+    "cv_high_risk_recall": 0.6444,
+    "test_high_risk_recall": 0.6287,
+    "high_risk_recall_gap": 0.0157,
+    "cv_accuracy": 0.5889,
+    "test_accuracy": 0.5766,
+    "accuracy_gap": 0.0123
+  },
+  "benchmark_comparison": {
+    "V1": {
+      "macro_f1": 0.5204,
+      "high_risk_recall": 0.5808,
+      "accuracy": 0.5749,
+      "weighted_f1": 0.5721
+    },
+    "V3": {
+      "macro_f1": 0.5188,
+      "high_risk_recall": 0.6018,
+      "accuracy": 0.5777,
+      "weighted_f1": 0.5726
+    },
+    "V4": {
+      "macro_f1": 0.5288,
+      "high_risk_recall": 0.6287,
+      "accuracy": 0.5766,
+      "weighted_f1": 0.5766
+    }
+  }
+}
