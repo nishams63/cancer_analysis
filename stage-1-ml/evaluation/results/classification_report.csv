@@ -1,0 +1,4 @@
+class,encoded_label,precision,recall,f1_score,support
+Low,0,0.7191,0.7091,0.7141,942
+Moderate,1,0.3495,0.3038,0.3251,474
+High,2,0.4743,0.5808,0.5222,334
