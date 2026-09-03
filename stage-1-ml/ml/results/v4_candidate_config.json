@@ -1,0 +1,59 @@
+{
+  "candidate_version": "V4",
+  "selected_name": "V4-Conservative (W=[1.0, 1.05, 1.05])",
+  "timestamp": "2026-09-03 11:01:55",
+  "model_type": "LightGBM",
+  "decision_multipliers": [
+    1.0,
+    1.05,
+    1.05
+  ],
+  "feature_set": "1C. Expanded (41 feats)",
+  "feature_engineer_config": {
+    "include_engineered": true,
+    "include_expanded": true
+  },
+  "class_weight": "balanced",
+  "hyperparameters": {
+    "boosting_type": "gbdt",
+    "class_weight": "balanced",
+    "colsample_bytree": 0.7,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "min_child_samples": 30,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 80,
+    "n_jobs": null,
+    "num_leaves": 8,
+    "objective": null,
+    "random_state": 42,
+    "reg_alpha": 0.5,
+    "reg_lambda": 1.0,
+    "subsample": 0.7,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "verbose": -1
+  },
+  "cv_metrics": {
+    "macro_f1": 0.5427,
+    "macro_f1_std": 0.0041,
+    "high_risk_recall": 0.6444,
+    "moderate_f1": 0.3332,
+    "accuracy": 0.5889,
+    "train_macro_f1": 0.6378,
+    "train_val_gap": 0.095
+  },
+  "v3_cv_reference": {
+    "macro_f1": 0.5427,
+    "high_risk_recall": 0.6459,
+    "train_macro_f1": 0.7763,
+    "train_val_gap": 0.2665
+  },
+  "v1_cv_reference": {
+    "macro_f1": 0.5348,
+    "high_risk_recall": 0.6009
+  },
+  "note": "Final locked-test evaluation must be performed by the Evaluation Engineer."
+}

@@ -58,3 +58,32 @@ def test_saved_model_artifact_loading():
     if os.path.exists(model_path):
         model = joblib.load(model_path)
         assert hasattr(model, "predict")
+
+
+def test_v4_candidate_configuration():
+    """Verify V4 candidate configuration adheres to generalization-first criteria."""
+    import json
+    v4_cfg_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "results", "v4_candidate_config.json"))
+    if not os.path.exists(v4_cfg_path):
+        pytest.skip("V4 config not yet generated.")
+        
+    with open(v4_cfg_path, "r") as f:
+        cfg = json.load(f)
+        
+    assert cfg["candidate_version"] == "V4"
+    assert "cv_metrics" in cfg
+    cv_m = cfg["cv_metrics"]
+    
+    # Check that train-validation gap is controlled (< 0.15)
+    assert cv_m["train_val_gap"] < 0.15, f"Train-val gap too high: {cv_m['train_val_gap']}"
+    
+    # Check that Macro F1 is healthy (learning signal)
+    assert cv_m["macro_f1"] >= 0.53, f"Macro F1 too low: {cv_m['macro_f1']}"
+    
+    # Check that High-Risk Recall is clinically useful (> 0.55)
+    assert cv_m["high_risk_recall"] >= 0.55, f"High-risk recall too low: {cv_m['high_risk_recall']}"
+    
+    # Check decision multipliers are conservative (<= 1.25)
+    w = cfg.get("decision_multipliers", [1.0, 1.0, 1.0])
+    assert all(val <= 1.25 for val in w), f"Decision multipliers too aggressive: {w}"
+

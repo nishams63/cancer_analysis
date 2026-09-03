@@ -59,7 +59,19 @@ class ToxicityRiskPredictor:
         self.numerical_features = meta["numerical_features"]
         self.categorical_features = meta["categorical_features"]
         
-        self.feature_engineer = FeatureEngineer(include_engineered=True, include_expanded=True)
+        # Load feature engineering config from V4 config if available
+        v4_config_path = os.path.join(os.path.dirname(self.encoders_path), "..", "results", "v4_candidate_config.json")
+        v4_config_path = os.path.abspath(v4_config_path)
+        if os.path.exists(v4_config_path):
+            with open(v4_config_path, "r") as f:
+                v4_cfg = json.load(f)
+            fe_cfg = v4_cfg.get("feature_engineer_config", {})
+            self.feature_engineer = FeatureEngineer(
+                include_engineered=fe_cfg.get("include_engineered", True),
+                include_expanded=fe_cfg.get("include_expanded", True)
+            )
+        else:
+            self.feature_engineer = FeatureEngineer(include_engineered=True, include_expanded=True)
 
     def predict_single(self, patient_dict: Dict[str, Any]) -> Dict[str, Any]:
         """
