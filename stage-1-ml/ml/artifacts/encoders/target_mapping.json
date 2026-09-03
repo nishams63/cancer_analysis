@@ -1,0 +1,52 @@
+{
+  "target_mapping": {
+    "Low": 0,
+    "Moderate": 1,
+    "High": 2
+  },
+  "reverse_target_mapping": {
+    "0": "Low",
+    "1": "Moderate",
+    "2": "High"
+  },
+  "numerical_features": [
+    "age",
+    "mutation_burden",
+    "gene_expression_score",
+    "ctdna_level",
+    "tumor_marker_level",
+    "inflammation_marker",
+    "heart_rate",
+    "systolic_bp",
+    "diastolic_bp",
+    "oxygen_saturation",
+    "hemoglobin",
+    "white_blood_cell_count",
+    "platelet_count",
+    "creatinine_level",
+    "liver_function_marker",
+    "drug_dose",
+    "treatment_cycle",
+    "previous_treatment_count",
+    "previous_toxicity_grade",
+    "comorbidity_count",
+    "blood_pressure_ratio",
+    "pulse_pressure",
+    "comorbidity_age_interaction",
+    "tumor_biomarker_index",
+    "hematologic_risk_flag",
+    "prior_toxicity_risk_flag"
+  ],
+  "categorical_features": [
+    "sex",
+    "cancer_type",
+    "cancer_stage",
+    "smoking_history",
+    "mutation_primary",
+    "mutation_secondary",
+    "biomarker_trend",
+    "treatment_type",
+    "drug_name",
+    "previous_adverse_event"
+  ]
+}
