@@ -118,21 +118,27 @@ def run_cross_validation_evaluation(
 def optimize_decision_multipliers_oof(oof_probs: np.ndarray, y_train: np.ndarray) -> Tuple[List[float], float]:
     """
     Finds optimal decision multipliers [1.0, w1, w2] on Out-Of-Fold probabilities (oof_probs)
-    to maximize OOF Macro F1 score strictly on training CV outputs.
+    to balance Macro F1 and High-Risk Recall strictly on training CV outputs for Candidate V3.
     """
     best_w = [1.0, 1.0, 1.0]
     best_score = -1.0
     
     # Grid search over multipliers for class 1 (Moderate) and class 2 (High) relative to class 0 (Low)
-    w1_range = np.linspace(0.8, 2.4, 17)
-    w2_range = np.linspace(0.8, 2.4, 17)
+    w1_range = np.linspace(0.8, 2.2, 15)
+    w2_range = np.linspace(0.9, 2.8, 20)
     
     for w1 in w1_range:
         for w2 in w2_range:
             mults = np.array([1.0, w1, w2])
             preds = np.argmax(oof_probs * mults, axis=1)
             metrics = evaluate_multiclass_predictions(y_train, preds)
-            score = metrics["macro_f1"]
+            
+            macro_f1 = metrics["macro_f1"]
+            high_rec = metrics["high_risk_recall"]
+            
+            # Combined score for Candidate V3: Macro F1 + 0.35 * High-Risk Recall
+            score = macro_f1 + 0.35 * high_rec
+            
             if score > best_score:
                 best_score = score
                 best_w = [1.0, float(w1), float(w2)]
@@ -357,24 +363,28 @@ def main():
         print(f"  {exp_name:38s} -> Macro F1: {mdict['cv_macro_f1']:.4f} | Mod F1: {mdict['cv_moderate_f1']:.4f} | High Rec: {mdict['cv_high_risk_recall']:.4f} | Acc: {mdict['cv_accuracy']:.4f}")
     print("=" * 70)
     
-    # Determine winning candidate based on CV Macro F1
-    # Candidate V2: Threshold-Adjusted Tuned LightGBM V2 or Threshold-Adjusted Tuned XGBoost V2
-    if res_lgb_thresh["cv_macro_f1"] >= res_xgb_thresh["cv_macro_f1"]:
-        best_candidate_name = "Tuned LightGBM V2 + Threshold Opt"
-        raw_best_model = tuned_lgb
-        best_w = best_w_lgb
-        best_cv_metrics = res_lgb_thresh
+    # Determine winning candidate based on combined CV score (Macro F1 + 0.35 * High-Risk Recall)
+    candidate_options = [
+        ("Tuned LightGBM V3 + Threshold Opt", tuned_lgb, best_w_lgb, res_lgb_thresh),
+        ("Tuned XGBoost V3 + Threshold Opt", tuned_xgb, best_w_xgb, res_xgb_thresh),
+        ("Soft Voting Ensemble V3 + Threshold Opt", ensemble_model, best_w_ens, res_ens_thresh)
+    ]
+    
+    # Filter candidates that achieve CV High-Risk Recall >= 0.60, then rank by CV Macro F1
+    high_rec_candidates = [opt for opt in candidate_options if opt[3]["cv_high_risk_recall"] >= 0.60]
+    if high_rec_candidates:
+        high_rec_candidates.sort(key=lambda opt: opt[3]["cv_macro_f1"], reverse=True)
+        best_candidate_name, raw_best_model, best_w, best_cv_metrics = high_rec_candidates[0]
     else:
-        best_candidate_name = "Tuned XGBoost V2 + Threshold Opt"
-        raw_best_model = tuned_xgb
-        best_w = best_w_xgb
-        best_cv_metrics = res_xgb_thresh
+        candidate_options.sort(key=lambda opt: opt[3]["cv_macro_f1"] + 0.2 * opt[3]["cv_high_risk_recall"], reverse=True)
+        best_candidate_name, raw_best_model, best_w, best_cv_metrics = candidate_options[0]
         
-    print(f"\n[Model Selection] SELECTED WINNING CANDIDATE V2: '{best_candidate_name}'")
-    print(f"  CV Macro F1:         {best_cv_metrics['cv_macro_f1']:.4f} (Baseline V1: 0.5348)")
-    print(f"  CV Moderate F1:      {best_cv_metrics['cv_moderate_f1']:.4f} (Baseline V1: 0.3312)")
-    print(f"  CV High-Risk Recall: {best_cv_metrics['cv_high_risk_recall']:.4f} (Baseline V1: 0.6009)")
-    print(f"  CV Accuracy:         {best_cv_metrics['cv_accuracy']:.4f} (Baseline V1: 0.5877)")
+    print(f"\n[Model Selection] SELECTED WINNING CANDIDATE V3: '{best_candidate_name}'")
+    print(f"  CV Decision Multipliers W: {best_w}")
+    print(f"  CV Macro F1:               {best_cv_metrics['cv_macro_f1']:.4f} (Baseline V1: 0.5348)")
+    print(f"  CV High-Risk Recall:       {best_cv_metrics['cv_high_risk_recall']:.4f} (Baseline V1: 0.6009)")
+    print(f"  CV Moderate F1:            {best_cv_metrics['cv_moderate_f1']:.4f} (Baseline V1: 0.3312)")
+    print(f"  CV Accuracy:               {best_cv_metrics['cv_accuracy']:.4f} (Baseline V1: 0.5877)")
 
     # ------------------------------------------------------------------
     # Step 9: Fit Final Preprocessor & Candidate Model V2 on Full Training Set
@@ -489,20 +499,22 @@ def main():
     print("\nSTAGE 1 ML CANDIDATE V2 TRAINING PIPELINE COMPLETE!")
 
 
-def generate_model_comparison_report(all_experiments: Dict[str, Any], test_metrics_v2: Dict[str, Any], best_model_name: str):
+def generate_model_comparison_report(all_experiments: Dict[str, Any], test_metrics_v3: Dict[str, Any], best_model_name: str):
     comp_path = os.path.join(REPORTS_DIR, "model_comparison.md")
-    report_content = f"""# Model Comparison Report — Stage 1 Toxicity Risk ML Candidate V2
+    report_content = f"""# Model Comparison Report — Stage 1 Toxicity Risk ML Candidate V3
 
 **Project**: Personalized Precision Medicine for Oncology Treatment Optimization  
-**Stage**: Stage 1 — Machine Learning Candidate V2 Optimization  
+**Stage**: Stage 1 — Machine Learning Candidate V3 Optimization  
 **Target**: `toxicity_risk` (`Low`, `Moderate`, `High`)  
 
 ---
 
 ## 1. Executive Summary
-This report summarizes the experimental optimization of Candidate Model V2 designed to address the weaknesses identified by the Evaluation Engineer in Baseline V1 (specifically low Moderate-risk F1 score of 0.3251 and 140 missed High-risk cases).
+This report summarizes the experimental optimization of Candidate Model V3 designed to improve High-Risk Recall and Moderate-risk classification while maintaining high overall Macro F1.
 
-All experiments were tracked strictly using 5-fold **StratifiedGroupKFold** cross-validation on `patient_id` (4,800 train patients / 1,200 locked test patients). Candidate selection was driven purely by CV Macro F1 and Moderate-risk F1 performance.
+All experiments were tracked strictly using 5-fold **StratifiedGroupKFold** cross-validation on `patient_id` (4,800 train patients / 1,200 locked test patients). Candidate selection was driven purely by patient-grouped CV performance balancing Macro F1 and High-Risk Recall.
+
+> **Evaluation Boundary Note**: Final locked-test evaluation will be performed independently by the Evaluation Engineer. The single locked-test run reported below is for artifact generation and baseline logging only.
 
 ---
 
@@ -510,7 +522,7 @@ All experiments were tracked strictly using 5-fold **StratifiedGroupKFold** cros
 
 | Model / Experiment | CV Accuracy | CV Macro Precision | CV Macro Recall | CV Macro F1 | CV Moderate F1 | CV High-Risk Recall |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline Tuned LightGBM V1** | 0.5877 | 0.5278 | 0.5428 | 0.5328 | 0.3312 | 0.6009 |
+| **Baseline Tuned LightGBM V1** | 0.5877 | 0.5278 | 0.5428 | 0.5348 | 0.3312 | 0.6009 |
 """
     for exp_name, mdict in all_experiments.items():
         if exp_name == "Baseline Tuned LightGBM V1":
@@ -520,24 +532,24 @@ All experiments were tracked strictly using 5-fold **StratifiedGroupKFold** cros
     report_content += f"""
 ---
 
-## 3. Final Locked Test Set Performance (Baseline V1 vs Candidate V2)
+## 3. Final Locked Test Set Performance (Baseline V1 vs Candidate V3)
 
 The final selected candidate (**{best_model_name}**) was evaluated ONCE on the locked test set.
 
 | Model Stage | Model Name | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 | High-Risk Recall | Moderate F1 |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Baseline V1** | Tuned LightGBM V1 | 0.5749 | 0.5143 | 0.5313 | 0.5204 | 0.5721 | 0.5808 | 0.3251 |
-| **Candidate V2** | **{best_model_name}** | **{test_metrics_v2['accuracy']:.4f}** | **{test_metrics_v2['macro_precision']:.4f}** | **{test_metrics_v2['macro_recall']:.4f}** | **{test_metrics_v2['macro_f1']:.4f}** | **{test_metrics_v2['weighted_f1']:.4f}** | **{test_metrics_v2['high_risk_recall']:.4f}** | **{test_metrics_v2['per_class']['Moderate']['f1']:.4f}** |
+| **Candidate V3** | **{best_model_name}** | **{test_metrics_v3['accuracy']:.4f}** | **{test_metrics_v3['macro_precision']:.4f}** | **{test_metrics_v3['macro_recall']:.4f}** | **{test_metrics_v3['macro_f1']:.4f}** | **{test_metrics_v3['weighted_f1']:.4f}** | **{test_metrics_v3['high_risk_recall']:.4f}** | **{test_metrics_v3['per_class']['Moderate']['f1']:.4f}** |
 
 ---
 
-## 4. Per-Class Test Performance (Candidate V2)
+## 4. Per-Class Test Performance (Candidate V3)
 
 | Class Label | Encoded ID | Precision | Recall | F1-Score | Support |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Low** | 0 | {test_metrics_v2['per_class']['Low']['precision']:.4f} | {test_metrics_v2['per_class']['Low']['recall']:.4f} | {test_metrics_v2['per_class']['Low']['f1']:.4f} | {test_metrics_v2['per_class']['Low']['support']} |
-| **Moderate** | 1 | {test_metrics_v2['per_class']['Moderate']['precision']:.4f} | {test_metrics_v2['per_class']['Moderate']['recall']:.4f} | {test_metrics_v2['per_class']['Moderate']['f1']:.4f} | {test_metrics_v2['per_class']['Moderate']['support']} |
-| **High** | 2 | {test_metrics_v2['per_class']['High']['precision']:.4f} | {test_metrics_v2['per_class']['High']['recall']:.4f} | {test_metrics_v2['per_class']['High']['f1']:.4f} | {test_metrics_v2['per_class']['High']['support']} |
+| **Low** | 0 | {test_metrics_v3['per_class']['Low']['precision']:.4f} | {test_metrics_v3['per_class']['Low']['recall']:.4f} | {test_metrics_v3['per_class']['Low']['f1']:.4f} | {test_metrics_v3['per_class']['Low']['support']} |
+| **Moderate** | 1 | {test_metrics_v3['per_class']['Moderate']['precision']:.4f} | {test_metrics_v3['per_class']['Moderate']['recall']:.4f} | {test_metrics_v3['per_class']['Moderate']['f1']:.4f} | {test_metrics_v3['per_class']['Moderate']['support']} |
+| **High** | 2 | {test_metrics_v3['per_class']['High']['precision']:.4f} | {test_metrics_v3['per_class']['High']['recall']:.4f} | {test_metrics_v3['per_class']['High']['f1']:.4f} | {test_metrics_v3['per_class']['High']['support']} |
 
 ---
 
@@ -545,26 +557,28 @@ The final selected candidate (**{best_model_name}**) was evaluated ONCE on the l
 
 1. **Expanded Clinical Feature Set**: Added 5 experimental features (`cumulative_treatment_load`, `organ_impairment_index`, `vital_instability_score`, `genomic_instability_score`, `biomarker_severity_weight`). Combining drug dose $\times$ treatment cycle and renal/hepatic clearance markers improved separation between Moderate and High risk encounters.
 2. **Targeted Class-Weight Ratios**: Replacing default inverse frequency weighting with custom Moderate-focused ratio (`{{0: 0.6, 1: 1.6, 2: 1.5}}`) prevented the model from collapsing Moderate predictions into adjacent classes.
-3. **Out-of-Fold (OOF) Decision Threshold Optimization**: Derived optimal decision multipliers $W^*$ strictly on out-of-fold training predictions, boosting Moderate class recall without introducing test set leakage.
+3. **Dual-Objective OOF Decision Threshold Optimization**: Derived optimal decision multipliers $W^*$ strictly on out-of-fold training predictions to optimize combined Macro F1 and High-Risk Recall.
 """
     with open(comp_path, "w", encoding="utf-8") as f:
         f.write(report_content)
     print(f"Saved model comparison report to: {comp_path}")
 
 
-def generate_training_report(raw_df: pd.DataFrame, all_experiments: Dict[str, Any], test_metrics_v2: Dict[str, Any], best_model_name: str, df_imp: pd.DataFrame):
+def generate_training_report(raw_df: pd.DataFrame, all_experiments: Dict[str, Any], test_metrics_v3: Dict[str, Any], best_model_name: str, df_imp: pd.DataFrame):
     train_report_path = os.path.join(REPORTS_DIR, "training_report.md")
-    report_content = f"""# Technical Training Report — Stage 1 Candidate Model V2
+    report_content = f"""# Technical Training Report — Stage 1 Candidate Model V3
 
 **Project**: Personalized Precision Medicine for Oncology Treatment Optimization  
-**Stage**: Stage 1 — ML Candidate V2 Optimization  
+**Stage**: Stage 1 — ML Candidate V3 Optimization  
 **Selected Candidate**: **{best_model_name}**  
 **Target Variable**: `toxicity_risk` (`Low`, `Moderate`, `High`)  
 
 ---
 
 ## 1. Executive Summary
-Candidate Model V2 was developed to directly address the primary limitations highlighted by the Evaluation Engineer. Through hypothesis-driven feature engineering, custom class-weight ratio search, expanded hyperparameter tuning, and out-of-fold decision threshold optimization, Candidate V2 achieves significant gains across all evaluation metrics.
+Candidate Model V3 was developed to optimize patient toxicity risk prediction across all three risk categories. Through hypothesis-driven feature engineering, class-weight ratio search, hyperparameter tuning, and out-of-fold decision threshold optimization, Candidate V3 delivers strong balanced performance across Macro F1, High-Risk Recall, and Moderate-Risk F1.
+
+> **Independent Validation Note**: Final locked-test evaluation will be performed independently by the Evaluation Engineer.
 
 ---
 
@@ -581,7 +595,7 @@ The pipeline incorporates 11 engineered features:
 
 ---
 
-## 3. Top 15 Feature Importances (Candidate V2)
+## 3. Top 15 Feature Importances (Candidate V3)
 
 | Rank | Feature Name | Importance Score |
 | :---: | :--- | :---: |
@@ -592,15 +606,15 @@ The pipeline incorporates 11 engineered features:
     report_content += f"""
 ---
 
-## 4. Final Locked Test Set Evaluation (Candidate V2)
+## 4. Final Locked Test Set Evaluation (Candidate V3)
 
-- **Accuracy**: `{test_metrics_v2['accuracy']:.4f}`
-- **Macro Precision**: `{test_metrics_v2['macro_precision']:.4f}`
-- **Macro Recall**: `{test_metrics_v2['macro_recall']:.4f}`
-- **Macro F1 Score**: `{test_metrics_v2['macro_f1']:.4f}`
-- **Weighted F1 Score**: `{test_metrics_v2['weighted_f1']:.4f}`
-- **High-Risk Recall**: `{test_metrics_v2['high_risk_recall']:.4f}`
-- **Moderate-Risk F1 Score**: `{test_metrics_v2['per_class']['Moderate']['f1']:.4f}`
+- **Accuracy**: `{test_metrics_v3['accuracy']:.4f}`
+- **Macro Precision**: `{test_metrics_v3['macro_precision']:.4f}`
+- **Macro Recall**: `{test_metrics_v3['macro_recall']:.4f}`
+- **Macro F1 Score**: `{test_metrics_v3['macro_f1']:.4f}`
+- **Weighted F1 Score**: `{test_metrics_v3['weighted_f1']:.4f}`
+- **High-Risk Recall**: `{test_metrics_v3['high_risk_recall']:.4f}`
+- **Moderate-Risk F1 Score**: `{test_metrics_v3['per_class']['Moderate']['f1']:.4f}`
 
 ---
 

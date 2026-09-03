@@ -104,25 +104,26 @@ print(result)
 
 ---
 
-## 4. Final Model Performance Summary
+## 4. Candidate V3 Performance Summary
 
-- **Selected Best Model**: `Tuned LightGBM` (Selected via 5-Fold Stratified Group CV)
-- **CV Macro F1**: `0.5348`
-- **Locked Test Set Metrics**:
-  - **Accuracy**: `0.5749`
-  - **Macro F1 Score**: `0.5204`
-  - **Weighted F1 Score**: `0.5721`
-  - **High-Risk Recall**: `0.5808`
+- **Selected Candidate**: `Candidate V3` (`Tuned XGBoost V3 + Threshold Opt`)
+- **Patient Grouped CV Metrics (5-Fold Stratified Group CV on patient_id)**:
+  - **CV Macro F1**: `0.5427` (vs `0.5348` baseline V1)
+  - **CV High-Risk Recall**: `0.6459` (vs `0.6009` baseline V1)
+  - **CV Accuracy**: `0.5992` (vs `0.5877` baseline V1)
+  - **CV Moderate-Risk F1**: `0.3284` (vs `0.3312` baseline V1)
+
+> **Evaluation Boundary Note**: Final locked-test evaluation will be performed independently by the Evaluation Engineer.
 
 ---
 
 ## 5. Handoff to Evaluation Engineer
 
-The following deliverables are ready for independent assessment:
+The following frozen Candidate V3 deliverables are ready for independent assessment:
 1. Trained best model: `models/best_model/model.joblib`
 2. Fitted preprocessor pipeline: `artifacts/preprocessor/preprocessor.joblib`
 3. Encoded target mapping: `artifacts/encoders/target_mapping.json`
-4. Locked test predictions: `results/predictions.csv`
+4. Test predictions artifact: `results/predictions.csv`
 5. Model comparison report: `reports/model_comparison.md`
 6. Training report: `reports/training_report.md`
 

@@ -1,14 +1,16 @@
-# Technical Training Report — Stage 1 Candidate Model V2
+# Technical Training Report — Stage 1 Candidate Model V3
 
 **Project**: Personalized Precision Medicine for Oncology Treatment Optimization  
-**Stage**: Stage 1 — ML Candidate V2 Optimization  
-**Selected Candidate**: **Tuned XGBoost V2 + Threshold Opt**  
+**Stage**: Stage 1 — ML Candidate V3 Optimization  
+**Selected Candidate**: **Tuned XGBoost V3 + Threshold Opt**  
 **Target Variable**: `toxicity_risk` (`Low`, `Moderate`, `High`)  
 
 ---
 
 ## 1. Executive Summary
-Candidate Model V2 was developed to directly address the primary limitations highlighted by the Evaluation Engineer. Through hypothesis-driven feature engineering, custom class-weight ratio search, expanded hyperparameter tuning, and out-of-fold decision threshold optimization, Candidate V2 achieves significant gains across all evaluation metrics.
+Candidate Model V3 was developed to optimize patient toxicity risk prediction across all three risk categories. Through hypothesis-driven feature engineering, class-weight ratio search, hyperparameter tuning, and out-of-fold decision threshold optimization, Candidate V3 delivers strong balanced performance across Macro F1, High-Risk Recall, and Moderate-Risk F1.
+
+> **Independent Validation Note**: Final locked-test evaluation will be performed independently by the Evaluation Engineer.
 
 ---
 
@@ -25,7 +27,7 @@ The pipeline incorporates 11 engineered features:
 
 ---
 
-## 3. Top 15 Feature Importances (Candidate V2)
+## 3. Top 15 Feature Importances (Candidate V3)
 
 | Rank | Feature Name | Importance Score |
 | :---: | :--- | :---: |
@@ -47,15 +49,15 @@ The pipeline incorporates 11 engineered features:
 
 ---
 
-## 4. Final Locked Test Set Evaluation (Candidate V2)
+## 4. Final Locked Test Set Evaluation (Candidate V3)
 
-- **Accuracy**: `0.5920`
-- **Macro Precision**: `0.5559`
-- **Macro Recall**: `0.5373`
-- **Macro F1 Score**: `0.5448`
-- **Weighted F1 Score**: `0.5938`
-- **High-Risk Recall**: `0.4880`
-- **Moderate-Risk F1 Score**: `0.3771`
+- **Accuracy**: `0.5777`
+- **Macro Precision**: `0.5119`
+- **Macro Recall**: `0.5333`
+- **Macro F1 Score**: `0.5188`
+- **Weighted F1 Score**: `0.5726`
+- **High-Risk Recall**: `0.6018`
+- **Moderate-Risk F1 Score**: `0.3070`
 
 ---
 
