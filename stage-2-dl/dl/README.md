@@ -181,3 +181,6 @@ The DL module has completed development-time validation.
 > **Locked-Test Evaluation Policy:**  
 > Final locked-test evaluation is intentionally not included in this DL module. The Evaluation Engineer owns the final test-set evaluation.  
 > Checkpoint files `best_pathology_cnn.pt` and `best_temporal_lstm.pt` are preserved in `stage-2-dl/dl/checkpoints/` and ready for evaluation benchmarking.
+
+### Recommended Investigation for Evaluation Engineer:
+Validation performance is exceptionally high (CNN: 100%, Progression F1: 100%, ctDNA R?: 0.869). The Evaluation Engineer should investigate whether synthetic generation artifacts create unusually high separability, perform feature attribution (e.g., Grad-CAM, permutation importance), and test perturbation robustness on the locked test set.

@@ -278,6 +278,18 @@ The Stage 2 Deep Learning module is certified and ready for locked test evaluati
 > **Final locked-test evaluation is intentionally not included in this DL module. The Evaluation Engineer owns the final test-set evaluation.**  
 > The 150 test patients (`test_patients.csv`, 1,800 tiles, 2,402 temporal observations) were completely withheld from model selection, hyperparameter tuning, and checkpoint optimization.
 
+### Mandatory Evaluation Audit Directive for Evaluation Engineer:
+The validation performance observed during development is extraordinarily high:
+- **Pathology CNN Validation Macro F1:** `100.00%`
+- **Temporal Progression Classification F1:** `100.00%`
+- **Temporal ctDNA Regression R?:** `0.869`
+
+While high performance is not uncommon in deterministic synthetic datasets, **the Evaluation Engineer must not simply report "100% accuracy" without investigating why.** The Evaluation Engineer must conduct a rigorous diagnostic audit to determine:
+1. **Synthetic Separability:** Did the procedural data generation engine introduce morphological or temporal patterns that make class separation unusually easy compared to real biological tissue?
+2. **Feature Attribution & Saliency:** Using Grad-CAM or Integrated Gradients on the CNN, do predictions rely on cellular architecture or subtle generator artifacts? Using temporal permutation importance on the BiLSTM, which timepoints and biomarkers drive the recurrence risk score?
+3. **Robustness & Perturbation:** How do models behave under out-of-distribution noise (e.g., simulated blur, severe stain shifts, higher missingness)?
+4. **Locked-Test Generalization:** Does the untouched test set (150 patients / 1,800 tiles) reflect the same separability, or does it reveal subtle generalization boundaries?
+
 ### Handoff Package Checklist:
 - [x] Best pathology CNN checkpoint: `stage-2-dl/dl/checkpoints/best_pathology_cnn.pt`
 - [x] Best temporal BiLSTM checkpoint: `stage-2-dl/dl/checkpoints/best_temporal_lstm.pt`
