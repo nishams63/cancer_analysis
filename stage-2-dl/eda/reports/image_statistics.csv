@@ -1,0 +1,10 @@
+class_label,split,tile_count,brightness_factor_mean,brightness_factor_std,brightness_factor_min,brightness_factor_max,contrast_factor_mean,contrast_factor_std,contrast_factor_min,contrast_factor_max,stain_variation_mean,stain_variation_std,stain_variation_min,stain_variation_max,bg_warm_count,bg_neutral_count,bg_cool_count
+benign,train,2800,0.9992,0.046,0.92,1.08,0.9994,0.0576,0.9,1.1,1.0051,0.1001,0.788,1.266,920,950,930
+benign,validation,600,1.0017,0.044,0.92,1.08,1.0036,0.0591,0.9,1.1,1.004,0.0949,0.789,1.254,205,209,186
+benign,test,600,1.0024,0.0447,0.92,1.08,0.9973,0.0559,0.9,1.1,1.0047,0.0974,0.798,1.258,194,206,200
+malignant,train,2800,0.9999,0.0461,0.92,1.08,1.0005,0.0583,0.9,1.1,1.003,0.1009,0.79,1.266,891,958,951
+malignant,validation,600,0.9986,0.0461,0.921,1.08,0.9921,0.0589,0.901,1.1,1.0005,0.1005,0.801,1.256,196,199,205
+malignant,test,600,1.0001,0.0466,0.921,1.08,0.997,0.0566,0.9,1.1,1.0089,0.0999,0.803,1.248,197,193,210
+inflammation,train,2800,0.9991,0.0464,0.92,1.08,1.001,0.0576,0.9,1.1,1.0046,0.0993,0.799,1.271,935,900,965
+inflammation,validation,600,0.9985,0.0448,0.921,1.079,0.9997,0.0566,0.9,1.1,1.0042,0.0966,0.802,1.267,197,217,186
+inflammation,test,600,1.0026,0.0442,0.92,1.08,0.9993,0.0575,0.9,1.1,1.0034,0.1035,0.803,1.264,200,212,188

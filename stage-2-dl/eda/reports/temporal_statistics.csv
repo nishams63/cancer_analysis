@@ -1,0 +1,6 @@
+biomarker,total_observations,valid_count,missing_count,missing_percentage,mask_count,mask_integrity_verified,mean,std,median,min,p5,p25,p75,p95,max,has_negative_values,has_infinities
+ctDNA_vaf_percent,16012,15158,854,5.33,854,True,2.1088,2.4617,1.4515,0.0773,0.2425,0.5043,2.5931,6.9661,14.61,False,False
+cea_ng_ml,16012,15115,897,5.6,897,True,14.5966,17.0347,10.01,0.74,2.05,3.9,17.205,48.215,102.25,False,False
+ca125_u_ml,16012,15126,886,5.53,886,True,45.5297,31.4495,40.165,8.0,12.51,22.1,59.4475,103.54,194.37,False,False
+ldh_u_l,16012,15124,888,5.55,888,True,253.0576,110.7853,226.2,123.2,157.0,182.3,283.7,474.295,833.8,False,False
+crp_mg_l,16012,15162,850,5.31,850,True,7.8647,6.6206,6.365,0.5,1.95,3.37,9.99,20.939,42.04,False,False

@@ -1,0 +1,4 @@
+split,patient_count,tile_count,temporal_observation_count,benign_count,benign_pct,malignant_count,malignant_pct,inflammation_count,inflammation_pct,traj_stable_count,traj_stable_pct,traj_gradual_inc_count,traj_gradual_inc_pct,traj_gradual_dec_count,traj_gradual_dec_pct,traj_fluctuating_count,traj_fluctuating_pct,traj_rapid_inc_count,traj_rapid_inc_pct
+train,700,8400,11223,2800,33.33,2800,33.33,2800,33.33,140,20.0,140,20.0,140,20.0,140,20.0,140,20.0
+validation,150,1800,2386,600,33.33,600,33.33,600,33.33,30,20.0,30,20.0,30,20.0,30,20.0,30,20.0
+test,150,1800,2403,600,33.33,600,33.33,600,33.33,30,20.0,30,20.0,30,20.0,30,20.0,30,20.0
