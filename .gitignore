@@ -1,0 +1,25 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and temporary files
+.pytest_cache/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Large archives
+*.zip
+
+# Large generated v2 binary pathology tiles (reproducible via python stage-2-dl/src/pipeline.py)
+stage-2-dl/data/v2/raw/images/*.png
+stage-2-dl/data/v2/processed/pathology_tiles/*/*.png
+!stage-2-dl/data/v2/processed/pathology_tiles/*/.gitkeep
