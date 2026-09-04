@@ -1,0 +1,21 @@
+modality,perturbation,perturbation_type,severity,accuracy,macro_f1,metric_a_name,metric_a_value,metric_b_name,metric_b_value,mae,rmse,f1
+image,Baseline (No Perturbation),baseline,0.0,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Gaussian Blur (sigma=1.0),gaussian_blur,1.0,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Gaussian Blur (sigma=2.5),gaussian_blur,2.5,0.6133,0.5882,accuracy,0.6133,macro_f1,0.5882,,,
+image,Gaussian Pixel Noise (sigma=0.10),gaussian_noise,0.1,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Gaussian Pixel Noise (sigma=0.25),gaussian_noise,0.25,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Brightness Increase (+25%),brightness_jitter,0.25,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Brightness Decrease (-25%),brightness_jitter,-0.25,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Contrast Increase (+25%),contrast_jitter,0.25,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Contrast Decrease (-25%),contrast_jitter,-0.25,1.0,1.0,accuracy,1.0,macro_f1,1.0,,,
+image,Downsample 2x (112x112),resolution_downsample,0.5,0.9967,0.9968,accuracy,0.9967,macro_f1,0.9968,,,
+image,Downsample 4x (56x56),resolution_downsample,0.25,0.8367,0.838,accuracy,0.8367,macro_f1,0.838,,,
+temporal,Baseline (No Noise),baseline,0.0,1.0,,mae,0.3698,f1_progression,1.0,0.3698,0.506,1.0
+temporal,Biomarker Assay Noise (10%),biomarker_noise,0.1,1.0,,mae,0.3759,f1_progression,1.0,0.3759,0.5147,1.0
+temporal,Biomarker Assay Noise (25%),biomarker_noise,0.25,1.0,,mae,0.3779,f1_progression,1.0,0.3779,0.5233,1.0
+temporal,Biomarker Assay Noise (50%),biomarker_noise,0.5,1.0,,mae,0.4382,f1_progression,1.0,0.4382,0.608,1.0
+temporal,Missingness Spike (15% drop),missingness_spike,0.15,0.9933,,mae,0.4443,f1_progression,0.9917,0.4443,0.622,0.9917
+temporal,Missingness Spike (30% drop),missingness_spike,0.3,0.94,,mae,0.5666,f1_progression,0.9302,0.5666,0.7659,0.9302
+temporal,Missingness Spike (50% drop),missingness_spike,0.5,0.78,,mae,0.7406,f1_progression,0.7843,0.7406,0.9748,0.7843
+temporal,Truncated Trajectory (First 3 visits),trajectory_truncation,3.0,0.3467,,mae,1.563,f1_progression,0.02,1.563,1.8917,0.02
+temporal,Truncated Trajectory (First 2 visits),trajectory_truncation,2.0,0.2,,mae,1.4868,f1_progression,0.0,1.4868,1.8567,0.0
