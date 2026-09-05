@@ -1,0 +1,15 @@
+Item_ID,Clinical_Requirement,Current_Status,Rating,Deficiency_Details
+CLIN-01,Real Patient Data,NOT PRESENT,RED,"All 1,000 patients, 12,000 tiles, and 16,012 observations are mathematically synthesized."
+CLIN-02,External Cohort Validation,NOT PRESENT,RED,Models have only been tested on the in-distribution locked synthetic test split.
+CLIN-03,Multi-Site Laboratory Diversity,NOT PRESENT,RED,"No whole-slide images from different pathology departments, slide preparation protocols, or scanner models."
+CLIN-04,Independent Patient Biobank,NOT PRESENT,RED,No independent clinical biobank validation (e.g. NSCLC cohorts from public consortia or institutional repositories).
+CLIN-05,Prospective Clinical Validation,NOT PRESENT,RED,"Zero real-time prospective patient enrollment, monitoring, or longitudinal outcome tracking."
+CLIN-06,Clinical Reference Standard,NOT PRESENT,RED,"Synthetic progression labels are mathematical thresholds (mean delta > 0.15), not RECIST 1.1 radiologist-reviewed progression."
+CLIN-07,Clinical Expert Consensus Review,NOT PRESENT,RED,No board-certified thoracic oncologists or pathologists have reviewed the ground truth or model outputs.
+CLIN-08,Empirical Model Calibration,NOT VALIDATED,YELLOW,Model confidence is uncalibrated; softmax outputs are near 1.0 due to artificial procedural separability.
+CLIN-09,Subgroup & Demographic Fairness,NOT PRESENT,RED,"No real patient demographic, ancestry, comorbidity, or mutational subtype metadata available."
+CLIN-10,Clinical Safety Analysis,"PROTOTYPE PRESENT, CLINICAL NOT VALIDATED",YELLOW,"Software traps invalid inputs; however, clinical failure mode consequences (false positives/negatives) have not been audited in clinical trials."
+CLIN-11,Clinical Failure-Mode Analysis,"PROTOTYPE PRESENT, CLINICAL NOT VALIDATED",YELLOW,"Simulated stress tests performed; real clinical assay dropouts and histological mimics (e.g. granulomas, atypical adenomatous hyperplasia) not tested."
+CLIN-12,Human-in-the-Loop Workflow Integration,"PROTOTYPE PRESENT, CLINICAL NOT VALIDATED",YELLOW,Dashboard provides manual review capabilities; formal human-in-the-loop override protocols and audit logs are not connected to hospital systems.
+CLIN-13,Hospital Clinical Workflow Compatibility,NOT VALIDATED,RED,"No DICOM / WSI format ingestion, no HL7 / FHIR EHR interoperability, no PACS integration."
+CLIN-14,Regulatory SaMD / FDA Compliance,NOT PRESENT,RED,"No FDA 510(k), De Novo, or CE-IVDR premarket documentation, design history files, or risk management files (ISO 14971)."
