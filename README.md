@@ -18,12 +18,14 @@ cancer_analysis/
 │   ├── ml/                  # Model development pipeline, Candidate V4 artifacts, and training code
 │   ├── evaluation/          # Independent locked-test evaluation, error transition analysis, subgroups
 │   └── integration/         # Production-ready FastAPI REST service (/health, /predict, /predict/batch)
-└── stage-2-dl/               # Deep Learning Multimodal Progression Prediction
-    ├── data-engineering/    # Synthetic pathology tiles and temporal biomarker sequences
-    ├── eda/                 # Spatial tissue and longitudinal trajectory analysis
-    ├── dl/                  # Vision CNNs, LSTMs, Transformers, MIL attention models
-    ├── evaluation/          # Locked test evaluation, calibration, and benchmark reports
-    └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
+├── stage-2-dl/               # Deep Learning Multimodal Progression Prediction
+│   ├── data-engineering/    # Synthetic pathology tiles and temporal biomarker sequences
+│   ├── eda/                 # Spatial tissue and longitudinal trajectory analysis
+│   ├── dl/                  # Vision CNNs, LSTMs, Transformers, MIL attention models
+│   ├── evaluation/          # Locked test evaluation, calibration, and benchmark reports
+│   └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
+└── stage-3-nlp-slm/          # NLP & Small Language Model (SLM) Decision Support
+    └── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
 ```
 
 ### Module Summary
@@ -37,6 +39,7 @@ cancer_analysis/
 | [`stage-1-ml/evaluation`](stage-1-ml/evaluation/) | Independent locked-test evaluation and error analysis | Confusion matrix, 95% bootstrap CIs, 26-cohort subgroup metrics |
 | [`stage-1-ml/integration`](stage-1-ml/integration/) | REST API inference interface for downstream services | FastAPI application, Pydantic input schemas, sample payloads |
 | [`stage-2-dl`](stage-2-dl/) | Multimodal Vision (CNN) & Sequence (LSTM/Transformer) | Tile classification, ctDNA forecasting, late fusion alert engine |
+| [`stage-3-nlp-slm/data-engineering`](stage-3-nlp-slm/data-engineering/) | Curate leakage-free clinical NLP & SLM research dataset | `clinical_nlp_dataset_v1.parquet`, Train/Val/Test splits, audits |
 
 ---
 

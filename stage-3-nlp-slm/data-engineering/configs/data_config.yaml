@@ -1,0 +1,73 @@
+# Stage 3 — Data Engineering Configuration for Oncology NLP + SLM
+# Project: Personalized Precision Medicine for Oncology Treatment Optimization
+
+project:
+  name: "Personalized Precision Medicine for Oncology Treatment Optimization"
+  stage: "Stage 3 — NLP + SLM Data Engineering"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  master_patient_dataset: "stage-1-ml/data-engineering/data/processed/master_patient_dataset.csv"
+  raw_data_dir: "stage-3-nlp-slm/data-engineering/data/raw"
+  processed_data_dir: "stage-3-nlp-slm/data-engineering/data/processed"
+  reports_dir: "stage-3-nlp-slm/data-engineering/reports"
+  configs_dir: "stage-3-nlp-slm/data-engineering/configs"
+
+cohort:
+  total_patients: 1000
+  patient_id_prefix: "PT-"
+  split_ratio:
+    train_patients: 700
+    val_patients: 150
+    test_patients: 150
+
+document_types:
+  - "oncology_consultation"
+  - "pathology_report"
+  - "nurse_intake_note"
+  - "patient_symptom_log"
+
+targets:
+  urgency_levels:
+    - "LOW"
+    - "MEDIUM"
+    - "HIGH"
+    - "CRITICAL"
+  hazard_types:
+    - "NONE"
+    - "HEMATOLOGIC"
+    - "HEPATIC"
+    - "RENAL"
+    - "CARDIAC"
+    - "PULMONARY"
+    - "NEUROPATHIC"
+    - "DERMATOLOGIC"
+  ner_entities:
+    - "GENE_MUTATION"
+    - "DRUG_NAME"
+    - "DOSAGE"
+    - "ADVERSE_EVENT"
+
+quality_thresholds:
+  min_word_count: 15
+  max_word_count: 850
+  min_char_count: 80
+  max_char_count: 6000
+
+leakage_control:
+  enforce_temporal_index: true
+  forbidden_outcome_terms:
+    - "retrospective survival"
+    - "autopsy finding"
+    - "overall survival reached"
+    - "post-mortem"
+    - "subsequent progression on day 180"
+
+privacy:
+  mask_tokens:
+    name: "[NAME]"
+    phone: "[PHONE]"
+    email: "[EMAIL]"
+    mrn: "[MRN]"
+    date: "[DATE]"
