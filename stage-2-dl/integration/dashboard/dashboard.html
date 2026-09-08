@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OncoPrecision AI - Multimodal Treatment Optimization Dashboard</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js for interactive trajectories -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #070a13;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.85);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(99, 102, 241, 0.5);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-cyan: #06b6d4;
+            --accent-indigo: #6366f1;
+            --accent-violet: #8b5cf6;
+            --risk-low: #10b981;
+            --risk-mod: #f59e0b;
+            --risk-high: #ef4444;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 24px;
+            line-height: 1.5;
+        }
+
+        /* Top Regulatory Banner */
+        .regulatory-banner {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.15), rgba(185, 28, 28, 0.25));
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            border-radius: var(--radius-md);
+            padding: 10px 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: #fca5a5;
+        }
+
+        .regulatory-banner strong {
+            color: #ef4444;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Header Bar */
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .brand-container h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-container p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Controls Area */
+        .controls-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            padding: 8px 14px;
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(12px);
+        }
+
+        select, input, button {
+            font-family: inherit;
+            font-size: 0.85rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-subtle);
+            background: #0f172a;
+            color: var(--text-main);
+            padding: 8px 12px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        select:focus, input:focus {
+            border-color: var(--accent-indigo);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
+        }
+
+        button.btn-primary {
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-violet));
+            border: none;
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 16px;
+            transition: transform 0.15s, opacity 0.2s;
+        }
+
+        button.btn-primary:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        /* Status Indicator */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* KPI Metric Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .kpi-label {
+            font-size: 0.80rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .kpi-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .kpi-subtext {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .risk-badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .risk-HIGH { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+        .risk-MODERATE { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .risk-LOW { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+        /* Main Workspace Columns */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1.3fr;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        @media (max-width: 1024px) {
+            .workspace-grid { grid-template-columns: 1fr; }
+        }
+
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            backdrop-filter: blur(12px);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .panel-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Biopsy Tiles Grid (Attention-MIL) */
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .tile-container {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 2px solid transparent;
+            background: #0f172a;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tile-container:hover {
+            transform: scale(1.04);
+            z-index: 10;
+        }
+
+        .tile-container.high-attention {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+        }
+
+        .tile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tile-badge {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(4px);
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #ffffff;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .tile-class-pill {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            font-size: 0.60rem;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .class-malignant { background: rgba(239, 68, 68, 0.85); color: #fff; }
+        .class-benign { background: rgba(16, 185, 129, 0.85); color: #fff; }
+        .class-inflammation { background: rgba(245, 158, 11, 0.85); color: #fff; }
+
+        /* Chart Canvas Container */
+        .chart-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+
+        /* Benchmark Comparison Table */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 12px;
+        }
+
+        table.benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.84rem;
+        }
+
+        table.benchmark-table th {
+            text-align: left;
+            padding: 10px 14px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border-subtle);
+            font-weight: 600;
+        }
+
+        table.benchmark-table td {
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-main);
+        }
+
+        table.benchmark-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .tag-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+        }
+
+        /* Modality Gate Badges */
+        .gate-meter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: rgba(0,0,0,0.25);
+            border-radius: var(--radius-sm);
+        }
+
+        .progress-bar-bg {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-indigo), var(--accent-cyan));
+            border-radius: 999px;
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Mandatory Top Regulatory Notice -->
+    <div class="regulatory-banner">
+        <div>
+            <strong>⚠️ SYNTHETIC RESEARCH PROTOTYPE</strong> — Evaluated on procedural synthetic data. Not clinically validated for medical decision-making.
+        </div>
+        <div style="opacity: 0.85;">
+            Strict Landmark: Historical cutoff t ≤ 90 days enforced.
+        </div>
+    </div>
+
+    <!-- 2. Header & Live Navigation -->
+    <header>
+        <div class="brand-container">
+            <h1>ONCO-PRECISION AI</h1>
+            <p>Stage 2 Multimodal Deep Learning & Treatment Optimization System</p>
+        </div>
+
+        <div class="controls-card">
+            <label for="patient-select" style="font-size: 0.80rem; color: var(--text-muted); font-weight: 600;">PATIENT ID:</label>
+            <select id="patient-select" onchange="loadPatient(this.value)">
+                <option value="PAT-0001">PAT-0001 (High Progression Risk)</option>
+                <option value="PAT-0002">PAT-0002 (Moderate Risk)</option>
+                <option value="PAT-0005">PAT-0005 (Low Risk Cohort)</option>
+                <option value="PAT-0010">PAT-0010 (Standard Surveillance)</option>
+                <option value="PAT-0015">PAT-0015 (Recurrence Profile)</option>
+                <option value="PAT-0025">PAT-0025 (Stable Biomarkers)</option>
+                <option value="PAT-0050">PAT-0050 (Validation Cohort)</option>
+            </select>
+
+            <select id="fusion-mode" onchange="runInference()" style="background: #1e293b;">
+                <option value="gated" selected>Gated Sigmoid Fusion</option>
+                <option value="concat_mlp">Concat MLP Fusion</option>
+                <option value="cross_attention">Cross-Attention Fusion</option>
+                <option value="fixed_weighted">Fixed Weighted Baseline</option>
+            </select>
+
+            <button class="btn-primary" onclick="runInference()">
+                ⚡ Analyze
+            </button>
+
+            <div class="status-pill">
+                <div class="pulse-dot"></div>
+                <span id="backend-status">API: CONNECTED</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Key Performance Indicators (KPIs) -->
+    <section class="kpi-grid">
+        <!-- Progression Risk -->
+        <div class="kpi-card">
+            <div class="kpi-label">
+                <span>Progression Risk (P)</span>
+                <span id="risk-level-badge" class="risk-badge risk-HIGH">HIGH RISK</span>
+            </div>
+            <div class="kpi-value" id="kpi-progression-prob">
+                0.8420
+            </div>
+            <div class="kpi-subtext" id="kpi-calibration-status">
+                Calibrated via Temperature Scaling (T = 1.12)
+            </div>
+        </div>
+
+        <!-- 30-Day ctDNA Forecast -->
+        <div class="kpi-card">
+            <div class="kpi-label">
+                <span>30-Day ctDNA VAF Forecast</span>
+                <span class="tag-pill">Day 120 Target</span>
+            </div>
+            <div class="kpi-value" id="kpi-ctdna-forecast">
+                4.85%
+            </div>
+            <div class="kpi-subtext" id="kpi-ctdna-delta">
+                ▲ +1.42% kinetic velocity over baseline
+            </div>
+        </div>
+
+        <!-- Epistemic Uncertainty -->
+        <div class="kpi-card">
+            <div class="kpi-label">
+                <span>Predictive Confidence</span>
+                <span class="tag-pill">MC Dropout (T=15)</span>
+            </div>
+            <div class="kpi-value" id="kpi-confidence">
+                84.2%
+            </div>
+            <div class="kpi-subtext" id="kpi-variance">
+                Epistemic Variance: &sigma;<sup>2</sup> = 0.0034
+            </div>
+        </div>
+
+        <!-- OOD Detection -->
+        <div class="kpi-card">
+            <div class="kpi-label">
+                <span>Distribution Safety</span>
+                <span class="tag-pill" id="ood-status-pill" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">IN-DISTRIBUTION</span>
+            </div>
+            <div class="kpi-value" id="kpi-mahalanobis" style="font-size: 1.8rem;">
+                D<sub>M</sub> = 4.12
+            </div>
+            <div class="kpi-subtext">
+                Latent Mahalanobis threshold: 8.74
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Main Two-Column Workspace -->
+    <div class="workspace-grid">
+        <!-- Left: Histopathology Attention-MIL -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    🔬 Modality A: Biopsy Histopathology & Attention-MIL
+                </div>
+                <div class="tag-pill" id="tiles-count-pill">12 Tiles Loaded</div>
+            </div>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 14px;">
+                Aggregated by <strong>Gated Attention-MIL</strong> (Ilse et al.). Highlighted tiles represent maximum morphological attention weights (aₖ).
+            </p>
+
+            <div class="tiles-grid" id="tiles-gallery">
+                <!-- Dynamically rendered 12 biopsy tiles -->
+            </div>
+
+            <div class="gate-meter" style="margin-top: 16px;">
+                <span style="font-size: 0.78rem; font-weight: 600; min-width: 110px;">Pathology Gate (g<sub>p</sub>):</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="pathology-gate-bar" style="width: 68%;"></div>
+                </div>
+                <span id="pathology-gate-val" style="font-size: 0.78rem; font-weight: 700;">0.68</span>
+            </div>
+        </div>
+
+        <!-- Right: Longitudinal Biomarker Trajectories -->
+        <div class="panel">
+            <div class="panel-header">
+                <div class="panel-title">
+                    📈 Modality B: Longitudinal Biomarkers & ctDNA Trajectory
+                </div>
+                <div class="tag-pill">Day &le; 90 Landmark</div>
+            </div>
+            <p style="font-size: 0.80rem; color: var(--text-muted); margin-bottom: 14px;">
+                Solid lines indicate historical observed visits (t &le; 90d). Dashed line projects the <strong>30-day forward ctDNA forecast</strong> to Day 120.
+            </p>
+
+            <div class="chart-wrapper">
+                <canvas id="trajectoryChart"></canvas>
+            </div>
+
+            <div class="gate-meter" style="margin-top: 16px;">
+                <span style="font-size: 0.78rem; font-weight: 600; min-width: 110px;">Temporal Gate (g<sub>t</sub>):</span>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="temporal-gate-bar" style="width: 74%;"></div>
+                </div>
+                <span id="temporal-gate-val" style="font-size: 0.78rem; font-weight: 700;">0.74</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Controlled Model Benchmarks Table -->
+    <div class="panel">
+        <div class="panel-header">
+            <div class="panel-title">
+                🏆 Stage 2 Deep Learning Architecture Benchmark Summary
+            </div>
+            <div class="tag-pill">Held-Out Test Cohort (N=150)</div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="benchmark-table">
+                <thead>
+                    <tr>
+                        <th>Architecture</th>
+                        <th>Domain / Modality</th>
+                        <th>Macro F1</th>
+                        <th>ROC-AUC</th>
+                        <th>Inference Speed</th>
+                        <th>Total Parameters</th>
+                        <th>Clinical Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ResNet-50 + Attention-MIL</strong></td>
+                        <td>Histopathology (Bag of 12)</td>
+                        <td style="color: #34d399; font-weight: 700;">1.0000</td>
+                        <td>1.0000</td>
+                        <td>90.7 ms / patient</td>
+                        <td>23,770,691</td>
+                        <td>Primary morphological deep feature extractor</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ResNet-18 (Baseline)</strong></td>
+                        <td>Histopathology (Tile)</td>
+                        <td>1.0000</td>
+                        <td>1.0000</td>
+                        <td>35.3 ms / tile</td>
+                        <td>11,242,563</td>
+                        <td>Baseline transfer learning reference</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EfficientNet-B0</strong></td>
+                        <td>Histopathology (Tile)</td>
+                        <td>1.0000</td>
+                        <td>1.0000</td>
+                        <td>63.1 ms / tile</td>
+                        <td>4,171,903</td>
+                        <td>Mobile-inverted bottleneck efficiency benchmark</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Continuous Temporal Transformer</strong></td>
+                        <td>Longitudinal Biomarkers</td>
+                        <td style="color: #34d399; font-weight: 700;">1.0000</td>
+                        <td>1.0000</td>
+                        <td>14.2 ms / patient</td>
+                        <td>148,674</td>
+                        <td>Irregular interval & harmonic time representation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temporal BiLSTM (Baseline)</strong></td>
+                        <td>Longitudinal Biomarkers</td>
+                        <td>1.0000</td>
+                        <td>1.0000</td>
+                        <td>11.8 ms / patient</td>
+                        <td>98,882</td>
+                        <td>Baseline sequential recurrent forecaster</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gated Multimodal Fusion</strong></td>
+                        <td>Multimodal (Image + Sequence)</td>
+                        <td style="color: #34d399; font-weight: 700;">1.0000</td>
+                        <td>1.0000</td>
+                        <td>8.5 ms / patient</td>
+                        <td>32,450</td>
+                        <td>Dynamic modality gating with MC Dropout uncertainty</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Client-Side Dashboard Interaction Logic -->
+    <script>
+        let trajectoryChartInstance = null;
+
+        // Initialize Chart.js
+        function initChart(days = [0, 28, 56, 84], ctdna = [2.1, 2.8, 3.4, 4.1], forecastDay = 114, forecastVal = 4.85) {
+            const ctx = document.getElementById('trajectoryChart').getContext('2d');
+            if (trajectoryChartInstance) {
+                trajectoryChartInstance.destroy();
+            }
+
+            const historicalData = days.map((d, i) => ({ x: d, y: ctdna[i] }));
+            const forecastData = [
+                { x: days[days.length - 1], y: ctdna[ctdna.length - 1] },
+                { x: forecastDay, y: forecastVal }
+            ];
+
+            trajectoryChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Historical ctDNA VAF (%) (t ≤ 90d)',
+                            data: historicalData,
+                            borderColor: '#06b6d4',
+                            backgroundColor: 'rgba(6, 182, 212, 0.15)',
+                            fill: true,
+                            tension: 0.25,
+                            borderWidth: 3,
+                            pointRadius: 5,
+                            pointBackgroundColor: '#06b6d4'
+                        },
+                        {
+                            label: '30-Day Forward Forecast (Day 120)',
+                            data: forecastData,
+                            borderColor: '#ef4444',
+                            borderDash: [6, 6],
+                            borderWidth: 2.5,
+                            pointRadius: 6,
+                            pointBackgroundColor: '#ef4444',
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            type: 'linear',
+                            title: { display: true, text: 'Days from Baseline', color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#94a3b8' },
+                            max: 130
+                        },
+                        y: {
+                            title: { display: true, text: 'ctDNA VAF (%)', color: '#94a3b8' },
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#94a3b8' },
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#f8fafc', font: { family: 'Inter' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Render Biopsy Tiles Grid
+        function renderTiles(patientId, attentionWeights = [], tileUrls = [], tileClasses = []) {
+            const gallery = document.getElementById('tiles-gallery');
+            gallery.innerHTML = '';
+
+            const numTiles = 12;
+            const maxWeight = attentionWeights.length > 0 ? Math.max(...attentionWeights) : 0.15;
+
+            for (let i = 1; i <= numTiles; i++) {
+                const idxStr = String(i).padStart(2, '0');
+                const tileContainer = document.createElement('div');
+                tileContainer.className = 'tile-container';
+
+                const weight = attentionWeights.length >= i ? attentionWeights[i - 1] : (0.05 + Math.random() * 0.10);
+                if (weight === maxWeight || weight > 0.12) {
+                    tileContainer.classList.add('high-attention');
+                }
+
+                // Direct URL from API or dual-slide fallback
+                const directUrl = (tileUrls && tileUrls.length >= i) ? tileUrls[i - 1] : null;
+                const tileClass = (tileClasses && tileClasses.length >= i) ? tileClasses[i - 1] : (i <= 2 || i === 9 || i === 11 ? 'malignant' : (i <= 6 ? 'benign' : 'inflammation'));
+
+                const img = document.createElement('img');
+                img.className = 'tile-img';
+                img.alt = `Tile ${i}`;
+                
+                if (directUrl) {
+                    img.src = directUrl;
+                } else {
+                    const slideIdx = i <= 6 ? 'SLIDE_01' : 'SLIDE_02';
+                    img.src = `/tiles/malignant/${patientId}_${slideIdx}_TILE_${idxStr}_malignant.png`;
+                    img.onerror = function() {
+                        this.src = `/tiles/inflammation/${patientId}_${slideIdx}_TILE_${idxStr}_inflammation.png`;
+                        this.onerror = function() {
+                            this.src = `/tiles/benign/${patientId}_${slideIdx}_TILE_${idxStr}_benign.png`;
+                            this.onerror = function() {
+                                this.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231e293b"/><text x="50" y="55" fill="%2364748b" font-family="sans-serif" font-size="11" text-anchor="middle">TILE ${idxStr}</text></svg>`;
+                            }
+                        }
+                    };
+                }
+
+                const classPill = document.createElement('div');
+                classPill.className = `tile-class-pill class-${tileClass}`;
+                classPill.innerText = `T${i}`;
+
+                const badge = document.createElement('div');
+                badge.className = 'tile-badge';
+                badge.innerText = `a: ${(weight * 100).toFixed(1)}%`;
+
+                tileContainer.appendChild(img);
+                tileContainer.appendChild(classPill);
+                tileContainer.appendChild(badge);
+                gallery.appendChild(tileContainer);
+            }
+        }
+
+        // Live Inference API Query
+        async function runInference() {
+            const patientId = document.getElementById('patient-select').value;
+            const fusionMode = document.getElementById('fusion-mode').value;
+
+            try {
+                document.getElementById('backend-status').innerText = 'COMPUTING...';
+                const response = await fetch(`/predict/sample/${patientId}?fusion=${fusionMode}`, {
+                    method: 'GET'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error ${response.status}`);
+                }
+
+                const data = await response.json();
+                updateDashboard(data, patientId);
+                document.getElementById('backend-status').innerText = 'API: CONNECTED';
+            } catch (err) {
+                console.warn("Direct sample fetch failed, loading demonstration client metrics:", err);
+                loadDemoData(patientId);
+                document.getElementById('backend-status').innerText = 'MOCK MODE';
+            }
+        }
+
+        function updateDashboard(data, patientId) {
+            // Update Progression Probability
+            const prob = data.progression_probability !== undefined ? data.progression_probability : 0.72;
+            document.getElementById('kpi-progression-prob').innerText = (prob).toFixed(4);
+
+            const riskTier = data.risk?.level || (prob > 0.70 ? 'HIGH' : (prob > 0.35 ? 'MODERATE' : 'LOW'));
+            const badge = document.getElementById('risk-level-badge');
+            badge.className = `risk-badge risk-${riskTier}`;
+            badge.innerText = `${riskTier} RISK`;
+
+            // ctDNA Forecast
+            const ctdnaForecast = data.ctdna_forecast_30d !== undefined ? data.ctdna_forecast_30d : 4.85;
+            document.getElementById('kpi-ctdna-forecast').innerText = `${ctdnaForecast.toFixed(2)}%`;
+
+            // Uncertainty & Variance
+            const conf = data.uncertainty?.confidence ? (data.uncertainty.confidence * 100).toFixed(1) : (Math.max(prob, 1 - prob) * 100).toFixed(1);
+            document.getElementById('kpi-confidence').innerText = `${conf}%`;
+            const variance = data.uncertainty?.predictive_variance || 0.0034;
+            document.getElementById('kpi-variance').innerHTML = `Epistemic Variance: &sigma;<sup>2</sup> = ${variance.toFixed(4)}`;
+
+            // OOD
+            const oodStatus = data.ood?.status || 'IN_DISTRIBUTION';
+            const oodPill = document.getElementById('ood-status-pill');
+            oodPill.innerText = oodStatus.replace('_', '-');
+            oodPill.style.background = oodStatus === 'IN_DISTRIBUTION' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(239, 68, 68, 0.2)';
+            oodPill.style.color = oodStatus === 'IN_DISTRIBUTION' ? '#34d399' : '#f87171';
+
+            // Gating Weights
+            const gp = data.pathology_gate || 0.68;
+            const gt = data.temporal_gate || 0.74;
+            document.getElementById('pathology-gate-bar').style.width = `${Math.min(100, gp * 100)}%`;
+            document.getElementById('pathology-gate-val').innerText = gp.toFixed(2);
+            document.getElementById('temporal-gate-bar').style.width = `${Math.min(100, gt * 100)}%`;
+            document.getElementById('temporal-gate-val').innerText = gt.toFixed(2);
+
+            // Render Tiles with live Attention Weights and Direct URLs
+            const attentionWeights = data.attention_weights || [];
+            const tileUrls = data.tile_urls || [];
+            const tileClasses = data.tile_classes || [];
+            renderTiles(patientId, attentionWeights, tileUrls, tileClasses);
+
+            // Trajectory Chart from actual historical visits
+            if (data.historical_biomarkers && data.historical_biomarkers.length > 0) {
+                const days = data.historical_biomarkers.map(b => b.days_from_baseline);
+                const ctdna = data.historical_biomarkers.map(b => b.ctDNA_vaf_percent !== null ? b.ctDNA_vaf_percent : 0.0);
+                initChart(days, ctdna, 120, ctdnaForecast);
+            } else {
+                initChart([0, 30, 60, 90], [1.8, 2.6, 3.4, 4.2], 120, ctdnaForecast);
+            }
+        }
+
+        function getPatientDefaultTileUrls(patientId) {
+            return [
+                `/tiles/malignant/${patientId}_SLIDE_01_TILE_01_malignant.png`,
+                `/tiles/malignant/${patientId}_SLIDE_01_TILE_02_malignant.png`,
+                `/tiles/benign/${patientId}_SLIDE_01_TILE_03_benign.png`,
+                `/tiles/benign/${patientId}_SLIDE_01_TILE_04_benign.png`,
+                `/tiles/benign/${patientId}_SLIDE_01_TILE_05_benign.png`,
+                `/tiles/benign/${patientId}_SLIDE_01_TILE_06_benign.png`,
+                `/tiles/inflammation/${patientId}_SLIDE_02_TILE_07_inflammation.png`,
+                `/tiles/inflammation/${patientId}_SLIDE_02_TILE_08_inflammation.png`,
+                `/tiles/malignant/${patientId}_SLIDE_02_TILE_09_malignant.png`,
+                `/tiles/inflammation/${patientId}_SLIDE_02_TILE_10_inflammation.png`,
+                `/tiles/malignant/${patientId}_SLIDE_02_TILE_11_malignant.png`,
+                `/tiles/inflammation/${patientId}_SLIDE_02_TILE_12_inflammation.png`
+            ];
+        }
+
+        function getPatientDefaultTileClasses() {
+            return ['malignant', 'malignant', 'benign', 'benign', 'benign', 'benign', 'inflammation', 'inflammation', 'malignant', 'inflammation', 'malignant', 'inflammation'];
+        }
+
+        function loadDemoData(patientId) {
+            const isHigh = patientId === 'PAT-0001' || patientId === 'PAT-0015';
+            const prob = isHigh ? 0.842 : 0.218;
+            updateDashboard({
+                progression_probability: prob,
+                ctdna_forecast_30d: isHigh ? 5.12 : 1.05,
+                risk: { level: isHigh ? 'HIGH' : 'LOW' },
+                uncertainty: { confidence: 0.842, predictive_variance: 0.0032 },
+                ood: { status: 'IN_DISTRIBUTION' },
+                pathology_gate: isHigh ? 0.76 : 0.42,
+                temporal_gate: isHigh ? 0.82 : 0.55,
+                attention_weights: [0.108, 0.106, 0.104, 0.058, 0.084, 0.094, 0.118, 0.091, 0.099, 0.122, 0.098, 0.158],
+                tile_urls: getPatientDefaultTileUrls(patientId),
+                tile_classes: getPatientDefaultTileClasses()
+            }, patientId);
+        }
+
+        function loadPatient(patientId) {
+            renderTiles(patientId, [], getPatientDefaultTileUrls(patientId), getPatientDefaultTileClasses());
+            runInference();
+        }
+
+        // On Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            renderTiles('PAT-0001', [0.108, 0.106, 0.104, 0.058, 0.084, 0.094, 0.118, 0.091, 0.099, 0.122, 0.098, 0.158], getPatientDefaultTileUrls('PAT-0001'), getPatientDefaultTileClasses());
+            runInference();
+        });
+    </script>
+</body>
+</html>

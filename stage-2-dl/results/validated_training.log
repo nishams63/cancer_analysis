@@ -1,0 +1,228 @@
+PATHOLOGY: resnet18
+  resnet18 test clean: 32/1800 tiles
+  resnet18 test clean: 832/1800 tiles
+  resnet18 test clean: 1632/1800 tiles
+  resnet18 train challenge: 32/8400 tiles
+  resnet18 train challenge: 832/8400 tiles
+  resnet18 train challenge: 1632/8400 tiles
+  resnet18 train challenge: 2432/8400 tiles
+  resnet18 train challenge: 3232/8400 tiles
+  resnet18 train challenge: 4032/8400 tiles
+  resnet18 train challenge: 4832/8400 tiles
+  resnet18 train challenge: 5632/8400 tiles
+  resnet18 train challenge: 6432/8400 tiles
+  resnet18 train challenge: 7232/8400 tiles
+  resnet18 train challenge: 8032/8400 tiles
+  resnet18 seed 42 epoch 5: val loss=0.00000
+  resnet18 seed 42 epoch 10: val loss=0.00000
+PATHOLOGY: resnet50
+Downloading: "https://download.pytorch.org/models/resnet50-11ad3fa6.pth" to C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\dl\checkpoints\pretrained\checkpoints\resnet50-11ad3fa6.pth
+  resnet50 train clean: 32/8400 tiles
+  resnet50 train clean: 832/8400 tiles
+  resnet50 train clean: 1632/8400 tiles
+  resnet50 train clean: 2432/8400 tiles
+  resnet50 train clean: 3232/8400 tiles
+  resnet50 train clean: 4032/8400 tiles
+  resnet50 train clean: 4832/8400 tiles
+  resnet50 train clean: 5632/8400 tiles
+  resnet50 train clean: 6432/8400 tiles
+  resnet50 train clean: 7232/8400 tiles
+  resnet50 train clean: 8032/8400 tiles
+  resnet50 validation clean: 32/1800 tiles
+  resnet50 validation clean: 832/1800 tiles
+  resnet50 validation clean: 1632/1800 tiles
+  resnet50 test clean: 32/1800 tiles
+  resnet50 test clean: 832/1800 tiles
+  resnet50 test clean: 1632/1800 tiles
+  resnet50 train challenge: 32/8400 tiles
+  resnet50 train challenge: 832/8400 tiles
+  resnet50 train challenge: 1632/8400 tiles
+  resnet50 train challenge: 2432/8400 tiles
+  resnet50 train challenge: 3232/8400 tiles
+  resnet50 train challenge: 4032/8400 tiles
+  resnet50 train challenge: 4832/8400 tiles
+  resnet50 train challenge: 5632/8400 tiles
+  resnet50 train challenge: 6432/8400 tiles
+  resnet50 train challenge: 7232/8400 tiles
+  resnet50 train challenge: 8032/8400 tiles
+  resnet50 seed 42 epoch 5: val loss=0.00000
+  resnet50 seed 42 epoch 10: val loss=0.00000
+PATHOLOGY: efficientnet_b0
+Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\dl\checkpoints\pretrained\checkpoints\efficientnet_b0_rwightman-7f5810bc.pth
+  efficientnet_b0 train clean: 32/8400 tiles
+  efficientnet_b0 train clean: 832/8400 tiles
+  efficientnet_b0 train clean: 1632/8400 tiles
+  efficientnet_b0 train clean: 2432/8400 tiles
+  efficientnet_b0 train clean: 3232/8400 tiles
+  efficientnet_b0 train clean: 4032/8400 tiles
+  efficientnet_b0 train clean: 4832/8400 tiles
+  efficientnet_b0 train clean: 5632/8400 tiles
+  efficientnet_b0 train clean: 6432/8400 tiles
+  efficientnet_b0 train clean: 7232/8400 tiles
+  efficientnet_b0 train clean: 8032/8400 tiles
+  efficientnet_b0 validation clean: 32/1800 tiles
+  efficientnet_b0 validation clean: 832/1800 tiles
+  efficientnet_b0 validation clean: 1632/1800 tiles
+  efficientnet_b0 test clean: 32/1800 tiles
+  efficientnet_b0 test clean: 832/1800 tiles
+  efficientnet_b0 test clean: 1632/1800 tiles
+  efficientnet_b0 train challenge: 32/8400 tiles
+  efficientnet_b0 train challenge: 832/8400 tiles
+  efficientnet_b0 train challenge: 1632/8400 tiles
+  efficientnet_b0 train challenge: 2432/8400 tiles
+  efficientnet_b0 train challenge: 3232/8400 tiles
+  efficientnet_b0 train challenge: 4032/8400 tiles
+  efficientnet_b0 train challenge: 4832/8400 tiles
+  efficientnet_b0 train challenge: 5632/8400 tiles
+  efficientnet_b0 train challenge: 6432/8400 tiles
+  efficientnet_b0 train challenge: 7232/8400 tiles
+  efficientnet_b0 train challenge: 8032/8400 tiles
+  efficientnet_b0 seed 42 epoch 5: val loss=0.00000
+  efficientnet_b0 seed 42 epoch 10: val loss=0.00000
+PATHOLOGY: vit
+Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\dl\checkpoints\pretrained\checkpoints\vit_b_16-c867db91.pth
+  vit train clean: 32/8400 tiles
+  vit train clean: 832/8400 tiles
+  vit train clean: 1632/8400 tiles
+  vit train clean: 2432/8400 tiles
+  vit train clean: 3232/8400 tiles
+  vit train clean: 4032/8400 tiles
+  vit train clean: 4832/8400 tiles
+  vit train clean: 5632/8400 tiles
+  vit train clean: 6432/8400 tiles
+  vit train clean: 7232/8400 tiles
+  vit train clean: 8032/8400 tiles
+  vit validation clean: 32/1800 tiles
+  vit validation clean: 832/1800 tiles
+  vit validation clean: 1632/1800 tiles
+  vit test clean: 32/1800 tiles
+  vit test clean: 832/1800 tiles
+  vit test clean: 1632/1800 tiles
+  vit train challenge: 32/8400 tiles
+  vit train challenge: 832/8400 tiles
+  vit train challenge: 1632/8400 tiles
+  vit train challenge: 2432/8400 tiles
+  vit train challenge: 3232/8400 tiles
+  vit train challenge: 4032/8400 tiles
+  vit train challenge: 4832/8400 tiles
+  vit train challenge: 5632/8400 tiles
+  vit train challenge: 6432/8400 tiles
+  vit train challenge: 7232/8400 tiles
+  vit train challenge: 8032/8400 tiles
+  vit seed 42 epoch 5: val loss=0.00000
+  vit seed 42 epoch 10: val loss=0.00000
+TEMPORAL: bilstm seed 42
+  bilstm seed 42 epoch 5: val loss=0.14288
+  bilstm seed 42 epoch 10: val loss=0.05655
+  bilstm seed 42 epoch 15: val loss=0.04820
+  bilstm seed 42 epoch 20: val loss=0.04542
+TEMPORAL: transformer seed 42
+C:\Users\nisham\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\transformer.py:533: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:181.)
+  output = torch._nested_tensor_from_mask(
+  transformer seed 42 epoch 5: val loss=0.56576
+  transformer seed 42 epoch 10: val loss=0.43775
+  transformer seed 42 epoch 15: val loss=0.30130
+  transformer seed 42 epoch 20: val loss=0.30385
+MIL ResNet50: mean
+  mil_mean seed 42 epoch 5: val loss=0.08150
+  mil_mean seed 42 epoch 10: val loss=0.05310
+  mil_mean seed 42 epoch 15: val loss=0.04347
+MIL ResNet50: median
+  mil_median seed 42 epoch 5: val loss=0.11400
+  mil_median seed 42 epoch 10: val loss=0.11025
+  mil_median seed 42 epoch 15: val loss=0.11832
+MIL ResNet50: max
+  mil_max seed 42 epoch 5: val loss=0.80980
+  mil_max seed 42 epoch 10: val loss=0.73683
+  mil_max seed 42 epoch 15: val loss=0.70183
+MIL ResNet50: attention
+  mil_attention seed 42 epoch 5: val loss=0.07290
+  mil_attention seed 42 epoch 10: val loss=0.05120
+  fusion_concat_mlp seed 42 epoch 5: val loss=0.30832
+  fusion_concat_mlp seed 42 epoch 10: val loss=0.28551
+  fusion_concat_mlp seed 42 epoch 15: val loss=0.29701
+  fusion_gated seed 42 epoch 5: val loss=0.31179
+  fusion_gated seed 42 epoch 10: val loss=0.28960
+  fusion_gated seed 42 epoch 15: val loss=0.27825
+  fusion_gated seed 42 epoch 20: val loss=0.27572
+  fusion_gated seed 42 epoch 25: val loss=0.28224
+  fusion_gated seed 42 epoch 30: val loss=0.27839
+  fusion_cross_attention seed 42 epoch 5: val loss=0.29224
+  fusion_cross_attention seed 42 epoch 10: val loss=0.28790
+  fusion_cross_attention seed 42 epoch 15: val loss=0.30137
+  fusion_cross_attention seed 42 epoch 20: val loss=0.28516
+  fusion_cross_attention seed 42 epoch 25: val loss=0.28681
+  pathology_only seed 42 epoch 5: val loss=1.38842
+  pathology_only seed 42 epoch 10: val loss=1.38767
+  pathology_only seed 42 epoch 15: val loss=1.38662
+  pathology_only seed 42 epoch 20: val loss=1.38650
+  pathology_only seed 42 epoch 25: val loss=1.38570
+  pathology_only seed 42 epoch 30: val loss=1.38649
+  resnet50 test ood_texture: 32/1800 tiles
+  resnet50 test ood_texture: 832/1800 tiles
+  resnet50 test ood_texture: 1632/1800 tiles
+  resnet18 test brightness_minus: 32/1800 tiles
+  resnet18 test brightness_minus: 832/1800 tiles
+  resnet18 test brightness_minus: 1632/1800 tiles
+  resnet18 test brightness_plus: 32/1800 tiles
+  resnet18 test brightness_plus: 832/1800 tiles
+  resnet18 test brightness_plus: 1632/1800 tiles
+  resnet18 test contrast_minus: 32/1800 tiles
+  resnet18 test contrast_minus: 832/1800 tiles
+  resnet18 test contrast_minus: 1632/1800 tiles
+  resnet18 test contrast_plus: 32/1800 tiles
+  resnet18 test contrast_plus: 832/1800 tiles
+  resnet18 test contrast_plus: 1632/1800 tiles
+  resnet18 test stain: 32/1800 tiles
+  resnet18 test stain: 832/1800 tiles
+  resnet18 test stain: 1632/1800 tiles
+  resnet18 test blur: 32/1800 tiles
+  resnet18 test blur: 832/1800 tiles
+  resnet18 test blur: 1632/1800 tiles
+  resnet18 test noise: 32/1800 tiles
+  resnet18 test noise: 832/1800 tiles
+  resnet18 test noise: 1632/1800 tiles
+  resnet18 test compression: 32/1800 tiles
+  resnet18 test compression: 832/1800 tiles
+  resnet18 test compression: 1632/1800 tiles
+  resnet18 test morphology: 32/1800 tiles
+  resnet18 test morphology: 832/1800 tiles
+  resnet18 test morphology: 1632/1800 tiles
+  resnet50 test brightness_minus: 32/1800 tiles
+  resnet50 test brightness_minus: 832/1800 tiles
+  resnet50 test brightness_minus: 1632/1800 tiles
+  resnet50 test brightness_plus: 32/1800 tiles
+  resnet50 test brightness_plus: 832/1800 tiles
+  resnet50 test brightness_plus: 1632/1800 tiles
+  resnet50 test contrast_minus: 32/1800 tiles
+  resnet50 test contrast_minus: 832/1800 tiles
+  resnet50 test contrast_minus: 1632/1800 tiles
+  resnet50 test contrast_plus: 32/1800 tiles
+  resnet50 test contrast_plus: 832/1800 tiles
+  resnet50 test contrast_plus: 1632/1800 tiles
+  resnet50 test stain: 32/1800 tiles
+  resnet50 test stain: 832/1800 tiles
+  resnet50 test stain: 1632/1800 tiles
+  resnet50 test blur: 32/1800 tiles
+  resnet50 test blur: 832/1800 tiles
+  resnet50 test blur: 1632/1800 tiles
+  resnet50 test noise: 32/1800 tiles
+  resnet50 test noise: 832/1800 tiles
+  resnet50 test noise: 1632/1800 tiles
+  resnet50 test compression: 32/1800 tiles
+  resnet50 test compression: 832/1800 tiles
+  resnet50 test compression: 1632/1800 tiles
+  resnet50 test morphology: 32/1800 tiles
+  resnet50 test morphology: 832/1800 tiles
+  resnet50 test morphology: 1632/1800 tiles
+  final_fusion_seed42 seed 42 epoch 5: val loss=0.30832
+  final_fusion_seed42 seed 42 epoch 10: val loss=0.28551
+  final_fusion_seed42 seed 42 epoch 15: val loss=0.29701
+  final_fusion_seed123 seed 123 epoch 5: val loss=0.32325
+  final_fusion_seed123 seed 123 epoch 10: val loss=0.30679
+  final_fusion_seed123 seed 123 epoch 15: val loss=0.27835
+  final_fusion_seed123 seed 123 epoch 20: val loss=0.28997
+  final_fusion_seed2026 seed 2026 epoch 5: val loss=0.31992
+  final_fusion_seed2026 seed 2026 epoch 10: val loss=0.28261
+  final_fusion_seed2026 seed 2026 epoch 15: val loss=0.28193
+Completed: C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\results\validated_v3; validation recommendation=bilstm

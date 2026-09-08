@@ -1,10 +1,10 @@
 """
 Stage 2 Deep Learning - Standalone Patient Multimodal Viewer & HTML Generator
 
-Generates a standalone HTML report or console summary for any patient without
-requiring an active web server.
+Generates a self-contained HTML report for any patient using PatientInferenceService
+without requiring an active web server.
 
-MANDATORY NOTICE:
+MANDATORY REGULATORY NOTICE:
 SYNTHETIC RESEARCH PROTOTYPE — NOT CLINICALLY VALIDATED
 Synthetic data != Real patient evidence != Clinical validation
 """
@@ -13,32 +13,62 @@ import sys
 import argparse
 from pathlib import Path
 import json
+import pandas as pd
 
 DASHBOARD_DIR = Path(__file__).resolve().parent
 INTEGRATION_DIR = DASHBOARD_DIR.parent
 SRC_DIR = INTEGRATION_DIR / 'src'
 sys.path.insert(0, str(SRC_DIR))
+sys.path.insert(0, str(INTEGRATION_DIR.parent))
 
-import config, integration_pipeline
+try:
+    import config, schemas
+    from inference_service import PatientInferenceService
+    from integration_pipeline import _load_sample_patient_data
+except (ImportError, ValueError):
+    from . import config, schemas
+    from .inference_service import PatientInferenceService
+    from .integration_pipeline import _load_sample_patient_data
 
 
 def generate_patient_html_report(patient_id: str, output_path: str = None) -> str:
     """Generates a standalone self-contained HTML report for a patient."""
-    tiles, bio_df = integration_pipeline._load_sample_patient_data(patient_id)
-    result = integration_pipeline.run_patient_inference(
+    tiles, bio_df = _load_sample_patient_data(patient_id)
+
+    obs_list = []
+    if bio_df is not None and len(bio_df) > 0:
+        for _, row in bio_df.iterrows():
+            obs_list.append(schemas.BiomarkerObservation(
+                days_from_baseline=int(row['days_from_baseline']),
+                ctDNA_vaf_percent=float(row['ctDNA_vaf_percent']) if pd.notna(row.get('ctDNA_vaf_percent')) else None,
+                cea_ng_ml=float(row['cea_ng_ml']) if pd.notna(row.get('cea_ng_ml')) else None,
+                ca125_u_ml=float(row['ca125_u_ml']) if pd.notna(row.get('ca125_u_ml')) else None,
+                ldh_u_l=float(row['ldh_u_l']) if pd.notna(row.get('ldh_u_l')) else None,
+                crp_mg_l=float(row['crp_mg_l']) if pd.notna(row.get('crp_mg_l')) else None,
+                delta_days=float(row['delta_days']) if pd.notna(row.get('delta_days')) else None,
+            ))
+
+    req = schemas.PatientInferenceRequest(
         patient_id=patient_id,
-        pathology_tiles=tiles,
-        temporal_history=bio_df
+        tile_paths=tiles if tiles else None,
+        temporal_observations=obs_list if obs_list else None,
+        model_configuration="auto",
+        fusion_mode="gated",
+        aggregation_method="attention"
     )
 
-    p_res = result['pathology_summary']
-    t_res = result['temporal_summary']
-    f_res = result['multimodal_fusion']
-    prov = result['provenance']
+    service = PatientInferenceService.get_shared()
+    res = service.predict(req)
 
-    score_val = f_res['prototype_multimodal_risk_score']
-    alert_lbl = f_res['prototype_alert_level']
-    badge_color = "#c62828" if "HIGH" in alert_lbl else ("#ef6c00" if "MODERATE" in alert_lbl else "#2e7d32")
+    badge_color = "#c62828" if res.risk.level == "HIGH" else ("#ef6c00" if res.risk.level == "MODERATE" else "#2e7d32")
+    ood_color = "#2e7d32" if res.ood.status == "IN_DISTRIBUTION" else "#c62828"
+
+    prob_val = f"{res.progression_probability:.4f}" if res.progression_probability is not None else "N/A"
+    ctdna_val = f"{res.ctdna_forecast_30d:.2f}%" if res.ctdna_forecast_30d is not None else "N/A"
+
+    p_summary = res.pathology
+    t_summary = res.temporal
+    f_summary = res.fusion
 
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
@@ -69,55 +99,62 @@ def generate_patient_html_report(patient_id: str, output_path: str = None) -> st
     <div class="card">
         <h2>Patient Multimodal Summary: {patient_id}</h2>
         <div class="grid">
-            <div class="metric-box"><div>Modality Status</div><div class="metric-val">{result['modality_status']}</div></div>
-            <div class="metric-box"><div>Prototype Multimodal Risk</div><div class="metric-val">{score_val:.4f}</div></div>
-            <div class="metric-box"><div>Prototype Alert Level</div><div class="metric-val"><span class="badge">{alert_lbl}</span></div></div>
-            <div class="metric-box"><div>Forecasted ctDNA 30d</div><div class="metric-val">{t_res['predicted_ctDNA_30d_vaf']:.2f}%</div></div>
+            <div class="metric-box"><div>Inference Mode</div><div class="metric-val">{res.inference_mode}</div></div>
+            <div class="metric-box"><div>Progression Probability</div><div class="metric-val">{prob_val}</div></div>
+            <div class="metric-box"><div>Research Risk Level</div><div class="metric-val"><span class="badge">{res.risk.level}</span></div></div>
+            <div class="metric-box"><div>Forecasted 30d ctDNA</div><div class="metric-val">{ctdna_val}</div></div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.95rem; color: #495057;">
+            <strong>Status:</strong> {res.risk.joint_confidence_status} | 
+            <strong>Model:</strong> {res.model_configuration} |
+            <strong>Latency:</strong> {res.latency.total_ms:.1f} ms
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🛡️ Reliability, Uncertainty & OOD Detection</h3>
+        <div class="grid">
+            <div class="metric-box"><div>Confidence</div><div class="metric-val">{res.uncertainty.confidence or 'N/A'}</div></div>
+            <div class="metric-box"><div>Epistemic Uncertainty</div><div class="metric-val">{res.uncertainty.uncertainty_score or 'N/A'}</div></div>
+            <div class="metric-box"><div>Calibration Status</div><div class="metric-val" style="font-size: 1rem;">{res.uncertainty.calibration_status}</div></div>
+            <div class="metric-box"><div>OOD Status</div><div class="metric-val" style="color: {ood_color};">{res.ood.status}</div></div>
         </div>
     </div>
 
     <div class="card">
         <h3>🔬 Modality A: Histopathology Biopsy Analysis</h3>
-        <p><strong>Tiles Analyzed:</strong> {p_res['num_tiles_analyzed']} (Aggregation: {p_res['aggregation_method']})</p>
+        <p><strong>Tiles Analyzed:</strong> {p_summary.num_tiles_analyzed if p_summary else 0} (Method: {p_summary.aggregation_method if p_summary else 'N/A'})</p>
         <div class="grid">
-            <div class="metric-box"><div>P(Malignant)</div><div class="metric-val">{p_res['malignant_probability']:.4f}</div></div>
-            <div class="metric-box"><div>P(Benign)</div><div class="metric-val">{p_res['benign_probability']:.4f}</div></div>
-            <div class="metric-box"><div>P(Inflammation)</div><div class="metric-val">{p_res['inflammation_probability']:.4f}</div></div>
+            <div class="metric-box"><div>P(Malignant)</div><div class="metric-val">{f"{p_summary.malignant_probability:.4f}" if p_summary else 'N/A'}</div></div>
+            <div class="metric-box"><div>P(Benign)</div><div class="metric-val">{f"{p_summary.benign_probability:.4f}" if p_summary else 'N/A'}</div></div>
+            <div class="metric-box"><div>P(Inflammation)</div><div class="metric-val">{f"{p_summary.inflammation_probability:.4f}" if p_summary else 'N/A'}</div></div>
         </div>
-        <p>Tile Classification Breakdown: {json.dumps(p_res['tile_predictions_breakdown'])}</p>
     </div>
 
     <div class="card">
         <h3>📈 Modality B: Longitudinal Biomarkers (Historical Window &le; 90d)</h3>
         <div class="grid">
-            <div class="metric-box"><div>Historical Visits Analyzed</div><div class="metric-val">{t_res['input_sequence_length']} visits</div></div>
-            <div class="metric-box"><div>Last Historical Day</div><div class="metric-val">Day {t_res['max_days_from_baseline']}</div></div>
-            <div class="metric-box"><div>Progression Risk</div><div class="metric-val">{t_res['progression_probability']:.4f}</div></div>
-            <div class="metric-box"><div>Predicted ctDNA 30d VAF</div><div class="metric-val">{t_res['predicted_ctDNA_30d_vaf']:.2f}%</div></div>
+            <div class="metric-box"><div>Visits Analyzed</div><div class="metric-val">{t_summary.sequence_length if t_summary else 0} visits</div></div>
+            <div class="metric-box"><div>Last Historical Day</div><div class="metric-val">Day {t_summary.max_historical_day if t_summary else 0}</div></div>
+            <div class="metric-box"><div>Progression Risk</div><div class="metric-val">{f"{t_summary.progression_probability:.4f}" if t_summary else 'N/A'}</div></div>
+            <div class="metric-box"><div>Predicted 30d ctDNA</div><div class="metric-val">{f"{t_summary.ctdna_30d_forecast:.2f}%" if t_summary else 'N/A'}</div></div>
         </div>
-    </div>
-
-    <div class="card">
-        <h3>⚖️ Engineering Explanation & Provenance</h3>
-        <p><strong>Engineering Narrative:</strong> {result['engineering_explanation']}</p>
-        <p><strong>Active Weights:</strong> {json.dumps(f_res['weights_used'])}</p>
-        <p><strong>Pathology Checkpoint:</strong> <code>{prov['pathology_model_checkpoint']}</code></p>
-        <p><strong>Temporal Checkpoint:</strong> <code>{prov['temporal_model_checkpoint']}</code></p>
-        <p><strong>Timestamp:</strong> {prov['timestamp']} (UTC)</p>
     </div>
 </body>
 </html>
 """
-    out_file = output_path or str(config.INTEGRATION_DIR / 'reports' / f"patient_{patient_id}_report.html")
-    with open(out_file, 'w', encoding='utf-8') as f:
+    save_path = output_path or str(config.REPORTS_DIR / f"patient_report_{patient_id}.html")
+    with open(save_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    print(f"Standalone HTML report written to: {out_file}")
-    return out_file
+
+    return save_path
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--patient-id', type=str, default='PAT-0001')
-    parser.add_argument('--output', type=str, default=None)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Standalone HTML Report Generator")
+    parser.add_argument("--patient-id", type=str, default="PAT-0001", help="Patient ID")
+    parser.add_argument("--output", type=str, default=None, help="Output HTML path")
     args = parser.parse_args()
-    generate_patient_html_report(args.patient_id, args.output)
+
+    out = generate_patient_html_report(args.patient_id, args.output)
+    print(f"Generated standalone report at: {out}")

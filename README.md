@@ -6,27 +6,37 @@ Autonomous multi-agent AI system for personalized precision oncology, integratin
 
 ## 📁 Repository Structure
 
-The project is organized into modular stages, with **Stage 1 (Machine Learning Toxicity Risk Prediction)** fully completed:
+The project is organized into modular engineering stages and documentation:
 
 ```text
 cancer_analysis/
-└── stage-1-ml/
-    ├── data-engineering/    # Data cleaning, schema validation, and master patient dataset
-    ├── eda/                 # Exploratory data analysis, biomarker distributions, statistical reports
-    ├── ml/                  # Model development pipeline, Candidate V4 artifacts, and training code
-    ├── evaluation/          # Independent locked-test evaluation, error transition analysis, subgroups
-    └── integration/         # Production-ready FastAPI REST service (/health, /predict, /predict/batch)
+├── docs/
+│   └── viva-preparation/     # Student-friendly Level 1 Viva Study PDF, HTML, & generators
+├── stage-1-ml/               # Classical Machine Learning Toxicity Risk Prediction
+│   ├── data-engineering/    # Data cleaning, schema validation, and master patient dataset
+│   ├── eda/                 # Exploratory data analysis, biomarker distributions, statistical reports
+│   ├── ml/                  # Model development pipeline, Candidate V4 artifacts, and training code
+│   ├── evaluation/          # Independent locked-test evaluation, error transition analysis, subgroups
+│   └── integration/         # Production-ready FastAPI REST service (/health, /predict, /predict/batch)
+└── stage-2-dl/               # Deep Learning Multimodal Progression Prediction
+    ├── data-engineering/    # Synthetic pathology tiles and temporal biomarker sequences
+    ├── eda/                 # Spatial tissue and longitudinal trajectory analysis
+    ├── dl/                  # Vision CNNs, LSTMs, Transformers, MIL attention models
+    ├── evaluation/          # Locked test evaluation, calibration, and benchmark reports
+    └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
 ```
 
 ### Module Summary
 
 | Module | Responsibility | Key Deliverables |
 |:---|:---|:---|
+| [`docs/viva-preparation`](docs/viva-preparation/) | Data Science Viva Level 1 Study Guide | [`Data_Science_Viva_Level_1_Study_Material.pdf`](docs/viva-preparation/Data_Science_Viva_Level_1_Study_Material.pdf), [`HTML Reference`](docs/viva-preparation/Data_Science_Viva_Level_1_Study_Material.html) |
 | [`stage-1-ml/data-engineering`](stage-1-ml/data-engineering/) | Clean, validate, and curate raw oncology records | `master_patient_dataset.csv`, Data dictionary, Quality report |
 | [`stage-1-ml/eda`](stage-1-ml/eda/) | Statistical analysis, leakage verification, and distributions | Statistical summaries, correlation heatmaps, biomarker plots |
 | [`stage-1-ml/ml`](stage-1-ml/ml/) | Model training, regularization, and feature engineering | Frozen Candidate V4 model artifact (`model.joblib`), preprocessor |
 | [`stage-1-ml/evaluation`](stage-1-ml/evaluation/) | Independent locked-test evaluation and error analysis | Confusion matrix, 95% bootstrap CIs, 26-cohort subgroup metrics |
 | [`stage-1-ml/integration`](stage-1-ml/integration/) | REST API inference interface for downstream services | FastAPI application, Pydantic input schemas, sample payloads |
+| [`stage-2-dl`](stage-2-dl/) | Multimodal Vision (CNN) & Sequence (LSTM/Transformer) | Tile classification, ctDNA forecasting, late fusion alert engine |
 
 ---
 

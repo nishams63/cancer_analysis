@@ -1,83 +1,117 @@
 """
-Stage 2 Deep Learning - Multimodal Inference REST API Service
+Stage 2 Deep Learning - Multimodal Oncology Patient-Level Inference Service (FastAPI)
 
-FastAPI service exposing:
-  - GET /health
-  - GET /info
-  - POST /predict/patient
-  - POST /predict/sample/{patient_id}
+Exposes REST endpoints:
+  - GET  /health                   System health, readiness, and loaded model registry status
+  - GET  /info                     Model configurations, alert thresholds, disclaimers
+  - POST /predict/patient          Single patient multimodal inference
+  - POST /predict/batch            Batch inference with per-patient error isolation
+  - POST /predict/sample/{patient_id} Demo endpoint loading sample development cohort cases
 
-MANDATORY NOTICE:
-This API is a research prototype developed with synthetic data.
-NOT clinically validated. Never use for clinical decision-making.
+MANDATORY REGULATORY NOTICE:
+Research prototype developed with synthetic data. NOT clinically validated.
+Performance does not establish clinical safety or efficacy.
 """
 import os
 import sys
+from pathlib import Path
 from typing import List, Dict, Any, Optional
-import pandas as pd
+
+STAGE_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(STAGE_ROOT / '.runtime'))
+sys.path.insert(0, str(STAGE_ROOT))
+
 from fastapi import FastAPI, HTTPException, status
-from pydantic import BaseModel, Field
+from fastapi.responses import HTMLResponse, RedirectResponse
+from starlette.staticfiles import StaticFiles
 import uvicorn
+import pandas as pd
 
 try:
-    from . import config, validation, integration_pipeline
+    from . import config, validation, schemas
+    from .model_registry import ModelRegistry, MissingCheckpointError
+    from .inference_service import PatientInferenceService
+    from .integration_pipeline import _load_sample_patient_data
 except (ImportError, ValueError):
-    import config, validation, integration_pipeline
+    import config, validation, schemas
+    from model_registry import ModelRegistry, MissingCheckpointError
+    from inference_service import PatientInferenceService
+    from integration_pipeline import _load_sample_patient_data
+
+from dl.research_inference import ResearchPredictor
 
 
-# Initialize FastAPI App
 app = FastAPI(
-    title="Multimodal Oncology Inference Service (Prototype)",
+    title="Multimodal Oncology Patient Inference Service",
     description=(
-        "Research prototype inference service uniting frozen histopathology CNN and temporal BiLSTM. "
-        "IMPORTANT: This service was developed using synthetic data and has not been clinically validated. "
-        "Performance does not establish clinical safety or efficacy."
+        "Patient-level multimodal inference uniting ResNet-50 Attention-MIL Pathology "
+        "and Continuous Temporal Transformer with Epistemic Uncertainty and OOD Detection. "
+        "MANDATORY: Research prototype developed with synthetic data. NOT clinically validated."
     ),
-    version="2.0.0-prototype"
+    version="2.1.0-upgraded"
 )
 
-
-# Pydantic Schemas
-class BiomarkerObservation(BaseModel):
-    days_from_baseline: int = Field(..., ge=0, le=90, description="Elapsed days since baseline (must be <= 90)")
-    ctDNA_vaf_percent: Optional[float] = Field(None, description="ctDNA variant allele frequency (%)")
-    cea_ng_ml: Optional[float] = Field(None, description="Carcinoembryonic antigen (ng/mL)")
-    ca125_u_ml: Optional[float] = Field(None, description="Cancer antigen 125 (U/mL)")
-    ldh_u_l: Optional[float] = Field(None, description="Lactate dehydrogenase (U/L)")
-    crp_mg_l: Optional[float] = Field(None, description="C-reactive protein (mg/L)")
-    delta_days: Optional[int] = Field(None, description="Days since previous visit")
-    ctDNA_velocity_30d: Optional[float] = Field(None, description="Backward-looking velocity")
-    ctDNA_missing: Optional[int] = Field(0, description="Missingness mask")
-    cea_missing: Optional[int] = Field(0, description="Missingness mask")
-    ca125_missing: Optional[int] = Field(0, description="Missingness mask")
-    ldh_missing: Optional[int] = Field(0, description="Missingness mask")
-    crp_missing: Optional[int] = Field(0, description="Missingness mask")
+# Mount pathology tiles static directory for rich browser visualization
+tiles_dir = config.STAGE_2_DIR / "data-engineering" / "data" / "v2" / "processed" / "pathology_tiles"
+if tiles_dir.exists():
+    app.mount("/tiles", StaticFiles(directory=str(tiles_dir)), name="tiles")
 
 
-class PatientInferenceRequest(BaseModel):
-    patient_id: str = Field(..., description="Unique patient identifier")
-    tile_paths: Optional[List[str]] = Field(None, description="List of absolute paths to biopsy tiles")
-    temporal_observations: Optional[List[BiomarkerObservation]] = Field(
-        None, description="Longitudinal history visits strictly within days <= 90"
-    )
-    aggregation_method: Optional[str] = Field("mean", description="Tile aggregation method: mean, median, max")
-    fusion_method: Optional[str] = Field("weighted_linear", description="Fusion method: weighted_linear or rule_based")
-    custom_weights: Optional[Dict[str, float]] = Field(None, description="Optional custom weights summing to 1.0")
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/dashboard", response_class=HTMLResponse, tags=["Dashboard"])
+def visual_dashboard():
+    """Serves the interactive visual multimodal oncology dashboard."""
+    dash_path = Path(__file__).resolve().parent.parent / "dashboard" / "dashboard.html"
+    if dash_path.exists():
+        with open(dash_path, "r", encoding="utf-8") as f:
+            return HTMLResponse(content=f.read())
+    return RedirectResponse(url="/docs")
+
+
+@app.get("/viewer/{patient_id}", response_class=HTMLResponse, tags=["Viewer"])
+def view_patient(patient_id: str):
+    """Renders self-contained interactive HTML dashboard report for a patient."""
+    try:
+        from integration.dashboard.standalone_viewer import generate_patient_html_report
+        path = generate_patient_html_report(patient_id)
+        with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return HTMLResponse(content=content)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate viewer: {str(e)}")
 
 
 @app.get("/health", tags=["System"])
 def health_check():
-    """Returns service health status and loaded model checkpoint information."""
-    pipeline = integration_pipeline.MultimodalPatientPipeline.get_shared_pipeline()
+    """
+    Returns system readiness, loaded model status, and mandatory regulatory disclaimers.
+    Reports 'degraded' if critical models are unavailable.
+    """
+    registry_status = ModelRegistry.status_summary()
+    models_dict = {k: "available" if v["available"] else "missing" for k, v in registry_status.items()}
+
+    if ResearchPredictor.ready():
+        return {
+            'status': 'healthy',
+            'service': 'stage-2-multimodal-integration',
+            'models': models_dict,
+            'validated_artifacts_ready': True,
+            'selected_configuration': ResearchPredictor.shared().selected,
+            'mandatory_disclaimer': config.MANDATORY_DISCLAIMER,
+            'equivalence_disclaimer': config.EQUIVALENCE_DISCLAIMER
+        }
+    has_pathology = registry_status.get("pathology_resnet50", {}).get("available", False) or \
+                    registry_status.get("baseline_pathology", {}).get("available", False)
+    has_temporal = registry_status.get("temporal_transformer", {}).get("available", False) or \
+                   registry_status.get("baseline_temporal", {}).get("available", False)
+
+    system_status = "healthy" if (has_pathology and has_temporal) else "degraded"
+
     return {
-        "status": "healthy",
+        "status": system_status,
         "service": "stage-2-multimodal-integration",
-        "models_loaded": {
-            "pathology_cnn": pipeline.pathology_checkpoint_path,
-            "temporal_bilstm": pipeline.temporal_checkpoint_path
-        },
-        "clinical_validation_status": config.CLINICAL_VALIDATION_STATUS,
-        "data_source": config.DATA_SOURCE,
+        "version": "stage2-upgraded-v1",
+        "models": {k: "available" if v["available"] else "missing" for k, v in registry_status.items()},
         "mandatory_disclaimer": config.MANDATORY_DISCLAIMER,
         "equivalence_disclaimer": config.EQUIVALENCE_DISCLAIMER
     }
@@ -85,70 +119,229 @@ def health_check():
 
 @app.get("/info", tags=["System"])
 def service_info():
-    """Returns default fusion configuration, alert thresholds, and disclaimers."""
+    """Returns configuration parameters, alert thresholds, and disclaimers."""
     return {
-        "notice": "Prototype parameters only. NOT clinically calibrated.",
-        "default_fusion_weights": config.DEFAULT_FUSION_WEIGHTS,
-        "temporal_only_weights": config.TEMPORAL_ONLY_WEIGHTS,
+        "service_version": "stage2-upgraded-v1",
+        "data_source": "synthetic_only",
+        "clinical_validation": "NONE",
+        "supported_fusion_modes": ["gated", "concat_mlp", "cross_attention", "fixed_weighted"],
+        "supported_aggregations": ["attention", "mean", "median", "max"],
+        "historical_cutoff_day": config.FORECAST_SPLIT_DAY,
         "prototype_alert_thresholds": config.PROTOTYPE_ALERT_THRESHOLDS,
         "prototype_alert_labels": config.PROTOTYPE_ALERT_LABELS,
-        "forecast_boundary_day": config.FORECAST_SPLIT_DAY,
-        "disclaimer": config.MANDATORY_DISCLAIMER
+        "mandatory_disclaimer": config.MANDATORY_DISCLAIMER,
+        "equivalence_disclaimer": config.EQUIVALENCE_DISCLAIMER
     }
 
 
 @app.post("/predict/patient", tags=["Inference"])
-def predict_patient(request: PatientInferenceRequest):
+def predict_patient(request: schemas.PatientInferenceRequest):
     """
-    Runs multimodal patient-level inference combining pathology tiles and longitudinal biomarkers.
-    """
-    try:
-        # Convert observation list to DataFrame if provided
-        history_df = None
-        if request.temporal_observations:
-            obs_dicts = [obs.dict(exclude_none=True) for obs in request.temporal_observations]
-            history_df = pd.DataFrame(obs_dicts)
-
-        pipeline = integration_pipeline.MultimodalPatientPipeline.get_shared_pipeline()
-        result = pipeline.run_patient_inference(
-            patient_id=request.patient_id,
-            pathology_tiles=request.tile_paths,
-            temporal_history=history_df,
-            aggregation_method=request.aggregation_method or config.DEFAULT_TILE_AGGREGATION,
-            fusion_method=request.fusion_method or 'weighted_linear',
-            custom_weights=request.custom_weights
-        )
-        return result
-
-    except validation.ValidationError as ve:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
-    except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Inference error: {str(e)}")
-
-
-@app.post("/predict/sample/{patient_id}", tags=["Demo / Testing"])
-def predict_sample_patient(patient_id: str, aggregation: str = "mean", fusion: str = "weighted_linear"):
-    """
-    Demo endpoint: loads sample data for patient_id from the development cohort and executes inference.
+    Executes unified patient-level inference combining pathology tiles and longitudinal biomarkers.
+    Enforces historical cutoff Day <= 90 and returns calibrated risk with epistemic uncertainty.
     """
     try:
-        tiles, bio_df = integration_pipeline._load_sample_patient_data(patient_id)
-        if not tiles and (bio_df is None or len(bio_df) == 0):
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Patient {patient_id} not found in sample cohort.")
+        use_validated = (request.model_version == 'validated') or (request.model_configuration == 'validated')
+        if use_validated:
+            if not ResearchPredictor.ready():
+                raise HTTPException(status_code=503, detail='Validated experiments have not completed')
+            res = ResearchPredictor.shared().predict(
+                request.patient_id,
+                request.tile_paths,
+                [obs.model_dump() for obs in request.temporal_observations] if request.temporal_observations else None
+            )
+            if 'inference_mode' not in res:
+                res['inference_mode'] = res.get('modality_status')
+            if 'risk' not in res:
+                lvl = res.get('risk_level') or 'LOW'
+                res['risk'] = {'level': lvl, 'joint_confidence_status': 'INTERMEDIATE', 'description': f'Model risk: {lvl}'}
+            return res
 
-        pipeline = integration_pipeline.MultimodalPatientPipeline.get_shared_pipeline()
-        result = pipeline.run_patient_inference(
-            patient_id=patient_id,
-            pathology_tiles=tiles,
-            temporal_history=bio_df,
-            aggregation_method=aggregation,
-            fusion_method=fusion
-        )
-        return result
+        if (request.model_version == 'auto' or request.model_configuration == 'auto') and ResearchPredictor.ready():
+            try:
+                res = ResearchPredictor.shared().predict(
+                    request.patient_id,
+                    request.tile_paths,
+                    [obs.model_dump() for obs in request.temporal_observations] if request.temporal_observations else None
+                )
+                if 'inference_mode' not in res:
+                    res['inference_mode'] = res.get('modality_status')
+                if 'risk' not in res:
+                    lvl = res.get('risk_level') or 'LOW'
+                    res['risk'] = {'level': lvl, 'joint_confidence_status': 'INTERMEDIATE', 'description': f'Model risk: {lvl}'}
+                return res
+            except Exception:
+                pass
+
+        service = PatientInferenceService.get_shared()
+        res = service.predict(request)
+        res_dict = res.model_dump()
+        res_dict['modality_status'] = res.inference_mode
+        return res_dict
+
     except HTTPException:
         raise
+    except validation.ValidationError as ve:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
+    except MissingCheckpointError as mce:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=str(mce))
+    except ValueError as ve:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(ve))
     except Exception as e:
-        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Inference execution failure: {str(e)}"
+        )
+
+
+@app.post("/predict/batch", tags=["Inference"])
+def predict_batch(request: schemas.BatchInferenceRequest):
+    """
+    Processes a batch of patients with isolated per-patient error handling.
+    Malformed patient records do not prevent valid patients from completing.
+    """
+    results: List[Dict[str, Any]] = []
+    successful = 0
+    failed = 0
+
+    for pt_request in request.patients:
+        try:
+            prediction = predict_patient(pt_request)
+            results.append({
+                "patient_id": pt_request.patient_id,
+                "status": "success",
+                "status_code": 200,
+                "detail": None,
+                "prediction": prediction
+            })
+            successful += 1
+        except HTTPException as exc:
+            results.append({
+                "patient_id": pt_request.patient_id,
+                "status": "error",
+                "status_code": exc.status_code,
+                "detail": exc.detail,
+                "prediction": None
+            })
+            failed += 1
+        except validation.ValidationError as ve:
+            results.append({
+                "patient_id": pt_request.patient_id,
+                "status": "error",
+                "status_code": 400,
+                "detail": f"Validation error: {str(ve)}",
+                "prediction": None
+            })
+            failed += 1
+        except MissingCheckpointError as mce:
+            results.append({
+                "patient_id": pt_request.patient_id,
+                "status": "error",
+                "status_code": 503,
+                "detail": f"Checkpoint error: {str(mce)}",
+                "prediction": None
+            })
+            failed += 1
+        except Exception as e:
+            results.append({
+                "patient_id": pt_request.patient_id,
+                "status": "error",
+                "status_code": 500,
+                "detail": f"Processing error: {str(e)}",
+                "prediction": None
+            })
+            failed += 1
+
+    return {
+        "count": len(results),
+        "total": len(results),
+        "successful": successful,
+        "failed": failed,
+        "results": results
+    }
+
+
+@app.get("/predict/sample/{patient_id}", tags=["Demo"])
+@app.post("/predict/sample/{patient_id}", tags=["Demo"])
+def predict_sample_patient(
+    patient_id: str,
+    aggregation: str = "attention",
+    fusion: str = "gated",
+    model_config: str = "auto"
+):
+    """
+    Demo endpoint: Loads sample data for a patient from development data and runs inference.
+    """
+    tiles, bio_df = _load_sample_patient_data(patient_id)
+    if not tiles and (bio_df is None or len(bio_df) == 0):
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Patient '{patient_id}' not found in sample dataset."
+        )
+
+    obs_list = []
+    if bio_df is not None and len(bio_df) > 0:
+        for _, row in bio_df.iterrows():
+            obs_list.append(schemas.BiomarkerObservation(
+                days_from_baseline=int(row['days_from_baseline']),
+                ctDNA_vaf_percent=float(row['ctDNA_vaf_percent']) if pd.notna(row.get('ctDNA_vaf_percent')) else None,
+                cea_ng_ml=float(row['cea_ng_ml']) if pd.notna(row.get('cea_ng_ml')) else None,
+                ca125_u_ml=float(row['ca125_u_ml']) if pd.notna(row.get('ca125_u_ml')) else None,
+                ldh_u_l=float(row['ldh_u_l']) if pd.notna(row.get('ldh_u_l')) else None,
+                crp_mg_l=float(row['crp_mg_l']) if pd.notna(row.get('crp_mg_l')) else None,
+                delta_days=float(row['delta_days']) if pd.notna(row.get('delta_days')) else None,
+            ))
+
+    req = schemas.PatientInferenceRequest(
+        patient_id=patient_id,
+        tile_paths=tiles if tiles else None,
+        temporal_observations=obs_list if obs_list else None,
+        model_configuration=model_config,
+        fusion_mode=fusion,
+        aggregation_method=aggregation
+    )
+
+    res = predict_patient(req)
+    if hasattr(res, "model_dump"):
+        res_dict = res.model_dump()
+    elif isinstance(res, dict):
+        res_dict = dict(res)
+    else:
+        res_dict = {"prediction": res}
+
+    # Format direct static URLs and classes for all biopsy tiles
+    tile_urls = []
+    tile_classes = []
+    for tp in (tiles or []):
+        p = Path(tp)
+        cls_name = p.parent.name
+        tile_urls.append(f"/tiles/{cls_name}/{p.name}")
+        tile_classes.append(cls_name)
+
+    res_dict["tile_urls"] = tile_urls
+    res_dict["tile_classes"] = tile_classes
+
+    # Format sorted historical biomarker visits for interactive charting
+    biomarkers = []
+    if bio_df is not None and len(bio_df) > 0:
+        for _, row in bio_df.sort_values("days_from_baseline").iterrows():
+            biomarkers.append({
+                "days_from_baseline": int(row["days_from_baseline"]),
+                "ctDNA_vaf_percent": float(row["ctDNA_vaf_percent"]) if pd.notna(row.get("ctDNA_vaf_percent")) else None,
+                "cea_ng_ml": float(row["cea_ng_ml"]) if pd.notna(row.get("cea_ng_ml")) else None,
+                "ca125_u_ml": float(row["ca125_u_ml"]) if pd.notna(row.get("ca125_u_ml")) else None,
+                "ldh_u_l": float(row["ldh_u_l"]) if pd.notna(row.get("ldh_u_l")) else None,
+                "crp_mg_l": float(row["crp_mg_l"]) if pd.notna(row.get("crp_mg_l")) else None,
+            })
+    res_dict["historical_biomarkers"] = biomarkers
+
+    # Elevate attention weights if inside pathology summary
+    if "attention_weights" not in res_dict or not res_dict["attention_weights"]:
+        p_info = res_dict.get("pathology")
+        if isinstance(p_info, dict) and p_info.get("attention_weights"):
+            res_dict["attention_weights"] = p_info["attention_weights"]
+
+    return res_dict
 
 
 def start_server(host: str = config.API_HOST, port: int = config.API_PORT):

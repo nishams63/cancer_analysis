@@ -1,0 +1,41 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.15, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\nisham\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis
+collecting ... collected 19 items
+
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_manifest_matches_both_modalities PASSED [  5%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_missing_targets_not_zero_imputed_and_sources_after_cutoff PASSED [ 10%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_future_values_cannot_change_features PASSED [ 15%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_temporal_raw_days_and_reproducible_challenges PASSED [ 21%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_bag_challenge_nonconstant_and_patient_ownership PASSED [ 26%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_pretrained_download_failure_is_not_random_fallback PASSED [ 31%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_random_backbone_remains_trainable PASSED [ 36%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_undefined_metrics_not_invented PASSED [ 42%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_multiclass_pr_auc_is_measured PASSED [ 47%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_negative_degradation_and_zero_reference PASSED [ 52%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_mc_binary_probabilities_independent_of_batch_and_modes_restored PASSED [ 57%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_mil_attention_receives_gradient_and_is_permutation_invariant PASSED [ 63%]
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_transformer_padding_invariance_and_time_sensitivity PASSED [ 68%]
+stage-2-dl/dl/tests/test_research_api.py::test_all_modality_states PASSED [ 73%]
+stage-2-dl/dl/tests/test_research_api.py::test_validated_request_does_not_invent_untrained_predictions PASSED [ 78%]
+stage-2-dl/dl/tests/test_research_api.py::test_future_api_visit_is_rejected PASSED [ 84%]
+stage-2-dl/dl/tests/test_research_api.py::test_batch_keeps_per_patient_errors PASSED [ 89%]
+stage-2-dl/dl/tests/test_research_api.py::test_no_input_abstains_without_loading_models PASSED [ 94%]
+stage-2-dl/dl/tests/test_research_api.py::test_patient_and_health_use_ready_artifacts PASSED [100%]
+
+============================== warnings summary ===============================
+stage-2-dl\.runtime\fastapi\testclient.py:1
+  C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\.runtime\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+stage-2-dl\.runtime\starlette\testclient.py:53
+  C:\Users\nisham\.gemini\antigravity-ide\scratch\cancer_analysis\stage-2-dl\.runtime\starlette\testclient.py:53: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = Callable[[], AbstractContextManager[anyio.abc.BlockingPortal]]
+
+stage-2-dl/dl/tests/test_integrity_regressions.py::test_transformer_padding_invariance_and_time_sensitivity
+  C:\Users\nisham\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\transformer.py:533: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:181.)
+    output = torch._nested_tensor_from_mask(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 19 passed, 3 warnings in 181.59s (0:03:01) ==================

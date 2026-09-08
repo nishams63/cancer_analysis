@@ -1,0 +1,4 @@
+{
+  "recommended": "bilstm",
+  "best_learned": "fusion_concat_mlp"
+}

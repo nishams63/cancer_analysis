@@ -1,4 +1,4 @@
-﻿# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -9,6 +9,8 @@ __pycache__/
 *.swo
 *~
 .DS_Store
+tmp/
+output/
 
 # Environments
 .venv/
@@ -16,8 +18,14 @@ env/
 venv/
 ENV/
 
-# Large archives
+# Large archives and binaries
 *.zip
+*.pt
+*.pth
+stage-2-dl/.runtime/
+stage-2-dl/dl/checkpoints/pretrained/
+stage-2-dl/dl/checkpoints/validated_v3/*.pt
+stage-2-dl/dl/checkpoints/*.pt
 
 # Large generated v2 binary pathology tiles (reproducible via pipeline.py)
 stage-2-dl/data-engineering/data/v2/raw/images/*.png

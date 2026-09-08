@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multimodal Patient Report - PAT-0001 (Prototype)</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 30px; background-color: #f8f9fa; color: #212529; }
+        .banner { background-color: #ffebee; border: 2px solid #c62828; border-radius: 8px; padding: 15px; margin-bottom: 25px; }
+        .banner h3 { color: #c62828; margin: 0 0 6px 0; }
+        .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .metric-box { background: #eef2f5; padding: 12px; border-radius: 6px; text-align: center; }
+        .metric-val { font-size: 1.4rem; font-weight: bold; margin-top: 4px; color: #1a365d; }
+        .badge { background-color: #ef6c00; color: white; padding: 6px 12px; border-radius: 4px; font-weight: bold; display: inline-block; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 8px 12px; border: 1px solid #dee2e6; text-align: left; }
+        th { background-color: #f1f3f5; }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h3>⚠️ SYNTHETIC RESEARCH PROTOTYPE — NOT CLINICALLY VALIDATED</h3>
+        <strong>Synthetic data != Real patient evidence != Clinical validation</strong><br>
+        This model was developed using synthetic data and has not been clinically validated. Performance on this dataset does not establish clinical effectiveness, safety, or real-world patient benefit.
+    </div>
+
+    <div class="card">
+        <h2>Patient Multimodal Summary: PAT-0001</h2>
+        <div class="grid">
+            <div class="metric-box"><div>Inference Mode</div><div class="metric-val">FULL_MULTIMODAL</div></div>
+            <div class="metric-box"><div>Progression Probability</div><div class="metric-val">0.4923</div></div>
+            <div class="metric-box"><div>Research Risk Level</div><div class="metric-val"><span class="badge">MODERATE</span></div></div>
+            <div class="metric-box"><div>Forecasted 30d ctDNA</div><div class="metric-val">0.02%</div></div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.95rem; color: #495057;">
+            <strong>Status:</strong> INTERMEDIATE | 
+            <strong>Model:</strong> stage2-upgraded-resnet50-transformer-gated-v1 |
+            <strong>Latency:</strong> 1901.7 ms
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>🛡️ Reliability, Uncertainty & OOD Detection</h3>
+        <div class="grid">
+            <div class="metric-box"><div>Confidence</div><div class="metric-val">0.5077</div></div>
+            <div class="metric-box"><div>Epistemic Uncertainty</div><div class="metric-val">N/A</div></div>
+            <div class="metric-box"><div>Calibration Status</div><div class="metric-val" style="font-size: 1rem;">RAW_SIGMOID_UNSCALED</div></div>
+            <div class="metric-box"><div>OOD Status</div><div class="metric-val" style="color: #c62828;">NOT_EVALUATED</div></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>🔬 Modality A: Histopathology Biopsy Analysis</h3>
+        <p><strong>Tiles Analyzed:</strong> 12 (Method: attention)</p>
+        <div class="grid">
+            <div class="metric-box"><div>P(Malignant)</div><div class="metric-val">0.3100</div></div>
+            <div class="metric-box"><div>P(Benign)</div><div class="metric-val">0.3317</div></div>
+            <div class="metric-box"><div>P(Inflammation)</div><div class="metric-val">0.3583</div></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>📈 Modality B: Longitudinal Biomarkers (Historical Window &le; 90d)</h3>
+        <div class="grid">
+            <div class="metric-box"><div>Visits Analyzed</div><div class="metric-val">7 visits</div></div>
+            <div class="metric-box"><div>Last Historical Day</div><div class="metric-val">Day 83</div></div>
+            <div class="metric-box"><div>Progression Risk</div><div class="metric-val">0.5335</div></div>
+            <div class="metric-box"><div>Predicted 30d ctDNA</div><div class="metric-val">0.24%</div></div>
+        </div>
+    </div>
+</body>
+</html>

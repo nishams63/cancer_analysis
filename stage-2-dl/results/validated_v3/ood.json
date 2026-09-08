@@ -1,0 +1,7 @@
+{
+  "challenge": "Independent RGB noise textures replacing pathology; temporal unchanged. Synthetic far-OOD only.",
+  "threshold": 9.166483666095415,
+  "clean_flag_rate": 0.033783783783783786,
+  "shifted_flag_rate": 0.0472972972972973,
+  "roc_auc": 0.4871712929145361
+}

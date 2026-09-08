@@ -1,0 +1,5 @@
+{
+  "recommended": "bilstm",
+  "best_learned": "fusion_concat_mlp",
+  "selection_partition": "validation"
+}

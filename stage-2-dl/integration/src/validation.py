@@ -2,15 +2,17 @@
 Stage 2 Deep Learning - Input Integrity & Anti-Leakage Validation Module
 
 Strictly enforces:
-1. Temporal historical boundary: days_from_baseline <= 90
+1. Temporal historical boundary: days_from_baseline <= 90 (Day 91+ strictly rejected)
 2. Anti-leakage target exclusion: forbids future_ctDNA_30d_target & future_progression_trend
-3. Modality structure and physical tile existence
-4. Fusion parameter bounds
+3. Modality structure and physical tile integrity
+4. Chronological consistency (delta_days >= 0)
+5. Modality state resolution: FULL_MULTIMODAL, PATHOLOGY_ONLY, TEMPORAL_ONLY, INSUFFICIENT_DATA
 """
 import os
 from pathlib import Path
-from typing import List, Union, Optional
+from typing import List, Union, Optional, Tuple
 import pandas as pd
+import numpy as np
 from PIL import Image
 
 try:
@@ -31,10 +33,22 @@ def validate_patient_id(patient_id: str) -> str:
     return patient_id.strip()
 
 
+def determine_modality_status(has_pathology: bool, has_temporal: bool) -> str:
+    """Resolves modality state into one of the four standard operational modes."""
+    if has_pathology and has_temporal:
+        return "FULL_MULTIMODAL"
+    elif has_pathology and not has_temporal:
+        return "PATHOLOGY_ONLY"
+    elif not has_pathology and has_temporal:
+        return "TEMPORAL_ONLY"
+    else:
+        return "INSUFFICIENT_DATA"
+
+
 def validate_temporal_history(df: Optional[pd.DataFrame]) -> Optional[pd.DataFrame]:
     """
     Validates patient temporal DataFrame against anti-leakage and schema rules.
-    Strictly checks that days_from_baseline <= 90 and targets are absent.
+    Strictly checks that days_from_baseline <= 90 and future targets are absent.
     """
     if df is None:
         return None
@@ -60,24 +74,43 @@ def validate_temporal_history(df: Optional[pd.DataFrame]) -> Optional[pd.DataFra
     # Strict historical window boundary check: days <= 90
     max_day = df['days_from_baseline'].max()
     if max_day > config.FORECAST_SPLIT_DAY:
-        violating_count = (df['days_from_baseline'] > config.FORECAST_SPLIT_DAY).sum()
+        violating_count = int((df['days_from_baseline'] > config.FORECAST_SPLIT_DAY).sum())
         raise ValidationError(
-            f"Forecasting boundary violation: Found {violating_count} observations exceeding Day {config.FORECAST_SPLIT_DAY} "
-            f"(maximum observed day: {max_day}). Model only accepts historical induction window data (days <= 90)."
+            f"Forecasting boundary violation: Found {violating_count} observation(s) exceeding Day {config.FORECAST_SPLIT_DAY} "
+            f"(maximum observed day: {max_day}). The model strictly accepts historical induction window data (days <= 90)."
         )
+
+    min_day = df['days_from_baseline'].min()
+    if min_day < 0:
+        raise ValidationError(f"Invalid timestamp: 'days_from_baseline' cannot be negative, got {min_day}.")
+
+    # Sort chronologically
+    sorted_df = df.copy().sort_values('days_from_baseline').reset_index(drop=True)
+
+    # Validate delta_days
+    delta = sorted_df['days_from_baseline'].diff()
+    if (delta < 0).any():
+        raise ValidationError("Chronological violation: Observations must be in non-decreasing order.")
+
+    # Check for duplicate visit dates
+    if sorted_df['days_from_baseline'].duplicated().any():
+        raise ValidationError("Duplicate visit dates detected in temporal history.")
 
     # Check for at least one numerical biomarker column
     num_cols = ['ctDNA_vaf_percent', 'cea_ng_ml', 'ca125_u_ml', 'ldh_u_l', 'crp_mg_l']
-    present_cols = [c for c in num_cols if c in df.columns]
+    present_cols = [c for c in num_cols if c in sorted_df.columns]
     if not present_cols:
         raise ValidationError(f"Temporal history must contain at least one biomarker column among: {num_cols}")
 
-    return df.copy().sort_values('days_from_baseline').reset_index(drop=True)
+    return sorted_df
 
 
-def validate_pathology_tiles(tiles_input: Union[None, str, Path, Image.Image, List[Union[str, Path, Image.Image]]]) -> List[Union[str, Path, Image.Image]]:
+def validate_pathology_tiles(
+    tiles_input: Union[None, str, Path, Image.Image, List[Union[str, Path, Image.Image]]]
+) -> List[Union[str, Path, Image.Image]]:
     """
     Validates image tiles input. Supports single tile, list of tiles, or file paths.
+    Checks physical file existence and decodability. Never fabricates missing tiles.
     """
     if tiles_input is None:
         return []
@@ -102,6 +135,9 @@ def validate_pathology_tiles(tiles_input: Union[None, str, Path, Image.Image, Li
             except Exception as e:
                 raise ValidationError(f"Corrupt or unreadable image file at {path_str}: {e}")
         elif isinstance(item, Image.Image):
+            # Verify valid dimensions and channels
+            if item.size[0] <= 0 or item.size[1] <= 0:
+                raise ValidationError(f"Invalid image dimensions at index {idx}: {item.size}")
             validated_tiles.append(item)
         else:
             raise ValidationError(f"Tile item at index {idx} has invalid type: {type(item)}")
@@ -119,18 +155,8 @@ def validate_fusion_weights(weights: dict) -> dict:
         if not isinstance(v, (int, float)) or v < 0:
             raise ValidationError(f"Fusion weight for '{k}' must be a non-negative float, got {v}")
 
-    total = sum(weights[k] for k in required_keys)
-    if abs(total - 1.0) > 1e-4:
-        raise ValidationError(f"Fusion weights must sum to 1.0, got {total:.4f}")
+    total = sum(weights.values())
+    if not (0.99 <= total <= 1.01):
+        raise ValidationError(f"Fusion weights must sum to 1.0, got sum = {total:.4f}")
 
-    return weights
-
-
-def validate_aggregation_method(method: str) -> str:
-    """Validates tile aggregation strategy."""
-    method_lower = method.lower()
-    if method_lower not in config.ALLOWED_TILE_AGGREGATIONS:
-        raise ValidationError(
-            f"Invalid tile aggregation method: '{method}'. Must be one of: {config.ALLOWED_TILE_AGGREGATIONS}"
-        )
-    return method_lower
+    return {k: float(v) for k, v in weights.items()}

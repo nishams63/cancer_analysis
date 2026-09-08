@@ -1,0 +1,124 @@
+{
+  "version": "validated-v3-landmark90-composition50",
+  "smoke": false,
+  "data_fingerprint": "1d4bed8301eab3642ac8547c386589b71d17b88618ea64de362fd0420955bff9",
+  "split_counts": {
+    "train": 700,
+    "validation": 150,
+    "test": 150
+  },
+  "seed": 42,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "torch": "2.14.0+cpu",
+  "pathology_epochs": 15,
+  "temporal_epochs": 20,
+  "fusion_epochs": 40,
+  "selection": "Validation progression F1; ties: validation ROC-AUC, then lower ctDNA MAE; threshold 0.5 fixed.",
+  "forecast": "Day90 landmark; nearest observed day120 ctDNA within +/-12 days; missing target excluded.",
+  "pathology_protocol": "Frozen official pretrained encoder + independently optimized identical-width head; no end-to-end fine-tuning.",
+  "source_hashes": {
+    "dl\\config.py": "b4e82a0ec5f4f642923f88edff37007fb7d1a80c49341e373f3763003e0cd2eb",
+    "dl\\dataset_v2.py": "5ad6bb660eb70aa4b09e7e02e099a28e9363e68a9f61903686b51484a78b970f",
+    "dl\\explainability.py": "e300fbe3061de2f5e3b47c68fdabfec652901a37d3781110d997f901d5aadb3b",
+    "dl\\ood_detector.py": "94e2552b99f486595a9fe59eeea08af9092f114dc3a30b99b27ae57106307de6",
+    "dl\\research_data.py": "31b08ce76d4c32006e046c5dcc45cc993d40983d42a5395083bb505b16910c52",
+    "dl\\research_inference.py": "72c4bea569bc005c0af53d0212a7211f31ef632475b3252413008f4291259ed0",
+    "dl\\robustness_suite.py": "52373177836007c472e722d7bf4ea46976de2c63625c142588744956c62133a3",
+    "dl\\uncertainty_calibration.py": "660d2bc0fa0df8ff0ae8187afafa861435d0ac50f49368df66a81e034252eb69",
+    "dl\\models\\attention_mil.py": "78059e357fa7c7ba5a90f3d20cd97003eb36667b7174f03d0ea5576aa4c4f278",
+    "dl\\models\\multimodal_fusion.py": "01193f58e3d869645d326b06a02be174e8bb11d3e883b5ef64dec8a70e4ff59f",
+    "dl\\models\\pathology_benchmarks.py": "965319bb2f8d3b9b32f7c3dff0f5429fc74592e390c4fc94c424a8a7494dece5",
+    "dl\\models\\research_models.py": "0f7ac9565cb645052b25f6b758e4c67bbdc24bb7634484c32e0e9d049bbf267c",
+    "dl\\models\\temporal_transformer.py": "d183ef793b4d2e7e394346b229473998d3b818518ae1f6fd13887d64acd6ee45",
+    "dl\\models\\__init__.py": "e5330d2fc29dcfaa470a15976dba4cbe1ab6fb9ac06f97127916fc1df30cde3c",
+    "dl\\src\\config.py": "6464d8d2b147a364680ef1758e19d3fb1d8c5991a06d26901898ac0b15f537c7",
+    "dl\\src\\datasets.py": "85073de9348252458b9ea0599f4ff8018978bffcb76e53dd9af2dbc49d36490e",
+    "dl\\src\\image_model.py": "17d3e3c252bd2d2ea95d2d2b5b6fae364483f8b28f07569d150f54483dc98630",
+    "dl\\src\\inference.py": "3ea47b9daf5e1dac0519f87ab29509335372ed63ce5e269824cde8cf407ee9a8",
+    "dl\\src\\temporal_model.py": "5090c6fd305543a56fe2bca809f411ac67eb829895bd5d099112a18d7061c71f",
+    "dl\\src\\train_image.py": "63363d21fa01ccdb96697645e00522e1980ad3b4e4df51db1f6bee03f7ca9a55",
+    "dl\\src\\train_temporal.py": "45ab7f5d80315f04be8890205fb32861cb064d1508598977870fdc26c99acf67",
+    "dl\\src\\utils.py": "4ec9648ebc36f4fcdd25ebd891b13e29b91260ba35693c7fdbe6c75a02ad0047",
+    "dl\\src\\__init__.py": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+    "dl\\tests\\test_dl.py": "7596d6b87b0935c59f8cec6923536978691d2f96e48edfc2bd518278b26d081a",
+    "dl\\tests\\test_integrity_regressions.py": "a5a7d28042f60949df018e9b6a72519c53347280f51f1b1eb3a6d0e102abda34",
+    "dl\\tests\\test_research_api.py": "c7f06f5509a047958efff02787d370ffe07dc8f7fdfe7d5bdc80e37fd5e05e01",
+    "dl\\tests\\test_upgraded_dl.py": "ed5de06283f44e4d9fc41c0e6dee5c94990cd967afa40b5a4695acdcfd3aaf0d",
+    "dl\\tests\\__init__.py": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295",
+    "dl\\training\\run_benchmarks.py": "ea3f342752f947eed70417b7f220fc1bbb5a5545e33d5f90ef1bf0530ef5df5b",
+    "dl\\training\\validated_experiments.py": "b857d068dd01afa6cc9ae42e4afc4b3ea64c20c4fb6d70a4d49ea5b552f6b107",
+    "dl\\training\\__init__.py": "c30f3e8f183332380e3a080b4e714da9bb0557995cfa6117c2c3776d6142eb54"
+  },
+  "exclusions": {
+    "train": [
+      {
+        "patient_id": "PAT-0193",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0212",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0221",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0352",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0407",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0632",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0712",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0791",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0809",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0855",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0873",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      }
+    ],
+    "validation": [
+      {
+        "patient_id": "PAT-0892",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0904",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      }
+    ],
+    "test": [
+      {
+        "patient_id": "PAT-0498",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      },
+      {
+        "patient_id": "PAT-0533",
+        "reason": "No observed ctDNA within day 120 +/-12"
+      }
+    ]
+  }
+}

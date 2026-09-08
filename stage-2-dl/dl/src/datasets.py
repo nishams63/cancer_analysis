@@ -1,4 +1,4 @@
-﻿"""
+"""
 Stage 2 Deep Learning (DL) - Dataset Implementations
 """
 import os
@@ -68,10 +68,17 @@ class PathologyTileDataset(Dataset):
         
         # Fallback path resolution if absolute drive path differs
         if not os.path.exists(img_path):
-            rel = row.get('relative_path', '')
-            alt_path = config.STAGE_2_DIR / rel.replace('data-engineering/data-engineering/', 'data-engineering/')
-            if alt_path.exists():
-                img_path = str(alt_path)
+            fname = os.path.basename(img_path)
+            for cls_c in ['benign', 'malignant', 'inflammation']:
+                cand = config.PATHOLOGY_TILES_DIR / cls_c / fname
+                if cand.exists():
+                    img_path = str(cand)
+                    break
+            else:
+                rel = row.get('relative_path', '')
+                alt_path = config.STAGE_2_DIR / rel.replace('data-engineering/data-engineering/', 'data-engineering/')
+                if alt_path.exists():
+                    img_path = str(alt_path)
                 
         image = Image.open(img_path).convert('RGB')
         tensor_img = self.transform(image)

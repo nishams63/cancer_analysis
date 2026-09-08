@@ -2,6 +2,12 @@
 Stage 2 Deep Learning - Multimodal Oncology Research Prototype Dashboard
 
 Streamlit research interface for inspecting multimodal patient predictions.
+Unites:
+  - ResNet-50 / ResNet-18 Pathology with Gated Attention-MIL
+  - Continuous Temporal Transformer / BiLSTM Forecaster
+  - Learned Multimodal Fusion (Gated, Concat-MLP, Cross-Attention)
+  - Epistemic Uncertainty (MC Dropout) & Validation Temperature Calibration
+  - Latent Out-of-Distribution (OOD) Detection
 
 MANDATORY REGULATORY BANNER:
 SYNTHETIC RESEARCH PROTOTYPE — NOT CLINICALLY VALIDATED
@@ -21,12 +27,20 @@ DASHBOARD_DIR = Path(__file__).resolve().parent
 INTEGRATION_DIR = DASHBOARD_DIR.parent
 SRC_DIR = INTEGRATION_DIR / 'src'
 sys.path.insert(0, str(SRC_DIR))
+sys.path.insert(0, str(INTEGRATION_DIR.parent))
 
-import config, integration_pipeline, fusion
+try:
+    import config, schemas, validation
+    from inference_service import PatientInferenceService
+    from integration_pipeline import _load_sample_patient_data
+except (ImportError, ValueError):
+    from . import config, schemas, validation
+    from .inference_service import PatientInferenceService
+    from .integration_pipeline import _load_sample_patient_data
 
 # Streamlit Page Configuration
 st.set_page_config(
-    page_title="Multimodal Oncology Prototype",
+    page_title="Multimodal Oncology Prototype Explorer",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -50,220 +64,153 @@ st.markdown(
 )
 
 st.title("🔬 Multimodal Oncology Patient Inference Explorer")
-st.caption("Stage 2 Deep Learning Prototype: Pathology CNN (ResNet-18) + Longitudinal Temporal BiLSTM")
+st.caption("Stage 2 Deep Learning: Pathology Attention-MIL + Longitudinal Temporal Transformer + Learned Fusion")
 
 # 2. SIDEBAR CONFIGURATION
-st.sidebar.header("⚙️ Patient & Pipeline Setup")
+st.sidebar.header("⚙️ Patient & Model Setup")
 
 # Patient selection
 sample_patients = [f"PAT-{i:04d}" for i in range(1, 21)]
-selected_patient_id = st.sidebar.selectbox("Select Patient Cohort Case", sample_patients, index=0)
+selected_patient_id = st.sidebar.selectbox("Select Patient Case", sample_patients, index=0)
 
-st.sidebar.subheader("Multimodal Parameters")
-aggregation_method = st.sidebar.selectbox(
-    "Pathology Tile Aggregation",
-    config.ALLOWED_TILE_AGGREGATIONS,
-    index=0,
-    help="Strategy to aggregate individual biopsy tile predictions into a patient-level signal."
+architecture_choice = st.sidebar.radio(
+    "Model Architecture",
+    ["Upgraded (ResNet-50 + Transformer + Gated)", "Baseline (ResNet-18 + BiLSTM + Fixed)"],
+    index=0
 )
+is_upgraded = "Upgraded" in architecture_choice
+model_config = "upgraded" if is_upgraded else "baseline"
 
-fusion_method = st.sidebar.selectbox(
-    "Fusion Strategy",
-    ['weighted_linear', 'rule_based'],
-    index=0,
-    help="Multimodal fusion strategy uniting pathology and temporal predictions."
-)
-
-# Configurable weights (Prototype Engineering Choices)
-st.sidebar.markdown("**Prototype Fusion Weights** *(Heuristic baseline)*")
-w_mal = st.sidebar.slider("Pathology Malignant Weight", 0.0, 1.0, config.DEFAULT_FUSION_WEIGHTS['pathology_malignant'], 0.05)
-w_prog = st.sidebar.slider("Temporal Progression Weight", 0.0, 1.0, config.DEFAULT_FUSION_WEIGHTS['temporal_progression'], 0.05)
-w_ctdna = st.sidebar.slider("ctDNA VAF Risk Weight", 0.0, 1.0, config.DEFAULT_FUSION_WEIGHTS['ctdna_vaf_risk'], 0.05)
-
-# Normalize weights
-sum_w = w_mal + w_prog + w_ctdna
-if sum_w > 0:
-    custom_weights = {
-        'pathology_malignant': round(w_mal / sum_w, 4),
-        'temporal_progression': round(w_prog / sum_w, 4),
-        'ctdna_vaf_risk': round(w_ctdna / sum_w, 4)
-    }
+if is_upgraded:
+    fusion_mode = st.sidebar.selectbox("Learned Fusion Strategy", ["gated", "concat_mlp", "cross_attention"], index=0)
+    aggregation_method = st.sidebar.selectbox("Pathology Aggregation", ["attention", "mean", "median", "max"], index=0)
 else:
-    custom_weights = config.DEFAULT_FUSION_WEIGHTS
+    fusion_mode = "fixed_weighted"
+    aggregation_method = st.sidebar.selectbox("Pathology Aggregation", ["mean", "median", "max"], index=0)
 
-# Modality availability toggles (for missing modality simulation)
+# Modality availability toggles
 st.sidebar.subheader("Simulate Modality Availability")
-include_pathology = st.sidebar.checkbox("Include Pathology Tiles", value=True)
+include_pathology = st.sidebar.checkbox("Include Pathology Biopsy Tiles", value=True)
 include_temporal = st.sidebar.checkbox("Include Temporal Biomarkers", value=True)
 
-
 # 3. DATA LOADING & INFERENCE EXECUTION
-tiles_raw, bio_raw = integration_pipeline._load_sample_patient_data(selected_patient_id)
+tiles, bio_df = _load_sample_patient_data(selected_patient_id)
 
-tiles_input = tiles_raw if include_pathology else None
-bio_input = bio_raw if include_temporal else None
+obs_list = []
+if include_temporal and bio_df is not None and len(bio_df) > 0:
+    for _, row in bio_df.iterrows():
+        obs_list.append(schemas.BiomarkerObservation(
+            days_from_baseline=int(row['days_from_baseline']),
+            ctDNA_vaf_percent=float(row['ctDNA_vaf_percent']) if pd.notna(row.get('ctDNA_vaf_percent')) else None,
+            cea_ng_ml=float(row['cea_ng_ml']) if pd.notna(row.get('cea_ng_ml')) else None,
+            ca125_u_ml=float(row['ca125_u_ml']) if pd.notna(row.get('ca125_u_ml')) else None,
+            ldh_u_l=float(row['ldh_u_l']) if pd.notna(row.get('ldh_u_l')) else None,
+            crp_mg_l=float(row['crp_mg_l']) if pd.notna(row.get('crp_mg_l')) else None,
+            delta_days=float(row['delta_days']) if pd.notna(row.get('delta_days')) else None,
+        ))
 
-with st.spinner("Executing multimodal pipeline inference..."):
-    result = integration_pipeline.run_patient_inference(
-        patient_id=selected_patient_id,
-        pathology_tiles=tiles_input,
-        temporal_history=bio_input,
-        aggregation_method=aggregation_method,
-        fusion_method=fusion_method,
-        custom_weights=custom_weights
-    )
+req = schemas.PatientInferenceRequest(
+    patient_id=selected_patient_id,
+    tile_paths=tiles if include_pathology else None,
+    temporal_observations=obs_list if include_temporal else None,
+    model_configuration=model_config,
+    fusion_mode=fusion_mode,
+    aggregation_method=aggregation_method
+)
 
-modality_status = result['modality_status']
-fusion_res = result['multimodal_fusion']
-pathology_res = result['pathology_summary']
-temporal_res = result['temporal_summary']
+service = PatientInferenceService.get_shared()
+with st.spinner("Running unified patient inference..."):
+    result = service.predict(req)
 
+# 4. DASHBOARD DISPLAY
+# Top Level Summary Cards
+c1, c2, c3, c4 = st.columns(4)
 
-# 4. MAIN DASHBOARD PANELS
-
-# Top Metric Cards
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    st.metric(label="Patient ID", value=selected_patient_id)
-
-with col2:
-    st.metric(
-        label="Modality Status",
-        value=modality_status,
-        delta="Complete" if modality_status == "FULL_MULTIMODAL" else "Partial"
-    )
-
-with col3:
-    score_val = fusion_res['prototype_multimodal_risk_score']
-    st.metric(
-        label="Prototype Multimodal Risk",
-        value=f"{score_val:.4f}" if score_val is not None else "N/A",
-        help="Weighted engineering score [0.0 - 1.0]. Prototype parameter only."
-    )
-
-with col4:
-    alert_lbl = fusion_res['prototype_alert_level']
-    badge_color = "#c62828" if "HIGH" in alert_lbl else ("#ef6c00" if "MODERATE" in alert_lbl else "#2e7d32")
-    st.markdown(
-        f"""
-        <div style="background-color: {badge_color}; color: white; text-align: center; border-radius: 6px; padding: 10px; font-weight: bold; margin-top: 5px;">
-            {alert_lbl}
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+with c1:
+    st.metric("Inference Mode", result.inference_mode)
+with c2:
+    prob_str = f"{result.progression_probability:.4f}" if result.progression_probability is not None else "N/A"
+    st.metric("Progression Probability", prob_str)
+with c3:
+    forecast_str = f"{result.ctdna_forecast_30d:.2f}%" if result.ctdna_forecast_30d is not None else "N/A"
+    st.metric("Forecasted 30d ctDNA VAF", forecast_str)
+with c4:
+    badge_color = "#c62828" if result.risk.level == "HIGH" else ("#ef6c00" if result.risk.level == "MODERATE" else "#2e7d32")
+    st.markdown(f"**Research Risk Level**<br><span style='background-color:{badge_color}; color:white; padding:4px 10px; border-radius:4px; font-weight:bold;'>{result.risk.level}</span>", unsafe_allow_html=True)
 
 st.markdown("---")
 
-# Layout: 2 Columns (Left: Pathology & Temporal Details, Right: Fusion & Explainability)
-left_col, right_col = st.columns([1.1, 0.9])
+# Safety & Reliability Row
+st.subheader("🛡️ Safety, Calibration & Out-of-Distribution Status")
+s1, s2, s3, s4 = st.columns(4)
+with s1:
+    st.metric("Confidence", f"{result.uncertainty.confidence:.4f}" if result.uncertainty.confidence else "N/A")
+with s2:
+    st.metric("Epistemic Uncertainty", f"{result.uncertainty.uncertainty_score:.4f}" if result.uncertainty.uncertainty_score else "N/A")
+with s3:
+    st.metric("Calibration Status", result.uncertainty.calibration_status)
+with s4:
+    ood_color = "#2e7d32" if result.ood.status == "IN_DISTRIBUTION" else "#c62828"
+    st.markdown(f"**OOD Status**<br><span style='color:{ood_color}; font-weight:bold;'>{result.ood.status}</span>", unsafe_allow_html=True)
+    if result.ood.mahalanobis_distance:
+        st.caption(f"Mahalanobis Dist: {result.ood.mahalanobis_distance:.2f} (Threshold: {result.ood.threshold:.2f})")
 
-with left_col:
-    # --- PATHOLOGY MODALITY SECTION ---
-    st.subheader("🔬 Modality A: Histopathology Biopsy")
-    if pathology_res['available']:
-        p_mal = pathology_res['malignant_probability']
-        p_ben = pathology_res['benign_probability']
-        p_inf = pathology_res['inflammation_probability']
+st.markdown("---")
 
-        p_col1, p_col2, p_col3, p_col4 = st.columns(4)
-        p_col1.metric("Tiles Analyzed", pathology_res['num_tiles_analyzed'])
-        p_col2.metric("P(Malignant)", f"{p_mal:.4f}")
-        p_col3.metric("P(Benign)", f"{p_ben:.4f}")
-        p_col4.metric("P(Inflammation)", f"{p_inf:.4f}")
+# Modality Tabs
+tab_path, tab_temp, tab_fusion, tab_audit = st.tabs(["🔬 Pathology & Attention-MIL", "📈 Longitudinal Biomarkers", "🔗 Multimodal Fusion", "📋 Latency & Audit"])
 
-        # Tile prediction breakdown
-        b_down = pathology_res['tile_predictions_breakdown']
-        st.caption(f"Tile Breakdown: {b_down['malignant']} Malignant | {b_down['benign']} Benign | {b_down['inflammation']} Inflammation")
+with tab_path:
+    if result.pathology:
+        p_res = result.pathology
+        col_p1, col_p2, col_p3 = st.columns(3)
+        col_p1.metric("P(Malignant)", f"{p_res.malignant_probability:.4f}")
+        col_p2.metric("P(Benign)", f"{p_res.benign_probability:.4f}")
+        col_p3.metric("P(Inflammation)", f"{p_res.inflammation_probability:.4f}")
 
-        # Tile Gallery expander
-        with st.expander(f"View {pathology_res['num_tiles_analyzed']} Biopsy Tile Gallery", expanded=False):
-            tile_grid = st.columns(min(4, len(pathology_res['tile_details'])))
-            for idx, t_info in enumerate(pathology_res['tile_details'][:8]):
-                col_idx = idx % len(tile_grid)
-                with tile_grid[col_idx]:
-                    if os.path.exists(t_info['tile_identifier']):
-                        img = Image.open(t_info['tile_identifier'])
-                        st.image(img, caption=f"Tile {t_info['tile_index']}: {t_info['prediction']} ({t_info['confidence']:.2f})", use_container_width=True)
+        if p_res.attention_tiles:
+            st.markdown("#### Attention-MIL Ranked Biopsy Tiles")
+            tile_cols = st.columns(min(len(p_res.attention_tiles), 6))
+            for i, tile_info in enumerate(p_res.attention_tiles[:6]):
+                with tile_cols[i]:
+                    st.caption(f"Rank #{tile_info.rank} (Weight: {tile_info.attention_weight:.3f})")
+                    if tile_info.tile_path and os.path.exists(tile_info.tile_path):
+                        with Image.open(tile_info.tile_path) as im:
+                            st.image(im, use_container_width=True)
+                    else:
+                        st.write(f"Tile {tile_info.tile_index}")
     else:
-        st.info("Pathology modality not provided or disabled.")
+        st.info("Pathology modality was not provided in this inference run.")
 
-    st.markdown("---")
-
-    # --- TEMPORAL MODALITY SECTION ---
-    st.subheader("📈 Modality B: Longitudinal Biomarkers (t <= 90d)")
-    if temporal_res['available']:
-        p_prog = temporal_res['progression_probability']
-        vaf_30d = temporal_res['predicted_ctDNA_30d_vaf']
-        norm_risk = temporal_res['normalized_ctdna_risk']
-
-        t_col1, t_col2, t_col3 = st.columns(3)
-        t_col1.metric("P(Progression Risk)", f"{p_prog:.4f}", help="Temporal BiLSTM binary progression probability")
-        t_col2.metric("Forecasted ctDNA 30d", f"{vaf_30d:.2f}% VAF", help="Predicted ctDNA VAF 30 days forward")
-        t_col3.metric("Normalized ctDNA Risk", f"{norm_risk:.4f}", help="Scaled [0, 1] risk index")
-
-        # Historical Trajectory Plot
-        if bio_input is not None and len(bio_input) > 0:
-            fig, ax = plt.subplots(figsize=(8, 3.2))
-            ax.plot(bio_input['days_from_baseline'], bio_input['ctDNA_vaf_percent'], marker='o', color='teal', label='Historical ctDNA VAF (%)')
-
-            # Add forecast point at max_day + 30
-            max_day = bio_input['days_from_baseline'].max()
-            forecast_day = max_day + 30
-            ax.plot([max_day, forecast_day], [bio_input['ctDNA_vaf_percent'].iloc[-1], vaf_30d], 'r--', marker='s', label=f'30d Forecast ({vaf_30d:.2f}%)')
-
-            ax.axvline(90, color='gray', linestyle=':', label='Forecast Boundary (Day 90)')
-            ax.set_xlabel('Days from Baseline', fontsize=9)
-            ax.set_ylabel('ctDNA VAF (%)', fontsize=9)
-            ax.set_title(f'Historical Biomarker Trajectory & 30-Day Forecast ({selected_patient_id})', fontsize=10, fontweight='bold')
-            ax.legend(fontsize=8)
-            ax.grid(True, alpha=0.3)
-            st.pyplot(fig)
-            plt.close()
+with tab_temp:
+    if result.temporal and bio_df is not None and len(bio_df) > 0:
+        st.markdown("#### Longitudinal Biomarker Trajectory (Days 0–90)")
+        fig, ax = plt.subplots(figsize=(8, 3))
+        ax.plot(bio_df['days_from_baseline'], bio_df['ctDNA_vaf_percent'], marker='o', label='ctDNA VAF (%)', color='#1976d2')
+        if 'cea_ng_ml' in bio_df.columns:
+            ax.plot(bio_df['days_from_baseline'], bio_df['cea_ng_ml'], marker='s', label='CEA (ng/mL)', color='#388e3c', linestyle='--')
+        ax.axvline(90, color='red', linestyle=':', label='Historical Cutoff (Day 90)')
+        ax.set_xlabel("Days from Baseline")
+        ax.set_ylabel("Measurement")
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        st.pyplot(fig)
+        plt.close(fig)
     else:
-        st.info("Temporal biomarker modality not provided or disabled.")
+        st.info("Temporal modality was not provided in this inference run.")
 
+with tab_fusion:
+    if result.fusion:
+        f_res = result.fusion
+        st.markdown(f"**Fusion Architecture:** `{f_res.model_name}`")
+        st.metric("Multimodal Risk Score", f"{f_res.multimodal_risk_score:.4f}" if f_res.multimodal_risk_score else "N/A")
+        st.metric("Fusion Latent Dimension", f_res.fusion_dimension)
+    else:
+        st.info("Multimodal fusion was not executed (single modality or insufficient data).")
 
-with right_col:
-    # --- FUSION & EXPLAINABILITY SECTION ---
-    st.subheader("⚖️ Multimodal Fusion & Contribution")
-
-    st.write(f"**Fusion Method:** `{fusion_res['fusion_method']}`")
-    st.write(f"**Modality Status:** `{modality_status}`")
-
-    # Score components bar chart
-    if fusion_res['score_components']:
-        comps = fusion_res['score_components']
-        fig_c, ax_c = plt.subplots(figsize=(7, 3))
-        keys = list(comps.keys())
-        vals = [comps[k] for k in keys]
-        clean_keys = [k.replace('_contribution', '').replace('_', ' ').title() for k in keys]
-
-        colors = ['#3498db', '#e67e22', '#2ecc71']
-        ax_c.barh(clean_keys, vals, color=colors[:len(keys)], edgecolor='black')
-        ax_c.set_xlabel('Score Contribution to Total Risk', fontsize=9)
-        ax_c.set_title('Engineering Feature Contribution Breakdown', fontsize=10, fontweight='bold')
-        ax_c.set_xlim([0.0, 1.0])
-        ax_c.grid(True, axis='x', alpha=0.3)
-        st.pyplot(fig_c)
-        plt.close()
-
-    # Engineering Explanation Box
-    st.markdown("**Engineering Explanation:**")
-    st.info(result['engineering_explanation'])
-
-    # Weight settings
-    with st.expander("View Active Fusion Weights & Thresholds", expanded=False):
-        st.json(fusion_res['weights_used'])
-        st.caption("Thresholds: Low < 0.35, Moderate 0.35 - 0.70, High >= 0.70")
-
-    # Provenance & Disclaimer Drawer
-    with st.expander("Data Provenance & Checkpoint Verification", expanded=False):
-        prov = result['provenance']
-        st.write(f"**Timestamp:** `{prov['timestamp']}`")
-        st.write(f"**Data Source:** `{prov['data_source']}`")
-        st.write(f"**Validation Status:** `{prov['clinical_validation_status']}`")
-        st.write(f"**Pathology Checkpoint:** `{prov['pathology_model_checkpoint']}`")
-        st.write(f"**Temporal Checkpoint:** `{prov['temporal_model_checkpoint']}`")
-        st.warning(prov['mandatory_disclaimer'])
+with tab_audit:
+    st.markdown("#### Execution Latency Breakdown (ms)")
+    lat = result.latency
+    st.json(lat.model_dump())
+    st.markdown("#### System Provenance")
+    st.json(result.system)
