@@ -25,7 +25,8 @@ cancer_analysis/
 │   ├── evaluation/          # Locked test evaluation, calibration, and benchmark reports
 │   └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
 └── stage-3-nlp-slm/          # NLP & Small Language Model (SLM) Decision Support
-    └── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
+    ├── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
+    └── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
 ```
 
 ### Module Summary
@@ -40,6 +41,7 @@ cancer_analysis/
 | [`stage-1-ml/integration`](stage-1-ml/integration/) | REST API inference interface for downstream services | FastAPI application, Pydantic input schemas, sample payloads |
 | [`stage-2-dl`](stage-2-dl/) | Multimodal Vision (CNN) & Sequence (LSTM/Transformer) | Tile classification, ctDNA forecasting, late fusion alert engine |
 | [`stage-3-nlp-slm/data-engineering`](stage-3-nlp-slm/data-engineering/) | Curate leakage-free clinical NLP & SLM research dataset | `clinical_nlp_dataset_v1.parquet`, Train/Val/Test splits, audits |
+| [`stage-3-nlp-slm/eda`](stage-3-nlp-slm/eda/) | Characterize clinical text, vocabulary, negation, and splits | 20-section EDA report, 16 figures, `eda_summary.json`, notebook |
 
 ---
 

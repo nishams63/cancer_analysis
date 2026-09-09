@@ -1,0 +1,1030 @@
+{
+  "dataset_overview": {
+    "total_documents": 6098,
+    "unique_patients": 1000,
+    "unique_encounters": 2038,
+    "docs_per_patient_mean": 6.1,
+    "docs_per_encounter_mean": 2.99,
+    "num_columns": 18,
+    "columns": [
+      "document_id",
+      "patient_id",
+      "encounter_id",
+      "document_type",
+      "document_date",
+      "index_date",
+      "text",
+      "cleaned_text",
+      "word_count",
+      "char_count",
+      "urgency_level",
+      "hazard_type",
+      "ner_entities",
+      "slm_summary",
+      "source",
+      "data_split",
+      "quality_status",
+      "disclaimer"
+    ],
+    "dtypes": {
+      "document_id": "str",
+      "patient_id": "str",
+      "encounter_id": "str",
+      "document_type": "str",
+      "document_date": "str",
+      "index_date": "str",
+      "text": "str",
+      "cleaned_text": "str",
+      "word_count": "int64",
+      "char_count": "int64",
+      "urgency_level": "str",
+      "hazard_type": "str",
+      "ner_entities": "str",
+      "slm_summary": "str",
+      "source": "str",
+      "data_split": "str",
+      "quality_status": "str",
+      "disclaimer": "str"
+    },
+    "missing_values": {
+      "document_id": 0,
+      "patient_id": 0,
+      "encounter_id": 0,
+      "document_type": 0,
+      "document_date": 0,
+      "index_date": 0,
+      "text": 0,
+      "cleaned_text": 0,
+      "word_count": 0,
+      "char_count": 0,
+      "urgency_level": 0,
+      "hazard_type": 0,
+      "ner_entities": 0,
+      "slm_summary": 0,
+      "source": 0,
+      "data_split": 0,
+      "quality_status": 0,
+      "disclaimer": 0
+    },
+    "total_missing_cells": 0,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_texts": 72
+  },
+  "text_length_statistics": {
+    "character_stats": {
+      "min": 504,
+      "max": 1055,
+      "mean": 781.87,
+      "median": 772.0,
+      "std": 177.97,
+      "p5": 505.0,
+      "p25": 729.0,
+      "p50": 772.0,
+      "p75": 977.0,
+      "p95": 1000.0,
+      "p99": 1014.0
+    },
+    "word_stats": {
+      "min": 76,
+      "max": 143,
+      "mean": 105.9,
+      "median": 99.0,
+      "std": 22.45,
+      "p5": 76.0,
+      "p25": 98.0,
+      "p50": 99.0,
+      "p75": 134.0,
+      "p95": 136.0,
+      "p99": 138.0
+    },
+    "whitespace_token_stats": {
+      "min": 79,
+      "max": 157,
+      "mean": 112.01,
+      "median": 102.0,
+      "std": 27.56
+    },
+    "sentence_stats": {
+      "min": 8,
+      "max": 20,
+      "mean": 12.35,
+      "median": 10.0,
+      "std": 4.76
+    },
+    "empty_docs_count": 0,
+    "very_short_docs_count": 0,
+    "very_long_docs_count": 0,
+    "length_by_document_type": {
+      "nurse_intake_note": {
+        "count": 1577,
+        "mean_words": 100.24,
+        "median_words": 99.0,
+        "min_words": 99,
+        "max_words": 109,
+        "std_words": 1.6
+      },
+      "oncology_consultation": {
+        "count": 2033,
+        "mean_words": 135.02,
+        "median_words": 135.0,
+        "min_words": 134,
+        "max_words": 143,
+        "std_words": 1.27
+      },
+      "pathology_report": {
+        "count": 1001,
+        "mean_words": 98.27,
+        "median_words": 98.0,
+        "min_words": 98,
+        "max_words": 106,
+        "std_words": 0.5
+      },
+      "patient_symptom_log": {
+        "count": 1487,
+        "mean_words": 77.21,
+        "median_words": 76.0,
+        "min_words": 76,
+        "max_words": 87,
+        "std_words": 2.4
+      }
+    },
+    "length_by_urgency_level": {
+      "CRITICAL": {
+        "count": 577,
+        "mean_words": 109.66,
+        "median_words": 101.0,
+        "min_words": 84,
+        "max_words": 140
+      },
+      "HIGH": {
+        "count": 836,
+        "mean_words": 118.83,
+        "median_words": 135.0,
+        "min_words": 77,
+        "max_words": 138
+      },
+      "LOW": {
+        "count": 4140,
+        "mean_words": 103.52,
+        "median_words": 99.0,
+        "min_words": 76,
+        "max_words": 143
+      },
+      "MEDIUM": {
+        "count": 545,
+        "mean_words": 100.14,
+        "median_words": 100.0,
+        "min_words": 78,
+        "max_words": 138
+      }
+    }
+  },
+  "vocabulary_statistics": {
+    "total_tokens": 646444,
+    "vocabulary_size": 3181,
+    "type_token_ratio": 0.0049,
+    "hapax_legomena_count": 237,
+    "hapax_percentage": 7.45,
+    "top_50_terms": [
+      {
+        "term": "and",
+        "count": 14946,
+        "freq": 0.02312
+      },
+      {
+        "term": "patient",
+        "count": 14356,
+        "freq": 0.02221
+      },
+      {
+        "term": "with",
+        "count": 11387,
+        "freq": 0.01761
+      },
+      {
+        "term": "of",
+        "count": 10679,
+        "freq": 0.01652
+      },
+      {
+        "term": "no",
+        "count": 9844,
+        "freq": 0.01523
+      },
+      {
+        "term": "i",
+        "count": 7886,
+        "freq": 0.0122
+      },
+      {
+        "term": "at",
+        "count": 7130,
+        "freq": 0.01103
+      },
+      {
+        "term": "oncology",
+        "count": 6188,
+        "freq": 0.00957
+      },
+      {
+        "term": "id",
+        "count": 6098,
+        "freq": 0.00943
+      },
+      {
+        "term": "blood",
+        "count": 5643,
+        "freq": 0.00873
+      },
+      {
+        "term": "clinical",
+        "count": 5620,
+        "freq": 0.00869
+      },
+      {
+        "term": "to",
+        "count": 5192,
+        "freq": 0.00803
+      },
+      {
+        "term": "in",
+        "count": 5169,
+        "freq": 0.008
+      },
+      {
+        "term": "cycle",
+        "count": 5097,
+        "freq": 0.00788
+      },
+      {
+        "term": "mg",
+        "count": 5097,
+        "freq": 0.00788
+      },
+      {
+        "term": "symptom",
+        "count": 4641,
+        "freq": 0.00718
+      },
+      {
+        "term": "confirmed",
+        "count": 4611,
+        "freq": 0.00713
+      },
+      {
+        "term": "serum",
+        "count": 4148,
+        "freq": 0.00642
+      },
+      {
+        "term": "diagnosis",
+        "count": 4066,
+        "freq": 0.00629
+      },
+      {
+        "term": "mutation",
+        "count": 4066,
+        "freq": 0.00629
+      },
+      {
+        "term": "scheduled",
+        "count": 4066,
+        "freq": 0.00629
+      },
+      {
+        "term": "tumor",
+        "count": 4035,
+        "freq": 0.00624
+      },
+      {
+        "term": "assessment",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "review",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "vitals",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "mmhg",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "rate",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "bpm",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "spo2",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "per",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "protocol",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "prior",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "infusion",
+        "count": 3610,
+        "freq": 0.00558
+      },
+      {
+        "term": "acute",
+        "count": 3559,
+        "freq": 0.00551
+      },
+      {
+        "term": "regimen",
+        "count": 3520,
+        "freq": 0.00545
+      },
+      {
+        "term": "0",
+        "count": 3421,
+        "freq": 0.00529
+      },
+      {
+        "term": "1",
+        "count": 3212,
+        "freq": 0.00497
+      },
+      {
+        "term": "ambulatory",
+        "count": 3154,
+        "freq": 0.00488
+      },
+      {
+        "term": "status",
+        "count": 3154,
+        "freq": 0.00488
+      },
+      {
+        "term": "reports",
+        "count": 3154,
+        "freq": 0.00488
+      },
+      {
+        "term": "denies",
+        "count": 3154,
+        "freq": 0.00488
+      },
+      {
+        "term": "nurse",
+        "count": 3064,
+        "freq": 0.00474
+      },
+      {
+        "term": "evaluation",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "molecular",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "primary",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "stage",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "driver",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "examination",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "clear",
+        "count": 3034,
+        "freq": 0.00469
+      },
+      {
+        "term": "therapy",
+        "count": 3034,
+        "freq": 0.00469
+      }
+    ],
+    "top_20_bigrams": [
+      {
+        "bigram": "patient id",
+        "count": 6098
+      },
+      {
+        "bigram": "prior to",
+        "count": 3610
+      },
+      {
+        "bigram": "no acute",
+        "count": 3260
+      },
+      {
+        "bigram": "mg patient",
+        "count": 3064
+      },
+      {
+        "bigram": "i am",
+        "count": 2974
+      },
+      {
+        "bigram": "i have",
+        "count": 2974
+      },
+      {
+        "bigram": "serum creatinine",
+        "count": 2115
+      },
+      {
+        "bigram": "oncology consultation",
+        "count": 2033
+      },
+      {
+        "bigram": "consultation progress",
+        "count": 2033
+      },
+      {
+        "bigram": "progress note",
+        "count": 2033
+      },
+      {
+        "bigram": "note patient",
+        "count": 2033
+      },
+      {
+        "bigram": "presenting for",
+        "count": 2033
+      },
+      {
+        "bigram": "for cycle",
+        "count": 2033
+      },
+      {
+        "bigram": "evaluation diagnosis",
+        "count": 2033
+      },
+      {
+        "bigram": "diagnosis molecular",
+        "count": 2033
+      },
+      {
+        "bigram": "molecular profiling",
+        "count": 2033
+      },
+      {
+        "bigram": "profiling primary",
+        "count": 2033
+      },
+      {
+        "bigram": "primary diagnosis",
+        "count": 2033
+      },
+      {
+        "bigram": "diagnosis stage",
+        "count": 2033
+      },
+      {
+        "bigram": "genomic profile",
+        "count": 2033
+      }
+    ],
+    "top_20_trigrams": [
+      {
+        "trigram": "oncology consultation progress",
+        "count": 2033
+      },
+      {
+        "trigram": "consultation progress note",
+        "count": 2033
+      },
+      {
+        "trigram": "progress note patient",
+        "count": 2033
+      },
+      {
+        "trigram": "note patient id",
+        "count": 2033
+      },
+      {
+        "trigram": "presenting for cycle",
+        "count": 2033
+      },
+      {
+        "trigram": "evaluation diagnosis molecular",
+        "count": 2033
+      },
+      {
+        "trigram": "diagnosis molecular profiling",
+        "count": 2033
+      },
+      {
+        "trigram": "molecular profiling primary",
+        "count": 2033
+      },
+      {
+        "trigram": "profiling primary diagnosis",
+        "count": 2033
+      },
+      {
+        "trigram": "primary diagnosis stage",
+        "count": 2033
+      },
+      {
+        "trigram": "genomic profile confirmed",
+        "count": 2033
+      },
+      {
+        "trigram": "profile confirmed driver",
+        "count": 2033
+      },
+      {
+        "trigram": "confirmed driver mutation",
+        "count": 2033
+      },
+      {
+        "trigram": "driver mutation in",
+        "count": 2033
+      },
+      {
+        "trigram": "tumor mutational burden",
+        "count": 2033
+      },
+      {
+        "trigram": "mutational burden measured",
+        "count": 2033
+      },
+      {
+        "trigram": "burden measured at",
+        "count": 2033
+      },
+      {
+        "trigram": "mut/mb with ctdna",
+        "count": 2033
+      },
+      {
+        "trigram": "with ctdna level",
+        "count": 2033
+      },
+      {
+        "trigram": "ctdna level of",
+        "count": 2033
+      }
+    ]
+  },
+  "clinical_terminology": {
+    "antineoplastic_agents": {
+      "carboplatin": 613,
+      "pembrolizumab": 560,
+      "cisplatin": 555,
+      "paclitaxel": 543,
+      "nivolumab": 328,
+      "durvalumab": 301,
+      "docetaxel": 279,
+      "atezolizumab": 258,
+      "alectinib": 231,
+      "crizotinib": 220,
+      "erlotinib": 202,
+      "osimertinib": 179
+    },
+    "genomic_biomarkers": {
+      "egfr": 707,
+      "kras": 668,
+      "tp53": 554,
+      "alk": 364,
+      "braf": 345,
+      "met": 291,
+      "ros1": 287
+    },
+    "organ_systems": {
+      "blood": 5643,
+      "renal": 2072,
+      "heart": 2033,
+      "liver": 2033,
+      "lung": 2033
+    },
+    "adverse_symptoms_toxicities": {
+      "fatigue": 2456,
+      "creatinine": 2115,
+      "vomiting": 1577,
+      "fever": 1487,
+      "nausea": 736,
+      "elevated": 404,
+      "dyspnea": 304,
+      "transaminases": 246,
+      "neutropenia": 96,
+      "nephrotoxicity": 82,
+      "thrombocytopenia": 73,
+      "neuropathy": 72,
+      "pneumonitis": 71,
+      "diarrhea": 54,
+      "rash": 54
+    }
+  },
+  "negation_statistics": {
+    "total_documents": 6098,
+    "documents_with_negation": 6098,
+    "percentage_documents_with_negation": 100.0,
+    "total_negation_occurrences": 13999,
+    "mean_negations_per_doc": 2.296,
+    "max_negations_in_single_doc": 3,
+    "pattern_prevalence": {
+      "\\bno\\b": 5097,
+      "\\bdenies\\b": 1577,
+      "\\bnot\\b": 1001,
+      "\\bwithout\\b": 0,
+      "\\bnegative\\s+for\\b": 0,
+      "\\bno\\s+evidence\\s+of\\b": 0,
+      "\\bruled\\s+out\\b": 0,
+      "\\bhistory\\s+of\\b": 0
+    }
+  },
+  "temporal_statistics": {
+    "min_document_date": "2023-01-01",
+    "max_document_date": "2026-12-31",
+    "temporal_span_days": 1460,
+    "future_date_violations": 0,
+    "inter_encounter_interval_days": {
+      "num_intervals": 1038,
+      "mean_days": 480.99,
+      "median_days": 422.0,
+      "min_days": 0,
+      "max_days": 1384,
+      "std_days": 346.85
+    },
+    "monthly_document_distribution": {
+      "2023-01": 117,
+      "2023-02": 96,
+      "2023-03": 120,
+      "2023-04": 121,
+      "2023-05": 120,
+      "2023-06": 121,
+      "2023-07": 180,
+      "2023-08": 132,
+      "2023-09": 102,
+      "2023-10": 111,
+      "2023-11": 112,
+      "2023-12": 135,
+      "2024-01": 135,
+      "2024-02": 96,
+      "2024-03": 120,
+      "2024-04": 150,
+      "2024-05": 168,
+      "2024-06": 133,
+      "2024-07": 126,
+      "2024-08": 135,
+      "2024-09": 144,
+      "2024-10": 168,
+      "2024-11": 138,
+      "2024-12": 96,
+      "2025-01": 102,
+      "2025-02": 130,
+      "2025-03": 138,
+      "2025-04": 108,
+      "2025-05": 117,
+      "2025-06": 132,
+      "2025-07": 99,
+      "2025-08": 126,
+      "2025-09": 120,
+      "2025-10": 121,
+      "2025-11": 159,
+      "2025-12": 117,
+      "2026-01": 135,
+      "2026-02": 153,
+      "2026-03": 93,
+      "2026-04": 120,
+      "2026-05": 111,
+      "2026-06": 123,
+      "2026-07": 142,
+      "2026-08": 135,
+      "2026-09": 126,
+      "2026-10": 127,
+      "2026-11": 147,
+      "2026-12": 141
+    }
+  },
+  "patient_distribution": {
+    "unique_patients": 1000,
+    "docs_per_patient": {
+      "mean": 6.1,
+      "median": 6.0,
+      "min": 3,
+      "max": 9,
+      "std": 0.54,
+      "skewness": 4.789,
+      "gini_coefficient": 0.0165
+    },
+    "encounters_per_patient": {
+      "mean": 2.04,
+      "median": 2.0,
+      "min": 1,
+      "max": 3,
+      "std": 0.2
+    },
+    "patients_with_1_doc": 0,
+    "patients_with_gt_5_docs": 999,
+    "patients_with_gt_10_docs": 0
+  },
+  "encounter_distribution": {
+    "unique_encounters": 2038,
+    "docs_per_encounter": {
+      "mean": 2.99,
+      "median": 3.0,
+      "min": 1,
+      "max": 3,
+      "std": 0.13
+    },
+    "text_words_per_encounter": {
+      "mean": 309.33,
+      "median": 305.0,
+      "min": 82,
+      "max": 332,
+      "std": 15.64
+    },
+    "doc_types_per_encounter_mean": 2.99,
+    "single_doc_encounters": 8,
+    "multi_doc_encounters": 2030
+  },
+  "label_distribution": {
+    "urgency_counts": {
+      "LOW": 4140,
+      "HIGH": 836,
+      "CRITICAL": 577,
+      "MEDIUM": 545
+    },
+    "urgency_percentages": {
+      "LOW": 67.89,
+      "HIGH": 13.71,
+      "CRITICAL": 9.46,
+      "MEDIUM": 8.94
+    },
+    "urgency_imbalance_ratio": 7.6,
+    "hazard_counts": {
+      "NONE": 4845,
+      "HEPATIC": 474,
+      "PULMONARY": 367,
+      "HEMATOLOGIC": 144,
+      "RENAL": 127,
+      "NEUROPATHIC": 60,
+      "DERMATOLOGIC": 46,
+      "CARDIAC": 35
+    },
+    "hazard_percentages": {
+      "NONE": 79.45,
+      "HEPATIC": 7.77,
+      "PULMONARY": 6.02,
+      "HEMATOLOGIC": 2.36,
+      "RENAL": 2.08,
+      "NEUROPATHIC": 0.98,
+      "DERMATOLOGIC": 0.75,
+      "CARDIAC": 0.57
+    },
+    "hazard_imbalance_ratio": 138.43,
+    "urgency_by_document_type": {
+      "nurse_intake_note": {
+        "CRITICAL": 304,
+        "HIGH": 285,
+        "LOW": 873,
+        "MEDIUM": 115
+      },
+      "oncology_consultation": {
+        "CRITICAL": 178,
+        "HIGH": 470,
+        "LOW": 1227,
+        "MEDIUM": 158
+      },
+      "pathology_report": {
+        "CRITICAL": 0,
+        "HIGH": 0,
+        "LOW": 1001,
+        "MEDIUM": 0
+      },
+      "patient_symptom_log": {
+        "CRITICAL": 95,
+        "HIGH": 81,
+        "LOW": 1039,
+        "MEDIUM": 272
+      }
+    },
+    "hazard_by_document_type": {
+      "nurse_intake_note": {
+        "CARDIAC": 2,
+        "DERMATOLOGIC": 4,
+        "HEMATOLOGIC": 16,
+        "HEPATIC": 253,
+        "NEUROPATHIC": 7,
+        "NONE": 942,
+        "PULMONARY": 308,
+        "RENAL": 45
+      },
+      "oncology_consultation": {
+        "CARDIAC": 25,
+        "DERMATOLOGIC": 27,
+        "HEMATOLOGIC": 77,
+        "HEPATIC": 193,
+        "NEUROPATHIC": 28,
+        "NONE": 1602,
+        "PULMONARY": 33,
+        "RENAL": 48
+      },
+      "pathology_report": {
+        "CARDIAC": 0,
+        "DERMATOLOGIC": 0,
+        "HEMATOLOGIC": 0,
+        "HEPATIC": 0,
+        "NEUROPATHIC": 0,
+        "NONE": 1001,
+        "PULMONARY": 0,
+        "RENAL": 0
+      },
+      "patient_symptom_log": {
+        "CARDIAC": 8,
+        "DERMATOLOGIC": 15,
+        "HEMATOLOGIC": 51,
+        "HEPATIC": 28,
+        "NEUROPATHIC": 25,
+        "NONE": 1300,
+        "PULMONARY": 26,
+        "RENAL": 34
+      }
+    }
+  },
+  "split_statistics": {
+    "split_metrics": {
+      "VALIDATION": {
+        "document_count": 909,
+        "document_percentage": 14.91,
+        "patient_count": 150,
+        "encounter_count": 303,
+        "mean_words": 103.19,
+        "urgency_distribution": {
+          "LOW": 599,
+          "HIGH": 128,
+          "CRITICAL": 92,
+          "MEDIUM": 90
+        },
+        "hazard_distribution": {
+          "NONE": 710,
+          "HEPATIC": 76,
+          "PULMONARY": 55,
+          "RENAL": 24,
+          "HEMATOLOGIC": 23,
+          "NEUROPATHIC": 12,
+          "CARDIAC": 5,
+          "DERMATOLOGIC": 4
+        },
+        "doc_type_distribution": {
+          "oncology_consultation": 303,
+          "patient_symptom_log": 233,
+          "nurse_intake_note": 223,
+          "pathology_report": 150
+        }
+      },
+      "TRAIN": {
+        "document_count": 4261,
+        "document_percentage": 69.88,
+        "patient_count": 700,
+        "encounter_count": 1425,
+        "mean_words": 103.4,
+        "urgency_distribution": {
+          "LOW": 2927,
+          "HIGH": 575,
+          "CRITICAL": 385,
+          "MEDIUM": 374
+        },
+        "hazard_distribution": {
+          "NONE": 3414,
+          "HEPATIC": 321,
+          "PULMONARY": 247,
+          "HEMATOLOGIC": 91,
+          "RENAL": 87,
+          "DERMATOLOGIC": 37,
+          "NEUROPATHIC": 36,
+          "CARDIAC": 28
+        },
+        "doc_type_distribution": {
+          "oncology_consultation": 1421,
+          "nurse_intake_note": 1108,
+          "patient_symptom_log": 1031,
+          "pathology_report": 701
+        }
+      },
+      "LOCKED_TEST": {
+        "document_count": 928,
+        "document_percentage": 15.22,
+        "patient_count": 150,
+        "encounter_count": 310,
+        "mean_words": 103.49,
+        "urgency_distribution": {
+          "LOW": 614,
+          "HIGH": 133,
+          "CRITICAL": 100,
+          "MEDIUM": 81
+        },
+        "hazard_distribution": {
+          "NONE": 721,
+          "HEPATIC": 77,
+          "PULMONARY": 65,
+          "HEMATOLOGIC": 30,
+          "RENAL": 16,
+          "NEUROPATHIC": 12,
+          "DERMATOLOGIC": 5,
+          "CARDIAC": 2
+        },
+        "doc_type_distribution": {
+          "oncology_consultation": 309,
+          "nurse_intake_note": 246,
+          "patient_symptom_log": 223,
+          "pathology_report": 150
+        }
+      }
+    },
+    "patient_overlap": {
+      "train_validation": 0,
+      "train_locked_test": 0,
+      "validation_locked_test": 0,
+      "is_patient_leakage_free": true
+    },
+    "encounter_overlap": {
+      "train_validation": 0,
+      "train_locked_test": 0,
+      "validation_locked_test": 0,
+      "is_encounter_leakage_free": true
+    }
+  },
+  "outlier_analysis": {
+    "word_len_p1_threshold": 76.0,
+    "word_len_p99_threshold": 138.0,
+    "extremely_short_docs_count": 0,
+    "extremely_long_docs_count": 40,
+    "high_symbol_density_docs_count": 61,
+    "high_numeric_density_docs_count": 60,
+    "short_outlier_doc_ids": [],
+    "long_outlier_doc_ids": [
+      "DOC-000673",
+      "DOC-000703",
+      "DOC-000814",
+      "DOC-000817",
+      "DOC-000958"
+    ]
+  },
+  "leakage_analysis": {
+    "forbidden_phrases_scanned": [
+      "\\bpost-mortem\\b",
+      "\\bautopsy\\b",
+      "\\bretrospective\\s+survival\\b",
+      "\\boverall\\s+survival\\s+reached\\b",
+      "\\bprogression\\s+on\\s+day\\s+180\\b",
+      "\\bsubsequent\\s+progression\\b",
+      "\\bfuture\\s+relapse\\b"
+    ],
+    "detections_per_phrase": {
+      "\\bpost-mortem\\b": 0,
+      "\\bautopsy\\b": 0,
+      "\\bretrospective\\s+survival\\b": 0,
+      "\\boverall\\s+survival\\s+reached\\b": 0,
+      "\\bprogression\\s+on\\s+day\\s+180\\b": 0,
+      "\\bsubsequent\\s+progression\\b": 0,
+      "\\bfuture\\s+relapse\\b": 0
+    },
+    "total_leakage_cues_detected": 0,
+    "leakage_risk_classification": "No evidence"
+  },
+  "nlp_readiness": {
+    "text_quality_status": "HIGH_QUALITY",
+    "leakage_risk": "No evidence",
+    "patient_overlap": 0,
+    "urgency_imbalance_ratio": 7.6,
+    "verdict": "READY_FOR_MODELING_WITH_IMBALANCE_CONTROLS"
+  }
+}
