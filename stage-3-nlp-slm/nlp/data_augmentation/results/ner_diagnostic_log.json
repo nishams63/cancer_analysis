@@ -1,0 +1,122 @@
+[
+  {
+    "config_name": "Config A (Original)",
+    "filename": "train_original.parquet",
+    "file_path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\nlp\\data_augmentation\\data\\augmented_train\\train_original.parquet",
+    "train_row_count": 4261,
+    "total_entity_occurrences_in_train": 15290,
+    "unique_lexicon_phrases": 1127,
+    "terms_sha256": "50421a2de4b3dae808abacd3a4a8343e69d9985fdd0f2354e0346ea0b29c5c6d",
+    "prediction_timestamp_utc": "2026-09-09T13:15:56.897572+00:00",
+    "inference_duration_sec": 4.1662,
+    "predictions_sha256": "eefa299c8b2ef57d27fc9eb39d2375e5d2f25a61183d02a448923e6e96946e39",
+    "exact_f1": 0.7185675360062281,
+    "exact_precision": 0.6237891416985808,
+    "exact_recall": 0.8473072215422277,
+    "relaxed_f1": 0.7185675360062281,
+    "relaxed_precision": 0.6237891416985808,
+    "relaxed_recall": 0.8473072215422277,
+    "per_entity_exact_f1": {
+      "GENE_MUTATION": 0.9485570890840652,
+      "DRUG_NAME": 0.73904576436222,
+      "DOSAGE": 0.42073170731707316,
+      "ADVERSE_EVENT": 0.7515502273666804
+    }
+  },
+  {
+    "config_name": "Config B (+25% Aug)",
+    "filename": "train_augmented_25.parquet",
+    "file_path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\nlp\\data_augmentation\\data\\augmented_train\\train_augmented_25.parquet",
+    "train_row_count": 5326,
+    "total_entity_occurrences_in_train": 19237,
+    "unique_lexicon_phrases": 1127,
+    "terms_sha256": "50421a2de4b3dae808abacd3a4a8343e69d9985fdd0f2354e0346ea0b29c5c6d",
+    "prediction_timestamp_utc": "2026-09-09T13:16:01.340502+00:00",
+    "inference_duration_sec": 4.229,
+    "predictions_sha256": "eefa299c8b2ef57d27fc9eb39d2375e5d2f25a61183d02a448923e6e96946e39",
+    "exact_f1": 0.7185675360062281,
+    "exact_precision": 0.6237891416985808,
+    "exact_recall": 0.8473072215422277,
+    "relaxed_f1": 0.7185675360062281,
+    "relaxed_precision": 0.6237891416985808,
+    "relaxed_recall": 0.8473072215422277,
+    "per_entity_exact_f1": {
+      "GENE_MUTATION": 0.9485570890840652,
+      "DRUG_NAME": 0.73904576436222,
+      "DOSAGE": 0.42073170731707316,
+      "ADVERSE_EVENT": 0.7515502273666804
+    }
+  },
+  {
+    "config_name": "Config C (+50% Aug)",
+    "filename": "train_augmented_50.parquet",
+    "file_path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\nlp\\data_augmentation\\data\\augmented_train\\train_augmented_50.parquet",
+    "train_row_count": 6391,
+    "total_entity_occurrences_in_train": 23160,
+    "unique_lexicon_phrases": 1127,
+    "terms_sha256": "50421a2de4b3dae808abacd3a4a8343e69d9985fdd0f2354e0346ea0b29c5c6d",
+    "prediction_timestamp_utc": "2026-09-09T13:16:05.891101+00:00",
+    "inference_duration_sec": 4.1986,
+    "predictions_sha256": "eefa299c8b2ef57d27fc9eb39d2375e5d2f25a61183d02a448923e6e96946e39",
+    "exact_f1": 0.7185675360062281,
+    "exact_precision": 0.6237891416985808,
+    "exact_recall": 0.8473072215422277,
+    "relaxed_f1": 0.7185675360062281,
+    "relaxed_precision": 0.6237891416985808,
+    "relaxed_recall": 0.8473072215422277,
+    "per_entity_exact_f1": {
+      "GENE_MUTATION": 0.9485570890840652,
+      "DRUG_NAME": 0.73904576436222,
+      "DOSAGE": 0.42073170731707316,
+      "ADVERSE_EVENT": 0.7515502273666804
+    }
+  },
+  {
+    "config_name": "Config D (+100% Aug)",
+    "filename": "train_augmented_100.parquet",
+    "file_path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\nlp\\data_augmentation\\data\\augmented_train\\train_augmented_100.parquet",
+    "train_row_count": 8522,
+    "total_entity_occurrences_in_train": 31074,
+    "unique_lexicon_phrases": 1127,
+    "terms_sha256": "50421a2de4b3dae808abacd3a4a8343e69d9985fdd0f2354e0346ea0b29c5c6d",
+    "prediction_timestamp_utc": "2026-09-09T13:16:10.502176+00:00",
+    "inference_duration_sec": 4.2227,
+    "predictions_sha256": "eefa299c8b2ef57d27fc9eb39d2375e5d2f25a61183d02a448923e6e96946e39",
+    "exact_f1": 0.7185675360062281,
+    "exact_precision": 0.6237891416985808,
+    "exact_recall": 0.8473072215422277,
+    "relaxed_f1": 0.7185675360062281,
+    "relaxed_precision": 0.6237891416985808,
+    "relaxed_recall": 0.8473072215422277,
+    "per_entity_exact_f1": {
+      "GENE_MUTATION": 0.9485570890840652,
+      "DRUG_NAME": 0.73904576436222,
+      "DOSAGE": 0.42073170731707316,
+      "ADVERSE_EVENT": 0.7515502273666804
+    }
+  },
+  {
+    "config_name": "Config E (Targeted Balanced)",
+    "filename": "train_augmented_targeted.parquet",
+    "file_path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\nlp\\data_augmentation\\data\\augmented_train\\train_augmented_targeted.parquet",
+    "train_row_count": 5761,
+    "total_entity_occurrences_in_train": 21248,
+    "unique_lexicon_phrases": 1127,
+    "terms_sha256": "50421a2de4b3dae808abacd3a4a8343e69d9985fdd0f2354e0346ea0b29c5c6d",
+    "prediction_timestamp_utc": "2026-09-09T13:16:15.015894+00:00",
+    "inference_duration_sec": 4.1303,
+    "predictions_sha256": "eefa299c8b2ef57d27fc9eb39d2375e5d2f25a61183d02a448923e6e96946e39",
+    "exact_f1": 0.7185675360062281,
+    "exact_precision": 0.6237891416985808,
+    "exact_recall": 0.8473072215422277,
+    "relaxed_f1": 0.7185675360062281,
+    "relaxed_precision": 0.6237891416985808,
+    "relaxed_recall": 0.8473072215422277,
+    "per_entity_exact_f1": {
+      "GENE_MUTATION": 0.9485570890840652,
+      "DRUG_NAME": 0.73904576436222,
+      "DOSAGE": 0.42073170731707316,
+      "ADVERSE_EVENT": 0.7515502273666804
+    }
+  }
+]

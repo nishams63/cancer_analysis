@@ -1,0 +1,16 @@
+{
+  "phase": "pilot",
+  "source_documents": 64,
+  "files": 512,
+  "rejected": [],
+  "speakers": 3,
+  "variants": 8,
+  "hours": 10.448961215277777,
+  "split_counts": {
+    "TRAIN": 384,
+    "VALIDATION": 128
+  },
+  "qc_pass_rate": 1.0,
+  "duplicates_rejected": 0,
+  "clinical_acceptance": "PENDING STT and clinical-preservation evaluation; waveform QC alone is insufficient"
+}

@@ -1,0 +1,14 @@
+{
+  "train_documents": 4261,
+  "validation_documents": 909,
+  "overlap": {
+    "patient_id": 0,
+    "encounter_id": 0,
+    "document_id": 0,
+    "canonical_text": 0
+  },
+  "train_patients": 700,
+  "validation_patients": 150,
+  "mean_words": 105.91645153719784,
+  "locked_test": "not opened by benchmark; existing integrity tests are separate"
+}

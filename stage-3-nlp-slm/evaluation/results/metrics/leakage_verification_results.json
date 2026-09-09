@@ -1,0 +1,87 @@
+{
+  "upstream_file_hashes": {
+    "all_files_invariant": true,
+    "details": {
+      "clinical_nlp_dataset_v1.parquet": {
+        "path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\data-engineering\\data\\processed\\clinical_nlp_dataset_v1.parquet",
+        "expected_sha256": "426ea0c51f354a5fa9e1177ec0d8fabc0ed26ed708f748ee8f8f4b0f18554230",
+        "computed_sha256": "426ea0c51f354a5fa9e1177ec0d8fabc0ed26ed708f748ee8f8f4b0f18554230",
+        "matched": true
+      },
+      "train.parquet": {
+        "path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\data-engineering\\data\\processed\\train.parquet",
+        "expected_sha256": "5862db7ec4e42fb71bf207906c9acf21f9d43280a32336ebf43dff77e6f55133",
+        "computed_sha256": "5862db7ec4e42fb71bf207906c9acf21f9d43280a32336ebf43dff77e6f55133",
+        "matched": true
+      },
+      "validation.parquet": {
+        "path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\data-engineering\\data\\processed\\validation.parquet",
+        "expected_sha256": "2b6787a394d262c8f8b94b92914777f495e30a7be4eaf925ce862f1302899a4c",
+        "computed_sha256": "2b6787a394d262c8f8b94b92914777f495e30a7be4eaf925ce862f1302899a4c",
+        "matched": true
+      },
+      "locked_test.parquet": {
+        "path": "C:\\Users\\nisham\\Desktop\\ONCOLOGY TREATMENT\\stage-3-nlp-slm\\data-engineering\\data\\processed\\locked_test.parquet",
+        "expected_sha256": "491562c892a6af2f08695eefefe782daeae12d52f1fef5a6ad11060d96af4509",
+        "computed_sha256": "491562c892a6af2f08695eefefe782daeae12d52f1fef5a6ad11060d96af4509",
+        "matched": true
+      }
+    }
+  },
+  "split_isolation": {
+    "is_completely_isolated": true,
+    "patient_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "encounter_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "document_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "unique_patients": {
+      "train": 700,
+      "validation": 150,
+      "locked_test": 150,
+      "total_distinct": 1000
+    }
+  },
+  "cross_split_text_duplicates": {
+    "cross_split_duplicates_detected": false,
+    "train_val_exact_text_duplicates": 0,
+    "train_test_exact_text_duplicates": 0,
+    "val_test_exact_text_duplicates": 0
+  },
+  "temporal_consistency": {
+    "validation": {
+      "total_documents_checked": 909,
+      "future_dated_inversions": 0,
+      "temporal_ordering_valid": true
+    },
+    "locked_test": {
+      "total_documents_checked": 928,
+      "future_dated_inversions": 0,
+      "temporal_ordering_valid": true
+    }
+  },
+  "target_leakage_scan": {
+    "validation": {
+      "documents_scanned": 909,
+      "forbidden_outcome_matches": 0,
+      "target_leakage_free": true,
+      "matches": []
+    },
+    "locked_test": {
+      "documents_scanned": 928,
+      "forbidden_outcome_matches": 0,
+      "target_leakage_free": true,
+      "matches": []
+    }
+  }
+}

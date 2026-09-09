@@ -1,0 +1,11 @@
+{
+  "runtime": "Python 3.14",
+  "existing_suites": {
+    "data-engineering": {"passed": 16, "failed": 0},
+    "eda": {"passed": 9, "failed": 0},
+    "nlp": {"passed": 43, "failed": 0},
+    "evaluation": {"passed": 20, "failed": 0}
+  },
+  "new_suites": {"passed": 11, "failed": 0},
+  "note": "Separate interpreter runs avoid existing top-level config/data_loader module-name collisions. Existing integrity tests read locked-test schema/isolation only; no locked-test model scoring was used for development."
+}

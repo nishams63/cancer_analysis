@@ -1,0 +1,128 @@
+{
+  "diagnostic_cases": 20,
+  "correct": 19,
+  "accuracy": 0.95,
+  "cases": [
+    {
+      "category": "affirmative",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "affirmative",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "pre_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "pre_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "pre_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "pre_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "post_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "post_negation",
+      "expected": "NEGATED",
+      "predicted": "NEGATED",
+      "correct": true
+    },
+    {
+      "category": "historical",
+      "expected": "HISTORICAL",
+      "predicted": "HISTORICAL",
+      "correct": true
+    },
+    {
+      "category": "historical",
+      "expected": "HISTORICAL",
+      "predicted": "HISTORICAL",
+      "correct": true
+    },
+    {
+      "category": "historical",
+      "expected": "HISTORICAL",
+      "predicted": "HISTORICAL",
+      "correct": true
+    },
+    {
+      "category": "resolved",
+      "expected": "RESOLVED",
+      "predicted": "HISTORICAL",
+      "correct": false
+    },
+    {
+      "category": "resolved",
+      "expected": "RESOLVED",
+      "predicted": "RESOLVED",
+      "correct": true
+    },
+    {
+      "category": "scope_termination",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "scope_termination",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "scope_termination",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "pseudo_negation",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "pseudo_negation",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "pseudo_negation",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    },
+    {
+      "category": "scope_distance",
+      "expected": "AFFIRMED",
+      "predicted": "AFFIRMED",
+      "correct": true
+    }
+  ],
+  "scope": "Controlled diagnostic cases only, not corpus-wide context accuracy"
+}

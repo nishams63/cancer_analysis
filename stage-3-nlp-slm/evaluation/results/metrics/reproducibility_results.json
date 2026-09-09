@@ -1,0 +1,7 @@
+{
+  "evaluation_seed": 42,
+  "urgency_predictions_identical": true,
+  "hazard_predictions_identical": true,
+  "max_confidence_difference": 0.0,
+  "is_perfectly_reproducible": true
+}

@@ -1,0 +1,1737 @@
+audio_id,source_document_hash,source_patient_hash,split,synthetic_speaker_id,source_text_hash,reference_transcript,audio_path,audio_sha256,variant_type,noise_level,speech_rate,volume_level,contains_drug,contains_dosage,contains_gene_mutation,contains_adverse_event,contains_negation,generation_seed,sample_rate,channels,duration_seconds,rms,peak_amplitude,clipping_ratio,silence_ratio,qc_pass
+9ac8224aa10ad2fd69df_clean_normal,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_clean_normal.wav,ceca6ad406680d092ece53d4997d04ff7c98c057468446eaac17270c67294287,clean_normal,,0,1.0,False,False,True,True,True,426,16000,1,74.875,0.08317117393016815,0.57464599609375,0.0,0.19731969949916528,True
+9ac8224aa10ad2fd69df_slow_speech,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_slow_speech.wav,082210a4f867dcdf0316854222e87ae457dc57efd0d1d91c643113bcddfc3754,slow_speech,,-2,1.0,False,False,True,True,True,427,16000,1,93.473,0.08318519592285156,0.57464599609375,0.0,0.19540669498143848,True
+9ac8224aa10ad2fd69df_fast_speech,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_fast_speech.wav,10f4494301c84990e9d8ce3bafd96b2a8193c7c4d9b9fd1ca5efc34e13e03de2,fast_speech,,2,1.0,False,False,True,True,True,428,16000,1,60.254875,0.08326639235019684,0.57464599609375,0.0,0.19790722327446533,True
+9ac8224aa10ad2fd69df_mild_noise,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_mild_noise.wav,341468630fe77724980da3669883488ac5304192920463edb1c8fb3959d2b981,mild_noise,25.0,0,1.0,False,False,True,True,True,429,16000,1,74.875,0.08329809457063675,0.57904052734375,0.0,0.05803672787979967,True
+9ac8224aa10ad2fd69df_moderate_noise,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_moderate_noise.wav,8c49c37571e95af9237f13da264009a4dc5b1a6bb61ec78fa65b9fcaf811ed1d,moderate_noise,15.0,0,1.0,False,False,True,True,True,430,16000,1,74.875,0.0844607949256897,0.587860107421875,0.0,0.02739315525876461,True
+9ac8224aa10ad2fd69df_pause_variation,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_pause_variation.wav,7c6c3338b3d43bfb4884486fe02810691f49c8138b99bb4d3349abd83a1480d0,pause_variation,,0,1.0,False,False,True,True,True,431,16000,1,75.175,0.08298799395561218,0.574615478515625,0.0,0.20275440638510142,True
+9ac8224aa10ad2fd69df_volume_variation,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_volume_variation.wav,07409a510e85387b5c6c4f76d34b74e0cf64dc25484655e06254a4e110be9e14,volume_variation,,0,0.55,False,False,True,True,True,432,16000,1,74.875,0.04573417454957962,0.3160400390625,0.0,0.24140901502504172,True
+9ac8224aa10ad2fd69df_speaker_variation,9ac8224aa10ad2fd69df4f68188ef7681746f642a8947866797f430561bcedc9,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_002,618e14fca21ec044ef303e7faea1f48641d7cab7d5fcbb48d1aeb30bb333d9b7,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000073
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Melanoma.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating EGFR driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage IV.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\9ac8224aa10ad2fd69df_speaker_variation.wav,e6c39ecbb07fdb97c69a05d9be89c8791eabad976484df4bf21d2cf468f8e892,speaker_variation,,0,1.0,False,False,True,True,True,433,16000,1,65.55,0.0644369050860405,0.61431884765625,0.0,0.26425057208237984,True
+1fa38a020c17ebad5379_clean_normal,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_clean_normal.wav,8677ddf54fa93baf5bf52e7b197ae932cbe1e60053bc2276dae92f42c4f03a03,clean_normal,,0,1.0,True,True,False,True,True,434,16000,1,46.29,0.06531209498643875,0.61431884765625,0.0,0.2835142579390797,True
+1fa38a020c17ebad5379_slow_speech,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_slow_speech.wav,ad06485e75ba0b321a36d5bf4c47c986d61ef0fd560e5e23395340b758d83e83,slow_speech,,-2,1.0,True,True,False,True,True,435,16000,1,56.23,0.06662237644195557,0.61431884765625,0.0,0.28927618708874264,True
+1fa38a020c17ebad5379_fast_speech,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_fast_speech.wav,c468a7eaa05a8431dc1b4394f73b347be7c027a633d0f9df5de93aa052edf22f,fast_speech,,2,1.0,True,True,False,True,True,436,16000,1,36.151875,0.0625385269522667,0.61431884765625,0.0,0.28602078038829243,True
+1fa38a020c17ebad5379_mild_noise,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_mild_noise.wav,b41f8394ae1851aa03579e9b81f28902a91d2880b0adb836f161828648685b37,mild_noise,25.0,0,1.0,True,True,False,True,True,437,16000,1,46.29,0.0654071569442749,0.626495361328125,0.0,0.08760801468999783,True
+1fa38a020c17ebad5379_moderate_noise,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_moderate_noise.wav,669bec97abd6df072c3bb427a4a2d28098a0c98da07f08731a5c9e735d0a21c5,moderate_noise,15.0,0,1.0,True,True,False,True,True,438,16000,1,46.29,0.06633525341749191,0.648773193359375,0.0,0.03939160725858717,True
+1fa38a020c17ebad5379_pause_variation,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_pause_variation.wav,68376eca437f6bd232746935f715db90767cd5498648c400e3a18f4e4210363a,pause_variation,,0,1.0,True,True,False,True,True,439,16000,1,46.59,0.0650872215628624,0.614288330078125,0.0,0.2899576089289547,True
+1fa38a020c17ebad5379_volume_variation,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_002,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_volume_variation.wav,236bc0b354cd0d298b3a2ea5d314c157369d4bbe16f5ea3ab380510b5a704176,volume_variation,,0,0.55,True,True,False,True,True,440,16000,1,46.29,0.035913385450839996,0.337860107421875,0.0,0.32237794340030246,True
+1fa38a020c17ebad5379_speaker_variation,1fa38a020c17ebad5379bdb1bc632121abe1fabb0a02ab128b7416a71d811906,240bce96281ad0f47497d7414c4be3ac666d5b707b73600089b7baeacce48aec,VALIDATION,speaker_003,4570e351dbd03d3e81792fbd546731f27b23e6b949e28d111f634d9d4f0aae6c,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000934
+Current Regimen: Docetaxel 144.8 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable febrile neutropenia and severe fluid retention with inability to keep fluids down.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\1fa38a020c17ebad5379_speaker_variation.wav,6181dbc05ffdbf01a7e3a5202201e9fc189521648c45f9179e0b5affad3c9127,speaker_variation,,0,1.0,True,True,False,True,True,441,16000,1,44.625,0.06622359901666641,0.4852294921875,0.0,0.2636862745098039,True
+28f5940c66f75038aef7_clean_normal,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_clean_normal.wav,9f9968f937f2baec773d7503c141acd8fd95cdd9ca67bf8df3cc11223337778d,clean_normal,,0,1.0,True,True,True,True,True,442,16000,1,94.07,0.06856662034988403,0.50518798828125,0.0,0.25510191878388433,True
+28f5940c66f75038aef7_slow_speech,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_slow_speech.wav,b395219ae7c0b901b32af55767a2dc25fbf3faf23b45faf0323e71ea8b46961e,slow_speech,,-2,1.0,True,True,True,True,True,443,16000,1,114.385,0.06883909553289413,0.516326904296875,0.0,0.26058104209468025,True
+28f5940c66f75038aef7_fast_speech,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_fast_speech.wav,5858b937ec81da286efe7fbd74bd94546d2216c2d5f68a4d5a83501a396d5bce,fast_speech,,2,1.0,True,True,True,True,True,444,16000,1,73.49,0.06738083064556122,0.510589599609375,0.0,0.2547497958905974,True
+28f5940c66f75038aef7_mild_noise,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_mild_noise.wav,b3b2c225954f3757b98a4c575092aaca3242ee2cbf3b6aa267b122e8a2c660b6,mild_noise,25.0,0,1.0,True,True,True,True,True,445,16000,1,94.07,0.06867088377475739,0.512969970703125,0.0,0.0723895769108111,True
+28f5940c66f75038aef7_moderate_noise,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_moderate_noise.wav,ed71a847cbab236cb155afbaea3440bcde0dc5aa5ea3bab9bcaaebc41ed701fd,moderate_noise,15.0,0,1.0,True,True,True,True,True,446,16000,1,94.07,0.0696365237236023,0.50927734375,0.0,0.03267114914425428,True
+28f5940c66f75038aef7_pause_variation,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_pause_variation.wav,0efd13d8c7053fda304f5400ec4ca3f3fa5945d022b2dd27272642ce27a7470f,pause_variation,,0,1.0,True,True,True,True,True,447,16000,1,94.37,0.06844053417444229,0.505157470703125,0.0,0.25900709971389213,True
+28f5940c66f75038aef7_volume_variation,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_003,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_volume_variation.wav,de40c71f886de35d3ba2be0bbaf508b510eb08b8b0542da7240cea91588901e3,volume_variation,,0,0.55,True,True,True,True,True,448,16000,1,94.07,0.037701964378356934,0.27783203125,0.0,0.2841421282024025,True
+28f5940c66f75038aef7_speaker_variation,28f5940c66f75038aef7301e59f3cfe43ef71c47cf90c16e1c91eb9157b523a3,c5b677900891b9fec731f1c4d08d206877f101557ff19b6c97435c36a5b79cd2,VALIDATION,speaker_001,7657ed23e8bdb5170e9b4b25f6b1fd778bf9dd3e22f5aa9937e10164e95e1eaa,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000258
+Demographics: 60-year-old male presenting for Cycle 1 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV SCLC.
+Genomic Profile: Confirmed driver mutation in ALK. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 151/95 mmHg, Heart rate 88 bpm, SpO2 95% on room air.
+Serum Chemistries: Serum creatinine 1.23 mg/dL, Liver function enzymes 10.7 U/L, Hemoglobin 14.3 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 163.9 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\28f5940c66f75038aef7_speaker_variation.wav,d18d62f33ad7c16de3b1057a2430b8d3a9983d700307056fdba04915a3a031f4,speaker_variation,,0,1.0,True,True,True,True,True,449,16000,1,111.675,0.08440231531858444,0.57464599609375,0.0,0.19316823371390196,True
+ad820e747f4c70db16d8_clean_normal,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_clean_normal.wav,94348bfb747fb1227de48a412a5e7ecdd6da497796212696dc9272effb6f0c91,clean_normal,,0,1.0,True,True,False,True,True,450,16000,1,48.94,0.08546490967273712,0.581817626953125,0.0,0.2251008888434818,True
+ad820e747f4c70db16d8_slow_speech,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_slow_speech.wav,4eada08d82707650178be1955fb2d9cdbf6bac96624327ff4571ec03c8b4d546,slow_speech,,-2,1.0,True,True,False,True,True,451,16000,1,61.054,0.08546486496925354,0.581817626953125,0.0,0.2231948357191994,True
+ad820e747f4c70db16d8_fast_speech,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_fast_speech.wav,e501a8fa4ff0626f8a8d941e19c1f373d552370375d5bf42741c772f5c4008b6,fast_speech,,2,1.0,True,True,False,True,True,452,16000,1,39.389875,0.08569428324699402,0.581817626953125,0.0,0.22664136405611848,True
+ad820e747f4c70db16d8_mild_noise,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_mild_noise.wav,bcd10d089b99fdd671e196b2fc688cb629c0e4e5c2b9d4299d02e419888e85cf,mild_noise,25.0,0,1.0,True,True,False,True,True,453,16000,1,48.94,0.08558448404073715,0.5838623046875,0.0,0.061230588475684515,True
+ad820e747f4c70db16d8_moderate_noise,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_moderate_noise.wav,1c6fc64c35eeffbfb8a5cc47c1f450d591ac4abe49c4cfdb4610acd2a3e6f0fd,moderate_noise,15.0,0,1.0,True,True,False,True,True,454,16000,1,48.94,0.08678445965051651,0.592010498046875,0.0,0.02794110134859011,True
+ad820e747f4c70db16d8_pause_variation,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_pause_variation.wav,7f780c1c97f122a9745548d99f62ac966d2daf76e7af45c31f1a259aa24229f8,pause_variation,,0,1.0,True,True,False,True,True,455,16000,1,49.24,0.08518753200769424,0.581787109375,0.0,0.23196080422420795,True
+ad820e747f4c70db16d8_volume_variation,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_volume_variation.wav,c0e91730a7713a1a0a1e4040db17ae45cf4e9d2c9faef8cffca555c2f3fafb7a,volume_variation,,0,0.55,True,True,False,True,True,456,16000,1,48.94,0.04699591547250748,0.319976806640625,0.0,0.2703782693093584,True
+ad820e747f4c70db16d8_speaker_variation,ad820e747f4c70db16d85b56cbf380cbad03557e64761fbf7f6d1df92c95c7e9,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_002,a4700701c7c934fd8e55899487d574a44e25e1e8433cae3036b2564d6c522317,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000707
+Current Regimen: Docetaxel 149.3 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\ad820e747f4c70db16d8_speaker_variation.wav,d5ead5446f36f16b4dfe446e002a600519dc1c93cadbe923780bb68ff850de70,speaker_variation,,0,1.0,True,True,False,True,True,457,16000,1,42.475,0.06535442918539047,0.61431884765625,0.0,0.30099764567392584,True
+fb43e7a4ec6b75a47289_clean_normal,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_clean_normal.wav,1cec054bd9452c483e6e436921d2cd3abe7ae7fc11bddc8b064c55c6732ca5f7,clean_normal,,0,1.0,True,True,True,True,True,458,16000,1,98.46,0.06570744514465332,0.61431884765625,0.0,0.2708809414990859,True
+fb43e7a4ec6b75a47289_slow_speech,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_slow_speech.wav,f2f616cd92bdce203b4ba12ce1804bf06b6c3d97451fb164815dd839c01e1a69,slow_speech,,-2,1.0,True,True,True,True,True,459,16000,1,119.87,0.06685591489076614,0.61431884765625,0.0,0.27640412530241093,True
+fb43e7a4ec6b75a47289_fast_speech,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_fast_speech.wav,81336bdbf5b8f706b44ba8718e6a87cd60cbf012a383dc40decc69beae658ed3,fast_speech,,2,1.0,True,True,True,True,True,460,16000,1,76.896,0.06332510709762573,0.61431884765625,0.0,0.2699920997191011,True
+fb43e7a4ec6b75a47289_mild_noise,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_mild_noise.wav,b678565338e5209305e51c9bd88fd3c35266c9dad2742c44d3d53a360d7aa056,mild_noise,25.0,0,1.0,True,True,True,True,True,461,16000,1,98.46,0.06580199301242828,0.62359619140625,0.0,0.08377259800934389,True
+fb43e7a4ec6b75a47289_moderate_noise,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_moderate_noise.wav,7fa1c0e62fd8a7c308a0d6f696495266b56f1fa21fa7f1a2cb4674c859a51420,moderate_noise,15.0,0,1.0,True,True,True,True,True,462,16000,1,98.46,0.06673552840948105,0.641326904296875,0.0,0.03809986288848263,True
+fb43e7a4ec6b75a47289_pause_variation,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_pause_variation.wav,c1d723cac5c4c0c75cc16cf337fbe2d30104df8f5a85200ee795fe323b990251,pause_variation,,0,1.0,True,True,True,True,True,463,16000,1,98.76,0.06559290736913681,0.614288330078125,0.0,0.27497405326042934,True
+fb43e7a4ec6b75a47289_volume_variation,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_002,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_volume_variation.wav,ee01b4f724aebccd3559fc878604045533d3f7f7e8596265b6cb991a852a0b76,volume_variation,,0,0.55,True,True,True,True,True,464,16000,1,98.46,0.0361306369304657,0.337860107421875,0.0,0.30954892849888277,True
+fb43e7a4ec6b75a47289_speaker_variation,fb43e7a4ec6b75a472893648f75ec0a2be3588fcf478116fd2b7b42e694a2ae7,e72bcc538a2c0ae5526900070885fcbdbaaecca8e9ad13f0890f2cdaf74535b6,VALIDATION,speaker_003,460d4e9461b9b476717160517a8030e7542e92d86c339d45866a569e4c0cf529,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000060
+Demographics: 65-year-old unknown presenting for Cycle 3 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 2.0 mut/Mb with ctDNA level of 0.30 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 108/94 mmHg, Heart rate 75 bpm, SpO2 89% on room air.
+Serum Chemistries: Serum creatinine 0.94 mg/dL, Liver function enzymes 36.4 U/L, Hemoglobin 14.6 g/dL.
+Patient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-SBRT at a dosage of 153.4 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\fb43e7a4ec6b75a47289_speaker_variation.wav,ed022d8d2460a4d9ec3c2e89a58798d69a6a776704753acbcdea8d687e244df0,speaker_variation,,0,1.0,True,True,True,True,True,465,16000,1,95.61,0.06855536252260208,0.50518798828125,0.0,0.2511851532266499,True
+bd6a5ed5030b9c2f77e4_clean_normal,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_clean_normal.wav,79c281ac2c9331463bd2e45253870b98355991b120c4f03d267ee2d384b44f4d,clean_normal,,0,1.0,True,True,True,True,True,466,16000,1,94.67,0.06870590150356293,0.50518798828125,0.0,0.25107808703918877,True
+bd6a5ed5030b9c2f77e4_slow_speech,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_slow_speech.wav,8fe6a545dc3a7d6c014f6434eb113d6ad14ec09ba4a455f070792273564f59e5,slow_speech,,-2,1.0,True,True,True,True,True,467,16000,1,115.075,0.06903664022684097,0.516326904296875,0.0,0.2565870084727352,True
+bd6a5ed5030b9c2f77e4_fast_speech,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_fast_speech.wav,0370e874d9d2521107b52bb06d8706217e9e3bfb841b9e663658a07008469053,fast_speech,,2,1.0,True,True,True,True,True,468,16000,1,73.94,0.0675797238945961,0.510589599609375,0.0,0.25098137002975385,True
+bd6a5ed5030b9c2f77e4_mild_noise,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_mild_noise.wav,5e246d151065889de8c8587bb2e4adc81d06a3483e9b26fa78fb0829f18590b3,mild_noise,25.0,0,1.0,True,True,True,True,True,469,16000,1,94.67,0.06880257278680801,0.509490966796875,0.0,0.07119863737192353,True
+bd6a5ed5030b9c2f77e4_moderate_noise,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_moderate_noise.wav,68f26a00a3033ac3c3622fa12aad51f4a8284bdc229411ff00a06085b239c957,moderate_noise,15.0,0,1.0,True,True,True,True,True,470,16000,1,94.67,0.06975999474525452,0.51776123046875,0.0,0.03217096229006021,True
+bd6a5ed5030b9c2f77e4_pause_variation,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_pause_variation.wav,937244d22683e84c2b4a5cd2ec5417a9434d3413d2e73f1836b6234a7aca213a,pause_variation,,0,1.0,True,True,True,True,True,471,16000,1,94.97,0.06858016550540924,0.505157470703125,0.0,0.2549265557544488,True
+bd6a5ed5030b9c2f77e4_volume_variation,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_003,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_volume_variation.wav,d3b1e45dc535b68b696b49986e6c8a1efb78a08aaa69bf870c4e79e10430ad08,volume_variation,,0,0.55,True,True,True,True,True,472,16000,1,94.67,0.03777849301695824,0.27783203125,0.0,0.279338755677617,True
+bd6a5ed5030b9c2f77e4_speaker_variation,bd6a5ed5030b9c2f77e49da60462e17b90f914917ab52b2fc1878fef702979e7,e209238952d73c2049e231ba385ca95bff527d230ca7aed166d7ec29aea141db,VALIDATION,speaker_001,fcd8d6b48c9a35937e5c261e3ba0f7ac1e45edbaa4b2f41ddbd724094d9eba59,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000832
+Demographics: 46-year-old male presenting for Cycle 5 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage II Melanoma.
+Genomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.
+Tumor mutational burden measured at 0.8 mut/Mb with ctDNA level of 0.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 100/72 mmHg, Heart rate 83 bpm, SpO2 96% on room air.
+Serum Chemistries: Serum creatinine 25.00 mg/dL, Liver function enzymes 10.0 U/L, Hemoglobin 11.8 g/dL.
+Patient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Radiotherapy-Standard at a dosage of 179.8 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\bd6a5ed5030b9c2f77e4_speaker_variation.wav,b352dcc8fb91bb48981164d45680abbf9681e8b4da88e31c27eb542161afaba6,speaker_variation,,0,1.0,True,True,True,True,True,473,16000,1,112.65,0.0853324756026268,0.57672119140625,0.0,0.1910813359964492,True
+4bbee5125b0946528d69_clean_normal,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_clean_normal.wav,33a0deeb7e42461c15d73bb099f1481c8497ed5680105433dd3d5109ba938f93,clean_normal,,0,1.0,True,True,False,True,True,474,16000,1,76.835,0.08209391683340073,0.576995849609375,0.0,0.20615767553849157,True
+4bbee5125b0946528d69_slow_speech,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_slow_speech.wav,994abbcffb5ccaaf02a05437d1dff68d7f4a697f4aa7d8b1a5e0db6911421829,slow_speech,,-2,1.0,True,True,False,True,True,475,16000,1,95.909,0.08207082748413086,0.576995849609375,0.0,0.20509545506678206,True
+4bbee5125b0946528d69_fast_speech,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_fast_speech.wav,b95f9645a70306889d701dadb874784ebbae38bb69b647dd164c0d5b43710010,fast_speech,,2,1.0,True,True,False,True,True,476,16000,1,61.8321875,0.08237671107053757,0.576995849609375,0.0,0.2073626701303427,True
+4bbee5125b0946528d69_mild_noise,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_mild_noise.wav,7d045e359903350bbe9896b12a17691e032a7c46b1d9d1e45834e4a400be2e5a,mild_noise,25.0,0,1.0,True,True,False,True,True,477,16000,1,76.835,0.08221745491027832,0.572998046875,0.0,0.06077959263356543,True
+4bbee5125b0946528d69_moderate_noise,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_moderate_noise.wav,919c2782b8c45431c223dbff63f7116d4c658e9353a07a4e4e4369ee792e7b82,moderate_noise,15.0,0,1.0,True,True,False,True,True,478,16000,1,76.835,0.08337972313165665,0.588470458984375,0.0,0.028158554044380817,True
+4bbee5125b0946528d69_pause_variation,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_pause_variation.wav,3d455f7e5fd3a16806a7f9f9c3892924318df238584508aec62c89bb97d41706,pause_variation,,0,1.0,True,True,False,True,True,479,16000,1,77.135,0.08191730827093124,0.57696533203125,0.0,0.21143773902897517,True
+4bbee5125b0946528d69_volume_variation,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_001,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_volume_variation.wav,79a475d029e48a1979d65eb1caa6e9de6a728e6e6b3496ceb810dc0854e6faf7,volume_variation,,0,0.55,True,True,False,True,True,480,16000,1,76.835,0.04514184594154358,0.31732177734375,0.0,0.25323257629986334,True
+4bbee5125b0946528d69_speaker_variation,4bbee5125b0946528d691f493dedc5b7b8acf176b736fdbd36a10f23a04893c9,be0ca8cb33c474cc9da68e0c1bace47a9059d9fb5197ed85a5f3a253e0d0637b,VALIDATION,speaker_002,4c8414fdbfcad33d385a92e936fe0ade9c1faebfcd73de2aa0afa61192691752,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000383 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 117/93 mmHg, Pulse 50 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Pemetrexed at 129.1 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\4bbee5125b0946528d69_speaker_variation.wav,b5920fe5d3c62949d700bf9de5422e67cab45f3e3de9a149c4112ed71c5525cc,speaker_variation,,0,1.0,True,True,False,True,True,481,16000,1,68.105,0.06331975758075714,0.61431884765625,0.0,0.28479094780118935,True
+cfeed71113c624c73efe_clean_normal,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_clean_normal.wav,bb330843118dd3e2c16aa6478063437a4c7d00598c5756ed6aec221e58d9a805,clean_normal,,0,1.0,True,True,False,True,True,482,16000,1,42.93,0.06540985405445099,0.61431884765625,0.0,0.3003945376193804,True
+cfeed71113c624c73efe_slow_speech,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_slow_speech.wav,235c0104debf7c59b294be420354985f5a7f0f02b49b1b7fc1582743da12e7d2,slow_speech,,-2,1.0,True,True,False,True,True,483,16000,1,52.185,0.06665661185979843,0.61431884765625,0.0,0.3058673469387755,True
+cfeed71113c624c73efe_fast_speech,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_fast_speech.wav,a0501b242e328dea14bd636d968a96220a71bad8c04223a250ceef4cff20e5d1,fast_speech,,2,1.0,True,True,False,True,True,484,16000,1,33.5365,0.06258518993854523,0.61431884765625,0.0,0.3037716368732575,True
+cfeed71113c624c73efe_mild_noise,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_mild_noise.wav,77d82826f8e40f8801664911d9786ab094fd0fc70d37bb910d79f7fee1bbad57,mild_noise,25.0,0,1.0,True,True,False,True,True,485,16000,1,42.93,0.06550142168998718,0.62255859375,0.0,0.0894392033542977,True
+cfeed71113c624c73efe_moderate_noise,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_moderate_noise.wav,2f1608e1e62a96ed3ffcf97885d0787ed1ad8f102b99ef26a432ec3d984417e6,moderate_noise,15.0,0,1.0,True,True,False,True,True,486,16000,1,42.93,0.06644821912050247,0.640472412109375,0.0,0.03977259492196599,True
+cfeed71113c624c73efe_pause_variation,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_pause_variation.wav,0a8adbf06eebebacfd886d3ddcad476f864cc47eb5b0cad90d9dd5d563ef908b,pause_variation,,0,1.0,True,True,False,True,True,487,16000,1,43.23,0.06516841053962708,0.614288330078125,0.0,0.3070813092759658,True
+cfeed71113c624c73efe_volume_variation,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_002,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_volume_variation.wav,f3ce23fdc998cb7b91f1ffc186e662eb5da9b524132397cbc1dc3b60aa4668b8,volume_variation,,0,0.55,True,True,False,True,True,488,16000,1,42.93,0.03596722334623337,0.337860107421875,0.0,0.3379396692289774,True
+cfeed71113c624c73efe_speaker_variation,cfeed71113c624c73efec83bff261297faecfc9c97f939f4573f7fb6d57c659f,a83b05b7e7474f199b4e4c14198c8282170fa224b6b67bcae39b3fbf1d1e4fc2,VALIDATION,speaker_003,6fb4a1546ff15023a091bad0397b0ffd86b8e6cadd90c3a782e84437977c01d1,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000118
+Current Regimen: radiotherapy-sbrt 196.0 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\cfeed71113c624c73efe_speaker_variation.wav,ed71c691e7c5b3efda687e4780a6e5f759d61a8ca7f272703cda2e6c9d6350a3,speaker_variation,,0,1.0,True,True,False,True,True,489,16000,1,41.525,0.06590677797794342,0.4852294921875,0.0,0.2786484045755569,True
+cba87f083a11f5e2f366_clean_normal,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_clean_normal.wav,e79793c2de6192cb105203a54f41b98d02457b23bf5a4914a3f01f6105fbfbe7,clean_normal,,0,1.0,True,True,True,True,True,490,16000,1,95.925,0.06859025359153748,0.50518798828125,0.0,0.2500742767787334,True
+cba87f083a11f5e2f366_slow_speech,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_slow_speech.wav,5b0264712e5d32b55175c77baac3eba0b09985ce5f1a35a28d1888ed5f2562a8,slow_speech,,-2,1.0,True,True,True,True,True,491,16000,1,116.605,0.06883765757083893,0.516326904296875,0.0,0.25581074996784015,True
+cba87f083a11f5e2f366_fast_speech,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_fast_speech.wav,0f06425bd2492ce2c5567e7e260987e9bf45f34f2e3074f3200f3085b72d9bef,fast_speech,,2,1.0,True,True,True,True,True,492,16000,1,74.885,0.06750912964344025,0.510589599609375,0.0,0.2506159444481538,True
+cba87f083a11f5e2f366_mild_noise,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_mild_noise.wav,dbc1c56eb2d616a071cdabbeeaa7a795ab3027a7545a0abc4f22b87744458f56,mild_noise,25.0,0,1.0,True,True,True,True,True,493,16000,1,95.925,0.06868582218885422,0.5078125,0.0,0.0714138649986969,True
+cba87f083a11f5e2f366_moderate_noise,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_moderate_noise.wav,c2c6284d956afa584b642fbf19566f1807756a4666ca463a81eacb1e556500b0,moderate_noise,15.0,0,1.0,True,True,True,True,True,494,16000,1,95.925,0.06965424120426178,0.52142333984375,0.0,0.032321475110763616,True
+cba87f083a11f5e2f366_pause_variation,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_pause_variation.wav,5238a8a94b8a06b70769d0c969b2e3b8d53c410faab8213b250d3fbf75f2faaa,pause_variation,,0,1.0,True,True,True,True,True,495,16000,1,96.225,0.06846612691879272,0.505157470703125,0.0,0.2539438815276695,True
+cba87f083a11f5e2f366_volume_variation,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_003,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_volume_variation.wav,6118c8178d1b5a97f0f8198cbd68c6551bab7c68d1e385123faeffff3b04c8cb,volume_variation,,0,0.55,True,True,True,True,True,496,16000,1,95.925,0.03771490231156349,0.27783203125,0.0,0.27893862392494134,True
+cba87f083a11f5e2f366_speaker_variation,cba87f083a11f5e2f366600ff90a968ff692950ff5808476768677df8f498ced,0f3268bd238e22b830023d0bbec5c1f0233bc1d80bd8c25f4f007c52c244cd08,VALIDATION,speaker_001,0df48403c7135a6a0685262917da4778c2aaff73ee4638bf815f77ee5387c8c1,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000073
+Demographics: 78-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage IV NSCLC.
+Genomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.
+Tumor mutational burden measured at 9.2 mut/Mb with ctDNA level of 2.02 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 110/85 mmHg, Heart rate 78 bpm, SpO2 98% on room air.
+Serum Chemistries: Serum creatinine 0.88 mg/dL, Liver function enzymes 54.9 U/L, Hemoglobin 15.5 g/dL.
+Patient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Nivolumab at a dosage of 166.2 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\cba87f083a11f5e2f366_speaker_variation.wav,0df487484fea1c55cbeb1f9ea4871781f69cbe73f59a06c406e54d4cd8a3ec7b,speaker_variation,,0,1.0,True,True,True,True,True,497,16000,1,113.38,0.08481109142303467,0.57464599609375,0.0,0.18959141823954842,True
+446002b0a111e4992d35_clean_normal,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_clean_normal.wav,3ae576813dd7b8e99e6de1add19c6180acb3c482cbb513be5040d6f304928a08,clean_normal,,0,1.0,True,True,False,True,True,498,16000,1,50.595,0.08599790185689926,0.581817626953125,0.0,0.21730408143097144,True
+446002b0a111e4992d35_slow_speech,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_slow_speech.wav,61cb73017d6307a99a115e2345325058a948cbc3a4d50cc971bb7b86cee4f11a,slow_speech,,-2,1.0,True,True,False,True,True,499,16000,1,63.127,0.08596168458461761,0.581817626953125,0.0,0.21556247722844424,True
+446002b0a111e4992d35_fast_speech,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_fast_speech.wav,81b32ce8069ac95879f2e0d061d9e0294e5da3440e466f6c4b409616b88fdbbb,fast_speech,,2,1.0,True,True,False,True,True,500,16000,1,40.71825,0.08622680604457855,0.581817626953125,0.0,0.21888987124937834,True
+446002b0a111e4992d35_mild_noise,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_mild_noise.wav,8ed16b5107d4b4d106d2f2596ee19c0376068649b4a0a1dab8759b713b7155d7,mild_noise,25.0,0,1.0,True,True,False,True,True,501,16000,1,50.595,0.08611849695444107,0.58251953125,0.0,0.06003187073821524,True
+446002b0a111e4992d35_moderate_noise,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_moderate_noise.wav,dcdbe33e860de75647eafd62d03201101d13502d870ba114c790ba6fd1d833e0,moderate_noise,15.0,0,1.0,True,True,False,True,True,502,16000,1,50.595,0.08733615279197693,0.599395751953125,0.0,0.027407599565174426,True
+446002b0a111e4992d35_pause_variation,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_pause_variation.wav,01e3547a49dccee6fd5a1c2dde92ef14c3cf2877cc89e60997f8fb7852e3d766,pause_variation,,0,1.0,True,True,False,True,True,503,16000,1,50.895,0.08572743088006973,0.581787109375,0.0,0.22406916200019647,True
+446002b0a111e4992d35_volume_variation,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_001,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_volume_variation.wav,5b6185ae7cbd22cc7ccb8d3fa4c64c7f8a37955670b0b051a1e178f5833f484c,volume_variation,,0,0.55,True,True,False,True,True,504,16000,1,50.595,0.04728905111551285,0.319976806640625,0.0,0.2626445300919063,True
+446002b0a111e4992d35_speaker_variation,446002b0a111e4992d350b8b19c20f74b1c3b4c60dd06f371954553c7eddc000,3888b9e1daab0f35dc8780a76931e187294cc3845997755c0fca825ccd577ae7,VALIDATION,speaker_002,6ec955ab0fc970d006ccd170b8c158e854d373a09bfc9bf61b71b23bd731c80a,"PATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL
+Patient ID: PT-000094
+Current Regimen: Cisplatin+Pemetrexed 174.6 mg
+
+PATIENT NARRATIVE:
+'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.
+I am able to perform light activities around the house, but I felt much weaker yesterday.
+I have no fever at home and no difficulty breathing when resting in bed.
+Taking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",audio\data\synthetic\validation\446002b0a111e4992d35_speaker_variation.wav,53e5c82fbe83177cbe9087b0dc0d63efdcf704902f8d6bdc09d942127007fce0,speaker_variation,,0,1.0,True,True,False,True,True,505,16000,1,43.895,0.06534226983785629,0.61431884765625,0.0,0.29364819455518854,True
+7aac763c75d5acbe894f_clean_normal,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_clean_normal.wav,7d9e17a6b8929ab7d965dded001b2f66dbef3b358cf3f45b14e37ab6b0cf8068,clean_normal,,0,1.0,True,True,False,True,True,506,16000,1,68.64,0.06372561305761337,0.61431884765625,0.0,0.28288079108391606,True
+7aac763c75d5acbe894f_slow_speech,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_slow_speech.wav,3013c1ce1fd24931dbb83da2ede4ad9f43c9f17e6953b4307e4a3ba13fc1fe72,slow_speech,,-2,1.0,True,True,False,True,True,507,16000,1,83.515,0.06501521170139313,0.61431884765625,0.0,0.28963060528048856,True
+7aac763c75d5acbe894f_fast_speech,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_fast_speech.wav,d78a02cbdb6f9a7aa8bc7c43478e9d364c92e5136102ad20aba1e6c12bbf07e5,fast_speech,,2,1.0,True,True,False,True,True,508,16000,1,53.5535625,0.06112010404467583,0.61431884765625,0.0,0.2830227214109239,True
+7aac763c75d5acbe894f_mild_noise,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_mild_noise.wav,b94df5cbf0f60c2befbcd24a5539f5d2b96ddb85cf4dfc05fff4d98eb7d603e0,mild_noise,25.0,0,1.0,True,True,False,True,True,509,16000,1,68.64,0.06382168084383011,0.624603271484375,0.0,0.08794343677156177,True
+7aac763c75d5acbe894f_moderate_noise,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_moderate_noise.wav,988464435b772ffce976896756eadda0645163d4cef831d8fecf96f23507101a,moderate_noise,15.0,0,1.0,True,True,False,True,True,510,16000,1,68.64,0.06470728665590286,0.636871337890625,0.0,0.039717183857808855,True
+7aac763c75d5acbe894f_pause_variation,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_pause_variation.wav,b39325cd1ebb35f77be7edfc44be3ef00a4251744db4dbb47ee166474fb74931,pause_variation,,0,1.0,True,True,False,True,True,511,16000,1,68.94,0.06357228755950928,0.614288330078125,0.0,0.28782637075718015,True
+7aac763c75d5acbe894f_volume_variation,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_002,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_volume_variation.wav,b9d4bb7c8f87b04448d08ffd58ebfaabeadf7a1f9fd8023b4015a26d1c2abf54,volume_variation,,0,0.55,True,True,False,True,True,512,16000,1,68.64,0.0350407212972641,0.337860107421875,0.0,0.3211092293123543,True
+7aac763c75d5acbe894f_speaker_variation,7aac763c75d5acbe894fae4c44d242ff4f2693301b114d5e37fb9898f4b67edb,fa5c8453e0ccd37a6fe032b448f5786c3a0516e2371d229a893b2bfa9979b15c,VALIDATION,speaker_003,8e75c0eaff83c4e639f2a1df4fe0c25c5a916d2ce13e9b7c3e06f8cd34e41344,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000142 | Infusion Cycle: 3
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 112/86 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 93%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Durvalumab at 145.9 mg.
+Patient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\7aac763c75d5acbe894f_speaker_variation.wav,71925af2ba9e1dfe5ee48d46cc9ae83616f8cccdbbb2ad05de6201e8a64ed439,speaker_variation,,0,1.0,True,True,False,True,True,513,16000,1,66.86,0.06635334342718124,0.52264404296875,0.0,0.2634329195333533,True
+102d515c068ad74a95e2_clean_normal,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_clean_normal.wav,9199896d7bae20bd6535e72b0726b14e8040b18f2dcde7c0ac8e2bd457188c0f,clean_normal,,0,1.0,False,False,True,True,True,514,16000,1,64.375,0.0659882128238678,0.5025634765625,0.0,0.24704271844660194,True
+102d515c068ad74a95e2_slow_speech,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_slow_speech.wav,cfb2b60836acd5f0917e6ac6d6b06fbdf1288250d6f7944b22054463a80e9690,slow_speech,,-2,1.0,False,False,True,True,True,515,16000,1,78.085,0.066462941467762,0.523712158203125,0.0,0.2528814753153615,True
+102d515c068ad74a95e2_fast_speech,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_fast_speech.wav,ea26f248cbe10ca646c1bf3f18b3572d545020b17c9c70710973a9b6525f5f73,fast_speech,,2,1.0,False,False,True,True,True,516,16000,1,50.145,0.06458603590726852,0.51336669921875,0.0,0.2467967893109981,True
+102d515c068ad74a95e2_mild_noise,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_mild_noise.wav,ad0b72c7c8b8473409266496183886907d278ac11f6ed6de98e313b179508d47,mild_noise,25.0,0,1.0,False,False,True,True,True,517,16000,1,64.375,0.0660843625664711,0.50628662109375,0.0,0.07373689320388349,True
+102d515c068ad74a95e2_moderate_noise,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_moderate_noise.wav,7f0a387b8a720d95e191097e5512acf94a7c2761e67b5229fb21fe971fc0b39b,moderate_noise,15.0,0,1.0,False,False,True,True,True,518,16000,1,64.375,0.06699298322200775,0.4998779296875,0.0,0.0338126213592233,True
+102d515c068ad74a95e2_pause_variation,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_pause_variation.wav,89e6eb11496b6e8e7ad739527b8041789a92e438cdd73e5789030f7a2f8edff5,pause_variation,,0,1.0,False,False,True,True,True,519,16000,1,64.675,0.06581799685955048,0.502532958984375,0.0,0.25211731735601084,True
+102d515c068ad74a95e2_volume_variation,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_003,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_volume_variation.wav,bd18376c39d4a0f0fe18c50374375be381b60a8d501103c6b9c5aac7ac57cb1d,volume_variation,,0,0.55,False,False,True,True,True,520,16000,1,64.375,0.036283861845731735,0.276397705078125,0.0,0.27732038834951456,True
+102d515c068ad74a95e2_speaker_variation,102d515c068ad74a95e2d495a9ee41a019617bb4463fe881b61480a9f5441edb,e6d912400f6c001e605e5cbebddf0aac2c9574798f9961567b4d4bf24479e473,VALIDATION,speaker_001,0856a0653e2ba0a5fe0df65dbcdabf57ae7fa63f3ed77476683c985fdd7994dc,"SURGICAL PATHOLOGY REPORT
+Patient ID: PT-000643
+Specimen: Core needle biopsy / surgical tissue resection of primary tumor.
+
+GROSS & MICROSCOPIC EXAMINATION:
+Specimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Unknown.
+Microscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.
+Surgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.
+
+MOLECULAR & IMMUNOHISTOCHEMICAL TESTING:
+Next-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.
+Pathologic Staging: Pathologic evaluation aligns with clinical Stage I.
+Recommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",audio\data\synthetic\validation\102d515c068ad74a95e2_speaker_variation.wav,8c7053cc90756934ea16c0daaf2e948526695776b26fa0e32b69fbb9b8999f70,speaker_variation,,0,1.0,False,False,True,True,True,521,16000,1,75.22,0.08308622986078262,0.57464599609375,0.0,0.19644625764424356,True
+a88fe9707ee6a5218eb4_clean_normal,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_clean_normal.wav,3b6cca4156db410a0ada9dc3a041bdcc02d1735a6f8ff2d685c35c84585d0e38,clean_normal,,0,1.0,True,True,False,True,True,522,16000,1,81.065,0.08235722035169601,0.576995849609375,0.0,0.19755443162893974,True
+a88fe9707ee6a5218eb4_slow_speech,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_slow_speech.wav,910d08fa7ca8837568a3e23d2cd4a18a29b79aa465278aedcf4c12311d9abe23,slow_speech,,-2,1.0,True,True,False,True,True,523,16000,1,101.207,0.08233129978179932,0.576995849609375,0.0,0.19629015285503967,True
+a88fe9707ee6a5218eb4_fast_speech,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_fast_speech.wav,2d849a2b9b352d15ab87c4a1a121d481ff6f6b58513782b1d118c647756e910a,fast_speech,,2,1.0,True,True,False,True,True,524,16000,1,65.2334375,0.08259068429470062,0.576995849609375,0.0,0.19890393634399536,True
+a88fe9707ee6a5218eb4_mild_noise,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_mild_noise.wav,473ff50c625c4286c7e5922ee2117302fafd42cb271550e617348f133eef573e,mild_noise,25.0,0,1.0,True,True,False,True,True,525,16000,1,81.065,0.08248072117567062,0.57525634765625,0.0,0.059163171529019926,True
+a88fe9707ee6a5218eb4_moderate_noise,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_moderate_noise.wav,f4736563dcffc6d3d10587170d8c821dea65e0c480190a1154d9ae70714d2ac0,moderate_noise,15.0,0,1.0,True,True,False,True,True,526,16000,1,81.065,0.08362214267253876,0.580078125,0.0,0.02803460186270277,True
+a88fe9707ee6a5218eb4_pause_variation,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_pause_variation.wav,a3159df0114fcb536dd6b43b317664d8fff4aef1c16fc973ef5e0e7c908c8858,pause_variation,,0,1.0,True,True,False,True,True,527,16000,1,81.365,0.08218828588724136,0.57696533203125,0.0,0.20277760707921097,True
+a88fe9707ee6a5218eb4_volume_variation,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_001,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_volume_variation.wav,7d9000a0a64d1a996b46697bf2f2aeee9b3a4a180dd8bfedc4006cb46f540f67,volume_variation,,0,0.55,True,True,False,True,True,528,16000,1,81.065,0.04528658092021942,0.31732177734375,0.0,0.24416671806574972,True
+a88fe9707ee6a5218eb4_speaker_variation,a88fe9707ee6a5218eb4828df58afc044f61934943ca9cbce65476f912ae72f5,e8865c721c74e31904c0773f55ff8892d0521e711845e67b07f07d3d85466e3d,VALIDATION,speaker_002,19090c40ee40593b9bd0f7b6ffc051e1db80e330c9c03dc69de769d463645f83,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000909 | Infusion Cycle: 7
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 123/55 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 91%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel+Bevacizumab at 172.0 mg.
+Patient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\a88fe9707ee6a5218eb4_speaker_variation.wav,4c9f1aa2dd05d94d795c97bbde3651566934343bc4d29a7e54ea7cefe434f99c,speaker_variation,,0,1.0,True,True,False,True,True,529,16000,1,71.98,0.0641583502292633,0.61431884765625,0.0,0.2726199986107252,True
+c2dc09eaaac9073204a3_clean_normal,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_clean_normal.wav,277986831a02b0f8e78cf25060737807d4cd3e62049ca479ef7808b7d2238db5,clean_normal,,0,1.0,True,True,True,True,True,530,16000,1,98.21,0.06591717898845673,0.61431884765625,0.0,0.2718014967925873,True
+c2dc09eaaac9073204a3_slow_speech,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_slow_speech.wav,3b64a0dfaafb3c59a371ed83036b84b41d5cd16268223f35679b658f518ce68a,slow_speech,,-2,1.0,True,True,True,True,True,531,16000,1,119.53,0.067112997174263,0.61431884765625,0.0,0.27733309629381747,True
+c2dc09eaaac9073204a3_fast_speech,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_fast_speech.wav,28c55f4e3f569ad82214667fecbc60a295db6d8b1eb87f19186e6963593fcfd1,fast_speech,,2,1.0,True,True,True,True,True,532,16000,1,76.7050625,0.06337158381938934,0.61431884765625,0.0,0.27070247156111765,True
+c2dc09eaaac9073204a3_mild_noise,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_mild_noise.wav,88ec0f6e081b26209aee0ff95d7f9612cf7d9cb0672363bf0759c70afe685fd7,mild_noise,25.0,0,1.0,True,True,True,True,True,533,16000,1,98.21,0.06600778549909592,0.625091552734375,0.0,0.08361737603095408,True
+c2dc09eaaac9073204a3_moderate_noise,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_moderate_noise.wav,e488c7b934b5ab0502838ca5b776970ac44614ab7e3b39d9b5a3a7e0ed649579,moderate_noise,15.0,0,1.0,True,True,True,True,True,534,16000,1,98.21,0.06694334745407104,0.648681640625,0.0,0.03790219936869973,True
+c2dc09eaaac9073204a3_pause_variation,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_pause_variation.wav,2fba9a269a8186a5b7715b2d340ec28e6a73cfcab275a1bd54e6b2818cecd9d2,pause_variation,,0,1.0,True,True,True,True,True,535,16000,1,98.51,0.06580212712287903,0.614288330078125,0.0,0.27589331032382497,True
+c2dc09eaaac9073204a3_volume_variation,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_002,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_volume_variation.wav,770242bf2584b741511b526fcecea1c68354df543159902fefef43b9ce9e1128,volume_variation,,0,0.55,True,True,True,True,True,536,16000,1,98.21,0.03624601289629936,0.337860107421875,0.0,0.3103292689135526,True
+c2dc09eaaac9073204a3_speaker_variation,c2dc09eaaac9073204a37297540c1e5c021971ad3b726bfcbe9e3c26f65534af,c92c6aa55994b8a576fc19421ab285f55d76f9ded55ba45f52b986bd90701e39,VALIDATION,speaker_003,725fdcb842fad567edef14fab6405d621cdc500a3761e7ed03fb5cf76a6e3419,"ONCOLOGY CONSULTATION PROGRESS NOTE
+Patient ID: PT-000129
+Demographics: 65-year-old unknown presenting for Cycle 4 evaluation.
+
+DIAGNOSIS & MOLECULAR PROFILING:
+Primary Diagnosis: Stage III NSCLC.
+Genomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.
+Tumor mutational burden measured at 2.1 mut/Mb with ctDNA level of 2.25 ng/mL.
+
+CLINICAL ASSESSMENT & LABORATORY REVIEW:
+Vitals: Blood pressure 138/78 mmHg, Heart rate 78 bpm, SpO2 90% on room air.
+Serum Chemistries: Serum creatinine 0.32 mg/dL, Liver function enzymes 41.5 U/L, Hemoglobin 13.0 g/dL.
+Patient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.
+
+TREATMENT PLAN & REGIMEN:
+Administer scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 256.7 mg.
+Pre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",audio\data\synthetic\validation\c2dc09eaaac9073204a3_speaker_variation.wav,4bcb80e758a7f949d7312f9dabefe759a944ccc39d45f22df668d20bdee475ba,speaker_variation,,0,1.0,True,True,True,True,True,537,16000,1,95.87,0.06868398934602737,0.50518798828125,0.0,0.24998304996349222,True
+aba4419b5fb5e2705686_clean_normal,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_clean_normal.wav,853bf14589a5cb76e63d474f7fa213a07993db1e311b4b236e74bfc8382c0e36,clean_normal,,0,1.0,True,True,False,True,True,538,16000,1,66.695,0.06606070697307587,0.52264404296875,0.0,0.2656168003598471,True
+aba4419b5fb5e2705686_slow_speech,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_slow_speech.wav,bb0da869a4a24a12fa253313cf00d7540b4570486220947cdfd378e06b6f6f64,slow_speech,,-2,1.0,True,True,False,True,True,539,16000,1,81.02,0.06635184586048126,0.525604248046875,0.0,0.27185880029622317,True
+aba4419b5fb5e2705686_fast_speech,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_fast_speech.wav,6c9e89d23f48fbcb71a338a8fda46c33803e9fbb7930f4b48330f1611cfaa9fe,fast_speech,,2,1.0,True,True,False,True,True,540,16000,1,52.07,0.0649217963218689,0.490478515625,0.0,0.2660721144613021,True
+aba4419b5fb5e2705686_mild_noise,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_mild_noise.wav,6ad15930831388229dbca6ad8cf9a8a573a84b17d624c0eeb499f85496d785fc,mild_noise,25.0,0,1.0,True,True,False,True,True,541,16000,1,66.695,0.0661536380648613,0.520172119140625,0.0,0.07662961991153759,True
+aba4419b5fb5e2705686_moderate_noise,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_moderate_noise.wav,b3a8cfa8a0e0d6d0565d44ed11ded1e270e7f232a1808dd43e8a1356b2b3f4de,moderate_noise,15.0,0,1.0,True,True,False,True,True,542,16000,1,66.695,0.06708253920078278,0.520050048828125,0.0,0.03387529050153685,True
+aba4419b5fb5e2705686_pause_variation,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_pause_variation.wav,bc0c9147d47f92d84baab5c175c905b0550d9a8136eb5b129e0a6f8caf41ebcd,pause_variation,,0,1.0,True,True,False,True,True,543,16000,1,66.995,0.06589576601982117,0.522613525390625,0.0,0.27040077617732666,True
+aba4419b5fb5e2705686_volume_variation,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_003,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_volume_variation.wav,be7b043da34f7bf1b3e03cfd58bcc414557b53b18dadad1733d850c187070e70,volume_variation,,0,0.55,True,True,False,True,True,544,16000,1,66.695,0.036323804408311844,0.287445068359375,0.0,0.2941562336007197,True
+aba4419b5fb5e2705686_speaker_variation,aba4419b5fb5e2705686f148b8e2278ebb38f7bd72906ddbb927043cccd75190,d23a19e9845ca7c04c9e03c3972e2ba1bae105b98839bbefeee2a906e5a37b98,VALIDATION,speaker_001,b92e4012f5f1ef95ee5e145ad309bd1fc8521cc3039d7c02b01a953fa8cb7d0e,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000809 | Infusion Cycle: 4
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 121/87 mmHg, Pulse 81 bpm, Resp Rate 18/min, SpO2 96%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Paclitaxel at 258.9 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\aba4419b5fb5e2705686_speaker_variation.wav,c1c8c6c4085ee39211469590cd3cf2748c92a4c6c10ac923f0242a1d2d3a2f54,speaker_variation,,0,1.0,True,True,False,True,True,545,16000,1,76.88,0.08173445612192154,0.576995849609375,0.0,0.20503300598335067,True
+faa5bcf9efa4e2a0b6a9_clean_normal,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_clean_normal.wav,e05a9d0de206358913c0aa180c694ef17cf2ea2685e8abdbae3ee1509628819b,clean_normal,,0,1.0,True,True,False,True,True,546,16000,1,77.575,0.08225703984498978,0.576995849609375,0.0,0.20355301321301966,True
+faa5bcf9efa4e2a0b6a9_slow_speech,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_slow_speech.wav,23d6ee26ab68e24e50ff338f4809babd3c194a8f0299a1f0d058844a41542d1d,slow_speech,,-2,1.0,True,True,False,True,True,547,16000,1,96.833,0.08230877667665482,0.576995849609375,0.0,0.20205727902677806,True
+faa5bcf9efa4e2a0b6a9_fast_speech,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_fast_speech.wav,813889ee525880cf117e692a306967d0471dae8e3e944f1a04b91604e50b5cb0,fast_speech,,2,1.0,True,True,False,True,True,548,16000,1,62.4259375,0.08246973156929016,0.576995849609375,0.0,0.20506400084099657,True
+faa5bcf9efa4e2a0b6a9_mild_noise,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_mild_noise.wav,63a1fbb3a48e58065e008117deabedb318ed37c013070c8c7b8b6b64212016fc,mild_noise,25.0,0,1.0,True,True,False,True,True,549,16000,1,77.575,0.08237506449222565,0.578704833984375,0.0,0.060253786658072836,True
+faa5bcf9efa4e2a0b6a9_moderate_noise,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_moderate_noise.wav,2f2b6945f93e215c0d6fde3e96ea8316f27813c4d9edf9e7eb54756d1c9c49ee,moderate_noise,15.0,0,1.0,True,True,False,True,True,550,16000,1,77.575,0.08354314416646957,0.593017578125,0.0,0.02793103448275862,True
+faa5bcf9efa4e2a0b6a9_pause_variation,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_pause_variation.wav,1cac96bacfea65fffb04f54535b12515188362b7e18297ab8276ea4deb6963f3,pause_variation,,0,1.0,True,True,False,True,True,551,16000,1,77.875,0.08208157867193222,0.57696533203125,0.0,0.20887078651685392,True
+faa5bcf9efa4e2a0b6a9_volume_variation,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_001,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_volume_variation.wav,1656ba0d8e65a895dbce820941707d624fe5b5e14f3244d15e1340d0d5938145,volume_variation,,0,0.55,True,True,False,True,True,552,16000,1,77.575,0.04523152485489845,0.31732177734375,0.0,0.25008459555269097,True
+faa5bcf9efa4e2a0b6a9_speaker_variation,faa5bcf9efa4e2a0b6a9e52376792b340a8727a0b272ef277c5d3a3a1b73600b,a85370672b17dbe5029407ffc2420938d49484319d1d55814d45679dd6afec28,VALIDATION,speaker_002,8336de16d90ce2b04a2dd713d83f7817dec8389221724fbef90efb0ffb9f7385,"AMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT
+Patient ID: PT-000707 | Infusion Cycle: 5
+
+TRIAGE & CLINICAL VITALS:
+Vital Signs: BP 131/61 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 99%.
+ECOG Performance Status: Evaluated as ambulatory and self-caring.
+
+SYMPTOM REVIEW & ADVERSE EVENT SCREENING:
+Patient screened prior to administration of Cisplatin at 269.0 mg.
+Patient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.
+IV peripheral access established with blood return confirmed in right forearm.
+
+NURSING INTERVENTIONS:
+Hydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",audio\data\synthetic\validation\faa5bcf9efa4e2a0b6a9_speaker_variation.wav,42b916de01620d6cfa0b26da2e3e5b51d9352013b3dd936e9a18f0774d1e3360,speaker_variation,,0,1.0,True,True,False,True,True,553,16000,1,68.81,0.06345270574092865,0.61431884765625,0.0,0.28104199970934457,True

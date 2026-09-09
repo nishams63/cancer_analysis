@@ -1,0 +1,584 @@
+{
+  "urgency_errors_validation": {
+    "task_name": "urgency",
+    "total_samples": 909,
+    "total_errors": 131,
+    "error_rate": 0.1441,
+    "high_confidence_errors_count": 32,
+    "high_confidence_error_rate": 0.2443,
+    "top_confusion_pairs": [
+      {
+        "pair": "MEDIUM -> HIGH",
+        "count": 38
+      },
+      {
+        "pair": "LOW -> MEDIUM",
+        "count": 28
+      },
+      {
+        "pair": "HIGH -> MEDIUM",
+        "count": 25
+      },
+      {
+        "pair": "LOW -> HIGH",
+        "count": 12
+      },
+      {
+        "pair": "HIGH -> LOW",
+        "count": 12
+      },
+      {
+        "pair": "MEDIUM -> LOW",
+        "count": 8
+      },
+      {
+        "pair": "CRITICAL -> MEDIUM",
+        "count": 4
+      },
+      {
+        "pair": "MEDIUM -> CRITICAL",
+        "count": 2
+      }
+    ],
+    "critical_misses_count": 5,
+    "critical_misses_details": [
+      {
+        "document_id": "DOC-000291",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.4938
+      },
+      {
+        "document_id": "DOC-000654",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.7788
+      },
+      {
+        "document_id": "DOC-001170",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.4155
+      },
+      {
+        "document_id": "DOC-003624",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.4938
+      },
+      {
+        "document_id": "DOC-003897",
+        "true_class": "CRITICAL",
+        "predicted_class": "HIGH",
+        "confidence": 0.3538
+      }
+    ],
+    "sample_error_cases": [
+      {
+        "document_id": "DOC-000018",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "HIGH",
+        "confidence": 0.4037
+      },
+      {
+        "document_id": "DOC-000066",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4087
+      },
+      {
+        "document_id": "DOC-000068",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4646
+      },
+      {
+        "document_id": "DOC-000289",
+        "document_type": "oncology_consultation",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.8297
+      },
+      {
+        "document_id": "DOC-000290",
+        "document_type": "nurse_intake_note",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.3767
+      },
+      {
+        "document_id": "DOC-000291",
+        "document_type": "patient_symptom_log",
+        "true_label": "CRITICAL",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4938
+      },
+      {
+        "document_id": "DOC-000355",
+        "document_type": "oncology_consultation",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.7712
+      },
+      {
+        "document_id": "DOC-000356",
+        "document_type": "nurse_intake_note",
+        "true_label": "MEDIUM",
+        "predicted_label": "LOW",
+        "confidence": 0.3392
+      },
+      {
+        "document_id": "DOC-000361",
+        "document_type": "oncology_consultation",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.7782
+      },
+      {
+        "document_id": "DOC-000363",
+        "document_type": "patient_symptom_log",
+        "true_label": "HIGH",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.6407
+      }
+    ]
+  },
+  "urgency_errors_locked_test": {
+    "task_name": "urgency",
+    "total_samples": 928,
+    "total_errors": 120,
+    "error_rate": 0.1293,
+    "high_confidence_errors_count": 31,
+    "high_confidence_error_rate": 0.2583,
+    "top_confusion_pairs": [
+      {
+        "pair": "MEDIUM -> HIGH",
+        "count": 31
+      },
+      {
+        "pair": "LOW -> MEDIUM",
+        "count": 31
+      },
+      {
+        "pair": "HIGH -> MEDIUM",
+        "count": 21
+      },
+      {
+        "pair": "LOW -> HIGH",
+        "count": 16
+      },
+      {
+        "pair": "HIGH -> LOW",
+        "count": 12
+      },
+      {
+        "pair": "MEDIUM -> LOW",
+        "count": 4
+      },
+      {
+        "pair": "CRITICAL -> MEDIUM",
+        "count": 2
+      },
+      {
+        "pair": "MEDIUM -> CRITICAL",
+        "count": 2
+      }
+    ],
+    "critical_misses_count": 3,
+    "critical_misses_details": [
+      {
+        "document_id": "DOC-001053",
+        "true_class": "CRITICAL",
+        "predicted_class": "HIGH",
+        "confidence": 0.5042
+      },
+      {
+        "document_id": "DOC-002013",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.4919
+      },
+      {
+        "document_id": "DOC-004251",
+        "true_class": "CRITICAL",
+        "predicted_class": "MEDIUM",
+        "confidence": 0.415
+      }
+    ],
+    "sample_error_cases": [
+      {
+        "document_id": "DOC-000034",
+        "document_type": "oncology_consultation",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.752
+      },
+      {
+        "document_id": "DOC-000036",
+        "document_type": "nurse_intake_note",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.476
+      },
+      {
+        "document_id": "DOC-000153",
+        "document_type": "patient_symptom_log",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.7253
+      },
+      {
+        "document_id": "DOC-000180",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "HIGH",
+        "confidence": 0.4569
+      },
+      {
+        "document_id": "DOC-000194",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4123
+      },
+      {
+        "document_id": "DOC-000277",
+        "document_type": "oncology_consultation",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.6849
+      },
+      {
+        "document_id": "DOC-000278",
+        "document_type": "nurse_intake_note",
+        "true_label": "MEDIUM",
+        "predicted_label": "HIGH",
+        "confidence": 0.4904
+      },
+      {
+        "document_id": "DOC-000279",
+        "document_type": "patient_symptom_log",
+        "true_label": "HIGH",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.6407
+      },
+      {
+        "document_id": "DOC-000443",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4473
+      },
+      {
+        "document_id": "DOC-000491",
+        "document_type": "nurse_intake_note",
+        "true_label": "LOW",
+        "predicted_label": "MEDIUM",
+        "confidence": 0.4315
+      }
+    ]
+  },
+  "hazard_errors_validation": {
+    "task_name": "hazard",
+    "total_samples": 909,
+    "total_errors": 204,
+    "error_rate": 0.2244,
+    "high_confidence_errors_count": 54,
+    "high_confidence_error_rate": 0.2647,
+    "top_confusion_pairs": [
+      {
+        "pair": "NONE -> RENAL",
+        "count": 51
+      },
+      {
+        "pair": "NONE -> DERMATOLOGIC",
+        "count": 44
+      },
+      {
+        "pair": "NONE -> HEMATOLOGIC",
+        "count": 36
+      },
+      {
+        "pair": "NONE -> HEPATIC",
+        "count": 14
+      },
+      {
+        "pair": "NONE -> NEUROPATHIC",
+        "count": 14
+      },
+      {
+        "pair": "RENAL -> HEPATIC",
+        "count": 7
+      },
+      {
+        "pair": "RENAL -> NONE",
+        "count": 5
+      },
+      {
+        "pair": "NEUROPATHIC -> HEMATOLOGIC",
+        "count": 4
+      }
+    ],
+    "critical_misses_count": 0,
+    "critical_misses_details": [],
+    "sample_error_cases": [
+      {
+        "document_id": "DOC-000003",
+        "document_type": "patient_symptom_log",
+        "true_label": "NONE",
+        "predicted_label": "HEMATOLOGIC",
+        "confidence": 0.6854
+      },
+      {
+        "document_id": "DOC-000016",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.5395
+      },
+      {
+        "document_id": "DOC-000020",
+        "document_type": "nurse_intake_note",
+        "true_label": "NONE",
+        "predicted_label": "HEPATIC",
+        "confidence": 0.4019
+      },
+      {
+        "document_id": "DOC-000115",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.775
+      },
+      {
+        "document_id": "DOC-000289",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "DERMATOLOGIC",
+        "confidence": 0.9456
+      },
+      {
+        "document_id": "DOC-000291",
+        "document_type": "patient_symptom_log",
+        "true_label": "NONE",
+        "predicted_label": "DERMATOLOGIC",
+        "confidence": 0.4448
+      },
+      {
+        "document_id": "DOC-000361",
+        "document_type": "oncology_consultation",
+        "true_label": "NEUROPATHIC",
+        "predicted_label": "HEMATOLOGIC",
+        "confidence": 0.6151
+      },
+      {
+        "document_id": "DOC-000388",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "DERMATOLOGIC",
+        "confidence": 0.5464
+      },
+      {
+        "document_id": "DOC-000392",
+        "document_type": "nurse_intake_note",
+        "true_label": "NONE",
+        "predicted_label": "HEPATIC",
+        "confidence": 0.4627
+      },
+      {
+        "document_id": "DOC-000415",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "DERMATOLOGIC",
+        "confidence": 0.7912
+      }
+    ]
+  },
+  "hazard_errors_locked_test": {
+    "task_name": "hazard",
+    "total_samples": 928,
+    "total_errors": 212,
+    "error_rate": 0.2284,
+    "high_confidence_errors_count": 70,
+    "high_confidence_error_rate": 0.3302,
+    "top_confusion_pairs": [
+      {
+        "pair": "NONE -> RENAL",
+        "count": 57
+      },
+      {
+        "pair": "NONE -> DERMATOLOGIC",
+        "count": 56
+      },
+      {
+        "pair": "NONE -> HEPATIC",
+        "count": 26
+      },
+      {
+        "pair": "NONE -> HEMATOLOGIC",
+        "count": 23
+      },
+      {
+        "pair": "NONE -> NEUROPATHIC",
+        "count": 12
+      },
+      {
+        "pair": "RENAL -> HEPATIC",
+        "count": 6
+      },
+      {
+        "pair": "PULMONARY -> NONE",
+        "count": 4
+      },
+      {
+        "pair": "HEPATIC -> CARDIAC",
+        "count": 4
+      }
+    ],
+    "critical_misses_count": 0,
+    "critical_misses_details": [],
+    "sample_error_cases": [
+      {
+        "document_id": "DOC-000034",
+        "document_type": "oncology_consultation",
+        "true_label": "HEMATOLOGIC",
+        "predicted_label": "CARDIAC",
+        "confidence": 0.4506
+      },
+      {
+        "document_id": "DOC-000039",
+        "document_type": "patient_symptom_log",
+        "true_label": "NONE",
+        "predicted_label": "HEMATOLOGIC",
+        "confidence": 0.7066
+      },
+      {
+        "document_id": "DOC-000151",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.5502
+      },
+      {
+        "document_id": "DOC-000160",
+        "document_type": "oncology_consultation",
+        "true_label": "NEUROPATHIC",
+        "predicted_label": "CARDIAC",
+        "confidence": 0.43
+      },
+      {
+        "document_id": "DOC-000163",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.6294
+      },
+      {
+        "document_id": "DOC-000180",
+        "document_type": "nurse_intake_note",
+        "true_label": "NONE",
+        "predicted_label": "HEPATIC",
+        "confidence": 0.3959
+      },
+      {
+        "document_id": "DOC-000193",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.5713
+      },
+      {
+        "document_id": "DOC-000278",
+        "document_type": "nurse_intake_note",
+        "true_label": "NEUROPATHIC",
+        "predicted_label": "HEPATIC",
+        "confidence": 0.3177
+      },
+      {
+        "document_id": "DOC-000403",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.646
+      },
+      {
+        "document_id": "DOC-000424",
+        "document_type": "oncology_consultation",
+        "true_label": "NONE",
+        "predicted_label": "RENAL",
+        "confidence": 0.777
+      }
+    ]
+  },
+  "entity_extraction_errors": {
+    "documents_sampled": 200,
+    "false_negatives_count": 41,
+    "false_positives_count": 342,
+    "boundary_discrepancies_count": 125,
+    "sample_error_details": [
+      {
+        "type": "FALSE_NEGATIVE",
+        "entity_label": "GENE_MUTATION",
+        "text_snippet": "Wild-type",
+        "document_id": "DOC-000034"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "74 mmHg",
+        "document_id": "DOC-000034"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "1.09 mg/dL",
+        "document_id": "DOC-000034"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "13.9 g/dL",
+        "document_id": "DOC-000034"
+      },
+      {
+        "type": "FALSE_NEGATIVE",
+        "entity_label": "ADVERSE_EVENT",
+        "text_snippet": "SCLC",
+        "document_id": "DOC-000035"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "74 mmHg",
+        "document_id": "DOC-000036"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "ADVERSE_EVENT",
+        "text_snippet": "vomiting",
+        "document_id": "DOC-000036"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "ADVERSE_EVENT",
+        "text_snippet": "NSCLC",
+        "document_id": "DOC-000037"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "86 mmHg",
+        "document_id": "DOC-000037"
+      },
+      {
+        "type": "FALSE_POSITIVE",
+        "entity_label": "DOSAGE",
+        "text_snippet": "1.19 mg/dL",
+        "document_id": "DOC-000037"
+      }
+    ]
+  }
+}

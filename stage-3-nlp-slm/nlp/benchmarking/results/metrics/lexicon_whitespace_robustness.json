@@ -1,0 +1,7 @@
+{
+  "documents": 909,
+  "condition": "double_spaces",
+  "clean_exact_f1": 0.7185675360062281,
+  "perturbed_exact_f1": 0.7185675360062281,
+  "predictions_reproducible": true
+}

@@ -1,0 +1,167 @@
+{
+  "train_original": {
+    "total_documents": 4261,
+    "unique_patients": 700,
+    "unique_encounters": 1425,
+    "vocabulary_size": 4398,
+    "total_tokens": 451310,
+    "type_token_ratio": 0.009745,
+    "mean_word_length": 105.92,
+    "median_word_length": 99.0,
+    "std_word_length": 22.41,
+    "urgency_distribution": {
+      "LOW": 2927,
+      "HIGH": 575,
+      "CRITICAL": 385,
+      "MEDIUM": 374
+    },
+    "hazard_distribution": {
+      "NONE": 3414,
+      "HEPATIC": 321,
+      "PULMONARY": 247,
+      "HEMATOLOGIC": 91,
+      "RENAL": 87,
+      "DERMATOLOGIC": 37,
+      "NEUROPATHIC": 36,
+      "CARDIAC": 28
+    },
+    "ner_entity_distribution": {
+      "GENE_MUTATION": 3907,
+      "DRUG_NAME": 3560,
+      "DOSAGE": 3560,
+      "ADVERSE_EVENT": 4263
+    }
+  },
+  "train_augmented_25": {
+    "total_documents": 5326,
+    "unique_patients": 700,
+    "unique_encounters": 1425,
+    "vocabulary_size": 4524,
+    "total_tokens": 575023,
+    "type_token_ratio": 0.007868,
+    "mean_word_length": 107.97,
+    "median_word_length": 100.0,
+    "std_word_length": 21.98,
+    "urgency_distribution": {
+      "LOW": 3617,
+      "HIGH": 770,
+      "CRITICAL": 499,
+      "MEDIUM": 440
+    },
+    "hazard_distribution": {
+      "NONE": 4215,
+      "HEPATIC": 447,
+      "PULMONARY": 322,
+      "HEMATOLOGIC": 113,
+      "RENAL": 104,
+      "DERMATOLOGIC": 48,
+      "NEUROPATHIC": 41,
+      "CARDIAC": 36
+    },
+    "ner_entity_distribution": {
+      "GENE_MUTATION": 5035,
+      "DRUG_NAME": 4437,
+      "DOSAGE": 4437,
+      "ADVERSE_EVENT": 5328
+    }
+  },
+  "train_augmented_50": {
+    "total_documents": 6391,
+    "unique_patients": 700,
+    "unique_encounters": 1425,
+    "vocabulary_size": 4526,
+    "total_tokens": 698466,
+    "type_token_ratio": 0.00648,
+    "mean_word_length": 109.29,
+    "median_word_length": 101.0,
+    "std_word_length": 21.55,
+    "urgency_distribution": {
+      "LOW": 4322,
+      "HIGH": 952,
+      "CRITICAL": 609,
+      "MEDIUM": 508
+    },
+    "hazard_distribution": {
+      "NONE": 5025,
+      "HEPATIC": 561,
+      "PULMONARY": 403,
+      "HEMATOLOGIC": 131,
+      "RENAL": 125,
+      "DERMATOLOGIC": 55,
+      "NEUROPATHIC": 47,
+      "CARDIAC": 44
+    },
+    "ner_entity_distribution": {
+      "GENE_MUTATION": 6155,
+      "DRUG_NAME": 5306,
+      "DOSAGE": 5306,
+      "ADVERSE_EVENT": 6393
+    }
+  },
+  "train_augmented_100": {
+    "total_documents": 8522,
+    "unique_patients": 700,
+    "unique_encounters": 1425,
+    "vocabulary_size": 4529,
+    "total_tokens": 945836,
+    "type_token_ratio": 0.004788,
+    "mean_word_length": 110.99,
+    "median_word_length": 101.0,
+    "std_word_length": 20.88,
+    "urgency_distribution": {
+      "LOW": 5737,
+      "HIGH": 1304,
+      "CRITICAL": 845,
+      "MEDIUM": 636
+    },
+    "hazard_distribution": {
+      "NONE": 6640,
+      "HEPATIC": 771,
+      "PULMONARY": 581,
+      "RENAL": 171,
+      "HEMATOLOGIC": 169,
+      "DERMATOLOGIC": 69,
+      "CARDIAC": 61,
+      "NEUROPATHIC": 60
+    },
+    "ner_entity_distribution": {
+      "GENE_MUTATION": 8394,
+      "DRUG_NAME": 7078,
+      "DOSAGE": 7078,
+      "ADVERSE_EVENT": 8524
+    }
+  },
+  "train_augmented_targeted": {
+    "total_documents": 5761,
+    "unique_patients": 700,
+    "unique_encounters": 1425,
+    "vocabulary_size": 4506,
+    "total_tokens": 630896,
+    "type_token_ratio": 0.007142,
+    "mean_word_length": 109.51,
+    "median_word_length": 102.0,
+    "std_word_length": 22.01,
+    "urgency_distribution": {
+      "LOW": 2927,
+      "HIGH": 1330,
+      "CRITICAL": 867,
+      "MEDIUM": 637
+    },
+    "hazard_distribution": {
+      "NONE": 3822,
+      "HEPATIC": 802,
+      "PULMONARY": 605,
+      "RENAL": 172,
+      "HEMATOLOGIC": 165,
+      "DERMATOLOGIC": 69,
+      "NEUROPATHIC": 65,
+      "CARDIAC": 61
+    },
+    "ner_entity_distribution": {
+      "GENE_MUTATION": 5365,
+      "DRUG_NAME": 5060,
+      "DOSAGE": 5060,
+      "ADVERSE_EVENT": 5763
+    }
+  }
+}

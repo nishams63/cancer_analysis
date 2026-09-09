@@ -1,0 +1,316 @@
+{
+  "name": "train_span_lexicon",
+  "status": "EVALUATED",
+  "split": "VALIDATION",
+  "protocol": "TRAIN annotated phrase lexicon + unchanged frozen urgency/hazard classifiers",
+  "training_seconds": 0.3477405000012368,
+  "ner_seconds_per_document": 0.005390872827272455,
+  "seconds_per_document": 0.005391,
+  "parameter_count": 1127,
+  "learned_phrase_count": 1127,
+  "ner_exact": {
+    "micro": {
+      "precision": 0.6237891416985808,
+      "recall": 0.8473072215422277,
+      "f1": 0.7185675360062281,
+      "tp": 2769,
+      "predicted": 4439,
+      "gold": 3268
+    },
+    "per_type": {
+      "GENE_MUTATION": {
+        "precision": 1.0,
+        "recall": 0.9021479713603818,
+        "f1": 0.9485570890840652,
+        "tp": 756,
+        "predicted": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "precision": 0.5861003861003861,
+        "recall": 1.0,
+        "f1": 0.73904576436222,
+        "tp": 759,
+        "predicted": 1295,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "precision": 0.39160045402951194,
+        "recall": 0.45454545454545453,
+        "f1": 0.42073170731707316,
+        "tp": 345,
+        "predicted": 881,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "precision": 0.6031851360318513,
+        "recall": 0.9967105263157895,
+        "f1": 0.7515502273666804,
+        "tp": 909,
+        "predicted": 1507,
+        "gold": 912
+      }
+    }
+  },
+  "ner_relaxed": {
+    "micro": {
+      "precision": 0.6237891416985808,
+      "recall": 0.8473072215422277,
+      "f1": 0.7185675360062281,
+      "tp": 2769,
+      "predicted": 4439,
+      "gold": 3268
+    },
+    "per_type": {
+      "GENE_MUTATION": {
+        "precision": 1.0,
+        "recall": 0.9021479713603818,
+        "f1": 0.9485570890840652,
+        "tp": 756,
+        "predicted": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "precision": 0.5861003861003861,
+        "recall": 1.0,
+        "f1": 0.73904576436222,
+        "tp": 759,
+        "predicted": 1295,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "precision": 0.39160045402951194,
+        "recall": 0.45454545454545453,
+        "f1": 0.42073170731707316,
+        "tp": 345,
+        "predicted": 881,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "precision": 0.6031851360318513,
+        "recall": 0.9967105263157895,
+        "f1": 0.7515502273666804,
+        "tp": 909,
+        "predicted": 1507,
+        "gold": 912
+      }
+    }
+  },
+  "urgency": {
+    "accuracy": 0.8558855885588559,
+    "macro_precision": 0.7492880213017646,
+    "macro_recall": 0.7637022320564468,
+    "macro_f1": 0.7556839491418932,
+    "weighted_f1": 0.8604987297234094,
+    "critical_recall": 0.9456521739130435,
+    "per_class": {
+      "CRITICAL": {
+        "precision": 0.9666666666666667,
+        "recall": 0.9456521739130435,
+        "f1-score": 0.9560439560439561,
+        "support": 92.0
+      },
+      "HIGH": {
+        "precision": 0.6408450704225352,
+        "recall": 0.7109375,
+        "f1-score": 0.674074074074074,
+        "support": 128.0
+      },
+      "LOW": {
+        "precision": 0.9653979238754326,
+        "recall": 0.9315525876460768,
+        "f1-score": 0.9481733220050977,
+        "support": 599.0
+      },
+      "MEDIUM": {
+        "precision": 0.42424242424242425,
+        "recall": 0.4666666666666667,
+        "f1-score": 0.4444444444444444,
+        "support": 90.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        87,
+        1,
+        0,
+        4
+      ],
+      [
+        0,
+        91,
+        12,
+        25
+      ],
+      [
+        1,
+        12,
+        558,
+        28
+      ],
+      [
+        2,
+        38,
+        8,
+        42
+      ]
+    ],
+    "labels": [
+      "CRITICAL",
+      "HIGH",
+      "LOW",
+      "MEDIUM"
+    ]
+  },
+  "hazard": {
+    "accuracy": 0.7755775577557755,
+    "macro_precision": 0.471562320959627,
+    "macro_recall": 0.7153393677891494,
+    "macro_f1": 0.5213709215509026,
+    "weighted_f1": 0.8229808218607061,
+    "critical_recall": null,
+    "per_class": {
+      "CARDIAC": {
+        "precision": 0.4,
+        "recall": 0.8,
+        "f1-score": 0.5333333333333333,
+        "support": 5.0
+      },
+      "DERMATOLOGIC": {
+        "precision": 0.06382978723404255,
+        "recall": 0.75,
+        "f1-score": 0.11764705882352941,
+        "support": 4.0
+      },
+      "HEMATOLOGIC": {
+        "precision": 0.26785714285714285,
+        "recall": 0.6521739130434783,
+        "f1-score": 0.379746835443038,
+        "support": 23.0
+      },
+      "HEPATIC": {
+        "precision": 0.7032967032967034,
+        "recall": 0.8421052631578947,
+        "f1-score": 0.7664670658682635,
+        "support": 76.0
+      },
+      "NEUROPATHIC": {
+        "precision": 0.2222222222222222,
+        "recall": 0.5,
+        "f1-score": 0.3076923076923077,
+        "support": 12.0
+      },
+      "NONE": {
+        "precision": 0.985663082437276,
+        "recall": 0.7746478873239436,
+        "f1-score": 0.8675078864353313,
+        "support": 710.0
+      },
+      "PULMONARY": {
+        "precision": 0.9629629629629629,
+        "recall": 0.9454545454545454,
+        "f1-score": 0.9541284403669725,
+        "support": 55.0
+      },
+      "RENAL": {
+        "precision": 0.16666666666666666,
+        "recall": 0.4583333333333333,
+        "f1-score": 0.24444444444444444,
+        "support": 24.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        4,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        15,
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        1,
+        64,
+        3,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        4,
+        2,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        44,
+        36,
+        14,
+        14,
+        550,
+        1,
+        51
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        52,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        7,
+        0,
+        5,
+        1,
+        11
+      ]
+    ],
+    "labels": [
+      "CARDIAC",
+      "DERMATOLOGIC",
+      "HEMATOLOGIC",
+      "HEPATIC",
+      "NEUROPATHIC",
+      "NONE",
+      "PULMONARY",
+      "RENAL"
+    ]
+  },
+  "classification_provenance": "Identical frozen heads and original feature pipeline; baseline_a predictions reused without alteration"
+}

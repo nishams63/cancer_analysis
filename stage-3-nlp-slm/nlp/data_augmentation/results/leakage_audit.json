@@ -1,0 +1,42 @@
+{
+  "train_augmented_25": {
+    "augmented_rows": 1065,
+    "augmented_patients": 582,
+    "patient_overlap_with_val": 0,
+    "non_train_patients_count": 0,
+    "encounter_overlap_with_val": 0,
+    "canonical_text_overlap_with_val": 0,
+    "doc_id_collisions": 0,
+    "is_leakage_free": true
+  },
+  "train_augmented_50": {
+    "augmented_rows": 2130,
+    "augmented_patients": 673,
+    "patient_overlap_with_val": 0,
+    "non_train_patients_count": 0,
+    "encounter_overlap_with_val": 0,
+    "canonical_text_overlap_with_val": 0,
+    "doc_id_collisions": 0,
+    "is_leakage_free": true
+  },
+  "train_augmented_100": {
+    "augmented_rows": 4261,
+    "augmented_patients": 699,
+    "patient_overlap_with_val": 0,
+    "non_train_patients_count": 0,
+    "encounter_overlap_with_val": 0,
+    "canonical_text_overlap_with_val": 0,
+    "doc_id_collisions": 0,
+    "is_leakage_free": true
+  },
+  "train_augmented_targeted": {
+    "augmented_rows": 1500,
+    "augmented_patients": 499,
+    "patient_overlap_with_val": 0,
+    "non_train_patients_count": 0,
+    "encounter_overlap_with_val": 0,
+    "canonical_text_overlap_with_val": 0,
+    "doc_id_collisions": 0,
+    "is_leakage_free": true
+  }
+}
