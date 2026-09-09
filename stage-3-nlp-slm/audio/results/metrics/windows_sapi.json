@@ -1,0 +1,5594 @@
+{
+  "status": "EVALUATED",
+  "overall": {
+    "files": 128,
+    "WER": 0.63462086659065,
+    "CER": 0.2939791666666667,
+    "DRUG_NAME_preservation": 0.0625,
+    "DOSAGE_preservation": 0.7232142857142857,
+    "GENE_MUTATION_preservation": 0.10416666666666667,
+    "ADVERSE_EVENT_preservation": 0.20588235294117646,
+    "NUMERIC_preservation": 0.572198275862069,
+    "NEGATION_preservation": 0.668918918918919,
+    "text_urgency": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "critical_recall": 1.0,
+      "per_class": {
+        "CRITICAL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 24.0
+        },
+        "HIGH": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 24.0
+        },
+        "LOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 72.0
+        },
+        "MEDIUM": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 8.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          24,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          24,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          72,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8
+        ]
+      ],
+      "labels": [
+        "CRITICAL",
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ]
+    },
+    "text_hazard": {
+      "accuracy": 0.6875,
+      "macro_precision": 0.35416666666666663,
+      "macro_recall": 0.40340909090909094,
+      "macro_f1": 0.36359649122807014,
+      "weighted_f1": 0.7331140350877193,
+      "critical_recall": null,
+      "per_class": {
+        "CARDIAC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "DERMATOLOGIC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "HEMATOLOGIC": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 8.0
+        },
+        "HEPATIC": {
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1-score": 0.4,
+          "support": 16.0
+        },
+        "NEUROPATHIC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "NONE": {
+          "precision": 1.0,
+          "recall": 0.7272727272727273,
+          "f1-score": 0.8421052631578947,
+          "support": 88.0
+        },
+        "PULMONARY": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 8.0
+        },
+        "RENAL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 8.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          8,
+          8,
+          0,
+          64,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "CARDIAC",
+        "DERMATOLOGIC",
+        "HEMATOLOGIC",
+        "HEPATIC",
+        "NEUROPATHIC",
+        "NONE",
+        "PULMONARY",
+        "RENAL"
+      ]
+    },
+    "text_ner_exact": {
+      "micro": {
+        "precision": 0.4358974358974359,
+        "recall": 0.5964912280701754,
+        "f1": 0.5037037037037037,
+        "tp": 272,
+        "predicted": 624,
+        "gold": 456
+      },
+      "per_type": {
+        "GENE_MUTATION": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "tp": 80,
+          "predicted": 80,
+          "gold": 96
+        },
+        "DRUG_NAME": {
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "f1": 0.5,
+          "tp": 48,
+          "predicted": 80,
+          "gold": 112
+        },
+        "DOSAGE": {
+          "precision": 0.4117647058823529,
+          "recall": 1.0,
+          "f1": 0.5833333333333334,
+          "tp": 112,
+          "predicted": 272,
+          "gold": 112
+        },
+        "ADVERSE_EVENT": {
+          "precision": 0.16666666666666666,
+          "recall": 0.23529411764705882,
+          "f1": 0.1951219512195122,
+          "tp": 32,
+          "predicted": 192,
+          "gold": 136
+        }
+      }
+    },
+    "text_ner_relaxed": {
+      "micro": {
+        "precision": 0.5897435897435898,
+        "recall": 0.8070175438596491,
+        "f1": 0.6814814814814815,
+        "tp": 368,
+        "predicted": 624,
+        "gold": 456
+      },
+      "per_type": {
+        "GENE_MUTATION": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "tp": 80,
+          "predicted": 80,
+          "gold": 96
+        },
+        "DRUG_NAME": {
+          "precision": 0.9,
+          "recall": 0.6428571428571429,
+          "f1": 0.75,
+          "tp": 72,
+          "predicted": 80,
+          "gold": 112
+        },
+        "DOSAGE": {
+          "precision": 0.4117647058823529,
+          "recall": 1.0,
+          "f1": 0.5833333333333334,
+          "tp": 112,
+          "predicted": 272,
+          "gold": 112
+        },
+        "ADVERSE_EVENT": {
+          "precision": 0.5416666666666666,
+          "recall": 0.7647058823529411,
+          "f1": 0.6341463414634146,
+          "tp": 104,
+          "predicted": 192,
+          "gold": 136
+        }
+      }
+    },
+    "audio_urgency": {
+      "accuracy": 0.3125,
+      "macro_precision": 0.2341628959276018,
+      "macro_recall": 0.2847222222222222,
+      "macro_f1": 0.1802721088435374,
+      "weighted_f1": 0.28061224489795916,
+      "critical_recall": 0.875,
+      "per_class": {
+        "CRITICAL": {
+          "precision": 0.20588235294117646,
+          "recall": 0.875,
+          "f1-score": 0.3333333333333333,
+          "support": 24.0
+        },
+        "HIGH": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 24.0
+        },
+        "LOW": {
+          "precision": 0.7307692307692307,
+          "recall": 0.2638888888888889,
+          "f1-score": 0.3877551020408163,
+          "support": 72.0
+        },
+        "MEDIUM": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 8.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          21,
+          0,
+          3,
+          0
+        ],
+        [
+          24,
+          0,
+          0,
+          0
+        ],
+        [
+          53,
+          0,
+          19,
+          0
+        ],
+        [
+          4,
+          0,
+          4,
+          0
+        ]
+      ],
+      "labels": [
+        "CRITICAL",
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ]
+    },
+    "audio_hazard": {
+      "accuracy": 0.328125,
+      "macro_precision": 0.12174066243833685,
+      "macro_recall": 0.16193181818181818,
+      "macro_f1": 0.09293469453897261,
+      "weighted_f1": 0.3346702317290553,
+      "critical_recall": null,
+      "per_class": {
+        "CARDIAC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "DERMATOLOGIC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "HEMATOLOGIC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 8.0
+        },
+        "HEPATIC": {
+          "precision": 0.18604651162790697,
+          "recall": 1.0,
+          "f1-score": 0.3137254901960784,
+          "support": 16.0
+        },
+        "NEUROPATHIC": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0
+        },
+        "NONE": {
+          "precision": 0.7878787878787878,
+          "recall": 0.29545454545454547,
+          "f1-score": 0.4297520661157025,
+          "support": 88.0
+        },
+        "PULMONARY": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 8.0
+        },
+        "RENAL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 8.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          16,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          55,
+          1,
+          26,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "CARDIAC",
+        "DERMATOLOGIC",
+        "HEMATOLOGIC",
+        "HEPATIC",
+        "NEUROPATHIC",
+        "NONE",
+        "PULMONARY",
+        "RENAL"
+      ]
+    },
+    "audio_ner_exact": {
+      "micro": {
+        "precision": 0.3628691983122363,
+        "recall": 0.18859649122807018,
+        "f1": 0.2481962481962482,
+        "tp": 86,
+        "predicted": 237,
+        "gold": 456
+      },
+      "per_type": {
+        "GENE_MUTATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "gold": 96
+        },
+        "DRUG_NAME": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "gold": 112
+        },
+        "DOSAGE": {
+          "precision": 0.47928994082840237,
+          "recall": 0.7232142857142857,
+          "f1": 0.5765124555160143,
+          "tp": 81,
+          "predicted": 169,
+          "gold": 112
+        },
+        "ADVERSE_EVENT": {
+          "precision": 0.07936507936507936,
+          "recall": 0.03676470588235294,
+          "f1": 0.05025125628140704,
+          "tp": 5,
+          "predicted": 63,
+          "gold": 136
+        }
+      }
+    },
+    "audio_ner_relaxed": {
+      "micro": {
+        "precision": 0.4641350210970464,
+        "recall": 0.2412280701754386,
+        "f1": 0.31746031746031744,
+        "tp": 110,
+        "predicted": 237,
+        "gold": 456
+      },
+      "per_type": {
+        "GENE_MUTATION": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 3,
+          "gold": 96
+        },
+        "DRUG_NAME": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "tp": 0,
+          "predicted": 2,
+          "gold": 112
+        },
+        "DOSAGE": {
+          "precision": 0.4911242603550296,
+          "recall": 0.7410714285714286,
+          "f1": 0.5907473309608541,
+          "tp": 83,
+          "predicted": 169,
+          "gold": 112
+        },
+        "ADVERSE_EVENT": {
+          "precision": 0.42857142857142855,
+          "recall": 0.19852941176470587,
+          "f1": 0.271356783919598,
+          "tp": 27,
+          "predicted": 63,
+          "gold": 136
+        }
+      }
+    },
+    "urgency_f1_difference": -0.8197278911564626,
+    "latency_seconds": 10.72622141953093
+  },
+  "by_condition": {
+    "clean_normal": {
+      "files": 16,
+      "WER": 0.5513112884834663,
+      "CER": 0.2504166666666667,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.8571428571428571,
+      "GENE_MUTATION_preservation": 0.08333333333333333,
+      "ADVERSE_EVENT_preservation": 0.23529411764705882,
+      "NUMERIC_preservation": 0.5775862068965517,
+      "NEGATION_preservation": 0.7027027027027027,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.375,
+        "macro_precision": 0.25,
+        "macro_recall": 0.3333333333333333,
+        "macro_f1": 0.2153846153846154,
+        "weighted_f1": 0.33461538461538465,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 0.75,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.46153846153846156,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.375,
+        "macro_precision": 0.12272727272727274,
+        "macro_recall": 0.17045454545454547,
+        "macro_f1": 0.10096153846153846,
+        "weighted_f1": 0.38221153846153844,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.18181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.3076923076923077,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.8,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.5,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.41935483870967744,
+          "recall": 0.22807017543859648,
+          "f1": 0.29545454545454547,
+          "tp": 13,
+          "predicted": 31,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5454545454545454,
+            "recall": 0.8571428571428571,
+            "f1": 0.6666666666666666,
+            "tp": 12,
+            "predicted": 22,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.1111111111111111,
+            "recall": 0.058823529411764705,
+            "f1": 0.07692307692307693,
+            "tp": 1,
+            "predicted": 9,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.5483870967741935,
+          "recall": 0.2982456140350877,
+          "f1": 0.38636363636363635,
+          "tp": 17,
+          "predicted": 31,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5454545454545454,
+            "recall": 0.8571428571428571,
+            "f1": 0.6666666666666666,
+            "tp": 12,
+            "predicted": 22,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5555555555555556,
+            "recall": 0.29411764705882354,
+            "f1": 0.38461538461538464,
+            "tp": 5,
+            "predicted": 9,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.7846153846153846,
+      "latency_seconds": 8.67806539375124
+    },
+    "fast_speech": {
+      "files": 16,
+      "WER": 0.5906499429874572,
+      "CER": 0.25625,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.7857142857142857,
+      "GENE_MUTATION_preservation": 0.0,
+      "ADVERSE_EVENT_preservation": 0.29411764705882354,
+      "NUMERIC_preservation": 0.6206896551724138,
+      "NEGATION_preservation": 0.7837837837837838,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.25,
+        "macro_precision": 0.16666666666666666,
+        "macro_recall": 0.2222222222222222,
+        "macro_f1": 0.14358974358974358,
+        "weighted_f1": 0.22307692307692306,
+        "critical_recall": 0.6666666666666666,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.16666666666666666,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.26666666666666666,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 0.5,
+            "recall": 0.2222222222222222,
+            "f1-score": 0.3076923076923077,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.3125,
+        "macro_precision": 0.11458333333333333,
+        "macro_recall": 0.1590909090909091,
+        "macro_f1": 0.08571428571428572,
+        "weighted_f1": 0.3107142857142857,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.2857142857142857,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.75,
+            "recall": 0.2727272727272727,
+            "f1-score": 0.4,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.35294117647058826,
+          "recall": 0.21052631578947367,
+          "f1": 0.26373626373626374,
+          "tp": 12,
+          "predicted": 34,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4782608695652174,
+            "recall": 0.7857142857142857,
+            "f1": 0.5945945945945946,
+            "tp": 11,
+            "predicted": 23,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.09090909090909091,
+            "recall": 0.058823529411764705,
+            "f1": 0.07142857142857142,
+            "tp": 1,
+            "predicted": 11,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.5,
+          "recall": 0.2982456140350877,
+          "f1": 0.37362637362637363,
+          "tp": 17,
+          "predicted": 34,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5217391304347826,
+            "recall": 0.8571428571428571,
+            "f1": 0.6486486486486487,
+            "tp": 12,
+            "predicted": 23,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.45454545454545453,
+            "recall": 0.29411764705882354,
+            "f1": 0.35714285714285715,
+            "tp": 5,
+            "predicted": 11,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.8564102564102565,
+      "latency_seconds": 8.781261553120657
+    },
+    "mild_noise": {
+      "files": 16,
+      "WER": 0.6157354618015963,
+      "CER": 0.2745,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.9285714285714286,
+      "GENE_MUTATION_preservation": 0.08333333333333333,
+      "ADVERSE_EVENT_preservation": 0.17647058823529413,
+      "NUMERIC_preservation": 0.6206896551724138,
+      "NEGATION_preservation": 0.7567567567567568,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.25,
+        "macro_precision": 0.20512820512820512,
+        "macro_recall": 0.2222222222222222,
+        "macro_f1": 0.14583333333333331,
+        "weighted_f1": 0.234375,
+        "critical_recall": 0.6666666666666666,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.15384615384615385,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.25,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 0.6666666666666666,
+            "recall": 0.2222222222222222,
+            "f1-score": 0.3333333333333333,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.3125,
+        "macro_precision": 0.11458333333333333,
+        "macro_recall": 0.1590909090909091,
+        "macro_f1": 0.08571428571428572,
+        "weighted_f1": 0.3107142857142857,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.2857142857142857,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.75,
+            "recall": 0.2727272727272727,
+            "f1-score": 0.4,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.40625,
+          "recall": 0.22807017543859648,
+          "f1": 0.29213483146067415,
+          "tp": 13,
+          "predicted": 32,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5416666666666666,
+            "recall": 0.9285714285714286,
+            "f1": 0.6842105263157895,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 8,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.46875,
+          "recall": 0.2631578947368421,
+          "f1": 0.33707865168539325,
+          "tp": 15,
+          "predicted": 32,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5416666666666666,
+            "recall": 0.9285714285714286,
+            "f1": 0.6842105263157895,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.25,
+            "recall": 0.11764705882352941,
+            "f1": 0.16,
+            "tp": 2,
+            "predicted": 8,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.8541666666666667,
+      "latency_seconds": 14.542326359372964
+    },
+    "moderate_noise": {
+      "files": 16,
+      "WER": 1.041049030786773,
+      "CER": 0.51825,
+      "DRUG_NAME_preservation": 0.0,
+      "DOSAGE_preservation": 0.14285714285714285,
+      "GENE_MUTATION_preservation": 0.0,
+      "ADVERSE_EVENT_preservation": 0.11764705882352941,
+      "NUMERIC_preservation": 0.46551724137931033,
+      "NEGATION_preservation": 0.3783783783783784,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.25,
+        "macro_precision": 0.3,
+        "macro_recall": 0.2777777777777778,
+        "macro_f1": 0.13333333333333333,
+        "weighted_f1": 0.175,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1-score": 0.3333333333333333,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 0.1111111111111111,
+            "f1-score": 0.2,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.1875,
+        "macro_precision": 0.14583333333333334,
+        "macro_recall": 0.13636363636363635,
+        "macro_f1": 0.05654761904761904,
+        "weighted_f1": 0.15029761904761904,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1-score": 0.2857142857142857,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.09090909090909091,
+            "f1-score": 0.16666666666666666,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.125,
+          "recall": 0.03508771929824561,
+          "f1": 0.0547945205479452,
+          "tp": 2,
+          "predicted": 16,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.14285714285714285,
+            "recall": 0.14285714285714285,
+            "f1": 0.14285714285714285,
+            "tp": 2,
+            "predicted": 14,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.125,
+          "recall": 0.03508771929824561,
+          "f1": 0.0547945205479452,
+          "tp": 2,
+          "predicted": 16,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.14285714285714285,
+            "recall": 0.14285714285714285,
+            "f1": 0.14285714285714285,
+            "tp": 2,
+            "predicted": 14,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.8666666666666667,
+      "latency_seconds": 21.32019547499658
+    },
+    "pause_variation": {
+      "files": 16,
+      "WER": 0.5701254275940707,
+      "CER": 0.2564166666666667,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.7857142857142857,
+      "GENE_MUTATION_preservation": 0.08333333333333333,
+      "ADVERSE_EVENT_preservation": 0.23529411764705882,
+      "NUMERIC_preservation": 0.5948275862068966,
+      "NEGATION_preservation": 0.6756756756756757,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.375,
+        "macro_precision": 0.3076923076923077,
+        "macro_recall": 0.3333333333333333,
+        "macro_f1": 0.21875,
+        "weighted_f1": 0.3515625,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.23076923076923078,
+            "recall": 1.0,
+            "f1-score": 0.375,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.5,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            3,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.375,
+        "macro_precision": 0.125,
+        "macro_recall": 0.17045454545454547,
+        "macro_f1": 0.10416666666666666,
+        "weighted_f1": 0.3854166666666667,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1-score": 0.3333333333333333,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.8,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.5,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            6,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.3870967741935484,
+          "recall": 0.21052631578947367,
+          "f1": 0.2727272727272727,
+          "tp": 12,
+          "predicted": 31,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5238095238095238,
+            "recall": 0.7857142857142857,
+            "f1": 0.6285714285714286,
+            "tp": 11,
+            "predicted": 21,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.1,
+            "recall": 0.058823529411764705,
+            "f1": 0.07407407407407407,
+            "tp": 1,
+            "predicted": 10,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.5161290322580645,
+          "recall": 0.2807017543859649,
+          "f1": 0.36363636363636365,
+          "tp": 16,
+          "predicted": 31,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5238095238095238,
+            "recall": 0.7857142857142857,
+            "f1": 0.6285714285714286,
+            "tp": 11,
+            "predicted": 21,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5,
+            "recall": 0.29411764705882354,
+            "f1": 0.37037037037037035,
+            "tp": 5,
+            "predicted": 10,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.78125,
+      "latency_seconds": 8.18765926562537
+    },
+    "slow_speech": {
+      "files": 16,
+      "WER": 0.5815279361459521,
+      "CER": 0.26158333333333333,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.7142857142857143,
+      "GENE_MUTATION_preservation": 0.08333333333333333,
+      "ADVERSE_EVENT_preservation": 0.23529411764705882,
+      "NUMERIC_preservation": 0.5689655172413793,
+      "NEGATION_preservation": 0.7027027027027027,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.3125,
+        "macro_precision": 0.30357142857142855,
+        "macro_recall": 0.3055555555555556,
+        "macro_f1": 0.17914438502673796,
+        "weighted_f1": 0.27072192513368987,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.21428571428571427,
+            "recall": 1.0,
+            "f1-score": 0.35294117647058826,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 0.2222222222222222,
+            "f1-score": 0.36363636363636365,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            7,
+            0,
+            2,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.375,
+        "macro_precision": 0.12272727272727274,
+        "macro_recall": 0.17045454545454547,
+        "macro_f1": 0.10096153846153846,
+        "weighted_f1": 0.38221153846153844,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.18181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.3076923076923077,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.8,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.5,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            7,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.4074074074074074,
+          "recall": 0.19298245614035087,
+          "f1": 0.2619047619047619,
+          "tp": 11,
+          "predicted": 27,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5263157894736842,
+            "recall": 0.7142857142857143,
+            "f1": 0.6060606060606061,
+            "tp": 10,
+            "predicted": 19,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.125,
+            "recall": 0.058823529411764705,
+            "f1": 0.08,
+            "tp": 1,
+            "predicted": 8,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.5185185185185185,
+          "recall": 0.24561403508771928,
+          "f1": 0.3333333333333333,
+          "tp": 14,
+          "predicted": 27,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5789473684210527,
+            "recall": 0.7857142857142857,
+            "f1": 0.6666666666666666,
+            "tp": 11,
+            "predicted": 19,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.375,
+            "recall": 0.17647058823529413,
+            "f1": 0.24,
+            "tp": 3,
+            "predicted": 8,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.820855614973262,
+      "latency_seconds": 8.944664765623656
+    },
+    "speaker_variation": {
+      "files": 16,
+      "WER": 0.571835803876853,
+      "CER": 0.285,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.7142857142857143,
+      "GENE_MUTATION_preservation": 0.4166666666666667,
+      "ADVERSE_EVENT_preservation": 0.11764705882352941,
+      "NUMERIC_preservation": 0.5172413793103449,
+      "NEGATION_preservation": 0.6216216216216216,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.3125,
+        "macro_precision": 0.19545454545454544,
+        "macro_recall": 0.25,
+        "macro_f1": 0.17857142857142855,
+        "weighted_f1": 0.2946428571428571,
+        "critical_recall": 0.6666666666666666,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.18181818181818182,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.2857142857142857,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 0.6,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.42857142857142855,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            2,
+            0,
+            1,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.3125,
+        "macro_precision": 0.125,
+        "macro_recall": 0.1590909090909091,
+        "macro_f1": 0.1,
+        "weighted_f1": 0.325,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.75,
+            "recall": 0.2727272727272727,
+            "f1-score": 0.4,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            5,
+            1,
+            3,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.29411764705882354,
+          "recall": 0.17543859649122806,
+          "f1": 0.21978021978021978,
+          "tp": 10,
+          "predicted": 34,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 3,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4166666666666667,
+            "recall": 0.7142857142857143,
+            "f1": 0.5263157894736842,
+            "tp": 10,
+            "predicted": 24,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 5,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.35294117647058826,
+          "recall": 0.21052631578947367,
+          "f1": 0.26373626373626374,
+          "tp": 12,
+          "predicted": 34,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 3,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 2,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4166666666666667,
+            "recall": 0.7142857142857143,
+            "f1": 0.5263157894736842,
+            "tp": 10,
+            "predicted": 24,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.4,
+            "recall": 0.11764705882352941,
+            "f1": 0.18181818181818182,
+            "tp": 2,
+            "predicted": 5,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.8214285714285714,
+      "latency_seconds": 7.433192231251269
+    },
+    "volume_variation": {
+      "files": 16,
+      "WER": 0.5547320410490307,
+      "CER": 0.24941666666666668,
+      "DRUG_NAME_preservation": 0.07142857142857142,
+      "DOSAGE_preservation": 0.8571428571428571,
+      "GENE_MUTATION_preservation": 0.08333333333333333,
+      "ADVERSE_EVENT_preservation": 0.23529411764705882,
+      "NUMERIC_preservation": 0.6120689655172413,
+      "NEGATION_preservation": 0.7297297297297297,
+      "text_urgency": {
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "weighted_f1": 1.0,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "text_hazard": {
+        "accuracy": 0.6875,
+        "macro_precision": 0.35416666666666663,
+        "macro_recall": 0.40340909090909094,
+        "macro_f1": 0.36359649122807014,
+        "weighted_f1": 0.7331140350877193,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1-score": 0.6666666666666666,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 1.0,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.8421052631578947,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "text_ner_exact": {
+        "micro": {
+          "precision": 0.4358974358974359,
+          "recall": 0.5964912280701754,
+          "f1": 0.5037037037037037,
+          "tp": 34,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.6,
+            "recall": 0.42857142857142855,
+            "f1": 0.5,
+            "tp": 6,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.16666666666666666,
+            "recall": 0.23529411764705882,
+            "f1": 0.1951219512195122,
+            "tp": 4,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "text_ner_relaxed": {
+        "micro": {
+          "precision": 0.5897435897435898,
+          "recall": 0.8070175438596491,
+          "f1": 0.6814814814814815,
+          "tp": 46,
+          "predicted": 78,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 1.0,
+            "recall": 0.8333333333333334,
+            "f1": 0.9090909090909091,
+            "tp": 10,
+            "predicted": 10,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.9,
+            "recall": 0.6428571428571429,
+            "f1": 0.75,
+            "tp": 9,
+            "predicted": 10,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.4117647058823529,
+            "recall": 1.0,
+            "f1": 0.5833333333333334,
+            "tp": 14,
+            "predicted": 34,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5416666666666666,
+            "recall": 0.7647058823529411,
+            "f1": 0.6341463414634146,
+            "tp": 13,
+            "predicted": 24,
+            "gold": 17
+          }
+        }
+      },
+      "audio_urgency": {
+        "accuracy": 0.375,
+        "macro_precision": 0.25,
+        "macro_recall": 0.3333333333333333,
+        "macro_f1": 0.2153846153846154,
+        "weighted_f1": 0.33461538461538465,
+        "critical_recall": 1.0,
+        "per_class": {
+          "CRITICAL": {
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1-score": 0.4,
+            "support": 3.0
+          },
+          "HIGH": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 3.0
+          },
+          "LOW": {
+            "precision": 0.75,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.46153846153846156,
+            "support": 9.0
+          },
+          "MEDIUM": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "labels": [
+          "CRITICAL",
+          "HIGH",
+          "LOW",
+          "MEDIUM"
+        ]
+      },
+      "audio_hazard": {
+        "accuracy": 0.375,
+        "macro_precision": 0.125,
+        "macro_recall": 0.17045454545454547,
+        "macro_f1": 0.10416666666666666,
+        "weighted_f1": 0.3854166666666667,
+        "critical_recall": null,
+        "per_class": {
+          "CARDIAC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "DERMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "HEMATOLOGIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "HEPATIC": {
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1-score": 0.3333333333333333,
+            "support": 2.0
+          },
+          "NEUROPATHIC": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 0.0
+          },
+          "NONE": {
+            "precision": 0.8,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.5,
+            "support": 11.0
+          },
+          "PULMONARY": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          },
+          "RENAL": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 1.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            6,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "labels": [
+          "CARDIAC",
+          "DERMATOLOGIC",
+          "HEMATOLOGIC",
+          "HEPATIC",
+          "NEUROPATHIC",
+          "NONE",
+          "PULMONARY",
+          "RENAL"
+        ]
+      },
+      "audio_ner_exact": {
+        "micro": {
+          "precision": 0.40625,
+          "recall": 0.22807017543859648,
+          "f1": 0.29213483146067415,
+          "tp": 13,
+          "predicted": 32,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5454545454545454,
+            "recall": 0.8571428571428571,
+            "f1": 0.6666666666666666,
+            "tp": 12,
+            "predicted": 22,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.1,
+            "recall": 0.058823529411764705,
+            "f1": 0.07407407407407407,
+            "tp": 1,
+            "predicted": 10,
+            "gold": 17
+          }
+        }
+      },
+      "audio_ner_relaxed": {
+        "micro": {
+          "precision": 0.53125,
+          "recall": 0.2982456140350877,
+          "f1": 0.38202247191011235,
+          "tp": 17,
+          "predicted": 32,
+          "gold": 57
+        },
+        "per_type": {
+          "GENE_MUTATION": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 12
+          },
+          "DRUG_NAME": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "tp": 0,
+            "predicted": 0,
+            "gold": 14
+          },
+          "DOSAGE": {
+            "precision": 0.5454545454545454,
+            "recall": 0.8571428571428571,
+            "f1": 0.6666666666666666,
+            "tp": 12,
+            "predicted": 22,
+            "gold": 14
+          },
+          "ADVERSE_EVENT": {
+            "precision": 0.5,
+            "recall": 0.29411764705882354,
+            "f1": 0.37037037037037035,
+            "tp": 5,
+            "predicted": 10,
+            "gold": 17
+          }
+        }
+      },
+      "urgency_f1_difference": -0.7846153846153846,
+      "latency_seconds": 7.9224063125057
+    }
+  }
+}

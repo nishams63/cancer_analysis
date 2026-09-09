@@ -1,0 +1,7 @@
+{
+  "name": "slm",
+  "checkpoint": "Qwen/Qwen2.5-0.5B-Instruct",
+  "status": "NOT COMPLETED",
+  "reason": "Cached pretrained weights loaded successfully and real TRAIN encoding started. Concurrent Qwen and MiniLM processes reduced available system RAM to 0.64 GB; the Qwen process was terminated to preserve machine usability. No model-selection score is claimed. Retry sequentially or with more available RAM/GPU.",
+  "metrics": null
+}

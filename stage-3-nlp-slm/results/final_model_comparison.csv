@@ -1,0 +1,18 @@
+model,status,urgency_macro_f1,critical_recall,hazard_macro_f1,ner_exact_f1,ner_relaxed_f1,seconds_per_document,training_seconds,parameters,reason,WER,CER,files,latency_seconds
+baseline_a,EVALUATED,0.7556839491418932,0.9456521739130435,0.5213709215509026,0.6008146639511202,0.725050916496945,0.01277716611660246,NA,12156.0,,NA,NA,NA,NA
+biobert,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,"We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",NA,NA,NA,NA
+clinicalbert,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,"We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",NA,NA,NA,NA
+distilbert,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,"We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",NA,NA,NA,NA
+minilm,EVALUATED,0.8498911819844458,0.9456521739130435,0.8872183672886136,0.4315687091843824,0.8256217868556343,0.3532757467546857,1748.827819500002,22721301.0,,NA,NA,NA,NA
+minilm_hybrid,EVALUATED,0.8815269837445644,1.0,0.9551335970840303,0.4315687091843824,0.8256217868556343,0.3541,1752.48,22721301.0,,NA,NA,NA,NA
+pubmedbert,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,"We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.
+Check your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.",NA,NA,NA,NA
+slm,NOT COMPLETED,NA,NA,NA,NA,NA,NA,NA,NA,Cached pretrained weights loaded successfully and real TRAIN encoding started. Concurrent Qwen and MiniLM processes reduced available system RAM to 0.64 GB; the Qwen process was terminated to preserve machine usability. No model-selection score is claimed. Retry sequentially or with more available RAM/GPU.,NA,NA,NA,NA
+train_span_lexicon,EVALUATED,0.7556839491418932,0.9456521739130435,0.5213709215509026,0.7185675360062281,0.7185675360062281,0.005391,0.3477405000012368,1127.0,,NA,NA,NA,NA
+base.en,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,No module named 'faster_whisper',NA,NA,NA,NA
+small.en,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,No module named 'faster_whisper',NA,NA,NA,NA
+tiny.en,NOT RUN,NA,NA,NA,NA,NA,NA,NA,NA,No module named 'faster_whisper',NA,NA,NA,NA
+windows_sapi,EVALUATED,NA,NA,NA,NA,NA,NA,NA,NA,,0.63462086659065,0.2939791666666667,128.0,10.72622141953093

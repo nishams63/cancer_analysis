@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 3 Clinical NLP — Data Augmentation & Benchmarking Platform</title>
+  <meta name="description" content="Interactive clinical research dashboard for precision oncology NLP data augmentation, class imbalance remediation, entity preservation, and model benchmarking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrapper">
+        <div class="logo-badge">NLP</div>
+        <div class="brand-text">
+          <h1>Clinical NLP Data Augmentation Platform</h1>
+          <p>Stage 3 Precision Oncology & SLM — Train-Only Clinical Expansion</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <div class="status-pill">
+          <span class="status-dot status-green"></span>
+          <span>Zero Test Leakage (100% Sealed)</span>
+        </div>
+        <div class="status-pill">
+          <span class="status-dot status-cyan"></span>
+          <span>QC Gate: 100% Passed</span>
+        </div>
+        <div class="status-pill">
+          <span class="status-dot status-purple"></span>
+          <span>Entity Preservation: 100.0%</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs" aria-label="Dashboard Navigation">
+    <button class="nav-tab active" data-tab="tab-overview" id="btn-tab-overview">Overview & KPIs</button>
+    <button class="nav-tab" data-tab="tab-imbalance" id="btn-tab-imbalance">Class Balance & Remediation</button>
+    <button class="nav-tab" data-tab="tab-diff" id="btn-tab-diff">Live Clinical Diff Viewer</button>
+    <button class="nav-tab" data-tab="tab-qc" id="btn-tab-qc">10-Point QC & Audit</button>
+    <button class="nav-tab" data-tab="tab-benchmark" id="btn-tab-benchmark">Model Leaderboard</button>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Tab 1: Overview & KPIs -->
+    <section id="tab-overview" class="tab-content active">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Training Data Size</div>
+          <div class="kpi-val" id="kpi-train-size">8,522 <span class="kpi-tag">+100%</span></div>
+          <div class="kpi-subtitle">Expanded from 4,261 original documents</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Unique Patient Cohort</div>
+          <div class="kpi-val" id="kpi-patients">700 <span class="kpi-tag">0 Fakes</span></div>
+          <div class="kpi-subtitle">100% strictly preserved patient lineage</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Vocabulary Coverage</div>
+          <div class="kpi-val" id="kpi-vocab">4,529 <span class="kpi-tag">+131 Words</span></div>
+          <div class="kpi-subtitle">Expanded carrier lexical diversity</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-title">Validation F1 (Hybrid Urgency)</div>
+          <div class="kpi-val" id="kpi-f1">0.8815 <span class="kpi-tag">100% Critical Recall</span></div>
+          <div class="kpi-subtitle">Evaluated on 909 frozen held-out docs</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Data Augmentation Multiplier Progression</h2>
+          <span class="status-pill"><span class="status-dot status-green"></span> All Splits Patient-Isolated</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table" id="table-multiplier-progression">
+            <thead>
+              <tr>
+                <th>Dataset Configuration</th>
+                <th>Total Documents</th>
+                <th>Augmented Docs</th>
+                <th>Total Tokens</th>
+                <th>Vocabulary Size</th>
+                <th>Mean Words</th>
+                <th>Type-Token Ratio</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Config A (Original)</strong></td>
+                <td>4,261</td>
+                <td>0 (Baseline)</td>
+                <td>451,310</td>
+                <td>4,398</td>
+                <td>105.9</td>
+                <td>0.009745</td>
+                <td><span class="status-pill">Baseline Reference</span></td>
+              </tr>
+              <tr>
+                <td><strong>Config B (+25% Aug)</strong></td>
+                <td>5,326</td>
+                <td>+1,065</td>
+                <td>575,023</td>
+                <td>4,524</td>
+                <td>108.0</td>
+                <td>0.007868</td>
+                <td><span class="status-pill status-cyan">QC Validated</span></td>
+              </tr>
+              <tr>
+                <td><strong>Config C (+50% Aug)</strong></td>
+                <td>6,391</td>
+                <td>+2,130</td>
+                <td>698,466</td>
+                <td>4,526</td>
+                <td>109.3</td>
+                <td>0.006480</td>
+                <td><span class="status-pill status-cyan">QC Validated</span></td>
+              </tr>
+              <tr>
+                <td><strong>Config D (+100% Aug)</strong></td>
+                <td>8,522</td>
+                <td>+4,261</td>
+                <td>945,836</td>
+                <td>4,529</td>
+                <td>111.0</td>
+                <td>0.004788</td>
+                <td><span class="status-pill status-cyan">QC Validated</span></td>
+              </tr>
+              <tr>
+                <td><strong>Config E (Targeted Balanced)</strong></td>
+                <td>5,761</td>
+                <td>+1,500 Targeted</td>
+                <td>630,896</td>
+                <td>4,506</td>
+                <td>109.5</td>
+                <td>0.007142</td>
+                <td><span class="status-pill status-green">Class-Balanced</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Class Balance & Toxicity Remediation -->
+    <section id="tab-imbalance" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Urgency Triage Class Distribution & Imbalance Remediation</h2>
+          <span class="status-pill">LOW Domination Reduced from 68.7% to 50.8%</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Dataset Version</th>
+                <th>Total Instances</th>
+                <th>LOW (Majority)</th>
+                <th>MEDIUM</th>
+                <th>HIGH</th>
+                <th>CRITICAL (Emergency)</th>
+                <th>LOW : CRITICAL Ratio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Original (A)</strong></td>
+                <td>4,261</td>
+                <td>2,927 (68.7%)</td>
+                <td>374 (8.8%)</td>
+                <td>575 (13.5%)</td>
+                <td>385 (9.0%)</td>
+                <td class="highlight-cell">7.60 : 1</td>
+              </tr>
+              <tr>
+                <td><strong>Augmented +25% (B)</strong></td>
+                <td>5,326</td>
+                <td>3,617 (67.9%)</td>
+                <td>440 (8.3%)</td>
+                <td>770 (14.5%)</td>
+                <td>499 (9.4%)</td>
+                <td>7.25 : 1</td>
+              </tr>
+              <tr>
+                <td><strong>Augmented +50% (C)</strong></td>
+                <td>6,391</td>
+                <td>4,322 (67.6%)</td>
+                <td>508 (7.9%)</td>
+                <td>952 (14.9%)</td>
+                <td>609 (9.5%)</td>
+                <td>7.10 : 1</td>
+              </tr>
+              <tr>
+                <td><strong>Augmented +100% (D)</strong></td>
+                <td>8,522</td>
+                <td>5,737 (67.3%)</td>
+                <td>636 (7.5%)</td>
+                <td>1,304 (15.3%)</td>
+                <td>845 (9.9%)</td>
+                <td>6.79 : 1</td>
+              </tr>
+              <tr>
+                <td><strong>Targeted Balanced (E)</strong></td>
+                <td><strong>5,761</strong></td>
+                <td><strong>2,927 (50.8%)</strong></td>
+                <td><strong>637 (11.1%)</strong></td>
+                <td><strong>1,330 (23.1%)</strong></td>
+                <td><strong>867 (15.0%)</strong></td>
+                <td class="success-cell"><strong>3.38 : 1 (-55.5% Imbalance)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Hazard Toxicity Organ System Representation (Config A vs Config E)</h2>
+          <span class="status-pill">Rare Toxicities Doubled / Tripled</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Hazard Organ / System</th>
+                <th>Original Train (A)</th>
+                <th>Targeted Train (E)</th>
+                <th>Instance Growth</th>
+                <th>Clinical Toxicity Representation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>HEPATIC</strong></td>
+                <td>321</td>
+                <td>802</td>
+                <td class="success-cell">+481 (+149.8%)</td>
+                <td>Elevated transaminases, AST/ALT elevation, jaundice</td>
+              </tr>
+              <tr>
+                <td><strong>PULMONARY</strong></td>
+                <td>247</td>
+                <td>605</td>
+                <td class="success-cell">+358 (+144.9%)</td>
+                <td>Dyspnea, pneumonitis, cough, oxygen desaturation</td>
+              </tr>
+              <tr>
+                <td><strong>RENAL</strong></td>
+                <td>87</td>
+                <td>172</td>
+                <td class="success-cell">+85 (+97.7%)</td>
+                <td>Nephrotoxicity, creatinine spike, oliguria</td>
+              </tr>
+              <tr>
+                <td><strong>HEMATOLOGIC</strong></td>
+                <td>91</td>
+                <td>165</td>
+                <td class="success-cell">+74 (+81.3%)</td>
+                <td>Neutropenia, thrombocytopenia, severe anemia</td>
+              </tr>
+              <tr>
+                <td><strong>DERMATOLOGIC</strong></td>
+                <td>37</td>
+                <td>69</td>
+                <td class="success-cell">+32 (+86.5%)</td>
+                <td>Severe maculopapular rash, pruritus, desquamation</td>
+              </tr>
+              <tr>
+                <td><strong>NEUROPATHIC</strong></td>
+                <td>36</td>
+                <td>65</td>
+                <td class="success-cell">+29 (+80.6%)</td>
+                <td>Peripheral sensory neuropathy, paresthesia</td>
+              </tr>
+              <tr>
+                <td><strong>CARDIAC</strong></td>
+                <td>28</td>
+                <td>61</td>
+                <td class="success-cell">+33 (+117.9%)</td>
+                <td>Arrhythmia, myocarditis, QT prolongation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Live Clinical Diff Viewer -->
+    <section id="tab-diff" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title">Side-by-Side Clinical Diff & Entity Invariance Inspector</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Compare original documents with their entity-preserving augmented variants</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <select id="diff-doc-selector" class="form-control" aria-label="Select Clinical Document Sample">
+              <option value="doc-0">Sample 1: Oncology Consultation Progress Note (DOC-000004)</option>
+              <option value="doc-1">Sample 2: Surgical Pathology Report (DOC-000005)</option>
+              <option value="doc-2">Sample 3: Ambulatory Nurse Intake Assessment (DOC-000006)</option>
+              <option value="doc-3">Sample 4: Patient Symptom Log & Daily Report</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="legend-bar">
+          <span style="font-weight: 700; color: var(--text-muted);">Legend:</span>
+          <div class="legend-item"><span class="legend-chip" style="background: var(--accent-purple);"></span> GENE_MUTATION</div>
+          <div class="legend-item"><span class="legend-chip" style="background: var(--accent-cyan);"></span> DRUG_NAME</div>
+          <div class="legend-item"><span class="legend-chip" style="background: var(--accent-amber);"></span> DOSAGE</div>
+          <div class="legend-item"><span class="legend-chip" style="background: var(--accent-rose);"></span> ADVERSE_EVENT</div>
+          <div class="legend-item"><span class="legend-chip" style="background: var(--accent-indigo);"></span> Transformed Carrier Text</div>
+        </div>
+
+        <div class="diff-container">
+          <div class="diff-box">
+            <div class="diff-box-header">
+              <span class="diff-title" id="diff-left-title">Original Source Document (TRAIN)</span>
+              <span class="status-pill" id="diff-left-meta">Urgency: HIGH | Hazard: NONE</span>
+            </div>
+            <div class="diff-text" id="diff-left-text">Loading original clinical note...</div>
+          </div>
+          <div class="diff-box">
+            <div class="diff-box-header">
+              <span class="diff-title" id="diff-right-title">Augmented Candidate (Verified QC)</span>
+              <span class="status-pill status-green" id="diff-right-meta">Method: Terminology + Permutation</span>
+            </div>
+            <div class="diff-text" id="diff-right-text">Loading augmented clinical note...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: 10-Point QC & Audit -->
+    <section id="tab-qc" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">10-Point Quality Control Gate Verification</h2>
+          <span class="status-pill status-green">100.0% Finalized Acceptance</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Check #</th>
+                <th>Validation Criterion</th>
+                <th>Threshold / Enforcement Rule</th>
+                <th>Admitted Compliance</th>
+                <th>Rejections During Search</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1</strong></td>
+                <td>Non-Empty Text</td>
+                <td>Length of stripped string > 0 chars</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>2</strong></td>
+                <td>Length Bounds</td>
+                <td>30 <= Words <= 850; 80 <= Chars <= 6,000</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>3</strong></td>
+                <td>Entity Span Invariance</td>
+                <td>Exact character slice match; non-overlapping</td>
+                <td class="success-cell">100% Passed (23,284 spans checked)</td>
+                <td>496 (filtered corrupt sources)</td>
+              </tr>
+              <tr>
+                <td><strong>4</strong></td>
+                <td>Label Preservation</td>
+                <td>Urgency & Hazard identically matched to source</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>5</strong></td>
+                <td>Negation Invariance</td>
+                <td>Negation count (no/not/denies) never decreased</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>6</strong></td>
+                <td>Polarity Invariance</td>
+                <td>Concept polarity (AFFIRMED/NEGATED) untouched</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>7</strong></td>
+                <td>Duplicate Check</td>
+                <td>Cryptographic SHA-256 differs from source</td>
+                <td class="success-cell">100% Passed</td>
+                <td>25 exact duplicates rejected</td>
+              </tr>
+              <tr>
+                <td><strong>8</strong></td>
+                <td>Near-Duplicate Bounds</td>
+                <td>0.50 <= 2-gram Jaccard Similarity <= 0.98</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0 out-of-bounds</td>
+              </tr>
+              <tr>
+                <td><strong>9</strong></td>
+                <td>Lineage Tracking</td>
+                <td>Source document ID and method populated</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>10</strong></td>
+                <td>Patient Partition Isolation</td>
+                <td>Patient ID strictly in TRAIN cohort (700 pts)</td>
+                <td class="success-cell">100% Passed</td>
+                <td>0 non-train patients</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: Benchmark Leaderboard -->
+    <section id="tab-benchmark" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Stage 3 NLP Data Size & Augmentation Performance Matrix</h2>
+          <span class="status-pill status-cyan">Evaluated on Held-Out Frozen Validation Set (909 docs)</span>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table" id="table-benchmark-matrix">
+            <thead>
+              <tr>
+                <th>Dataset Version</th>
+                <th>Training Docs</th>
+                <th>Unique Patients</th>
+                <th>Baseline Urgency F1</th>
+                <th>Baseline Critical Recall</th>
+                <th>Baseline Hazard F1</th>
+                <th>Hybrid Urgency F1</th>
+                <th>Hybrid Critical Recall</th>
+                <th>Hybrid Hazard F1</th>
+                <th>NER Exact F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Config A (Original)</strong></td>
+                <td>4,261</td>
+                <td>700</td>
+                <td>0.7557</td>
+                <td>94.57%</td>
+                <td>0.5214</td>
+                <td>0.8828</td>
+                <td class="success-cell"><strong>100.0%</strong></td>
+                <td>0.9408</td>
+                <td>0.7186</td>
+              </tr>
+              <tr>
+                <td><strong>Config B (+25% Aug)</strong></td>
+                <td>5,326</td>
+                <td>700</td>
+                <td>0.7531</td>
+                <td>91.30%</td>
+                <td>0.5385</td>
+                <td>0.8938</td>
+                <td class="success-cell"><strong>100.0%</strong></td>
+                <td>0.9493</td>
+                <td>0.7186</td>
+              </tr>
+              <tr>
+                <td><strong>Config C (+50% Aug)</strong></td>
+                <td>6,391</td>
+                <td>700</td>
+                <td>0.7561</td>
+                <td>86.96%</td>
+                <td>0.5558</td>
+                <td class="highlight-cell"><strong>0.8942</strong></td>
+                <td class="success-cell"><strong>100.0%</strong></td>
+                <td class="highlight-cell"><strong>0.9618</strong></td>
+                <td>0.7186</td>
+              </tr>
+              <tr>
+                <td><strong>Config D (+100% Aug)</strong></td>
+                <td>8,522</td>
+                <td>700</td>
+                <td>0.7372</td>
+                <td>86.96%</td>
+                <td class="highlight-cell"><strong>0.5639</strong></td>
+                <td class="success-cell"><strong>0.9195</strong></td>
+                <td>98.91%</td>
+                <td class="success-cell"><strong>0.9636</strong></td>
+                <td>0.7186</td>
+              </tr>
+              <tr>
+                <td><strong>Config E (Targeted Balanced)</strong></td>
+                <td><strong>5,761</strong></td>
+                <td><strong>700</strong></td>
+                <td>0.7358</td>
+                <td>84.78%</td>
+                <td>0.5578</td>
+                <td>0.8930</td>
+                <td>97.83%</td>
+                <td>0.9493</td>
+                <td>0.7186</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Stage 3 Clinical NLP & SLM Research Prototype — Personalized Precision Medicine for Oncology Treatment Optimization</p>
+    <p style="margin-top: 0.25rem; font-size: 0.75rem; color: var(--text-muted);">Strictly Research Prototype — Not for Clinical Diagnosis — Patient Privacy & Split Isolation Enforced</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

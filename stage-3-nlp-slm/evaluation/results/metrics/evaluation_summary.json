@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "evaluator": "Stage 3 Evaluation Engineer",
+    "date": "2026-09-09",
+    "eval_status": "OFFICIAL_LOCKED_TEST_VERIFIED"
+  },
+  "sample_counts": {
+    "train_documents": 4261,
+    "val_documents": 909,
+    "test_documents": 928,
+    "total_documents": 6098
+  },
+  "validation_key_metrics": {
+    "urgency_macro_f1": 0.7557,
+    "urgency_accuracy": 0.8559,
+    "urgency_critical_recall": 0.9457,
+    "hazard_macro_f1": 0.5214,
+    "hazard_accuracy": 0.7756,
+    "ner_relaxed_f1": 0.767,
+    "ner_exact_f1": 0.6437
+  },
+  "locked_test_key_metrics": {
+    "urgency_macro_f1": 0.7814,
+    "urgency_accuracy": 0.8707,
+    "urgency_critical_recall": 0.97,
+    "hazard_macro_f1": 0.5111,
+    "hazard_accuracy": 0.7716,
+    "ner_relaxed_f1": 0.7756,
+    "ner_exact_f1": 0.6439
+  },
+  "generalization_gaps": {
+    "urgency_macro_f1_delta": 0.0257,
+    "urgency_critical_recall_delta": 0.0243,
+    "hazard_macro_f1_delta": -0.0103,
+    "ner_relaxed_f1_delta": 0.0086
+  },
+  "reproducibility": {
+    "evaluation_seed": 42,
+    "urgency_predictions_identical": true,
+    "hazard_predictions_identical": true,
+    "max_confidence_difference": 0.0,
+    "is_perfectly_reproducible": true
+  },
+  "leakage": {
+    "is_completely_isolated": true,
+    "all_upstream_hashes_match": true
+  }
+}

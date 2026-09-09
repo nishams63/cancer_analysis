@@ -31,3 +31,12 @@ stage-2-dl/dl/checkpoints/*.pt
 stage-2-dl/data-engineering/data/v2/raw/images/*.png
 stage-2-dl/data-engineering/data/v2/processed/pathology_tiles/*/*.png
 !stage-2-dl/data-engineering/data/v2/processed/pathology_tiles/*/.gitkeep
+
+# Integration Test Databases and Scratch Files
+.pytest_temp/
+.pytest_tmp/
+*.db
+*.db-wal
+*.db-shm
+stage-3-nlp-slm/scratch/
+

@@ -1,0 +1,102 @@
+[
+  {
+    "bin_index": 0,
+    "bin_lower": 0.0,
+    "bin_upper": 0.1,
+    "count": 0,
+    "frequency": 0.0,
+    "mean_confidence": 0.05,
+    "mean_accuracy": 0.0,
+    "calibration_gap": 0.0
+  },
+  {
+    "bin_index": 1,
+    "bin_lower": 0.1,
+    "bin_upper": 0.2,
+    "count": 0,
+    "frequency": 0.0,
+    "mean_confidence": 0.15,
+    "mean_accuracy": 0.0,
+    "calibration_gap": 0.0
+  },
+  {
+    "bin_index": 2,
+    "bin_lower": 0.2,
+    "bin_upper": 0.3,
+    "count": 0,
+    "frequency": 0.0,
+    "mean_confidence": 0.25,
+    "mean_accuracy": 0.0,
+    "calibration_gap": 0.0
+  },
+  {
+    "bin_index": 3,
+    "bin_lower": 0.3,
+    "bin_upper": 0.4,
+    "count": 19,
+    "frequency": 0.0205,
+    "mean_confidence": 0.3779,
+    "mean_accuracy": 0.5789,
+    "calibration_gap": 0.201
+  },
+  {
+    "bin_index": 4,
+    "bin_lower": 0.4,
+    "bin_upper": 0.5,
+    "count": 92,
+    "frequency": 0.0991,
+    "mean_confidence": 0.4534,
+    "mean_accuracy": 0.6196,
+    "calibration_gap": 0.1661
+  },
+  {
+    "bin_index": 5,
+    "bin_lower": 0.5,
+    "bin_upper": 0.6,
+    "count": 152,
+    "frequency": 0.1638,
+    "mean_confidence": 0.5433,
+    "mean_accuracy": 0.7829,
+    "calibration_gap": 0.2396
+  },
+  {
+    "bin_index": 6,
+    "bin_lower": 0.6,
+    "bin_upper": 0.7,
+    "count": 188,
+    "frequency": 0.2026,
+    "mean_confidence": 0.6543,
+    "mean_accuracy": 0.9309,
+    "calibration_gap": 0.2766
+  },
+  {
+    "bin_index": 7,
+    "bin_lower": 0.7,
+    "bin_upper": 0.8,
+    "count": 146,
+    "frequency": 0.1573,
+    "mean_confidence": 0.7467,
+    "mean_accuracy": 0.8493,
+    "calibration_gap": 0.1026
+  },
+  {
+    "bin_index": 8,
+    "bin_lower": 0.8,
+    "bin_upper": 0.9,
+    "count": 99,
+    "frequency": 0.1067,
+    "mean_confidence": 0.8399,
+    "mean_accuracy": 0.9091,
+    "calibration_gap": 0.0692
+  },
+  {
+    "bin_index": 9,
+    "bin_lower": 0.9,
+    "bin_upper": 1.0,
+    "count": 232,
+    "frequency": 0.25,
+    "mean_confidence": 0.9733,
+    "mean_accuracy": 1.0,
+    "calibration_gap": 0.0267
+  }
+]

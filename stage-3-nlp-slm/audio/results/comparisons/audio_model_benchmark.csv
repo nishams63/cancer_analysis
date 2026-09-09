@@ -1,0 +1,5 @@
+model,status,WER,CER,files,latency_seconds,reason
+base.en,NOT RUN,NA,NA,NA,NA,No module named 'faster_whisper'
+small.en,NOT RUN,NA,NA,NA,NA,No module named 'faster_whisper'
+tiny.en,NOT RUN,NA,NA,NA,NA,No module named 'faster_whisper'
+windows_sapi,EVALUATED,0.63462086659065,0.2939791666666667,128.0,10.72622141953093,

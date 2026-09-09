@@ -1,0 +1,98 @@
+{
+  "text_perturbations": {
+    "sample_size": 300,
+    "perturbation_evaluations": {
+      "uppercase": {
+        "urgency_prediction_agreement": 1.0,
+        "hazard_prediction_agreement": 1.0,
+        "entity_count_agreement": 1.0,
+        "urgency_failure_rate": 0.0,
+        "hazard_failure_rate": 0.0
+      },
+      "lowercase": {
+        "urgency_prediction_agreement": 1.0,
+        "hazard_prediction_agreement": 1.0,
+        "entity_count_agreement": 1.0,
+        "urgency_failure_rate": 0.0,
+        "hazard_failure_rate": 0.0
+      },
+      "extra_whitespace": {
+        "urgency_prediction_agreement": 0.4967,
+        "hazard_prediction_agreement": 0.65,
+        "entity_count_agreement": 1.0,
+        "urgency_failure_rate": 0.5033,
+        "hazard_failure_rate": 0.35
+      },
+      "comma_to_semicolon": {
+        "urgency_prediction_agreement": 1.0,
+        "hazard_prediction_agreement": 1.0,
+        "entity_count_agreement": 1.0,
+        "urgency_failure_rate": 0.0,
+        "hazard_failure_rate": 0.0
+      }
+    }
+  },
+  "negation_probes": {
+    "total_probes": 5,
+    "probe_details": [
+      {
+        "probe_name": "affirmative_dyspnea",
+        "text": "Patient is experiencing severe dyspnea and cough.",
+        "expected_urgency_direction": "CRITICAL",
+        "predicted_urgency": "LOW",
+        "predicted_hazard": "NONE",
+        "extracted_entities": 2,
+        "concept_polarities": [
+          "AFFIRMED",
+          "AFFIRMED"
+        ]
+      },
+      {
+        "probe_name": "negated_dyspnea",
+        "text": "Patient denies dyspnea and cough is absent.",
+        "expected_urgency_direction": "LOW",
+        "predicted_urgency": "LOW",
+        "predicted_hazard": "NONE",
+        "extracted_entities": 2,
+        "concept_polarities": [
+          "NEGATED",
+          "NEGATED"
+        ]
+      },
+      {
+        "probe_name": "affirmative_fatigue",
+        "text": "Patient reports manageable mild fatigue.",
+        "expected_urgency_direction": "LOW",
+        "predicted_urgency": "LOW",
+        "predicted_hazard": "NONE",
+        "extracted_entities": 1,
+        "concept_polarities": [
+          "AFFIRMED"
+        ]
+      },
+      {
+        "probe_name": "affirmative_hepatotoxicity",
+        "text": "Patient presents with elevated transaminases and jaundice.",
+        "expected_urgency_direction": "HIGH",
+        "predicted_urgency": "LOW",
+        "predicted_hazard": "NONE",
+        "extracted_entities": 1,
+        "concept_polarities": [
+          "AFFIRMED"
+        ]
+      },
+      {
+        "probe_name": "negated_hepatotoxicity",
+        "text": "No evidence of elevated transaminases or hepatotoxicity.",
+        "expected_urgency_direction": "LOW",
+        "predicted_urgency": "LOW",
+        "predicted_hazard": "NONE",
+        "extracted_entities": 2,
+        "concept_polarities": [
+          "NEGATED",
+          "NEGATED"
+        ]
+      }
+    ]
+  }
+}

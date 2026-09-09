@@ -1,0 +1,9 @@
+seed: 42
+pilot_source_documents: 64
+full_source_documents: 512
+train_fraction: 0.75
+sample_rate: 16000
+channels: 1
+voices: [Microsoft Hazel Desktop, Microsoft David Desktop, Microsoft Zira Desktop]
+variants: [clean_normal, slow_speech, fast_speech, mild_noise, moderate_noise, pause_variation, volume_variation, speaker_variation]
+full_generation_requires_measured_pilot_acceptance: true

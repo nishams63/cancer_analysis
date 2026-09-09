@@ -1,0 +1,909 @@
+{
+  "split": "locked_test",
+  "sample_count": 928,
+  "unique_patients": 150,
+  "unique_encounters": 310,
+  "urgency_classification": {
+    "task_name": "urgency_locked_test",
+    "total_samples": 928,
+    "accuracy": 0.8707,
+    "macro_precision": 0.7693,
+    "macro_recall": 0.7971,
+    "macro_f1": 0.7814,
+    "weighted_f1": 0.8768,
+    "per_class": {
+      "CRITICAL": {
+        "precision": 0.9798,
+        "recall": 0.97,
+        "f1": 0.9749,
+        "support": 100
+      },
+      "HIGH": {
+        "precision": 0.6757,
+        "recall": 0.7519,
+        "f1": 0.7117,
+        "support": 133
+      },
+      "LOW": {
+        "precision": 0.9726,
+        "recall": 0.9235,
+        "f1": 0.9474,
+        "support": 614
+      },
+      "MEDIUM": {
+        "precision": 0.449,
+        "recall": 0.5432,
+        "f1": 0.4916,
+        "support": 81
+      }
+    },
+    "confusion_matrix": [
+      [
+        97,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        100,
+        12,
+        21
+      ],
+      [
+        0,
+        16,
+        567,
+        31
+      ],
+      [
+        2,
+        31,
+        4,
+        44
+      ]
+    ],
+    "confusion_matrix_normalized": [
+      [
+        0.97,
+        0.01,
+        0.0,
+        0.02
+      ],
+      [
+        0.0,
+        0.7519,
+        0.0902,
+        0.1579
+      ],
+      [
+        0.0,
+        0.0261,
+        0.9235,
+        0.0505
+      ],
+      [
+        0.0247,
+        0.3827,
+        0.0494,
+        0.5432
+      ]
+    ],
+    "class_names": [
+      "CRITICAL",
+      "HIGH",
+      "LOW",
+      "MEDIUM"
+    ],
+    "critical_recall": 0.97,
+    "high_recall": 0.7519
+  },
+  "hazard_classification": {
+    "task_name": "hazard_locked_test",
+    "total_samples": 928,
+    "accuracy": 0.7716,
+    "macro_precision": 0.4636,
+    "macro_recall": 0.7545,
+    "macro_f1": 0.5111,
+    "weighted_f1": 0.8228,
+    "per_class": {
+      "CARDIAC": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.3333,
+        "support": 2
+      },
+      "DERMATOLOGIC": {
+        "precision": 0.0667,
+        "recall": 0.8,
+        "f1": 0.1231,
+        "support": 5
+      },
+      "HEMATOLOGIC": {
+        "precision": 0.44,
+        "recall": 0.7333,
+        "f1": 0.55,
+        "support": 30
+      },
+      "HEPATIC": {
+        "precision": 0.6538,
+        "recall": 0.8831,
+        "f1": 0.7514,
+        "support": 77
+      },
+      "NEUROPATHIC": {
+        "precision": 0.2727,
+        "recall": 0.5,
+        "f1": 0.3529,
+        "support": 12
+      },
+      "NONE": {
+        "precision": 0.9892,
+        "recall": 0.7587,
+        "f1": 0.8587,
+        "support": 721
+      },
+      "PULMONARY": {
+        "precision": 0.9836,
+        "recall": 0.9231,
+        "f1": 0.9524,
+        "support": 65
+      },
+      "RENAL": {
+        "precision": 0.1029,
+        "recall": 0.4375,
+        "f1": 0.1667,
+        "support": 16
+      }
+    },
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        22,
+        2,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        1,
+        68,
+        1,
+        0,
+        0,
+        3
+      ],
+      [
+        1,
+        0,
+        3,
+        2,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        56,
+        23,
+        26,
+        12,
+        547,
+        0,
+        57
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        60,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        6,
+        0,
+        2,
+        1,
+        7
+      ]
+    ],
+    "confusion_matrix_normalized": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.8,
+        0.2,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.1,
+        0.0,
+        0.7333,
+        0.0667,
+        0.1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0519,
+        0.0,
+        0.013,
+        0.8831,
+        0.013,
+        0.0,
+        0.0,
+        0.039
+      ],
+      [
+        0.0833,
+        0.0,
+        0.25,
+        0.1667,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0777,
+        0.0319,
+        0.0361,
+        0.0166,
+        0.7587,
+        0.0,
+        0.0791
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0615,
+        0.9231,
+        0.0154
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.375,
+        0.0,
+        0.125,
+        0.0625,
+        0.4375
+      ]
+    ],
+    "class_names": [
+      "CARDIAC",
+      "DERMATOLOGIC",
+      "HEMATOLOGIC",
+      "HEPATIC",
+      "NEUROPATHIC",
+      "NONE",
+      "PULMONARY",
+      "RENAL"
+    ]
+  },
+  "urgency_confidence_intervals": {
+    "resampling_unit": "patient_cluster",
+    "n_iterations": 1000,
+    "confidence_level": 0.95,
+    "random_seed": 42,
+    "unique_patients_sampled": 150,
+    "metrics": {
+      "accuracy": {
+        "mean": 0.8705,
+        "std_err": 0.0132,
+        "ci_lower": 0.844,
+        "ci_upper": 0.8968
+      },
+      "macro_f1": {
+        "mean": 0.7811,
+        "std_err": 0.0189,
+        "ci_lower": 0.7444,
+        "ci_upper": 0.8183
+      },
+      "macro_recall": {
+        "mean": 0.7976,
+        "std_err": 0.0212,
+        "ci_lower": 0.7557,
+        "ci_upper": 0.8393
+      },
+      "weighted_f1": {
+        "mean": 0.8766,
+        "std_err": 0.0127,
+        "ci_lower": 0.8517,
+        "ci_upper": 0.9014
+      },
+      "critical_recall": {
+        "mean": 0.9695,
+        "std_err": 0.0168,
+        "ci_lower": 0.9333,
+        "ci_upper": 1.0
+      }
+    }
+  },
+  "hazard_confidence_intervals": {
+    "resampling_unit": "patient_cluster",
+    "n_iterations": 1000,
+    "confidence_level": 0.95,
+    "random_seed": 42,
+    "unique_patients_sampled": 150,
+    "metrics": {
+      "accuracy": {
+        "mean": 0.7717,
+        "std_err": 0.0136,
+        "ci_lower": 0.7457,
+        "ci_upper": 0.7985
+      },
+      "macro_f1": {
+        "mean": 0.5062,
+        "std_err": 0.03,
+        "ci_lower": 0.4506,
+        "ci_upper": 0.5649
+      },
+      "macro_recall": {
+        "mean": 0.7375,
+        "std_err": 0.056,
+        "ci_lower": 0.6047,
+        "ci_upper": 0.8143
+      },
+      "weighted_f1": {
+        "mean": 0.8238,
+        "std_err": 0.0111,
+        "ci_lower": 0.802,
+        "ci_upper": 0.8454
+      },
+      "critical_recall": {
+        "mean": 0.8832,
+        "std_err": 0.0359,
+        "ci_lower": 0.8068,
+        "ci_upper": 0.9494
+      }
+    }
+  },
+  "entity_extraction_exact": {
+    "match_type": "exact",
+    "evaluated_documents": 928,
+    "macro_mean_precision": 0.6047,
+    "macro_mean_recall": 0.7352,
+    "macro_mean_f1": 0.6439,
+    "micro_precision": 0.5076,
+    "micro_recall": 0.7333,
+    "micro_f1": 0.5999,
+    "total_true_positives": 2444,
+    "total_predicted_entities": 4815,
+    "total_ground_truth_entities": 3333,
+    "per_entity_type": {
+      "GENE_MUTATION": {
+        "precision": 1.0,
+        "recall": 0.8113,
+        "f1": 0.8958,
+        "predicted_count": 688,
+        "ground_truth_count": 848,
+        "true_positives": 688
+      },
+      "DRUG_NAME": {
+        "precision": 0.7568,
+        "recall": 0.6761,
+        "f1": 0.7142,
+        "predicted_count": 695,
+        "ground_truth_count": 778,
+        "true_positives": 526
+      },
+      "DOSAGE": {
+        "precision": 0.3983,
+        "recall": 0.9987,
+        "f1": 0.5694,
+        "predicted_count": 1951,
+        "ground_truth_count": 778,
+        "true_positives": 777
+      },
+      "ADVERSE_EVENT": {
+        "precision": 0.3059,
+        "recall": 0.4876,
+        "f1": 0.3759,
+        "predicted_count": 1481,
+        "ground_truth_count": 929,
+        "true_positives": 453
+      }
+    }
+  },
+  "entity_extraction_relaxed": {
+    "match_type": "relaxed",
+    "evaluated_documents": 928,
+    "macro_mean_precision": 0.7145,
+    "macro_mean_recall": 0.9037,
+    "macro_mean_f1": 0.7756,
+    "micro_precision": 0.6197,
+    "micro_recall": 0.8953,
+    "micro_f1": 0.7324,
+    "total_true_positives": 2984,
+    "total_predicted_entities": 4815,
+    "total_ground_truth_entities": 3333,
+    "per_entity_type": {
+      "GENE_MUTATION": {
+        "precision": 1.0,
+        "recall": 0.8113,
+        "f1": 0.8958,
+        "predicted_count": 688,
+        "ground_truth_count": 848,
+        "true_positives": 688
+      },
+      "DRUG_NAME": {
+        "precision": 0.9266,
+        "recall": 0.8278,
+        "f1": 0.8744,
+        "predicted_count": 695,
+        "ground_truth_count": 778,
+        "true_positives": 644
+      },
+      "DOSAGE": {
+        "precision": 0.3983,
+        "recall": 0.9987,
+        "f1": 0.5694,
+        "predicted_count": 1951,
+        "ground_truth_count": 778,
+        "true_positives": 777
+      },
+      "ADVERSE_EVENT": {
+        "precision": 0.5908,
+        "recall": 0.9419,
+        "f1": 0.7261,
+        "predicted_count": 1481,
+        "ground_truth_count": 929,
+        "true_positives": 875
+      }
+    }
+  },
+  "calibration": {
+    "urgency": {
+      "task_name": "urgency_test",
+      "n_samples": 928,
+      "n_classes": 4,
+      "brier_score": 0.2515,
+      "expected_calibration_error": 0.146,
+      "maximum_calibration_error": 0.2766,
+      "probability_bounds_valid": true,
+      "probability_sum_to_one": true,
+      "confidence_statistics": {
+        "mean_confidence": 0.7246,
+        "median_confidence": 0.7116,
+        "std_confidence": 0.1839,
+        "min_confidence": 0.3389,
+        "max_confidence": 1.0
+      },
+      "bin_details": [
+        {
+          "bin_index": 0,
+          "bin_lower": 0.0,
+          "bin_upper": 0.1,
+          "count": 0,
+          "frequency": 0.0,
+          "mean_confidence": 0.05,
+          "mean_accuracy": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 1,
+          "bin_lower": 0.1,
+          "bin_upper": 0.2,
+          "count": 0,
+          "frequency": 0.0,
+          "mean_confidence": 0.15,
+          "mean_accuracy": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "bin_lower": 0.2,
+          "bin_upper": 0.3,
+          "count": 0,
+          "frequency": 0.0,
+          "mean_confidence": 0.25,
+          "mean_accuracy": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 3,
+          "bin_lower": 0.3,
+          "bin_upper": 0.4,
+          "count": 19,
+          "frequency": 0.0205,
+          "mean_confidence": 0.3779,
+          "mean_accuracy": 0.5789,
+          "calibration_gap": 0.201
+        },
+        {
+          "bin_index": 4,
+          "bin_lower": 0.4,
+          "bin_upper": 0.5,
+          "count": 92,
+          "frequency": 0.0991,
+          "mean_confidence": 0.4534,
+          "mean_accuracy": 0.6196,
+          "calibration_gap": 0.1661
+        },
+        {
+          "bin_index": 5,
+          "bin_lower": 0.5,
+          "bin_upper": 0.6,
+          "count": 152,
+          "frequency": 0.1638,
+          "mean_confidence": 0.5433,
+          "mean_accuracy": 0.7829,
+          "calibration_gap": 0.2396
+        },
+        {
+          "bin_index": 6,
+          "bin_lower": 0.6,
+          "bin_upper": 0.7,
+          "count": 188,
+          "frequency": 0.2026,
+          "mean_confidence": 0.6543,
+          "mean_accuracy": 0.9309,
+          "calibration_gap": 0.2766
+        },
+        {
+          "bin_index": 7,
+          "bin_lower": 0.7,
+          "bin_upper": 0.8,
+          "count": 146,
+          "frequency": 0.1573,
+          "mean_confidence": 0.7467,
+          "mean_accuracy": 0.8493,
+          "calibration_gap": 0.1026
+        },
+        {
+          "bin_index": 8,
+          "bin_lower": 0.8,
+          "bin_upper": 0.9,
+          "count": 99,
+          "frequency": 0.1067,
+          "mean_confidence": 0.8399,
+          "mean_accuracy": 0.9091,
+          "calibration_gap": 0.0692
+        },
+        {
+          "bin_index": 9,
+          "bin_lower": 0.9,
+          "bin_upper": 1.0,
+          "count": 232,
+          "frequency": 0.25,
+          "mean_confidence": 0.9733,
+          "mean_accuracy": 1.0,
+          "calibration_gap": 0.0267
+        }
+      ]
+    },
+    "hazard": {
+      "task_name": "hazard_test",
+      "n_samples": 928,
+      "n_classes": 8,
+      "brier_score": 0.3628,
+      "expected_calibration_error": 0.0907,
+      "maximum_calibration_error": 0.2864,
+      "probability_bounds_valid": true,
+      "probability_sum_to_one": true,
+      "confidence_statistics": {
+        "mean_confidence": 0.7235,
+        "median_confidence": 0.7547,
+        "std_confidence": 0.2087,
+        "min_confidence": 0.2703,
+        "max_confidence": 0.9889
+      },
+      "bin_details": [
+        {
+          "bin_index": 0,
+          "bin_lower": 0.0,
+          "bin_upper": 0.1,
+          "count": 0,
+          "frequency": 0.0,
+          "mean_confidence": 0.05,
+          "mean_accuracy": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 1,
+          "bin_lower": 0.1,
+          "bin_upper": 0.2,
+          "count": 0,
+          "frequency": 0.0,
+          "mean_confidence": 0.15,
+          "mean_accuracy": 0.0,
+          "calibration_gap": 0.0
+        },
+        {
+          "bin_index": 2,
+          "bin_lower": 0.2,
+          "bin_upper": 0.3,
+          "count": 7,
+          "frequency": 0.0075,
+          "mean_confidence": 0.285,
+          "mean_accuracy": 0.5714,
+          "calibration_gap": 0.2864
+        },
+        {
+          "bin_index": 3,
+          "bin_lower": 0.3,
+          "bin_upper": 0.4,
+          "count": 62,
+          "frequency": 0.0668,
+          "mean_confidence": 0.365,
+          "mean_accuracy": 0.5806,
+          "calibration_gap": 0.2156
+        },
+        {
+          "bin_index": 4,
+          "bin_lower": 0.4,
+          "bin_upper": 0.5,
+          "count": 128,
+          "frequency": 0.1379,
+          "mean_confidence": 0.4504,
+          "mean_accuracy": 0.7188,
+          "calibration_gap": 0.2683
+        },
+        {
+          "bin_index": 5,
+          "bin_lower": 0.5,
+          "bin_upper": 0.6,
+          "count": 96,
+          "frequency": 0.1034,
+          "mean_confidence": 0.5545,
+          "mean_accuracy": 0.6667,
+          "calibration_gap": 0.1122
+        },
+        {
+          "bin_index": 6,
+          "bin_lower": 0.6,
+          "bin_upper": 0.7,
+          "count": 107,
+          "frequency": 0.1153,
+          "mean_confidence": 0.6516,
+          "mean_accuracy": 0.5794,
+          "calibration_gap": 0.0721
+        },
+        {
+          "bin_index": 7,
+          "bin_lower": 0.7,
+          "bin_upper": 0.8,
+          "count": 135,
+          "frequency": 0.1455,
+          "mean_confidence": 0.7522,
+          "mean_accuracy": 0.763,
+          "calibration_gap": 0.0108
+        },
+        {
+          "bin_index": 8,
+          "bin_lower": 0.8,
+          "bin_upper": 0.9,
+          "count": 133,
+          "frequency": 0.1433,
+          "mean_confidence": 0.8536,
+          "mean_accuracy": 0.8722,
+          "calibration_gap": 0.0185
+        },
+        {
+          "bin_index": 9,
+          "bin_lower": 0.9,
+          "bin_upper": 1.0,
+          "count": 260,
+          "frequency": 0.2802,
+          "mean_confidence": 0.9656,
+          "mean_accuracy": 0.9192,
+          "calibration_gap": 0.0464
+        }
+      ]
+    }
+  },
+  "feature_diagnostics": {
+    "split_name": "locked_test",
+    "n_samples": 928,
+    "total_features": 1012,
+    "expected_features": 1012,
+    "is_dimension_valid": true,
+    "nan_count": 0,
+    "inf_count": 0,
+    "zero_variance_features_count": 53,
+    "zero_variance_ratio": 0.0524,
+    "structured_feature_statistics": {
+      "word_count": {
+        "mean": 106.014,
+        "std": 22.4051,
+        "min": 76.0,
+        "max": 140.0,
+        "null_count": 0
+      },
+      "char_count": {
+        "mean": 782.3987,
+        "std": 177.3845,
+        "min": 504.0,
+        "max": 1036.0,
+        "null_count": 0
+      },
+      "total_concepts": {
+        "mean": 5.1886,
+        "std": 2.7457,
+        "min": 0.0,
+        "max": 11.0,
+        "null_count": 0
+      },
+      "affirmed_concepts": {
+        "mean": 4.4213,
+        "std": 3.0976,
+        "min": 0.0,
+        "max": 11.0,
+        "null_count": 0
+      },
+      "negated_concepts": {
+        "mean": 0.2651,
+        "std": 0.4414,
+        "min": 0.0,
+        "max": 1.0,
+        "null_count": 0
+      },
+      "historical_concepts": {
+        "mean": 0.5022,
+        "std": 0.8722,
+        "min": 0.0,
+        "max": 3.0,
+        "null_count": 0
+      },
+      "drug_mentions": {
+        "mean": 0.7489,
+        "std": 0.5439,
+        "min": 0.0,
+        "max": 2.0,
+        "null_count": 0
+      },
+      "mutation_mentions": {
+        "mean": 0.7414,
+        "std": 0.8356,
+        "min": 0.0,
+        "max": 2.0,
+        "null_count": 0
+      },
+      "dosage_mentions": {
+        "mean": 2.1024,
+        "std": 1.486,
+        "min": 0.0,
+        "max": 4.0,
+        "null_count": 0
+      },
+      "adverse_event_mentions": {
+        "mean": 1.5959,
+        "std": 0.6913,
+        "min": 0.0,
+        "max": 3.0,
+        "null_count": 0
+      },
+      "has_grade_3_4": {
+        "mean": 0.0323,
+        "std": 0.1769,
+        "min": 0.0,
+        "max": 1.0,
+        "null_count": 0
+      },
+      "has_critical_symptom": {
+        "mean": 0.2759,
+        "std": 0.4469,
+        "min": 0.0,
+        "max": 1.0,
+        "null_count": 0
+      }
+    }
+  },
+  "feature_drift": {
+    "total_features_tested": 12,
+    "drift_detected_features_count": 0,
+    "feature_drift_details": {
+      "word_count": {
+        "ks_statistic": 0.0178,
+        "p_value": 0.964952,
+        "drift_flag": false
+      },
+      "char_count": {
+        "ks_statistic": 0.0097,
+        "p_value": 0.999999,
+        "drift_flag": false
+      },
+      "total_concepts": {
+        "ks_statistic": 0.0174,
+        "p_value": 0.970984,
+        "drift_flag": false
+      },
+      "affirmed_concepts": {
+        "ks_statistic": 0.0073,
+        "p_value": 1.0,
+        "drift_flag": false
+      },
+      "negated_concepts": {
+        "ks_statistic": 0.0051,
+        "p_value": 1.0,
+        "drift_flag": false
+      },
+      "historical_concepts": {
+        "ks_statistic": 0.0179,
+        "p_value": 0.964066,
+        "drift_flag": false
+      },
+      "drug_mentions": {
+        "ks_statistic": 0.045,
+        "p_value": 0.08867,
+        "drift_flag": false
+      },
+      "mutation_mentions": {
+        "ks_statistic": 0.0169,
+        "p_value": 0.978596,
+        "drift_flag": false
+      },
+      "dosage_mentions": {
+        "ks_statistic": 0.0045,
+        "p_value": 1.0,
+        "drift_flag": false
+      },
+      "adverse_event_mentions": {
+        "ks_statistic": 0.0144,
+        "p_value": 0.996689,
+        "drift_flag": false
+      },
+      "has_grade_3_4": {
+        "ks_statistic": 0.0042,
+        "p_value": 1.0,
+        "drift_flag": false
+      },
+      "has_critical_symptom": {
+        "ks_statistic": 0.0013,
+        "p_value": 1.0,
+        "drift_flag": false
+      }
+    }
+  }
+}

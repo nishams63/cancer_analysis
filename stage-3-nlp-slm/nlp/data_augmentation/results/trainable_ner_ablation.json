@@ -1,0 +1,277 @@
+[
+  {
+    "config_name": "Config A (Original)",
+    "config_key": "config_a",
+    "filename": "train_original.parquet",
+    "train_rows": 4261,
+    "train_tokens": 565088,
+    "feature_count": 9939,
+    "train_duration_sec": 24.05,
+    "infer_duration_sec": 6.128,
+    "predictions_sha256": "bf9cedf028e938ba7090d4520bfabe3f76619b90d09d10ce254871f423fa3ad1",
+    "exact_micro": {
+      "f1": 0.9743,
+      "precision": 0.9871,
+      "recall": 0.9618,
+      "tp": 3143,
+      "predicted": 3184,
+      "gold": 3268
+    },
+    "relaxed_micro": {
+      "f1": 0.9867,
+      "precision": 0.9997,
+      "recall": 0.974,
+      "tp": 3183
+    },
+    "per_entity_exact": {
+      "GENE_MUTATION": {
+        "f1": 0.9486,
+        "precision": 1.0,
+        "recall": 0.9021,
+        "tp": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "f1": 0.9974,
+        "precision": 0.9974,
+        "recall": 0.9974,
+        "tp": 757,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 759,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "f1": 0.9561,
+        "precision": 0.9571,
+        "recall": 0.955,
+        "tp": 871,
+        "gold": 912
+      }
+    }
+  },
+  {
+    "config_name": "Config B (+25% Aug)",
+    "config_key": "config_b",
+    "filename": "train_augmented_25.parquet",
+    "train_rows": 5326,
+    "train_tokens": 722974,
+    "feature_count": 10223,
+    "train_duration_sec": 30.97,
+    "infer_duration_sec": 6.2,
+    "predictions_sha256": "b9c9c6213f046368d0812844b9d3c0db31505f7dd8d28492c4986213c20b3e91",
+    "exact_micro": {
+      "f1": 0.9665,
+      "precision": 0.9787,
+      "recall": 0.9547,
+      "tp": 3120,
+      "predicted": 3188,
+      "gold": 3268
+    },
+    "relaxed_micro": {
+      "f1": 0.9857,
+      "precision": 0.9981,
+      "recall": 0.9737,
+      "tp": 3182
+    },
+    "per_entity_exact": {
+      "GENE_MUTATION": {
+        "f1": 0.9486,
+        "precision": 1.0,
+        "recall": 0.9021,
+        "tp": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "f1": 0.998,
+        "precision": 0.9987,
+        "recall": 0.9974,
+        "tp": 757,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 759,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "f1": 0.9283,
+        "precision": 0.9268,
+        "recall": 0.9298,
+        "tp": 848,
+        "gold": 912
+      }
+    }
+  },
+  {
+    "config_name": "Config C (+50% Aug)",
+    "config_key": "config_c",
+    "filename": "train_augmented_50.parquet",
+    "train_rows": 6391,
+    "train_tokens": 880402,
+    "feature_count": 10223,
+    "train_duration_sec": 37.83,
+    "infer_duration_sec": 6.322,
+    "predictions_sha256": "91e0989271389ee3754fc0d1a39aaea012730172558fb0aec708a5bda6b7afcb",
+    "exact_micro": {
+      "f1": 0.9652,
+      "precision": 0.9768,
+      "recall": 0.9538,
+      "tp": 3117,
+      "predicted": 3191,
+      "gold": 3268
+    },
+    "relaxed_micro": {
+      "f1": 0.9853,
+      "precision": 0.9972,
+      "recall": 0.9737,
+      "tp": 3182
+    },
+    "per_entity_exact": {
+      "GENE_MUTATION": {
+        "f1": 0.9486,
+        "precision": 1.0,
+        "recall": 0.9021,
+        "tp": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "f1": 0.998,
+        "precision": 0.9987,
+        "recall": 0.9974,
+        "tp": 757,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 759,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "f1": 0.9235,
+        "precision": 0.9205,
+        "recall": 0.9265,
+        "tp": 845,
+        "gold": 912
+      }
+    }
+  },
+  {
+    "config_name": "Config D (+100% Aug)",
+    "config_key": "config_d",
+    "filename": "train_augmented_100.parquet",
+    "train_rows": 8522,
+    "train_tokens": 1196214,
+    "feature_count": 10223,
+    "train_duration_sec": 66.98,
+    "infer_duration_sec": 6.341,
+    "predictions_sha256": "8f6c178e7ca7923fa0e6a40ffa561fe0425b069d06d9681739dbc236bde68bba",
+    "exact_micro": {
+      "f1": 0.9577,
+      "precision": 0.9664,
+      "recall": 0.9492,
+      "tp": 3102,
+      "predicted": 3210,
+      "gold": 3268
+    },
+    "relaxed_micro": {
+      "f1": 0.9824,
+      "precision": 0.9913,
+      "recall": 0.9737,
+      "tp": 3182
+    },
+    "per_entity_exact": {
+      "GENE_MUTATION": {
+        "f1": 0.9486,
+        "precision": 1.0,
+        "recall": 0.9021,
+        "tp": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "f1": 0.998,
+        "precision": 0.9987,
+        "recall": 0.9974,
+        "tp": 757,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 759,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "f1": 0.8978,
+        "precision": 0.8858,
+        "recall": 0.9101,
+        "tp": 830,
+        "gold": 912
+      }
+    }
+  },
+  {
+    "config_name": "Config E (Targeted Balanced)",
+    "config_key": "config_e",
+    "filename": "train_augmented_targeted.parquet",
+    "train_rows": 5761,
+    "train_tokens": 795686,
+    "feature_count": 10164,
+    "train_duration_sec": 36.4,
+    "infer_duration_sec": 5.899,
+    "predictions_sha256": "a5ed632f37485262da58452ed348a43ee87309a87a75aa3f25de515bd7657be6",
+    "exact_micro": {
+      "f1": 0.9724,
+      "precision": 0.9846,
+      "recall": 0.9605,
+      "tp": 3139,
+      "predicted": 3188,
+      "gold": 3268
+    },
+    "relaxed_micro": {
+      "f1": 0.9861,
+      "precision": 0.9984,
+      "recall": 0.974,
+      "tp": 3183
+    },
+    "per_entity_exact": {
+      "GENE_MUTATION": {
+        "f1": 0.9486,
+        "precision": 1.0,
+        "recall": 0.9021,
+        "tp": 756,
+        "gold": 838
+      },
+      "DRUG_NAME": {
+        "f1": 0.9974,
+        "precision": 0.9974,
+        "recall": 0.9974,
+        "tp": 757,
+        "gold": 759
+      },
+      "DOSAGE": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "tp": 759,
+        "gold": 759
+      },
+      "ADVERSE_EVENT": {
+        "f1": 0.9496,
+        "precision": 0.9486,
+        "recall": 0.9507,
+        "tp": 867,
+        "gold": 912
+      }
+    }
+  }
+]

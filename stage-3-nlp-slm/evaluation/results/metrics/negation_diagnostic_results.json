@@ -1,0 +1,241 @@
+{
+  "diagnostic_suite": {
+    "total_test_cases": 20,
+    "total_correct": 19,
+    "overall_accuracy": 0.95,
+    "category_performance": {
+      "affirmative": {
+        "total": 2,
+        "correct": 2,
+        "accuracy": 1.0
+      },
+      "pre_negation": {
+        "total": 4,
+        "correct": 4,
+        "accuracy": 1.0
+      },
+      "post_negation": {
+        "total": 2,
+        "correct": 2,
+        "accuracy": 1.0
+      },
+      "historical": {
+        "total": 3,
+        "correct": 3,
+        "accuracy": 1.0
+      },
+      "resolved": {
+        "total": 2,
+        "correct": 1,
+        "accuracy": 0.5
+      },
+      "scope_termination": {
+        "total": 3,
+        "correct": 3,
+        "accuracy": 1.0
+      },
+      "pseudo_negation": {
+        "total": 3,
+        "correct": 3,
+        "accuracy": 1.0
+      },
+      "scope_distance": {
+        "total": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      }
+    },
+    "detailed_results": [
+      {
+        "category": "affirmative",
+        "sentence": "Patient reports severe nausea and acute fatigue following chemotherapy.",
+        "concept": "nausea",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "affirmative",
+        "sentence": "Observed moderate rash on bilateral lower extremities.",
+        "concept": "rash",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "pre_negation",
+        "sentence": "Patient denies dyspnea or shortness of breath today.",
+        "concept": "dyspnea",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "pre_negation",
+        "sentence": "Physical examination confirms no evidence of pneumonitis.",
+        "concept": "pneumonitis",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "pre_negation",
+        "sentence": "Labs indicate patient is negative for neutropenia.",
+        "concept": "neutropenia",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "pre_negation",
+        "sentence": "Patient proceeded with treatment without acute adverse toxicities.",
+        "concept": "acute adverse toxicities",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "post_negation",
+        "sentence": "Cardiotoxicity was deemed unlikely given normal echocardiogram.",
+        "concept": "cardiotoxicity",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "post_negation",
+        "sentence": "Nausea is currently absent.",
+        "concept": "nausea",
+        "expected": "NEGATED",
+        "predicted": "NEGATED",
+        "is_correct": true
+      },
+      {
+        "category": "historical",
+        "sentence": "Patient with history of breast cancer presenting for consultation.",
+        "concept": "breast cancer",
+        "expected": "HISTORICAL",
+        "predicted": "HISTORICAL",
+        "is_correct": true
+      },
+      {
+        "category": "historical",
+        "sentence": "Patient was previously treated with cisplatin.",
+        "concept": "cisplatin",
+        "expected": "HISTORICAL",
+        "predicted": "HISTORICAL",
+        "is_correct": true
+      },
+      {
+        "category": "historical",
+        "sentence": "Status post docetaxel therapy with neuropathy.",
+        "concept": "docetaxel",
+        "expected": "HISTORICAL",
+        "predicted": "HISTORICAL",
+        "is_correct": true
+      },
+      {
+        "category": "resolved",
+        "sentence": "Prior chemotherapy-induced vomiting has resolved completely.",
+        "concept": "vomiting",
+        "expected": "RESOLVED",
+        "predicted": "HISTORICAL",
+        "is_correct": false
+      },
+      {
+        "category": "resolved",
+        "sentence": "Acute transaminitis has subsided.",
+        "concept": "acute transaminitis",
+        "expected": "RESOLVED",
+        "predicted": "RESOLVED",
+        "is_correct": true
+      },
+      {
+        "category": "scope_termination",
+        "sentence": "Patient denies nausea, but reports severe fatigue.",
+        "concept": "fatigue",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "scope_termination",
+        "sentence": "No diarrhea observed; however, patient complains of rash.",
+        "concept": "rash",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "scope_termination",
+        "sentence": "Without neuropathy; nevertheless, lethargy persists.",
+        "concept": "lethargy",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "pseudo_negation",
+        "sentence": "Patient exhibits no change in chronic fatigue levels.",
+        "concept": "fatigue",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "pseudo_negation",
+        "sentence": "Patient presented with not only nausea but also diarrhea.",
+        "concept": "nausea",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "pseudo_negation",
+        "sentence": "There is no increase in peripheral neuropathy severity.",
+        "concept": "neuropathy",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      },
+      {
+        "category": "scope_distance",
+        "sentence": "No acute distress noted upon general physical examination while reviewing previous oncology records indicating stable neuropathy.",
+        "concept": "neuropathy",
+        "expected": "AFFIRMED",
+        "predicted": "AFFIRMED",
+        "is_correct": true
+      }
+    ]
+  },
+  "polarity_distribution_val": {
+    "total_entities_evaluated": 4588,
+    "polarity_counts": {
+      "AFFIRMED": 3964,
+      "NEGATED": 223,
+      "HISTORICAL": 401,
+      "RESOLVED": 0
+    },
+    "polarity_ratios": {
+      "AFFIRMED": 0.864,
+      "NEGATED": 0.0486,
+      "HISTORICAL": 0.0874,
+      "RESOLVED": 0.0
+    }
+  },
+  "polarity_distribution_test": {
+    "total_entities_evaluated": 4815,
+    "polarity_counts": {
+      "AFFIRMED": 4103,
+      "NEGATED": 246,
+      "HISTORICAL": 466,
+      "RESOLVED": 0
+    },
+    "polarity_ratios": {
+      "AFFIRMED": 0.8521,
+      "NEGATED": 0.0511,
+      "HISTORICAL": 0.0968,
+      "RESOLVED": 0.0
+    }
+  }
+}

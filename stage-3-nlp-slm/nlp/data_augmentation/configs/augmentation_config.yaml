@@ -1,0 +1,84 @@
+# Clinical Data Augmentation Configuration
+# Project: Personalized Precision Medicine for Oncology Treatment Optimization
+# Stage 3 — NLP + SLM Train-Only Augmentation Pipeline
+
+project:
+  name: "Stage 3 Clinical NLP Data Augmentation"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  train_parquet: "stage-3-nlp-slm/data-engineering/data/processed/train.parquet"
+  validation_parquet: "stage-3-nlp-slm/data-engineering/data/processed/validation.parquet"
+  augmented_data_dir: "stage-3-nlp-slm/nlp/data_augmentation/data/augmented_train"
+  intermediate_data_dir: "stage-3-nlp-slm/nlp/data_augmentation/data/intermediate"
+  results_dir: "stage-3-nlp-slm/nlp/data_augmentation/results"
+  reports_dir: "stage-3-nlp-slm/nlp/data_augmentation/reports"
+
+constraints:
+  min_word_count: 30
+  max_word_count: 850
+  min_char_count: 80
+  max_char_count: 6000
+  jaccard_max_similarity: 0.98
+  jaccard_min_similarity: 0.50
+
+entities:
+  protected_labels:
+    - "GENE_MUTATION"
+    - "DRUG_NAME"
+    - "DOSAGE"
+    - "ADVERSE_EVENT"
+
+polarity:
+  protected_triggers:
+    - "no"
+    - "not"
+    - "without"
+    - "denies"
+    - "denied"
+    - "absence of"
+    - "negative for"
+    - "ruled out"
+    - "history of"
+    - "prior to"
+    - "resolved"
+    - "subsided"
+
+datasets:
+  - id: "train_original"
+    multiplier: 0.0
+    description: "Original 100% frozen training data"
+    output_filename: "train_original.parquet"
+  - id: "train_augmented_25"
+    multiplier: 0.25
+    description: "Original + 25% safe clinical augmentation"
+    output_filename: "train_augmented_25.parquet"
+  - id: "train_augmented_50"
+    multiplier: 0.50
+    description: "Original + 50% safe clinical augmentation"
+    output_filename: "train_augmented_50.parquet"
+  - id: "train_augmented_100"
+    multiplier: 1.00
+    description: "Original + 100% safe clinical augmentation"
+    output_filename: "train_augmented_100.parquet"
+  - id: "train_augmented_targeted"
+    mode: "targeted_class_balance"
+    description: "Balanced targeted augmentation for underrepresented urgency and hazard classes"
+    output_filename: "train_augmented_targeted.parquet"
+
+targeted_balancing:
+  urgency_multiplier:
+    CRITICAL: 1.5
+    HIGH: 1.0
+    MEDIUM: 1.5
+    LOW: 0.0
+  hazard_multiplier:
+    CARDIAC: 3.0
+    DERMATOLOGIC: 3.0
+    NEUROPATHIC: 3.0
+    RENAL: 2.0
+    HEMATOLOGIC: 2.0
+    PULMONARY: 1.0
+    HEPATIC: 0.5
+    NONE: 0.0

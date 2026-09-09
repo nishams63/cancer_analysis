@@ -1,0 +1,8 @@
+{
+  "gpu": "NVIDIA GeForce RTX 2050, 4096 MiB VRAM detected by nvidia-smi",
+  "working_runtime": "Python 3.14 with torch 2.14.0+cpu and transformers 5.16.1",
+  "cuda_install": "Attempted torch==2.11.0+cu128 for Python 3.13 from official PyTorch cu128 index. The 2753.2 MB download repeatedly interrupted with DNS failures/timeouts, then failed with WinError 32 after five resumes. CUDA training not available.",
+  "speech_install": "Attempted faster-whisper plus dependencies for Python 3.13. ctranslate2 wheel download repeatedly interrupted with DNS failures, then failed with WinError 32 after five resumes. No Whisper transcription metrics claimed.",
+  "tts": "Microsoft Hazel Desktop, Microsoft David Desktop, Microsoft Zira Desktop synthesized genuine speech. Microsoft George was registered but could not synthesize. Three functioning voices used.",
+  "python_launcher": "py -3.12 pointed at an inaccessible WindowsApps alias; explicit installed interpreter paths were used."
+}
