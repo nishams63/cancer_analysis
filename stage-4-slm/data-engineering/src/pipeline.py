@@ -50,7 +50,7 @@ def run_stage4_pipeline(config_path: str = None) -> Dict[str, Any]:
         cfg = yaml.safe_load(f)
 
     # Resolve paths relative to scratch repo root
-    repo_root = PROJECT_ROOT.parent
+    repo_root = PROJECT_ROOT.parent.parent
     stage3_path = repo_root / cfg["paths"]["stage3_parquet_path"]
     data_dir = repo_root / cfg["paths"]["output_data_dir"]
     reports_dir = repo_root / cfg["paths"]["reports_dir"]

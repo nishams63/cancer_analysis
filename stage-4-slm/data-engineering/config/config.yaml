@@ -14,15 +14,15 @@ paths:
   stage3_baseline_report_path: "stage-3-nlp-slm/nlp/reports/baseline_report.md"
   
   # Stage 4 outputs
-  output_data_dir: "stage-4-data-engineering/data"
-  final_dataset_path: "stage-4-data-engineering/data/slm_finetune_dataset_v1.parquet"
-  rejected_dataset_path: "stage-4-data-engineering/data/rejected_pairs.parquet"
-  generation_log_path: "stage-4-data-engineering/data/generation_log.parquet"
+  output_data_dir: "stage-4-slm/data-engineering/data"
+  final_dataset_path: "stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"
+  rejected_dataset_path: "stage-4-slm/data-engineering/data/rejected_pairs.parquet"
+  generation_log_path: "stage-4-slm/data-engineering/data/generation_log.parquet"
   
-  reports_dir: "stage-4-data-engineering/reports"
-  quality_report_json: "stage-4-data-engineering/reports/data_quality_report.json"
-  quality_report_md: "stage-4-data-engineering/reports/data_quality_report.md"
-  manual_review_audit_md: "stage-4-data-engineering/reports/manual_review_audit.md"
+  reports_dir: "stage-4-slm/data-engineering/reports"
+  quality_report_json: "stage-4-slm/data-engineering/reports/data_quality_report.json"
+  quality_report_md: "stage-4-slm/data-engineering/reports/data_quality_report.md"
+  manual_review_audit_md: "stage-4-slm/data-engineering/reports/manual_review_audit.md"
 
 circuit_breaker:
   max_rejection_rate: 0.30  # 30% maximum allowed rejection rate
