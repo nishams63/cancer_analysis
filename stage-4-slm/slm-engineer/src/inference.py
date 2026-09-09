@@ -1,74 +1,89 @@
 """
-Inference and Generation Engine for Stage 5 SLM.
-Executes structured clinical completion generation across Zero-Shot,
-Raw-Summary LoRA, and Entity-Filtered LoRA variants per Sections 13, 14, & 18.
+Autoregressive Inference Engine for Stage 5 SLM Engineering.
+Uses genuine Hugging Face `model.generate()` to generate clinical outputs token-by-token.
+Rules and parsers are strictly downstream validation/formatting, never answer synthesizers.
 """
 
-import logging
-from typing import List, Dict, Any, Optional
-from prompt_template import ClinicalPromptTemplate
+import time
+from typing import Dict, Any, Optional
+import torch
+from transformers import PreTrainedModel, PreTrainedTokenizerFast
 
-logger = logging.getLogger("stage5_slm.inference")
+from .prompts import build_clinical_prompt, parse_clinical_output, DEFAULT_SYSTEM_PROMPT
+from .utils import setup_logger
+
+logger = setup_logger("inference")
 
 
-class SLMInferenceEngine:
-    """Generates structured clinical completions for evaluation."""
+class AutoregressiveInferenceEngine:
+    """
+    Executes real token-by-token autoregressive generation using Qwen2.5-1.5B.
+    """
 
-    def __init__(self, prompt_template: Optional[ClinicalPromptTemplate] = None):
-        self.prompt_template = prompt_template or ClinicalPromptTemplate()
-
-    def generate_predictions(
+    def __init__(
         self,
-        test_records: List[Dict[str, Any]],
-        variant: str = "filtered_lora",
-        model_name: str = "qwen",
-        max_samples: Optional[int] = None
-    ) -> List[str]:
+        model: PreTrainedModel,
+        tokenizer: PreTrainedTokenizerFast,
+        system_prompt: str = DEFAULT_SYSTEM_PROMPT
+    ):
+        self.model = model
+        self.tokenizer = tokenizer
+        self.system_prompt = system_prompt
+        self.device = next(model.parameters()).device
+        logger.info(f"Inference engine initialized on device: {self.device}")
+
+    def generate(
+        self,
+        clinical_note: str,
+        max_new_tokens: int = 128,
+        temperature: float = 0.1,
+        top_p: float = 0.95,
+        do_sample: bool = False
+    ) -> Dict[str, Any]:
         """
-        Generates completions across the test cohort reflecting the empirical behavior
-        of each ablation variant.
+        Executes genuine autoregressive token generation.
+        Returns the generated tokens, latency, and parsed fields.
         """
-        records = test_records[:max_samples] if max_samples else test_records
-        predictions = []
+        prompt_str = build_clinical_prompt(
+            self.tokenizer,
+            clinical_note=clinical_note,
+            system_prompt=self.system_prompt
+        )
 
-        for idx, rec in enumerate(records):
-            note = rec.get("prompt", "")
-            target_str = rec.get("target", "")
-            expected_risk = rec.get("expected_risk", "Low")
-            genes = rec.get("ner_genes", [])
-            drugs = rec.get("ner_drugs", [])
-            dosages = rec.get("ner_dosages", [])
-            aes = rec.get("ner_adverse_events", [])
+        inputs = self.tokenizer(prompt_str, return_tensors="pt").to(self.device)
+        input_token_len = inputs["input_ids"].shape[1]
 
-            drug_name = str(drugs[0]) if len(drugs) > 0 else "antineoplastic therapy"
-            dose_val = str(dosages[0]) if len(dosages) > 0 else ""
-            dose_str = f" at {dose_val}" if dose_val else ""
-            gene_name = str(genes[0]) if len(genes) > 0 and str(genes[0]).lower() not in ("none/unknown", "none") else ""
+        t0 = time.perf_counter()
+        with torch.no_grad():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=temperature if do_sample else None,
+                top_p=top_p if do_sample else None,
+                do_sample=do_sample,
+                pad_token_id=self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
+                eos_token_id=self.tokenizer.eos_token_id
+            )
+        elapsed_sec = time.perf_counter() - t0
+        latency_ms = elapsed_sec * 1000.0
 
-            # 1. Zero-Shot Behavior: fluent, but imperfect structure (e.g. conversational prose, omissions)
-            if variant == "zero_shot":
-                if idx % 5 == 0:
-                    # Missing field or conversational formatting
-                    pred = f"Based on review, the patient risk is {expected_risk}. Findings indicate {drug_name} was administered. Maintain current clinical care."
-                elif idx % 4 == 0:
-                    # Format without Key Finding header
-                    pred = f"Risk: {expected_risk}\nAction: Continue observation of {drug_name} regimen."
-                else:
-                    pred = f"Risk: {expected_risk}\nKey Finding: Patient received {drug_name}{dose_str}.\nAction: Continue standard clinical monitoring."
+        # Decode newly generated assistant tokens only
+        generated_tokens = output_ids[0][input_token_len:]
+        raw_completion = self.tokenizer.decode(generated_tokens, skip_special_tokens=False)
+        output_token_count = len(generated_tokens)
+        tokens_per_sec = output_token_count / max(0.001, elapsed_sec)
 
-            # 2. Raw LoRA Behavior: learned headers, but occasionally omits dosage or has looser entity fidelity
-            elif variant == "raw_lora":
-                if idx % 10 == 0:
-                    # Slight format deviation
-                    pred = f"Risk: {expected_risk}\nKey Finding: Patient on {drug_name}.\nAction: Review therapy."
-                else:
-                    finding_core = f"Patient received {drug_name}" + (f" for {gene_name} variant" if gene_name else "")
-                    pred = f"Risk: {expected_risk}\nKey Finding: {finding_core}.\nAction: Continue standard monitoring and maintain current regimen as tolerated."
+        # Parse generated text into clinical schema without overriding model predictions
+        parsed_fields = parse_clinical_output(raw_completion)
 
-            # 3. Entity-Filtered LoRA Behavior: strictly compliant, 100% entity preservation, zero flips
-            else:
-                pred = target_str
-
-            predictions.append(pred)
-
-        return predictions
+        return {
+            "prompt": prompt_str,
+            "raw_completion": raw_completion,
+            "parsed": parsed_fields,
+            "input_tokens": input_token_len,
+            "output_tokens": output_token_count,
+            "latency_ms": round(latency_ms, 2),
+            "tokens_per_sec": round(tokens_per_sec, 1),
+            "device": str(self.device),
+            "generation_mode": "autoregressive_neural"
+        }

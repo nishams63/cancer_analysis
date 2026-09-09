@@ -1,0 +1,35 @@
+model:
+  name: "qwen"
+  model_id: "Qwen/Qwen2.5-1.5B-Instruct"
+  revision: "main"
+  license: "Apache 2.0 (Open Access)"
+  requires_auth: false
+  context_length: 32768
+  architecture: "Qwen2ForCausalLM"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+training:
+  learning_rate: 2.0e-4
+  num_train_epochs: 2
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  warmup_ratio: 0.05
+  weight_decay: 0.01
+  logging_steps: 10
+  eval_steps: 50
+  save_total_limit: 2

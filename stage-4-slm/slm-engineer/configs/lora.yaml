@@ -1,0 +1,19 @@
+# PEFT LoRA Configuration (Verified Qwen2 Architecture)
+r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+bias: "none"
+task_type: "CAUSAL_LM"
+
+# Verified target modules in Qwen2.5-1.5B (28 transformer blocks x 7 projections = 196 adapter targets)
+target_modules:
+  - "q_proj"
+  - "k_proj"
+  - "v_proj"
+  - "o_proj"
+  - "gate_proj"
+  - "up_proj"
+  - "down_proj"
+
+# Module scaling factor: alpha / r = 32 / 16 = 2.0
+modules_to_save: []

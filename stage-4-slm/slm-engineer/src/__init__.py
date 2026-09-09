@@ -1,5 +1,6 @@
 """
-Stage 5 SLM Engineer: Production-Grade Clinical SLM Fine-Tuning & Ablation Study Package.
+Stage 5: Real Clinical SLM Engineering Package.
+Provides real Qwen2.5-1.5B-Instruct loading, PEFT LoRA training, evaluation, and autoregressive inference.
 """
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
