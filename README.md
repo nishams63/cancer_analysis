@@ -32,7 +32,8 @@ cancer_analysis/
     ├── data-engineer/        # Entity-verified instruction dataset pipeline, circuit breaker, zero-leakage splits
     ├── eda-engineer/         # Statistical, linguistic & tokenization audit of instruction pairs (16 tests)
     ├── slm-engineer/         # Parameter-efficient QLoRA fine-tuning & ablation study (BioMistral, LLaMA-3)
-    └── evaluation-engineer/  # OOD, adversarial, empirical calibration (tau*), safety firewall & clinician review
+    ├── evaluation-engineer/  # OOD, adversarial, empirical calibration (tau*), safety firewall & clinician review
+    └── integration-engineer/ # 100% offline local CPU FastAPI service, GGUF/llama.cpp, web UI, CLI (20 tests)
 ```
 
 ### Module Summary
@@ -53,6 +54,7 @@ cancer_analysis/
 | [`stage-4-slm/eda-engineer`](stage-4-slm/eda-engineer/) | Statistical, linguistic & tokenization audit | Readiness report, 16 unit tests, vocab & token length profiling |
 | [`stage-4-slm/slm-engineer`](stage-4-slm/slm-engineer/) | QLoRA fine-tuning & 4-config ablation study | BioMistral-7B / Clinical-Llama-3 adapters, 13 unit tests |
 | [`stage-4-slm/evaluation-engineer`](stage-4-slm/evaluation-engineer/) | Multi-axis clinical evaluation & safety firewall | OOD/adversarial benchmarks, tau* calibration, 6-gate firewall, 16 tests |
+| [`stage-4-slm/integration-engineer`](stage-4-slm/integration-engineer/) | Offline local CPU application & decision support | GGUF Q4_K_M, llama.cpp, FastAPI (/summarize), Web UI, CLI, 20 tests |
 
 ---
 

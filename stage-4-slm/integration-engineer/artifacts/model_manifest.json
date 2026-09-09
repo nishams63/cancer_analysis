@@ -1,0 +1,55 @@
+{
+  "integration_metadata": {
+    "version": "1.0.0",
+    "timestamp": "2026-09-09T12:28:00Z",
+    "engineer": "Integration Engineer",
+    "status": "FROZEN_BASELINE_CERTIFIED"
+  },
+  "base_model": {
+    "name": "qwen",
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "architecture": "Qwen2ForCausalLM",
+    "context_length": 32768,
+    "runtime_context_length": 4096,
+    "license": "Apache 2.0 (Open Access)"
+  },
+  "adapter": {
+    "name": "qwen_filtered_lora_r16_lr2e4",
+    "alias": "best_model_adapter",
+    "path": "stage-4-slm/slm-engineer/adapters/best_model_adapter",
+    "adapter_config_sha256": "a6771e01ffa3b6ac35436818b4deec9b9422dd5d50e82dd4504de630cca9fe55",
+    "adapter_weights_sha256": "322390ec20e24bb7a672dc5d257819bf7f033148190703da0ca77a409a81f18e",
+    "parameters": {
+      "r": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    }
+  },
+  "prompt_template": {
+    "name": "clinical_decision_support_v1",
+    "version": "1.0.0",
+    "target_fields": ["Risk", "Key Finding", "Action"]
+  },
+  "provenance_hashes": {
+    "stage4_dataset_sha256": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+    "stage5_model_comparison_sha256": "2b8bb709e7502c2999cb59f0c53fc352bacd42e7d99066b0b318c877f6066967",
+    "stage5_reproducibility_sha256": "4af9952cacb97022c0f224129b8a8695352dcb93f5782bfbb96f9fcf13909856",
+    "stage6_provenance_manifest_sha256": "2ed136f33687fddee2a8caac1442ec50dcaf1255d22ef62b94047969729330ae",
+    "stage6_validation_report_sha256": "2387c011d6a3c2e6869e9046d62b5917d603392693c99ffd8c2579286d5dd1a3"
+  },
+  "calibrated_threshold": {
+    "source": "stage-4-slm/evaluation-engineer/reports/provenance_manifest.json",
+    "locked_confidence_threshold": 0.500,
+    "selective_error_rate_guarantee": 0.014,
+    "test_coverage": 0.999
+  }
+}

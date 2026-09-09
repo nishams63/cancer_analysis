@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical SLM Decision Support</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-badge">OFFLINE CPU RUNTIME</div>
+      <h1>Clinical Decision Support Assistant</h1>
+      <p class="subtitle">Clinical Decision Support — Human review required when safety checks fail.</p>
+    </header>
+
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner">
+      <strong>RESEARCH & PROTOTYPE USE ONLY:</strong> This software is a clinical decision-support prototype. It does not provide medical diagnoses or make final clinical decisions. All outputs must be independently reviewed and verified by a licensed oncologist.
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="main-grid">
+      <!-- Input Column -->
+      <div class="panel input-panel">
+        <h2>Clinical Note Ingestion</h2>
+        <p class="panel-desc">Paste unstructured oncology progress note or summary:</p>
+        <textarea id="clinicalNoteInput" rows="12" placeholder="e.g. 64-year-old female with metastatic EGFR-mutated NSCLC on osimertinib 80mg daily. Tolerating therapy well with no diarrhea, rash, or fatigue. Confirms complete absence of acute treatment-limiting toxicities."></textarea>
+        
+        <div class="sample-buttons">
+          <span>Quick Samples:</span>
+          <button type="button" class="btn-sample" onclick="loadSample('low')">Low Risk (Stable)</button>
+          <button type="button" class="btn-sample" onclick="loadSample('high')">High Risk (Toxicity)</button>
+          <button type="button" class="btn-sample" onclick="loadSample('neg')">Negated Symptoms</button>
+        </div>
+
+        <button id="generateBtn" class="btn-primary" onclick="generateBriefing()">
+          Generate Clinical Briefing
+        </button>
+      </div>
+
+      <!-- Output Column -->
+      <div class="panel output-panel">
+        <div class="panel-header">
+          <h2>Decision-Support Briefing</h2>
+          <span id="safetyBadge" class="badge badge-waiting">WAITING FOR INPUT</span>
+        </div>
+
+        <!-- Result Card -->
+        <div id="resultCard" class="result-card" style="display: none;">
+          <!-- Risk Tier Banner -->
+          <div class="risk-display">
+            <span class="risk-label">Assigned Risk Urgency:</span>
+            <span id="riskTier" class="risk-value">--</span>
+          </div>
+
+          <!-- Structured Fields -->
+          <div class="field-group">
+            <h3>Key Finding</h3>
+            <p id="keyFindingText" class="field-content">--</p>
+          </div>
+
+          <div class="field-group">
+            <h3>Recommended Action</h3>
+            <p id="actionText" class="field-content">--</p>
+          </div>
+
+          <!-- Voice-Ready Spoken Summary -->
+          <div class="field-group voice-group">
+            <div class="voice-header">
+              <h3>Spoken Briefing (Voice-Ready)</h3>
+              <button id="speakBtn" class="btn-secondary" onclick="speakBriefing()">🔊 Read Briefing</button>
+            </div>
+            <pre id="spokenSummaryText" class="spoken-box">--</pre>
+          </div>
+
+          <!-- Infraction / Review Alert -->
+          <div id="reviewAlert" class="alert-box" style="display: none;">
+            <h4>⚠️ Clinical Review Required</h4>
+            <p id="reviewReasonText">One or more safety checks failed. Routed to clinician queue.</p>
+          </div>
+
+          <!-- Metadata Grid -->
+          <div class="metadata-grid">
+            <div class="meta-item">
+              <span class="meta-label">Confidence:</span>
+              <span id="confidenceVal" class="meta-value">--</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Latency:</span>
+              <span id="latencyVal" class="meta-value">--</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Model:</span>
+              <span id="modelVal" class="meta-value">--</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Inference ID:</span>
+              <span id="inferenceIdVal" class="meta-value code-font">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder when empty -->
+        <div id="emptyState" class="empty-state">
+          <p>Submit a clinical note to evaluate risk tier, key findings, and therapeutic actions through the 6-stage clinical safety firewall.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Precision Oncology Decision Support • Local GGUF Runtime (llama.cpp CPU) • Certified Zero-Leakage Dataset</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

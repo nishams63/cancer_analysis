@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  clinical-slm-service:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    container_name: clinical-slm-app
+    ports:
+      - "8000:8000"
+    environment:
+      - OFFLINE_MODE=true
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      # Mount models explicitly from host (never downloaded at runtime)
+      - ../runtime/models:/app/runtime/models:ro
+      - ../artifacts:/app/artifacts:rw
+    restart: unless-stopped
