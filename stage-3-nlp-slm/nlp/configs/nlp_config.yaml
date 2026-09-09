@@ -1,0 +1,131 @@
+# Stage 3 Clinical NLP Pipeline Configuration
+# Project: Personalized Precision Medicine for Oncology Treatment Optimization
+
+metadata:
+  module: "stage-3-nlp-slm/nlp"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  # Upstream Data Paths (Read-Only)
+  upstream_data_dir: "../data-engineering/data/processed"
+  raw_dataset_path: "../data-engineering/data/processed/clinical_nlp_dataset_v1.parquet"
+  train_split_path: "../data-engineering/data/processed/train.parquet"
+  validation_split_path: "../data-engineering/data/processed/validation.parquet"
+  locked_test_split_path: "../data-engineering/data/processed/locked_test.parquet"
+
+  # Module Local Paths
+  intermediate_dir: "data/intermediate"
+  outputs_dir: "data/outputs"
+  artifacts_dir: "artifacts"
+  vocab_dir: "artifacts/vocab"
+  tokenizers_dir: "artifacts/tokenizers"
+  encoders_dir: "artifacts/encoders"
+  results_dir: "results"
+  predictions_dir: "results/predictions"
+  metrics_dir: "results/metrics"
+  feature_outputs_dir: "results/feature_outputs"
+  reports_dir: "reports"
+
+schema:
+  id_columns:
+    document_id: "document_id"
+    patient_id: "patient_id"
+    encounter_id: "encounter_id"
+  text_columns:
+    raw_text: "text"
+    cleaned_text: "cleaned_text"
+  metadata_columns:
+    document_type: "document_type"
+    document_date: "document_date"
+    index_date: "index_date"
+    data_split: "data_split"
+  targets:
+    primary_urgency: "urgency_level"
+    secondary_hazard: "hazard_type"
+    ner_entities: "ner_entities"
+    slm_summary: "slm_summary"
+
+vocabularies:
+  document_types:
+    - "oncology_consultation"
+    - "nurse_intake_note"
+    - "patient_symptom_log"
+    - "pathology_report"
+  urgency_levels:
+    - "LOW"
+    - "MEDIUM"
+    - "HIGH"
+    - "CRITICAL"
+  hazard_types:
+    - "NONE"
+    - "HEPATIC"
+    - "PULMONARY"
+    - "HEMATOLOGIC"
+    - "RENAL"
+    - "NEUROPATHIC"
+    - "DERMATOLOGIC"
+    - "CARDIAC"
+  ner_labels:
+    - "GENE_MUTATION"
+    - "DRUG_NAME"
+    - "DOSAGE"
+    - "ADVERSE_EVENT"
+
+preprocessing:
+  unicode_form: "NFKC"
+  max_sequence_length: 256
+  min_word_length: 15
+  max_word_length: 400
+  preserve_case_for_biomarkers: true
+
+negation:
+  scope_window_tokens: 6
+  pre_negation_cues:
+    - "no"
+    - "denies"
+    - "negative for"
+    - "without evidence of"
+    - "without"
+    - "ruled out"
+    - "not"
+    - "absence of"
+  post_negation_cues:
+    - "unlikely"
+    - "absent"
+    - "resolved"
+    - "free"
+  historical_cues:
+    - "history of"
+    - "previously treated with"
+    - "prior"
+    - "status post"
+  pseudo_negation_cues:
+    - "no change"
+    - "not only"
+    - "no increase"
+
+feature_extraction:
+  tf_idf:
+    max_features: 1000
+    ngram_range: [1, 2]
+    min_df: 2
+    max_df: 0.95
+    sublinear_tf: true
+    negation_prefix: "neg_"
+  concept_counts:
+    include_affirmative_count: true
+    include_negated_count: true
+    include_historical_count: true
+    include_drug_count: true
+    include_biomarker_count: true
+    include_severity_max: true
+
+baseline_model:
+  classifier_type: "LogisticRegression"
+  class_weight: "balanced"
+  regularization_c: 1.0
+  penalty: "l2"
+  solver: "lbfgs"
+  max_iter: 1000
+  random_state: 42

@@ -26,7 +26,8 @@ cancer_analysis/
 │   └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
 └── stage-3-nlp-slm/          # NLP & Small Language Model (SLM) Decision Support
     ├── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
-    └── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
+    ├── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
+    └── nlp/                 # Clinical NLP pipeline, negation scoping, feature extraction, baselines
 ```
 
 ### Module Summary
@@ -42,6 +43,7 @@ cancer_analysis/
 | [`stage-2-dl`](stage-2-dl/) | Multimodal Vision (CNN) & Sequence (LSTM/Transformer) | Tile classification, ctDNA forecasting, late fusion alert engine |
 | [`stage-3-nlp-slm/data-engineering`](stage-3-nlp-slm/data-engineering/) | Curate leakage-free clinical NLP & SLM research dataset | `clinical_nlp_dataset_v1.parquet`, Train/Val/Test splits, audits |
 | [`stage-3-nlp-slm/eda`](stage-3-nlp-slm/eda/) | Characterize clinical text, vocabulary, negation, and splits | 20-section EDA report, 16 figures, `eda_summary.json`, notebook |
+| [`stage-3-nlp-slm/nlp`](stage-3-nlp-slm/nlp/) | Negation-aware clinical feature extraction & baselines | Baseline models (Macro F1 0.7557), feature outputs, 6 reports |
 
 ---
 
