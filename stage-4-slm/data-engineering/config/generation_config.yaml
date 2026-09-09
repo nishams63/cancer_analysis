@@ -1,0 +1,38 @@
+# Stage 4 Draft Target Generation Provenance & Configuration
+# Section 5a: Pinned generation configuration for reproducible audit trails
+
+generation_metadata:
+  model_name: "clinical-draft-target-generator-v1.0.0"
+  provider: "deterministic-clinical-synthesizer"  # Or llm-provider when external API is attached
+  version: "1.0.0"
+  prompt_version: "v2.1"
+  timestamp_pinned: "2026-09-09T18:00:00Z"
+
+hyperparameters:
+  temperature: 0.0
+  max_tokens: 350
+  top_p: 1.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+
+prompt_template: |
+  You are an expert clinical oncology assistant.
+  Given the clinical note and its validated clinical entities (Gene, Drug, Dosage, Adverse Event), generate a structured summary with exactly three fields:
+  
+  Risk: <Clinical toxicity risk attribution associated with the prescribed therapy and patient profile>
+  Key Finding: <Molecular biomarker, genomic variation, drug, dosage, and adverse toxicity events identified>
+  Action: <Concrete, actionable clinical mitigation, dose adjustment, or monitoring protocol>
+  
+  Clinical Note:
+  {clinical_note}
+  
+  Entities:
+  - Genes: {genes}
+  - Drugs: {drugs}
+  - Dosages: {dosages}
+  - Adverse Events: {adverse_events}
+
+output_fields:
+  - "Risk"
+  - "Key Finding"
+  - "Action"

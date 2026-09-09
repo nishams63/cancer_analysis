@@ -24,10 +24,16 @@ cancer_analysis/
 │   ├── dl/                  # Vision CNNs, LSTMs, Transformers, MIL attention models
 │   ├── evaluation/          # Locked test evaluation, calibration, and benchmark reports
 │   └── integration/         # Multimodal Late Fusion API, clinical risk engine, and dashboard
-└── stage-3-nlp-slm/          # NLP & Small Language Model (SLM) Decision Support
-    ├── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
-    ├── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
-    └── nlp/                 # Clinical NLP pipeline, negation scoping, feature extraction, baselines
+├── stage-3-nlp-slm/          # NLP & Small Language Model (SLM) Decision Support
+│   ├── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
+│   ├── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
+│   └── nlp/                 # Clinical NLP pipeline, negation scoping, feature extraction, baselines
+└── stage-4-slm/              # SLM Fine-Tuning & Multi-Agent Decision Support
+    ├── data-engineering/    # Entity-verified instruction-tuning pipeline, circuit breaker, zero-leakage splits
+    ├── eda/                 # Instruction-tuning dataset distributions, token lengths, and vocab coverage
+    ├── slm/                 # Parameter-efficient SLM fine-tuning (LoRA / QLoRA)
+    ├── evaluation/          # Locked-test SLM benchmarking, NLG metrics, and safety audits
+    └── integration/         # Serving API / inference pipeline for SLM decision support
 ```
 
 ### Module Summary
@@ -44,6 +50,8 @@ cancer_analysis/
 | [`stage-3-nlp-slm/data-engineering`](stage-3-nlp-slm/data-engineering/) | Curate leakage-free clinical NLP & SLM research dataset | `clinical_nlp_dataset_v1.parquet`, Train/Val/Test splits, audits |
 | [`stage-3-nlp-slm/eda`](stage-3-nlp-slm/eda/) | Characterize clinical text, vocabulary, negation, and splits | 20-section EDA report, 16 figures, `eda_summary.json`, notebook |
 | [`stage-3-nlp-slm/nlp`](stage-3-nlp-slm/nlp/) | Negation-aware clinical feature extraction & baselines | Baseline models (Macro F1 0.7557), feature outputs, 6 reports |
+| [`stage-4-slm/data-engineering`](stage-4-slm/data-engineering/) | Entity-verified instruction dataset pipeline (v2) | `slm_finetune_dataset_v1.parquet`, 23 tests, zero-leakage reports |
+| [`stage-4-slm`](stage-4-slm/) | Small Language Model fine-tuning & decision support | Instruction pairs, EDA, PEFT/LoRA models, evaluation, serving API |
 
 ---
 
