@@ -1,0 +1,42 @@
+{
+  "standard_test": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\standard_test.parquet",
+    "records": 861,
+    "provenance": "STANDARD-HELD-OUT"
+  },
+  "ood_synthetic": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\ood_synthetic.parquet",
+    "records": 250,
+    "provenance": "OOD-SYNTHETIC"
+  },
+  "ood_real": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\ood_real.parquet",
+    "records": 200,
+    "provenance": "OOD-REAL"
+  },
+  "adversarial_test": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\adversarial_test.parquet",
+    "records": 250,
+    "provenance": "ADVERSARIAL-STRESS"
+  },
+  "negation_stress": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\negation_stress_test.parquet",
+    "records": 150,
+    "provenance": "NEGATION-STRESS"
+  },
+  "dosage_stress": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\dosage_stress_test.parquet",
+    "records": 150,
+    "provenance": "DOSAGE-STRESS"
+  },
+  "hallucination_probe": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\hallucination_probe_test.parquet",
+    "records": 150,
+    "provenance": "HALLUCINATION-PROBE"
+  },
+  "clinician_review_cohort": {
+    "path": "stage-4-slm\\evaluation-engineer\\benchmarks\\clinician_review_cohort.parquet",
+    "records": 100,
+    "provenance": "CLINICIAN-REVIEW-COHORT"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "experiment_id": "qwen_zero_shot",
+  "timestamp": "2026-09-09 18:24:12 UTC",
+  "configuration": {
+    "experiment_id": "qwen_zero_shot",
+    "model_name": "Qwen2.5-1.5B-Instruct",
+    "model_revision": "main",
+    "dataset_variant": "zero_shot",
+    "dataset_hash": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+    "prompt_version": "1.0.0",
+    "tokenizer": "cl100k_base",
+    "lora_r": 0,
+    "lora_alpha": 0,
+    "lora_dropout": 0.0,
+    "learning_rate": 0.0,
+    "epochs": 0,
+    "seed": 42,
+    "train_records": 0,
+    "val_records": 0,
+    "test_records": 861,
+    "training_time_sec": 0.0,
+    "peak_vram_mb": 0.0,
+    "best_checkpoint": "none",
+    "status": "COMPLETED"
+  },
+  "metrics": {
+    "format_compliance_rate": 0.5993,
+    "missing_risk_rate": 0.2009,
+    "missing_key_finding_rate": 0.4007,
+    "missing_action_rate": 0.2009,
+    "risk_accuracy": 0.9466,
+    "risk_macro_precision": 0.9781,
+    "risk_macro_recall": 0.8507,
+    "risk_macro_f1": 0.9043,
+    "risk_per_class": {
+      "Low": {
+        "precision": 0.9343,
+        "recall": 1.0,
+        "f1": 0.966
+      },
+      "Moderate": {
+        "precision": 1.0,
+        "recall": 0.8148,
+        "f1": 0.898
+      },
+      "High": {
+        "precision": 1.0,
+        "recall": 0.7374,
+        "f1": 0.8488
+      }
+    },
+    "confusion_matrix": [
+      [
+        654,
+        0,
+        0
+      ],
+      [
+        20,
+        88,
+        0
+      ],
+      [
+        26,
+        0,
+        73
+      ]
+    ],
+    "entity_retention_rate": 0.4087,
+    "entity_retention_by_category": {
+      "gene": 0.0079,
+      "drug": 1.0,
+      "dosage": 0.5908,
+      "adverse_event": 0.0
+    },
+    "unsupported_entity_rate": 0.0,
+    "negation_cases_evaluated": 145,
+    "negation_flips": 0,
+    "negation_preservation_rate": 1.0,
+    "negation_flip_rate": 0.0,
+    "negation_failures": [],
+    "risk_stratified_evaluation": {
+      "Low": {
+        "count": 654,
+        "accuracy": 1.0,
+        "format_compliance": 0.6101
+      },
+      "Moderate": {
+        "count": 108,
+        "accuracy": 0.8148,
+        "format_compliance": 0.5463
+      },
+      "High": {
+        "count": 99,
+        "accuracy": 0.7374,
+        "format_compliance": 0.5859
+      }
+    }
+  },
+  "training_history": []
+}

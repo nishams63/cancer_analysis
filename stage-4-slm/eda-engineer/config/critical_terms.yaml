@@ -1,0 +1,77 @@
+# Oncology Clinical Terminology and Critical Lexicon
+# Seed and empirically discovered terms from the Stage 4 dataset
+
+drugs:
+  - cisplatin
+  - carboplatin
+  - paclitaxel
+  - pemetrexed
+  - erlotinib
+  - gefitinib
+  - osimertinib
+  - alectinib
+  - crizotinib
+  - pembrolizumab
+  - durvalumab
+  - docetaxel
+  - dabrafenib
+  - trametinib
+  - bevacizumab
+  - 5-fu
+  - fluorouracil
+  - trastuzumab
+
+biomarkers:
+  - egfr
+  - egfr l858r
+  - egfr t790m
+  - kras
+  - kras g12c
+  - alk
+  - braf
+  - braf v600e
+  - pd-l1
+  - her2
+  - her2+
+  - egfr+
+  - alk+
+  - ros1
+  - ret
+
+regimens:
+  - folfox
+  - folfiri
+  - folfirinox
+  - carbo-pem
+  - dab-tram
+  - ac-t
+  - capeox
+
+toxicities:
+  - neutropenia
+  - febrile neutropenia
+  - thrombocytopenia
+  - pneumonitis
+  - peripheral neuropathy
+  - nephrotoxicity
+  - hepatotoxicity
+  - transaminitis
+  - fatigue
+  - nausea
+  - diarrhea
+  - rash
+  - anemia
+  - dyspnea
+  - hypoxemia
+
+clinical_acronyms:
+  - nccn
+  - ecog
+  - recist
+  - ctcae
+  - pr
+  - cr
+  - sd
+  - pd
+  - nsclc
+  - sbrt

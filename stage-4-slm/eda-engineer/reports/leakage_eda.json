@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "patient_isolation": {
+    "is_patient_isolated": true,
+    "total_patient_leakage": 0,
+    "pairwise_overlaps": {
+      "VALIDATION_vs_TRAIN": {
+        "overlap_count": 0,
+        "overlapping_patient_sample": []
+      },
+      "VALIDATION_vs_TEST": {
+        "overlap_count": 0,
+        "overlapping_patient_sample": []
+      },
+      "TRAIN_vs_TEST": {
+        "overlap_count": 0,
+        "overlapping_patient_sample": []
+      }
+    },
+    "split_distribution": {
+      "TRAIN": {
+        "records": 3996,
+        "percentage": 70.03,
+        "unique_patients": 700
+      },
+      "TEST": {
+        "records": 861,
+        "percentage": 15.09,
+        "unique_patients": 150
+      },
+      "VALIDATION": {
+        "records": 849,
+        "percentage": 14.88,
+        "unique_patients": 150
+      }
+    }
+  },
+  "cross_split_exact_duplicates": {
+    "cross_split_exact_duplicate_count": 0,
+    "cross_split_exact_duplicates": []
+  },
+  "cross_split_near_duplicates": {
+    "similarity_threshold": 0.85,
+    "near_duplicate_pair_count": 190377,
+    "sample_near_duplicate_pairs": [
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000011",
+        "similarity": 0.8867
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000023",
+        "similarity": 0.8695
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000029",
+        "similarity": 0.8845
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000047",
+        "similarity": 0.8825
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000053",
+        "similarity": 0.8717
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000059",
+        "similarity": 0.8828
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000071",
+        "similarity": 0.8804
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000077",
+        "similarity": 0.8705
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000083",
+        "similarity": 0.9004
+      },
+      {
+        "split_pair": "VALIDATION_vs_TRAIN",
+        "doc_1": "DOC-000002",
+        "doc_2": "DOC-000089",
+        "similarity": 0.876
+      }
+    ]
+  },
+  "metadata_id_leakage": {
+    "metadata_id_leakage_count": 0,
+    "leakage_cases": []
+  }
+}

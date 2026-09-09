@@ -1,0 +1,40 @@
+pipeline:
+  name: "stage-5-clinical-slm-fine-tuning"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  stage4_dataset: "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"
+  raw_dataset: "stage-4-slm/data-engineer/data/generation_log.parquet"
+  eda_report: "stage-4-slm/eda-engineer/reports/eda_report.md"
+  eda_results: "stage-4-slm/eda-engineer/reports/eda_results.json"
+  adapters_dir: "stage-4-slm/slm-engineer/adapters"
+  checkpoints_dir: "stage-4-slm/slm-engineer/checkpoints"
+  predictions_dir: "stage-4-slm/slm-engineer/predictions"
+  results_dir: "stage-4-slm/slm-engineer/results"
+  reports_dir: "stage-4-slm/slm-engineer/results/reports"
+  training_curves_dir: "stage-4-slm/slm-engineer/results/training_curves"
+  logs_dir: "stage-4-slm/slm-engineer/logs"
+
+hardware:
+  force_cpu: false
+  mixed_precision: "no" # "fp16", "bf16", or "no" on CPU
+  gradient_checkpointing: false
+  max_memory_mb: 12000
+
+model_selection:
+  weights:
+    risk_macro_f1: 0.30
+    entity_retention: 0.25
+    negation_preservation: 0.25
+    format_compliance: 0.10
+    hallucination_penalty: 0.10
+  disqualification_thresholds:
+    max_negation_flip_rate: 0.05
+    min_format_compliance: 0.80
+
+generation:
+  max_new_tokens: 180
+  temperature: 0.1
+  top_p: 0.9
+  do_sample: false

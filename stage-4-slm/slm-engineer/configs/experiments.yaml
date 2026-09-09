@@ -1,0 +1,59 @@
+ablation_experiments:
+  - id: "qwen_zero_shot"
+    model: "qwen"
+    variant: "zero_shot"
+    description: "Zero-shot baseline evaluation on held-out test split without fine-tuning."
+    train_dataset: null
+    lora_enabled: false
+
+  - id: "qwen_raw_lora"
+    model: "qwen"
+    variant: "raw_lora"
+    description: "QLoRA fine-tuning on raw/unfiltered Stage 4 draft summaries."
+    train_dataset: "raw"
+    lora_enabled: true
+    lora_r: 16
+    lora_alpha: 32
+    learning_rate: 2.0e-4
+
+  - id: "qwen_filtered_lora"
+    model: "qwen"
+    variant: "filtered_lora"
+    description: "QLoRA fine-tuning on EDA-approved entity-filtered Stage 4 dataset."
+    train_dataset: "filtered"
+    lora_enabled: true
+    lora_r: 16
+    lora_alpha: 32
+    learning_rate: 2.0e-4
+
+  - id: "llama_zero_shot"
+    model: "llama"
+    variant: "zero_shot"
+    description: "Zero-shot baseline evaluation for Llama-3.2-3B on held-out test split."
+    train_dataset: null
+    lora_enabled: false
+
+  - id: "llama_raw_lora"
+    model: "llama"
+    variant: "raw_lora"
+    description: "QLoRA fine-tuning on raw/unfiltered draft summaries for Llama-3.2-3B."
+    train_dataset: "raw"
+    lora_enabled: true
+    lora_r: 16
+    lora_alpha: 32
+    learning_rate: 2.0e-4
+
+  - id: "llama_filtered_lora"
+    model: "llama"
+    variant: "filtered_lora"
+    description: "QLoRA fine-tuning on EDA-approved entity-filtered dataset for Llama-3.2-3B."
+    train_dataset: "filtered"
+    lora_enabled: true
+    lora_r: 16
+    lora_alpha: 32
+    learning_rate: 2.0e-4
+
+hyperparameter_sweep:
+  rank_options: [8, 16, 32]
+  learning_rate_options: [1.0e-4, 2.0e-4]
+  alpha_options: [16, 32]

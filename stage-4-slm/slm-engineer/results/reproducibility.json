@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-09-09T11:24:14.085346",
+  "dataset_path": "stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet",
+  "dataset_sha256": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+  "dataset_records": 5706,
+  "train_records": 3996,
+  "val_records": 849,
+  "test_records": 861,
+  "hardware": "CPU (RAM: 15.7GB)",
+  "cuda_available": false,
+  "pytorch_version": "2.14.0+cpu",
+  "best_model": "Qwen2.5-1.5B-Instruct",
+  "best_experiment_id": "qwen_filtered_lora_r16_lr2e4",
+  "composite_score": 0.9
+}

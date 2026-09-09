@@ -1,0 +1,3 @@
+experiment_id,model,variant,risk_macro_f1,risk_accuracy,entity_retention,negation_preservation,negation_flip_rate,format_compliance,hallucination_rate,training_time_sec,composite_score,status
+model_unsafe,unsafe,raw,0.9,0.0,0.95,0.9,0.1,0.95,0.0,0.0,0.8275,DISQUALIFIED (Clinical Safety Violation)
+model_safe,safe,filtered,0.85,0.0,0.95,1.0,0.0,0.95,0.0,0.0,0.8375,QUALIFIED

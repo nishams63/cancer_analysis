@@ -1,0 +1,13 @@
+{
+  "evaluation_type": "Human Review Infrastructure & Agreement Protocol",
+  "validation_claim": "PILOT WORKFLOW DEMONSTRATION ONLY \u2014 NOT OFFICIAL MEDICAL VALIDATION",
+  "total_cases_reviewed": 100,
+  "inter_rater_cohens_kappa": 0.985,
+  "inter_rater_raw_agreement_rate": 0.99,
+  "mean_clinical_correctness_score_1_to_5": 4.69,
+  "mean_action_appropriateness_score_1_to_5": 4.8,
+  "model_alignment": {
+    "model_vs_human_consensus_kappa": 1.0,
+    "model_vs_human_agreement_rate": 1.0
+  }
+}

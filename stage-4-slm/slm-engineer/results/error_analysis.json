@@ -1,0 +1,15 @@
+{
+  "total_errors_logged": 0,
+  "breakdown": {
+    "FORMAT_ERROR": 0,
+    "RISK_ERROR": 0,
+    "ENTITY_OMISSION": 0,
+    "ENTITY_HALLUCINATION": 0,
+    "DOSAGE_ERROR": 0,
+    "NEGATION_FLIP": 0,
+    "INCOMPLETE_ACTION": 0,
+    "UNSUPPORTED_CLAIM": 0,
+    "OTHER": 0
+  },
+  "sample_cases": []
+}
