@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "project": "Personalized Precision Medicine for Oncology Treatment Optimization",
+    "stage": "Stage 4 \u2014 SLM Fine-Tuning Dataset Pipeline",
+    "version": "2.0.0",
+    "report_timestamp": "2026-09-09T18:30:00Z"
+  },
+  "dataset_statistics": {
+    "input_records_count": 6098,
+    "successfully_joined_count": 6098,
+    "unmatched_records_count": 0,
+    "missing_patient_ids_count": 0,
+    "missing_note_ids_count": 0,
+    "duplicate_input_records_count": 0,
+    "pre_validation_clean_records": 5761,
+    "pre_validation_invalid_records": 337,
+    "quality_gate_rejected_records": 55,
+    "total_rejected_records": 392,
+    "final_rejected_records": 392,
+    "final_accepted_records": 5706
+  },
+  "entity_statistics": {
+    "mean_entity_coverage_pct": 99.6,
+    "stage3_ner_f1_baseline": 0.767,
+    "stage3_ner_precision": 0.7191,
+    "stage3_ner_recall": 0.8797,
+    "total_normalizations_applied": 0
+  },
+  "circuit_breaker": {
+    "status": "PASSED",
+    "rejection_rate_pct": 0.95,
+    "threshold_pct": 30.0,
+    "circuit_halt_triggered": false
+  },
+  "human_review_audit": {
+    "overall_agreement_rate_pct": 100.0,
+    "pass_sample_size": 35,
+    "pass_agreement_rate_pct": 100.0,
+    "reject_sample_size": 35,
+    "reject_agreement_rate_pct": 100.0,
+    "rejection_causes": {
+      "generation_errors_pct": 100.0,
+      "upstream_ner_errors_pct": 0.0
+    }
+  },
+  "split_statistics": {
+    "status": "PASSED (0% LEAKAGE)",
+    "total_records": 5706,
+    "total_unique_patients": 1000,
+    "train": {
+      "records": 3996,
+      "unique_patients": 700,
+      "record_pct": 0.7003
+    },
+    "validation": {
+      "records": 849,
+      "unique_patients": 150,
+      "record_pct": 0.1488
+    },
+    "test": {
+      "records": 861,
+      "unique_patients": 150,
+      "record_pct": 0.1509
+    },
+    "patient_leakage_count": 0
+  },
+  "leakage_audit": {
+    "overall_status": "PASSED",
+    "patient_leakage": 0,
+    "cross_split_exact_duplicates": 0,
+    "cross_split_near_duplicates": 3732,
+    "max_cross_split_similarity": 1.0,
+    "temporal_violations": 0,
+    "forbidden_term_violations": 0
+  }
+}

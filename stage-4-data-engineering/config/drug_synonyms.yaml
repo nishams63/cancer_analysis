@@ -1,0 +1,70 @@
+# Stage 4 Versioned Drug Synonym Lookup Table (Generic <-> Brand & Shorthands)
+# Strictly versioned: any alias not present in this dictionary is treated as a genuine mismatch.
+
+metadata:
+  version: "1.0.0"
+  last_updated: "2026-09-09"
+  description: "Controlled oncology drug synonym mappings for entity normalization"
+
+synonyms:
+  warfarin:
+    - "coumadin"
+    - "jantoven"
+  erlotinib:
+    - "tarceva"
+  osimertinib:
+    - "tagrisso"
+  pembrolizumab:
+    - "keytruda"
+  nivolumab:
+    - "opdivo"
+  atezolizumab:
+    - "tecentriq"
+  durvalumab:
+    - "imfinzi"
+  cisplatin:
+    - "platinol"
+    - "cddp"
+  carboplatin:
+    - "paraplatin"
+    - "cbdca"
+  oxaliplatin:
+    - "eloxatin"
+  paclitaxel:
+    - "taxol"
+    - "abraxane"
+  docetaxel:
+    - "taxotere"
+  fluorouracil:
+    - "5-fu"
+    - "5-fluorouracil"
+    - "adrucil"
+  capecitabine:
+    - "xeloda"
+  gemcitabine:
+    - "gemzar"
+  doxorubicin:
+    - "adriamycin"
+  trastuzumab:
+    - "herceptin"
+  pertuzumab:
+    - "perjeta"
+  tamoxifen:
+    - "nolvadex"
+  letrozole:
+    - "femara"
+  enzalutamide:
+    - "xtandi"
+  abiraterone:
+    - "zytiga"
+  irinotecan:
+    - "camptosar"
+  etoposide:
+    - "toposar"
+    - "vepesid"
+  gefitinib:
+    - "iressa"
+  alectinib:
+    - "alecensa"
+  crizotinib:
+    - "xalkori"
