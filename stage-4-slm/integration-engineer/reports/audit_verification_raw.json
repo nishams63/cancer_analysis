@@ -1,0 +1,1091 @@
+{
+  "audit_timestamp": "2026-09-09T19:55:53Z",
+  "gguf_models": {
+    "Q4_K_M": {
+      "exists": true,
+      "filename": "merged-model-Q4_K_M.gguf",
+      "file_size_bytes": 809344,
+      "file_size_mb": 0.77,
+      "sha256": "f01cf4112b2cf3b6df6b3d71a9cd288521f5035c690962e33d0acb8c61e71d1d",
+      "gguf_version": 3,
+      "tensor_count": 21,
+      "quant_distribution": {
+        "Q6_K": 3,
+        "F32": 5,
+        "Q4_K": 13
+      },
+      "architecture": "qwen2",
+      "model_name": "Qwen2.5-1.5B-Instruct-Clinical-LoRA",
+      "context_length": 4096,
+      "tensors": [
+        {
+          "name": "output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "output_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "token_embd.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.0.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.1.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.1.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.1.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.1.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "blk.1.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "blk.1.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        },
+        {
+          "name": "blk.1.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 12,
+          "type_name": "Q4_K"
+        }
+      ]
+    },
+    "F16": {
+      "exists": true,
+      "filename": "merged-model-F16.gguf",
+      "file_size_bytes": 2634304,
+      "file_size_mb": 2.51,
+      "sha256": "9226f8a01191d2686cf5586dc7cce566098d7f61c1ee31537ff689a89c415619",
+      "gguf_version": 3,
+      "tensor_count": 21,
+      "quant_distribution": {
+        "F16": 16,
+        "F32": 5
+      },
+      "architecture": "qwen2",
+      "model_name": "Qwen2.5-1.5B-Instruct-Clinical-LoRA",
+      "context_length": 4096,
+      "tensors": [
+        {
+          "name": "token_embd.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "output_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.0.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        },
+        {
+          "name": "blk.1.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 1,
+          "type_name": "F16"
+        }
+      ]
+    },
+    "Q5_K_M": {
+      "exists": true,
+      "filename": "merged-model-Q5_K_M.gguf",
+      "file_size_bytes": 944512,
+      "file_size_mb": 0.9,
+      "sha256": "03d5d752b3f1c7139e865917911b456361a84d35bdd5263d1e8e0ba7db3d2c53",
+      "gguf_version": 3,
+      "tensor_count": 21,
+      "quant_distribution": {
+        "Q6_K": 3,
+        "F32": 5,
+        "Q5_K": 13
+      },
+      "architecture": "qwen2",
+      "model_name": "Qwen2.5-1.5B-Instruct-Clinical-LoRA",
+      "context_length": 4096,
+      "tensors": [
+        {
+          "name": "output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "output_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "token_embd.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.0.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.0.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.1.attn_k.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.1.attn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.attn_output.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.1.attn_q.weight",
+          "shape": [
+            256,
+            256
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.1.attn_v.weight",
+          "shape": [
+            256,
+            128
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "blk.1.ffn_down.weight",
+          "shape": [
+            512,
+            256
+          ],
+          "type_code": 14,
+          "type_name": "Q6_K"
+        },
+        {
+          "name": "blk.1.ffn_gate.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        },
+        {
+          "name": "blk.1.ffn_norm.weight",
+          "shape": [
+            256
+          ],
+          "type_code": 0,
+          "type_name": "F32"
+        },
+        {
+          "name": "blk.1.ffn_up.weight",
+          "shape": [
+            256,
+            512
+          ],
+          "type_code": 13,
+          "type_name": "Q5_K"
+        }
+      ]
+    }
+  },
+  "lora_lineage": {
+    "adapter_dir_exists": true,
+    "config_exists": true,
+    "weights_exists": true,
+    "config": {
+      "base_model_name_or_path": "Qwen/Qwen2.5-1.5B-Instruct",
+      "bias": "none",
+      "fan_in_fan_out": false,
+      "lora_alpha": 32,
+      "lora_dropout": 0.05,
+      "r": 16,
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "task_type": "CAUSAL_LM",
+      "peft_type": "LORA"
+    },
+    "weights_bytes_len": 36,
+    "weights_sha256": "322390ec20e24bb7a672dc5d257819bf7f033148190703da0ca77a409a81f18e",
+    "is_placeholder": true,
+    "raw_sample": "LORA_ADAPTER_WEIGHTS_BIN_PLACEHOLDER"
+  },
+  "clinical_20_benchmark": {
+    "model_load_time_sec": 0.007,
+    "ram_before_mb": 109.3,
+    "ram_loaded_mb": 120.1,
+    "ram_overhead_mb": 10.8,
+    "ram_peak_mb": 121.6,
+    "ttft_mean_ms": 0.738,
+    "ttft_p50_ms": 0.671,
+    "latency_p50_ms": 1.0,
+    "latency_p90_ms": 1.24,
+    "latency_p95_ms": 2.0,
+    "latency_p99_ms": 2.08,
+    "mean_generation_latency_ms": 1.11,
+    "mean_service_latency_ms": 1.53,
+    "mean_input_tokens": 144.1,
+    "mean_output_tokens": 33.5,
+    "mean_tokens_per_sec": 31419.3,
+    "sample_records": [
+      {
+        "idx": 1,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000034",
+        "input_chars": 995,
+        "input_tokens": 182,
+        "output_tokens": 37,
+        "ttft_ms": 0.927,
+        "generation_latency_ms": 2.0,
+        "total_service_ms": 2.38,
+        "tokens_per_sec": 18500.0,
+        "risk": "High",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.915
+      },
+      {
+        "idx": 2,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000035",
+        "input_chars": 817,
+        "input_tokens": 130,
+        "output_tokens": 31,
+        "ttft_ms": 1.124,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.86,
+        "tokens_per_sec": 31000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      },
+      {
+        "idx": 3,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000036",
+        "input_chars": 754,
+        "input_tokens": 138,
+        "output_tokens": 33,
+        "ttft_ms": 0.949,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.76,
+        "tokens_per_sec": 33000.0,
+        "risk": "High",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.915
+      },
+      {
+        "idx": 4,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000037",
+        "input_chars": 977,
+        "input_tokens": 178,
+        "output_tokens": 37,
+        "ttft_ms": 0.676,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.63,
+        "tokens_per_sec": 37000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 5,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000038",
+        "input_chars": 733,
+        "input_tokens": 131,
+        "output_tokens": 33,
+        "ttft_ms": 0.924,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.79,
+        "tokens_per_sec": 33000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 6,
+        "patient_id": "PT-000007",
+        "note_id": "DOC-000039",
+        "input_chars": 507,
+        "input_tokens": 101,
+        "output_tokens": 34,
+        "ttft_ms": 0.66,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.34,
+        "tokens_per_sec": 34000.0,
+        "risk": "Moderate",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.887
+      },
+      {
+        "idx": 7,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000148",
+        "input_chars": 995,
+        "input_tokens": 180,
+        "output_tokens": 34,
+        "ttft_ms": 0.572,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.28,
+        "tokens_per_sec": 34000.0,
+        "risk": "Moderate",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.887
+      },
+      {
+        "idx": 8,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000149",
+        "input_chars": 824,
+        "input_tokens": 131,
+        "output_tokens": 27,
+        "ttft_ms": 0.578,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.3,
+        "tokens_per_sec": 27000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      },
+      {
+        "idx": 9,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000150",
+        "input_chars": 729,
+        "input_tokens": 131,
+        "output_tokens": 33,
+        "ttft_ms": 0.571,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.41,
+        "tokens_per_sec": 33000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 10,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000151",
+        "input_chars": 971,
+        "input_tokens": 178,
+        "output_tokens": 37,
+        "ttft_ms": 0.864,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.11,
+        "tokens_per_sec": 37000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 11,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000152",
+        "input_chars": 730,
+        "input_tokens": 131,
+        "output_tokens": 33,
+        "ttft_ms": 0.563,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.28,
+        "tokens_per_sec": 33000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 12,
+        "patient_id": "PT-000026",
+        "note_id": "DOC-000153",
+        "input_chars": 505,
+        "input_tokens": 101,
+        "output_tokens": 34,
+        "ttft_ms": 0.855,
+        "generation_latency_ms": 2.1,
+        "total_service_ms": 1.86,
+        "tokens_per_sec": 16190.5,
+        "risk": "Moderate",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.887
+      },
+      {
+        "idx": 13,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000160",
+        "input_chars": 1007,
+        "input_tokens": 182,
+        "output_tokens": 34,
+        "ttft_ms": 0.666,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.52,
+        "tokens_per_sec": 34000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      },
+      {
+        "idx": 14,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000161",
+        "input_chars": 819,
+        "input_tokens": 130,
+        "output_tokens": 31,
+        "ttft_ms": 0.718,
+        "generation_latency_ms": 0.99,
+        "total_service_ms": 1.4,
+        "tokens_per_sec": 31000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      },
+      {
+        "idx": 15,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000162",
+        "input_chars": 740,
+        "input_tokens": 134,
+        "output_tokens": 33,
+        "ttft_ms": 0.628,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.25,
+        "tokens_per_sec": 33000.0,
+        "risk": "High",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.915
+      },
+      {
+        "idx": 16,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000163",
+        "input_chars": 974,
+        "input_tokens": 178,
+        "output_tokens": 37,
+        "ttft_ms": 0.594,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.27,
+        "tokens_per_sec": 37000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 17,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000164",
+        "input_chars": 730,
+        "input_tokens": 131,
+        "output_tokens": 33,
+        "ttft_ms": 0.578,
+        "generation_latency_ms": 1.15,
+        "total_service_ms": 1.33,
+        "tokens_per_sec": 28695.7,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 18,
+        "patient_id": "PT-000028",
+        "note_id": "DOC-000165",
+        "input_chars": 555,
+        "input_tokens": 107,
+        "output_tokens": 30,
+        "ttft_ms": 0.602,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.36,
+        "tokens_per_sec": 30000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      },
+      {
+        "idx": 19,
+        "patient_id": "PT-000031",
+        "note_id": "DOC-000178",
+        "input_chars": 976,
+        "input_tokens": 178,
+        "output_tokens": 37,
+        "ttft_ms": 0.897,
+        "generation_latency_ms": 0.99,
+        "total_service_ms": 2.02,
+        "tokens_per_sec": 37000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.942
+      },
+      {
+        "idx": 20,
+        "patient_id": "PT-000031",
+        "note_id": "DOC-000179",
+        "input_chars": 817,
+        "input_tokens": 130,
+        "output_tokens": 31,
+        "ttft_ms": 0.805,
+        "generation_latency_ms": 1.0,
+        "total_service_ms": 1.53,
+        "tokens_per_sec": 31000.0,
+        "risk": "Low",
+        "safety_status": "PASS",
+        "review_required": false,
+        "confidence": 0.925
+      }
+    ]
+  },
+  "safety_firewall_audit": {
+    "all_gates_verified": true,
+    "test_results": [
+      {
+        "test_name": "Gate 1 - Valid Schema (Pass)",
+        "expected_pass": true,
+        "actual_pass": true,
+        "route": "CLINICAL_UI",
+        "infractions": [],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Gate 1 - Schema Error (Missing Action)",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "SCHEMA_ERROR: Missing required 'Action:' field"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Gate 2 - Risk Tier Validity Error",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "INVALID_RISK: 'Critical_Emergency' is not in allowed tiers ['Moderate', 'High', 'Low']"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Gate 3 & 4 - Hallucination Detection (Fabricated Drug)",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "HALLUCINATED_DRUG: Severe hallucination of non-prescribed antineoplastic 'doxorubicin'"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Gate 5 - Negation Polarity Preservation (Toxicity Inversion)",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "NEGATION_RISK_CONTRADICTION: Note has no toxicities but model assigned 'High' risk"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Gate 6 - Action Direction Coherence (Low Risk with Urgent Hold Action)",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "ACTION_INCOHERENCE: Low-risk patient assigned aggressive emergency action"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      },
+      {
+        "test_name": "Confidence Threshold Gate (< 0.500)",
+        "expected_pass": false,
+        "actual_pass": false,
+        "route": "HUMAN_REVIEW",
+        "infractions": [
+          "LOW_CONFIDENCE: Confidence score 0.350 below minimum 0.500"
+        ],
+        "status_match": true,
+        "flag_verified": true
+      }
+    ]
+  },
+  "offline_audit": {
+    "socket_block_enforced": true,
+    "inference_succeeded_with_sockets_blocked": true,
+    "external_network_calls_detected": false,
+    "suspicious_cloud_sdk_findings_count": 0,
+    "suspicious_findings": [],
+    "offline_compliance": true
+  },
+  "audit_log_verification": {
+    "log_path": "artifacts\\audit_log.jsonl",
+    "total_records": 149,
+    "valid_records": 149,
+    "sample_record": {
+      "inference_id": "inf-aef94decdaf6",
+      "timestamp": "2026-09-09T19:34:56Z",
+      "model_version": "qwen2.5-1.5b-instruct-clinical-lora",
+      "adapter_version": "best_model_adapter-r16-alpha32",
+      "quantization": "Q4_K_M",
+      "prompt_version": "1.0.0",
+      "tokenizer_version": "Qwen2TokenizerFast",
+      "runtime_version": "llama.cpp-0.3.35",
+      "input_hash": "7ebcd859728cbf6ad0ce077d1e5ea2e300d0c46262b4c3cde8d93e9732e9900e",
+      "output_hash": "3383af1a612b2b0df969fd0482724ecebacd71cb6636b3257969e2e392acefb9",
+      "confidence": 0.887,
+      "latency_ms": 2.24,
+      "firewall_verdict": "PASS",
+      "firewall_checks": [],
+      "review_required": false
+    }
+  }
+}

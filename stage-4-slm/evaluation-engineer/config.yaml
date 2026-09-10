@@ -1,0 +1,42 @@
+pipeline:
+  name: "stage-6-clinical-slm-evaluation"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  stage4_dataset: "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"
+  raw_dataset: "stage-4-slm/data-engineer/data/generation_log.parquet"
+  adapter_path: "stage-4-slm/slm-engineer/adapters/best_model_adapter"
+  benchmarks_dir: "stage-4-slm/evaluation-engineer/benchmarks"
+  reports_dir: "stage-4-slm/evaluation-engineer/reports"
+  figures_dir: "stage-4-slm/evaluation-engineer/figures"
+  results_dir: "stage-4-slm/evaluation-engineer/results"
+
+calibration:
+  target_error_rate: 0.03 # 3% max error rate on validation split
+  threshold_sweep_min: 0.50
+  threshold_sweep_max: 0.95
+  threshold_sweep_steps: 46
+  num_bins: 10
+
+safety_firewall:
+  strict_mode: true
+  min_format_compliance: 1.0
+  max_unsupported_entities: 0
+  allow_unlisted_drugs: false
+  route_on_failure: "HUMAN_REVIEW"
+
+rollback:
+  enabled: true
+  mode: "recommended" # "automatic", "recommended", "manual"
+  require_human_approval: true
+  firewall_rejection_threshold: 0.05
+  confidence_drift_threshold: 0.15
+  format_failure_threshold: 0.02
+  alert_webhook: "https://internal-clinical-safety.hospital.local/alerts"
+
+clinician_review:
+  target_sample_size: 100
+  num_reviewers: 2
+  agreement_metric: "cohens_kappa"
+  is_simulation_mode: true

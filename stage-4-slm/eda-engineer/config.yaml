@@ -1,0 +1,44 @@
+pipeline:
+  name: "stage-4-clinical-slm-eda-audit"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  input_dataset: "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"
+  stage3_dataset: "stage-3-nlp-slm/data-engineering/data/processed/clinical_nlp_dataset_v1.parquet"
+  critical_terms: "stage-4-slm/eda-engineer/config/critical_terms.yaml"
+  reports_dir: "stage-4-slm/eda-engineer/reports"
+  figures_dir: "stage-4-slm/eda-engineer/figures"
+
+token_analysis:
+  tokenizer_family: "tiktoken"
+  tokenizer_model: "cl100k_base"
+  context_limits: [512, 1024, 2048, 4096]
+  target_context_limit: 4096
+  truncation_tail_fraction: 0.10
+
+similarity:
+  near_duplicate_threshold: 0.85
+  max_features: 5000
+
+quality_thresholds:
+  context_overflow_rate:
+    warning: 0.01
+    critical: 0.05
+  negation_flip_rate:
+    warning: 0.01
+    critical: 0.05
+  entity_retention_rate:
+    warning: 0.95
+    critical: 0.90
+  patient_leakage:
+    critical: 0
+  duplicate_rate:
+    warning: 0.01
+    critical: 0.03
+  risk_class_imbalance:
+    warning: 0.20
+
+expected_metadata:
+  row_count: 5706
+  sha256: "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d"

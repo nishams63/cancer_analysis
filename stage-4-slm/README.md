@@ -14,20 +14,26 @@ stage-4-slm/
 ├── eda/                 # Instruction-tuning dataset EDA, token lengths, vocab, distributions (5 tests)
 ├── slm/                 # Small Language Model fine-tuning (LoRA / QLoRA, checkpointing) (6 tests)
 ├── evaluation/          # Benchmark evaluation, ROUGE, BLEU, entity preservation, subgroups (6 tests)
-└── integration/         # Production FastAPI service, clinical guardrails, and safe fallback (11 tests)
+├── integration/         # Production FastAPI service, clinical guardrails, and safe fallback (11 tests)
+│
+├── data-engineer/       # Specialized role: Ingestion, normalization & provenance
+├── eda-engineer/        # Specialized role: Statistical, linguistic, and risk analysis
+├── slm-engineer/        # Specialized role: Multi-model ablation & QLoRA adapters
+├── evaluation-engineer/ # Specialized role: Adversarial evaluation, calibration & clinician review
+└── integration-engineer/# Specialized role: Offline CPU runtime, GGUF quantization & gateway
 ```
 
 ---
 
 ## 👥 Engineering Modules & Deliverables
 
-| Module | Engineering Role | Key Deliverables & Artifacts |
+| Module | Engineering Focus | Key Deliverables & Artifacts |
 |:---|:---|:---|
-| [`data-engineering/`](data-engineering/) | **Data Engineer** | Stage 3 ingestion, clinical entity normalization, target drafting with provenance logging, entity preservation quality gate, rejection circuit breaker, patient-level 70/15/15 split, multi-dimensional leakage audit (`patient_leakage = 0`), and `slm_finetune_dataset_v1.parquet`. |
-| [`eda/`](eda/) | **EDA Engineer** | Character and token length distributions, context window truncation analysis (512, 1024, 2048), vocabulary coverage, 4 publication figures, `eda_summary.json`, and `reports/eda_report.md`. |
-| [`slm/`](slm/) | **SLM Engineer** | Parameter-efficient fine-tuning (PEFT / LoRA / QLoRA), prompt token masking (-100 CE loss strictly on completions), domain-adapted clinical decision engine, and LoRA adapter checkpointing. |
-| [`evaluation/`](evaluation/) | **Evaluation Engineer** | Independent locked-test benchmarking ($N = 861$), NLG metrics (ROUGE-1, ROUGE-L, BLEU-4) with 95% bootstrap CIs, clinical entity preservation, 26-cohort safety audit, and `reports/evaluation_report.md`. |
-| [`integration/`](integration/) | **Integration Engineer** | Production FastAPI REST service (`/health`, `/generate/risk`, `/generate/action`, `/generate/decision-support`, `/batch`), clinical safety guardrails, contradiction filters, and Stage 3 fallback. |
+| [`data-engineering/`](data-engineering/) | **Data Engineering** | Stage 3 ingestion, clinical entity normalization, target drafting with provenance logging, entity preservation quality gate, rejection circuit breaker, patient-level 70/15/15 split, multi-dimensional leakage audit (`patient_leakage = 0`), and `slm_finetune_dataset_v1.parquet`. |
+| [`eda/`](eda/) | **Exploratory Analysis** | Character and token length distributions, context window truncation analysis (512, 1024, 2048), vocabulary coverage, 4 publication figures, `eda_summary.json`, and `reports/eda_report.md`. |
+| [`slm/`](slm/) | **SLM Fine-Tuning** | Parameter-efficient fine-tuning (PEFT / LoRA / QLoRA), prompt token masking (-100 CE loss strictly on completions), domain-adapted clinical decision engine, and LoRA adapter checkpointing. |
+| [`evaluation/`](evaluation/) | **Clinical Evaluation** | Independent locked-test benchmarking ($N = 861$), NLG metrics (ROUGE-1, ROUGE-L, BLEU-4) with 95% bootstrap CIs, clinical entity preservation, 26-cohort safety audit, and `reports/evaluation_report.md`. |
+| [`integration/`](integration/) | **Service Integration** | Production FastAPI REST service (`/health`, `/generate/risk`, `/generate/action`, `/generate/decision-support`, `/batch`), clinical safety guardrails, contradiction filters, and Stage 3 fallback. |
 
 ---
 
@@ -51,7 +57,7 @@ Independently benchmarked on the locked test set (**861 held-out clinical encoun
 
 ### 1. Run Automated Test Suite (51 Unit Tests)
 ```powershell
-py -3.13 -m pytest stage-4-slm/ -v --basetemp=.pytest_tmp --import-mode=importlib
+py -3.13 -m pytest stage-4-slm/data-engineering/tests stage-4-slm/eda/tests stage-4-slm/slm/tests stage-4-slm/evaluation/tests stage-4-slm/integration/tests -v --basetemp=.pytest_tmp --import-mode=importlib
 ```
 
 ### 2. Run Dataset EDA Pipeline
@@ -78,6 +84,29 @@ py -3.13 stage-4-slm/evaluation/src/subgroup_audit.py
 uvicorn stage-4-slm.integration.src.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 *Interactive API Swagger documentation: `http://localhost:8000/docs`*
+
+---
+
+## 🧪 Extended Specialized Role Suites
+
+For role-specific deep dive evaluations and offline quantized runtimes:
+
+```bash
+# Data Engineer (23 tests)
+pytest stage-4-slm/data-engineer/tests/ -v
+
+# EDA Engineer (16 tests)
+pytest stage-4-slm/eda-engineer/tests/ -v
+
+# SLM Engineer (13 tests)
+pytest stage-4-slm/slm-engineer/tests/ -v
+
+# Evaluation Engineer (16 tests)
+pytest stage-4-slm/evaluation-engineer/tests/ -v
+
+# Integration Engineer (20 tests)
+pytest stage-4-slm/integration-engineer/tests/ -v
+```
 
 ---
 

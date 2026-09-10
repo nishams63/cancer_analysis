@@ -1,0 +1,27 @@
+model:
+  name: "qwen2.5-1.5b-instruct-clinical-lora"
+  path: "stage-4-slm/integration-engineer/runtime/models/merged-model-Q4_K_M.gguf"
+  quantization: "Q4_K_M"
+  architecture: "qwen2"
+  context_length: 4096
+  threads: 4
+  batch_size: 512
+  temperature: 0.1
+  top_p: 0.95
+  max_tokens: 256
+
+service:
+  host: "127.0.0.1"
+  port: 8000
+  offline_mode: true
+  max_note_length_chars: 10000
+
+safety:
+  strict_mode: true
+  calibrated_threshold_source: "stage-4-slm/evaluation-engineer/reports/provenance_manifest.json"
+  default_confidence_threshold: 0.500
+  route_on_failure: "HUMAN_REVIEW"
+
+logging:
+  audit_log_path: "stage-4-slm/integration-engineer/artifacts/audit_log.jsonl"
+  mask_phi: true

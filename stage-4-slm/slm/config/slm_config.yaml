@@ -40,7 +40,7 @@ training:
   seed: 42
 
 paths:
-  train_data: "stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"
+  train_data: "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"
   output_dir: "stage-4-slm/slm/checkpoints"
   adapter_dir: "stage-4-slm/slm/artifacts/lora_adapter"
   tokenizer_dir: "stage-4-slm/slm/artifacts/tokenizer"

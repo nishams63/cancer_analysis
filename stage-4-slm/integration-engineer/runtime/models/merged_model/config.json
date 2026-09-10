@@ -1,0 +1,49 @@
+{
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "model_type": "qwen2",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "vocab_size": 151936,
+  "hidden_size": 1536,
+  "intermediate_size": 8960,
+  "num_hidden_layers": 28,
+  "num_attention_heads": 12,
+  "num_key_value_heads": 2,
+  "hidden_act": "silu",
+  "max_position_embeddings": 32768,
+  "runtime_context_length": 4096,
+  "rms_norm_eps": 1e-06,
+  "tie_word_embeddings": true,
+  "rope_theta": 1000000.0,
+  "torch_dtype": "float16",
+  "merged_adapter": {
+    "adapter_type": "LORA",
+    "r": 16,
+    "lora_alpha": 32,
+    "scaling_factor": 2.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "adapter_weights_sha256": "322390ec20e24bb7a672dc5d257819bf7f033148190703da0ca77a409a81f18e"
+  },
+  "clinical_fine_tuning": {
+    "task": "clinical_decision_support_summarization",
+    "risk_classes": [
+      "Low",
+      "Moderate",
+      "High"
+    ],
+    "target_fields": [
+      "Risk",
+      "Key Finding",
+      "Action"
+    ]
+  }
+}

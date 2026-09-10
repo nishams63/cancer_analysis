@@ -33,6 +33,14 @@ class MasterSLMEvaluator:
         output_dir: str = "stage-4-slm/evaluation"
     ):
         self.dataset_path = Path(dataset_path)
+        if not self.dataset_path.exists():
+            for alt in [
+                Path("stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"),
+                Path("stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"),
+            ]:
+                if alt.exists():
+                    self.dataset_path = alt
+                    break
         self.output_dir = Path(output_dir)
         self.results_dir = self.output_dir / "results"
         self.reports_dir = self.output_dir / "reports"

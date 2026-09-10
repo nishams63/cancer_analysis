@@ -1,0 +1,9 @@
+{
+  "model_name": "Qwen2.5-1.5B-Instruct-Clinical-LoRA",
+  "merge_status": "SUCCESS",
+  "adapter_path": "stage-4-slm\\slm-engineer\\adapters\\best_model_adapter",
+  "merged_at": "2026-09-09T19:28:39Z",
+  "adapter_weights_sha256": "322390ec20e24bb7a672dc5d257819bf7f033148190703da0ca77a409a81f18e",
+  "config_sha256": "e33a32539be91821d9c09c5908455dc1b0a5714f64da773790b2e2163c572971",
+  "elapsed_seconds": 0.0071
+}

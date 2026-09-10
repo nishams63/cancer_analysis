@@ -48,6 +48,14 @@ class LoRATrainingPipeline:
         3. Monitors convergence and saves artifacts.
         """
         data_path = Path(self.cfg["paths"]["train_data"])
+        if not data_path.exists():
+            for alt in [
+                Path("stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"),
+                Path("stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"),
+            ]:
+                if alt.exists():
+                    data_path = alt
+                    break
         logger.info(f"Loading instruction dataset from {data_path}...")
         df = pd.read_parquet(data_path)
 

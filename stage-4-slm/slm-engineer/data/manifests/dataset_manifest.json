@@ -1,0 +1,54 @@
+{
+  "manifest_version": "1.0.0",
+  "dataset_source": "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet",
+  "sha256": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+  "total_records": 5706,
+  "total_patients": 1000,
+  "splits": {
+    "TRAIN": {
+      "records": 3996,
+      "patients": 700,
+      "percentage": 70.03
+    },
+    "VALIDATION": {
+      "records": 849,
+      "patients": 150,
+      "percentage": 14.88
+    },
+    "TEST": {
+      "records": 861,
+      "patients": 150,
+      "percentage": 15.09
+    }
+  },
+  "leakage_verification": {
+    "cross_split_patient_overlap": 0,
+    "cross_split_prompt_target_overlap": 0,
+    "duplicate_notes": 0,
+    "leakage_audit_certified": true
+  },
+  "token_distribution": {
+    "tokenizer": "Qwen/Qwen2.5-1.5B-Instruct",
+    "vocab_size": 151665,
+    "train_input_tokens": {
+      "min": 156,
+      "max": 335,
+      "mean": 238.7,
+      "p95": 320.0
+    },
+    "train_target_tokens": {
+      "min": 51,
+      "max": 126,
+      "mean": 79.3,
+      "p95": 108.0
+    },
+    "train_total_tokens": {
+      "min": 217,
+      "max": 453,
+      "mean": 318.0,
+      "p95": 424.0
+    },
+    "truncation_at_512": 0,
+    "truncation_at_1024": 0
+  }
+}

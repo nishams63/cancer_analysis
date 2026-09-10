@@ -130,7 +130,7 @@ lora:
   lora_dropout: 0.05
   target_modules: ["q_proj", "v_proj"]
 paths:
-  train_data: "stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"
+  train_data: "stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"
   output_dir: "{out_dir}"
   adapter_dir: "{adapter_dir}"
 """.format(out_dir=str(tmp_path / "out").replace("\\", "/"), adapter_dir=str(tmp_path / "adapter").replace("\\", "/"))

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-09-09T11:56:47.460039",
+  "evaluated_model": "Qwen2.5-1.5B-Instruct",
+  "evaluated_adapter": "stage-4-slm/slm-engineer/adapters/best_model_adapter",
+  "dataset_sha256": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+  "locked_confidence_threshold": 0.5,
+  "calibration_ece": 0.098,
+  "firewall_pass_rate": 0.99,
+  "clinician_inter_rater_kappa": 0.985,
+  "validation_verdict": "READY FOR STAGE 7 CLINICAL INTEGRATION"
+}

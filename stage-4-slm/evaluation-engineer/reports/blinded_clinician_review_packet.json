@@ -1,0 +1,1207 @@
+{
+  "protocol": "Double-Blind Independent Clinical Oncology SLM Review",
+  "disclaimer": "Pilot infrastructure demonstration. Official clinical validation requires board-certified oncologists.",
+  "total_cases": 100,
+  "cases": [
+    {
+      "case_id": "REV_001",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000389\nDemographics: 72-year-old unknown presenting for Cycle 2 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III SCLC.\nGenomic Profile: Confirmed driver mutation in Wild-type. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 5.8 mut/Mb with ctDNA level of 1.58 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 160/90 mmHg, Heart rate 76 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 0.47 mg/dL, Liver function enzymes 23.2 U/L, Hemoglobin 9.2 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Carboplatin at a dosage of 93.1 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Wild-type variant was identified; patient received carboplatin at 93.1 mg; exhibits stable tolerance with no acute adverse toxicities.\nAction: Continue standard clinical monitoring and maintain current Carboplatin regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_002",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000993\nCurrent Regimen: Pembrolizumab 64.5 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent immune-mediated pneumonitis and thyroiditis.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received pembrolizumab at 64.5 mg; developed moderate intermittent immune-mediated pneumonitis and thyroiditis.\nAction: Monitor moderate intermittent immune-mediated pneumonitis and thyroiditis closely, assess patient tolerance, and review Pembrolizumab dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_003",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000995\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating ROS1 driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Ros1 variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_004",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000693\nDemographics: 46-year-old unknown presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Breast Cancer.\nGenomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: Wild-type.\nTumor mutational burden measured at 10.7 mut/Mb with ctDNA level of 3.04 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 129/75 mmHg, Heart rate 83 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.63 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 12.3 g/dL.\nPatient currently demonstrates moderate peripheral sensory neuropathy in bilateral extremities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Paclitaxel at a dosage of 161.1 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Wild-type variant was identified; patient received paclitaxel at 161.1 mg; developed moderate peripheral sensory neuropathy in bilateral extremities.\nAction: Hold or reduce Paclitaxel therapy, initiate supportive management for moderate peripheral sensory neuropathy in bilateral extremities, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_005",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000095\nDemographics: 58-year-old female presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Colorectal Cancer.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.\nTumor mutational burden measured at 2.9 mut/Mb with ctDNA level of 5.80 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 129/81 mmHg, Heart rate 82 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 1.54 mg/dL, Liver function enzymes 23.5 U/L, Hemoglobin 12.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Crizotinib at a dosage of 74.5 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Kras variant was identified; patient received crizotinib at 74.5 mg; developed moderate fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce Crizotinib therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_006",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000550\nCurrent Regimen: Radiotherapy-SBRT 150.3 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received radiotherapy-sbrt at 150.3 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Radiotherapy-SBRT dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_007",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000700\nDemographics: 67-year-old female presenting for Cycle 1 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II SCLC.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: TP53.\nTumor mutational burden measured at 2.7 mut/Mb with ctDNA level of 2.38 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 135/80 mmHg, Heart rate 79 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 1.01 mg/dL, Liver function enzymes 19.2 U/L, Hemoglobin 13.2 g/dL.\nPatient currently demonstrates mild myelosuppression and severe thrombocytopenia. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Carboplatin at a dosage of 96.3 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Braf variant was identified; patient received carboplatin at 96.3 mg; developed mild myelosuppression and severe thrombocytopenia. Genomic status: TP53.\nAction: Monitor mild myelosuppression and severe thrombocytopenia closely, assess patient tolerance, and review Carboplatin dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_008",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000995\nDemographics: 54-year-old female presenting for Cycle 2 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV NSCLC.\nGenomic Profile: Confirmed driver mutation in ROS1. Secondary mutation: TP53.\nTumor mutational burden measured at 1.9 mut/Mb with ctDNA level of 2.15 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 149/66 mmHg, Heart rate 89 bpm, SpO2 93% on room air.\nSerum Chemistries: Serum creatinine 1.11 mg/dL, Liver function enzymes 17.3 U/L, Hemoglobin 11.0 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 154.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Ros1 variant was identified; patient received docetaxel at 154.6 mg; exhibits stable tolerance with no acute adverse toxicities. Genomic status: TP53.\nAction: Continue standard clinical monitoring and maintain current Docetaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_009",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000272 | Infusion Cycle: 5\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 144/87 mmHg, Pulse 91 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Carboplatin at 136.8 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received carboplatin at 136.8 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Carboplatin therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_010",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000651 | Infusion Cycle: 3\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 170/83 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 91%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Radiotherapy-SBRT at 130.0 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received radiotherapy-sbrt at 130.0 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Radiotherapy-SBRT therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_011",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000908 | Infusion Cycle: 2\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 114/88 mmHg, Pulse 94 bpm, Resp Rate 18/min, SpO2 88%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Atezolizumab at 192.1 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received atezolizumab at 192.1 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Atezolizumab therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_012",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000979\nDemographics: 47-year-old male presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 0.3 mut/Mb with ctDNA level of 0.95 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 172/80 mmHg, Heart rate 92 bpm, SpO2 93% on room air.\nSerum Chemistries: Serum creatinine 0.96 mg/dL, Liver function enzymes 128.8 U/L, Hemoglobin 14.4 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 173.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Kras variant was identified; patient received carboplatin+pembrolizumab at 173.6 mg; developed acute grade 3 fatigue and mild nausea.\nAction: Hold or reduce Carboplatin+Pembrolizumab therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_013",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000229\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Breast Cancer.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating TP53 driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage III.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Tp53 variant was identified; patient received antineoplastic therapy; developed breast cancer.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_014",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000908\nDemographics: 58-year-old female presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: TP53.\nTumor mutational burden measured at 0.4 mut/Mb with ctDNA level of 1.55 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 108/45 mmHg, Heart rate 81 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 1.18 mg/dL, Liver function enzymes 92.7 U/L, Hemoglobin 10.8 g/dL.\nPatient currently demonstrates acute grade 3 febrile neutropenia and severe fluid retention. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 148.1 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Kras variant was identified; patient received docetaxel at 148.1 mg; developed acute grade 3 febrile neutropenia and severe fluid retention. Genomic status: TP53.\nAction: Hold or reduce Docetaxel therapy, initiate supportive management for acute grade 3 febrile neutropenia and severe fluid retention, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_015",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000826\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating BRAF driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage III.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Braf variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_016",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000991\nCurrent Regimen: Dabrafenib 115.5 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable nausea and lethargy with inability to keep fluids down.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received dabrafenib at 115.5 mg; developed severe unbearable nausea and lethargy with inability to keep fluids down.\nAction: Hold or reduce Dabrafenib therapy, initiate supportive management for severe unbearable nausea and lethargy with inability to keep fluids down, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_017",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000128\nDemographics: 73-year-old male presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.\nTumor mutational burden measured at 5.9 mut/Mb with ctDNA level of 1.01 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 129/95 mmHg, Heart rate 62 bpm, SpO2 99% on room air.\nSerum Chemistries: Serum creatinine 0.80 mg/dL, Liver function enzymes 11.6 U/L, Hemoglobin 12.5 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Osimertinib at a dosage of 157.7 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Kras variant was identified; patient received osimertinib at 157.7 mg; exhibits stable tolerance with no acute adverse toxicities. Genomic status: Wild-type.\nAction: Continue standard clinical monitoring and maintain current Osimertinib regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_018",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000702\nCurrent Regimen: Paclitaxel 137.1 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received paclitaxel at 137.1 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Paclitaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_019",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000471 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 150/71 mmHg, Pulse 79 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Alectinib at 269.7 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received alectinib at 269.7 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_020",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000239 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 113/79 mmHg, Pulse 69 bpm, Resp Rate 18/min, SpO2 91%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Pemetrexed at 121.2 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received pemetrexed at 121.2 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Pemetrexed therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_021",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000095\nCurrent Regimen: Crizotinib 74.5 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received crizotinib at 74.5 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Crizotinib dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_022",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000883\nDemographics: 50-year-old male presenting for Cycle 1 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Colorectal Cancer.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 2.9 mut/Mb with ctDNA level of 2.31 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 133/93 mmHg, Heart rate 96 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 1.08 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 13.9 g/dL.\nPatient currently demonstrates mild immune-mediated pneumonitis and thyroiditis. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Pembrolizumab at a dosage of 263.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Braf variant was identified; patient received pembrolizumab at 263.4 mg; developed mild immune-mediated pneumonitis and thyroiditis.\nAction: Monitor mild immune-mediated pneumonitis and thyroiditis closely, assess patient tolerance, and review Pembrolizumab dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_023",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000074\nCurrent Regimen: nivolumab 183.6 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable nausea and lethargy with inability to keep fluids down.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received nivolumab at 183.6 mg; developed severe unbearable nausea and lethargy with inability to keep fluids down.\nAction: Hold or reduce nivolumab therapy, initiate supportive management for severe unbearable nausea and lethargy with inability to keep fluids down, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_024",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000301\nDemographics: 52-year-old female presenting for Cycle 1 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Unknown.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 4.7 mut/Mb with ctDNA level of 0.58 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 139/80 mmHg, Heart rate 75 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 1.43 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 14.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with NIVOLUMAB at a dosage of 161.7 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Braf variant was identified; patient received nivolumab at 161.7 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce NIVOLUMAB therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_025",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000575\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with SCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating KRAS driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Kras variant was identified; patient received antineoplastic therapy; developed sclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_026",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000045 | Infusion Cycle: 5\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 133/94 mmHg, Pulse 111 bpm, Resp Rate 18/min, SpO2 91%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Alectinib at 69.0 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received alectinib at 69.0 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_027",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000604\nDemographics: 61-year-old unknown presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Colorectal Cancer.\nGenomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: Wild-type.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 0.63 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 126/79 mmHg, Heart rate 79 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 0.91 mg/dL, Liver function enzymes 40.2 U/L, Hemoglobin 8.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Alectinib at a dosage of 189.8 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Wild-type variant was identified; patient received alectinib at 189.8 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_028",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000371 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 124/74 mmHg, Pulse 68 bpm, Resp Rate 18/min, SpO2 94%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Crizotinib at 110.5 mg.\nPatient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received crizotinib at 110.5 mg; developed mild treatment-related fatigue.\nAction: Continue standard clinical monitoring and maintain current Crizotinib regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_029",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000007\nDemographics: 60-year-old male presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III SCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 0.68 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 128/74 mmHg, Heart rate 47 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 1.09 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 13.9 g/dL.\nPatient currently demonstrates mild febrile neutropenia and severe fluid retention. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 161.8 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Kras variant was identified; patient received docetaxel at 161.8 mg; developed mild febrile neutropenia and severe fluid retention. Genomic status: Wild-type.\nAction: Monitor mild febrile neutropenia and severe fluid retention closely, assess patient tolerance, and review Docetaxel dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_030",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000104\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with SCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating EGFR driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Egfr variant was identified; patient received antineoplastic therapy; developed sclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_031",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000755 | Infusion Cycle: 2\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 151/69 mmHg, Pulse 70 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Atezolizumab at 143.7 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received atezolizumab at 143.7 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Atezolizumab therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_032",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000026\nDemographics: 65-year-old male presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II Breast Cancer.\nGenomic Profile: Confirmed driver mutation in MET. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 1.81 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 132/76 mmHg, Heart rate 71 bpm, SpO2 98% on room air.\nSerum Chemistries: Serum creatinine 1.42 mg/dL, Liver function enzymes 17.3 U/L, Hemoglobin 13.5 g/dL.\nPatient currently demonstrates moderate papulopustular rash and diarrhea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Erlotinib at a dosage of 84.9 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Met variant was identified; patient received erlotinib at 84.9 mg; developed moderate papulopustular rash and diarrhea.\nAction: Hold or reduce Erlotinib therapy, initiate supportive management for moderate papulopustular rash and diarrhea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_033",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000115\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating TP53 driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Tp53 variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_034",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000095\nDemographics: 67-year-old female presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.\nTumor mutational burden measured at 4.8 mut/Mb with ctDNA level of 0.63 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 187/85 mmHg, Heart rate 72 bpm, SpO2 91% on room air.\nSerum Chemistries: Serum creatinine 0.92 mg/dL, Liver function enzymes 90.1 U/L, Hemoglobin 14.2 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Dabrafenib at a dosage of 208.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Egfr variant was identified; patient received dabrafenib at 208.4 mg; developed acute grade 3 fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce Dabrafenib therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_035",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000979\nCurrent Regimen: Cisplatin 227.2 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received cisplatin at 227.2 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Cisplatin regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_036",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000855 | Infusion Cycle: 1\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 128/86 mmHg, Pulse 83 bpm, Resp Rate 18/min, SpO2 96%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Carboplatin at 134.8 mg.\nPatient reports grade 2 myelosuppression and severe thrombocytopenia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received carboplatin at 134.8 mg; developed grade 2 myelosuppression and severe thrombocytopenia.\nAction: Monitor grade 2 myelosuppression and severe thrombocytopenia closely, assess patient tolerance, and review Carboplatin dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_037",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000115 | Infusion Cycle: 2\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 122/90 mmHg, Pulse 100 bpm, Resp Rate 18/min, SpO2 95%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Atezolizumab at 73.9 mg.\nPatient reports elevated transaminases and right upper quadrant discomfort. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received atezolizumab at 73.9 mg; developed elevated transaminases and right upper quadrant discomfort.\nAction: Hold or reduce Atezolizumab therapy, initiate supportive management for elevated transaminases and right upper quadrant discomfort, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_038",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000547\nCurrent Regimen: Paclitaxel+Bevacizumab 107.5 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received paclitaxel+bevacizumab at 107.5 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Paclitaxel+Bevacizumab regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_039",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000672\nCurrent Regimen: Radiotherapy-Standard 223.9 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received radiotherapy-standard at 223.9 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Radiotherapy-Standard dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_040",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000160\nCurrent Regimen: Cisplatin 102.9 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable acute nephrotoxicity with elevated serum creatinine with inability to keep fluids down.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received cisplatin at 102.9 mg; developed severe unbearable acute nephrotoxicity with elevated serum creatinine with inability to keep fluids down.\nAction: Hold or reduce Cisplatin therapy, initiate supportive management for severe unbearable acute nephrotoxicity with elevated serum creatinine with inability to keep fluids down, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_041",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000105\nDemographics: 83-year-old female presenting for Cycle 2 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II NSCLC.\nGenomic Profile: Confirmed driver mutation in TP53. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 2.9 mut/Mb with ctDNA level of 0.96 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 127/65 mmHg, Heart rate 66 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 0.20 mg/dL, Liver function enzymes 58.0 U/L, Hemoglobin 11.1 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Pemetrexed at a dosage of 150.3 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Tp53 variant was identified; patient received pemetrexed at 150.3 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce Pemetrexed therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_042",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000045 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 148/89 mmHg, Pulse 70 bpm, Resp Rate 18/min, SpO2 91%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Cisplatin+Pemetrexed at 150.3 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received cisplatin+pemetrexed at 150.3 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Cisplatin+Pemetrexed therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_043",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000388\nDemographics: 68-year-old unknown presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: Wild-type.\nTumor mutational burden measured at 5.2 mut/Mb with ctDNA level of 0.07 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 123/92 mmHg, Heart rate 88 bpm, SpO2 99% on room air.\nSerum Chemistries: Serum creatinine 0.31 mg/dL, Liver function enzymes 61.7 U/L, Hemoglobin 12.5 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Dabrafenib at a dosage of 39.9 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Kras variant was identified; patient received dabrafenib at 39.9 mg; developed acute grade 3 fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce Dabrafenib therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_044",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000700\nDemographics: 62-year-old female presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV SCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: MET.\nTumor mutational burden measured at 8.0 mut/Mb with ctDNA level of 1.41 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 129/77 mmHg, Heart rate 60 bpm, SpO2 92% on room air.\nSerum Chemistries: Serum creatinine 0.61 mg/dL, Liver function enzymes 16.4 U/L, Hemoglobin 11.2 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Cisplatin at a dosage of 215.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Egfr variant was identified; patient received cisplatin at 215.6 mg; exhibits stable tolerance with no acute adverse toxicities. Genomic status: MET.\nAction: Continue standard clinical monitoring and maintain current Cisplatin regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_045",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000829 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 128/75 mmHg, Pulse 79 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Carboplatin+Pembrolizumab at 133.3 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received carboplatin+pembrolizumab at 133.3 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Carboplatin+Pembrolizumab therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_046",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000722\nDemographics: 42-year-old male presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Colorectal Cancer.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: ROS1.\nTumor mutational burden measured at 7.3 mut/Mb with ctDNA level of 1.56 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 143/83 mmHg, Heart rate 68 bpm, SpO2 99% on room air.\nSerum Chemistries: Serum creatinine 1.36 mg/dL, Liver function enzymes 71.5 U/L, Hemoglobin 10.7 g/dL.\nPatient currently demonstrates acute grade 3 myelosuppression and severe thrombocytopenia. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Carboplatin at a dosage of 67.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Egfr variant was identified; patient received carboplatin at 67.6 mg; developed acute grade 3 myelosuppression and severe thrombocytopenia. Genomic status: ROS1.\nAction: Hold or reduce Carboplatin therapy, initiate supportive management for acute grade 3 myelosuppression and severe thrombocytopenia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_047",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000984 | Infusion Cycle: 5\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 133/71 mmHg, Pulse 79 bpm, Resp Rate 18/min, SpO2 94%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of radiotherapy-sbrt at 230.5 mg.\nPatient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received radiotherapy-sbrt at 230.5 mg; developed mild treatment-related fatigue.\nAction: Continue standard clinical monitoring and maintain current radiotherapy-sbrt regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_048",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000277\nDemographics: 88-year-old female presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 4.7 mut/Mb with ctDNA level of 0.70 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 161/90 mmHg, Heart rate 74 bpm, SpO2 93% on room air.\nSerum Chemistries: Serum creatinine 1.16 mg/dL, Liver function enzymes 67.3 U/L, Hemoglobin 12.3 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Alectinib at a dosage of 160.2 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Egfr variant was identified; patient received alectinib at 160.2 mg; developed acute grade 3 fatigue and mild nausea.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_049",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000979\nDemographics: 68-year-old male presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: MET.\nTumor mutational burden measured at 25.0 mut/Mb with ctDNA level of 3.15 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 119/103 mmHg, Heart rate 70 bpm, SpO2 99% on room air.\nSerum Chemistries: Serum creatinine 0.57 mg/dL, Liver function enzymes 55.8 U/L, Hemoglobin 13.7 g/dL.\nPatient currently demonstrates moderate acute nephrotoxicity with elevated serum creatinine. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Cisplatin at a dosage of 227.2 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received cisplatin at 227.2 mg; developed moderate acute nephrotoxicity with elevated serum creatinine. Genomic status: MET.\nAction: Hold or reduce Cisplatin therapy, initiate supportive management for moderate acute nephrotoxicity with elevated serum creatinine, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_050",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000218\nDemographics: 51-year-old female presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: BRAF.\nTumor mutational burden measured at 7.7 mut/Mb with ctDNA level of 8.15 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 125/83 mmHg, Heart rate 53 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.55 mg/dL, Liver function enzymes 71.0 U/L, Hemoglobin 15.6 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with CRIZOTINIB at a dosage of 103.5 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Braf variant was identified; patient received crizotinib at 103.5 mg; developed acute grade 3 fatigue and mild nausea.\nAction: Hold or reduce CRIZOTINIB therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_051",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000368 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 161/87 mmHg, Pulse 63 bpm, Resp Rate 18/min, SpO2 91%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Pemetrexed at 197.2 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received pemetrexed at 197.2 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Pemetrexed therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_052",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000143 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 159/79 mmHg, Pulse 84 bpm, Resp Rate 18/min, SpO2 92%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Paclitaxel at 147.4 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received paclitaxel at 147.4 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Paclitaxel therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_053",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000100\nDemographics: 55-year-old female presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Colorectal Cancer.\nGenomic Profile: Confirmed driver mutation in ROS1. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 10.5 mut/Mb with ctDNA level of 1.52 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 108/74 mmHg, Heart rate 80 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.09 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 13.2 g/dL.\nPatient currently demonstrates mild febrile neutropenia and severe fluid retention. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 219.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Ros1 variant was identified; patient received docetaxel at 219.4 mg; developed mild febrile neutropenia and severe fluid retention.\nAction: Monitor mild febrile neutropenia and severe fluid retention closely, assess patient tolerance, and review Docetaxel dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_054",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000715\nCurrent Regimen: Nivolumab 80.6 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent immune-mediated hepatitis with elevated AST/ALT.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received nivolumab at 80.6 mg; developed moderate intermittent immune-mediated hepatitis with elevated ast/alt.\nAction: Monitor moderate intermittent immune-mediated hepatitis with elevated AST/ALT closely, assess patient tolerance, and review Nivolumab dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_055",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000081 | Infusion Cycle: 5\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 110/66 mmHg, Pulse 63 bpm, Resp Rate 18/min, SpO2 92%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Atezolizumab at 63.0 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received atezolizumab at 63.0 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Atezolizumab therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_056",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000225\nCurrent Regimen: Alectinib 160.2 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received alectinib at 160.2 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Alectinib regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_057",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000659\nDemographics: 39-year-old unknown presenting for Cycle 6 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I Breast Cancer.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 3.61 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 118/68 mmHg, Heart rate 86 bpm, SpO2 98% on room air.\nSerum Chemistries: Serum creatinine 0.60 mg/dL, Liver function enzymes 75.2 U/L, Hemoglobin 16.2 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Pemetrexed at a dosage of 44.1 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Egfr variant was identified; patient received pemetrexed at 44.1 mg; developed acute grade 3 fatigue and mild nausea.\nAction: Hold or reduce Pemetrexed therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_058",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000285\nCurrent Regimen: Atezolizumab 10.0 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received atezolizumab at 10.0 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Atezolizumab dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_059",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000090\nDemographics: 64-year-old male presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I NSCLC.\nGenomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: ROS1.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 3.65 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 96/78 mmHg, Heart rate 84 bpm, SpO2 98% on room air.\nSerum Chemistries: Serum creatinine 1.83 mg/dL, Liver function enzymes 18.1 U/L, Hemoglobin 14.4 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Cisplatin+Pemetrexed at a dosage of 155.9 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Ros1 variant was identified; patient received cisplatin+pemetrexed at 155.9 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce Cisplatin+Pemetrexed therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_060",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000566\nDemographics: 59-year-old male presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 0.6 mut/Mb with ctDNA level of 4.46 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 124/85 mmHg, Heart rate 108 bpm, SpO2 95% on room air.\nSerum Chemistries: Serum creatinine 0.69 mg/dL, Liver function enzymes 7.7 U/L, Hemoglobin 13.0 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 92.8 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Kras variant was identified; patient received docetaxel at 92.8 mg; exhibits stable tolerance with no acute adverse toxicities.\nAction: Continue standard clinical monitoring and maintain current Docetaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_061",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000251\nDemographics: 88-year-old male presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Unknown.\nGenomic Profile: Confirmed driver mutation in ROS1. Secondary mutation: Wild-type.\nTumor mutational burden measured at 4.5 mut/Mb with ctDNA level of 0.01 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 160/83 mmHg, Heart rate 76 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 1.58 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 11.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Paclitaxel+Bevacizumab at a dosage of 236.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Ros1 variant was identified; patient received paclitaxel+bevacizumab at 236.6 mg; developed moderate fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce Paclitaxel+Bevacizumab therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_062",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000047\nCurrent Regimen: Paclitaxel 115.2 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing persistent peripheral sensory neuropathy in bilateral extremities.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received paclitaxel at 115.2 mg; developed persistent peripheral sensory neuropathy in bilateral extremities.\nAction: Hold or reduce Paclitaxel therapy, initiate supportive management for persistent peripheral sensory neuropathy in bilateral extremities, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_063",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000277\nCurrent Regimen: Alectinib 160.2 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received alectinib at 160.2 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Alectinib dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_064",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000888\nDemographics: 72-year-old male presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II Prostate Cancer.\nGenomic Profile: Confirmed driver mutation in TP53. Secondary mutation: EGFR.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 2.48 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 109/71 mmHg, Heart rate 55 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 0.96 mg/dL, Liver function enzymes 49.9 U/L, Hemoglobin 13.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Alectinib at a dosage of 89.2 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Tp53 variant was identified; patient received alectinib at 89.2 mg; developed moderate fatigue and mild nausea. Genomic status: EGFR.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_065",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000617\nDemographics: 57-year-old female presenting for Cycle 1 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Prostate Cancer.\nGenomic Profile: Confirmed driver mutation in ROS1. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 1.9 mut/Mb with ctDNA level of 0.00 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 130/81 mmHg, Heart rate 92 bpm, SpO2 100% on room air.\nSerum Chemistries: Serum creatinine 1.07 mg/dL, Liver function enzymes 56.9 U/L, Hemoglobin 11.5 g/dL.\nPatient currently demonstrates moderate febrile neutropenia and severe fluid retention. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 197.0 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Ros1 variant was identified; patient received docetaxel at 197.0 mg; developed moderate febrile neutropenia and severe fluid retention.\nAction: Hold or reduce Docetaxel therapy, initiate supportive management for moderate febrile neutropenia and severe fluid retention, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_066",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000778\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with Breast Cancer.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage II.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received antineoplastic therapy; developed breast cancer.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_067",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000687\nCurrent Regimen: Carboplatin 173.9 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent myelosuppression and severe thrombocytopenia.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received carboplatin at 173.9 mg; developed moderate intermittent myelosuppression and severe thrombocytopenia.\nAction: Monitor moderate intermittent myelosuppression and severe thrombocytopenia closely, assess patient tolerance, and review Carboplatin dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_068",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000411\nCurrent Regimen: Carboplatin+Pembrolizumab 169.7 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received carboplatin+pembrolizumab at 169.7 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Carboplatin+Pembrolizumab regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_069",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000324\nDemographics: 72-year-old female presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: Wild-type.\nTumor mutational burden measured at 2.3 mut/Mb with ctDNA level of 0.75 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 136/91 mmHg, Heart rate 97 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.74 mg/dL, Liver function enzymes 25.5 U/L, Hemoglobin 10.5 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Carboplatin+Pembrolizumab at a dosage of 168.5 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received carboplatin+pembrolizumab at 168.5 mg; developed moderate fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce Carboplatin+Pembrolizumab therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_070",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000390\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating EGFR driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Egfr variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_071",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000096\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating EGFR driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage I.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Egfr variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_072",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000215\nDemographics: 69-year-old male presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Prostate Cancer.\nGenomic Profile: Confirmed driver mutation in None/Unknown. Secondary mutation: MET.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 3.73 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 134/87 mmHg, Heart rate 73 bpm, SpO2 91% on room air.\nSerum Chemistries: Serum creatinine 1.08 mg/dL, Liver function enzymes 42.3 U/L, Hemoglobin 13.3 g/dL.\nPatient currently demonstrates moderate immune-mediated pneumonitis and thyroiditis. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Pembrolizumab at a dosage of 130.3 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Met variant was identified; patient received pembrolizumab at 130.3 mg; developed moderate immune-mediated pneumonitis and thyroiditis.\nAction: Hold or reduce Pembrolizumab therapy, initiate supportive management for moderate immune-mediated pneumonitis and thyroiditis, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_073",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000168\nDemographics: 76-year-old unknown presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II Breast Cancer.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 1.4 mut/Mb with ctDNA level of 2.06 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 154/96 mmHg, Heart rate 97 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 0.51 mg/dL, Liver function enzymes 52.2 U/L, Hemoglobin 11.2 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with PACLITAXEL at a dosage of 171.6 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received paclitaxel at 171.6 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce PACLITAXEL therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_074",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000693\nCurrent Regimen: Radiotherapy-Standard 177.9 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received radiotherapy-standard at 177.9 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Radiotherapy-Standard dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_075",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000678\nDemographics: 82-year-old female presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II NSCLC.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 1.6 mut/Mb with ctDNA level of 1.63 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 124/85 mmHg, Heart rate 92 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 0.71 mg/dL, Liver function enzymes 15.2 U/L, Hemoglobin 12.1 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Paclitaxel+Bevacizumab at a dosage of 128.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Braf variant was identified; patient received paclitaxel+bevacizumab at 128.4 mg; exhibits stable tolerance with no acute adverse toxicities.\nAction: Continue standard clinical monitoring and maintain current Paclitaxel+Bevacizumab regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_076",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000581\nDemographics: 76-year-old male presenting for Cycle 7 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Unknown.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: ALK.\nTumor mutational burden measured at 18.4 mut/Mb with ctDNA level of 1.31 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 140/79 mmHg, Heart rate 55 bpm, SpO2 91% on room air.\nSerum Chemistries: Serum creatinine 1.50 mg/dL, Liver function enzymes 19.4 U/L, Hemoglobin 13.6 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Paclitaxel+Bevacizumab at a dosage of 152.8 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received paclitaxel+bevacizumab at 152.8 mg; developed moderate fatigue and mild nausea. Genomic status: ALK.\nAction: Hold or reduce Paclitaxel+Bevacizumab therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_077",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000364\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage I.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_078",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000229\nDemographics: 43-year-old male presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III Breast Cancer.\nGenomic Profile: Confirmed driver mutation in MET. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 4.5 mut/Mb with ctDNA level of 2.44 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 124/76 mmHg, Heart rate 77 bpm, SpO2 98% on room air.\nSerum Chemistries: Serum creatinine 1.09 mg/dL, Liver function enzymes 84.6 U/L, Hemoglobin 11.2 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Pemetrexed at a dosage of 123.7 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Met variant was identified; patient received pemetrexed at 123.7 mg; developed acute grade 3 fatigue and mild nausea.\nAction: Hold or reduce Pemetrexed therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_079",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000028\nDemographics: 62-year-old male presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II SCLC.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 7.2 mut/Mb with ctDNA level of 0.62 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 166/85 mmHg, Heart rate 90 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.17 mg/dL, Liver function enzymes 29.3 U/L, Hemoglobin 11.1 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Cisplatin at a dosage of 165.0 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Braf variant was identified; patient received cisplatin at 165.0 mg; exhibits stable tolerance with no acute adverse toxicities.\nAction: Continue standard clinical monitoring and maintain current Cisplatin regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_080",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000147\nCurrent Regimen: Crizotinib 145.0 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received crizotinib at 145.0 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review Crizotinib dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_081",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000100\nDemographics: 65-year-old unknown presenting for Cycle 5 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage III NSCLC.\nGenomic Profile: Confirmed driver mutation in ROS1. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 4.5 mut/Mb with ctDNA level of 2.81 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 100/48 mmHg, Heart rate 86 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 1.60 mg/dL, Liver function enzymes 6.2 U/L, Hemoglobin 13.4 g/dL.\nPatient currently demonstrates moderate febrile neutropenia and severe fluid retention. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Docetaxel at a dosage of 150.3 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Ros1 variant was identified; patient received docetaxel at 150.3 mg; developed moderate febrile neutropenia and severe fluid retention.\nAction: Hold or reduce Docetaxel therapy, initiate supportive management for moderate febrile neutropenia and severe fluid retention, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_082",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000251\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating None/Unknown driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_083",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000074\nCurrent Regimen: CISPLATIN+PEMETREXED 183.8 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing moderate intermittent nausea and lethargy.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Patient received cisplatin+pemetrexed at 183.8 mg; developed moderate intermittent nausea and lethargy.\nAction: Monitor moderate intermittent nausea and lethargy closely, assess patient tolerance, and review CISPLATIN+PEMETREXED dosing before the next treatment cycle.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_084",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000672 | Infusion Cycle: 2\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 121/77 mmHg, Pulse 72 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Radiotherapy-Standard at 147.9 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received radiotherapy-standard at 147.9 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Radiotherapy-Standard therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_085",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000368 | Infusion Cycle: 3\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 121/64 mmHg, Pulse 74 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Nivolumab at 125.5 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received nivolumab at 125.5 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Nivolumab therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_086",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000666\nDemographics: 49-year-old unknown presenting for Cycle 1 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage IV Unknown.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 4.7 mut/Mb with ctDNA level of 0.69 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 120/91 mmHg, Heart rate 98 bpm, SpO2 96% on room air.\nSerum Chemistries: Serum creatinine 1.66 mg/dL, Liver function enzymes 26.6 U/L, Hemoglobin 11.9 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Alectinib at a dosage of 142.8 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received alectinib at 142.8 mg; developed moderate fatigue and mild nausea.\nAction: Hold or reduce Alectinib therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_087",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000700 | Infusion Cycle: 6\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 129/77 mmHg, Pulse 60 bpm, Resp Rate 18/min, SpO2 92%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Cisplatin at 215.6 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received cisplatin at 215.6 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Cisplatin therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_088",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000983 | Infusion Cycle: 1\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 126/88 mmHg, Pulse 82 bpm, Resp Rate 18/min, SpO2 93%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Docetaxel at 137.3 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received docetaxel at 137.3 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Docetaxel therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_089",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000104\nCurrent Regimen: Erlotinib 150.3 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing severe unbearable papulopustular rash and diarrhea with inability to keep fluids down.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received erlotinib at 150.3 mg; developed severe unbearable papulopustular rash and diarrhea with inability to keep fluids down.\nAction: Hold or reduce Erlotinib therapy, initiate supportive management for severe unbearable papulopustular rash and diarrhea with inability to keep fluids down, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_090",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000991\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with NSCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating BRAF driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage IV.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Braf variant was identified; patient received antineoplastic therapy; developed nsclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_091",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000592 | Infusion Cycle: 5\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 108/90 mmHg, Pulse 76 bpm, Resp Rate 18/min, SpO2 96%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Dabrafenib at 165.1 mg.\nPatient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received dabrafenib at 165.1 mg; developed mild treatment-related fatigue.\nAction: Continue standard clinical monitoring and maintain current Dabrafenib regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_092",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000082 | Infusion Cycle: 4\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 147/83 mmHg, Pulse 66 bpm, Resp Rate 18/min, SpO2 96%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Docetaxel at 262.1 mg.\nPatient reports mild treatment-related fatigue. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received docetaxel at 262.1 mg; developed mild treatment-related fatigue.\nAction: Continue standard clinical monitoring and maintain current Docetaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_093",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nSURGICAL PATHOLOGY REPORT\nPatient ID: PT-000827\nSpecimen: Core needle biopsy / surgical tissue resection of primary tumor.\n\nGROSS & MICROSCOPIC EXAMINATION:\nSpecimen consists of multiple fibrous tissue cores exhibiting invasive malignant epithelial neoplasm consistent with SCLC.\nMicroscopic sections reveal moderate cellular atypia with hyperchromatic nuclei, prominent nucleoli, and desmoplastic stroma.\nSurgical margins are evaluated and confirmed clear of invasive tumor cells. Lymphovascular invasion is not identified.\n\nMOLECULAR & IMMUNOHISTOCHEMICAL TESTING:\nNext-Generation Sequencing (NGS) confirms activating MET driver alteration.\nPathologic Staging: Pathologic evaluation aligns with clinical Stage I.\nRecommendation: Correlation with systemic clinical oncology records and targeted therapy protocols.",
+      "candidate_summary": "Risk: Low\nKey Finding: Met variant was identified; patient received antineoplastic therapy; developed sclc.\nAction: Continue standard clinical monitoring and maintain current antineoplastic therapy regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_094",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000160\nDemographics: 61-year-old female presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II NSCLC.\nGenomic Profile: Confirmed driver mutation in KRAS. Secondary mutation: ALK.\nTumor mutational burden measured at 2.9 mut/Mb with ctDNA level of 1.89 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 165/86 mmHg, Heart rate 61 bpm, SpO2 97% on room air.\nSerum Chemistries: Serum creatinine 0.98 mg/dL, Liver function enzymes 39.6 U/L, Hemoglobin 14.7 g/dL.\nPatient currently demonstrates no acute adverse toxicities. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Radiotherapy SBRT at a dosage of 152.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Low\nKey Finding: Kras variant was identified; patient received radiotherapy sbrt at 152.4 mg; exhibits stable tolerance with no acute adverse toxicities. Genomic status: ALK.\nAction: Continue standard clinical monitoring and maintain current Radiotherapy SBRT regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_095",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nAMBULATORY ONCOLOGY NURSE INTAKE ASSESSMENT\nPatient ID: PT-000518 | Infusion Cycle: 6\n\nTRIAGE & CLINICAL VITALS:\nVital Signs: BP 118/108 mmHg, Pulse 80 bpm, Resp Rate 18/min, SpO2 90%.\nECOG Performance Status: Evaluated as ambulatory and self-caring.\n\nSYMPTOM REVIEW & ADVERSE EVENT SCREENING:\nPatient screened prior to administration of Cisplatin+Pemetrexed at 203.5 mg.\nPatient reports severe exertional dyspnea and hypoxemia. Patient explicitly denies chest pain, denies intractable vomiting, and reports no shaking chills.\nIV peripheral access established with blood return confirmed in right forearm.\n\nNURSING INTERVENTIONS:\nHydration protocol initiated per oncology standing orders. Physician notified regarding baseline labs and symptom status.",
+      "candidate_summary": "Risk: High\nKey Finding: Patient received cisplatin+pemetrexed at 203.5 mg; developed severe exertional dyspnea and hypoxemia.\nAction: Hold or reduce Cisplatin+Pemetrexed therapy, initiate supportive management for severe exertional dyspnea and hypoxemia, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_096",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000221\nDemographics: 76-year-old female presenting for Cycle 4 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II NSCLC.\nGenomic Profile: Confirmed driver mutation in EGFR. Secondary mutation: MET.\nTumor mutational burden measured at 3.4 mut/Mb with ctDNA level of 0.26 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 162/62 mmHg, Heart rate 81 bpm, SpO2 91% on room air.\nSerum Chemistries: Serum creatinine 1.53 mg/dL, Liver function enzymes 17.2 U/L, Hemoglobin 14.5 g/dL.\nPatient currently demonstrates moderate fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Dabrafenib at a dosage of 50.4 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Egfr variant was identified; patient received dabrafenib at 50.4 mg; developed moderate fatigue and mild nausea. Genomic status: MET.\nAction: Hold or reduce Dabrafenib therapy, initiate supportive management for moderate fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_097",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000082\nCurrent Regimen: Docetaxel 262.1 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received docetaxel at 262.1 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Docetaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_098",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000406\nDemographics: 46-year-old male presenting for Cycle 3 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage II Breast Cancer.\nGenomic Profile: Confirmed driver mutation in TP53. Secondary mutation: Wild-type.\nTumor mutational burden measured at 2.6 mut/Mb with ctDNA level of 1.88 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 125/62 mmHg, Heart rate 60 bpm, SpO2 99% on room air.\nSerum Chemistries: Serum creatinine 1.94 mg/dL, Liver function enzymes 89.7 U/L, Hemoglobin 15.4 g/dL.\nPatient currently demonstrates acute grade 3 fatigue and mild nausea. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with ERLOTINIB at a dosage of 140.2 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: High\nKey Finding: Tp53 variant was identified; patient received erlotinib at 140.2 mg; developed acute grade 3 fatigue and mild nausea. Genomic status: Wild-type.\nAction: Hold or reduce ERLOTINIB therapy, initiate supportive management for acute grade 3 fatigue and mild nausea, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_099",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nPATIENT-REPORTED SYMPTOM LOG & CALL-IN JOURNAL\nPatient ID: PT-000105\nCurrent Regimen: Docetaxel 48.5 mg\n\nPATIENT NARRATIVE:\n'I am reporting my daily symptoms since starting my recent cycle. I have been experiencing manageable mild fatigue.\nI am able to perform light activities around the house, but I felt much weaker yesterday.\nI have no fever at home and no difficulty breathing when resting in bed.\nTaking prescribed supportive medications with partial relief. Requesting callback from clinic nurse.'",
+      "candidate_summary": "Risk: Low\nKey Finding: Patient received docetaxel at 48.5 mg; developed manageable mild fatigue.\nAction: Continue standard clinical monitoring and maintain current Docetaxel regimen as tolerated.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    },
+    {
+      "case_id": "REV_100",
+      "clinical_note": "INSTRUCTION: Analyze the clinical note and provide the patient's Risk, Key Finding, and Action.\n\nCLINICAL NOTE:\nONCOLOGY CONSULTATION PROGRESS NOTE\nPatient ID: PT-000430\nDemographics: 52-year-old female presenting for Cycle 2 evaluation.\n\nDIAGNOSIS & MOLECULAR PROFILING:\nPrimary Diagnosis: Stage I NSCLC.\nGenomic Profile: Confirmed driver mutation in BRAF. Secondary mutation: None/Unknown.\nTumor mutational burden measured at 0.7 mut/Mb with ctDNA level of 1.13 ng/mL.\n\nCLINICAL ASSESSMENT & LABORATORY REVIEW:\nVitals: Blood pressure 134/95 mmHg, Heart rate 90 bpm, SpO2 94% on room air.\nSerum Chemistries: Serum creatinine 1.45 mg/dL, Liver function enzymes 5.0 U/L, Hemoglobin 12.9 g/dL.\nPatient currently demonstrates moderate immune-mediated hepatitis with elevated AST/ALT. Physical examination reveals no jaundice, no acute respiratory distress, and clear lung fields bilaterally.\n\nTREATMENT PLAN & REGIMEN:\nAdminister scheduled therapy with Nivolumab at a dosage of 176.2 mg.\nPre-medications ordered per protocol. Serial monitoring of renal markers and complete blood count scheduled prior to next infusion.",
+      "candidate_summary": "Risk: Moderate\nKey Finding: Braf variant was identified; patient received nivolumab at 176.2 mg; developed moderate immune-mediated hepatitis with elevated ast/alt.\nAction: Hold or reduce Nivolumab therapy, initiate supportive management for moderate immune-mediated hepatitis with elevated AST/ALT, and closely monitor patient status.",
+      "evaluation_rubric": {
+        "clinical_correctness": "Score 1-5 (1=Harmful/Inaccurate, 5=Flawless)",
+        "risk_agreement": "Agree / Disagree",
+        "key_finding_completeness": "Complete / Missing Critical Findings",
+        "action_appropriateness": "Score 1-5 (1=Contraindicated, 5=Optimal Standard of Care)",
+        "entity_fidelity": "High / Partial / Distorted"
+      }
+    }
+  ]
+}

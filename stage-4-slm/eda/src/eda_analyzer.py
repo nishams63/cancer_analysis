@@ -30,6 +30,14 @@ class DatasetEDAAnalyzer:
 
     def __init__(self, data_path: str, output_dir: str):
         self.data_path = Path(data_path)
+        if not self.data_path.exists():
+            for alt in [
+                Path("stage-4-slm/data-engineer/data/slm_finetune_dataset_v1.parquet"),
+                Path("stage-4-slm/data-engineering/data/slm_finetune_dataset_v1.parquet"),
+            ]:
+                if alt.exists():
+                    self.data_path = alt
+                    break
         self.output_dir = Path(output_dir)
         self.figures_dir = self.output_dir / "figures"
         self.reports_dir = self.output_dir / "reports"

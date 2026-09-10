@@ -1,0 +1,36 @@
+# Training Hyperparameters
+seed: 42
+output_dir: "stage-4-slm/slm-engineer/training/checkpoints"
+logging_dir: "stage-4-slm/slm-engineer/training/logs"
+run_name: "qwen2.5-1.5b-clinical-lora-r16-alpha32"
+
+num_train_epochs: 3
+per_device_train_batch_size: 4
+per_device_eval_batch_size: 4
+gradient_accumulation_steps: 4
+effective_batch_size: 16
+
+learning_rate: 0.0002 # 2e-4
+weight_decay: 0.01
+warmup_ratio: 0.05
+lr_scheduler_type: "cosine"
+
+fp16: false
+bf16: true
+gradient_checkpointing: true
+max_grad_norm: 1.0
+
+eval_strategy: "steps"
+eval_steps: 50
+save_strategy: "steps"
+save_steps: 50
+save_total_limit: 2
+load_best_model_at_end: true
+metric_for_best_model: "eval_loss"
+greater_is_better: false
+
+logging_steps: 10
+report_to: "none"
+dataloader_num_workers: 2
+dataloader_pin_memory: true
+max_seq_length: 512
