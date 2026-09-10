@@ -1,0 +1,69 @@
+{
+  "test_set_size": 861,
+  "unique_patients": 150,
+  "nlg_metrics": {
+    "rouge1": 0.5241953964251391,
+    "rouge2": 0.3565781713896958,
+    "rougeL": 0.5082761300848496,
+    "bleu4": 0.2837311809083538
+  },
+  "entity_metrics": {
+    "drug": {
+      "precision": 0.8722415795586528,
+      "recall": 0.7084785133565621,
+      "f1": 0.7818770955632303
+    },
+    "gene": {
+      "precision": 0.9814169570267132,
+      "recall": 0.8732311320754716,
+      "f1": 0.9241686824128102
+    },
+    "dosage": {
+      "precision": 0.6991869918699187,
+      "recall": 0.6991869918699187,
+      "f1": 0.6991869918699187
+    },
+    "mean_entity_f1": 0.8017442566153198,
+    "hallucination_rate": 0.0,
+    "unsupported_entity_count": 0
+  },
+  "safety_metrics": {
+    "critical_patients_evaluated": 259,
+    "critical_patients_correctly_triaged": 259,
+    "critical_safety_recall": 1.0,
+    "critical_safety_f1": 1.0
+  },
+  "comparative_stage3_benchmark": {
+    "stage3_baseline": {
+      "urgency_macro_f1": 0.7557,
+      "critical_safety_recall": 0.9457,
+      "critical_safety_f1": 0.956,
+      "hazard_macro_f1": 0.5214,
+      "entity_span_f1": 0.767
+    },
+    "stage4_slm": {
+      "critical_safety_recall": 1.0,
+      "critical_safety_f1": 1.0,
+      "mean_entity_preservation_f1": 0.8017442566153198,
+      "hallucination_rate": 0.0,
+      "rouge_1": {
+        "mean": 0.5241953964251391,
+        "ci_95": [
+          0.5167002109233496,
+          0.5320714724963604
+        ]
+      },
+      "rouge_l": {
+        "mean": 0.5082761300848496,
+        "ci_95": [
+          0.5001420188935554,
+          0.5166901006517943
+        ]
+      },
+      "bleu_4": 0.2837311809083538
+    },
+    "entity_preservation_delta": 0.03474425661531977,
+    "critical_recall_delta": 0.054300000000000015,
+    "certification_status": "EXCEEDS_BASELINE"
+  }
+}

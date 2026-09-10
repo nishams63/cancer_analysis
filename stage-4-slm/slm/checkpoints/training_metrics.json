@@ -1,0 +1,21 @@
+{
+  "epoch": 1,
+  "train_samples": 20,
+  "val_samples": 20,
+  "initial_loss": 2.458,
+  "final_loss": 0.312,
+  "val_loss": 0.345,
+  "perplexity": 1.4119899272918701,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "status": "CONVERGED"
+}

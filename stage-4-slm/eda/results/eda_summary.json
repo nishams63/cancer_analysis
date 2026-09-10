@@ -1,0 +1,292 @@
+{
+  "dataset_overview": {
+    "total_records": 5706,
+    "unique_patients": 1000
+  },
+  "length_statistics": {
+    "clinical_note": {
+      "char_length": {
+        "mean": 771.6531720995443,
+        "std": 176.6559328258084,
+        "median": 759.0,
+        "p25": 567.0,
+        "p75": 975.0,
+        "p95": 999.0,
+        "min": 504,
+        "max": 1038
+      },
+      "word_count": {
+        "mean": 104.53680336487908,
+        "std": 22.09221678091789,
+        "median": 99.0,
+        "p95": 136.0,
+        "min": 76,
+        "max": 143
+      },
+      "token_count": {
+        "mean": 162.38468279004556,
+        "std": 45.33464356673242,
+        "median": 151.0,
+        "p95": 229.0,
+        "min": 110,
+        "max": 243
+      }
+    },
+    "instruction": {
+      "char_length": {
+        "mean": 82.0,
+        "std": 0.0,
+        "median": 82.0,
+        "p25": 82.0,
+        "p75": 82.0,
+        "p95": 82.0,
+        "min": 82,
+        "max": 82
+      },
+      "word_count": {
+        "mean": 13.0,
+        "std": 0.0,
+        "median": 13.0,
+        "p95": 13.0,
+        "min": 13,
+        "max": 13
+      },
+      "token_count": {
+        "mean": 20.0,
+        "std": 0.0,
+        "median": 20.0,
+        "p95": 20.0,
+        "min": 20,
+        "max": 20
+      }
+    },
+    "target_risk": {
+      "char_length": {
+        "mean": 116.44128987031195,
+        "std": 14.632110440211306,
+        "median": 115.0,
+        "p25": 109.0,
+        "p75": 124.0,
+        "p95": 141.0,
+        "min": 91,
+        "max": 187
+      },
+      "word_count": {
+        "mean": 14.51174202593761,
+        "std": 2.0099539014889896,
+        "median": 15.0,
+        "p95": 17.0,
+        "min": 11,
+        "max": 24
+      },
+      "token_count": {
+        "mean": 22.195758850332982,
+        "std": 4.422520990689579,
+        "median": 24.0,
+        "p95": 26.0,
+        "min": 13,
+        "max": 36
+      }
+    },
+    "target_key_finding": {
+      "char_length": {
+        "mean": 100.30581843673326,
+        "std": 23.662968575980756,
+        "median": 93.0,
+        "p25": 82.0,
+        "p75": 117.0,
+        "p95": 144.0,
+        "min": 56,
+        "max": 176
+      },
+      "word_count": {
+        "mean": 12.745881528215913,
+        "std": 3.5269223279062722,
+        "median": 11.0,
+        "p95": 19.0,
+        "min": 6,
+        "max": 23
+      },
+      "token_count": {
+        "mean": 20.394497020679985,
+        "std": 5.684781214743476,
+        "median": 18.0,
+        "p95": 32.0,
+        "min": 9,
+        "max": 40
+      }
+    },
+    "target_action": {
+      "char_length": {
+        "mean": 115.3913424465475,
+        "std": 29.55162784952557,
+        "median": 103.0,
+        "p25": 91.0,
+        "p75": 145.0,
+        "p95": 170.0,
+        "min": 90,
+        "max": 214
+      },
+      "word_count": {
+        "mean": 14.095162986330179,
+        "std": 4.265618340222047,
+        "median": 11.0,
+        "p95": 21.0,
+        "min": 11,
+        "max": 28
+      },
+      "token_count": {
+        "mean": 18.039607430774623,
+        "std": 6.330858009876492,
+        "median": 14.0,
+        "p95": 28.0,
+        "min": 13,
+        "max": 39
+      }
+    },
+    "full_sequence": {
+      "token_count": {
+        "mean": 258.9081668419208,
+        "std": 53.19053753238685,
+        "median": 242.0,
+        "p95": 346.0,
+        "min": 196,
+        "max": 376
+      }
+    },
+    "truncation_risk": {
+      "threshold_512": {
+        "exceeded_count": 0,
+        "exceeded_pct": 0.0
+      },
+      "threshold_1024": {
+        "exceeded_count": 0,
+        "exceeded_pct": 0.0
+      },
+      "threshold_2048": {
+        "exceeded_count": 0,
+        "exceeded_pct": 0.0
+      }
+    }
+  },
+  "entity_and_vocabulary": {
+    "entities": {
+      "total_drug_mentions": 4752,
+      "unique_drugs": 45,
+      "top_drugs": {
+        "Pemetrexed": 320,
+        "Cisplatin": 297,
+        "Carboplatin": 292,
+        "Paclitaxel": 278,
+        "Nivolumab": 275,
+        "Durvalumab": 263,
+        "Docetaxel": 258,
+        "Carboplatin+Pembrolizumab": 245,
+        "Radiotherapy-Standard": 240,
+        "Atezolizumab": 235,
+        "Radiotherapy-SBRT": 231,
+        "Pembrolizumab": 230,
+        "Alectinib": 211,
+        "Paclitaxel+Bevacizumab": 204,
+        "Crizotinib": 187
+      },
+      "total_gene_mentions": 4412,
+      "unique_genes": 9,
+      "top_genes": {
+        "None/Unknown": 1081,
+        "EGFR": 638,
+        "KRAS": 594,
+        "TP53": 501,
+        "Wild-type": 432,
+        "ALK": 334,
+        "BRAF": 310,
+        "ROS1": 263,
+        "MET": 259
+      },
+      "total_dosage_mentions": 4752,
+      "unique_dosages": 20,
+      "top_dosages": {
+        "150.3 mg": 229,
+        "10.0 mg": 56,
+        "5000.0 mg": 17,
+        "135.0 mg": 12,
+        "150.5 mg": 12,
+        "153.8 mg": 12,
+        "153.6 mg": 12,
+        "161.7 mg": 11,
+        "219.9 mg": 11,
+        "154.8 mg": 11,
+        "148.1 mg": 11,
+        "203.8 mg": 11,
+        "125.0 mg": 11,
+        "184.9 mg": 11,
+        "156.0 mg": 11,
+        "150.6 mg": 11,
+        "129.6 mg": 10,
+        "128.2 mg": 10,
+        "157.7 mg": 10,
+        "177.1 mg": 10
+      },
+      "total_adverse_event_mentions": 5706,
+      "unique_adverse_events": 75,
+      "top_adverse_events": {
+        "no acute adverse toxicities": 1026,
+        "manageable mild fatigue": 1024,
+        "mild treatment-related fatigue": 864,
+        "NSCLC": 510,
+        "severe exertional dyspnea and hypoxemia": 299,
+        "moderate fatigue and mild nausea": 244,
+        "elevated transaminases and right upper quadrant discomfort": 240,
+        "moderate intermittent nausea and lethargy": 155,
+        "Breast Cancer": 126,
+        "SCLC": 96,
+        "Melanoma": 88,
+        "Colorectal Cancer": 85,
+        "mild fatigue and mild nausea": 82,
+        "acute grade 3 fatigue and mild nausea": 82,
+        "grade 2 generalized fatigue": 69
+      }
+    },
+    "lexical_diversity": {
+      "clinical_note_total_words": 596487,
+      "clinical_note_vocab_size": 5312,
+      "clinical_note_ttr": 0.0089054748888073,
+      "target_total_words": 235959,
+      "target_vocab_size": 2755,
+      "target_ttr": 0.011675757229010125,
+      "target_vocab_grounded_in_notes_pct": 51.39745916515427
+    }
+  },
+  "partition_uniformity": {
+    "TRAIN": {
+      "record_count": 3996,
+      "record_pct": 70.03154574132492,
+      "unique_patients": 700,
+      "mean_token_length": 162.48648648648648,
+      "median_token_length": 151.0,
+      "drug_mention_frequency": 83.25825825825825,
+      "ae_mention_frequency": 100.0,
+      "mean_entities_per_note": 3.439189189189189
+    },
+    "VALIDATION": {
+      "record_count": 849,
+      "record_pct": 14.879074658254469,
+      "unique_patients": 150,
+      "mean_token_length": 161.92932862190813,
+      "median_token_length": 151.0,
+      "drug_mention_frequency": 83.51001177856303,
+      "ae_mention_frequency": 100.0,
+      "mean_entities_per_note": 3.442873969375736
+    },
+    "TEST": {
+      "record_count": 861,
+      "record_pct": 15.08937960042061,
+      "unique_patients": 150,
+      "mean_token_length": 162.36120789779326,
+      "median_token_length": 151.0,
+      "drug_mention_frequency": 83.15911730545878,
+      "ae_mention_frequency": 100.0,
+      "mean_entities_per_note": 3.4332171893147505
+    }
+  }
+}
