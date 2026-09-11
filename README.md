@@ -28,12 +28,18 @@ cancer_analysis/
 │   ├── data-engineering/    # Production-quality research NLP dataset, deduplication, PII scrub, splits
 │   ├── eda/                 # Exploratory data analysis, vocabulary, negation profiling, 16 figures, reports
 │   └── nlp/                 # Clinical NLP pipeline, negation scoping, feature extraction, baselines
-└── stage-4-slm/              # SLM Fine-Tuning & Multi-Agent Decision Support
-    ├── data-engineer/        # Entity-verified instruction dataset pipeline, circuit breaker, zero-leakage splits
-    ├── eda-engineer/         # Statistical, linguistic & tokenization audit of instruction pairs (16 tests)
-    ├── slm-engineer/         # Parameter-efficient QLoRA fine-tuning & ablation study (BioMistral, LLaMA-3)
-    ├── evaluation-engineer/  # OOD, adversarial, empirical calibration (tau*), safety firewall & clinician review
-    └── integration-engineer/ # 100% offline local CPU FastAPI service, GGUF/llama.cpp, web UI, CLI (20 tests)
+├── stage-4-slm/              # SLM Fine-Tuning & Multi-Agent Decision Support
+│   ├── data-engineer/        # Entity-verified instruction dataset pipeline, circuit breaker, zero-leakage splits
+│   ├── eda-engineer/         # Statistical, linguistic & tokenization audit of instruction pairs (16 tests)
+│   ├── slm-engineer/         # Parameter-efficient QLoRA fine-tuning & ablation study (BioMistral, LLaMA-3)
+│   ├── evaluation-engineer/  # OOD, adversarial, empirical calibration (tau*), safety firewall & clinician review
+│   └── integration-engineer/ # 100% offline local CPU FastAPI service, GGUF/llama.cpp, web UI, CLI (20 tests)
+└── stage 5 Gen-AI/           # GenAI Synthetic Oncology Stress-Test Engine
+    ├── Data Engineer/        # Reference distributions, bounds, constraints, rare-combination space, evidence chunks
+    ├── Eda Engineer/         # Blind-spot analysis, scenario library (PROMPT-R01 to R15), retrieval intents, drift rules
+    ├── Gen Ai Engineer/      # StructuredSampler, NVIDIA LLM client, TF-IDF RAG retriever, counterfactuals
+    ├── Evaluation Engineer/  # 10-question evaluation harness, F01-F20 taxonomy, difficulty & impact scoring, 8 reports
+    └── Integration Engineer/ # Unified CLI (run_stage5.py), SQLite store, Wildcard ranking & interactive dashboard
 ```
 
 ### Module Summary
@@ -55,6 +61,11 @@ cancer_analysis/
 | [`stage-4-slm/slm-engineer`](stage-4-slm/slm-engineer/) | QLoRA fine-tuning & 4-config ablation study | BioMistral-7B / Clinical-Llama-3 adapters, 13 unit tests |
 | [`stage-4-slm/evaluation-engineer`](stage-4-slm/evaluation-engineer/) | Multi-axis clinical evaluation & safety firewall | OOD/adversarial benchmarks, tau* calibration, 6-gate firewall, 16 tests |
 | [`stage-4-slm/integration-engineer`](stage-4-slm/integration-engineer/) | Offline local CPU application & decision support | GGUF Q4_K_M, llama.cpp, FastAPI (/summarize), Web UI, CLI, 20 tests |
+| [`stage 5 Gen-AI/Data Engineer`](stage%205%20Gen-AI/Data%20Engineer/) | Reference distributions, constraints & evidence corpus | Validated parquets, constraint specs, 32 unit tests |
+| [`stage 5 Gen-AI/Eda Engineer`](stage%205%20Gen-AI/Eda%20Engineer/) | Blind-spot analysis & scenario prompt library | 7 analysis modules, PROMPT-R01 to R15, 21 unit tests |
+| [`stage 5 Gen-AI/Gen Ai Engineer`](stage%205%20Gen-AI/Gen%20Ai%20Engineer/) | GenAI synthetic patient & counterfactual generator | Structured sampler, RAG retriever, LLM pipeline, 25 unit tests |
+| [`stage 5 Gen-AI/Evaluation Engineer`](stage%205%20Gen-AI/Evaluation%20Engineer/) | Multi-axis stress-test evaluation & failure audit | 10 DoD verifications, 8 markdown reports, 24 unit tests |
+| [`stage 5 Gen-AI/Integration Engineer`](stage%205%20Gen-AI/Integration%20Engineer/) | End-to-end orchestration & operational layer | Unified CLI (`run_stage5.py`), SQLite, dashboard, 14 unit tests |
 
 ---
 
@@ -75,10 +86,24 @@ uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 Interactive API docs will be available at: `http://localhost:8000/docs`.
 
-### 3. Run Automated Tests
-Execute the full test suite across the entire project (40 passed tests):
+### 3. Run Stage 5 GenAI Synthetic Stress-Test Engine
+Execute the unified Stage 5 pipeline to generate and stress-test 20 synthetic oncology scenarios:
 ```bash
-pytest stage-1-ml/ -v
+python run_stage5.py --n 20 --seed 42
+```
+Launch the interactive Stage 5 evaluation dashboard:
+```bash
+uvicorn "stage 5 Gen-AI.Integration Engineer.src.dashboard.dashboard_api:create_app" --factory --port 8085
+```
+
+### 4. Run Automated Tests
+Execute the test suites across the project (116 passed tests across Stage 5 roles):
+```bash
+pytest "stage 5 Gen-AI/Data Engineer/tests" -v
+pytest "stage 5 Gen-AI/Eda Engineer/tests" -v
+pytest "stage 5 Gen-AI/Gen Ai Engineer/tests" -v
+pytest "stage 5 Gen-AI/Evaluation Engineer/tests" -v
+pytest "stage 5 Gen-AI/Integration Engineer/tests" -v
 ```
 
 ---

@@ -1,0 +1,16 @@
+# Storage and Persistence Configuration
+database:
+  engine: sqlite
+  path: results/stage5.db
+  timeout: 30.0
+  journal_mode: WAL
+
+exports:
+  jsonl: true
+  csv: true
+  parquet: true
+  export_paths:
+    batches: results/batches/batch_results.jsonl
+    scenarios: results/scenarios/scenario_results.jsonl
+    failures: results/failures/failure_results.jsonl
+    wildcard_candidates: results/rankings/wildcard_candidates.csv

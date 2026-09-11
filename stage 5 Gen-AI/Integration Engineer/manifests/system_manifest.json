@@ -1,0 +1,12 @@
+{
+  "stage5_version": "1.0.0",
+  "data_version": "v1.0",
+  "prompt_library_version": "v1.2",
+  "rag_index_version": "v3.0",
+  "llm_provider": "offline_fallback",
+  "evaluation_version": "v1.0",
+  "stage1_version": "v2.0-candidate-v4",
+  "stage2_version": "v1.0-multimodal-dl",
+  "stage3_version": "v4.0-clinical-nlp",
+  "stage4_version": "v2.0-slm-qwen"
+}

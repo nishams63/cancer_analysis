@@ -1,0 +1,49 @@
+# Integration Engineer Configuration
+batch:
+  default_size: 20
+  default_seed: 42
+  max_batch_size: 500
+
+execution:
+  continue_on_stage_error: true
+  fail_fast: false
+  max_retries: 3
+  timeout_seconds:
+    rag: 30
+    llm: 60
+    stage1: 15
+    stage2: 15
+    stage3: 30
+    stage4: 30
+    evaluation: 30
+
+checkpointing:
+  enabled: true
+  checkpoint_dir: runtime/checkpoints
+  save_every_step: true
+
+storage:
+  backend: sqlite
+  database_path: results/stage5.db
+  export_dir: results/exports
+
+ranking:
+  enabled: true
+  min_fidelity: 0.80
+  min_faithfulness: 0.80
+  weights:
+    plausibility: 0.10
+    fidelity: 0.10
+    difficulty: 0.20
+    impact: 0.25
+    multi_stage_failure: 0.15
+    reproducibility: 0.10
+    novelty: 0.10
+
+dashboard:
+  enabled: true
+  host: '127.0.0.1'
+  port: 8085
+
+reproducibility:
+  strict_version_capture: true

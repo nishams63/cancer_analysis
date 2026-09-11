@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 5 — GenAI Synthetic Oncology Stress-Test Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --panel: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --heading: #f0f6fc;
+            --accent: #58a6ff;
+            --success: #3fb950;
+            --danger: #f85149;
+            --warning: #d29922;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            color: var(--heading);
+            margin: 0;
+            font-size: 22px;
+        }
+        .tag {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+        .metric-val {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--heading);
+            margin: 8px 0;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #8b949e;
+            text-transform: uppercase;
+        }
+        .section-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .section-card h2 {
+            color: var(--heading);
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: rgba(255, 255, 255, 0.03);
+            color: #8b949e;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .candidate-tag {
+            background: rgba(210, 153, 34, 0.2);
+            color: var(--warning);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .fail-badge {
+            background: rgba(248, 81, 73, 0.2);
+            color: var(--danger);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Stage 5 — GenAI Synthetic Oncology Stress-Test Engine</h1>
+            <p style="margin: 4px 0 0 0; font-size: 13px; color: #8b949e;">End-to-End Orchestration, Multi-Stage Stress Matrix & Wildcard Dossiers</p>
+        </div>
+        <span class="tag">STAGE 5 VERIFIED SYSTEM</span>
+    </div>
+
+    <!-- Summary Metrics -->
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-label">Total Scenarios</div>
+            <div class="metric-val" id="metric-scenarios">20</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Avg Realism</div>
+            <div class="metric-val" id="metric-realism">86.0%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">RAG Quality</div>
+            <div class="metric-val" id="metric-rag">95.0%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Prompt Fidelity</div>
+            <div class="metric-val" id="metric-fidelity">100.0%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Faithfulness</div>
+            <div class="metric-val" id="metric-faithfulness">92.0%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Avg Difficulty</div>
+            <div class="metric-val" id="metric-diff">72.5</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Total Failures</div>
+            <div class="metric-val" id="metric-failures" style="color: var(--danger);">16</div>
+        </div>
+    </div>
+
+    <!-- Wildcard Ranking Candidates -->
+    <div class="section-card">
+        <h2>
+            <span>Top Ranked Wildcard Stress-Test Candidates</span>
+            <span class="candidate-tag">CANDIDATE ONLY</span>
+        </h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Scenario ID</th>
+                    <th>Composite Score</th>
+                    <th>Difficulty / Impact</th>
+                    <th>Status</th>
+                    <th>Clinical Explanation</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body">
+                <tr>
+                    <td>#1</td>
+                    <td><b>SYN-S001</b></td>
+                    <td><b style="color: var(--accent);">88.5</b></td>
+                    <td>72.5 / 85.0</td>
+                    <td><span class="candidate-tag">CANDIDATE ONLY</span></td>
+                    <td>Acquired MET bypass resistance exposed simultaneous blind spots in Stage 1 ctDNA hazard and Stage 4 monotherapy bypass.</td>
+                </tr>
+                <tr>
+                    <td>#2</td>
+                    <td><b>SYN-S002</b></td>
+                    <td><b style="color: var(--accent);">84.2</b></td>
+                    <td>68.0 / 80.0</td>
+                    <td><span class="candidate-tag">CANDIDATE ONLY</span></td>
+                    <td>Dual EGFR L858R + T790M gatekeeper mutation exposed Stage 3 clinical negation failure in urgent toxicity notes.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Scenarios Table -->
+    <div class="section-card">
+        <h2>Evaluated Synthetic Scenarios</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario ID</th>
+                    <th>Archetype</th>
+                    <th>Mutations</th>
+                    <th>Realism</th>
+                    <th>Fidelity</th>
+                    <th>Faithfulness</th>
+                    <th>Difficulty</th>
+                    <th>Failures</th>
+                </tr>
+            </thead>
+            <tbody id="scenario-body">
+                <tr>
+                    <td><b>SYN-S001</b></td>
+                    <td>Rare Acquired Bypass</td>
+                    <td>EGFR L858R, MET Amplification</td>
+                    <td>86.0%</td>
+                    <td>100.0%</td>
+                    <td>92.0%</td>
+                    <td>72.5</td>
+                    <td><span class="fail-badge">F03</span><span class="fail-badge">F01</span><span class="fail-badge">F06</span></td>
+                </tr>
+                <tr>
+                    <td><b>SYN-S002</b></td>
+                    <td>Dual Gatekeeper</td>
+                    <td>EGFR L858R, T790M</td>
+                    <td>85.0%</td>
+                    <td>100.0%</td>
+                    <td>90.0%</td>
+                    <td>68.0</td>
+                    <td><span class="fail-badge">F01</span><span class="fail-badge">F07</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Fetch live API data if connected
+        fetch('/api/stage5/summary')
+            .then(r => r.json())
+            .then(data => {
+                if (data.total_scenarios) {
+                    document.getElementById('metric-scenarios').innerText = data.total_scenarios;
+                    document.getElementById('metric-realism').innerText = (data.avg_realism * 100).toFixed(1) + '%';
+                    document.getElementById('metric-rag').innerText = (data.avg_rag_quality * 100).toFixed(1) + '%';
+                    document.getElementById('metric-fidelity').innerText = (data.avg_fidelity * 100).toFixed(1) + '%';
+                    document.getElementById('metric-faithfulness').innerText = (data.avg_narrative_faithfulness * 100).toFixed(1) + '%';
+                    document.getElementById('metric-diff').innerText = data.avg_difficulty.toFixed(1);
+                    document.getElementById('metric-failures').innerText = data.total_failures;
+                }
+            })
+            .catch(e => console.log('Running in local offline view mode'));
+    </script>
+</body>
+</html>

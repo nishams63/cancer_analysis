@@ -1,0 +1,21 @@
+id,batch_id,rank,scenario_id,wildcard_score,is_candidate,reason_explanation
+5,RERUN-001,1,SYN-S001,78.2,1,"Scenario SYN-S001 ranked #1 (Composite Score: 78.2) [CANDIDATE ONLY]:
+- Scenario Plausibility: 90.0% (biologically consistent)
+- Prompt Fidelity: 100.0% (all conditions satisfied)
+- Narrative Faithfulness: 92.0% (zero critical hallucinations)
+- System Stress Difficulty: 66.0 / 100
+- Downstream Failure Impact: 76.0 / 100
+- Exposed Stages: stage1, stage4
+- Failure Codes: F03, F06
+- Counterfactual Instability: Preserved
+- Reproducibility: Validated deterministic lineage"
+6,RERUN-001,2,SYN-S002,68.65,1,"Scenario SYN-S002 ranked #2 (Composite Score: 68.7) [CANDIDATE ONLY]:
+- Scenario Plausibility: 90.0% (biologically consistent)
+- Prompt Fidelity: 100.0% (all conditions satisfied)
+- Narrative Faithfulness: 92.0% (zero critical hallucinations)
+- System Stress Difficulty: 67.0 / 100
+- Downstream Failure Impact: 77.0 / 100
+- Exposed Stages: None
+- Failure Codes: None
+- Counterfactual Instability: Preserved
+- Reproducibility: Validated deterministic lineage"

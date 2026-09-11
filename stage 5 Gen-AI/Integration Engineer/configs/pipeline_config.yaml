@@ -1,0 +1,24 @@
+# Pipeline Step Execution Toggles
+steps:
+  load_data_foundation: true
+  load_approved_scenarios: true
+  structured_generation: true
+  structured_validation: true
+  rag: true
+  llm: true
+  narrative_validation: true
+  realism: true
+  rag_quality: true
+  fidelity: true
+  narrative_faithfulness: true
+  stage1: true
+  stage2: true
+  stage3: true
+  stage4: true
+  failure_analysis: true
+  difficulty_impact: true
+  counterfactual: true
+  failure_clustering: true
+  wildcard_ranking: true
+  persist_results: true
+  update_dashboard: true

@@ -1,0 +1,2 @@
+{"id": 6, "scenario_id": "SYN-S001", "batch_id": "RERUN-001", "stage_name": "stage1", "failure_code": "F03", "confidence": 0.88, "evidence_text": "Stage 1 ML classified high ctDNA VAF as Standard risk."}
+{"id": 7, "scenario_id": "SYN-S001", "batch_id": "RERUN-001", "stage_name": "stage4", "failure_code": "F06", "confidence": 0.93, "evidence_text": "Stage 4 SLM recommended monotherapy failing bypass resistance."}

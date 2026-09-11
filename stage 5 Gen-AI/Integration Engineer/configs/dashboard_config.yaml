@@ -1,0 +1,11 @@
+# Dashboard Configuration
+server:
+  host: '127.0.0.1'
+  port: 8085
+  debug: false
+  cors_origins:
+    - '*'
+
+metrics:
+  refresh_interval_sec: 5
+  cache_ttl_sec: 30
