@@ -1,0 +1,16 @@
+blind_spot_id,name,description,affected_stages,stage_failure_rate,underrepresentation_score,disagreement_score,uncertainty_score,rarity_score,reproducibility_score,stress_test_priority_score,priority_tier
+BS12,Cross-stage disagreement,"Direct discordance between Tabular ML, Vision/Seq DL, and NLP/SLM",All Stages,0.7,0.8,0.9,0.85,0.85,0.95,0.81,CRITICAL
+BS14,Resistance pattern,Acquired bypass resistance mutations emerging under targeted therapy,"Stage 3, 4",0.68,0.9,0.65,0.85,0.92,0.95,0.781,CRITICAL
+BS09,Conflicting clinical signals,ECOG performance status contradictory to acute laboratory markers,"Stage 1, 4",0.65,0.85,0.7,0.9,0.8,0.9,0.765,CRITICAL
+BS02,Rare mutation co-occurrence,Dual or multi-driver co-occurrence with < 0.5% cohort representation,"Stage 3, 4",0.58,0.95,0.55,0.8,0.98,0.95,0.7395,CRITICAL
+BS15,Dataset coverage gap,Clinical phenotypes unrepresented in historical training cohorts,All Stages,0.5,0.95,0.5,0.8,0.95,0.85,0.6975,HIGH
+BS04,Conflicting biomarkers,Contradictory biomarker signals (e.g. high ctDNA vs normal CEA),"Stage 1, 2",0.5,0.8,0.65,0.85,0.8,0.9,0.6925,CRITICAL
+BS10,Low-confidence prediction pattern,Inputs that trigger model epistemic uncertainty (confidence < 0.50),"Stage 1, 3",0.6,0.65,0.55,0.95,0.7,0.95,0.68,HIGH
+BS11,High-confidence wrong prediction,Model misclassification with overconfident probability (> 0.80),Stage 1,0.75,0.6,0.65,0.5,0.75,0.9,0.67,CRITICAL
+BS05,Rare adverse event,High-severity toxicities with low base-rate (e.g. immune pneumonitis),"Stage 1, 3",0.4,0.9,0.45,0.7,0.95,0.9,0.635,HIGH
+BS08,Temporal complexity,Compressed or rapid multi-line treatment progression trajectories,"Stage 2, 4",0.42,0.8,0.45,0.75,0.8,0.9,0.6135,HIGH
+BS03,Sparse biomarker region,Biomarker values in sparse upper or lower percentile tails,Stage 1,0.45,0.75,0.4,0.75,0.85,0.9,0.6075,HIGH
+BS01,Underrepresented mutation,Single driver mutation with < 3% cohort representation,"Stage 1, 4",0.35,0.85,0.4,0.65,0.9,0.95,0.59,HIGH
+BS13,Unusual treatment history,Non-standard sequential switching across multiple drug classes,"Stage 1, 4",0.4,0.75,0.45,0.7,0.8,0.9,0.59,MEDIUM
+BS07,Negation-heavy text,Complex multi-clause clinical sentences with nested negations,"Stage 3, 4",0.55,0.6,0.5,0.7,0.5,0.95,0.5875,HIGH
+BS06,Missing clinical information,Partial clinical charts missing critical genomic or lab values,"Stage 1, 4",0.38,0.7,0.4,0.85,0.6,0.95,0.569,HIGH

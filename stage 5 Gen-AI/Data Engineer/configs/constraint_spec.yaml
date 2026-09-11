@@ -1,0 +1,250 @@
+version: 1.0.0
+metadata:
+  generated_by: Stage5 Data Engineer
+  purpose: Define permissible synthetic oncology parameter space for structured sampling
+schema_constraints:
+  patient_id:
+    type: string
+    nullable: false
+    pattern: ^PT-[0-9]{6}$
+  age:
+    type: integer
+    nullable: false
+    min: 18
+    max: 100
+  sex:
+    type: string
+    nullable: false
+    allowed:
+    - Male
+    - Female
+    - Unknown
+  cancer_type:
+    type: string
+    nullable: false
+    allowed:
+    - Non-Small Cell Lung Cancer
+    - Breast Cancer
+    - Colorectal Cancer
+    - Pancreatic Cancer
+    - Unknown
+  cancer_stage:
+    type: string
+    nullable: false
+    allowed:
+    - Stage I
+    - Stage II
+    - Stage III
+    - Stage IV
+    - Unknown
+biomarker_ranges:
+  ctdna_level:
+    unit: ng/mL
+    min: 0.0
+    max: 25.0
+    distribution_quantile_p95: 8.5
+  tumor_marker_level:
+    unit: U/mL
+    min: 0.0
+    max: 500.0
+    distribution_quantile_p95: 120.0
+  inflammation_marker:
+    unit: mg/L
+    min: 0.0
+    max: 150.0
+    distribution_quantile_p95: 45.0
+  gene_expression_score:
+    unit: score
+    min: 0.0
+    max: 100.0
+    distribution_quantile_p95: 85.0
+  hemoglobin:
+    unit: g/dL
+    min: 5.0
+    max: 19.0
+    critical_threshold_low: 7.0
+  white_blood_cell_count:
+    unit: 10^3/uL
+    min: 0.5
+    max: 50.0
+    critical_threshold_low: 1.0
+  platelet_count:
+    unit: 10^3/uL
+    min: 10.0
+    max: 1000.0
+    critical_threshold_low: 25.0
+  creatinine_level:
+    unit: mg/dL
+    min: 0.3
+    max: 10.0
+    critical_threshold_high: 3.0
+  liver_function_marker:
+    unit: U/L
+    min: 5.0
+    max: 500.0
+    critical_threshold_high: 150.0
+vital_signs:
+  systolic_bp:
+    unit: mmHg
+    min: 75.0
+    max: 210.0
+  diastolic_bp:
+    unit: mmHg
+    min: 45.0
+    max: 125.0
+  heart_rate:
+    unit: bpm
+    min: 45.0
+    max: 180.0
+  oxygen_saturation:
+    unit: '%'
+    min: 75.0
+    max: 100.0
+temporal_rules:
+- rule_id: T001
+  name: treatment_after_diagnosis
+  condition: treatment_start_date >= diagnosis_date
+  description: Cancer treatment start timestamp must occur on or after the initial
+    diagnosis date.
+- rule_id: T002
+  name: followup_after_treatment
+  condition: followup_date >= treatment_start_date
+  description: Post-treatment surveillance observation must occur on or after treatment
+    initiation.
+- rule_id: T003
+  name: toxicity_during_active_therapy
+  condition: toxicity_onset_date >= treatment_start_date
+  description: Drug-induced adverse events must follow the administration of the causative
+    agent.
+- rule_id: T004
+  name: progression_time_window
+  condition: progression_date >= treatment_start_date + 14_days
+  description: Documented biological disease progression requires minimum observation
+    window.
+mutation_rules:
+  allowed_driver_mutations:
+  - EGFR
+  - KRAS
+  - TP53
+  - ALK
+  - MET
+  - BRAF
+  - PIK3CA
+  - HER2
+  - ROS1
+  - RET
+  common_cooccurrences:
+  - pair:
+    - KRAS
+    - TP53
+    evidence_status: empirically_frequent
+    frequency_range:
+    - 0.35
+    - 0.45
+  - pair:
+    - EGFR
+    - TP53
+    evidence_status: empirically_frequent
+    frequency_range:
+    - 0.3
+    - 0.4
+  rare_cooccurrences:
+  - pair:
+    - EGFR
+    - MET
+    evidence_status: bypass_resistance_mechanism
+    joint_frequency_bound: 0.02
+  - pair:
+    - KRAS
+    - BRAF
+    evidence_status: rare_dual_mapk
+    joint_frequency_bound: 0.01
+  - pair:
+    - EGFR
+    - KRAS
+    evidence_status: rare_dual_driver
+    joint_frequency_bound: 0.015
+  forbidden_contradictions:
+  - rule_id: MUT-EXCL-001
+    pair:
+    - ALK
+    - ROS1
+    reason: Dual kinase fusions mutually exclusive in treatment-naive presentation
+  - rule_id: MUT-SYNTAX-002
+    condition: mutation_name not in allowed_driver_mutations and mutation_name !=
+      'None/Unknown'
+  unknown_handling:
+    policy: allow_unmutated
+    canonical_representation: None/Unknown
+treatment_rules:
+  treatments:
+    Docetaxel:
+      unit: mg
+      approved_project_range:
+        min: 60.0
+        max: 300.0
+        median: 140.0
+      allowed_modalities:
+      - Chemotherapy
+      - Adjuvant
+      - Neoadjuvant
+      contraindicated_conditions:
+      - Severe hepatic impairment (ALT > 150 U/L)
+      - Bilirubin > 3x ULN
+    Osimertinib:
+      unit: mg
+      approved_project_range:
+        min: 40.0
+        max: 80.0
+        median: 80.0
+      allowed_modalities:
+      - Targeted Therapy
+      contraindicated_conditions:
+      - Pre-existing severe QTc prolongation (> 500 ms)
+    Cisplatin:
+      unit: mg
+      approved_project_range:
+        min: 40.0
+        max: 150.0
+        median: 75.0
+      allowed_modalities:
+      - Chemotherapy
+      contraindicated_conditions:
+      - Creatinine clearance < 50 mL/min
+      - Pre-existing severe renal failure
+    Pembrolizumab:
+      unit: mg
+      approved_project_range:
+        min: 100.0
+        max: 400.0
+        median: 200.0
+      allowed_modalities:
+      - Immunotherapy
+      contraindicated_conditions:
+      - Active life-threatening autoimmune disorder
+    Trastuzumab:
+      unit: mg
+      approved_project_range:
+        min: 120.0
+        max: 600.0
+        median: 420.0
+      allowed_modalities:
+      - Targeted Therapy
+      contraindicated_conditions:
+      - Severe congestive heart failure (LVEF < 40%)
+    radiotherapy-standard:
+      unit: Gy
+      approved_project_range:
+        min: 20.0
+        max: 70.0
+        median: 60.0
+      allowed_modalities:
+      - Radiation
+      - Stereotactic
+      contraindicated_conditions:
+      - Prior radiation toxicity in same anatomical field
+  general_dosage_policy:
+    negative_doses_allowed: false
+    zero_dose_allowed_for_withheld: true
+    disclaimer: Observed project ranges represent empirical bounds from research cohorts
+      and must not be used as autonomous medical prescription advice.

@@ -1,0 +1,18 @@
+version: 1.0.0
+rag:
+  enabled: true
+  retrieval:
+    top_k: 5
+    min_score_threshold: 0.25
+  filtering:
+    approved_sources_only: true
+    require_category_coverage: true
+  reranking:
+    enabled: false
+    algorithm: cross_entropy
+  persistence:
+    enabled: true
+    index_path: genai/retrieval/indexes/evidence_vector_index.json
+  embedding:
+    provider: tfidf_cosine
+    dimension: 512

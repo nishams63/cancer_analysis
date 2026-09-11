@@ -1,0 +1,133 @@
+{
+  "manifest_type": "distribution_manifest",
+  "distribution_version": "v1.0",
+  "created_at_utc": "2026-09-11T16:42:59.312102+00:00",
+  "distributions": {
+    "reference_distributions.parquet": {
+      "filename": "reference_distributions.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\reference_distributions.parquet",
+      "file_hash": "23909400009d4a5743d8f2ad41a8535d88d0b1bba3ee107c8e2c722d8403f367",
+      "file_size_bytes": 23081,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.321930+00:00",
+      "verified": true
+    },
+    "mutation_frequencies.parquet": {
+      "filename": "mutation_frequencies.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\mutation_frequencies.parquet",
+      "file_hash": "834023b1e56a4a314b6478d13fca50273d156f9fe3c550a02470633dbfbfa279",
+      "file_size_bytes": 3632,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.328847+00:00",
+      "verified": true
+    },
+    "mutation_cooccurrence.parquet": {
+      "filename": "mutation_cooccurrence.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\mutation_cooccurrence.parquet",
+      "file_hash": "d9f10abd12756b898625e53dea2e36488bf5c5f1d93562d9440107cc881a5895",
+      "file_size_bytes": 6871,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.334848+00:00",
+      "verified": true
+    },
+    "biomarker_distributions.parquet": {
+      "filename": "biomarker_distributions.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\biomarker_distributions.parquet",
+      "file_hash": "f6931ce3ad3773119332879309c368f2af1318d5993c3e8716e73ed53b6c55b4",
+      "file_size_bytes": 10094,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.341237+00:00",
+      "verified": true
+    },
+    "treatment_distributions.parquet": {
+      "filename": "treatment_distributions.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\treatment_distributions.parquet",
+      "file_hash": "88c2ad014ad91287a7bd8db98cdf8e8ebfc639e8bc13400e465da082350ab9bd",
+      "file_size_bytes": 4986,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.347238+00:00",
+      "verified": true
+    },
+    "dosage_ranges.parquet": {
+      "filename": "dosage_ranges.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\dosage_ranges.parquet",
+      "file_hash": "663d460e686e989ff027eecdc8f80ff6d3a8df3723f345bee48f00d38492a6aa",
+      "file_size_bytes": 6022,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.351212+00:00",
+      "verified": true
+    },
+    "adverse_event_distributions.parquet": {
+      "filename": "adverse_event_distributions.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\adverse_event_distributions.parquet",
+      "file_hash": "f8485f65f90a02c9e97c5b054c1b060ce5560bd956b232f584ebe18e86a2012d",
+      "file_size_bytes": 4790,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.356219+00:00",
+      "verified": true
+    },
+    "missingness_patterns.parquet": {
+      "filename": "missingness_patterns.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\missingness_patterns.parquet",
+      "file_hash": "767b8cb50fbf91abd5e1bd2c7ebac649981f86df69eb1d526803dbe52943c15e",
+      "file_size_bytes": 4490,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.361310+00:00",
+      "verified": true
+    },
+    "temporal_patterns.parquet": {
+      "filename": "temporal_patterns.parquet",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\processed\\temporal_patterns.parquet",
+      "file_hash": "b9d97331e46db51e8f9b9cc799a15c346c6a4e715b45b0e777ebb0d6e07cb64a",
+      "file_size_bytes": 5849,
+      "source_ids": [
+        "PROJECT_STAGE1",
+        "PROJECT_STAGE2"
+      ],
+      "dataset_version": "v1.0",
+      "distribution_version": "v1.0",
+      "processing_timestamp": "2026-09-11T16:42:59.366310+00:00",
+      "verified": true
+    }
+  }
+}

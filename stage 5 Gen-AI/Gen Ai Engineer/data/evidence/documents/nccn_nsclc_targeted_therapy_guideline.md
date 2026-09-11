@@ -1,0 +1,23 @@
+# NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer & Biomarker Concordance
+## Category: Biomarker & Molecular Resistance
+
+### 1. Actionable Driver Oncogenes in Non-Small Cell Lung Cancer (NSCLC)
+Molecular testing is recommended for all patients with advanced or metastatic non-squamous NSCLC before initiating first-line targeted therapy.
+
+#### EGFR (Epidermal Growth Factor Receptor)
+- **Sensitizing Alterations**: Exon 19 in-frame deletions and Exon 21 L858R point mutations account for approximately 85-90% of sensitizing EGFR mutations.
+- **First-Line Standard**: Third-generation EGFR TKI Osimertinib (80 mg daily orally) is the preferred standard of care, exhibiting superior central nervous system (CNS) penetration and progression-free survival.
+- **Resistance Mechanisms**:
+  - Secondary on-target resistance: EGFR C797S in exon 20.
+  - Off-target bypass resistance: MET gene amplification (15-20% of resistance cases), HER2 amplification, or phenotypic transformation to small cell lung cancer (SCLC).
+  - Emergence of bypass MET amplification warrants combination therapy evaluation (e.g., Osimertinib + MET inhibitor like Capmatinib).
+
+#### KRAS (Kirsten Rat Sarcoma Viral Oncogene)
+- **Molecular Epidemiology**: Approximately 25-30% of NSCLC adenocarcinomas harbor KRAS mutations, most frequently G12C, G12D, or G12V.
+- **Clinical Nuance**: Historically considered undruggable; KRAS G12C inhibitors (e.g., Sotorasib, Adagrasib) demonstrate efficacy in pretreated settings.
+- **Co-occurrence Profiles**: KRAS frequently co-occurs with TP53 loss or STK11/KEAP1 mutations. Dual driver presentation with classic sensitizing EGFR is exceptionally rare in untreated cohorts (<1.5%) and presents major resistance dilemmas.
+
+#### ALK & ROS1 Gene Rearrangements
+- **Prevalence**: ALK fusions (e.g., EML4-ALK) occur in 3-5% of patients, typically in younger non-smokers.
+- **Therapy**: Second/third-generation ALK inhibitors (Alectinib, Brigatinib, Lorlatinib).
+- **Mutual Exclusivity**: ALK and ROS1 rearrangements are mutually exclusive with primary EGFR driver mutations.

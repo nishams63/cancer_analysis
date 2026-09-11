@@ -1,0 +1,11 @@
+{
+  "document_id": "DOC-SPEC-001",
+  "title": "Oncology Decision Engine System Architecture Specification",
+  "source": "ONCOLOGY_SPEC_001",
+  "source_type": "clinical_guideline",
+  "version": "2026.v2",
+  "approval_status": "approved",
+  "evidence_category": "clinical_terminology",
+  "file_hash": "6c509a35fb1abb05a2aa6d77ea41268e582e9fbfbaa77cb94d606a0ab46ac954",
+  "file_size_bytes": 2873
+}

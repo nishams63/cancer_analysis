@@ -1,0 +1,11 @@
+{
+  "document_id": "DOC-CTCAE-004",
+  "title": "CTCAE v5.0 Toxicity & Organ Grading Definitions",
+  "source": "CTCAE_TOXICITY_004",
+  "source_type": "external_reference",
+  "version": "v5.0",
+  "approval_status": "approved",
+  "evidence_category": "toxicity",
+  "file_hash": "1499a163594a849dc557a620c2f8619dcd534d6a47b57f1b93cd2f605efefd1c",
+  "file_size_bytes": 1685
+}

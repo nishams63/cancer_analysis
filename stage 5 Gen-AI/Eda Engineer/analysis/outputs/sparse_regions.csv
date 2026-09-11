@@ -1,0 +1,6 @@
+region_id,biomarker_name,unit,sparse_range_min,sparse_range_max,vulnerability_type,observed_sample_density,uncertainty_score,clinical_context,candidate_stress_test
+SPARSE-001,creatinine_level,mg/dL,1.4,2.0,borderline_nephrotoxicity_threshold,sparse_tail,0.78,Critical boundary for Cisplatin contraindication (CrCl < 50 mL/min),True
+SPARSE-002,ctdna_level,ng/mL,5.0,20.0,extreme_tumor_shedding,extreme_upper_quantile,0.85,Correlates with rapid metastatic disease progression and early therapy failure,True
+SPARSE-003,tumor_marker_level,U/mL,250.0,1000.0,extreme_serum_marker_elevation,sparse_upper_quantile,0.72,High divergence with localized early stage labels,True
+SPARSE-004,liver_function_marker,U/L,120.0,350.0,borderline_grade2_grade3_hepatotoxicity,sparse_transition_zone,0.8,Dose reduction / withholding trigger for Docetaxel and targeted TKIs,True
+SPARSE-005,platelet_count,10^3/uL,20.0,50.0,grade3_thrombocytopenia_boundary,extreme_lower_tail,0.75,High risk of life-threatening hemorrhage during cytotoxic regimens,True

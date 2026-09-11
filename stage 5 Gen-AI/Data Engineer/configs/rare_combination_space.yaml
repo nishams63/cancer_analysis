@@ -1,0 +1,139 @@
+version: 1.0.0
+metadata:
+  generated_by: Stage5 Data Engineer Rarity Miner
+  rarity_definition: Individually Plausible + Jointly Rare + Allowed by Project Rules
+  disclaimer: Statistical rarity does not imply clinical severity or model difficulty.
+rarity_thresholds:
+  common: 0.1
+  uncommon: 0.03
+  rare: 0.005
+  very_rare: 0.001
+total_mined_rare_combinations: 6
+scenarios:
+- scenario_id: RC-001
+  scenario_name: 'Rare dual driver: EGFR sensitizing + MET bypass amplification'
+  required_features:
+    mutations:
+    - EGFR
+    - MET
+    organ_risk: PULMONARY
+  individual_plausibility:
+    EGFR: true
+    MET: true
+  joint_frequency: 0.002
+  rarity_category: very_rare
+  allowed: true
+  evidence_ids:
+  - NCCN_NSCLC_REF_002
+  - ONCOLOGY_SPEC_001
+  constraint_ids:
+  - MUT-001
+  - MUT-004
+  source_distribution_version: v1.0
+  stress_dimension: Acquired kinase bypass resistance with targeted therapy dilemma
+- scenario_id: RC-002
+  scenario_name: 'Uncommon dual MAPK driver: KRAS activating + BRAF V600E'
+  required_features:
+    mutations:
+    - KRAS
+    - BRAF
+    organ_risk: HEPATIC
+  individual_plausibility:
+    KRAS: true
+    BRAF: true
+  joint_frequency: 0.0035
+  rarity_category: rare
+  allowed: true
+  evidence_ids:
+  - NCCN_NSCLC_REF_002
+  constraint_ids:
+  - MUT-002
+  - MUT-005
+  source_distribution_version: v1.0
+  stress_dimension: Co-occurring downstream MAPK pathway hyperactivation
+- scenario_id: RC-003
+  scenario_name: 'Dual driver conflict: EGFR L858R + KRAS G12C'
+  required_features:
+    mutations:
+    - EGFR
+    - KRAS
+    organ_risk: SYSTEMIC
+  individual_plausibility:
+    EGFR: true
+    KRAS: true
+  joint_frequency: 0.0048
+  rarity_category: rare
+  allowed: true
+  evidence_ids:
+  - NCCN_NSCLC_REF_002
+  - ONCOLOGY_SPEC_001
+  constraint_ids:
+  - MUT-001
+  - MUT-002
+  source_distribution_version: v1.0
+  stress_dimension: Primary resistance to single-agent EGFR TKI monotherapy
+- scenario_id: RC-004
+  scenario_name: 'Rare compound variant: ALK fusion + concurrent PIK3CA activating'
+  required_features:
+    mutations:
+    - ALK
+    - PIK3CA
+    organ_risk: HEPATIC
+  individual_plausibility:
+    ALK: true
+    PIK3CA: true
+  joint_frequency: 0.0018
+  rarity_category: very_rare
+  allowed: true
+  evidence_ids:
+  - NCCN_NSCLC_REF_002
+  constraint_ids:
+  - MUT-003
+  - MUT-007
+  source_distribution_version: v1.0
+  stress_dimension: Parallel oncogenic pathway bypass resistance
+- scenario_id: RC-005
+  scenario_name: High Mutational Burden with Severe Baseline Renal Dysfunction
+  required_features:
+    mutations:
+    - TP53
+    biomarkers:
+      creatinine_level: 3.8
+      tumor_marker_level: 420.0
+    contraindicated_drugs:
+    - Cisplatin
+  individual_plausibility:
+    TP53: true
+  joint_frequency: 0.0041
+  rarity_category: rare
+  allowed: true
+  evidence_ids:
+  - FDA_DRUG_LABEL_003
+  - ONCOLOGY_SPEC_001
+  constraint_ids:
+  - RENAL-001
+  - TX-CIS-001
+  source_distribution_version: v1.0
+  stress_dimension: 'Clinical contraindication dilemma: urgent tumor burden vs toxic
+    nephropathy'
+- scenario_id: RC-006
+  scenario_name: Severe ctDNA Velocity Spike under Target-Negative Phenotype
+  required_features:
+    mutations:
+    - None/Unknown
+    biomarkers:
+      ctdna_vaf_percent: 18.5
+      crp_mg_l: 85.0
+    trajectory_pattern: rapid_progression
+  individual_plausibility:
+    None/Unknown: true
+  joint_frequency: 0.0062
+  rarity_category: uncommon
+  allowed: true
+  evidence_ids:
+  - ONCOLOGY_SPEC_001
+  constraint_ids:
+  - BIO-CTDNA-001
+  source_distribution_version: v1.0
+  stress_dimension: Fast progression with lack of targetable molecular actionable
+    alterations

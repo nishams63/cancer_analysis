@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage5DistributionRecord",
+  "description": "Schema for empirical reference distribution summary records.",
+  "type": "object",
+  "required": [
+    "feature",
+    "count",
+    "mean",
+    "median",
+    "std",
+    "min",
+    "max",
+    "p05",
+    "p50",
+    "p95",
+    "missing_rate",
+    "source",
+    "version"
+  ],
+  "properties": {
+    "feature": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "numerical",
+        "categorical"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mean": {
+      "type": "number"
+    },
+    "median": {
+      "type": "number"
+    },
+    "std": {
+      "type": "number",
+      "minimum": 0
+    },
+    "min": {
+      "type": "number"
+    },
+    "max": {
+      "type": "number"
+    },
+    "p05": {
+      "type": "number"
+    },
+    "p25": {
+      "type": "number"
+    },
+    "p50": {
+      "type": "number"
+    },
+    "p75": {
+      "type": "number"
+    },
+    "p95": {
+      "type": "number"
+    },
+    "missing_rate": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "source": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

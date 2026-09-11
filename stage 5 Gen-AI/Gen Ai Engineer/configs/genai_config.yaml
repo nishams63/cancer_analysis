@@ -1,0 +1,22 @@
+version: 1.0.0
+generation:
+  structured:
+    max_attempts: 5
+    default_count: 20
+  narrative:
+    max_attempts: 3
+    generate_pathology: true
+    generate_imaging: true
+  counterfactual:
+    enabled: true
+    verify_immutability: true
+validation:
+  strict_mode: true
+  enforce_drift_rules: true
+  zero_tolerance_forbidden: true
+provenance:
+  enabled: true
+  manifest_tracking: true
+synthetic_label:
+  required: true
+  label_text: SYNTHETIC SCENARIO - GENERATED FOR AI STRESS TESTING ONLY

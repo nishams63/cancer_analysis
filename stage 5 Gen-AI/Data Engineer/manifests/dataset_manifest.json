@@ -1,0 +1,43 @@
+{
+  "manifest_type": "dataset_manifest",
+  "version": "1.0.0",
+  "created_at_utc": "2026-09-11T16:42:59.304812+00:00",
+  "sources": {
+    "PROJECT_STAGE1": {
+      "source_id": "PROJECT_STAGE1",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\raw\\project\\master_patient_dataset.csv",
+      "file_hash": "b11cf0a33cf4241560946db771cab59028a45cfb18eb1f3d70d4e84618af239b",
+      "version": "v1.0",
+      "row_count": 8754,
+      "col_count": 35,
+      "verified": true
+    },
+    "PROJECT_STAGE2": {
+      "source_id": "PROJECT_STAGE2",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\raw\\project\\biomarkers_processed.csv",
+      "file_hash": "0e3c6f38a3958269cc93365944c46e69bb6f278516368748445a34e50b1003f0",
+      "version": "v1.0",
+      "row_count": 617,
+      "col_count": 21,
+      "verified": true
+    },
+    "PROJECT_STAGE3": {
+      "source_id": "PROJECT_STAGE3",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\raw\\project\\clinical_nlp_dataset_v1.parquet",
+      "file_hash": "426ea0c51f354a5fa9e1177ec0d8fabc0ed26ed708f748ee8f8f4b0f18554230",
+      "version": "v1.0",
+      "row_count": 6098,
+      "col_count": 18,
+      "verified": true
+    },
+    "PROJECT_STAGE4": {
+      "source_id": "PROJECT_STAGE4",
+      "file_path": "C:\\Users\\Nallu_PC\\.gemini\\antigravity\\scratch\\cancer_analysis\\stage 5 Gen-AI\\Data Engineer\\data\\raw\\project\\slm_finetune_dataset_v1.parquet",
+      "file_hash": "95d684c0940be3475375c69fc99a17f42b424d95ebc5a102cf608fa0889a1b2d",
+      "version": "v1.0",
+      "row_count": 5706,
+      "col_count": 17,
+      "verified": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "chunk_id": "CHUNK-DOC-FDA-003-0001",
+    "document_id": "DOC-FDA-003",
+    "section": "Approved Dosages & Safety Bulletins",
+    "page": 1,
+    "text": "# FDA Precision Oncology Product Labeling & Dosage Specifications ## Category: Treatment & Safety Bulletins ### 1. Docetaxel (Taxotere) - **Indication**: Locally advanced or metastatic non-small cell lung cancer, breast cancer, prostate cancer. - **Standard Dosing**: 60 mg/m2 to 100 mg/m2 IV over 1 hour every 3 weeks. Typical flat-dose equivalents observed in project cohorts: 140 mg to 300 mg. - **Black Box Warnings**: - Toxic deaths related to abnormal liver function. - Severe neutropenia (ANC < 500 cells/mm3). - Severe hypersensitivity reactions requiring dexamethasone premedication. - **Dose Modifications**: Discontinue or reduce dose by 25% if patient develops Grade 4 neutropenia lasting > 7 days or Grade 3 peripheral neuropathy. ### 2. Osimertinib (Tagrisso) - **Indication**: First-line treatment of patients with metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations. - **Standard Dosing**: 80 mg orally once daily with or without food. - **Approved Project",
+    "word_count": 150,
+    "source": "FDA_DRUG_LABEL_003",
+    "version": "2026.v1",
+    "approval_status": "approved",
+    "evidence_category": "treatment"
+  },
+  {
+    "chunk_id": "CHUNK-DOC-FDA-003-0002",
+    "document_id": "DOC-FDA-003",
+    "section": "Approved Dosages & Safety Bulletins",
+    "page": 1,
+    "text": "with metastatic NSCLC whose tumors have EGFR exon 19 deletions or exon 21 L858R mutations. - **Standard Dosing**: 80 mg orally once daily with or without food. - **Approved Project Range**: 40 mg (reduced dose) to 80 mg (standard dose). - **Adverse Reactions**: Diarrhea, rash, dry skin, nail toxicity, fatigue, stomatitis, decreased appetite. - **Safety Precautions**: QTc interval prolongation (withhold if QTc > 500 ms) and risk of interstitial lung disease (permanently discontinue if diagnosed). ### 3. Cisplatin - **Indication**: Standard platinum backbone for combination chemotherapy in lung, bladder, ovarian, and testicular cancers. - **Approved Project Range**: 40 mg to 150 mg (typically 50 to 100 mg/m2). - **Major Toxicities**: Cumulative nephrotoxicity, ototoxicity, myelosuppression, severe nausea and vomiting. - **Contraindications**: Pre-existing renal impairment (serum creatinine > 1.5 mg/dL or CrCl < 50 mL/min). ### 4. Pembrolizumab (Keytruda) - **Indication**: Immune checkpoint inhibitor targeting PD-1 in NSCLC, melanoma, MSI-H solid tumors.",
+    "word_count": 150,
+    "source": "FDA_DRUG_LABEL_003",
+    "version": "2026.v1",
+    "approval_status": "approved",
+    "evidence_category": "treatment"
+  },
+  {
+    "chunk_id": "CHUNK-DOC-FDA-003-0003",
+    "document_id": "DOC-FDA-003",
+    "section": "Approved Dosages & Safety Bulletins",
+    "page": 1,
+    "text": "Pre-existing renal impairment (serum creatinine > 1.5 mg/dL or CrCl < 50 mL/min). ### 4. Pembrolizumab (Keytruda) - **Indication**: Immune checkpoint inhibitor targeting PD-1 in NSCLC, melanoma, MSI-H solid tumors. - **Approved Project Range**: 200 mg every 3 weeks or 400 mg every 6 weeks IV. - **Adverse Reactions**: Immune-mediated adverse events (pneumonitis, colitis, hepatitis, endocrinopathies, nephritis).",
+    "word_count": 57,
+    "source": "FDA_DRUG_LABEL_003",
+    "version": "2026.v1",
+    "approval_status": "approved",
+    "evidence_category": "treatment"
+  }
+]

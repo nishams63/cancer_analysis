@@ -1,0 +1,38 @@
+[
+  {
+    "chunk_id": "CHUNK-DOC-CTCAE-004-0001",
+    "document_id": "DOC-CTCAE-004",
+    "section": "Organ Toxicity Grading Criteria",
+    "page": 1,
+    "text": "# CTCAE v5.0 Organ Toxicity Grading Reference ## Category: Toxicity & Adverse Event Severity ### 1. General Severity Scale - **Grade 1 (Mild)**: Asymptomatic or mild symptoms; clinical or diagnostic observations only; intervention not indicated. - **Grade 2 (Moderate)**: Minimal, local or noninvasive intervention indicated; limiting age-appropriate instrumental Activities of Daily Living (ADL). - **Grade 3 (Severe)**: Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of hospitalization indicated; disabling; limiting self-care ADL. - **Grade 4 (Life-threatening)**: Life-threatening consequences; urgent intervention indicated. - **Grade 5 (Death)**: Death related to adverse event. ### 2. Organ-Specific CTCAE Grading Definitions - **Hematologic (Neutropenia)**: - Grade 1: LLN - 1500 /mm3 - Grade 2: < 1500 - 1000 /mm3 - Grade 3: < 1000 - 500 /mm3 - Grade 4: < 500 /mm3 (Febrile Neutropenia requires immediate emergency hospitalization) - **Hepatic (ALT / AST Elevation)**: - Grade 1: > ULN - 3.0x",
+    "word_count": 150,
+    "source": "CTCAE_TOXICITY_004",
+    "version": "v5.0",
+    "approval_status": "approved",
+    "evidence_category": "toxicity"
+  },
+  {
+    "chunk_id": "CHUNK-DOC-CTCAE-004-0002",
+    "document_id": "DOC-CTCAE-004",
+    "section": "Organ Toxicity Grading Criteria",
+    "page": 1,
+    "text": "< 1000 - 500 /mm3 - Grade 4: < 500 /mm3 (Febrile Neutropenia requires immediate emergency hospitalization) - **Hepatic (ALT / AST Elevation)**: - Grade 1: > ULN - 3.0x ULN - Grade 2: > 3.0 - 5.0x ULN - Grade 3: > 5.0 - 20.0x ULN - Grade 4: > 20.0x ULN - **Renal (Creatinine Elevation)**: - Grade 1: > 1.5 - 2.0x baseline - Grade 2: > 2.0 - 3.0x baseline - Grade 3: > 3.0x baseline or > 4.0 mg/dL - Grade 4: Life-threatening consequences; dialysis indicated - **Pulmonary (Pneumonitis)**: - Grade 1: Asymptomatic, radiographic findings only - Grade 2: Symptomatic, medical intervention indicated (corticosteroids) - Grade 3: Severe symptoms, oxygen indicated - Grade 4: Life-threatening respiratory compromise, intubation indicated",
+    "word_count": 123,
+    "source": "CTCAE_TOXICITY_004",
+    "version": "v5.0",
+    "approval_status": "approved",
+    "evidence_category": "toxicity"
+  },
+  {
+    "chunk_id": "CHUNK-DOC-CTCAE-004-0003",
+    "document_id": "DOC-CTCAE-004",
+    "section": "Organ Toxicity Grading Criteria",
+    "page": 1,
+    "text": "compromise, intubation indicated",
+    "word_count": 3,
+    "source": "CTCAE_TOXICITY_004",
+    "version": "v5.0",
+    "approval_status": "approved",
+    "evidence_category": "toxicity"
+  }
+]

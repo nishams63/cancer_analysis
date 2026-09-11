@@ -1,0 +1,64 @@
+project:
+  name: "stage5_oncology_stress_test"
+  version: "1.0.0"
+  description: "GenAI Synthetic Oncology Stress-Test Engine Reference Data Foundation"
+
+paths:
+  raw_project: "data/raw/project"
+  raw_external: "data/raw/external"
+  interim_cleaned: "data/interim/cleaned"
+  interim_normalized: "data/interim/normalized"
+  interim_harmonized: "data/interim/harmonized"
+  processed: "data/processed"
+  evidence_documents: "data/evidence/documents"
+  evidence_chunks: "data/evidence/chunks"
+  evidence_metadata: "data/evidence/metadata"
+  evidence_approved: "data/evidence/approved_sources"
+  manifests: "manifests"
+  schemas: "schemas"
+  reports: "reports"
+  configs: "configs"
+
+quality:
+  duplicate_policy: "flag"
+  invalid_value_policy: "quarantine"
+  age_min: 18
+  age_max: 105
+  blood_pressure:
+    systolic_min: 70.0
+    systolic_max: 220.0
+    diastolic_min: 40.0
+    diastolic_max: 130.0
+  heart_rate:
+    min: 40.0
+    max: 200.0
+  oxygen_saturation:
+    min: 70.0
+    max: 100.0
+
+distributions:
+  quantiles:
+    - 0.05
+    - 0.25
+    - 0.50
+    - 0.75
+    - 0.95
+
+rarity:
+  thresholds:
+    common: 0.10
+    uncommon: 0.03
+    rare: 0.005
+    very_rare: 0.001
+
+evidence:
+  require_approved_status: true
+  preserve_page_metadata: true
+  chunk_size_words: 150
+  chunk_overlap_words: 30
+
+versioning:
+  enabled: true
+  distribution_version: "v1.0"
+  evidence_store_version: "v1.0"
+  dataset_version: "v1.0"

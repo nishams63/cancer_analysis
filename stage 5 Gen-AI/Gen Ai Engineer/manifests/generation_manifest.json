@@ -1,0 +1,19 @@
+{
+  "manifest_type": "generation_manifest",
+  "version": "1.0.0",
+  "created_at": "2026-09-11T14:57:31.234477Z",
+  "batch_id": "BATCH-20260911145540",
+  "total_requested": 5,
+  "total_accepted": 5,
+  "total_rejected": 0,
+  "total_counterfactuals": 5,
+  "acceptance_rate": 1.0,
+  "seed": 42,
+  "scenarios_represented": [
+    "PROMPT-R04",
+    "PROMPT-R05",
+    "PROMPT-R01",
+    "PROMPT-R03",
+    "PROMPT-R02"
+  ]
+}

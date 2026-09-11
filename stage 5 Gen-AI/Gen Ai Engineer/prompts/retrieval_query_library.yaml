@@ -1,0 +1,391 @@
+version: 1.0.0
+description: Evidence retrieval query library for oncology stress-test scenarios
+target_knowledge_bases:
+- nccn_clinical_practice_guidelines
+- fda_approved_drug_labels
+- asco_emergency_triage_algorithms
+- ajcc_cancer_staging_manual_8th
+- ctcae_toxicity_criteria_v5
+intents:
+- scenario_id: PROMPT-R01
+  scenario_title: 'Dual Driver Resistance: EGFR T790M + MET Amplification Bypass'
+  intent_id: RAG-INTENT-01
+  target_domain: guidelines
+  primary_query: NCCN NSCLC guideline Osimertinib resistance MET amplification combination
+    therapy
+  search_terms:
+  - EGFR T790M
+  - MET amplification
+  - Osimertinib
+  - Savolitinib
+  - Tepotinib
+  - bypass resistance
+  required_keywords:
+  - MET
+  - resistance
+  - combination
+  forbidden_keywords:
+  - monotherapy chemotherapy only
+  min_documents: 2
+  guideline_reference: NCCN-NSCLC-v4.2024
+  target_blind_spots:
+  - BS01
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R02
+  scenario_title: Complex Negation / Contrasting Clause Respiratory Hazard
+  intent_id: RAG-INTENT-02
+  target_domain: guidelines
+  primary_query: oncology emergency pulmonary embolism acute dyspnea triage protocol
+  search_terms:
+  - pulmonary embolism
+  - acute dyspnea
+  - tachycardia
+  - triage urgency
+  required_keywords:
+  - pulmonary
+  - urgency
+  - dyspnea
+  forbidden_keywords:
+  - routine follow-up
+  min_documents: 1
+  guideline_reference: ASCO-Emergency-Triage-2023
+  target_blind_spots:
+  - BS02
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R03
+  scenario_title: Sub-Centimeter Primary with Malignant Pleural Effusion (T1a N0 M1a
+    - Stage IVA)
+  intent_id: RAG-INTENT-03
+  target_domain: guidelines
+  primary_query: AJCC 8th edition staging NSCLC T1a N0 M1a malignant pleural effusion
+    Stage IVA
+  search_terms:
+  - T1a
+  - M1a
+  - malignant pleural effusion
+  - Stage IVA
+  - AJCC 8th
+  required_keywords:
+  - Stage IVA
+  - M1a
+  forbidden_keywords:
+  - Stage IA
+  min_documents: 1
+  guideline_reference: AJCC-Cancer-Staging-8th-Ed
+  target_blind_spots:
+  - BS03
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R04
+  scenario_title: Borderline Biomarkers in the Moderate-Risk Ambiguity Envelope
+  intent_id: RAG-INTENT-04
+  target_domain: guidelines
+  primary_query: borderline elevated CEA CA-125 surveillance colorectal cancer moderate
+    risk
+  search_terms:
+  - CEA borderline
+  - CA-125
+  - recurrence risk
+  - moderate risk
+  required_keywords:
+  - biomarker
+  - monitoring
+  forbidden_keywords:
+  - acute metastasis
+  min_documents: 1
+  guideline_reference: NCCN-Colorectal-Surveillance-v2
+  target_blind_spots:
+  - BS04
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R05
+  scenario_title: Severe Nephrotoxicity Spike (Cr 3.8) vs Planned Cisplatin Continuation
+  intent_id: RAG-INTENT-05
+  target_domain: drug_labels
+  primary_query: FDA Cisplatin renal impairment contraindication eGFR creatinine toxicity
+    dose modification
+  search_terms:
+  - Cisplatin
+  - renal failure
+  - contraindication
+  - dose modification
+  - eGFR
+  required_keywords:
+  - Cisplatin
+  - renal
+  - contraindication
+  forbidden_keywords:
+  - safe administration
+  min_documents: 1
+  guideline_reference: FDA-Cisplatin-Package-Insert
+  target_blind_spots:
+  - BS05
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R06
+  scenario_title: 'Hyper-Acute Decompensation: Febrile Neutropenia to Septic Shock
+    within 6 Hours'
+  intent_id: RAG-INTENT-06
+  target_domain: guidelines
+  primary_query: ASCO IDSA neutropenic fever emergency septic shock management protocol
+  search_terms:
+  - febrile neutropenia
+  - septic shock
+  - ANC < 500
+  - empiric broad-spectrum antibiotics
+  required_keywords:
+  - neutropenia
+  - fever
+  - antibiotics
+  forbidden_keywords:
+  - outpatient oral antibiotics
+  min_documents: 1
+  guideline_reference: ASCO-IDSA-Neutropenic-Fever-2023
+  target_blind_spots:
+  - BS06
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R07
+  scenario_title: 'Sparse Envelope: Outside Transfer with >60% Missing Tabular Attributes'
+  intent_id: RAG-INTENT-07
+  target_domain: guidelines
+  primary_query: palpable fixed axillary lymphadenopathy breast cancer diagnostic
+    workup NCCN
+  search_terms:
+  - palpable lymph nodes
+  - axillary mass
+  - staging workup
+  - biopsy
+  required_keywords:
+  - workup
+  - biopsy
+  - axillary
+  forbidden_keywords:
+  - discharge home
+  min_documents: 1
+  guideline_reference: NCCN-Breast-Staging-Workup
+  target_blind_spots:
+  - BS07
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R08
+  scenario_title: 'Ultra-Rare Quadruple Alteration: KRAS G12C + TP53 + STK11 + KEAP1'
+  intent_id: RAG-INTENT-08
+  target_domain: guidelines
+  primary_query: KRAS G12C STK11 KEAP1 co-mutation immunotherapy resistance NCCN NSCLC
+  search_terms:
+  - KRAS G12C
+  - STK11
+  - KEAP1
+  - immunotherapy resistance
+  - PD-L1 high
+  required_keywords:
+  - resistance
+  - STK11
+  - chemotherapy
+  forbidden_keywords:
+  - pembrolizumab monotherapy optimal
+  min_documents: 2
+  guideline_reference: NCCN-NSCLC-Biomarkers-2024
+  target_blind_spots:
+  - BS08
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R09
+  scenario_title: 'Sarcopenic Elderly Blind Spot: Normal Creatinine (0.9) with CrCl
+    24 mL/min'
+  intent_id: RAG-INTENT-09
+  target_domain: drug_labels
+  primary_query: Capecitabine dose reduction elderly renal impairment Cockcroft-Gault
+    CrCl < 30
+  search_terms:
+  - Capecitabine
+  - CrCl < 30
+  - dose reduction
+  - contraindicated
+  - elderly
+  required_keywords:
+  - dose
+  - reduction
+  - CrCl
+  forbidden_keywords:
+  - full standard dose
+  min_documents: 1
+  guideline_reference: FDA-Capecitabine-Label
+  target_blind_spots:
+  - BS09
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R10
+  scenario_title: 'Rare Histology Intersection: Adenosquamous Carcinoma with EGFR
+    Exon 19 Deletion'
+  intent_id: RAG-INTENT-10
+  target_domain: guidelines
+  primary_query: Adenosquamous carcinoma lung EGFR TKI response duration transformation
+    risk
+  search_terms:
+  - Adenosquamous
+  - EGFR
+  - Osimertinib
+  - squamous transformation
+  required_keywords:
+  - Adenosquamous
+  - EGFR
+  forbidden_keywords:
+  - benign
+  min_documents: 1
+  guideline_reference: NCCN-Rare-Histologies-NSCLC
+  target_blind_spots:
+  - BS10
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R11
+  scenario_title: 'Permanent Contraindication Violation: Checkpoint Inhibitor Re-Challenge
+    after Grade 3 Myocarditis'
+  intent_id: RAG-INTENT-11
+  target_domain: guidelines
+  primary_query: ASCO management immune checkpoint toxicity myocarditis permanent
+    discontinuation contraindication
+  search_terms:
+  - immune-mediated myocarditis
+  - permanent discontinuation
+  - rechallenge contraindication
+  - ASCO guidelines
+  required_keywords:
+  - discontinue
+  - permanently
+  - myocarditis
+  forbidden_keywords:
+  - restart safely
+  min_documents: 1
+  guideline_reference: ASCO-Immune-Toxicity-2023
+  target_blind_spots:
+  - BS11
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R12
+  scenario_title: 'Inverse Weighting False-Alarm: Grade 1 Xerosis & Trace Proteinuria
+    Provoking False Positive'
+  intent_id: RAG-INTENT-12
+  target_domain: guidelines
+  primary_query: CTCAE v5.0 Grade 1 xerosis rash management epidermal growth factor
+    inhibitor
+  search_terms:
+  - Grade 1 xerosis
+  - CTCAE
+  - dry skin
+  - supportive care
+  required_keywords:
+  - Grade 1
+  - supportive
+  forbidden_keywords:
+  - hospital admission
+  - emergent
+  min_documents: 1
+  guideline_reference: CTCAE-v5.0-Toxicity
+  target_blind_spots:
+  - BS12
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R13
+  scenario_title: 'OOD Real Clinic Drift: Heavy Colloquial Abbreviations, Typos, and
+    Copy-Paste Artifacts'
+  intent_id: RAG-INTENT-13
+  target_domain: guidelines
+  primary_query: clinical abbreviation disambiguation oncology febrile neutropenia
+    protocol
+  search_terms:
+  - febrile neutropenia
+  - clinical shorthand
+  - triage
+  required_keywords:
+  - neutropenia
+  - fever
+  forbidden_keywords:
+  - unrelated
+  min_documents: 1
+  guideline_reference: EHR-Clinical-Documentation-Standards
+  target_blind_spots:
+  - BS13
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R14
+  scenario_title: 'Conflicting Longitudinal Timeline: Progressive Imaging vs Stale
+    ''Stable Disease'' Note'
+  intent_id: RAG-INTENT-14
+  target_domain: guidelines
+  primary_query: RECIST 1.1 progression criteria versus clinical documentation discrepancy
+    resolution
+  search_terms:
+  - RECIST 1.1
+  - progressive disease
+  - target lesion increase
+  - discordance
+  required_keywords:
+  - RECIST
+  - progressive
+  forbidden_keywords:
+  - stable
+  min_documents: 1
+  guideline_reference: RECIST-1.1-Criteria
+  target_blind_spots:
+  - BS14
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72
+- scenario_id: PROMPT-R15
+  scenario_title: 'Urgency Inversion Paradox: Asymptomatic Hypercalcemia (14.6 mg/dL)
+    vs Loud Symptomatic Viral URI'
+  intent_id: RAG-INTENT-15
+  target_domain: guidelines
+  primary_query: hypercalcemia of malignancy severe emergency management calcium >
+    14 NCCN
+  search_terms:
+  - hypercalcemia
+  - calcium > 14
+  - zoledronic acid
+  - calcitonin
+  - emergency
+  required_keywords:
+  - hypercalcemia
+  - emergency
+  - hydration
+  forbidden_keywords:
+  - routine outpatient observation
+  min_documents: 1
+  guideline_reference: NCCN-Hypercalcemia-Emergency
+  target_blind_spots:
+  - BS15
+  retrieval_scoring:
+    must_match_all_required: true
+    penalty_for_forbidden: 1.0
+    min_semantic_similarity: 0.72

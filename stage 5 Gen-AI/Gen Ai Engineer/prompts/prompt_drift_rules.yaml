@@ -1,0 +1,19 @@
+version: 1.0.0
+description: Rules to detect semantic drift, condition leakage, and constraint violation
+  in generated scenarios
+global_rules:
+- rule_id: GLOBAL-DRIFT-01
+  name: no_fictional_hallucinated_mutations
+  pattern: \\b(KRAS G12Z|EGFR T999M|TP53 XYZ)\\b
+  description: Generator must not hallucinate biologically impossible mutation nomenclature.
+- rule_id: GLOBAL-DRIFT-02
+  name: preserve_specified_sex_and_age
+  description: Patient skeleton demographics must remain within +/- 2 years of target
+    age and preserve biological sex.
+- rule_id: GLOBAL-DRIFT-03
+  name: severity_inversion_prevention
+  description: Critical emergency scenarios (e.g. Sepsis, Calcium > 14) must not be
+    rewritten as routine outpatient encounters.
+compliance_thresholds:
+  min_acceptable_score: 0.85
+  zero_tolerance_on_forbidden: true

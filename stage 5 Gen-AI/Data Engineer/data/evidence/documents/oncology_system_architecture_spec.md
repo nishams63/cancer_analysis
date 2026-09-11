@@ -1,0 +1,23 @@
+# Personalized Precision Medicine for Oncology Treatment Optimization
+## Autonomous Multi-Agent AI System Specification
+
+### 1. Executive Mission
+At 8:00 AM in the Oncology Tumor Board, a complex patient with aggressive non-small cell lung cancer presents rapid disease progression. The team has genomic sequencing data, histopathology slides, longitudinal biomarker feeds, and zero time to waste. The mission is to build the autonomous, multi-agent AI brain that turns raw multi-modal clinical chaos into an optimized, life-saving precision therapy plan before toxic side effects take hold.
+
+### 2. The 6-Stage Journey
+- **Stage 01: Machine Learning (Spot the Pattern)**: Turn raw tabular clinical and genomic sensor data into an instant patient risk score for treatment toxicity and therapy response.
+- **Stage 02: Deep Learning (Develop Instincts)**: Analyze tissue histopathology slides and longitudinal biomarker sequences to predict tumor growth.
+- **Stage 03: Natural Language Processing (Decode Clinical Notes)**: Parse unstructured clinical trial papers, pathology notes, and physician voice logs into structured entity annotations.
+- **Stage 04: Small Language Model (Brief the Oncologist)**: Deliver fast, 5-second, voice-ready bedside clinical summaries offline on local hospital hardware.
+- **Stage 05: Generative AI (Stress-Test Therapy)**: Rare genomic variants and novel drug resistance mutations have sparse real-world data. Utilize Generative AI to synthesize complex, rare patient genomic profiles and simulated treatment responses to battle-test the entire pipeline before clinical deployment.
+- **Stage 06: Agentic AI (Take the Wheel)**: Build an autonomous multi-agent decision engine that synthesizes patient risk scores, pathology vision alerts, and NLP clinical intelligence to formulate precision treatment plans, balance drug toxicity, and match clinical trials independently.
+
+### 3. Stage 5 Squad Roles & Responsibilities
+- **Data Engineer**: Assemble reference baseline datasets from real historical oncology distributions.
+- **EDA / Prompt Engineer**: Identify blind spots in genomic data and craft prompts for extreme drug-resistance scenarios.
+- **GenAI Engineer**: Construct the generative scenario pipeline (GAN/VAE or LLM-based synthetic patient generation).
+- **Evaluation Engineer**: Audit generated synthetic patient profiles to verify they realistically stress agent decision logic.
+- **Integration Engineer**: Integrate synthetic scenario output back into the testing dashboard for continuous evaluation.
+
+### 4. Capstone Story & Challenge
+Invent rare edge-case scenarios no one on the team has considered yet, such as a dual-driver mutation with severe liver impairment, or high tumor mutational burden with pre-existing renal dysfunction, to observe how treatment optimization balances clinical trade-offs.

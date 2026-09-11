@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage5ValidationIssueRecord",
+  "description": "Schema for tracking data quality and cleaning issues.",
+  "type": "object",
+  "required": [
+    "row_id",
+    "field",
+    "issue_type",
+    "action_taken"
+  ],
+  "properties": {
+    "row_id": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "issue_type": {
+      "type": "string"
+    },
+    "original_value": {},
+    "action_taken": {
+      "type": "string"
+    }
+  }
+}

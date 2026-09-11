@@ -1,0 +1,89 @@
+{
+  "guideline": "NCCN Clinical Practice Guidelines in Oncology: Non-Small Cell Lung Cancer & Precision Oncology",
+  "version": "2026.v1",
+  "approved_status": "approved",
+  "biomarkers": [
+    {
+      "gene": "EGFR",
+      "common_variants": [
+        "Exon 19 deletion",
+        "L858R",
+        "T790M",
+        "Exon 20 insertion"
+      ],
+      "first_line_therapy": "Osimertinib",
+      "resistance_mutations": [
+        "T790M",
+        "C797S",
+        "MET amplification"
+      ],
+      "cooccurrence_notes": "Concomitant EGFR and KRAS driver mutations are rare in primary untreated tumors (<1.5%)."
+    },
+    {
+      "gene": "KRAS",
+      "common_variants": [
+        "G12C",
+        "G12D",
+        "G12V"
+      ],
+      "first_line_therapy": "Chemo-immunotherapy (Pembrolizumab + Platinum doublet) or Sotorasib for G12C",
+      "resistance_mutations": [
+        "Secondary KRAS mutations",
+        "MET amplification"
+      ],
+      "cooccurrence_notes": "KRAS co-occurs frequently with TP53 (35-45%), rarely with classic sensitizing EGFR."
+    },
+    {
+      "gene": "TP53",
+      "common_variants": [
+        "R175H",
+        "R248Q",
+        "R273H"
+      ],
+      "first_line_therapy": "Dependent on concurrent actionable driver alterations",
+      "resistance_mutations": [
+        "Loss of heterozygosity"
+      ],
+      "cooccurrence_notes": "Most common co-occurring alteration across solid tumors (40-60%)."
+    },
+    {
+      "gene": "ALK",
+      "common_variants": [
+        "EML4-ALK fusion variant 1",
+        "variant 3"
+      ],
+      "first_line_therapy": "Alectinib / Lorlatinib",
+      "resistance_mutations": [
+        "G1202R",
+        "L1196M"
+      ],
+      "cooccurrence_notes": "Mutually exclusive with EGFR and ROS1 in typical presentation."
+    },
+    {
+      "gene": "MET",
+      "common_variants": [
+        "Exon 14 skipping",
+        "MET high amplification"
+      ],
+      "first_line_therapy": "Capmatinib / Tepotinib",
+      "resistance_mutations": [
+        "Y1230X",
+        "D1228X"
+      ],
+      "cooccurrence_notes": "Acquired MET amplification is a recognized bypass resistance mechanism in EGFR-mutant NSCLC."
+    },
+    {
+      "gene": "BRAF",
+      "common_variants": [
+        "V600E",
+        "Non-V600"
+      ],
+      "first_line_therapy": "Dabrafenib + Trametinib",
+      "resistance_mutations": [
+        "MEK1 mutations",
+        "NRAS reactivation"
+      ],
+      "cooccurrence_notes": "V600E alterations are uncommon (1-3% in NSCLC, 8-10% in CRC)."
+    }
+  ]
+}

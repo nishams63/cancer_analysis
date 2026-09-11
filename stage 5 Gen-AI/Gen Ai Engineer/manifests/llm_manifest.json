@@ -1,0 +1,46 @@
+{
+  "manifest_type": "llm_manifest",
+  "version": "1.0.0",
+  "created_at": "2026-09-11T14:57:31.234809Z",
+  "llm_provider": "nvidia",
+  "llm_model": "meta/llama-3.1-70b-instruct",
+  "total_generations": 5,
+  "success_rate": 1.0,
+  "generation_sample": [
+    {
+      "scenario_id": "PROMPT-R01",
+      "patient_id": "SYN-P000001",
+      "valid": true,
+      "attempts": 1,
+      "latency_ms": 28092.06
+    },
+    {
+      "scenario_id": "PROMPT-R02",
+      "patient_id": "SYN-P000002",
+      "valid": true,
+      "attempts": 2,
+      "latency_ms": 12054.21
+    },
+    {
+      "scenario_id": "PROMPT-R03",
+      "patient_id": "SYN-P000003",
+      "valid": true,
+      "attempts": 1,
+      "latency_ms": 15309.33
+    },
+    {
+      "scenario_id": "PROMPT-R04",
+      "patient_id": "SYN-P000004",
+      "valid": true,
+      "attempts": 1,
+      "latency_ms": 21468.78
+    },
+    {
+      "scenario_id": "PROMPT-R05",
+      "patient_id": "SYN-P000005",
+      "valid": true,
+      "attempts": 1,
+      "latency_ms": 22283.91
+    }
+  ]
+}

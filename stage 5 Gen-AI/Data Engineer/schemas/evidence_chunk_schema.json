@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage5EvidenceChunk",
+  "description": "Traceable chunk schema for approved RAG oncology documents.",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "document_id",
+    "section",
+    "page",
+    "text",
+    "source",
+    "version",
+    "approval_status",
+    "evidence_category"
+  ],
+  "properties": {
+    "chunk_id": {
+      "type": "string",
+      "pattern": "^CHUNK-.*-[0-9]{4}$"
+    },
+    "document_id": {
+      "type": "string"
+    },
+    "section": {
+      "type": "string"
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "text": {
+      "type": "string",
+      "minLength": 10
+    },
+    "word_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "source": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "approval_status": {
+      "type": "string",
+      "enum": [
+        "approved"
+      ]
+    },
+    "evidence_category": {
+      "type": "string",
+      "enum": [
+        "mutation",
+        "biomarker",
+        "resistance",
+        "treatment",
+        "toxicity",
+        "pathology",
+        "imaging",
+        "clinical_terminology"
+      ]
+    }
+  }
+}

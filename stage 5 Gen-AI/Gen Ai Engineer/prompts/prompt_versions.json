@@ -1,0 +1,217 @@
+{
+  "catalog_version": "1.0.0",
+  "timestamp": "2026-09-11T12:00:00Z",
+  "total_scenarios": 15,
+  "blind_spots_covered_count": 15,
+  "all_blind_spots": [
+    "BS01",
+    "BS02",
+    "BS03",
+    "BS04",
+    "BS05",
+    "BS06",
+    "BS07",
+    "BS08",
+    "BS09",
+    "BS10",
+    "BS11",
+    "BS12",
+    "BS13",
+    "BS14",
+    "BS15"
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "PROMPT-R01",
+      "version": "1.0.0",
+      "title": "Dual Driver Resistance: EGFR T790M + MET Amplification Bypass",
+      "target_blind_spots": [
+        "BS01"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R02",
+      "version": "1.0.0",
+      "title": "Complex Negation / Contrasting Clause Respiratory Hazard",
+      "target_blind_spots": [
+        "BS02"
+      ],
+      "target_stages": [
+        "STAGE_3_NLP"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R03",
+      "version": "1.0.0",
+      "title": "Sub-Centimeter Primary with Malignant Pleural Effusion (T1a N0 M1a - Stage IVA)",
+      "target_blind_spots": [
+        "BS03"
+      ],
+      "target_stages": [
+        "STAGE_1_ML",
+        "STAGE_4_SLM"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R04",
+      "version": "1.0.0",
+      "title": "Borderline Biomarkers in the Moderate-Risk Ambiguity Envelope",
+      "target_blind_spots": [
+        "BS04"
+      ],
+      "target_stages": [
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R05",
+      "version": "1.0.0",
+      "title": "Severe Nephrotoxicity Spike (Cr 3.8) vs Planned Cisplatin Continuation",
+      "target_blind_spots": [
+        "BS05"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R06",
+      "version": "1.0.0",
+      "title": "Hyper-Acute Decompensation: Febrile Neutropenia to Septic Shock within 6 Hours",
+      "target_blind_spots": [
+        "BS06"
+      ],
+      "target_stages": [
+        "STAGE_1_ML",
+        "STAGE_3_NLP"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R07",
+      "version": "1.0.0",
+      "title": "Sparse Envelope: Outside Transfer with >60% Missing Tabular Attributes",
+      "target_blind_spots": [
+        "BS07"
+      ],
+      "target_stages": [
+        "STAGE_1_ML",
+        "STAGE_2_DL"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R08",
+      "version": "1.0.0",
+      "title": "Ultra-Rare Quadruple Alteration: KRAS G12C + TP53 + STK11 + KEAP1",
+      "target_blind_spots": [
+        "BS08"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R09",
+      "version": "1.0.0",
+      "title": "Sarcopenic Elderly Blind Spot: Normal Creatinine (0.9) with CrCl 24 mL/min",
+      "target_blind_spots": [
+        "BS09"
+      ],
+      "target_stages": [
+        "STAGE_1_ML",
+        "STAGE_4_SLM"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R10",
+      "version": "1.0.0",
+      "title": "Rare Histology Intersection: Adenosquamous Carcinoma with EGFR Exon 19 Deletion",
+      "target_blind_spots": [
+        "BS10"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R11",
+      "version": "1.0.0",
+      "title": "Permanent Contraindication Violation: Checkpoint Inhibitor Re-Challenge after Grade 3 Myocarditis",
+      "target_blind_spots": [
+        "BS11"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_3_NLP"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R12",
+      "version": "1.0.0",
+      "title": "Inverse Weighting False-Alarm: Grade 1 Xerosis & Trace Proteinuria Provoking False Positive",
+      "target_blind_spots": [
+        "BS12"
+      ],
+      "target_stages": [
+        "STAGE_3_NLP"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R13",
+      "version": "1.0.0",
+      "title": "OOD Real Clinic Drift: Heavy Colloquial Abbreviations, Typos, and Copy-Paste Artifacts",
+      "target_blind_spots": [
+        "BS13"
+      ],
+      "target_stages": [
+        "STAGE_4_SLM",
+        "STAGE_3_NLP"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R14",
+      "version": "1.0.0",
+      "title": "Conflicting Longitudinal Timeline: Progressive Imaging vs Stale 'Stable Disease' Note",
+      "target_blind_spots": [
+        "BS14"
+      ],
+      "target_stages": [
+        "STAGE_1_ML",
+        "STAGE_4_SLM"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    },
+    {
+      "scenario_id": "PROMPT-R15",
+      "version": "1.0.0",
+      "title": "Urgency Inversion Paradox: Asymptomatic Hypercalcemia (14.6 mg/dL) vs Loud Symptomatic Viral URI",
+      "target_blind_spots": [
+        "BS15"
+      ],
+      "target_stages": [
+        "STAGE_3_NLP",
+        "STAGE_1_ML"
+      ],
+      "status": "APPROVED_FOR_GENERATION"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "manifest_type": "schema_manifest",
+  "version": "1.0.0",
+  "created_at_utc": "2026-09-11T16:42:59.411045+00:00",
+  "schemas": {
+    "distribution_schema.json": {
+      "schema_file": "distribution_schema.json",
+      "file_hash": "52329507bb68d59938fa5abc9313a16a063b6d805abd8bc4f37dbc8c252285b5",
+      "file_size_bytes": 1402,
+      "schema_version": "1.0.0",
+      "verified": true
+    },
+    "evidence_chunk_schema.json": {
+      "schema_file": "evidence_chunk_schema.json",
+      "file_hash": "7b6af3ae73019f43b7e20ac24c8eeea43c6cade5507476e9f0e03c5b57726289",
+      "file_size_bytes": 1288,
+      "schema_version": "1.0.0",
+      "verified": true
+    },
+    "patient_schema.json": {
+      "schema_file": "patient_schema.json",
+      "file_hash": "4f6192f04552c315f815b8874917047b8207b997b8bc5eb82b2e4ef725520072",
+      "file_size_bytes": 4786,
+      "schema_version": "1.0.0",
+      "verified": true
+    },
+    "validation_schema.json": {
+      "schema_file": "validation_schema.json",
+      "file_hash": "2b486914336dc8f936101c589a21ffe84e8c5605e457aeb2e01329fd8ada1e6b",
+      "file_size_bytes": 546,
+      "schema_version": "1.0.0",
+      "verified": true
+    }
+  }
+}

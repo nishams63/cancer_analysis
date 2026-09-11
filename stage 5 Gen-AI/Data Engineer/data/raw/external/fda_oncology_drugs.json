@@ -1,0 +1,136 @@
+{
+  "reference": "FDA Precision Oncology Product Labeling & Dosage Specifications",
+  "version": "2026.v1",
+  "approved_status": "approved",
+  "drugs": [
+    {
+      "drug_name": "Docetaxel",
+      "canonical_name": "Docetaxel",
+      "class": "Taxane antimicrotubular agent",
+      "standard_unit": "mg",
+      "approved_reference_range": {
+        "min": 60.0,
+        "max": 300.0,
+        "recommended_standard": 75.0,
+        "unit": "mg/m2"
+      },
+      "major_toxicities": [
+        "Neutropenia",
+        "Peripheral Neuropathy",
+        "Fluid retention",
+        "Hypersensitivity"
+      ],
+      "dose_modification_triggers": [
+        "Grade 4 neutropenia",
+        "Severe cutaneous toxicity",
+        "Hepatic impairment (ALT/AST > 1.5x ULN)"
+      ]
+    },
+    {
+      "drug_name": "Osimertinib",
+      "canonical_name": "Osimertinib",
+      "class": "Third-generation EGFR Tyrosine Kinase Inhibitor",
+      "standard_unit": "mg",
+      "approved_reference_range": {
+        "min": 40.0,
+        "max": 80.0,
+        "recommended_standard": 80.0,
+        "unit": "mg"
+      },
+      "major_toxicities": [
+        "Diarrhea",
+        "Rash",
+        "QT prolongation",
+        "Interstitial lung disease"
+      ],
+      "dose_modification_triggers": [
+        "QTc > 500 ms",
+        "Symptomatic interstitial lung disease"
+      ]
+    },
+    {
+      "drug_name": "Cisplatin",
+      "canonical_name": "Cisplatin",
+      "class": "Platinum-based alkylating agent",
+      "standard_unit": "mg",
+      "approved_reference_range": {
+        "min": 50.0,
+        "max": 150.0,
+        "recommended_standard": 75.0,
+        "unit": "mg/m2"
+      },
+      "major_toxicities": [
+        "Nephrotoxicity",
+        "Ototoxicity",
+        "Severe nausea/vomiting",
+        "Peripheral neuropathy"
+      ],
+      "dose_modification_triggers": [
+        "Serum creatinine > 1.5 mg/dL",
+        "Creatinine clearance < 50 mL/min"
+      ]
+    },
+    {
+      "drug_name": "Pembrolizumab",
+      "canonical_name": "Pembrolizumab",
+      "class": "PD-1 receptor antagonist immune checkpoint inhibitor",
+      "standard_unit": "mg",
+      "approved_reference_range": {
+        "min": 200.0,
+        "max": 400.0,
+        "recommended_standard": 200.0,
+        "unit": "mg"
+      },
+      "major_toxicities": [
+        "Immune-mediated pneumonitis",
+        "Colitis",
+        "Hepatitis",
+        "Endocrinopathies"
+      ],
+      "dose_modification_triggers": [
+        "Grade 2 immune toxicity: withhold; Grade 3-4: permanently discontinue"
+      ]
+    },
+    {
+      "drug_name": "Trastuzumab",
+      "canonical_name": "Trastuzumab",
+      "class": "HER2/neu receptor antagonist humanized IgG1 monoclonal antibody",
+      "standard_unit": "mg",
+      "approved_reference_range": {
+        "min": 150.0,
+        "max": 600.0,
+        "recommended_standard": 420.0,
+        "unit": "mg"
+      },
+      "major_toxicities": [
+        "Cardiomyopathy / Left ventricular dysfunction",
+        "Infusion reactions",
+        "Embryo-fetal toxicity"
+      ],
+      "dose_modification_triggers": [
+        "LVEF decrease >= 16% from baseline or below institutional lower limit"
+      ]
+    },
+    {
+      "drug_name": "radiotherapy-standard",
+      "canonical_name": "radiotherapy-standard",
+      "class": "Ionizing radiation oncology therapy",
+      "standard_unit": "Gy",
+      "approved_reference_range": {
+        "min": 20.0,
+        "max": 70.0,
+        "recommended_standard": 60.0,
+        "unit": "Gy"
+      },
+      "major_toxicities": [
+        "Radiation dermatitis",
+        "Radiation pneumonitis",
+        "Fatigue"
+      ],
+      "dose_modification_triggers": [
+        "Severe moist desquamation",
+        "Acute pneumonitis"
+      ]
+    }
+  ]
+}

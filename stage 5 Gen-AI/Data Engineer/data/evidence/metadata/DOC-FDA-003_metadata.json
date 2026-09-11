@@ -1,0 +1,11 @@
+{
+  "document_id": "DOC-FDA-003",
+  "title": "FDA Oncology Drug Labeling & Dosage Specifications",
+  "source": "FDA_DRUG_LABEL_003",
+  "source_type": "external_reference",
+  "version": "2026.v1",
+  "approval_status": "approved",
+  "evidence_category": "treatment",
+  "file_hash": "c17e8d0b206e5436237483b6fd4e824de933300623391ef731b4d1f600607fa4",
+  "file_size_bytes": 2131
+}

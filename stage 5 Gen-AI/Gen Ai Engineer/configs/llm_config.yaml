@@ -1,0 +1,16 @@
+version: 1.0.0
+provider: nvidia
+model:
+  name: ${LLM_MODEL:-meta/llama-3.2-11b-vision-instruct}
+  api_base: ${NVIDIA_BASE_URL:-https://integrate.api.nvidia.com/v1}
+generation:
+  temperature: 0.2
+  max_tokens: 1200
+  top_p: 0.95
+retry:
+  max_api_attempts: 3
+  backoff_factor: 1.5
+  timeout_seconds: 30
+mock_mode:
+  allow_offline_mock: true
+  fallback_on_missing_key: true

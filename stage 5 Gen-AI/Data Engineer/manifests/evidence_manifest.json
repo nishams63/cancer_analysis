@@ -1,0 +1,53 @@
+{
+  "manifest_type": "evidence_manifest",
+  "evidence_store_version": "v1.0",
+  "created_at_utc": "2026-09-11T16:42:59.411045+00:00",
+  "total_documents": 4,
+  "total_chunks": 13,
+  "documents": [
+    {
+      "document_id": "DOC-CTCAE-004",
+      "title": "CTCAE v5.0 Toxicity & Organ Grading Definitions",
+      "source": "CTCAE_TOXICITY_004",
+      "version": "v5.0",
+      "approval_status": "approved",
+      "evidence_category": "toxicity",
+      "chunk_count": 3,
+      "file_hash": "1499a163594a849dc557a620c2f8619dcd534d6a47b57f1b93cd2f605efefd1c",
+      "processing_timestamp": "2026-09-11T16:42:59.377313+00:00"
+    },
+    {
+      "document_id": "DOC-FDA-003",
+      "title": "FDA Oncology Drug Labeling & Dosage Specifications",
+      "source": "FDA_DRUG_LABEL_003",
+      "version": "2026.v1",
+      "approval_status": "approved",
+      "evidence_category": "treatment",
+      "chunk_count": 3,
+      "file_hash": "c17e8d0b206e5436237483b6fd4e824de933300623391ef731b4d1f600607fa4",
+      "processing_timestamp": "2026-09-11T16:42:59.388059+00:00"
+    },
+    {
+      "document_id": "DOC-NCCN-002",
+      "title": "NCCN NSCLC Biomarker Concordance & Targeted Therapy",
+      "source": "NCCN_NSCLC_REF_002",
+      "version": "2026.v1",
+      "approval_status": "approved",
+      "evidence_category": "biomarker",
+      "chunk_count": 3,
+      "file_hash": "1966413813435f05eab822d0e63e7231dc409834c8ed53f5ee396581f753cfc8",
+      "processing_timestamp": "2026-09-11T16:42:59.399448+00:00"
+    },
+    {
+      "document_id": "DOC-SPEC-001",
+      "title": "Oncology Decision Engine System Architecture Specification",
+      "source": "ONCOLOGY_SPEC_001",
+      "version": "2026.v2",
+      "approval_status": "approved",
+      "evidence_category": "clinical_terminology",
+      "chunk_count": 4,
+      "file_hash": "6c509a35fb1abb05a2aa6d77ea41268e582e9fbfbaa77cb94d606a0ab46ac954",
+      "processing_timestamp": "2026-09-11T16:42:59.411045+00:00"
+    }
+  ]
+}

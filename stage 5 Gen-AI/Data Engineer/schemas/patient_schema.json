@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Stage5SyntheticPatientScenario",
+  "description": "Schema definition for structured synthetic oncology patient stress-test scenarios.",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "patient_id",
+    "demographics",
+    "mutations",
+    "biomarkers",
+    "treatments",
+    "dosages",
+    "adverse_events",
+    "resistance",
+    "timeline",
+    "missing_fields",
+    "provenance"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^RC-[0-9]{3}$"
+    },
+    "patient_id": {
+      "type": "string",
+      "pattern": "^PT-[0-9]{6}$"
+    },
+    "demographics": {
+      "type": "object",
+      "required": [
+        "age",
+        "sex",
+        "cancer_type",
+        "cancer_stage"
+      ],
+      "properties": {
+        "age": {
+          "type": "integer",
+          "minimum": 18,
+          "maximum": 105
+        },
+        "sex": {
+          "type": "string",
+          "enum": [
+            "Male",
+            "Female",
+            "Unknown"
+          ]
+        },
+        "cancer_type": {
+          "type": "string"
+        },
+        "cancer_stage": {
+          "type": "string",
+          "enum": [
+            "Stage I",
+            "Stage II",
+            "Stage III",
+            "Stage IV",
+            "Unknown"
+          ]
+        }
+      }
+    },
+    "mutations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "gene",
+          "variant",
+          "tier"
+        ],
+        "properties": {
+          "gene": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "secondary",
+              "acquired_resistance"
+            ]
+          }
+        }
+      }
+    },
+    "biomarkers": {
+      "type": "object",
+      "properties": {
+        "ctdna_level": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ctdna_vaf_percent": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "tumor_marker_level": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "inflammation_marker": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "creatinine_level": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "liver_function_marker": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dosages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "adverse_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "toxicity_term",
+          "organ_system",
+          "grade"
+        ],
+        "properties": {
+          "toxicity_term": {
+            "type": "string"
+          },
+          "organ_system": {
+            "type": "string"
+          },
+          "grade": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          }
+        }
+      }
+    },
+    "resistance": {
+      "type": "object",
+      "properties": {
+        "mechanism": {
+          "type": "string"
+        },
+        "conferred_by": {
+          "type": "string"
+        },
+        "evidence_reference": {
+          "type": "string"
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event",
+          "day_offset"
+        ],
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "day_offset": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_distribution_version",
+        "constraint_version",
+        "generated_by"
+      ],
+      "properties": {
+        "source_distribution_version": {
+          "type": "string"
+        },
+        "constraint_version": {
+          "type": "string"
+        },
+        "generated_by": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "terminology": "Common Terminology Criteria for Adverse Events (CTCAE)",
+  "version": "v5.0",
+  "approved_status": "approved",
+  "organ_systems": [
+    {
+      "system_name": "HEMATOLOGIC",
+      "associated_toxicities": [
+        "Neutropenia",
+        "Febrile neutropenia",
+        "Thrombocytopenia",
+        "Anemia",
+        "Leukopenia"
+      ],
+      "grades": {
+        "Grade 1": "Mild",
+        "Grade 2": "Moderate",
+        "Grade 3": "Severe / medically significant",
+        "Grade 4": "Life-threatening"
+      }
+    },
+    {
+      "system_name": "HEPATIC",
+      "associated_toxicities": [
+        "Elevated ALT",
+        "Elevated AST",
+        "Hyperbilirubinemia",
+        "Hepatotoxicity"
+      ],
+      "grades": {
+        "Grade 1": ">ULN - 3.0x ULN",
+        "Grade 2": ">3.0 - 5.0x ULN",
+        "Grade 3": ">5.0 - 20.0x ULN",
+        "Grade 4": ">20.0x ULN"
+      }
+    },
+    {
+      "system_name": "PULMONARY",
+      "associated_toxicities": [
+        "Pneumonitis",
+        "Dyspnea",
+        "Cough",
+        "Hypoxia",
+        "Interstitial lung disease"
+      ],
+      "grades": {
+        "Grade 1": "Asymptomatic",
+        "Grade 2": "Symptomatic, medical intervention indicated",
+        "Grade 3": "Severe symptoms, oxygen indicated",
+        "Grade 4": "Life-threatening respiratory compromise"
+      }
+    },
+    {
+      "system_name": "RENAL",
+      "associated_toxicities": [
+        "Acute kidney injury",
+        "Serum creatinine elevation",
+        "Proteinuria"
+      ],
+      "grades": {
+        "Grade 1": ">1.5 - 2.0x baseline",
+        "Grade 2": ">2.0 - 3.0x baseline",
+        "Grade 3": ">3.0x baseline or >4.0 mg/dL",
+        "Grade 4": "Dialysis indicated"
+      }
+    },
+    {
+      "system_name": "NEUROPATHIC",
+      "associated_toxicities": [
+        "Peripheral sensory neuropathy",
+        "Motor neuropathy",
+        "Paresthesia",
+        "Ataxia"
+      ],
+      "grades": {
+        "Grade 1": "Asymptomatic / loss of DTRs",
+        "Grade 2": "Moderate symptoms limiting instrumental ADLs",
+        "Grade 3": "Severe symptoms limiting self-care ADLs",
+        "Grade 4": "Permanent disability"
+      }
+    },
+    {
+      "system_name": "DERMATOLOGIC",
+      "associated_toxicities": [
+        "Rash maculopapular",
+        "Pruritus",
+        "Alopecia",
+        "Palmar-plantar erythrodysesthesia"
+      ],
+      "grades": {
+        "Grade 1": "<10% BSA",
+        "Grade 2": "10-30% BSA",
+        "Grade 3": ">30% BSA",
+        "Grade 4": "Life-threatening dermopathy"
+      }
+    },
+    {
+      "system_name": "CARDIAC",
+      "associated_toxicities": [
+        "Heart failure",
+        "LVEF reduction",
+        "Myocarditis",
+        "QTc interval prolongation",
+        "Arrhythmia"
+      ],
+      "grades": {
+        "Grade 1": "Asymptomatic",
+        "Grade 2": "Mild with minor exertion",
+        "Grade 3": "Severe at rest / hospitalization",
+        "Grade 4": "Life-threatening"
+      }
+    },
+    {
+      "system_name": "NONE",
+      "associated_toxicities": [
+        "No acute adverse toxicities",
+        "Tolerance confirmed"
+      ],
+      "grades": {
+        "Grade 0": "No adverse event"
+      }
+    }
+  ]
+}
