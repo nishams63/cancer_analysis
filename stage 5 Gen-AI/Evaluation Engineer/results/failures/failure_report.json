@@ -1,0 +1,162 @@
+[
+  {
+    "failure_code": "F03",
+    "stage": "stage1",
+    "scenario_id": "PROMPT-R01",
+    "expected": "High Risk",
+    "actual": "Standard",
+    "confidence": 0.88,
+    "evidence": "Stage 1 ML classified high ctDNA/sparse alteration as Standard Risk with high confidence (conf=0.88).",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F01",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R01",
+    "expected": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F06",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R01",
+    "expected": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F06",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R01",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F07",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R01",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F09",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R01",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 67.33
+  },
+  {
+    "failure_code": "F01",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R02",
+    "expected": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "difficulty_score": 53.33
+  },
+  {
+    "failure_code": "F06",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R02",
+    "expected": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "difficulty_score": 53.33
+  },
+  {
+    "failure_code": "F06",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R02",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 53.33
+  },
+  {
+    "failure_code": "F07",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R02",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 53.33
+  },
+  {
+    "failure_code": "F09",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R02",
+    "expected": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "difficulty_score": 53.33
+  },
+  {
+    "failure_code": "F03",
+    "stage": "stage1",
+    "scenario_id": "PROMPT-R03",
+    "expected": "High Risk",
+    "actual": "Standard",
+    "confidence": 0.88,
+    "evidence": "Stage 1 ML classified high ctDNA/sparse alteration as Standard Risk with high confidence (conf=0.88).",
+    "difficulty_score": 42.0
+  },
+  {
+    "failure_code": "F04",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R04",
+    "expected": "Negation Preserved (No Mutation Detected)",
+    "actual": "Affirmative Extraction (Mutation Present)",
+    "confidence": 0.94,
+    "evidence": "Stage 3 NLP extracted negated entity as affirmative (flipped negation polarity).",
+    "difficulty_score": 39.33
+  },
+  {
+    "failure_code": "F09",
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R04",
+    "expected": "Negation Preserved (No Mutation Detected)",
+    "actual": "Affirmative Extraction (Mutation Present)",
+    "confidence": 0.94,
+    "evidence": "Stage 3 NLP extracted negated entity as affirmative (flipped negation polarity).",
+    "difficulty_score": 39.33
+  },
+  {
+    "failure_code": "F07",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R05",
+    "expected": "Dose Avoidance / Carboplatin Substitution",
+    "actual": "Full Dose Cisplatin Protocol",
+    "confidence": 0.88,
+    "evidence": "Stage 4 SLM recommended nephrotoxic Cisplatin despite severe renal dysfunction (Cr > 3.0).",
+    "difficulty_score": 42.0
+  },
+  {
+    "failure_code": "F10",
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R05",
+    "expected": "Dose Avoidance / Carboplatin Substitution",
+    "actual": "Full Dose Cisplatin Protocol",
+    "confidence": 0.88,
+    "evidence": "Stage 4 SLM recommended nephrotoxic Cisplatin despite severe renal dysfunction (Cr > 3.0).",
+    "difficulty_score": 42.0
+  }
+]

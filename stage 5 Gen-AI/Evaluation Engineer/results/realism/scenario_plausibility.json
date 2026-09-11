@@ -1,0 +1,47 @@
+[
+  {
+    "scenario_id": "PROMPT-R01",
+    "scenario_plausibility_score": 0.85,
+    "individual_plausibility": true,
+    "joint_rules_allowed": true,
+    "clinical_rules_conformed": true,
+    "evidence_backed": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R02",
+    "scenario_plausibility_score": 0.85,
+    "individual_plausibility": true,
+    "joint_rules_allowed": true,
+    "clinical_rules_conformed": true,
+    "evidence_backed": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R03",
+    "scenario_plausibility_score": 0.85,
+    "individual_plausibility": true,
+    "joint_rules_allowed": true,
+    "clinical_rules_conformed": true,
+    "evidence_backed": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R04",
+    "scenario_plausibility_score": 0.85,
+    "individual_plausibility": true,
+    "joint_rules_allowed": true,
+    "clinical_rules_conformed": true,
+    "evidence_backed": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R05",
+    "scenario_plausibility_score": 0.85,
+    "individual_plausibility": true,
+    "joint_rules_allowed": true,
+    "clinical_rules_conformed": true,
+    "evidence_backed": false,
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,6 @@
+scenario_id,impact_score,severity_level,failed_stages,failure_codes,high_confidence_error
+PROMPT-R01,100.0,CRITICAL,"stage1, stage3, stage4","F01, F03, F06, F07, F09",True
+PROMPT-R02,100.0,CRITICAL,"stage3, stage4","F01, F06, F07, F09",True
+PROMPT-R03,53.5,HIGH,stage1,F03,True
+PROMPT-R04,78.0,CRITICAL,stage3,"F04, F09",True
+PROMPT-R05,53.5,HIGH,stage4,"F07, F10",True

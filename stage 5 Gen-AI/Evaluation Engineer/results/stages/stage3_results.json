@@ -1,0 +1,81 @@
+[
+  {
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R01",
+    "expected_output": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual_output": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "status": "FAIL",
+    "failure_codes": [
+      "F01",
+      "F06"
+    ],
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "predictions": {
+      "urgency": "Standard",
+      "extracted_entities": "Single Mutation Extracted (Secondary Omitted)"
+    }
+  },
+  {
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R02",
+    "expected_output": "Dual Mutation Extracted (Primary + Secondary Bypass)",
+    "actual_output": "Single Mutation Extracted (Secondary Omitted)",
+    "confidence": 0.89,
+    "status": "FAIL",
+    "failure_codes": [
+      "F01",
+      "F06"
+    ],
+    "evidence": "Stage 3 NLP missed secondary resistance driver (e.g. MET amplification) in clinical text.",
+    "predictions": {
+      "urgency": "Standard",
+      "extracted_entities": "Single Mutation Extracted (Secondary Omitted)"
+    }
+  },
+  {
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R03",
+    "expected_output": "Entities Correctly Extracted",
+    "actual_output": "Entities Correctly Extracted",
+    "confidence": 0.95,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 3 NLP accurately parsed entities and clinical urgency.",
+    "predictions": {
+      "urgency": "High Urgency",
+      "extracted_entities": "Entities Correctly Extracted"
+    }
+  },
+  {
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R04",
+    "expected_output": "Negation Preserved (No Mutation Detected)",
+    "actual_output": "Affirmative Extraction (Mutation Present)",
+    "confidence": 0.94,
+    "status": "FAIL",
+    "failure_codes": [
+      "F04",
+      "F09"
+    ],
+    "evidence": "Stage 3 NLP extracted negated entity as affirmative (flipped negation polarity).",
+    "predictions": {
+      "urgency": "High Urgency",
+      "extracted_entities": "Affirmative Extraction (Mutation Present)"
+    }
+  },
+  {
+    "stage": "stage3",
+    "scenario_id": "PROMPT-R05",
+    "expected_output": "Entities Correctly Extracted",
+    "actual_output": "Entities Correctly Extracted",
+    "confidence": 0.95,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 3 NLP accurately parsed entities and clinical urgency.",
+    "predictions": {
+      "urgency": "High Urgency",
+      "extracted_entities": "Entities Correctly Extracted"
+    }
+  }
+]

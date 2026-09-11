@@ -1,0 +1,115 @@
+version: 1.0.0
+categories:
+  F01:
+    name: Critical entity extraction failure
+    stage: stage3
+    severity: CRITICAL
+    description: Failed to extract primary or resistance mutation or contraindication
+      entity from clinical text.
+  F02:
+    name: Incorrect urgency classification
+    stage: stage3
+    severity: CRITICAL
+    description: Emergency acute decompensation or progression classified as low/standard
+      urgency.
+  F03:
+    name: Incorrect hazard classification
+    stage: stage1
+    severity: HIGH
+    description: Underestimated 12-month mortality or progression risk in high-risk
+      patient.
+  F04:
+    name: Negation failure
+    stage: stage3
+    severity: CRITICAL
+    description: Flipped negated entity into affirmative or affirmative into negative
+      (e.g. no MET -> MET present).
+  F05:
+    name: Temporal reasoning failure
+    stage: all
+    severity: HIGH
+    description: Failed to infer causality between past treatment progression and
+      acquired resistance.
+  F06:
+    name: Mutation interpretation failure
+    stage: stage4
+    severity: CRITICAL
+    description: Overlooked secondary bypass mutation (MET, BRAF) when recommending
+      targeted therapy.
+  F07:
+    name: Treatment inconsistency
+    stage: stage4
+    severity: HIGH
+    description: Recommended monotherapy when dual-inhibition is mandated by evidence
+      guidelines.
+  F08:
+    name: Cross-stage disagreement
+    stage: cross_stage
+    severity: HIGH
+    description: Discordance between ML tabular hazard, NLP urgency, and SLM recommendation.
+  F09:
+    name: High-confidence incorrect prediction
+    stage: all
+    severity: CATASTROPHIC
+    description: Stage emitted erroneous clinical prediction with confidence >= 0.85.
+  F10:
+    name: Counterfactual instability
+    stage: stage4
+    severity: HIGH
+    description: Model flipped recommendation on irrelevant input change or failed
+      to adapt on causal variable shift.
+  F11:
+    name: Missing-information handling failure
+    stage: stage1
+    severity: MEDIUM
+    description: Model crashed, hallucinated, or biased prediction when biomarker
+      was appropriately missing.
+  F12:
+    name: Biomarker interpretation failure
+    stage: stage1
+    severity: HIGH
+    description: Misinterpreted high ctDNA velocity or high tumor burden as stable
+      disease.
+  F13:
+    name: Narrative hallucination
+    stage: stage5_genai
+    severity: CRITICAL
+    description: LLM inserted fictional clinical entities or altered structured ground
+      truth.
+  F14:
+    name: Prompt/scenario drift
+    stage: stage5_genai
+    severity: MEDIUM
+    description: Generated scenario deviated from requested EDA stress specification.
+  F15:
+    name: RAG retrieval failure
+    stage: stage5_rag
+    severity: HIGH
+    description: RAG failed to retrieve required evidence chunk for target resistance
+      alteration.
+  F16:
+    name: RAG evidence conflict
+    stage: stage5_rag
+    severity: MEDIUM
+    description: Retrieved chunks contain conflicting therapeutic recommendations.
+  F17:
+    name: Stage integration failure
+    stage: integration
+    severity: HIGH
+    description: Incompatible data schema or missing fields between consecutive stages.
+  F18:
+    name: Confidence calibration failure
+    stage: all
+    severity: MEDIUM
+    description: Model reports near-certainty in sparse edge-case regions where training
+      data was absent.
+  F19:
+    name: Decision instability
+    stage: all
+    severity: HIGH
+    description: Erratic changes in risk stratification across minor perturbations.
+  F20:
+    name: Unknown/unclassified failure
+    stage: all
+    severity: LOW
+    description: Unclassified anomaly requiring expert clinician review.

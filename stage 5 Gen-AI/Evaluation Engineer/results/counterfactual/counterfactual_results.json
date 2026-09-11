@@ -1,0 +1,52 @@
+[
+  {
+    "scenario_id": "PROMPT-R01",
+    "target_variable": "",
+    "factual_prediction": "Monotherapy EGFR TKI (Osimertinib)",
+    "counterfactual_prediction": "Monotherapy EGFR TKI (Osimertinib)",
+    "sensitivity_detected": false,
+    "immutability_preserved": true,
+    "instability_detected": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R02",
+    "target_variable": "",
+    "factual_prediction": "Guideline-Concordant Regimen",
+    "counterfactual_prediction": "Guideline-Concordant Regimen",
+    "sensitivity_detected": false,
+    "immutability_preserved": true,
+    "instability_detected": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R03",
+    "target_variable": "",
+    "factual_prediction": "Guideline-Concordant Regimen",
+    "counterfactual_prediction": "Guideline-Concordant Regimen",
+    "sensitivity_detected": false,
+    "immutability_preserved": true,
+    "instability_detected": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R04",
+    "target_variable": "",
+    "factual_prediction": "Guideline-Concordant Regimen",
+    "counterfactual_prediction": "Guideline-Concordant Regimen",
+    "sensitivity_detected": false,
+    "immutability_preserved": true,
+    "instability_detected": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R05",
+    "target_variable": "",
+    "factual_prediction": "Guideline-Concordant Regimen",
+    "counterfactual_prediction": "Guideline-Concordant Regimen",
+    "sensitivity_detected": false,
+    "immutability_preserved": true,
+    "instability_detected": false,
+    "status": "PASS"
+  }
+]

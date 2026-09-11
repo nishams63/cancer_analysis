@@ -1,0 +1,42 @@
+[
+  {
+    "scenario_id": "PROMPT-R01",
+    "fidelity_score": 1.0,
+    "satisfied_conditions": 6,
+    "total_conditions": 6,
+    "forbidden_violations": [],
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R02",
+    "fidelity_score": 1.0,
+    "satisfied_conditions": 6,
+    "total_conditions": 6,
+    "forbidden_violations": [],
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R03",
+    "fidelity_score": 1.0,
+    "satisfied_conditions": 6,
+    "total_conditions": 6,
+    "forbidden_violations": [],
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R04",
+    "fidelity_score": 1.0,
+    "satisfied_conditions": 5,
+    "total_conditions": 5,
+    "forbidden_violations": [],
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R05",
+    "fidelity_score": 1.0,
+    "satisfied_conditions": 6,
+    "total_conditions": 6,
+    "forbidden_violations": [],
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "scenario_id": "PROMPT-R01",
+    "status": "PASS",
+    "total_chunks_retrieved": 2,
+    "mean_retrieval_score": 0.3468,
+    "concept_coverage_ratio": 1.0,
+    "provenance_valid": true,
+    "failure_codes": [],
+    "covered_concepts": [
+      "nsclc",
+      "resistance",
+      "amplification",
+      "guideline",
+      "therapy",
+      "combination",
+      "osimertinib",
+      "nccn"
+    ],
+    "missing_concepts": []
+  },
+  {
+    "scenario_id": "PROMPT-R02",
+    "status": "FAIL",
+    "total_chunks_retrieved": 0,
+    "mean_retrieval_score": 0.0,
+    "concept_coverage_ratio": 0.0,
+    "provenance_valid": false,
+    "failure_codes": [
+      "R01",
+      "R02"
+    ],
+    "covered_concepts": [],
+    "missing_concepts": [
+      "pulmonary",
+      "acute",
+      "oncology",
+      "embolism",
+      "emergency",
+      "triage",
+      "protocol",
+      "dyspnea"
+    ]
+  },
+  {
+    "scenario_id": "PROMPT-R03",
+    "status": "FAIL",
+    "total_chunks_retrieved": 2,
+    "mean_retrieval_score": 0.2286,
+    "concept_coverage_ratio": 0.125,
+    "provenance_valid": true,
+    "failure_codes": [
+      "R01"
+    ],
+    "covered_concepts": [
+      "stage"
+    ],
+    "missing_concepts": [
+      "nsclc",
+      "edition",
+      "malignant",
+      "staging",
+      "effusion",
+      "ajcc",
+      "pleural"
+    ]
+  },
+  {
+    "scenario_id": "PROMPT-R04",
+    "status": "FAIL",
+    "total_chunks_retrieved": 2,
+    "mean_retrieval_score": 0.1225,
+    "concept_coverage_ratio": 0.125,
+    "provenance_valid": true,
+    "failure_codes": [
+      "R01",
+      "R02"
+    ],
+    "covered_concepts": [
+      "cancer"
+    ],
+    "missing_concepts": [
+      "moderate",
+      "ca-125",
+      "surveillance",
+      "colorectal",
+      "borderline",
+      "risk",
+      "elevated"
+    ]
+  },
+  {
+    "scenario_id": "PROMPT-R05",
+    "status": "PASS",
+    "total_chunks_retrieved": 3,
+    "mean_retrieval_score": 0.1535,
+    "concept_coverage_ratio": 1.0,
+    "provenance_valid": true,
+    "failure_codes": [],
+    "covered_concepts": [
+      "creatinine",
+      "renal",
+      "modification",
+      "cisplatin",
+      "dose",
+      "egfr",
+      "impairment",
+      "toxicity",
+      "contraindication"
+    ],
+    "missing_concepts": []
+  }
+]

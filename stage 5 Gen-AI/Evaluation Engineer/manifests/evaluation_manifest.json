@@ -1,0 +1,15 @@
+{
+  "manifest_type": "evaluation_manifest",
+  "version": "1.0.0",
+  "execution_timestamp": "2026-09-11T17:02:22.445002Z",
+  "batch_id": "BATCH-001",
+  "total_scenarios_evaluated": 5,
+  "total_failures_detected": 16,
+  "total_clusters": 9,
+  "top_wildcard_candidate": "PROMPT-R01",
+  "scores_summary": {
+    "mean_difficulty": 48.8,
+    "mean_impact": 77.0,
+    "cross_stage_discordance": 1.0
+  }
+}

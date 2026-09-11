@@ -1,0 +1,14 @@
+version: 1.0.0
+metric_name: SYSTEM STRESS-TEST DIFFICULTY SCORE
+description: Calculates downstream engineering difficulty (0-100) based on observed
+  model vulnerabilities.
+weights:
+  stage_failure: 0.4
+  disagreement: 0.2
+  uncertainty: 0.2
+  instability: 0.2
+scaling:
+  min_score: 0.0
+  max_score: 100.0
+  failure_multiplier: 25.0
+  disagreement_multiplier: 50.0

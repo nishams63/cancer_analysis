@@ -1,0 +1,6 @@
+scenario_id,evidence_score,difficulty,impact,scenario_plausibility,narrative_faithfulness,rag_quality,failed_stages,failure_codes,reproducibility
+PROMPT-R01,84.22,67.33,100.0,0.85,0.86,1.0,"stage1, stage3, stage4","F01, F03, F06, F07, F09",YES
+PROMPT-R02,79.32,53.33,100.0,0.85,0.86,0.0,"stage3, stage4","F01, F06, F07, F09",YES
+PROMPT-R04,66.72,39.33,78.0,0.85,0.86,0.125,stage3,"F04, F09",YES
+PROMPT-R03,59.07,42.0,53.5,0.85,0.86,0.125,stage1,F03,YES
+PROMPT-R05,59.07,42.0,53.5,0.85,0.86,1.0,stage4,"F07, F10",YES

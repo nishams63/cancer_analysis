@@ -1,0 +1,72 @@
+[
+  {
+    "scenario_id": "PROMPT-R01",
+    "narrative_faithfulness_score": 0.86,
+    "component_scores": {
+      "entity_preservation": 0.6,
+      "value_preservation": 0.7,
+      "missingness_preservation": 1.0,
+      "negation_preservation": 1.0,
+      "contradiction_free_score": 1.0
+    },
+    "has_hallucination": false,
+    "has_contradiction": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R02",
+    "narrative_faithfulness_score": 0.86,
+    "component_scores": {
+      "entity_preservation": 0.6,
+      "value_preservation": 0.7,
+      "missingness_preservation": 1.0,
+      "negation_preservation": 1.0,
+      "contradiction_free_score": 1.0
+    },
+    "has_hallucination": false,
+    "has_contradiction": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R03",
+    "narrative_faithfulness_score": 0.86,
+    "component_scores": {
+      "entity_preservation": 0.6,
+      "value_preservation": 0.7,
+      "missingness_preservation": 1.0,
+      "negation_preservation": 1.0,
+      "contradiction_free_score": 1.0
+    },
+    "has_hallucination": false,
+    "has_contradiction": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R04",
+    "narrative_faithfulness_score": 0.86,
+    "component_scores": {
+      "entity_preservation": 0.6,
+      "value_preservation": 0.7,
+      "missingness_preservation": 1.0,
+      "negation_preservation": 1.0,
+      "contradiction_free_score": 1.0
+    },
+    "has_hallucination": false,
+    "has_contradiction": false,
+    "status": "PASS"
+  },
+  {
+    "scenario_id": "PROMPT-R05",
+    "narrative_faithfulness_score": 0.86,
+    "component_scores": {
+      "entity_preservation": 0.6,
+      "value_preservation": 0.7,
+      "missingness_preservation": 1.0,
+      "negation_preservation": 1.0,
+      "contradiction_free_score": 1.0
+    },
+    "has_hallucination": false,
+    "has_contradiction": false,
+    "status": "PASS"
+  }
+]

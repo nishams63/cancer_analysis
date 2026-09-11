@@ -1,0 +1,72 @@
+[
+  {
+    "stage": "stage2",
+    "scenario_id": "PROMPT-R01",
+    "expected_output": "High Grade / Invasive",
+    "actual_output": "High Grade / Invasive",
+    "confidence": 0.91,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 2 correctly scored pathology severity.",
+    "predictions": {
+      "risk_category": "High Risk",
+      "pathology_grade": "High Grade / Invasive"
+    }
+  },
+  {
+    "stage": "stage2",
+    "scenario_id": "PROMPT-R02",
+    "expected_output": "High Grade / Invasive",
+    "actual_output": "High Grade / Invasive",
+    "confidence": 0.91,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 2 correctly scored pathology severity.",
+    "predictions": {
+      "risk_category": "High Risk",
+      "pathology_grade": "High Grade / Invasive"
+    }
+  },
+  {
+    "stage": "stage2",
+    "scenario_id": "PROMPT-R03",
+    "expected_output": "High Grade / Invasive",
+    "actual_output": "High Grade / Invasive",
+    "confidence": 0.91,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 2 correctly scored pathology severity.",
+    "predictions": {
+      "risk_category": "High Risk",
+      "pathology_grade": "High Grade / Invasive"
+    }
+  },
+  {
+    "stage": "stage2",
+    "scenario_id": "PROMPT-R04",
+    "expected_output": "High Grade / Invasive",
+    "actual_output": "High Grade / Invasive",
+    "confidence": 0.91,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 2 correctly scored pathology severity.",
+    "predictions": {
+      "risk_category": "High Risk",
+      "pathology_grade": "High Grade / Invasive"
+    }
+  },
+  {
+    "stage": "stage2",
+    "scenario_id": "PROMPT-R05",
+    "expected_output": "High Grade / Invasive",
+    "actual_output": "High Grade / Invasive",
+    "confidence": 0.91,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 2 correctly scored pathology severity.",
+    "predictions": {
+      "risk_category": "High Risk",
+      "pathology_grade": "High Grade / Invasive"
+    }
+  }
+]

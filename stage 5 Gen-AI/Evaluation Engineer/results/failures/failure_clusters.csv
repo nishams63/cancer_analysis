@@ -1,0 +1,10 @@
+cluster_id,dominant_failure_code,scenario_category,affected_stage,count,average_confidence,average_difficulty,representative_scenarios
+CLUST-001,F03,High Risk Progression,stage1,2,0.88,54.7,"PROMPT-R03, PROMPT-R01"
+CLUST-002,F01,Resistance & Bypass,stage3,2,0.89,60.3,"PROMPT-R01, PROMPT-R02"
+CLUST-003,F06,Resistance & Bypass,stage3,2,0.89,60.3,"PROMPT-R01, PROMPT-R02"
+CLUST-004,F06,Resistance & Bypass,stage4,2,0.93,60.3,"PROMPT-R01, PROMPT-R02"
+CLUST-005,F07,High Risk Progression,stage4,3,0.913,54.2,"PROMPT-R01, PROMPT-R02, PROMPT-R05"
+CLUST-006,F09,High Risk Progression,stage4,2,0.93,60.3,"PROMPT-R01, PROMPT-R02"
+CLUST-007,F04,Resistance & Bypass,stage3,1,0.94,39.3,PROMPT-R04
+CLUST-008,F09,High Risk Progression,stage3,1,0.94,39.3,PROMPT-R04
+CLUST-009,F10,High Risk Progression,stage4,1,0.88,42.0,PROMPT-R05

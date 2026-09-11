@@ -1,0 +1,69 @@
+{
+  "batch_size": 5,
+  "population_similarity_score": 0.7964,
+  "age_mean_diff": 1.57,
+  "age_wasserstein_dist": 7.08,
+  "cancer_type_tvd": 0.45,
+  "scenario_evaluations": [
+    {
+      "scenario_id": "PROMPT-R01",
+      "patient_id": "SYN-P000001",
+      "checks": {
+        "age": "PASS",
+        "mutations": "PASS",
+        "biomarkers": "PASS",
+        "treatment": "PASS",
+        "temporal": "PASS"
+      },
+      "is_physiologically_plausible": true
+    },
+    {
+      "scenario_id": "PROMPT-R02",
+      "patient_id": "SYN-P000002",
+      "checks": {
+        "age": "PASS",
+        "mutations": "PASS",
+        "biomarkers": "PASS",
+        "treatment": "PASS",
+        "temporal": "PASS"
+      },
+      "is_physiologically_plausible": true
+    },
+    {
+      "scenario_id": "PROMPT-R03",
+      "patient_id": "SYN-P000003",
+      "checks": {
+        "age": "PASS",
+        "mutations": "PASS",
+        "biomarkers": "PASS",
+        "treatment": "PASS",
+        "temporal": "PASS"
+      },
+      "is_physiologically_plausible": true
+    },
+    {
+      "scenario_id": "PROMPT-R04",
+      "patient_id": "SYN-P000004",
+      "checks": {
+        "age": "PASS",
+        "mutations": "PASS",
+        "biomarkers": "PASS",
+        "treatment": "PASS",
+        "temporal": "PASS"
+      },
+      "is_physiologically_plausible": true
+    },
+    {
+      "scenario_id": "PROMPT-R05",
+      "patient_id": "SYN-P000005",
+      "checks": {
+        "age": "PASS",
+        "mutations": "PASS",
+        "biomarkers": "PASS",
+        "treatment": "PASS",
+        "temporal": "PASS"
+      },
+      "is_physiologically_plausible": true
+    }
+  ]
+}

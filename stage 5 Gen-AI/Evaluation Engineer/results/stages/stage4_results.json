@@ -1,0 +1,83 @@
+[
+  {
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R01",
+    "expected_output": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual_output": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "status": "FAIL",
+    "failure_codes": [
+      "F06",
+      "F07",
+      "F09"
+    ],
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "predictions": {
+      "recommendation": "Monotherapy EGFR TKI (Osimertinib)",
+      "contraindication_detected": false
+    }
+  },
+  {
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R02",
+    "expected_output": "Dual Targeted Inhibition (EGFR TKI + MET/BRAF Inhibitor)",
+    "actual_output": "Monotherapy EGFR TKI (Osimertinib)",
+    "confidence": 0.93,
+    "status": "FAIL",
+    "failure_codes": [
+      "F06",
+      "F07",
+      "F09"
+    ],
+    "evidence": "Stage 4 SLM emitted standard monotherapy, failing to address acquired kinase bypass resistance.",
+    "predictions": {
+      "recommendation": "Monotherapy EGFR TKI (Osimertinib)",
+      "contraindication_detected": false
+    }
+  },
+  {
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R03",
+    "expected_output": "Guideline-Concordant Regimen",
+    "actual_output": "Guideline-Concordant Regimen",
+    "confidence": 0.94,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 4 SLM recommended concordant therapy.",
+    "predictions": {
+      "recommendation": "Guideline-Concordant Regimen",
+      "contraindication_detected": true
+    }
+  },
+  {
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R04",
+    "expected_output": "Guideline-Concordant Regimen",
+    "actual_output": "Guideline-Concordant Regimen",
+    "confidence": 0.94,
+    "status": "PASS",
+    "failure_codes": [],
+    "evidence": "Stage 4 SLM recommended concordant therapy.",
+    "predictions": {
+      "recommendation": "Guideline-Concordant Regimen",
+      "contraindication_detected": true
+    }
+  },
+  {
+    "stage": "stage4",
+    "scenario_id": "PROMPT-R05",
+    "expected_output": "Dose Avoidance / Carboplatin Substitution",
+    "actual_output": "Full Dose Cisplatin Protocol",
+    "confidence": 0.88,
+    "status": "FAIL",
+    "failure_codes": [
+      "F07",
+      "F10"
+    ],
+    "evidence": "Stage 4 SLM recommended nephrotoxic Cisplatin despite severe renal dysfunction (Cr > 3.0).",
+    "predictions": {
+      "recommendation": "Full Dose Cisplatin Protocol",
+      "contraindication_detected": false
+    }
+  }
+]

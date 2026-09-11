@@ -1,0 +1,6 @@
+scenario_id,difficulty_score,difficulty_tier,failure_count,has_disagreement,confidence_spread
+PROMPT-R01,67.33,HARD,3,True,0.05
+PROMPT-R02,53.33,HARD,2,True,0.04
+PROMPT-R03,42.0,MODERATE,1,True,0.07
+PROMPT-R04,39.33,MODERATE,1,True,0.03
+PROMPT-R05,42.0,MODERATE,1,True,0.07

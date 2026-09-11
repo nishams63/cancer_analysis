@@ -1,0 +1,17 @@
+version: 1.0.0
+metric_name: FAILURE IMPACT SCORE
+description: Quantifies the clinical importance and downstream severity (0-100) of
+  observed failures.
+weights:
+  critical_output: 0.35
+  multi_stage_failure: 0.2
+  high_confidence_error: 0.2
+  downstream_propagation: 0.15
+  reproducibility: 0.1
+critical_entities:
+- EGFR T790M
+- MET Amplification
+- BRAF V600E
+- Cisplatin Contraindication
+- Sepsis Decompensation
+- Grade 4 Toxicity

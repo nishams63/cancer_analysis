@@ -1,0 +1,59 @@
+version: 1.0.0
+metadata:
+  engine: Stage 5 GenAI Stress-Test Evaluation Harness
+  author: Senior AI Evaluation Engineer
+  description: Master evaluation configuration for synthetic oncology stress scenarios.
+paths:
+  reference_data: ../Data Engineer/data/processed
+  constraints: ../Data Engineer/configs/constraint_spec.yaml
+  rare_space: ../Data Engineer/configs/rare_combination_space.yaml
+  prompt_library: ../Eda Engineer/prompts/prompt_library.yaml
+  drift_rules: ../Eda Engineer/prompts/prompt_drift_rules.yaml
+  retrieval_queries: ../Eda Engineer/prompts/retrieval_query_library.yaml
+  synthetic_scenarios: ../Gen Ai Engineer/generation/structured/synthetic_scenarios.jsonl
+  narratives: ../Gen Ai Engineer/generation/narratives/generated_narratives.jsonl
+  counterfactuals: ../Gen Ai Engineer/generation/counterfactuals/counterfactual_scenarios.jsonl
+  rag_results: ../Gen Ai Engineer/retrieval/results/retrieval_results.jsonl
+  evidence_chunks: ../Data Engineer/data/evidence/chunks
+  results_dir: results
+  reports_dir: reports
+  manifests_dir: manifests
+realism:
+  enabled: true
+  continuous_alpha: 0.05
+  max_ks_statistic: 0.35
+  max_wasserstein_z: 2.5
+  separate_population_from_plausibility: true
+rag:
+  evaluate_relevance: true
+  evaluate_coverage: true
+  evaluate_provenance: true
+  min_coverage_ratio: 0.67
+  min_relevance_score: 0.2
+  require_approved_status: true
+fidelity:
+  strict_forbidden_checks: true
+  tolerance_bounds:
+    age_margin_years: 2
+    biomarker_pct_margin: 0.05
+narrative:
+  require_fact_preservation: true
+  forbid_hallucinations: true
+  check_contradictions: true
+  check_negation_inversion: true
+stages:
+  stage1_enabled: true
+  stage2_enabled: true
+  stage3_enabled: true
+  stage4_enabled: true
+  high_confidence_threshold: 0.85
+counterfactual:
+  enabled: true
+  min_expected_sensitivity_shift: 0.2
+  max_allowed_invariance_drift: 0.05
+failure_clustering:
+  enabled: true
+  min_cluster_size: 1
+wildcard:
+  enabled: true
+  top_candidates_count: 5
