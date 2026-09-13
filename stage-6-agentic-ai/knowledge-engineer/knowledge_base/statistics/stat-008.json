@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "STAT-008",
+  "title": "Effect Size and Statistical Power Analysis",
+  "category": "statistics",
+  "subcategory": "inferential_statistics",
+  "description": "Quantification of practical significance and computation of sample size requirements.",
+  "conditions": [
+    "Planning experimental sample sizes (A/B testing, clinical trials)",
+    "Interpreting p-values on very large or very small sample sizes"
+  ],
+  "recommended_methods": [
+    "Cohen's d for standardized difference between two group means",
+    "Eta-squared and Partial Eta-squared for ANOVA effect sizes",
+    "Prospective statistical power calculation (alpha = 0.05, power = 0.80)"
+  ],
+  "selection_rules": [
+    "Never declare findings significant based solely on p < 0.05; always report effect size (e.g. Cohen's d)",
+    "Benchmark Cohen's d: 0.20 small, 0.50 medium, 0.80 large practical effect",
+    "Before launching an A/B experiment, calculate minimum detectable effect (MDE) and required sample size"
+  ],
+  "limitations": [
+    "Retrospective post-hoc power calculations based on observed p-values are mathematically redundant and misleading",
+    "Standardized effect sizes depend on sample homogeneity and cannot always be compared across different populations"
+  ],
+  "source": "Cohen (1988) Statistical Power Analysis for the Behavioral Sciences",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

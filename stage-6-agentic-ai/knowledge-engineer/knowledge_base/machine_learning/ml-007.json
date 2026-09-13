@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ML-007",
+  "title": "Class Imbalance Mitigation Strategies",
+  "category": "machine_learning",
+  "subcategory": "classification",
+  "description": "Remediation techniques for severe classification target skewness (e.g. positive class < 5%).",
+  "conditions": [
+    "Binary or multiclass classification where minority class prevalence is < 10% (fraud, disease, rare failure)",
+    "Model predicts only the majority class while achieving misleadingly high accuracy"
+  ],
+  "recommended_methods": [
+    "Algorithmic cost-sensitive weighting (class_weight='balanced' or scale_pos_weight in XGBoost)",
+    "Synthetic Minority Over-sampling Technique (SMOTE) applied strictly to training folds",
+    "Post-hoc classification threshold tuning optimizing F1-Score or Cost Utility Matrix"
+  ],
+  "selection_rules": [
+    "Never evaluate an imbalanced classifier using Raw Accuracy; evaluate PR-AUC (Precision-Recall AUC) and Balanced Accuracy",
+    "Prefer cost-sensitive class weighting over SMOTE; weighting does not synthesize noisy artificial examples",
+    "Tune decision threshold away from default 0.50 based on business cost ratio of False Positives vs False Negatives"
+  ],
+  "limitations": [
+    "SMOTE creates synthetic samples in feature space that can bridge across class boundaries in noisy data",
+    "Extreme oversampling drastically increases training time"
+  ],
+  "source": "Chawla et al. (2002) SMOTE: Synthetic Minority Over-sampling Technique",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

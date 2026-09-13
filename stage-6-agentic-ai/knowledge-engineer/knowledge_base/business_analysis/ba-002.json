@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "BA-002",
+  "title": "Customer Lifetime Value (LTV / CLV) Modeling",
+  "category": "business_analysis",
+  "subcategory": "customer_analytics",
+  "description": "Mathematical estimation of the net present economic value generated across an entity's relationship lifespan.",
+  "conditions": [
+    "Evaluating customer acquisition cost (CAC) payback and unit economics",
+    "Segmentation of customers into lifetime value tiers for resource allocation"
+  ],
+  "recommended_methods": [
+    "Simple historical LTV = Average Revenue Per User (ARPU) * Gross Margin % / Churn Rate",
+    "Buy 'Til You Die (BTYD / BG-NBD) probabilistic models for non-contractual transactional data",
+    "Discounted Cash Flow (DCF) net present value projection"
+  ],
+  "selection_rules": [
+    "In contractual subscription models, use ARPU * Margin / Churn Rate with annual discount rate",
+    "In non-contractual retail models, use BG-NBD model to predict future transaction counts and Gamma-Gamma for spend",
+    "Benchmark LTV to CAC ratio: healthy unit economics typically target LTV:CAC >= 3.0"
+  ],
+  "limitations": [
+    "Simple LTV formulas assume constant churn rate, which fails because churn rate drops sharply as customer tenure increases",
+    "Overestimating LTV can lead to catastrophic overspending on marketing acquisition channels"
+  ],
+  "source": "Fader and Hardie (2005) Counting Your Customers the Easy Way",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

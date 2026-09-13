@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "STAT-004",
+  "title": "Parametric Two-Sample Hypothesis Testing",
+  "category": "statistics",
+  "subcategory": "hypothesis_testing",
+  "description": "Evaluation of differences in means between two groups using Student's t-test and Welch's t-test.",
+  "conditions": [
+    "Comparison of continuous outcome between two independent or paired groups",
+    "Sample size N >= 30 per group or verified normality of residuals",
+    "Continuous measurement scale"
+  ],
+  "recommended_methods": [
+    "Welch's t-test (unequal variances assumed) as the default independent two-sample test",
+    "Student's two-sample t-test (only if equal variances strictly verified by Levene's test)",
+    "Paired t-test for repeated pre/post measurements on the exact same subjects"
+  ],
+  "selection_rules": [
+    "Always default to Welch's t-test over Student's t-test; it maintains nominal Type I error rates under unequal variances",
+    "If data is paired (e.g. pre-treatment vs post-treatment on patient i), use Paired t-test on differences",
+    "If sample size N < 20 and data violates normality (Shapiro-Wilk p < 0.05), switch to Mann-Whitney U test"
+  ],
+  "limitations": [
+    "T-tests test only central tendency differences, not distribution shape differences",
+    "High statistical power on massive datasets (N > 100,000) produces statistically significant p-values for meaningless effect sizes"
+  ],
+  "source": "Welch (1947) Generalization of Student's Problem",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

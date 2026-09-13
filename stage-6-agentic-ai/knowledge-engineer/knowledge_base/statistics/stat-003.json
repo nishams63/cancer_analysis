@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "STAT-003",
+  "title": "Percentile and Quantile Estimation",
+  "category": "statistics",
+  "subcategory": "distribution_statistics",
+  "description": "Computation and interpretation of quantiles, percentiles, and cumulative distribution thresholds.",
+  "conditions": [
+    "Establishing Service Level Agreements (SLA), reference ranges, or tail-risk boundaries (e.g., P95, P99)",
+    "Non-parametric distribution profiling"
+  ],
+  "recommended_methods": [
+    "Linear interpolation empirical quantile estimator (Hyndman and Fan Type 7 default)",
+    "Nearest-rank quantile calculation for discrete integer counts",
+    "Empirical Cumulative Distribution Function (ECDF) calculation"
+  ],
+  "selection_rules": [
+    "For continuous operational latencies or financial costs, report P50, P90, P95, and P99",
+    "For sample sizes N < 100, do not report percentiles higher than P95 due to extreme sample variance",
+    "To estimate quantile confidence intervals on moderate N, use bootstrap resampling"
+  ],
+  "limitations": [
+    "Estimating extreme quantiles (e.g. P99.9) requires sample size N >= 10,000 for statistical stability",
+    "Different software packages (R, Python, SAS) implement up to 9 distinct quantile interpolation formulas"
+  ],
+  "source": "Hyndman and Fan (1996) Sample Quantiles in Statistical Packages",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

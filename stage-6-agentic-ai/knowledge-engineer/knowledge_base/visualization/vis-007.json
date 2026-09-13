@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-007",
+  "title": "Faceting and Small Multiples",
+  "category": "visualization",
+  "subcategory": "multi_panel_plots",
+  "description": "Trellis display architecture using repetitive sub-charts to compare distributions across high-dimensional segments.",
+  "conditions": [
+    "Visualizing complex relationships conditioned on 1 or 2 categorical segment variables",
+    "Single plot becomes overcrowded and uninterpretable with multi-colored overlapping lines or points"
+  ],
+  "recommended_methods": [
+    "Small multiples grid (e.g. FacetGrid / trellis) sharing consistent x and y axis scales",
+    "One-variable wrap faceting (e.g. one panel per Region)",
+    "Two-variable matrix faceting (e.g. rows = Gender, columns = Age Cohort)"
+  ],
+  "selection_rules": [
+    "Keep axis scales FIXED across all panels to ensure honest cross-panel visual comparisons",
+    "Order panels logically by aggregate metric volume or alphabetical order",
+    "Limit total number of small multiple panels to <= 16 to avoid excessive cognitive overload"
+  ],
+  "limitations": [
+    "Fixed axis scales can flatten curves in low-volume panels (allow independent y-scales only if clearly annotated)",
+    "Requires larger canvas size in exported reports and presentations"
+  ],
+  "source": "Tufte (1990) Envisioning Information",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

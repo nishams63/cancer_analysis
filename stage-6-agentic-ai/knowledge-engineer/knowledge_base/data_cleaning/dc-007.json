@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-007",
+  "title": "Numerical Feature Scaling and Normalization",
+  "category": "data_cleaning",
+  "subcategory": "scaling",
+  "description": "Transformation of continuous features onto uniform numerical scales for distance-based and gradient-based algorithms.",
+  "conditions": [
+    "Algorithms sensitive to feature magnitudes (PCA, K-Means, SVM, KNN, Neural Nets)",
+    "Features measured in disparate physical units (e.g., Age [0-100] vs Income [10k-500k])",
+    "Presence of moderate outliers in continuous features"
+  ],
+  "recommended_methods": [
+    "StandardScaler (Z-score normalization: zero mean, unit variance)",
+    "RobustScaler (Median centering and IQR scaling) for outlier-resilient scaling",
+    "MinMaxScaler (bounded transformation to [0, 1] range)"
+  ],
+  "selection_rules": [
+    "If features contain extreme outliers that cannot be capped, select RobustScaler over StandardScaler",
+    "If model requires strictly positive bounded features (e.g. image pixels, Naive Bayes), select MinMaxScaler",
+    "If model is tree-based (Random Forest, XGBoost), scaling is unnecessary and can be skipped"
+  ],
+  "limitations": [
+    "MinMaxScaler is completely compromised if unseen test data exceeds training min/max bounds",
+    "StandardScaler distorts true sparsity when applied to sparse matrices (use MaxAbsScaler instead)"
+  ],
+  "source": "Scikit-Learn Preprocessing Guidelines",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

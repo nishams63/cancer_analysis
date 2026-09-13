@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "EDA-004",
+  "title": "Numerical vs Categorical Association Analysis",
+  "category": "eda",
+  "subcategory": "bivariate_analysis",
+  "description": "Exploration of continuous variable distributions across discrete groups or cohorts.",
+  "conditions": [
+    "One continuous dependent variable and one discrete grouping factor (e.g. Treatment arm, Region, Tier)",
+    "Need to determine if group means/medians differ significantly",
+    "Visual inspection of group variance homoscedasticity"
+  ],
+  "recommended_methods": [
+    "Grouped descriptive statistics (mean, median, std, IQR by category)",
+    "Comparative box plots and violin plots",
+    "Eta-squared (effect size) calculation from one-way ANOVA"
+  ],
+  "selection_rules": [
+    "If group distributions are Gaussian with equal variances (Levene's test p > 0.05), report ANOVA F and Eta-squared",
+    "If group distributions are skewed or sample sizes per group are small, report Kruskal-Wallis H statistic",
+    "If category has > 10 levels, sort groups by median value before plotting for interpretability"
+  ],
+  "limitations": [
+    "Unequal sample sizes across groups distort standard ANOVA F-tests (requires Welch ANOVA)",
+    "Violin plots can mislead if sample size within a group is < 20 observations"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

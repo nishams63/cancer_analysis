@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "RCA-002",
+  "title": "Rate vs Volume Mix Decomposition",
+  "category": "root_cause",
+  "subcategory": "variance_analysis",
+  "description": "Separating performance changes into pure rate improvements versus compositional volume mix shifts.",
+  "conditions": [
+    "Aggregate average rate changed (e.g. Average Order Value increased, or Click-Through Rate dropped)",
+    "Underlying population mix across sub-tiers or segments shifted over the same time horizon"
+  ],
+  "recommended_methods": [
+    "Mix-Rate-Volume variance decomposition: Delta = Volume Effect + Rate Effect + Mix Interaction Effect",
+    "Standardized weighting holding baseline segment proportions constant",
+    "Waterfall attribution visualization"
+  ],
+  "selection_rules": [
+    "If an average rate changed while subgroup rates remained flat, diagnose Simpson's paradox via Mix Shift",
+    "Calculate Volume Effect = (Total_N_new - Total_N_old) * Baseline_Avg_Rate",
+    "Calculate Mix Effect = Sum(Delta_Segment_Proportion * Baseline_Segment_Rate)"
+  ],
+  "limitations": [
+    "Requires granular sub-segment records across both comparison periods",
+    "Interaction term (Delta_Rate * Delta_Mix) must be transparently allocated"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

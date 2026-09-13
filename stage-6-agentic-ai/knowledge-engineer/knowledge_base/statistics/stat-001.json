@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "STAT-001",
+  "title": "Measures of Central Tendency Selection",
+  "category": "statistics",
+  "subcategory": "descriptive_statistics",
+  "description": "Decision framework for selecting Mean, Median, or Mode as the authoritative summary metric.",
+  "conditions": [
+    "Reporting summary baseline statistics for a feature or population metric",
+    "Data exhibits varying degrees of skewness, kurtosis, or boundary constraints"
+  ],
+  "recommended_methods": [
+    "Arithmetic Mean for symmetric, unskewed, unbounded Gaussian distributions",
+    "Median for skewed distributions, ordinal ranks, or datasets with severe outliers",
+    "Trimmed Mean (5% or 10% trim) for moderately skewed distributions with extreme tails",
+    "Mode for nominal categorical features and discrete count spikes"
+  ],
+  "selection_rules": [
+    "If absolute Fisher-Pearson skewness > 1.0, report Median as primary central tendency",
+    "If distribution is symmetric (|skewness| < 0.5) and no severe outliers, report Mean and Standard Deviation",
+    "If reporting financial, duration, or medical cost metrics, always include Median alongside Mean"
+  ],
+  "limitations": [
+    "Arithmetic mean is corrupted by a single arbitrarily large outlier",
+    "Median does not reflect shifts in the extreme tails of the distribution"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

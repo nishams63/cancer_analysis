@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ML-001",
+  "title": "Supervised Classification Algorithm Selection",
+  "category": "machine_learning",
+  "subcategory": "classification",
+  "description": "Decision framework for selecting optimal tabular classification algorithms based on dataset size, linearity, and explainability.",
+  "conditions": [
+    "Supervised classification task with binary or multiclass categorical targets",
+    "Structured tabular dataset",
+    "Requirement to balance predictive accuracy with model interpretability"
+  ],
+  "recommended_methods": [
+    "Logistic Regression with L2 (Ridge) regularization as the transparent baseline",
+    "Gradient Boosted Trees (LightGBM, XGBoost, CatBoost) for state-of-the-art tabular accuracy",
+    "Random Forest for robust non-linear modeling with minimal hyperparameter tuning"
+  ],
+  "selection_rules": [
+    "If strict legal or clinical explainability is mandated, choose Logistic Regression with weight inspection",
+    "If maximizing ROC-AUC or Log-Loss on complex tabular data, choose LightGBM or XGBoost",
+    "If dataset has high percentage of categorical features with high cardinality, choose CatBoost"
+  ],
+  "limitations": [
+    "Gradient boosting models are susceptible to overfitting on small noisy datasets (N < 500)",
+    "Logistic regression fails to capture complex feature interactions without manual polynomial engineering"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

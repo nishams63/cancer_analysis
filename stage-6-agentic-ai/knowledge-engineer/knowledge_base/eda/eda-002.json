@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "EDA-002",
+  "title": "Univariate Categorical Feature Profiling",
+  "category": "eda",
+  "subcategory": "univariate_analysis",
+  "description": "Characterization of nominal and ordinal feature frequency distributions, entropy, and dominance.",
+  "conditions": [
+    "Initial exploration of categorical, boolean, or discrete status columns",
+    "Need to evaluate class balance, rare categories, and informational entropy"
+  ],
+  "recommended_methods": [
+    "Frequency table and percentage distribution computation",
+    "Shannon entropy calculation for categorical dispersion measurement",
+    "Pareto 80/20 cumulative frequency analysis"
+  ],
+  "selection_rules": [
+    "If top category accounts for > 95% of records, flag column as near-constant / low-variance",
+    "If cardinality equals record count, classify as candidate unique entity key",
+    "If categories with < 1% representation exceed 50% of total categories, plan long-tail grouping"
+  ],
+  "limitations": [
+    "Categorical profiling does not reveal intra-category semantic overlap or synonyms",
+    "Entropy metrics require adjustment when comparing features with disparate cardinality"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

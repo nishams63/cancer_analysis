@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "BA-003",
+  "title": "Conversion Funnel Bottleneck Diagnostics",
+  "category": "business_analysis",
+  "subcategory": "funnel_analytics",
+  "description": "Multi-stage sequential event analysis to pinpoint drop-off friction points and user flow leakage.",
+  "conditions": [
+    "Multi-step sequential user journeys (e.g. Landing -> Signup -> Onboarding -> Checkout)",
+    "Need to prioritize UX engineering interventions based on highest conversion impact"
+  ],
+  "recommended_methods": [
+    "Stage-by-stage conversion and abandonment rate calculation",
+    "Step drop-off impact scoring: Drop_Impact = Users_Entering_Step * Step_Drop_Rate",
+    "Time-to-convert latency distribution across funnel stages"
+  ],
+  "selection_rules": [
+    "Prioritize fixing the funnel step with the highest absolute user loss, not necessarily highest percentage drop",
+    "Segment funnel conversion by acquisition channel, device type, and user demographic",
+    "Examine whether users dropping out of Step N are abandoning permanently or converting via alternative paths"
+  ],
+  "limitations": [
+    "Assumes linear progression; real users navigate back-and-forth across non-linear multi-session paths",
+    "Funnel analysis does not reveal emotional or qualitative reasons for drop-off (requires user session replays)"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

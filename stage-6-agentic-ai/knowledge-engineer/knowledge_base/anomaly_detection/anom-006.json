@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ANOM-006",
+  "title": "Time-Series Anomaly Detection",
+  "category": "anomaly_detection",
+  "subcategory": "time_series_anomalies",
+  "description": "Identification of point spikes, contextual anomalies, and collective trend breaks in temporal sequences.",
+  "conditions": [
+    "Chronological sequential telemetry, event counts, or financial transaction streams",
+    "Data exhibits underlying trend, seasonality, and noise components"
+  ],
+  "recommended_methods": [
+    "STL decomposition residual thresholding (3-sigma on residual series)",
+    "Exponential smoothing confidence bands (Holt-Winters prediction intervals)",
+    "Rolling median absolute deviation (Rolling MAD) window thresholding"
+  ],
+  "selection_rules": [
+    "If series has strong periodic seasonality, decompose via STL first and detect anomalies on the residual series",
+    "If real-time streaming detection is required, use rolling exponential smoothing bands",
+    "Classify anomalies into Point Anomalies (single spike) vs Level Shifts (sustained step change)"
+  ],
+  "limitations": [
+    "Lag in rolling windows can delay detection of sudden structural breaks",
+    "Holidays and planned events must be masked out to prevent high false alarm rates"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

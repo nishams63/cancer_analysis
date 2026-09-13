@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ML-008",
+  "title": "Supervised Model Evaluation Metrics Selection",
+  "category": "machine_learning",
+  "subcategory": "evaluation",
+  "description": "Aligning quantitative model validation metrics with real-world clinical and business utility.",
+  "conditions": [
+    "Final model scoring and comparison across candidate algorithms",
+    "Requirement to report performance to technical and non-technical stakeholders"
+  ],
+  "recommended_methods": [
+    "PR-AUC (Precision-Recall Area Under Curve) and Brier Score for rare-event probability calibration",
+    "Macro-averaged and Weighted F1-Score for multiclass classification",
+    "Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) for continuous regression"
+  ],
+  "selection_rules": [
+    "If severe penalties exist for extreme regression errors, prioritize RMSE over MAE",
+    "If regression errors contain heavy outliers and median loss is preferred, prioritize MAE over RMSE",
+    "If model outputs probabilities used for downstream triage decisions, evaluate probability calibration curves"
+  ],
+  "limitations": [
+    "ROC-AUC can present an overly optimistic assessment on datasets with extreme class imbalance",
+    "R-squared in regression can be artificially inflated by adding irrelevant features"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

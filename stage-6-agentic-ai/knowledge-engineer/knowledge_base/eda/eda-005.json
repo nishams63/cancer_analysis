@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "EDA-005",
+  "title": "Categorical vs Categorical Association Analysis",
+  "category": "eda",
+  "subcategory": "bivariate_analysis",
+  "description": "Contingency table analysis to determine independence and strength of association between two categorical variables.",
+  "conditions": [
+    "Two nominal or ordinal features",
+    "Investigation of demographic or behavioral interactions",
+    "Cross-tabulation prior to segment profiling"
+  ],
+  "recommended_methods": [
+    "Two-way cross-tabulation with row and column percentage distributions",
+    "Pearson's Chi-Square Test of Independence",
+    "Cramer's V statistic for association strength measurement"
+  ],
+  "selection_rules": [
+    "If any cell in contingency table has expected frequency < 5, apply Fisher's Exact Test or combine sparse categories",
+    "Interpret Cramer's V: < 0.10 negligible, 0.10-0.30 moderate, > 0.30 strong association",
+    "Report normalized standardized residuals to pinpoint specific cells driving chi-square significance"
+  ],
+  "limitations": [
+    "Chi-square p-value becomes statistically significant on very large N even for trivial associations",
+    "Does not inform directional causality"
+  ],
+  "source": "Cramer (1946) Mathematical Methods of Statistics",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

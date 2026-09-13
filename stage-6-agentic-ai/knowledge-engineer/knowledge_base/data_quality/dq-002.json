@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-002",
+  "title": "Missing Categorical Values Assessment",
+  "category": "data_quality",
+  "subcategory": "missing_values",
+  "description": "Evaluation and categorization of null, empty string, and whitespace records in categorical features.",
+  "conditions": [
+    "Categorical feature contains null, empty strings (''), or blank spaces",
+    "Category cardinality is either low (< 20) or high (> 50)",
+    "Values represent administrative or clinical attributes"
+  ],
+  "recommended_methods": [
+    "Sentinel string replacement ('Missing', 'Unknown', 'Unspecified')",
+    "Mode frequency replacement for low-missingness nominal variables (< 2%)",
+    "Missingness category preservation to model administrative non-response"
+  ],
+  "selection_rules": [
+    "If missingness > 5%, create an explicit 'Unknown' category rather than imputing mode",
+    "If categorical feature is an essential primary identifier, flag records for quarantine",
+    "If missingness is correlated with a specific cohort, document systematic reporting disparity"
+  ],
+  "limitations": [
+    "Imputing the mode artificially inflates category variance and distorts entropy",
+    "Adding 'Unknown' increases cardinality by 1 and may dilute rare subgroup signals"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

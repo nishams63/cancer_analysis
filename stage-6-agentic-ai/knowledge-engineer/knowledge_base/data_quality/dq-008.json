@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-008",
+  "title": "Cross-Field Logical Consistency Rules",
+  "category": "data_quality",
+  "subcategory": "consistency",
+  "description": "Multi-column relationship validation to prevent logical contradictions within individual entities.",
+  "conditions": [
+    "Hierarchical or chronologically linked attributes (e.g., diagnosis_date and death_date)",
+    "Mutually exclusive flags or conditional requirements (e.g., pregnant=True and biological_sex='Male')",
+    "Aggregated totals that should match component sums (e.g., subtotal + tax = total)"
+  ],
+  "recommended_methods": [
+    "Boolean rule matrix evaluation across column pairs",
+    "Chronological sequence assertions (Event A <= Event B)",
+    "Arithmetic balance checking with tolerance epsilon (1e-4)"
+  ],
+  "selection_rules": [
+    "If death_date < diagnosis_date, quarantine record for temporal inconsistency",
+    "If component sum deviates from reported total by > 1%, record accounting discrepancy warning",
+    "If conditional dependency is violated (e.g. surgery_type present but had_surgery=False), reconcile flags"
+  ],
+  "limitations": [
+    "Requires comprehensive domain business rules before validation",
+    "Complex cross-field rules increase execution time on massive multi-million row datasets"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

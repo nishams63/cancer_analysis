@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ANOM-001",
+  "title": "Statistical 3-Sigma Rule Anomaly Detection",
+  "category": "anomaly_detection",
+  "subcategory": "statistical_outliers",
+  "description": "Parametric standard deviation thresholding for identifying extreme deviations from the mean in Gaussian data.",
+  "conditions": [
+    "Single continuous numerical variable",
+    "Feature distribution verified as approximately Gaussian (Shapiro-Wilk p > 0.05, |skewness| < 0.5)",
+    "Sample size N >= 100"
+  ],
+  "recommended_methods": [
+    "Z-score transformation [Z = (X - Mean) / SD]",
+    "3-Sigma thresholding (|Z| > 3.0 flags top 0.27% extreme events)",
+    "Modified Z-score using median and MAD for resilience against masking"
+  ],
+  "selection_rules": [
+    "If data is strictly Gaussian, standard 3-sigma Z-score is fast, interpretable, and sufficient",
+    "If data contains multiple outliers that inflate the standard deviation (masking effect), use Boris Iglewicz Modified Z-score with MAD",
+    "Never apply standard 3-sigma to heavily skewed, multimodal, or bounded count data"
+  ],
+  "limitations": [
+    "Fails catastrophically on skewed distributions (flags valid right-tail values while missing left-tail anomalies)",
+    "Single extreme outlier inflates mean and SD, hiding subsequent outliers (swamping/masking effect)"
+  ],
+  "source": "Pukelsheim (1994) The Three Sigma Rule",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

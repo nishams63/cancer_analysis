@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-005",
+  "title": "Inconsistent Categorical Encoding",
+  "category": "data_quality",
+  "subcategory": "consistency",
+  "description": "Detection of divergent textual representations, case mismatches, leading/trailing whitespace, and semantic synonyms.",
+  "conditions": [
+    "Categorical feature displays unexpectedly high cardinality",
+    "Free-text or manually entered strings present in operational databases",
+    "Presence of case variations (e.g. 'MALE', 'Male', 'male', ' male ')"
+  ],
+  "recommended_methods": [
+    "String normalization (trimming whitespace, case collapsing to lowercase)",
+    "Edit distance clustering (Levenshtein / Token Sort Ratio) for typo detection",
+    "Canonical value lookup dictionary mapping"
+  ],
+  "selection_rules": [
+    "Always apply whitespace trimming and lowercasing as an initial baseline",
+    "If similarity to an approved canonical dictionary term > 0.85, auto-map to canonical term",
+    "If string cannot be resolved unambiguously, flag for manual domain review"
+  ],
+  "limitations": [
+    "Aggressive fuzzy mapping may collapse distinct medical or clinical terms (e.g., Stage IIA vs Stage IIB)",
+    "Lookup dictionaries require regular synchronization with domain ontologies"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

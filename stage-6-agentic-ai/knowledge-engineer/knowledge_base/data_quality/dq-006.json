@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-006",
+  "title": "Data Type Mismatch and Coercion Risks",
+  "category": "data_quality",
+  "subcategory": "types",
+  "description": "Verification of semantic vs physical storage data types (e.g., numeric IDs stored as floats, dates as strings).",
+  "conditions": [
+    "Numeric columns read as object/string due to currency symbols, commas, or error strings ('N/A', '#REF!')",
+    "Integer identifiers stored as float64 leading to precision loss on large 64-bit integers",
+    "Boolean columns represented as mixed integers, characters ('Y'/'N'), and True/False"
+  ],
+  "recommended_methods": [
+    "Regex-based character stripping before numeric coercion",
+    "Strict schema assertion with Pydantic / Pandera type validation",
+    "Safe casting with error interception ('coerce' vs 'raise')"
+  ],
+  "selection_rules": [
+    "If column is a discrete identifier (e.g. Patient ID, ZIP code), cast to string, never float",
+    "If column contains mixed numbers and strings, extract non-numeric tokens into separate error audit table",
+    "If boolean has > 2 non-null representations, map through explicit truth-value dictionary"
+  ],
+  "limitations": [
+    "Blind coercion with 'coerce=errors' silently replaces invalid data with NaN, hiding corruption",
+    "Memory explosion when casting sparse categorical strings to dense uncompressed object types"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

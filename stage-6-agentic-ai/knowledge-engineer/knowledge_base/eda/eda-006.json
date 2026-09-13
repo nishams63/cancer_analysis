@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "EDA-006",
+  "title": "Longitudinal and Time-Series Trend Analysis",
+  "category": "eda",
+  "subcategory": "time_series",
+  "description": "Exploration of temporal patterns, seasonality, autocorrelation, and regime shifts in time-stamped records.",
+  "conditions": [
+    "Sequential observations indexed by timestamp or chronological epoch",
+    "Need to identify macro trends, weekly/monthly seasonality, or abrupt anomalies"
+  ],
+  "recommended_methods": [
+    "Rolling moving average and exponential smoothing trend lines",
+    "Classical additive or multiplicative seasonal decomposition (STL)",
+    "Autocorrelation (ACF) and Partial Autocorrelation (PACF) plots"
+  ],
+  "selection_rules": [
+    "If seasonal amplitude grows proportionally with trend level, select Multiplicative decomposition over Additive",
+    "If data exhibits significant gap intervals, resample onto regular grid (daily, hourly) before autocorrelation",
+    "If ACF displays slow linear decay, series is non-stationary and requires differencing"
+  ],
+  "limitations": [
+    "Decomposition boundary endpoints suffer from edge-effect distortion",
+    "Sudden structural regime shifts (e.g. regulatory policy change) violate smooth seasonality models"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

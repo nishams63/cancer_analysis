@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ML-004",
+  "title": "Dimensionality Reduction and Manifold Learning",
+  "category": "machine_learning",
+  "subcategory": "dimensionality_reduction",
+  "description": "Techniques for feature space compression, multicollinearity elimination, and 2D/3D visualization.",
+  "conditions": [
+    "High-dimensional continuous feature matrix (P > 50 columns)",
+    "Severe multicollinearity across features",
+    "Requirement to project complex feature spaces into 2D plots for exploratory discovery"
+  ],
+  "recommended_methods": [
+    "Principal Component Analysis (PCA) for linear orthogonal variance decomposition",
+    "Uniform Manifold Approximation and Projection (UMAP) for non-linear local/global structure preservation",
+    "t-Distributed Stochastic Neighbor Embedding (t-SNE) strictly for 2D exploratory cluster visualization"
+  ],
+  "selection_rules": [
+    "Always scale features with StandardScaler prior to applying PCA",
+    "Retain principal components that capture cumulative explained variance >= 85%",
+    "Never use t-SNE embeddings as input features for predictive models (use PCA or UMAP instead)"
+  ],
+  "limitations": [
+    "PCA components are linear combinations of all original features, making individual factor attribution difficult",
+    "t-SNE distances between distant clusters are meaningless and cluster sizes in t-SNE do not reflect true variance"
+  ],
+  "source": "Jolliffe (2002) Principal Component Analysis",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

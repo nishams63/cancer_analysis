@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-002",
+  "title": "Box Plot vs Violin Plot Selection",
+  "category": "visualization",
+  "subcategory": "comparison_plots",
+  "description": "Selection criteria between Tukey box plots and kernel density violin plots for group distribution comparison.",
+  "conditions": [
+    "Comparing a continuous metric across discrete categories or cohorts",
+    "Displaying median, quartiles, and outlier points simultaneously"
+  ],
+  "recommended_methods": [
+    "Standard Tukey Box Plot with IQR whiskers and individual outlier points",
+    "Violin Plot with embedded box plot or quartile lines",
+    "Strip plot / Jitter overlay on box plot for small sample sizes (N < 50 per group)"
+  ],
+  "selection_rules": [
+    "If group sample size N < 30, use Box Plot with jittered data points, NOT Violin Plot",
+    "If distribution is suspected to be bimodal or multimodal within groups, use Violin Plot (box plots hide bimodal shapes)",
+    "Sort categories along the categorical axis by median value for instant cognitive readability"
+  ],
+  "limitations": [
+    "Box plots hide the distribution's actual sample size and modality completely",
+    "Violin plots are frequently misunderstood by non-technical executive stakeholders"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

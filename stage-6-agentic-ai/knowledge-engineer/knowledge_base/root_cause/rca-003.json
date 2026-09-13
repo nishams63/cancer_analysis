@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "RCA-003",
+  "title": "Segment Performance Disparity and Gap Analysis",
+  "category": "root_cause",
+  "subcategory": "gap_analysis",
+  "description": "Comparative benchmarking of underperforming cohorts against top-quartile cohorts to isolate root factors.",
+  "conditions": [
+    "Identified underperforming business segment, regional facility, or clinical subgroup",
+    "Need to determine what operational attributes distinguish best performers from worst performers"
+  ],
+  "recommended_methods": [
+    "Feature distribution difference testing (Kolmogorov-Smirnov test and standardized mean difference)",
+    "Decision tree surrogate modeling to extract distinguishing rule splits",
+    "Information Value (IV) and Weight of Evidence (WoE) ranking of segment attributes"
+  ],
+  "selection_rules": [
+    "Rank explanatory features by Standardized Mean Difference (SMD > 0.50 indicates substantial disparity)",
+    "Train shallow decision tree (depth <= 3) predicting Best vs Worst segment to extract plain-English distinguishing rules",
+    "Verify that differences are statistically significant using appropriate hypothesis tests"
+  ],
+  "limitations": [
+    "Correlation between segment attributes and performance does not prove direct causation",
+    "Unobserved confounding variables (e.g. local regional demographics) can drive observed performance gaps"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

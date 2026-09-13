@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ANOM-003",
+  "title": "Isolation Forest Anomaly Detection",
+  "category": "anomaly_detection",
+  "subcategory": "multivariate_outliers",
+  "description": "Tree-based unsupervised algorithm isolating anomalies based on shorter average path lengths in random partitions.",
+  "conditions": [
+    "Multivariate numerical feature spaces (5 to 100 features)",
+    "Complex non-linear relationships and interactions where univariate thresholds fail",
+    "Large tabular datasets requiring linear time complexity O(N)"
+  ],
+  "recommended_methods": [
+    "Isolation Forest (iForest) with 100-200 isolation trees",
+    "Sub-sampling size set to 256 instances to prevent swamping and masking",
+    "Contamination parameter tuning based on expected anomaly budget"
+  ],
+  "selection_rules": [
+    "Default to Isolation Forest for general tabular multivariate anomaly detection tasks",
+    "Set contamination parameter to estimated outlier proportion (e.g. 0.01 for 1% anomaly rate)",
+    "Inspect average decision path length: score < 0.5 indicates normal, score approaching 1.0 indicates definite anomaly"
+  ],
+  "limitations": [
+    "Axis-aligned splits can create ghost anomaly regions in multi-dimensional space (extended Isolation Forest solves this)",
+    "Does not natively explain which specific feature caused an observation to be flagged"
+  ],
+  "source": "Liu, Ting, Zhou (2008) Isolation Forest",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

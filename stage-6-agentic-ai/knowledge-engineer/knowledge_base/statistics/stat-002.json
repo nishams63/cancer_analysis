@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "STAT-002",
+  "title": "Measures of Dispersion and Spread Selection",
+  "category": "statistics",
+  "subcategory": "descriptive_statistics",
+  "description": "Selection of appropriate dispersion metrics to quantify variability and uncertainty.",
+  "conditions": [
+    "Reporting variability, risk, or spread around central tendency",
+    "Comparison of stability across multiple groups or time periods"
+  ],
+  "recommended_methods": [
+    "Standard Deviation (SD) and Variance for Gaussian distributions paired with Mean",
+    "Interquartile Range (IQR = Q3 - Q1) for skewed data paired with Median",
+    "Median Absolute Deviation (MAD) for robust non-parametric scale estimation",
+    "Coefficient of Variation (CV = SD / Mean) for unit-independent relative dispersion comparison"
+  ],
+  "selection_rules": [
+    "When Median is chosen as central tendency, always pair with IQR or MAD, never SD alone",
+    "When comparing dispersion between features with radically different scales (e.g. weight vs height), use CV",
+    "For robust outlier thresholds, MAD is superior to standard deviation (1.4826 * MAD approximates normal SD)"
+  ],
+  "limitations": [
+    "Standard deviation squares errors, making it hyper-sensitive to extreme tail values",
+    "IQR ignores the specific values beyond the 25th and 75th percentiles"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

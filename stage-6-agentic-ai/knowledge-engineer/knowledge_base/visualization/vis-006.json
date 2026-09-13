@@ -1,0 +1,28 @@
+{
+  "knowledge_id": "VIS-006",
+  "title": "Pie Chart Anti-Patterns and Proportion Alternatives",
+  "category": "visualization",
+  "subcategory": "proportion_plots",
+  "description": "Guidelines discouraging misleading pie charts and prescribing effective part-to-whole visualizations.",
+  "conditions": [
+    "Communicating part-to-whole proportions and percentage shares of a categorical total"
+  ],
+  "recommended_methods": [
+    "Horizontal Bar Chart sorted in descending order of percentage",
+    "Waffle Chart (10x10 square grid) for intuitive percentage representation",
+    "Donut Chart strictly limited to 2 or 3 distinct categories with large contrast"
+  ],
+  "selection_rules": [
+    "NEVER use a Pie Chart if categories exceed 5 (human perception cannot accurately compare angular slices)",
+    "NEVER use 3D Pie Charts under any circumstance (3D perspective distorts relative slice areas)",
+    "Replace multi-category pie charts with horizontal bar charts showing exact percentages"
+  ],
+  "limitations": [
+    "Bar charts do not instantly convey that the parts sum to 100% (mitigate by explicitly titling 'Percentage Share of Total')",
+    "Donut charts waste valuable center space unless used to display the total aggregate metric"
+  ],
+  "source": "Tufte (2001) The Visual Display of Quantitative Information",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "RCA-004",
+  "title": "Correlation vs Causation Diagnostic Safeguards",
+  "category": "root_cause",
+  "subcategory": "causal_inference",
+  "description": "Methodological safeguards preventing false causal claims derived from observational correlation.",
+  "conditions": [
+    "Formulating business recommendations or clinical conclusions from observational data",
+    "Risk of recommending counterproductive interventions due to confounding bias"
+  ],
+  "recommended_methods": [
+    "Confounder identification using Directed Acyclic Graphs (DAGs)",
+    "Temporal precedence verification (Cause must strictly precede Effect in time)",
+    "Sensitivity analysis for unobserved confounding (Rosenbaum bounds or E-value calculation)"
+  ],
+  "selection_rules": [
+    "Never assert causality from cross-sectional observational data without explicitly documenting confounding risks",
+    "If an observed correlation vanishes when stratifying by a third variable, reject direct causal link (spurious correlation)",
+    "Compute the E-value: minimum strength of association an unmeasured confounder would need to explain away the effect"
+  ],
+  "limitations": [
+    "Observational data alone cannot prove causality without unverifiable exchangeability assumptions",
+    "Controlling for collider variables inadvertently induces artificial non-causal correlations"
+  ],
+  "source": "Pearl (2009) Causality: Models, Reasoning, and Inference",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

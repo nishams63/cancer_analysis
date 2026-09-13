@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-003",
+  "title": "Duplicate Records Detection",
+  "category": "data_quality",
+  "subcategory": "duplicates",
+  "description": "Identification of redundant observational records across primary keys, composite keys, or complete feature rows.",
+  "conditions": [
+    "Multi-source data integration or batch ingestion pipeline executed",
+    "Suspected replay of transactional events or survey resubmissions",
+    "High frequency of identical feature vectors in tabular data"
+  ],
+  "recommended_methods": [
+    "Exact row hashing via SHA-256 for identical duplicate discovery",
+    "Composite key uniqueness checking across business keys (e.g., patient_id + visit_date)",
+    "Jaro-Winkler or Levenshtein distance matching for fuzzy duplicate detection"
+  ],
+  "selection_rules": [
+    "If primary key is duplicate but timestamps differ, apply latest-record survivorship rule",
+    "If exact duplicates across all columns exist, retain single representative instance and drop remainder",
+    "If partial duplicate matches on entity identifiers, flag for human reconciliation or automated merge"
+  ],
+  "limitations": [
+    "Fuzzy duplicate algorithms scale quadratically O(N^2) without blocking or indexing",
+    "Legitimate recurring events (e.g. repeated daily lab tests) can be misidentified as duplicates"
+  ],
+  "source": "ISO/IEC 25012 Data Quality Standard",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

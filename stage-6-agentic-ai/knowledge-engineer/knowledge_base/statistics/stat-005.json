@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "STAT-005",
+  "title": "Non-Parametric Hypothesis Testing",
+  "category": "statistics",
+  "subcategory": "hypothesis_testing",
+  "description": "Rank-based hypothesis testing for comparing distributions when normality assumptions are violated.",
+  "conditions": [
+    "Continuous or ordinal outcome metric",
+    "Small sample sizes (N < 30 per group) or severe non-normality and skewness",
+    "Ordinal survey responses (e.g., Likert scales)"
+  ],
+  "recommended_methods": [
+    "Mann-Whitney U test (Wilcoxon Rank-Sum) for two independent groups",
+    "Wilcoxon Signed-Rank test for paired dependent samples",
+    "Kruskal-Wallis H test for three or more independent groups"
+  ],
+  "selection_rules": [
+    "If outcome distribution is skewed or ordinal, select Mann-Whitney U over t-test",
+    "If testing three or more non-normal groups, execute Kruskal-Wallis followed by Dunn's post-hoc test with Bonferroni correction",
+    "If group distributions have identical shapes, Mann-Whitney tests medians; otherwise, it tests stochastic dominance"
+  ],
+  "limitations": [
+    "Lower statistical power than t-tests when normality actually holds (~95% asymptotic relative efficiency)",
+    "Tied ranks require continuity correction in small samples"
+  ],
+  "source": "Mann and Whitney (1947) Test of Whether One of Two Variables is Stochastically Larger",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

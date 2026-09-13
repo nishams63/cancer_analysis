@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "BA-001",
+  "title": "Cohort Retention and Churn Rate Analysis",
+  "category": "business_analysis",
+  "subcategory": "customer_analytics",
+  "description": "Tracking longitudinal customer or patient engagement decay curves across discrete onboarding cohorts.",
+  "conditions": [
+    "Subscription, recurring engagement, or longitudinal therapy datasets",
+    "Need to evaluate whether product/service retention is improving over successive generations"
+  ],
+  "recommended_methods": [
+    "Cohort Retention Heatmap matrix (Acquisition Month vs Months Since Onboarding)",
+    "Kaplan-Meier survival curve estimation for time-to-churn distribution",
+    "Hazard rate modeling via Cox Proportional Hazards regression"
+  ],
+  "selection_rules": [
+    "Calculate retention rate strictly as: Active_Users_Month_N / Total_Users_Cohort_Month_0",
+    "If retention curve flattens into a horizontal asymptote, product has achieved baseline product-market fit",
+    "Use Cox Proportional Hazards regression to discover which customer onboarding features predict lower churn risk"
+  ],
+  "limitations": [
+    "Recent cohorts suffer from right-censoring (insufficient elapsed time to evaluate long-term retention)",
+    "Defining 'churn' in non-contractual business models requires arbitrary inactivity window cutoffs"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

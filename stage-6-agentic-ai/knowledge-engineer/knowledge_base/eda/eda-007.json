@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "EDA-007",
+  "title": "Cohort and Segment Slicing Analysis",
+  "category": "eda",
+  "subcategory": "segmentation",
+  "description": "Decomposition of aggregate metrics into homogenous sub-populations to identify hidden disparities.",
+  "conditions": [
+    "Dataset contains heterogeneous sub-populations (e.g., patient cohorts, geographic regions, tier plans)",
+    "Suspected Simpson's Paradox where aggregate trend inverts within subgroups",
+    "Business requirement for personalized or targeted insights"
+  ],
+  "recommended_methods": [
+    "Multi-dimensional groupby slicing across primary demographic/operational dimensions",
+    "Variance across segment metrics vs overall population mean",
+    "Simpson's Paradox detection across stratified contingency tables"
+  ],
+  "selection_rules": [
+    "Prioritize segment dimensions that maximize inter-segment metric variance",
+    "Ensure minimum segment sample size (N >= 30) before reporting segment-specific conclusions",
+    "If aggregate trend contradicts subgroup trends, highlight Simpson's Paradox prominently"
+  ],
+  "limitations": [
+    "Over-segmentation leads to data fragmentation, loss of statistical power, and false discoveries",
+    "Arbitrary segment cutoffs on continuous features can hide non-linear boundary effects"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

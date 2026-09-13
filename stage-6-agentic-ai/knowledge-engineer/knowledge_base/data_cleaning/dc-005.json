@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-005",
+  "title": "Text Sanitization and Normalization",
+  "category": "data_cleaning",
+  "subcategory": "text_cleaning",
+  "description": "Standardization of raw free-text fields, removal of control characters, and Unicode normalization.",
+  "conditions": [
+    "User input fields, comments, notes, or web-scraped strings",
+    "Presence of non-printable ASCII, Unicode accents, or HTML entity escapes",
+    "Downstream NLP or search indexing planned"
+  ],
+  "recommended_methods": [
+    "Unicode normalization form NFKD followed by ASCII encoding",
+    "Regex-based stripping of control characters (\\x00-\\x1f) and redundant whitespace",
+    "HTML unescaping via html.unescape"
+  ],
+  "selection_rules": [
+    "Always strip leading and trailing whitespace from every string feature",
+    "If text contains multilingual names, preserve UTF-8 rather than stripping accents to ASCII",
+    "If text contains embedded code or JSON strings, do not strip quotes or backslashes"
+  ],
+  "limitations": [
+    "Aggressive regex cleaning can destroy meaningful clinical syntax (e.g., '> 10 mg/dL')",
+    "Case folding loses distinction for acronyms (e.g., 'AIDS' vs 'aids')"
+  ],
+  "source": "Unicode Standard Annex #15",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

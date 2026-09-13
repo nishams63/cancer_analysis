@@ -1,0 +1,31 @@
+{
+  "knowledge_id": "DC-001",
+  "title": "Numerical Missing Value Imputation Strategy",
+  "category": "data_cleaning",
+  "subcategory": "imputation",
+  "description": "Principled algorithm selection for replacing missing numerical values while preserving distribution shape and variance.",
+  "conditions": [
+    "Missing numerical values validated as MCAR or MAR",
+    "Missingness percentage is between 0.5% and 25%",
+    "Downstream models or analytics cannot process NaN values directly"
+  ],
+  "recommended_methods": [
+    "Median imputation for skewed or outlier-heavy distributions",
+    "Mean imputation for verified Gaussian / symmetrical distributions",
+    "K-Nearest Neighbors (KNN) imputation for multi-correlated features",
+    "Iterative chained equations (MICE) for high-stakes clinical or economic datasets"
+  ],
+  "selection_rules": [
+    "If skewness magnitude > 1.0 or heavy outliers exist, select Median imputation over Mean",
+    "If feature correlation with other features > 0.60, select KNN or MICE imputation over univariate median",
+    "If missingness > 30%, do not impute with mean/median; consider dropping or model-based imputation"
+  ],
+  "limitations": [
+    "Mean and median imputation artificially underestimate feature standard deviation and compress error bars",
+    "KNN imputation is computationally expensive O(N_missing * N_train * D) on large datasets"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

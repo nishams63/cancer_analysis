@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-004",
+  "title": "Bar Chart vs Line Chart Selection Rules",
+  "category": "visualization",
+  "subcategory": "trend_and_category_plots",
+  "description": "Fundamental chart selection rules between discrete categorical comparisons and continuous temporal trends.",
+  "conditions": [
+    "Displaying metric values across independent categories or chronological time points",
+    "Ensuring honest visual encoding that does not imply false continuity"
+  ],
+  "recommended_methods": [
+    "Horizontal Bar Chart for unordered categorical comparisons with long labels",
+    "Vertical Bar Chart (Column Chart) for small number of categories (< 7) or ordinal sequences",
+    "Line Chart with continuous chronological x-axis"
+  ],
+  "selection_rules": [
+    "NEVER use a Line Chart for discrete, unordered categories (connecting unrelated categories implies false interpolation)",
+    "ALWAYS start the numerical axis at ZERO (0) for Bar Charts to prevent visual distortion of ratio quantities",
+    "Use Line Charts strictly when the x-axis represents a continuous, ordered dimension (time, distance, age)"
+  ],
+  "limitations": [
+    "Starting y-axis at zero on line charts can compress subtle, meaningful variations (zoomed y-axis is permissible on line charts if labeled)",
+    "Stacked bar charts become difficult to read for intermediate segments (use 100% stacked or faceted bars)"
+  ],
+  "source": "Few (2012) Show Me the Numbers",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

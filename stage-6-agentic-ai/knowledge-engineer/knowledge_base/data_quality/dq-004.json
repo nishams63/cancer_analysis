@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DQ-004",
+  "title": "Out-of-Range and Invalid Numerical Values",
+  "category": "data_quality",
+  "subcategory": "validity",
+  "description": "Validation of numerical features against domain-specific physical, physiological, and mathematical boundaries.",
+  "conditions": [
+    "Continuous or discrete numeric features with known plausible ranges (e.g., age 0-125, percentage 0-100)",
+    "Negative values present in strictly non-negative quantities (e.g., revenue, blood pressure, duration)",
+    "Floating point infinity or NaN values occurring after computational pipelines"
+  ],
+  "recommended_methods": [
+    "Hard boundary validation masks (val < min_allowed or val > max_allowed)",
+    "Constraint violation logging with severity levels (Fatal vs Warning)",
+    "Physiological boundary assertions from domain reference manifests"
+  ],
+  "selection_rules": [
+    "If numerical value violates physical reality (e.g. Age = -5 or 350), set to NaN or quarantine record",
+    "If value exceeds 99.9th percentile but is physically possible, flag as valid extreme outlier, not invalid",
+    "If percentage feature is scaled 0.0-1.0 while others are 0-100, standardize representation"
+  ],
+  "limitations": [
+    "Requires authoritative domain metadata for bounds definition",
+    "Static thresholds fail to detect context-dependent impossibilities (e.g., infant weight = 80kg)"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

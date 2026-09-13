@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ML-002",
+  "title": "Supervised Regression Algorithm Selection",
+  "category": "machine_learning",
+  "subcategory": "regression",
+  "description": "Selection of continuous prediction algorithms based on collinearity, feature count, and non-linearity.",
+  "conditions": [
+    "Supervised regression task with continuous numerical target variable",
+    "Tabular feature matrix with linear or non-linear predictor interactions"
+  ],
+  "recommended_methods": [
+    "Ridge Regression (L2 penalty) for multicollinear linear predictors",
+    "Lasso Regression (L1 penalty) for sparse feature selection and parameter shrinkage",
+    "Gradient Boosted Regressors (LightGBM Regressor / XGBoost Regressor) for non-linear relationships"
+  ],
+  "selection_rules": [
+    "If number of features P exceeds sample size N, use Lasso or ElasticNet regression",
+    "If target variable is strictly positive and right-skewed, train regressor on log1p(target) or use Tweedie/Gamma objective",
+    "If relationship exhibits complex step functions or interactions, select Gradient Boosted Trees"
+  ],
+  "limitations": [
+    "Tree regressors cannot extrapolate beyond the minimum and maximum target values seen during training",
+    "Linear models suffer severe bias if true data-generating process has strong non-linear interactions"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

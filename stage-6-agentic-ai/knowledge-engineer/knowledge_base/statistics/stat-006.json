@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "STAT-006",
+  "title": "Analysis of Variance (ANOVA) and Multiple Comparisons",
+  "category": "statistics",
+  "subcategory": "hypothesis_testing",
+  "description": "Testing differences in means across three or more independent groups with post-hoc family-wise error rate control.",
+  "conditions": [
+    "One continuous outcome metric and one discrete grouping variable with 3 or more levels",
+    "Normally distributed residuals and homogeneity of variance across groups"
+  ],
+  "recommended_methods": [
+    "One-Way Analysis of Variance (ANOVA) for single grouping factor",
+    "Welch's ANOVA when group variances are unequal (Levene's test p < 0.05)",
+    "Tukey's Honestly Significant Difference (HSD) post-hoc test for pairwise comparisons"
+  ],
+  "selection_rules": [
+    "Only run post-hoc pairwise tests if overall omnibus ANOVA F-test is statistically significant (p < 0.05)",
+    "Use Tukey HSD for all-pairwise comparisons to maintain Family-Wise Error Rate (FWER) at 0.05",
+    "If comparing multiple treatment groups against a single control group, use Dunnett's test instead of Tukey HSD"
+  ],
+  "limitations": [
+    "Standard ANOVA is sensitive to severe variance heterogeneity when group sample sizes are unequal",
+    "Omnibus significance only indicates at least one group differs; it does not indicate which one"
+  ],
+  "source": "Tukey (1949) Comparing Individual Means in the Analysis of Variance",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "RCA-001",
+  "title": "Metric Decomposition and Factor Tree Analysis",
+  "category": "root_cause",
+  "subcategory": "metric_decomposition",
+  "description": "Mathematical deconstruction of aggregate metric movements into constituent multiplicative and additive drivers.",
+  "conditions": [
+    "Top-line KPI exhibits significant unexpected increase or decrease (e.g. Revenue fell by 15%)",
+    "Need to isolate exact mathematical drivers rather than relying on correlation guesses"
+  ],
+  "recommended_methods": [
+    "Multiplicative DuPont equation deconstruction (e.g. Revenue = Active Users * Conversion Rate * AOV)",
+    "Logarithmic Mean Divisia Index (LMDI) decomposition",
+    "Additive waterfall bridge attribution"
+  ],
+  "selection_rules": [
+    "Deconstruct top-line metric into its fundamental equation tree before exploring demographic segments",
+    "Calculate percentage contribution of each driver: Delta_Driver / Total_Delta",
+    "Prioritize deep-dive investigation on the driver accounting for > 60% of the net variance"
+  ],
+  "limitations": [
+    "Decomposition reveals which mathematical component shifted, not the external real-world cause",
+    "Simultaneous shifts in multiple correlated drivers create interaction terms that require allocation rules"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

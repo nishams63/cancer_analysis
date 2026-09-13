@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "STAT-007",
+  "title": "Confidence Interval Estimation",
+  "category": "statistics",
+  "subcategory": "inferential_statistics",
+  "description": "Quantifying estimation precision for population parameters using parametric formulas and empirical bootstrapping.",
+  "conditions": [
+    "Reporting point estimates (mean, median, proportion, risk ratio, difference in means)",
+    "Need to communicate statistical uncertainty beyond single p-values"
+  ],
+  "recommended_methods": [
+    "Student's t-distribution confidence interval for normal means [Mean +/- t*(s/sqrt(n))]",
+    "Wilson Score interval for binomial proportions (superior to Wald normal approximation)",
+    "Non-parametric bootstrap percentile confidence interval (1,000+ resamples)"
+  ],
+  "selection_rules": [
+    "Always report 95% Confidence Intervals alongside point estimates in executive summaries",
+    "For proportions close to 0 or 1, never use Wald normal approximation (p +/- 1.96*SE); use Wilson Score",
+    "For medians, quantiles, or complex ratios, compute 95% BCa (bias-corrected and accelerated) bootstrap intervals"
+  ],
+  "limitations": [
+    "A 95% CI does not mean there is a 95% probability the true parameter lies in that specific interval (frequentist interpretation)",
+    "Bootstrap intervals require sufficient sample size (N >= 30) to adequately sample tail variation"
+  ],
+  "source": "Efron (1979) Bootstrap Methods: Another Look at the Jackknife",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

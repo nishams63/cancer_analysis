@@ -1,0 +1,31 @@
+{
+  "knowledge_id": "DQ-001",
+  "title": "Missing Numerical Values Assessment",
+  "category": "data_quality",
+  "subcategory": "missing_values",
+  "description": "Systematic evaluation of missingness mechanisms (MCAR, MAR, MNAR) in numerical features to prevent estimation bias.",
+  "conditions": [
+    "Column contains NaN, null, or sentinel placeholder values (-999, 9999, 'NA')",
+    "Missingness proportion is between 0.1% and 60% of total sample size",
+    "Dataset is intended for downstream parametric modeling or descriptive statistics"
+  ],
+  "recommended_methods": [
+    "Little's MCAR statistical test for missingness randomness",
+    "Missingness correlation matrix to identify co-occurring missing columns",
+    "Missingness indicator flag creation for MAR/MNAR tracking"
+  ],
+  "selection_rules": [
+    "If missingness > 60% and feature is not clinically/operationally vital, flag for removal",
+    "If missingness is MCAR and < 5%, simple mean or median imputation is acceptable",
+    "If missingness is MAR or MNAR, use iterative multivariate imputation (MICE) or flag as informative missingness"
+  ],
+  "limitations": [
+    "MCAR tests have high sensitivity to large sample sizes",
+    "MNAR cannot be proven statistically without external ground truth data",
+    "Dropping rows indiscriminately leads to severe selection bias"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

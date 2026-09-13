@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-004",
+  "title": "Deduplication and Record Merging",
+  "category": "data_cleaning",
+  "subcategory": "deduplication",
+  "description": "Resolution policies for consolidating identified duplicate records into single golden records.",
+  "conditions": [
+    "Duplicate records detected by DQ-003",
+    "Multiple updates for the same entity across disparate ingestion timestamps",
+    "Conflicting non-null values across duplicate candidate rows"
+  ],
+  "recommended_methods": [
+    "Latest timestamp survivorship (Last-Write-Wins)",
+    "Non-null attribute consolidation (coalesce/merge across rows)",
+    "Source priority ranking (authoritative master system overrides secondary feeds)"
+  ],
+  "selection_rules": [
+    "If duplicate rows are byte-for-byte identical, drop all but the first occurrence",
+    "If duplicate rows contain complementary non-null columns, execute coalesced merge into unified record",
+    "If conflict exists in core attribute (e.g. conflicting date of birth), route to exception table"
+  ],
+  "limitations": [
+    "Last-Write-Wins may overwrite accurate historical data with empty fields from recent sync",
+    "Coalescing across many rows can create chimeric entities if keys were falsely matched"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

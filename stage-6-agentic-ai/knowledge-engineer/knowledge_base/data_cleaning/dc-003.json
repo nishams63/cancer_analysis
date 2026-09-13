@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-003",
+  "title": "Outlier Treatment and Capping",
+  "category": "data_cleaning",
+  "subcategory": "outliers",
+  "description": "Remediation strategies for extreme numerical values including winsorization, trimming, and transform stabilization.",
+  "conditions": [
+    "Numerical features containing verified valid extreme values that distort linear estimators",
+    "Algorithms sensitive to scale and variance (Linear Regression, K-Means, Neural Networks)",
+    "Data cannot be discarded without losing valuable entity context"
+  ],
+  "recommended_methods": [
+    "Winsorization at 1st and 99th percentiles (or 5th / 95th for extreme skew)",
+    "Tukey IQR fence capping [Q1 - 1.5*IQR, Q3 + 1.5*IQR]",
+    "Logarithmic or Box-Cox transformation to compress right-tailed distributions"
+  ],
+  "selection_rules": [
+    "If data is right-skewed strictly positive (revenue, dosage), apply Log1p transformation first before capping",
+    "If extreme values represent data entry errors, trim/remove records",
+    "If extreme values represent genuine rare phenomena, winsorize to percentile limits rather than dropping"
+  ],
+  "limitations": [
+    "Winsorization introduces artificial spikes at boundary percentiles",
+    "Trimming reduces sample size and induces survivorship bias"
+  ],
+  "source": "Tukey (1977) Exploratory Data Analysis",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-001",
+  "title": "Histogram and Density Plot Selection",
+  "category": "visualization",
+  "subcategory": "distribution_plots",
+  "description": "Rules for visualizing continuous univariate distributions, bin count optimization, and density curves.",
+  "conditions": [
+    "Displaying univariate continuous feature distribution in report or dashboard",
+    "Assessing skewness, modality, and tail behavior visually"
+  ],
+  "recommended_methods": [
+    "Freedman-Diaconis rule for optimal histogram bin width [bin_width = 2 * IQR * N^(-1/3)]",
+    "Kernel Density Estimation (KDE) curve overlay",
+    "Rug plot along the x-axis for individual sample density visualization"
+  ],
+  "selection_rules": [
+    "Always compute bin counts using Freedman-Diaconis rule rather than arbitrary default (e.g. 10 bins)",
+    "If sample size N > 1,000, overlay smooth KDE line on top of normalized frequency histogram",
+    "Always include clear axis labels with measurement units and median indicator line"
+  ],
+  "limitations": [
+    "Arbitrary bin widths can obscure or falsely manufacture multimodal peaks",
+    "KDE curves can smooth out sharp true cutoffs (e.g. bounded positive features at zero)"
+  ],
+  "source": "Freedman and Diaconis (1981) On the Histogram as a Density Estimator",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

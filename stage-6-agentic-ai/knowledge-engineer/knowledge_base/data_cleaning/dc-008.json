@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-008",
+  "title": "High-Cardinality Categorical Encoding",
+  "category": "data_cleaning",
+  "subcategory": "encoding",
+  "description": "Techniques for transforming high-cardinality nominal features (> 20 distinct categories) into machine-readable numerical representations.",
+  "conditions": [
+    "Nominal features with high cardinality (ZIP codes, merchant IDs, diagnosis ICD codes)",
+    "One-hot encoding would cause massive dimensional explosion and memory exhaustion",
+    "Supervised learning pipeline planned"
+  ],
+  "recommended_methods": [
+    "Target Encoding (Mean Target Encoding with empirical Bayes m-estimate smoothing)",
+    "Frequency / Count Encoding (replacing category with its sample frequency)",
+    "Long-tail consolidation (grouping categories below 1% prevalence into 'Other')"
+  ],
+  "selection_rules": [
+    "Always apply long-tail consolidation to 'Other' before encoding if category count > 50",
+    "If using Target Encoding, enforce strict out-of-fold computation to prevent catastrophic target leakage",
+    "If feature is purely nominal with no target correlation, use Frequency Encoding"
+  ],
+  "limitations": [
+    "Naive Target Encoding leads to extreme overfitting on rare categories without regularization smoothing",
+    "Frequency encoding collapses distinct categories that happen to have identical sample counts"
+  ],
+  "source": "Micci-Barreca (2001) Target Encoding Standard",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

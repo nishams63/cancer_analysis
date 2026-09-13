@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ANOM-005",
+  "title": "Mahalanobis Distance Multivariate Outlier Detection",
+  "category": "anomaly_detection",
+  "subcategory": "multivariate_outliers",
+  "description": "Distance metric accounting for covariance structures among correlated continuous features.",
+  "conditions": [
+    "Multivariate continuous numerical dataset with strong correlations between features",
+    "Underlying data approximates an elliptical multivariate normal distribution",
+    "Sample size N significantly exceeds number of features P (N >> P)"
+  ],
+  "recommended_methods": [
+    "Mahalanobis distance calculation using empirical covariance matrix",
+    "Minimum Covariance Determinant (MCD) for robust covariance estimation (Rousseeuw)",
+    "Chi-Square distribution thresholding with degrees of freedom equal to number of features"
+  ],
+  "selection_rules": [
+    "Always use Robust Mahalanobis (MCD) rather than classical Mahalanobis to prevent outlier contamination of the covariance matrix",
+    "Compare squared Mahalanobis distance against Chi-Square critical value at p = 0.001",
+    "Do not use Mahalanobis distance if covariance matrix is singular or non-invertible"
+  ],
+  "limitations": [
+    "Assumes unimodal elliptical distribution; fails on multimodal or manifold geometries",
+    "Cannot invert covariance matrix if P > N or if collinear features exist"
+  ],
+  "source": "Rousseeuw and Driessen (1999) A Fast Algorithm for the Minimum Covariance Determinant Estimator",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

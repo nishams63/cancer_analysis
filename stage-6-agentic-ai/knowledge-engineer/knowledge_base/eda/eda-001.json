@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "EDA-001",
+  "title": "Univariate Continuous Feature Profiling",
+  "category": "eda",
+  "subcategory": "univariate_analysis",
+  "description": "Comprehensive statistical and distributional profiling of continuous numerical variables.",
+  "conditions": [
+    "Initial exploration phase of raw or cleaned tabular dataset",
+    "Requirement to identify skewness, multimodal distributions, and zero-inflation",
+    "Data validation prior to statistical hypothesis testing"
+  ],
+  "recommended_methods": [
+    "Five-number summary (Min, Q1, Median, Q3, Max) plus Mean and Standard Deviation",
+    "Fisher-Pearson skewness coefficient and kurtosis calculation",
+    "Kernel Density Estimation (KDE) and Freedman-Diaconis histogram inspection"
+  ],
+  "selection_rules": [
+    "If skewness > 1.5, classify feature as heavily right-skewed and evaluate log/box-cox transform",
+    "If multimodal distribution detected in KDE, explore underlying subgroup mixture components",
+    "If > 30% of non-null values are exactly zero, profile separately as zero-inflated continuous feature"
+  ],
+  "limitations": [
+    "Skewness and kurtosis are hyper-sensitive to sample size and lone outliers",
+    "KDE bandwidth selection can smooth out genuine narrow multimodal peaks if bandwidth is too large"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

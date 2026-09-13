@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "BA-004",
+  "title": "Pareto Concentration and ABC Classification",
+  "category": "business_analysis",
+  "subcategory": "portfolio_analytics",
+  "description": "Quantifying concentration of revenue, inventory, or activity among top entities using the 80/20 principle.",
+  "conditions": [
+    "Assessing revenue dependency on top accounts, product concentration, or clinical workload distribution",
+    "Need to establish tiered operational service levels"
+  ],
+  "recommended_methods": [
+    "Cumulative percentage Pareto curve and Gini concentration coefficient",
+    "ABC Stratification (A: Top 80% value from ~20% entities, B: Next 15% value, C: Tail 5% value)",
+    "Herfindahl-Hirschman Index (HHI) for market concentration measurement"
+  ],
+  "selection_rules": [
+    "Classify entities into Tier A (80% cumulative value), Tier B (next 15%), and Tier C (bottom 5%)",
+    "If Gini coefficient > 0.75 or top 5% accounts generate > 60% revenue, flag severe revenue concentration risk",
+    "Tailor retention workflows: Tier A accounts require dedicated human management; Tier C accounts use automated workflows"
+  ],
+  "limitations": [
+    "Heavy focus on Tier A can neglect high-growth Tier C accounts with massive expansion potential",
+    "Concentration metrics describe static snapshot states and do not predict account migration trajectories"
+  ],
+  "source": "Juran (1951) Quality Control Handbook (Pareto Principle)",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

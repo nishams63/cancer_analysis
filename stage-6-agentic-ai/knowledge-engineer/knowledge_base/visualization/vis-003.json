@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-003",
+  "title": "Scatter Plots and Overplotting Remediation",
+  "category": "visualization",
+  "subcategory": "bivariate_plots",
+  "description": "Visualizing relationships between two continuous variables and resolving heavy overplotting.",
+  "conditions": [
+    "Two continuous variables with potential linear, non-linear, or cluster relationships",
+    "Large sample size (N > 5,000) causing extreme point occlusion and solid dark blobs"
+  ],
+  "recommended_methods": [
+    "Alpha transparency adjustment (e.g. alpha = 0.1 to 0.3) for moderate N",
+    "2D Hexagonal Binning (Hexbin) or 2D Density Contours for large N (> 10,000)",
+    "Linear regression or LOESS trend line overlay with 95% confidence interval band"
+  ],
+  "selection_rules": [
+    "If N > 10,000 points, do not plot raw scatter dots; use Hexbin plot with logarithmic color scale",
+    "Always include an annotated Pearson r or Spearman rho value directly on the plot",
+    "If adding a third variable, encode via color palette, reserving size encoding only for natural volume metrics"
+  ],
+  "limitations": [
+    "Hexbin plots lose visibility of isolated extreme outlier points (overlay single red points for outliers)",
+    "LOESS trend lines overfit locally if span parameter is set too small"
+  ],
+  "source": "Cleveland (1985) The Elements of Graphing Data",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "VIS-005",
+  "title": "Correlation Matrix Heatmap Best Practices",
+  "category": "visualization",
+  "subcategory": "matrix_plots",
+  "description": "Design standards for pairwise correlation heatmaps to maximize clarity and eliminate redundancy.",
+  "conditions": [
+    "Displaying pairwise correlation matrix across 5 to 30 continuous features",
+    "Identifying collinear feature clusters"
+  ],
+  "recommended_methods": [
+    "Diverging colormap centered at zero (e.g., Coolwarm, vlag, RdBu) with fixed bounds [-1, +1]",
+    "Lower-triangle masking to eliminate redundant symmetric duplicates and identity diagonal",
+    "Hierarchical clustering reordering (clustermap) to group correlated features together"
+  ],
+  "selection_rules": [
+    "Always mask the upper triangle and diagonal (1.00 values) to reduce visual clutter by 55%",
+    "Always enforce color scale limits strictly from -1.0 to +1.0 with 0.0 as neutral white/gray",
+    "Annotate cell correlation values with 2 decimal places if number of features <= 15"
+  ],
+  "limitations": [
+    "Heatmaps fail to display non-linear relationships or data distributions underlying the correlation",
+    "Heatmaps with > 30 features become unreadable without interactive zooming"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

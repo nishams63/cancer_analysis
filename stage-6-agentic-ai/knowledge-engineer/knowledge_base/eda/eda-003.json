@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "EDA-003",
+  "title": "Bivariate Numerical Correlation Analysis",
+  "category": "eda",
+  "subcategory": "bivariate_analysis",
+  "description": "Pairwise correlation assessment between continuous numerical features to discover linear and non-linear associations.",
+  "conditions": [
+    "Two or more continuous numerical variables in tabular dataset",
+    "Screening for multicollinearity prior to regression or feature selection",
+    "Exploration of feature-target dependencies"
+  ],
+  "recommended_methods": [
+    "Pearson correlation coefficient (r) for linear Gaussian relationships",
+    "Spearman rank correlation (rho) for non-linear monotonic relationships",
+    "Kendall's Tau for small sample sizes or tied ranks"
+  ],
+  "selection_rules": [
+    "If variables violate normality or contain heavy outliers, report Spearman over Pearson",
+    "If absolute Pearson r > 0.85 between two predictor variables, flag for collinearity redundancy",
+    "If Spearman is high (> 0.7) but Pearson is moderate (< 0.4), relationship is monotonic non-linear"
+  ],
+  "limitations": [
+    "Zero correlation does not imply independence (e.g. quadratic relationships Y = X^2 have r = 0)",
+    "Correlation does not establish causal directionality"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

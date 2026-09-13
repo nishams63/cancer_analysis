@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ML-006",
+  "title": "Cross-Validation and Data Splitting Protocols",
+  "category": "machine_learning",
+  "subcategory": "validation",
+  "description": "Validation schemes to ensure unbiased model performance estimation without data leakage.",
+  "conditions": [
+    "Training and evaluating any supervised machine learning model",
+    "Dataset exhibits class imbalance, grouping structure (e.g. repeated measures per patient), or temporal ordering"
+  ],
+  "recommended_methods": [
+    "Stratified K-Fold Cross-Validation (typically 5 or 10 folds) for imbalanced classification",
+    "GroupKFold to ensure all records for a given entity (e.g. Patient ID) remain exclusively in train or test fold",
+    "TimeSeriesSplit (expanding or rolling window) for chronologically ordered observations"
+  ],
+  "selection_rules": [
+    "If data has a temporal timestamp index, NEVER use standard random K-Fold; use TimeSeriesSplit to prevent look-ahead bias",
+    "If multiple records belong to the same entity/customer, always use GroupKFold on entity ID",
+    "Execute all feature scaling, imputation, and encoding strictly INSIDE each cross-validation fold"
+  ],
+  "limitations": [
+    "Standard K-Fold drastically underestimates generalization error when applied to autocorrelated time-series",
+    "Cross-validation increases training wall-clock compute time by a factor of K"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ANOM-004",
+  "title": "Local Outlier Factor (LOF)",
+  "category": "anomaly_detection",
+  "subcategory": "density_outliers",
+  "description": "Density-based anomaly detection identifying points whose local density is significantly lower than their neighbors.",
+  "conditions": [
+    "Feature space exhibits clusters with substantially different densities",
+    "Univariate and global distance metrics fail because normal density varies across regions",
+    "Dataset sample size N < 50,000"
+  ],
+  "recommended_methods": [
+    "Local Outlier Factor with k-nearest neighbors (typically k = 20)",
+    "Minkowski or Euclidean distance metric computation",
+    "Standardized feature matrix input via RobustScaler"
+  ],
+  "selection_rules": [
+    "If dataset contains multiple dense clusters alongside sparse clusters, select LOF over Isolation Forest",
+    "LOF score ~ 1.0 indicates similar density to neighbors (inlier); score > 1.5 indicates significant local outlier",
+    "If dataset has large sample size N > 50,000, avoid LOF due to O(N^2) neighbor query overhead"
+  ],
+  "limitations": [
+    "High computational cost on large datasets",
+    "Curse of dimensionality degrades neighbor distance discrimination in high dimensions (P > 30)"
+  ],
+  "source": "Breunig et al. (2000) LOF: Identifying Density-Based Local Outliers",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

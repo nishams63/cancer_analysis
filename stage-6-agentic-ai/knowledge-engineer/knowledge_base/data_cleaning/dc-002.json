@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-002",
+  "title": "Categorical Missing Value Imputation Strategy",
+  "category": "data_cleaning",
+  "subcategory": "imputation",
+  "description": "Techniques for imputing missing categorical attributes without introducing category imbalance.",
+  "conditions": [
+    "Nominal or ordinal categorical columns with missing entries",
+    "Downstream consumers require dense categorical vectors",
+    "Missingness is either non-informative or structurally significant"
+  ],
+  "recommended_methods": [
+    "Explicit sentinel assignment ('Missing' / 'Unknown')",
+    "Mode frequency replacement for low missingness (< 2%)",
+    "Predictive classification imputation using decision trees"
+  ],
+  "selection_rules": [
+    "If missingness > 3%, always impute with an explicit 'Unknown' category token",
+    "If missingness < 2% and dominant category frequency > 70%, mode imputation is safe",
+    "If ordinal category, use median ordinal level rather than mode"
+  ],
+  "limitations": [
+    "Mode imputation can severely distort entropy in balanced categorical features",
+    "Adding 'Unknown' token can introduce an artificial predictive feature in ML models"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

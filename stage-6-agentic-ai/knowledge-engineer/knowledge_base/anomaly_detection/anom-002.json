@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ANOM-002",
+  "title": "Tukey's Interquartile Range (IQR) Fences",
+  "category": "anomaly_detection",
+  "subcategory": "statistical_outliers",
+  "description": "Non-parametric quartile fencing for identifying outliers without assuming an underlying Gaussian distribution.",
+  "conditions": [
+    "Continuous or discrete ordinal numerical features",
+    "Skewed or non-normal distribution where Mean and SD are unreliable",
+    "Need for an objective, reproducible cutoff rule"
+  ],
+  "recommended_methods": [
+    "Inner fences [Q1 - 1.5*IQR, Q3 + 1.5*IQR] for mild outliers",
+    "Outer fences [Q1 - 3.0*IQR, Q3 + 3.0*IQR] for extreme anomalies",
+    "Boxplot visual mapping"
+  ],
+  "selection_rules": [
+    "Use 1.5*IQR for exploratory screening of unusual observations",
+    "Use 3.0*IQR (outer fence) when flagging severe anomalies for operational quarantine or automated alerts",
+    "For right-skewed data, consider Medcouple adjusted boxplot (Hubert and Vandervieren) to prevent overflagging"
+  ],
+  "limitations": [
+    "Fixed 1.5 multiplier overflags normal tail observations on skewed distributions",
+    "Discards multivariate covariance relationships between features"
+  ],
+  "source": "Tukey (1977) Exploratory Data Analysis",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

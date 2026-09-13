@@ -1,0 +1,29 @@
+{
+  "knowledge_id": "ML-003",
+  "title": "Unsupervised Clustering Algorithm Selection",
+  "category": "machine_learning",
+  "subcategory": "clustering",
+  "description": "Guidance on selecting clustering algorithms based on cluster geometry, noise tolerance, and scalability.",
+  "conditions": [
+    "Unsupervised discovery of latent customer segments, patient phenotypes, or behavioral clusters",
+    "No ground truth target labels available"
+  ],
+  "recommended_methods": [
+    "K-Means clustering with K-Means++ initialization for spherical, equal-variance clusters",
+    "DBSCAN (Density-Based Spatial Clustering) for arbitrary shapes and automatic outlier noise separation",
+    "Agglomerative Hierarchical Clustering for taxonomy generation and dendrogram inspection"
+  ],
+  "selection_rules": [
+    "Determine K in K-Means using the Silhouette Score combined with the Elbow method on inertia",
+    "If dataset contains irregular spatial shapes or extreme noise, select DBSCAN over K-Means",
+    "If dataset N > 50,000, avoid Hierarchical clustering due to O(N^2) memory complexity; use MiniBatchKMeans"
+  ],
+  "limitations": [
+    "K-Means fails completely on non-convex or elongated cluster geometries",
+    "DBSCAN is sensitive to the choice of epsilon (eps) and struggles in datasets with varying density"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

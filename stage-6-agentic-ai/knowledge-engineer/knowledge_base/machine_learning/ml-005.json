@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "ML-005",
+  "title": "Feature Selection Methodology",
+  "category": "machine_learning",
+  "subcategory": "feature_engineering",
+  "description": "Selection of minimal, highly predictive feature subsets to prevent curse of dimensionality and overfitting.",
+  "conditions": [
+    "High ratio of features to observations (P / N > 0.1)",
+    "Presence of uninformative, noisy, or redundant predictors",
+    "Requirement to improve model inference speed and interpretability"
+  ],
+  "recommended_methods": [
+    "Mutual Information regression/classification for non-linear dependency screening",
+    "Permutation Feature Importance evaluated on held-out validation data",
+    "Recursive Feature Elimination with Cross-Validation (RFECV)"
+  ],
+  "selection_rules": [
+    "Never rely on Gini impurity importance from default Random Forest as it heavily biases toward high-cardinality features",
+    "Compute Permutation Importance on validation set to measure true generalization degradation",
+    "Drop zero-variance and quasi-constant features (variance < 1e-4) before running wrapper selection"
+  ],
+  "limitations": [
+    "Wrapper methods like RFECV are computationally expensive on large feature sets",
+    "Features that appear uninformative in univariate filters may have powerful non-linear interaction effects"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}

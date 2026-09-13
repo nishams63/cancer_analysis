@@ -1,0 +1,30 @@
+{
+  "knowledge_id": "DC-006",
+  "title": "Temporal Standardization and Parsing",
+  "category": "data_cleaning",
+  "subcategory": "datetime_cleaning",
+  "description": "Standardization of temporal representations into unified UTC timestamps and clean date parts.",
+  "conditions": [
+    "Heterogeneous date formats in raw data sources",
+    "Longitudinal time-series analysis or survival duration modeling",
+    "Mixed timezones across operational regions"
+  ],
+  "recommended_methods": [
+    "Strict strptime parsing with explicit format strings",
+    "UTC timezone conversion via standard datetime libraries",
+    "Feature engineering of calendar components (year, month, day_of_week, is_weekend)"
+  ],
+  "selection_rules": [
+    "Never use ambiguous dateutil auto-parsing on financial or medical transactional dates",
+    "If timezone is absent, document default assumed timezone (e.g. UTC) in metadata manifest",
+    "Convert duration between two timestamps into standardized floating point units (days, hours)"
+  ],
+  "limitations": [
+    "Historical dates prior to 1970 (Unix epoch) can cause integer overflow in older legacy systems",
+    "Leap seconds and daylight savings shifts can create negative elapsed durations"
+  ],
+  "source": "AADA Internal Methodology",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "status": "active"
+}
