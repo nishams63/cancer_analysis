@@ -1,0 +1,266 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      String   @default("clinician")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Patient {
+  id         String   @id
+  age        Int
+  sex        String
+  cancerType String
+  stage      String
+  ecog       Int?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model ClinicalReport {
+  id          String   @id @default(cuid())
+  patientId   String
+  objectKey   String?
+  contentHash String?
+  reportType  String
+  createdAt   DateTime @default(now())
+  @@index([patientId])
+}
+
+model LabResult {
+  id             String   @id @default(cuid())
+  patientId      String
+  name           String
+  value          Float
+  unit           String
+  measuredAt     DateTime
+  referenceRange String?
+  metadata       Json?
+  @@index([patientId, measuredAt])
+}
+
+model Treatment {
+  id        String   @id @default(cuid())
+  patientId String
+  regimen   String
+  startDate DateTime
+  endDate   DateTime?
+  cycle     Int?
+  response  String?
+  metadata  Json?
+  @@index([patientId])
+}
+
+model PathologyImage {
+  id         String   @id @default(cuid())
+  patientId  String
+  objectKey  String
+  stain      String?
+  capturedAt DateTime?
+  metadata   Json?
+  @@index([patientId])
+}
+
+model CtDNAReading {
+  id         String   @id @default(cuid())
+  patientId  String
+  value      Float
+  unit       String
+  measuredAt DateTime
+  metadata   Json?
+  @@index([patientId, measuredAt])
+}
+
+model ToxicityPrediction {
+  id           String   @id @default(cuid())
+  patientId    String
+  modelName    String
+  modelVersion String
+  inputVersion String
+  prediction   Json
+  confidence   Float
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  @@index([patientId, createdAt])
+}
+
+model ProgressionPrediction {
+  id           String   @id @default(cuid())
+  patientId    String
+  modelName    String
+  modelVersion String
+  inputVersion String
+  prediction   Json
+  confidence   Float
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  @@index([patientId, createdAt])
+}
+
+model NLPExtraction {
+  id           String   @id @default(cuid())
+  patientId    String
+  modelName    String
+  modelVersion String
+  inputVersion String
+  prediction   Json
+  confidence   Float
+  entities     Json
+  negations    Json
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  @@index([patientId, createdAt])
+}
+
+model SLMSession {
+  id           String   @id @default(cuid())
+  patientId    String
+  userId       String?
+  modelName    String
+  modelVersion String
+  messages     Json
+  safety       Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  @@index([patientId])
+}
+
+model RAGEvidence {
+  id         String   @id @default(cuid())
+  patientId  String?
+  sourceType String
+  sourceId   String
+  title      String
+  excerpt    String?
+  metadata   Json?
+  createdAt  DateTime @default(now())
+}
+
+model SyntheticPatient {
+  id                String   @id @default(cuid())
+  seed              Int
+  profile           Json
+  biologicallyValid Boolean
+  createdAt         DateTime @default(now())
+}
+
+model StressTest {
+  id                 String   @id @default(cuid())
+  syntheticPatientId String
+  modelVersions      Json
+  results            Json
+  status             String
+  createdAt          DateTime @default(now())
+  @@index([syntheticPatientId])
+}
+
+model BlindSpot {
+  id             String   @id @default(cuid())
+  stressTestId   String
+  difficulty     Float
+  modelsAffected Json
+  reason         String
+  status         String   @default("open")
+  createdAt      DateTime @default(now())
+  @@index([stressTestId])
+}
+
+model TreatmentProposal {
+  id                      String   @id @default(cuid())
+  patientId               String
+  version                 Int
+  recommendedStrategy     Json
+  confidence              Float
+  physicianReviewRequired Boolean  @default(true)
+  status                  String   @default("review_required")
+  createdAt               DateTime @default(now())
+  @@unique([patientId, version])
+  @@index([patientId, createdAt])
+}
+
+model TrialMatch {
+  id          String   @id @default(cuid())
+  patientId   String
+  proposalId  String?
+  trialId     String
+  eligibility String
+  confidence  Float?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  @@index([patientId])
+}
+
+model AgentAction {
+  id              String   @id @default(cuid())
+  patientId       String
+  proposalId      String?
+  agentName       String
+  action          String
+  observation     String?
+  decisionSummary String?
+  toolUsed        String?
+  evidenceRefs    Json
+  status          String
+  createdAt       DateTime @default(now())
+  @@index([patientId, createdAt])
+}
+
+model ModelVersion {
+  id          String   @id @default(cuid())
+  module      String
+  name        String
+  version     String
+  status      String
+  artifactUri String?
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  @@unique([name, version])
+}
+
+model ModelMetric {
+  id             String   @id @default(cuid())
+  modelVersionId String
+  metric         String
+  value          Float
+  cohort         String?
+  measuredAt     DateTime @default(now())
+  metadata       Json?
+  @@index([modelVersionId])
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  userId       String?
+  patientId    String?
+  module       String
+  modelVersion String?
+  action       String
+  confidence   Float?
+  status       String
+  requestId    String   @unique
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  @@index([patientId, createdAt])
+  @@index([userId, createdAt])
+}
+
+model SystemEvent {
+  id        String   @id @default(cuid())
+  service   String
+  level     String
+  message   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+  @@index([service, createdAt])
+}
