@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { useEffect, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Activity, ArrowRight, BrainCircuit, Check, Dna, Eye, EyeOff, ShieldCheck, Stethoscope } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
+  const { status } = useSession();
   const [show, setShow] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.replace("/overview");
+    }
+  }, [status, router]);
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
