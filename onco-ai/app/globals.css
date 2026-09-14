@@ -140,3 +140,113 @@ a { color: inherit; text-decoration: none; }
   .panel-character{width:82px;height:175px}
   .not-physician{display:none}
 }
+
+/* Modal and Toast Notification Utilities */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 27, 51, 0.48);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.modal-card {
+  width: min(580px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #dce6f1;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 24px 64px rgba(10, 35, 65, 0.18);
+  position: relative;
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf1f6;
+}
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e1e8f0;
+  background: #f8fafc;
+  color: #63738a;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.modal-close:hover {
+  background: #edf2f8;
+  color: #10243f;
+}
+.modal-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.modal-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #344c66;
+}
+.modal-form-grid input, .modal-form-grid select {
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid #ced9e7;
+  border-radius: 9px;
+  background: #fbfdff;
+  color: #10243f;
+  font-size: 13px;
+  outline: none;
+}
+.modal-form-grid input:focus, .modal-form-grid select:focus {
+  border-color: #1769e0;
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.12);
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #edf1f6;
+}
+.floating-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #071c34;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(5, 20, 38, 0.28);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 120;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.25s ease-out;
+}
+.floating-toast svg {
+  color: #18a774;
+  flex-shrink: 0;
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
