@@ -1,0 +1,31 @@
+{
+  "scenario_id": "SC-EDGE-004",
+  "name": "Low Statistical Power Analysis",
+  "description": "Sample size is extremely small (N=42); confidence calculation yields < 0.50, requiring review.",
+  "category": "edge_case",
+  "dataset": "data/small_sample.csv",
+  "user_goal": "Perform predictive model training on sample cohort.",
+  "expected_workflow": "WF-PREDICTIVE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "statistical_analysis"
+  ],
+  "expected_knowledge": [],
+  "expected_branches": [],
+  "expected_escalations": [
+    "low_confidence_rca"
+  ],
+  "ground_truth_id": "GT-EDGE-004",
+  "difficulty": "hard",
+  "tags": [
+    "edge_case",
+    "low_confidence",
+    "sample_size"
+  ]
+}

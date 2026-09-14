@@ -1,0 +1,42 @@
+{
+  "scenario_id": "SC-EDGE-005",
+  "name": "Clean Dataset Branching Bypass",
+  "description": "Data quality score = 0.98; agent evaluates branch condition and correctly skips T004 (cleaning).",
+  "category": "edge_case",
+  "dataset": "data/clean_sales.csv",
+  "user_goal": "Analyze clean data stream and skip redundant preprocessing.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T011",
+    "T012",
+    "T013"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "validate_data_quality",
+    "eda_analysis",
+    "root_cause_analysis",
+    "generate_report"
+  ],
+  "expected_knowledge": [],
+  "expected_branches": [
+    {
+      "condition_id": "COND-01",
+      "target": "T005"
+    }
+  ],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-EDGE-005",
+  "difficulty": "medium",
+  "tags": [
+    "edge_case",
+    "branching",
+    "bypass"
+  ]
+}

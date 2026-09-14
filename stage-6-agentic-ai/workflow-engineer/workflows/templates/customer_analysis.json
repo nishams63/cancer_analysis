@@ -1,0 +1,323 @@
+{
+  "workflow_id": "WF-CUSTOMER-001",
+  "name": "Customer - Customer Analysis",
+  "version": "1.0",
+  "goal": "Analyze customer behavior, segmentation, and retention/churn patterns.",
+  "entry_task": "T001",
+  "terminal_tasks": [
+    "T008"
+  ],
+  "tasks": [
+    {
+      "task_id": "T001",
+      "name": "Load Customer Dataset",
+      "description": "Load customer transaction records from in customer records.",
+      "task_type": "ingestion",
+      "tool": "load_dataset",
+      "dependencies": [],
+      "required_inputs": [],
+      "expected_outputs": [
+        "raw_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T002",
+      "name": "Profile Customer Dataset",
+      "description": "Profile customer identifiers, activity timestamps, and monetary attributes.",
+      "task_type": "profiling",
+      "tool": "profile_dataset",
+      "dependencies": [
+        "T001"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "profile_report"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T003",
+      "name": "Validate Data Quality",
+      "description": "Ensure customer IDs are unique and monetary quantities are non-negative.",
+      "task_type": "validation",
+      "tool": "validate_data_quality",
+      "dependencies": [
+        "T002"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "quality_verdict"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T004",
+      "name": "Compute RFM Metrics",
+      "description": "Calculate Recency, Frequency, and Monetary values per customer entity.",
+      "task_type": "eda",
+      "tool": "eda_analysis",
+      "dependencies": [
+        "T003"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "rfm_features"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T005",
+      "name": "Segment Customers",
+      "description": "Execute clustering algorithm to identify behavioral customer personas.",
+      "task_type": "segmentation",
+      "tool": "segment_customers",
+      "dependencies": [
+        "T004"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "customer_segments"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Unsupervised Clustering Algorithm Selection for customer segmentation",
+        "category": "machine_learning",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T006",
+      "name": "Analyze Churn & Retention Curves",
+      "description": "Compute cohort retention decay and identify leading churn indicators.",
+      "task_type": "statistical_analysis",
+      "tool": "statistical_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "retention_cohort_matrix",
+        "churn_risk_scores"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Cohort Retention and Churn Rate Analysis",
+        "category": "business_analysis",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T007",
+      "name": "Generate Customer Retention Recommendations",
+      "description": "Produce targeted retention campaigns for high-risk, high-value tiers.",
+      "task_type": "recommendation",
+      "tool": "generate_recommendation",
+      "dependencies": [
+        "T006"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "retention_playbook"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T008",
+      "name": "Generate Customer Insights Report",
+      "description": "Compile comprehensive customer intelligence report.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T007"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "customer_insights_report"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-001-POOR-QUALITY",
+      "name": "Critical Data Quality Failure",
+      "trigger": "poor_data_quality",
+      "condition_metric": "quality_score",
+      "operator": "lt",
+      "threshold": 0.5,
+      "action": "human_review",
+      "severity": "critical",
+      "message": "Dataset quality score is below minimum viable analysis threshold"
+    },
+    {
+      "rule_id": "ESC-002-LOW-CONFIDENCE-RCA",
+      "name": "Low Confidence Root Cause",
+      "trigger": "conflicting_evidence",
+      "condition_metric": "root_cause_confidence",
+      "operator": "lt",
+      "threshold": 0.6,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Root cause model confidence fell below acceptable decision threshold"
+    },
+    {
+      "rule_id": "ESC-003-SIMILAR-CAUSE-SCORES",
+      "name": "Ambiguous Competing Root Causes",
+      "trigger": "similar_cause_scores",
+      "condition_metric": "cause_score_margin",
+      "operator": "lt",
+      "threshold": 0.05,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Top root causes have indistinguishable confidence margins"
+    },
+    {
+      "rule_id": "ESC-004-MISSING-COLUMNS",
+      "name": "Missing Required Schema Columns",
+      "trigger": "missing_required_columns",
+      "condition_metric": "missing_required_columns_count",
+      "operator": "gt",
+      "threshold": 0,
+      "action": "workflow_pause",
+      "severity": "critical",
+      "message": "Critical feature columns missing from dataset"
+    },
+    {
+      "rule_id": "ESC-005-MAX-RETRIES",
+      "name": "Task Max Retries Exceeded",
+      "trigger": "max_retries_exceeded",
+      "condition_metric": "retry_count",
+      "operator": "gte",
+      "threshold": 3,
+      "action": "workflow_escalation",
+      "severity": "critical",
+      "message": "Task failed repeatedly after 3 retry attempts"
+    },
+    {
+      "rule_id": "ESC-006-HIGH-IMPACT-ACTION",
+      "name": "High-Impact Business Recommendation",
+      "trigger": "high_impact_action",
+      "condition_metric": "business_impact_level",
+      "operator": "eq",
+      "threshold": "high",
+      "action": "human_review",
+      "severity": "warning",
+      "message": "Recommendation carries high operational/financial impact; supervisor signoff required"
+    }
+  ],
+  "global_conditions": [],
+  "metadata": {
+    "raw_goal": "Analyze customer churn and segmentation behavior in customer records.",
+    "domain": "customer",
+    "intent_type": "customer_analysis",
+    "dataset": "in customer records",
+    "time_scope": null,
+    "analysis_requirements": [
+      "customer profiling",
+      "rfm segmentation",
+      "behavioral trend analysis",
+      "churn risk and anomaly detection",
+      "cross-segment comparison",
+      "root cause analysis of churn"
+    ],
+    "topological_order": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008"
+    ]
+  }
+}

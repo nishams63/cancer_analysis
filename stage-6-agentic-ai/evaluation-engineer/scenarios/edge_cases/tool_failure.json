@@ -1,0 +1,23 @@
+{
+  "scenario_id": "SC-EDGE-006",
+  "name": "Tool Execution Failure and Cascade Skip",
+  "description": "Tool raises IO error; agent captures failure and skips dependent downstream tasks safely.",
+  "category": "edge_case",
+  "dataset": "data/unreadable_disk.csv",
+  "user_goal": "Load dataset and perform profiling.",
+  "expected_workflow": "WF-FAIL-01",
+  "expected_tasks": [],
+  "expected_tools": [
+    "load_dataset"
+  ],
+  "expected_knowledge": [],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-EDGE-006",
+  "difficulty": "hard",
+  "tags": [
+    "edge_case",
+    "tool_failure",
+    "error_handling"
+  ]
+}

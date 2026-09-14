@@ -1,0 +1,540 @@
+{
+  "workflow_id": "WF-REVENUE-001",
+  "name": "Sales - Revenue Decline",
+  "version": "1.0",
+  "goal": "Determine the causes of revenue decline and decompose performance drivers.",
+  "entry_task": "T001",
+  "terminal_tasks": [
+    "T013"
+  ],
+  "tasks": [
+    {
+      "task_id": "T001",
+      "name": "Load Sales Dataset",
+      "description": "Ingest raw this sales dataset into analytical session.",
+      "task_type": "ingestion",
+      "tool": "load_dataset",
+      "dependencies": [],
+      "required_inputs": [
+        "this sales dataset"
+      ],
+      "expected_outputs": [
+        "raw_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "critical",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T002",
+      "name": "Profile Sales Dataset",
+      "description": "Compute summary statistics, row counts, missing rates, and data types.",
+      "task_type": "profiling",
+      "tool": "profile_dataset",
+      "dependencies": [
+        "T001"
+      ],
+      "required_inputs": [
+        "raw_dataframe"
+      ],
+      "expected_outputs": [
+        "profile_report",
+        "missing_rate",
+        "quality_score"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T003",
+      "name": "Validate Data Quality",
+      "description": "Verify presence of required revenue columns, timestamps, and validity ranges.",
+      "task_type": "validation",
+      "tool": "validate_data_quality",
+      "dependencies": [
+        "T002"
+      ],
+      "required_inputs": [
+        "profile_report"
+      ],
+      "expected_outputs": [
+        "quality_verdict",
+        "needs_cleaning"
+      ],
+      "conditions": [
+        {
+          "condition_id": "COND-REV-CLEANING",
+          "metric_name": "needs_cleaning",
+          "operator": "eq",
+          "threshold": true,
+          "action": "data_cleaning",
+          "target_task_id": "T004",
+          "description": "Route to cleaning if missing values or invalid data detected"
+        },
+        {
+          "condition_id": "COND-REV-CLEAN",
+          "metric_name": "needs_cleaning",
+          "operator": "eq",
+          "threshold": false,
+          "action": "continue_analysis",
+          "target_task_id": "T005",
+          "description": "Proceed directly to trend analysis if data is clean"
+        }
+      ],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Validation of missing numerical values and hard boundary limits",
+        "category": "data_quality",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T004",
+      "name": "Clean Dataset",
+      "description": "Impute missing numerical/categorical values and trim anomalous recording errors.",
+      "task_type": "cleaning",
+      "tool": "clean_dataset",
+      "dependencies": [
+        "T003"
+      ],
+      "required_inputs": [
+        "raw_dataframe",
+        "quality_verdict"
+      ],
+      "expected_outputs": [
+        "cleaned_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Median imputation for skewed numerical data and robust winsorization",
+        "category": "data_cleaning",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T005",
+      "name": "Analyze Revenue Trend",
+      "description": "Calculate longitudinal revenue trajectory and identify turning points.",
+      "task_type": "eda",
+      "tool": "eda_analysis",
+      "dependencies": [
+        "T003",
+        "T004"
+      ],
+      "required_inputs": [
+        "cleaned_dataframe"
+      ],
+      "expected_outputs": [
+        "revenue_trend_metrics",
+        "decline_magnitude",
+        "decline_start_date"
+      ],
+      "conditions": [
+        {
+          "condition_id": "COND-DECLINE-CONFIRM",
+          "metric_name": "decline_magnitude",
+          "operator": "gt",
+          "threshold": 0.0,
+          "action": "continue_analysis",
+          "target_task_id": null,
+          "description": "Continue root-cause analysis branches if revenue decline confirmed"
+        }
+      ],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T006",
+      "name": "Analyze Product Performance Branch",
+      "description": "Decompose revenue change by product hierarchy and SKU volume.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [
+        "revenue_trend_metrics"
+      ],
+      "expected_outputs": [
+        "product_contribution_delta"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T007",
+      "name": "Analyze Customer Segment Branch",
+      "description": "Decompose revenue variance across customer tiers and tenure cohorts.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [
+        "revenue_trend_metrics"
+      ],
+      "expected_outputs": [
+        "customer_contribution_delta"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T008",
+      "name": "Analyze Regional & Channel Branch",
+      "description": "Decompose revenue changes by geographic markets and sales channels.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [
+        "revenue_trend_metrics"
+      ],
+      "expected_outputs": [
+        "region_channel_contribution_delta"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T009",
+      "name": "Detect Revenue Anomalies Branch",
+      "description": "Identify specific dates or accounts exhibiting abnormal revenue drops.",
+      "task_type": "anomaly_detection",
+      "tool": "detect_anomalies",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [
+        "revenue_trend_metrics"
+      ],
+      "expected_outputs": [
+        "revenue_anomaly_list"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Time-series anomaly detection and residual spike isolation",
+        "category": "anomaly_detection",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T010",
+      "name": "Perform Rate vs Volume Mix Analysis",
+      "description": "Consolidate all branch deltas and isolate pure price changes vs volume mix shifts.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T006",
+        "T007",
+        "T008",
+        "T009"
+      ],
+      "required_inputs": [
+        "product_contribution_delta",
+        "customer_contribution_delta",
+        "region_channel_contribution_delta",
+        "revenue_anomaly_list"
+      ],
+      "expected_outputs": [
+        "consolidated_rca_drivers",
+        "root_cause_confidence"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Rate vs Volume Mix Decomposition and factor tree attribution",
+        "category": "root_cause",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T011",
+      "name": "Synthesize Evidence-Based Findings",
+      "description": "Synthesize quantitative driver rankings with confidence intervals and hypothesis tests.",
+      "task_type": "statistical_analysis",
+      "tool": "statistical_analysis",
+      "dependencies": [
+        "T010"
+      ],
+      "required_inputs": [
+        "consolidated_rca_drivers"
+      ],
+      "expected_outputs": [
+        "ranked_findings",
+        "statistical_significance"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T012",
+      "name": "Generate Strategic Recommendations",
+      "description": "Derive actionable business remediation strategies addressing verified root causes.",
+      "task_type": "recommendation",
+      "tool": "generate_recommendation",
+      "dependencies": [
+        "T011"
+      ],
+      "required_inputs": [
+        "ranked_findings"
+      ],
+      "expected_outputs": [
+        "strategic_action_plan",
+        "business_impact_level"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T013",
+      "name": "Generate Final Executive Report",
+      "description": "Compile final analytical report with visual waterfall chart and findings summary.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T012"
+      ],
+      "required_inputs": [
+        "ranked_findings",
+        "strategic_action_plan"
+      ],
+      "expected_outputs": [
+        "final_executive_report_markdown"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-001-POOR-QUALITY",
+      "name": "Critical Data Quality Failure",
+      "trigger": "poor_data_quality",
+      "condition_metric": "quality_score",
+      "operator": "lt",
+      "threshold": 0.5,
+      "action": "human_review",
+      "severity": "critical",
+      "message": "Dataset quality score is below minimum viable analysis threshold"
+    },
+    {
+      "rule_id": "ESC-002-LOW-CONFIDENCE-RCA",
+      "name": "Low Confidence Root Cause",
+      "trigger": "conflicting_evidence",
+      "condition_metric": "root_cause_confidence",
+      "operator": "lt",
+      "threshold": 0.6,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Root cause model confidence fell below acceptable decision threshold"
+    },
+    {
+      "rule_id": "ESC-003-SIMILAR-CAUSE-SCORES",
+      "name": "Ambiguous Competing Root Causes",
+      "trigger": "similar_cause_scores",
+      "condition_metric": "cause_score_margin",
+      "operator": "lt",
+      "threshold": 0.05,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Top root causes have indistinguishable confidence margins"
+    },
+    {
+      "rule_id": "ESC-004-MISSING-COLUMNS",
+      "name": "Missing Required Schema Columns",
+      "trigger": "missing_required_columns",
+      "condition_metric": "missing_required_columns_count",
+      "operator": "gt",
+      "threshold": 0,
+      "action": "workflow_pause",
+      "severity": "critical",
+      "message": "Critical feature columns missing from dataset"
+    },
+    {
+      "rule_id": "ESC-005-MAX-RETRIES",
+      "name": "Task Max Retries Exceeded",
+      "trigger": "max_retries_exceeded",
+      "condition_metric": "retry_count",
+      "operator": "gte",
+      "threshold": 3,
+      "action": "workflow_escalation",
+      "severity": "critical",
+      "message": "Task failed repeatedly after 3 retry attempts"
+    },
+    {
+      "rule_id": "ESC-006-HIGH-IMPACT-ACTION",
+      "name": "High-Impact Business Recommendation",
+      "trigger": "high_impact_action",
+      "condition_metric": "business_impact_level",
+      "operator": "eq",
+      "threshold": "high",
+      "action": "human_review",
+      "severity": "warning",
+      "message": "Recommendation carries high operational/financial impact; supervisor signoff required"
+    }
+  ],
+  "global_conditions": [],
+  "metadata": {
+    "raw_goal": "Analyze this sales dataset and determine why revenue decreased during the last quarter.",
+    "domain": "sales",
+    "intent_type": "revenue_decline",
+    "dataset": "this sales dataset",
+    "time_scope": "last quarter",
+    "analysis_requirements": [
+      "revenue trend analysis",
+      "product analysis",
+      "customer segment analysis",
+      "geographic/channel performance analysis",
+      "pricing and volume mix decomposition",
+      "revenue anomaly detection",
+      "root cause analysis and evidence ranking"
+    ],
+    "topological_order": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012",
+      "T013"
+    ]
+  }
+}

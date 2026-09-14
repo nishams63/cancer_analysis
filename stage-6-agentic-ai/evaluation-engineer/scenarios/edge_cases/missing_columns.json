@@ -1,0 +1,28 @@
+{
+  "scenario_id": "SC-EDGE-002",
+  "name": "Missing Critical Revenue Column",
+  "description": "Target column 'revenue' is entirely missing from schema; agent must halt without hallucinating.",
+  "category": "edge_case",
+  "dataset": "data/missing_cols.csv",
+  "user_goal": "Calculate revenue metrics and breakdown by region.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset"
+  ],
+  "expected_knowledge": [],
+  "expected_branches": [],
+  "expected_escalations": [
+    "missing_required_columns"
+  ],
+  "ground_truth_id": "GT-EDGE-002",
+  "difficulty": "hard",
+  "tags": [
+    "edge_case",
+    "schema_violation"
+  ]
+}

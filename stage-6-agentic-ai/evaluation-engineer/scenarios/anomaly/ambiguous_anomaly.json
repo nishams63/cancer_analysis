@@ -1,0 +1,34 @@
+{
+  "scenario_id": "SC-ANOM-002",
+  "name": "Ambiguous Low Magnitude Anomaly",
+  "description": "Evaluate subtle recurring variance (z-score ~ 2.1) without clear operational signature.",
+  "category": "anomaly",
+  "dataset": "data/anomaly_ambiguous.csv",
+  "user_goal": "Investigate borderline data deviations and assess business impact.",
+  "expected_workflow": "WF-ANOMALY-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T004",
+    "T005"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "detect_anomalies",
+    "statistical_analysis",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "borderline anomaly discrimination"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-ANOM-002",
+  "difficulty": "medium",
+  "tags": [
+    "anomaly",
+    "borderline"
+  ]
+}

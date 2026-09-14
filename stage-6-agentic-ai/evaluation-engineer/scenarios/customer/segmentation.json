@@ -1,0 +1,33 @@
+{
+  "scenario_id": "SC-CUST-002",
+  "name": "Customer RFM Behavioral Segmentation",
+  "description": "Cluster customers into distinct behavioral tiers to optimize marketing allocation.",
+  "category": "customer",
+  "dataset": "data/customer_rfm.csv",
+  "user_goal": "Segment customer base using RFM methodology and profile top tier accounts.",
+  "expected_workflow": "WF-CUSTOMER-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "segment_customers",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "rfm clustering methodology"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-CUST-002",
+  "difficulty": "easy",
+  "tags": [
+    "customer",
+    "segmentation"
+  ]
+}

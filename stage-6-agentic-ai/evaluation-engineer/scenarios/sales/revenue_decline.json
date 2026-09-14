@@ -1,0 +1,47 @@
+{
+  "scenario_id": "SC-REV-001",
+  "name": "Revenue Decline Analysis",
+  "description": "Investigate why sales revenue declined by 18% in Q2/Q3 across enterprise tiers.",
+  "category": "sales",
+  "dataset": "data/sales_q3.csv",
+  "user_goal": "Determine why revenue decreased last quarter and identify the primary driver.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T011",
+    "T012",
+    "T013"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "validate_data_quality",
+    "eda_analysis",
+    "root_cause_analysis",
+    "generate_recommendation",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "revenue drop analysis methods",
+    "root cause analysis standards"
+  ],
+  "expected_branches": [
+    {
+      "condition_id": "COND-01",
+      "target": "T005"
+    }
+  ],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-REV-001",
+  "difficulty": "medium",
+  "tags": [
+    "sales",
+    "revenue",
+    "root_cause",
+    "core"
+  ]
+}

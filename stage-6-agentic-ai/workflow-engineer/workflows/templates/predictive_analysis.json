@@ -1,0 +1,297 @@
+{
+  "workflow_id": "WF-PREDICTIVE-001",
+  "name": "Predictive - Predictive Analysis",
+  "version": "1.0",
+  "goal": "Build, validate, and evaluate predictive model pipeline on target variable.",
+  "entry_task": "T001",
+  "terminal_tasks": [
+    "T007"
+  ],
+  "tasks": [
+    {
+      "task_id": "T001",
+      "name": "Load Feature Dataset",
+      "description": "Ingest training tabular features.",
+      "task_type": "ingestion",
+      "tool": "load_dataset",
+      "dependencies": [],
+      "required_inputs": [],
+      "expected_outputs": [
+        "raw_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T002",
+      "name": "Profile Dataset and Target",
+      "description": "Evaluate feature distributions and target variable balance/skew.",
+      "task_type": "profiling",
+      "tool": "profile_dataset",
+      "dependencies": [
+        "T001"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "profile_report",
+        "target_type"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T003",
+      "name": "Engineer Features and Normalization",
+      "description": "Encode categorical variables, handle missing data, and apply scaling.",
+      "task_type": "cleaning",
+      "tool": "clean_dataset",
+      "dependencies": [
+        "T002"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "processed_feature_matrix"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T004",
+      "name": "Select Cross-Validation Strategy",
+      "description": "Determine optimal split protocol (Stratified K-Fold or TimeSeriesSplit).",
+      "task_type": "validation",
+      "tool": "statistical_analysis",
+      "dependencies": [
+        "T003"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "cv_folds_config"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Cross-Validation and Data Splitting Protocols",
+        "category": "machine_learning",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T005",
+      "name": "Train Candidate Models",
+      "description": "Fit baseline and gradient boosted models using cross-validation.",
+      "task_type": "machine_learning",
+      "tool": "train_model",
+      "dependencies": [
+        "T004"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "trained_model_artifacts",
+        "cv_metrics"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Supervised Classification Algorithm Selection",
+        "category": "machine_learning",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T006",
+      "name": "Evaluate Model & Feature Importance",
+      "description": "Compute permutation feature importance, calibration, and error residuals.",
+      "task_type": "machine_learning",
+      "tool": "eda_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "feature_importance_ranking",
+        "test_evaluation_metrics"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T007",
+      "name": "Generate Predictive Model Report",
+      "description": "Document performance benchmarks, key feature drivers, and deployment guidance.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T006"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "model_performance_report"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-001-POOR-QUALITY",
+      "name": "Critical Data Quality Failure",
+      "trigger": "poor_data_quality",
+      "condition_metric": "quality_score",
+      "operator": "lt",
+      "threshold": 0.5,
+      "action": "human_review",
+      "severity": "critical",
+      "message": "Dataset quality score is below minimum viable analysis threshold"
+    },
+    {
+      "rule_id": "ESC-002-LOW-CONFIDENCE-RCA",
+      "name": "Low Confidence Root Cause",
+      "trigger": "conflicting_evidence",
+      "condition_metric": "root_cause_confidence",
+      "operator": "lt",
+      "threshold": 0.6,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Root cause model confidence fell below acceptable decision threshold"
+    },
+    {
+      "rule_id": "ESC-003-SIMILAR-CAUSE-SCORES",
+      "name": "Ambiguous Competing Root Causes",
+      "trigger": "similar_cause_scores",
+      "condition_metric": "cause_score_margin",
+      "operator": "lt",
+      "threshold": 0.05,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Top root causes have indistinguishable confidence margins"
+    },
+    {
+      "rule_id": "ESC-004-MISSING-COLUMNS",
+      "name": "Missing Required Schema Columns",
+      "trigger": "missing_required_columns",
+      "condition_metric": "missing_required_columns_count",
+      "operator": "gt",
+      "threshold": 0,
+      "action": "workflow_pause",
+      "severity": "critical",
+      "message": "Critical feature columns missing from dataset"
+    },
+    {
+      "rule_id": "ESC-005-MAX-RETRIES",
+      "name": "Task Max Retries Exceeded",
+      "trigger": "max_retries_exceeded",
+      "condition_metric": "retry_count",
+      "operator": "gte",
+      "threshold": 3,
+      "action": "workflow_escalation",
+      "severity": "critical",
+      "message": "Task failed repeatedly after 3 retry attempts"
+    },
+    {
+      "rule_id": "ESC-006-HIGH-IMPACT-ACTION",
+      "name": "High-Impact Business Recommendation",
+      "trigger": "high_impact_action",
+      "condition_metric": "business_impact_level",
+      "operator": "eq",
+      "threshold": "high",
+      "action": "human_review",
+      "severity": "warning",
+      "message": "Recommendation carries high operational/financial impact; supervisor signoff required"
+    }
+  ],
+  "global_conditions": [],
+  "metadata": {
+    "raw_goal": "Train and evaluate a predictive classification model to forecast outcome on tabular dataset.",
+    "domain": "predictive",
+    "intent_type": "predictive_analysis",
+    "dataset": "on tabular dataset",
+    "time_scope": null,
+    "analysis_requirements": [
+      "target distribution validation",
+      "feature engineering and scaling",
+      "cross-validation protocol selection",
+      "model training and baseline comparison",
+      "feature importance and error analysis"
+    ],
+    "topological_order": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007"
+    ]
+  }
+}

@@ -1,0 +1,429 @@
+{
+  "workflow_id": "WF-DATASET-001",
+  "name": "General - Dataset Analysis",
+  "version": "1.0",
+  "goal": "Perform end-to-end dataset profiling, exploratory analysis, and hypothesis discovery.",
+  "entry_task": "T001",
+  "terminal_tasks": [
+    "T012"
+  ],
+  "tasks": [
+    {
+      "task_id": "T001",
+      "name": "Load Dataset",
+      "description": "Ingest dataset into analytical session.",
+      "task_type": "ingestion",
+      "tool": "load_dataset",
+      "dependencies": [],
+      "required_inputs": [],
+      "expected_outputs": [
+        "raw_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T002",
+      "name": "Profile Dataset",
+      "description": "Compute distributions, missingness, and data types across all columns.",
+      "task_type": "profiling",
+      "tool": "profile_dataset",
+      "dependencies": [
+        "T001"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "profile_report",
+        "missing_rate",
+        "quality_score"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T003",
+      "name": "Validate Data Quality",
+      "description": "Check schema constraints, valid ranges, and duplicate records.",
+      "task_type": "validation",
+      "tool": "validate_data_quality",
+      "dependencies": [
+        "T002"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "quality_verdict",
+        "needs_cleaning"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T004",
+      "name": "Clean Dataset Conditionally",
+      "description": "Impute missing values and standardize formats if necessary.",
+      "task_type": "cleaning",
+      "tool": "clean_dataset",
+      "dependencies": [
+        "T003"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "cleaned_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T005",
+      "name": "Perform Exploratory Data Analysis",
+      "description": "Analyze univariate and bivariate correlations and distributions.",
+      "task_type": "eda",
+      "tool": "eda_analysis",
+      "dependencies": [
+        "T003",
+        "T004"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "eda_summary_metrics"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T006",
+      "name": "Perform Statistical Testing",
+      "description": "Execute hypothesis tests to evaluate significant differences between groups.",
+      "task_type": "statistical_analysis",
+      "tool": "statistical_analysis",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "statistical_test_results"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Parametric and Non-Parametric Two-Sample Hypothesis Testing",
+        "category": "statistics",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T007",
+      "name": "Detect Data Anomalies",
+      "description": "Screen numerical columns for extreme multi-sigma outliers.",
+      "task_type": "anomaly_detection",
+      "tool": "detect_anomalies",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "anomaly_flags"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T008",
+      "name": "Perform Pattern & Segment Analysis",
+      "description": "Extract clustering groupings and feature interactions.",
+      "task_type": "segmentation",
+      "tool": "eda_analysis",
+      "dependencies": [
+        "T006",
+        "T007"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "segment_patterns"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T009",
+      "name": "Perform Root Cause Analysis",
+      "description": "Identify principal factors driving observed disparities.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T008"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "primary_drivers"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T010",
+      "name": "Synthesize Analytical Findings",
+      "description": "Combine statistical and exploratory discoveries into clear takeaways.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T009"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "findings_summary"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T011",
+      "name": "Generate Recommendations",
+      "description": "Formulate actionable business conclusions.",
+      "task_type": "recommendation",
+      "tool": "generate_recommendation",
+      "dependencies": [
+        "T010"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "actionable_recommendations"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T012",
+      "name": "Compile Final Analytical Report",
+      "description": "Produce publication-ready executive report.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T011"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "final_report_markdown"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-001-POOR-QUALITY",
+      "name": "Critical Data Quality Failure",
+      "trigger": "poor_data_quality",
+      "condition_metric": "quality_score",
+      "operator": "lt",
+      "threshold": 0.5,
+      "action": "human_review",
+      "severity": "critical",
+      "message": "Dataset quality score is below minimum viable analysis threshold"
+    },
+    {
+      "rule_id": "ESC-002-LOW-CONFIDENCE-RCA",
+      "name": "Low Confidence Root Cause",
+      "trigger": "conflicting_evidence",
+      "condition_metric": "root_cause_confidence",
+      "operator": "lt",
+      "threshold": 0.6,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Root cause model confidence fell below acceptable decision threshold"
+    },
+    {
+      "rule_id": "ESC-003-SIMILAR-CAUSE-SCORES",
+      "name": "Ambiguous Competing Root Causes",
+      "trigger": "similar_cause_scores",
+      "condition_metric": "cause_score_margin",
+      "operator": "lt",
+      "threshold": 0.05,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Top root causes have indistinguishable confidence margins"
+    },
+    {
+      "rule_id": "ESC-004-MISSING-COLUMNS",
+      "name": "Missing Required Schema Columns",
+      "trigger": "missing_required_columns",
+      "condition_metric": "missing_required_columns_count",
+      "operator": "gt",
+      "threshold": 0,
+      "action": "workflow_pause",
+      "severity": "critical",
+      "message": "Critical feature columns missing from dataset"
+    },
+    {
+      "rule_id": "ESC-005-MAX-RETRIES",
+      "name": "Task Max Retries Exceeded",
+      "trigger": "max_retries_exceeded",
+      "condition_metric": "retry_count",
+      "operator": "gte",
+      "threshold": 3,
+      "action": "workflow_escalation",
+      "severity": "critical",
+      "message": "Task failed repeatedly after 3 retry attempts"
+    },
+    {
+      "rule_id": "ESC-006-HIGH-IMPACT-ACTION",
+      "name": "High-Impact Business Recommendation",
+      "trigger": "high_impact_action",
+      "condition_metric": "business_impact_level",
+      "operator": "eq",
+      "threshold": "high",
+      "action": "human_review",
+      "severity": "warning",
+      "message": "Recommendation carries high operational/financial impact; supervisor signoff required"
+    }
+  ],
+  "global_conditions": [],
+  "metadata": {
+    "raw_goal": "Perform complete exploratory data profiling, quality audit, and statistical summary on dataset.",
+    "domain": "general",
+    "intent_type": "dataset_analysis",
+    "dataset": "complete exploratory data",
+    "time_scope": null,
+    "analysis_requirements": [
+      "data quality audit",
+      "univariate and bivariate profiling",
+      "correlation and association analysis",
+      "statistical hypothesis testing",
+      "key findings and executive report generation"
+    ],
+    "topological_order": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006",
+      "T007",
+      "T008",
+      "T009",
+      "T010",
+      "T011",
+      "T012"
+    ]
+  }
+}

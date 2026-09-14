@@ -1,0 +1,37 @@
+{
+  "scenario_id": "SC-REV-002",
+  "name": "Revenue Growth Drivers",
+  "description": "Examine positive revenue growth of 12% driven by mid-market customer acquisition.",
+  "category": "sales",
+  "dataset": "data/sales_growth.csv",
+  "user_goal": "Analyze the factors driving positive revenue growth this fiscal year.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T011",
+    "T012",
+    "T013"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "eda_analysis",
+    "root_cause_analysis",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "sales growth drivers"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-REV-002",
+  "difficulty": "easy",
+  "tags": [
+    "sales",
+    "growth"
+  ]
+}

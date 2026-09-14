@@ -1,0 +1,39 @@
+{
+  "scenario_id": "SC-EDGE-003",
+  "name": "Critical Dilemma: Competing Root Causes",
+  "description": "Price increase vs. competitor promo exhibit identical effect sizes (margin < 0.05); agent must escalate.",
+  "category": "edge_case",
+  "dataset": "data/conflicting_causes.csv",
+  "user_goal": "Determine whether price increase or competitor promotion caused the drop.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T011"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "eda_analysis",
+    "root_cause_analysis"
+  ],
+  "expected_knowledge": [
+    "competing cause resolution"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [
+    "ESC-CONFLICT",
+    "similar_cause_scores"
+  ],
+  "ground_truth_id": "GT-EDGE-003",
+  "difficulty": "extreme",
+  "tags": [
+    "edge_case",
+    "dilemma",
+    "conflict_resolution",
+    "escalation"
+  ]
+}

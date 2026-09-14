@@ -1,0 +1,388 @@
+{
+  "GT-REV-001": {
+    "ground_truth_id": "GT-REV-001",
+    "scenario_id": "SC-REV-001",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "Total revenue decline magnitude",
+        "metric_name": "decline_magnitude",
+        "expected_value": 180000.0,
+        "tolerance_pct": 0.05,
+        "is_critical": true
+      },
+      {
+        "fact_id": "F-02",
+        "description": "Decline rate",
+        "metric_name": "decline_rate",
+        "expected_value": 0.18,
+        "tolerance_pct": 0.05,
+        "is_critical": true
+      },
+      {
+        "fact_id": "F-03",
+        "description": "Baseline revenue",
+        "metric_name": "baseline_revenue",
+        "expected_value": 1000000.0,
+        "tolerance_pct": 0.05,
+        "is_critical": false
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "Price Increase in Enterprise Tier",
+        "min_score": 0.7,
+        "max_rank": 1
+      },
+      {
+        "cause": "pricing modification",
+        "min_score": 0.65,
+        "max_rank": 2
+      },
+      {
+        "cause": "enterprise churn",
+        "min_score": 0.6,
+        "max_rank": 2
+      }
+    ],
+    "forbidden_claims": [
+      "Revenue increased during Q2 and Q3",
+      "Hardware failure caused 100% of the decline",
+      "Competitor promotion was the sole primary cause"
+    ],
+    "acceptable_alternative_tools": {
+      "eda_analysis": [
+        "statistical_analysis",
+        "detect_anomalies"
+      ],
+      "generate_report": [
+        "generate_visualization"
+      ]
+    },
+    "expected_recommendation_themes": [
+      "pricing",
+      "tier",
+      "grandfathered discount",
+      "monitor"
+    ],
+    "numerical_tolerances": {
+      "decline_rate": 0.02,
+      "decline_magnitude": 10000.0
+    }
+  },
+  "GT-REV-002": {
+    "ground_truth_id": "GT-REV-002",
+    "scenario_id": "SC-REV-002",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "Revenue growth rate",
+        "metric_name": "growth_rate",
+        "expected_value": 0.12,
+        "tolerance_pct": 0.05,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "mid-market acquisition",
+        "min_score": 0.7,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Revenue suffered severe decline"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "expansion",
+      "acquisition"
+    ],
+    "numerical_tolerances": {
+      "growth_rate": 0.02
+    }
+  },
+  "GT-REV-003": {
+    "ground_truth_id": "GT-REV-003",
+    "scenario_id": "SC-REV-003",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "Gross revenue increase",
+        "metric_name": "gross_revenue_change",
+        "expected_value": 0.08,
+        "tolerance_pct": 0.05,
+        "is_critical": false
+      },
+      {
+        "fact_id": "F-02",
+        "description": "Net margin contraction",
+        "metric_name": "net_margin_change",
+        "expected_value": -0.14,
+        "tolerance_pct": 0.05,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "discount rate escalation",
+        "min_score": 0.75,
+        "max_rank": 1
+      },
+      {
+        "cause": "price erosion",
+        "min_score": 0.65,
+        "max_rank": 2
+      }
+    ],
+    "forbidden_claims": [
+      "Net profits improved proportionally"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "discount governance",
+      "margin protection"
+    ],
+    "numerical_tolerances": {
+      "net_margin_change": 0.02
+    }
+  },
+  "GT-CUST-001": {
+    "ground_truth_id": "GT-CUST-001",
+    "scenario_id": "SC-CUST-001",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "At risk segment concentration",
+        "metric_name": "churn_segment_size",
+        "expected_value": 3400,
+        "tolerance_pct": 0.1,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "contract renewal friction",
+        "min_score": 0.7,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Zero customer churn detected"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "proactive outreach",
+      "CSM engagement"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-CUST-002": {
+    "ground_truth_id": "GT-CUST-002",
+    "scenario_id": "SC-CUST-002",
+    "expected_facts": [],
+    "acceptable_causes": [
+      {
+        "cause": "behavioral tier distribution",
+        "min_score": 0.6,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "targeted campaigns"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-ANOM-001": {
+    "ground_truth_id": "GT-ANOM-001",
+    "scenario_id": "SC-ANOM-001",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "Outlier count",
+        "metric_name": "anomalies_detected",
+        "expected_value": 14,
+        "tolerance_pct": 0.15,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "batch processing surge",
+        "min_score": 0.75,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Data has no anomalous outliers"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "batch smoothing"
+    ],
+    "numerical_tolerances": {
+      "anomalies_detected": 2.0
+    }
+  },
+  "GT-ANOM-002": {
+    "ground_truth_id": "GT-ANOM-002",
+    "scenario_id": "SC-ANOM-002",
+    "expected_facts": [],
+    "acceptable_causes": [
+      {
+        "cause": "organic variance",
+        "min_score": 0.5,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Critical security breach confirmed"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "extended observation"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-EDGE-001": {
+    "ground_truth_id": "GT-EDGE-001",
+    "scenario_id": "SC-EDGE-001",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "High missing rate",
+        "metric_name": "missing_rate",
+        "expected_value": 0.28,
+        "tolerance_pct": 0.1,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "ingestion pipeline failure",
+        "min_score": 0.8,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Data is clean and fully verified"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "data remediation",
+      "human review"
+    ],
+    "numerical_tolerances": {
+      "missing_rate": 0.05
+    }
+  },
+  "GT-EDGE-002": {
+    "ground_truth_id": "GT-EDGE-002",
+    "scenario_id": "SC-EDGE-002",
+    "expected_facts": [],
+    "acceptable_causes": [],
+    "forbidden_claims": [
+      "Revenue successfully computed as $500,000"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "schema fix"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-EDGE-003": {
+    "ground_truth_id": "GT-EDGE-003",
+    "scenario_id": "SC-EDGE-003",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "Narrow cause margin",
+        "metric_name": "cause_score_margin",
+        "expected_value": 0.04,
+        "tolerance_pct": 0.5,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "Ambiguous competing root causes",
+        "min_score": 0.7,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Price Increase is definitively the single exclusive cause with 100% certainty"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "escalate to analyst",
+      "human review"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-EDGE-004": {
+    "ground_truth_id": "GT-EDGE-004",
+    "scenario_id": "SC-EDGE-004",
+    "expected_facts": [],
+    "acceptable_causes": [],
+    "forbidden_claims": [
+      "Model trained with 99.9% statistical confidence"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "gather larger sample size"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-EDGE-005": {
+    "ground_truth_id": "GT-EDGE-005",
+    "scenario_id": "SC-EDGE-005",
+    "expected_facts": [
+      {
+        "fact_id": "F-01",
+        "description": "High quality score",
+        "metric_name": "quality_score",
+        "expected_value": 0.98,
+        "tolerance_pct": 0.05,
+        "is_critical": true
+      }
+    ],
+    "acceptable_causes": [
+      {
+        "cause": "Clean data stream verified",
+        "min_score": 0.8,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "Data cleaning task was mandatory"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "proceed to advanced modeling"
+    ],
+    "numerical_tolerances": {}
+  },
+  "GT-EDGE-006": {
+    "ground_truth_id": "GT-EDGE-006",
+    "scenario_id": "SC-EDGE-006",
+    "expected_facts": [],
+    "acceptable_causes": [
+      {
+        "cause": "IO disk failure",
+        "min_score": 0.8,
+        "max_rank": 1
+      }
+    ],
+    "forbidden_claims": [
+      "All 5 tasks completed successfully"
+    ],
+    "acceptable_alternative_tools": {},
+    "expected_recommendation_themes": [
+      "infrastructure repair"
+    ],
+    "numerical_tolerances": {}
+  }
+}

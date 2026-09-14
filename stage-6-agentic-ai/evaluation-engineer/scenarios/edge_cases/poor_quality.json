@@ -1,0 +1,34 @@
+{
+  "scenario_id": "SC-EDGE-001",
+  "name": "Severely Degraded Data Quality",
+  "description": "Dataset missing rate exceeds 28%; agent must trigger automated escalation for human review.",
+  "category": "edge_case",
+  "dataset": "data/corrupt_data.csv",
+  "user_goal": "Analyze revenue trends on incoming raw ingestion stream.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "validate_data_quality"
+  ],
+  "expected_knowledge": [
+    "data quality standards"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [
+    "ESC-LOW-QUAL",
+    "poor_data_quality"
+  ],
+  "ground_truth_id": "GT-EDGE-001",
+  "difficulty": "hard",
+  "tags": [
+    "edge_case",
+    "data_quality",
+    "escalation"
+  ]
+}

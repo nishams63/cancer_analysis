@@ -1,0 +1,34 @@
+{
+  "scenario_id": "SC-ANOM-001",
+  "name": "High Severity Outlier Spike",
+  "description": "Isolate extreme transaction volume spike (z-score > 4.5) caused by holiday batch processing.",
+  "category": "anomaly",
+  "dataset": "data/anomaly_spike.csv",
+  "user_goal": "Detect and explain anomalous transaction spikes in the dataset.",
+  "expected_workflow": "WF-ANOMALY-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T004",
+    "T005"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "detect_anomalies",
+    "root_cause_analysis",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "isolation forest anomaly detection"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-ANOM-001",
+  "difficulty": "easy",
+  "tags": [
+    "anomaly",
+    "outlier"
+  ]
+}

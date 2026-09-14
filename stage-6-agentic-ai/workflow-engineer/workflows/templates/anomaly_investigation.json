@@ -1,0 +1,264 @@
+{
+  "workflow_id": "WF-ANOMALY-001",
+  "name": "Operations - Anomaly Investigation",
+  "version": "1.0",
+  "goal": "Detect, validate, and isolate root causes for statistical anomalies.",
+  "entry_task": "T001",
+  "terminal_tasks": [
+    "T006"
+  ],
+  "tasks": [
+    {
+      "task_id": "T001",
+      "name": "Load Dataset",
+      "description": "Load operational data stream.",
+      "task_type": "ingestion",
+      "tool": "load_dataset",
+      "dependencies": [],
+      "required_inputs": [],
+      "expected_outputs": [
+        "raw_dataframe"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T002",
+      "name": "Detect Anomalies",
+      "description": "Run multi-method statistical and machine learning anomaly detection.",
+      "task_type": "anomaly_detection",
+      "tool": "detect_anomalies",
+      "dependencies": [
+        "T001"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "detected_anomalies",
+        "anomaly_scores"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": {
+        "query": "Isolation Forest and Tukey IQR fences for anomaly detection",
+        "category": "anomaly_detection",
+        "subcategory": null,
+        "top_k": 2
+      },
+      "metadata": {}
+    },
+    {
+      "task_id": "T003",
+      "name": "Validate Anomaly Integrity",
+      "description": "Verify whether flagged anomalies are measurement artifacts or genuine events.",
+      "task_type": "validation",
+      "tool": "validate_data_quality",
+      "dependencies": [
+        "T002"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "validated_anomalies"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T004",
+      "name": "Historical Baseline Comparison",
+      "description": "Compare anomalous window against rolling historical distributions.",
+      "task_type": "statistical_analysis",
+      "tool": "statistical_analysis",
+      "dependencies": [
+        "T003"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "historical_deviation_metrics"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T005",
+      "name": "Investigate Anomaly Root Causes",
+      "description": "Rank correlated features and isolate driving factors for abnormal state.",
+      "task_type": "root_cause_analysis",
+      "tool": "root_cause_analysis",
+      "dependencies": [
+        "T004"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "ranked_causes",
+        "root_cause_confidence"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    },
+    {
+      "task_id": "T006",
+      "name": "Generate Anomaly Incident Report",
+      "description": "Compile technical diagnostic report detailing causes and mitigations.",
+      "task_type": "reporting",
+      "tool": "generate_report",
+      "dependencies": [
+        "T005"
+      ],
+      "required_inputs": [],
+      "expected_outputs": [
+        "incident_report_markdown"
+      ],
+      "conditions": [],
+      "failure_policy": "retry",
+      "retry_policy": {
+        "max_retries": 3,
+        "backoff_factor": 2.0,
+        "initial_delay_sec": 1.0,
+        "fallback_task_id": null
+      },
+      "priority": "medium",
+      "status": "pending",
+      "knowledge_retrieval": null,
+      "metadata": {}
+    }
+  ],
+  "escalation_rules": [
+    {
+      "rule_id": "ESC-001-POOR-QUALITY",
+      "name": "Critical Data Quality Failure",
+      "trigger": "poor_data_quality",
+      "condition_metric": "quality_score",
+      "operator": "lt",
+      "threshold": 0.5,
+      "action": "human_review",
+      "severity": "critical",
+      "message": "Dataset quality score is below minimum viable analysis threshold"
+    },
+    {
+      "rule_id": "ESC-002-LOW-CONFIDENCE-RCA",
+      "name": "Low Confidence Root Cause",
+      "trigger": "conflicting_evidence",
+      "condition_metric": "root_cause_confidence",
+      "operator": "lt",
+      "threshold": 0.6,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Root cause model confidence fell below acceptable decision threshold"
+    },
+    {
+      "rule_id": "ESC-003-SIMILAR-CAUSE-SCORES",
+      "name": "Ambiguous Competing Root Causes",
+      "trigger": "similar_cause_scores",
+      "condition_metric": "cause_score_margin",
+      "operator": "lt",
+      "threshold": 0.05,
+      "action": "human_review",
+      "severity": "high",
+      "message": "Top root causes have indistinguishable confidence margins"
+    },
+    {
+      "rule_id": "ESC-004-MISSING-COLUMNS",
+      "name": "Missing Required Schema Columns",
+      "trigger": "missing_required_columns",
+      "condition_metric": "missing_required_columns_count",
+      "operator": "gt",
+      "threshold": 0,
+      "action": "workflow_pause",
+      "severity": "critical",
+      "message": "Critical feature columns missing from dataset"
+    },
+    {
+      "rule_id": "ESC-005-MAX-RETRIES",
+      "name": "Task Max Retries Exceeded",
+      "trigger": "max_retries_exceeded",
+      "condition_metric": "retry_count",
+      "operator": "gte",
+      "threshold": 3,
+      "action": "workflow_escalation",
+      "severity": "critical",
+      "message": "Task failed repeatedly after 3 retry attempts"
+    },
+    {
+      "rule_id": "ESC-006-HIGH-IMPACT-ACTION",
+      "name": "High-Impact Business Recommendation",
+      "trigger": "high_impact_action",
+      "condition_metric": "business_impact_level",
+      "operator": "eq",
+      "threshold": "high",
+      "action": "human_review",
+      "severity": "warning",
+      "message": "Recommendation carries high operational/financial impact; supervisor signoff required"
+    }
+  ],
+  "global_conditions": [],
+  "metadata": {
+    "raw_goal": "Detect and investigate unusual transaction spikes and statistical anomalies in telemetry table.",
+    "domain": "operations",
+    "intent_type": "anomaly_investigation",
+    "dataset": "in telemetry table",
+    "time_scope": null,
+    "analysis_requirements": [
+      "statistical anomaly detection",
+      "multivariate outlier validation",
+      "historical baseline comparison",
+      "cohort anomaly segmentation",
+      "root cause ranking and explanation"
+    ],
+    "topological_order": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005",
+      "T006"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "scenario_id": "SC-CUST-001",
+  "name": "Enterprise Churn Investigation",
+  "description": "Analyze customer retention metrics and identify segments with highest churn risk.",
+  "category": "customer",
+  "dataset": "data/customer_churn.csv",
+  "user_goal": "Identify high-risk customer segments and recommend retention interventions.",
+  "expected_workflow": "WF-CUSTOMER-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T007",
+    "T008"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "segment_customers",
+    "statistical_analysis",
+    "generate_recommendation"
+  ],
+  "expected_knowledge": [
+    "churn risk factors"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-CUST-001",
+  "difficulty": "medium",
+  "tags": [
+    "customer",
+    "churn"
+  ]
+}

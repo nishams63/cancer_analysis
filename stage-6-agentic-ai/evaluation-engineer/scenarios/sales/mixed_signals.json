@@ -1,0 +1,40 @@
+{
+  "scenario_id": "SC-REV-003",
+  "name": "Mixed Signal Margin Analysis",
+  "description": "Gross revenue increased 8% while net profit margins fell 14% due to aggressive discounting.",
+  "category": "sales",
+  "dataset": "data/sales_mixed.csv",
+  "user_goal": "Analyze why profit margin dropped despite higher top-line transaction volume.",
+  "expected_workflow": "WF-REVENUE-001",
+  "expected_tasks": [
+    "T001",
+    "T002",
+    "T003",
+    "T005",
+    "T006",
+    "T010",
+    "T011",
+    "T012",
+    "T013"
+  ],
+  "expected_tools": [
+    "load_dataset",
+    "profile_dataset",
+    "eda_analysis",
+    "statistical_analysis",
+    "root_cause_analysis",
+    "generate_report"
+  ],
+  "expected_knowledge": [
+    "margin compression factors"
+  ],
+  "expected_branches": [],
+  "expected_escalations": [],
+  "ground_truth_id": "GT-REV-003",
+  "difficulty": "hard",
+  "tags": [
+    "sales",
+    "margin",
+    "discounting"
+  ]
+}
