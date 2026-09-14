@@ -12,11 +12,34 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault(); setBusy(true); setError("");
-    const data = new FormData(e.currentTarget);
-    const result = await signIn("credentials", { email: data.get("email"), password: data.get("password"), redirect: false });
-    setBusy(false);
-    if (result?.ok) { router.push("/overview"); router.refresh(); } else setError("Use the demo credentials shown below.");
+    e.preventDefault();
+    setBusy(true);
+    setError("");
+    try {
+      const data = new FormData(e.currentTarget);
+      const email = data.get("email") as string;
+      const password = data.get("password") as string;
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+        callbackUrl: "/overview",
+      });
+      setBusy(false);
+      if (result?.ok) {
+        router.push("/overview");
+        router.refresh();
+      } else {
+        if (result?.error === "Configuration") {
+          setError("Authentication configuration error. Please verify server environment variables.");
+        } else {
+          setError("Invalid credentials. Use the demo credentials shown below.");
+        }
+      }
+    } catch (err) {
+      setBusy(false);
+      setError("An unexpected authentication error occurred. Please try again.");
+    }
   }
 
   return (

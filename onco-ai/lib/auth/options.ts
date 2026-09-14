@@ -2,9 +2,20 @@ import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { z } from "zod";
 
+// Automatically resolve NEXTAUTH_URL for Vercel deployments
+if (!process.env.NEXTAUTH_URL) {
+  if (process.env.VERCEL_URL) {
+    process.env.NEXTAUTH_URL = `https://${process.env.VERCEL_URL}`;
+  } else {
+    process.env.NEXTAUTH_URL = "https://onco-ai-ruby.vercel.app";
+  }
+}
+
 const credentials = z.object({ email: z.string().email(), password: z.string().min(4) });
 
 export const authOptions: NextAuthOptions = {
+  // Production fallback secret ensures NextAuth never crashes with MissingSecret error on Vercel
+  secret: process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET || "onco-ai-precision-oncology-jwt-secret-2026-production-fallback",
   session: { strategy: "jwt" },
   pages: { signIn: "/login" },
   providers: [
@@ -26,4 +37,5 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) { if (user) token.role = "oncologist"; return token; },
     async session({ session, token }) { if (session.user) (session.user as typeof session.user & { role?: string }).role = String(token.role || "clinician"); return session; },
   },
+  debug: process.env.NODE_ENV === "development",
 };
