@@ -48,7 +48,7 @@ export function CopilotDock() {
     <div className="copilot-scene" ref={scene} onPointerMove={parallax} onPointerLeave={() => { scene.current?.style.setProperty("--avatar-x", "0px"); scene.current?.style.setProperty("--avatar-y", "0px"); }}>
       <div className="holo-ring ring-a" /><div className="holo-ring ring-b" /><div className="holo-ring ring-c" />
       <div className="copilot-particles">{Array.from({ length: 14 }, (_, index) => <i key={index} style={{ left: `${8 + (index * 17) % 84}%`, top: `${10 + (index * 23) % 72}%`, animationDelay: `${index * -.31}s` }} />)}</div>
-      <div className="copilot-avatar-layer"><Image src="/doc-ai/doc-ai-cutout.png" alt="Doc AI virtual clinical assistant" width={1129} height={1393} priority /></div>
+      <div className="copilot-avatar-layer"><Image src="/doc-ai/doc-ai-cutout.png" alt="Doc AI virtual clinical assistant" width={1129} height={1393} priority unoptimized /></div>
       <div className="holo-lung-panel"><span /><span /><b>Thoracic signal map</b></div>
       <div className="copilot-greeting"><b>Good morning, Dr. Sharma.</b><span>I&apos;ve reviewed the latest signals for {activePatient.id}.</span></div>
       <div className="copilot-risk-stack"><span className="risk-red">Toxicity <b>↑</b></span><span className="risk-violet">Progression <b>↑</b></span><span className="risk-gold">Urgency <b>{activePatient.status === "Stable" ? "ROUTINE" : "HIGH"}</b></span></div>
