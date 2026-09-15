@@ -176,3 +176,107 @@ python stage-6-agentic-ai/agent-engineer/examples/run_revenue_analysis.py
 ```bash
 uvicorn api.server:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+
+---
+
+## 9. Deliberative AI Agent Architecture (Oncology Clinical Decision Support)
+
+The Stage 06 Agent Engineer includes a specialized **Deliberative AI Agent** (`deliberation.DeliberativeAgent`) designed for Oncology Clinical Decision Support (CDSS). Unlike purely reactive ReAct loops that immediately call tools upon receiving an instruction, the deliberative agent reasons across an explicit, auditable 12-stage deliberation cycle.
+
+### Core Architectural Principle: Clinical Decision Support (CDSS)
+> **CRITICAL CLINICAL BOUNDARY**:  
+> The system is strictly a **Clinical Decision Support System**. It does **NOT** autonomously diagnose, prescribe treatment regimens, or replace an oncologist. The treating clinician retains sole clinical responsibility for patient care. Every output includes a mandatory non-autonomous clinical disclaimer.
+
+### 12-Stage Deliberation Reasoning Cycle
+
+```
+                    USER
+                      │
+                      ▼
+             Clinical Question
+                      │
+                      ▼
+          ┌─────────────────────┐
+          │ DELIBERATIVE AGENT  │
+          └──────────┬──────────┘
+                     │
+                     ▼
+          1. UNDERSTAND QUESTION & CONTEXT
+                     │
+                     ▼
+          2. BUILD & VALIDATE CLINICAL PLAN
+                     │
+                     ▼
+          3. IDENTIFY EVIDENCE NEEDS
+                     │
+          ┌──────────┴──────────┐
+          ▼                     ▼
+ Knowledge Engineer       Trusted Patient Data
+          │                     │
+          └──────────┬──────────┘
+                     ▼
+          4. RETRIEVE EVIDENCE
+                     │
+                     ▼
+          5. ANALYZE & SYNTHESIZE EVIDENCE
+                     │
+                     ▼
+          6. FORMULATE COMPETING HYPOTHESES
+                     │
+                     ▼
+          7. COMPARE HYPOTHESES (Score & Rank)
+                     │
+                     ▼
+          8. CHECK CONTRADICTIONS & TOXICITY
+                     │
+                     ▼
+          9. ASSESS UNCERTAINTY (Low/Mod/High/Critical)
+                     │
+               ┌─────┴─────┐
+               ▼           ▼
+            SAFE        UNCERTAIN / CONFLICT
+               │           │
+               │           ▼
+               │      10. REQUEST HUMAN REVIEW (WAITING_FOR_HUMAN)
+               │           │
+               └─────┬─────┘
+                     ▼
+          11. EXECUTE & VERIFY CONCLUSION (7 Safety Gates)
+                     │
+                     ▼
+          12. PRESENT CLINICAL DECISION SUPPORT SUMMARY
+```
+
+### The 7 Clinical Safety Gates
+
+A consequential clinical recommendation cannot bypass these 7 deterministic safety gates:
+1. **Gate 1 (Patient Facts Validated)**: Primary cancer type, clinical stage, and key patient identifiers verified against trusted EMR records; missing facts marked `MISSING_INFORMATION`.
+2. **Gate 2 (Plan Validated)**: Deliberation plan contains actionable steps, relevance confirmation, and explicit safety checks.
+3. **Gate 3 (Evidence Sufficient)**: Non-zero validated clinical guidelines retrieved from Knowledge Engineer.
+4. **Gate 4 (Contradictions Checked)**: Audit for fact-vs-fact (e.g., stage I vs distant metastases) and fact-vs-option (e.g., cisplatin in renal failure, osimertinib in active ILD).
+5. **Gate 5 (Uncertainty Acceptable)**: Epistemic and aleatoric uncertainty quantified; high/critical uncertainty halts execution.
+6. **Gate 6 (Human Review Evaluated)**: Consequential options, conflicting signals, or high uncertainty mandate `WAITING_FOR_HUMAN`.
+7. **Gate 7 (Conclusion Verified)**: Claims substantiated by evidence, numerical bounds verified, and non-autonomous disclaimer attached.
+
+### Private Reasoning Safety
+The Deliberative Agent strictly prevents the leakage or persistence of raw chain-of-thought, token-level scratchpads, or private internal reasoning. All trace milestones are recorded as auditable structured event summaries:
+- `QUESTION_RECEIVED`
+- `CONTEXT_VALIDATED`
+- `PLAN_CREATED`
+- `EVIDENCE_REQUIREMENTS_IDENTIFIED`
+- `KNOWLEDGE_RETRIEVED`
+- `EVIDENCE_ANALYZED`
+- `HYPOTHESES_GENERATED`
+- `HYPOTHESES_COMPARED`
+- `CONTRADICTION_DETECTED` / `CONTRADICTIONS_AUDITED`
+- `UNCERTAINTY_ASSESSED`
+- `HUMAN_REVIEW_REQUIRED` (or `HUMAN_APPROVED` / `HUMAN_REJECTED`)
+- `SAFETY_CHECK_COMPLETED`
+- `CONCLUSION_VERIFIED`
+- `RESULT_GENERATED`
+
+### Running the Oncology Deliberation Demo
+```powershell
+.venv\Scripts\python.exe stage-6-agentic-ai/agent-engineer/examples/run_oncology_deliberation.py
+```

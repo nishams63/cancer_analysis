@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Callable, Dict, Any, List, Optional
 from .contracts import ToolMetadata, ToolRiskLevel
 from . import adapters
+from . import clinical_adapters
 
 
 class ToolRegistry:
@@ -108,4 +109,11 @@ def get_default_registry() -> ToolRegistry:
         adapters.human_review,
         metadata=ToolMetadata(name="human_review", description="Escalate for human review", risk_level=ToolRiskLevel.HIGH),
     )
+    # Oncology Clinical Decision Support Tools
+    reg.register("validate_patient_facts", clinical_adapters.validate_patient_facts)
+    reg.register("retrieve_clinical_guidelines", clinical_adapters.retrieve_clinical_guidelines)
+    reg.register("analyze_clinical_evidence", clinical_adapters.analyze_clinical_evidence)
+    reg.register("check_contraindications", clinical_adapters.check_contraindications)
+    reg.register("calculate_clinical_uncertainty", clinical_adapters.calculate_clinical_uncertainty)
+    reg.register("format_clinician_summary", clinical_adapters.format_clinician_summary)
     return reg

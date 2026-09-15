@@ -2,6 +2,7 @@
 from .agent import RunStatus, AgentMetrics, AgentState
 from .trace import EventType, TraceEvent
 from .result import AgentResult
+from . import deliberation
 
 __all__ = [
     "RunStatus",
@@ -10,4 +11,5 @@ __all__ = [
     "EventType",
     "TraceEvent",
     "AgentResult",
+    "deliberation",
 ]

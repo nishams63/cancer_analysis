@@ -55,3 +55,15 @@ class ExecutionMetrics(BaseModel):
     retry_count: int = 0
     human_overrides: int = 0
     status: str = "completed"
+
+
+class DeliberationMetrics(BaseModel):
+    """Metrics specifically assessing deliberative reasoning fidelity."""
+    planning_accuracy: float = Field(1.0, ge=0.0, le=1.0, description="Completeness and safety of created analytical plan")
+    evidence_completeness: float = Field(1.0, ge=0.0, le=1.0, description="Proportion of required clinical evidence gathered")
+    hypothesis_comparison_score: float = Field(1.0, ge=0.0, le=1.0, description="Quality of multi-factor hypothesis comparison")
+    contradiction_detection_rate: float = Field(1.0, ge=0.0, le=1.0, description="Precision of identifying clinical conflicts")
+    uncertainty_calibration: float = Field(1.0, ge=0.0, le=1.0, description="Calibration of uncertainty vs evidence divergence")
+    replanning_success_rate: float = Field(1.0, ge=0.0, le=1.0, description="Success rate of bounded replanning adaptations")
+    verification_pass_rate: float = Field(1.0, ge=0.0, le=1.0, description="Pre-presentation verification checklist pass rate")
+    composite_deliberation_score: float = Field(1.0, ge=0.0, le=1.0, description="Overall weighted deliberative score")

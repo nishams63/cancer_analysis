@@ -33,6 +33,24 @@ class FailureCategory(str, Enum):
     F18_UNAUTHORIZED_TOOL = "F18_UNAUTHORIZED_TOOL"
     F19_INCOMPLETE_RESULT = "F19_INCOMPLETE_RESULT"
     F20_UNSUPPORTED_RECOMMENDATION = "F20_UNSUPPORTED_RECOMMENDATION"
+    # Deliberation Failure Taxonomy (D01 - D14)
+    D01_NO_PLAN = "D01_NO_PLAN"
+    D02_INCOMPLETE_PLAN = "D02_INCOMPLETE_PLAN"
+    D03_WRONG_PLAN = "D03_WRONG_PLAN"
+    D04_PREMATURE_CONCLUSION = "D04_PREMATURE_CONCLUSION"
+    D05_INSUFFICIENT_EVIDENCE = "D05_INSUFFICIENT_EVIDENCE"
+    D06_FAILED_CONTRADICTION_DETECTION = "D06_FAILED_CONTRADICTION_DETECTION"
+    D07_UNSUPPORTED_HYPOTHESIS = "D07_UNSUPPORTED_HYPOTHESIS"
+    D08_UNCALIBRATED_CONFIDENCE = "D08_UNCALIBRATED_CONFIDENCE"
+    D09_FAILED_REPLANNING = "D09_FAILED_REPLANNING"
+    D10_MISSED_HUMAN_REVIEW = "D10_MISSED_HUMAN_REVIEW"
+    D11_FAILED_VERIFICATION = "D11_FAILED_VERIFICATION"
+    D12_PATIENT_FACT_HALLUCINATION = "D12_PATIENT_FACT_HALLUCINATION"
+    D13_EVIDENCE_MISATTRIBUTION = "D13_EVIDENCE_MISATTRIBUTION"
+    D14_UNSUPPORTED_RECOMMENDATION = "D14_UNSUPPORTED_RECOMMENDATION"
+
+
+DeliberationFailureCategory = FailureCategory
 
 
 class FailureRecord(BaseModel):
@@ -41,7 +59,7 @@ class FailureRecord(BaseModel):
     scenario_id: str = Field(..., description="Scenario where defect occurred")
     run_id: str = Field(..., description="Agent execution run ID")
     task_id: Optional[str] = Field(None, description="Task ID where failure occurred")
-    category: FailureCategory = Field(..., description="Taxonomy classification code")
+    category: FailureCategory = Field(..., description="Taxonomy classification code e.g. F01 or D01")
     severity: FailureSeverity = Field(..., description="Impact severity classification")
     expected: str = Field(..., description="Expected behavior or contract")
     actual: str = Field(..., description="Actual agent behavior observed")
