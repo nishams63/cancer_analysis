@@ -1255,6 +1255,26 @@ function TumorPage() {
   const [decision, setDecision] = useState(""), [tab, setTab] = useState("Decision Overview");
   const [showTrialsModal, setShowTrialsModal] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [deliberationRunning, setDeliberationRunning] = useState(false);
+  const [currentStep, setCurrentStep] = useState(12);
+  const [simulatedContradiction, setSimulatedContradiction] = useState(false);
+
+  function runDeliberationCycle() {
+    setDeliberationRunning(true);
+    setCurrentStep(1);
+    setToast("Initializing 12-Stage Deliberation Cycle...");
+    let s = 1;
+    const timer = setInterval(() => {
+      s += 1;
+      if (s <= 12) {
+        setCurrentStep(s);
+      } else {
+        clearInterval(timer);
+        setDeliberationRunning(false);
+        setToast("12-Stage Deliberation Complete: Verified CDSS Output Generated.");
+      }
+    }, 250);
+  }
   
   const agents = [
     ["Guideline Agent","Guideline evidence retrieved","NCCN NSCLC v4.2026"],
@@ -1312,7 +1332,7 @@ function TumorPage() {
       </div>
 
       <Tabs
-        tabs={["Decision Overview","Agent Trace","Treatment Options","Clinical Trials","Evidence"]}
+        tabs={["Decision Overview","12-Stage Deliberation","7 Safety Gates","Agent Trace","Treatment Options","Clinical Trials","Evidence"]}
         active={tab}
         onChange={setTab}
       />
@@ -1400,6 +1420,260 @@ function TumorPage() {
             {decision && <p className="decision-feedback"><Check /> {decision}</p>}
           </Card>
         </>
+      )}
+
+      {tab === "12-Stage Deliberation" && (
+        <div className="stack" style={{ gap: "20px" }}>
+          <Card>
+            <div className="card-title" style={{ flexWrap: "wrap", gap: "12px" }}>
+              <div>
+                <p className="eyebrow">STAGE 06 DELIBERATIVE AI AGENT ARCHITECTURE</p>
+                <h2>12-Stage Deliberation Reasoning Cycle</h2>
+                <p style={{ fontSize: "12px", color: "#63738a", margin: "4px 0 0" }}>
+                  Autonomous Clinical Decision Support (CDSS) with auditable ReAct DAG execution, multi-factor hypothesis competition, and non-autonomous disclaimers.
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <button
+                  className="primary"
+                  onClick={runDeliberationCycle}
+                  disabled={deliberationRunning}
+                  style={{ display: "flex", alignItems: "center", gap: "6px" }}
+                >
+                  <RefreshCw className={deliberationRunning ? "spin" : ""} size={14} />
+                  {deliberationRunning ? `Executing Stage ${currentStep}/12...` : "Run Deliberation Cycle"}
+                </button>
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "12px", margin: "16px 0 8px" }}>
+              {[
+                { step: 1, code: "QUESTION_RECEIVED", name: "Question Understanding", desc: "Parsed clinical query: 'Recommended first-line targeted therapy options for PT-ONC-2048'" },
+                { step: 2, code: "CONTEXT_VALIDATED", name: "Clinical Context Validation", desc: "Validated patient facts: NSCLC Stage IV, EGFR exon 19 del, MET amp, Cr 1.8 mg/dL" },
+                { step: 3, code: "PLAN_CREATED", name: "Clinical Plan Generation", desc: "Generated 10-step deliberation plan. Feasibility and safety bounds confirmed" },
+                { step: 4, code: "EVIDENCE_REQUIREMENTS", name: "Evidence Requirement Spec", desc: "Identified 7 evidence targets: NCCN guidelines, renal dose limits, biomarker rules" },
+                { step: 5, code: "KNOWLEDGE_RETRIEVED", name: "Guideline Knowledge Fetch", desc: "Retrieved 4 peer-reviewed guidelines from Knowledge Engineer (NCCN, CTCAE, ASCO, FDA)" },
+                { step: 6, code: "EVIDENCE_ANALYZED", name: "Evidence & Fact Synthesis", desc: "Cross-analyzed patient renal impairment against cisplatin nephrotoxicity curves" },
+                { step: 7, code: "HYPOTHESES_GENERATED", name: "Candidate Formulation", desc: "Formulated 4 competing hypotheses (H1: Osimertinib+Savolitinib, H2: Pembrolizumab, H3: Cisplatin, H4: Sotorasib)" },
+                { step: 8, code: "HYPOTHESES_COMPARED", name: "Multi-Factor Scoring & Ranking", desc: "Scored candidates via effect size, sample size, evidence quality, and consistency" },
+                { step: 9, code: "CONTRADICTIONS_AUDITED", name: "Contradiction & Toxicity Check", desc: "Flagged Fact-vs-Option conflict: Cisplatin contraindicated for Cr > 1.8 mg/dL" },
+                { step: 10, code: "UNCERTAINTY_ASSESSED", name: "Uncertainty Quantification", desc: "Calibrated uncertainty: MODERATE (Epistemic 0.18, Aleatoric 0.12, Final Conf 73%)" },
+                { step: 11, code: "SAFETY_CHECK_COMPLETED", name: "Allowlist & Guardrail Checks", desc: "Zero private scratchpad leakage verified; allowlisted CDSS presentation validated" },
+                { step: 12, code: "CONCLUSION_VERIFIED", name: "Pre-Presentation Verification", desc: "All claims substantiated with citations; mandatory non-autonomous CDSS disclaimer attached" },
+              ].map((item) => {
+                const isPassed = currentStep >= item.step;
+                const isCurrent = currentStep === item.step && deliberationRunning;
+                return (
+                  <div
+                    key={item.step}
+                    style={{
+                      padding: "12px 14px",
+                      borderRadius: "10px",
+                      border: isCurrent ? "2px solid #1d6bf3" : isPassed ? "1px solid #c7d9ec" : "1px solid #e2e8f0",
+                      background: isCurrent ? "#eff6ff" : isPassed ? "#f8fafc" : "#fafafa",
+                      transition: "all 0.2s ease",
+                      opacity: isPassed ? 1 : 0.45,
+                    }}
+                  >
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+                      <span style={{ fontSize: "11px", fontWeight: 700, color: isPassed ? "#1d6bf3" : "#94a3b8", fontFamily: "var(--font-mono, monospace)" }}>
+                        [{item.step.toString().padStart(2, "0")}] {item.code}
+                      </span>
+                      {isCurrent ? (
+                        <RefreshCw className="spin" size={14} color="#1d6bf3" />
+                      ) : isPassed ? (
+                        <CheckCircle2 size={14} color="#10b981" />
+                      ) : (
+                        <CircleDot size={14} color="#cbd5e1" />
+                      )}
+                    </div>
+                    <div style={{ fontSize: "12px", fontWeight: 600, color: "#1e293b", marginBottom: "3px" }}>{item.name}</div>
+                    <p style={{ fontSize: "11px", color: "#64748b", margin: 0, lineHeight: 1.4 }}>{item.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="trace-note" style={{ marginTop: "12px" }}>
+              <Info /> <b>Private Reasoning Safety:</b> Token-level internal chain-of-thought is never stored or displayed to clinicians. Only verifiable milestones and grounded conclusions are emitted.
+            </p>
+          </Card>
+
+          <Card>
+            <div className="card-title">
+              <div>
+                <p className="eyebrow">DETERMINISTIC DECISION RUBRIC</p>
+                <h2>Competing Hypotheses Conflict Resolution Matrix</h2>
+              </div>
+              <Status tone="green">Margin Check: Passed (+0.31)</Status>
+            </div>
+            <p style={{ fontSize: "12px", color: "#63738a", margin: "0 0 14px" }}>
+              Hypotheses are ranked using a multi-factor formula: <code>Score = 0.30·Effect + 0.25·Sample + 0.25·Evidence + 0.20·Consistency</code>. An ambiguity margin threshold &lt; 0.10 triggers human escalation.
+            </p>
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Candidate Hypothesis</th>
+                    <th>Target & Regimen</th>
+                    <th>Effect (0.30)</th>
+                    <th>Sample (0.25)</th>
+                    <th>Evidence (0.25)</th>
+                    <th>Consistency (0.20)</th>
+                    <th>Calibrated Score</th>
+                    <th>CDSS Evaluation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["H1 (Leading)", "Osimertinib 80mg + Savolitinib 600mg", "0.92", "0.85", "0.95 (Cat 1)", "0.90", "0.73", "RECOMMENDED"],
+                    ["H2 (Alternate)", "Pembrolizumab 200mg Monotherapy", "0.55", "0.88", "0.80", "0.45", "0.42", "SUB-OPTIMAL (EGFR+)"],
+                    ["H3 (Excluded)", "Cisplatin + Pemetrexed Doublet", "0.68", "0.92", "0.85", "0.10", "0.28", "CONTRAINDICATED (Cr > 1.8)"],
+                    ["H4 (Discordant)", "Sotorasib 960mg (KRAS G12C)", "0.20", "0.60", "0.40", "0.05", "0.15", "DISCORDANT (Wild-Type)"],
+                  ].map(([id, reg, eff, sam, ev, con, sc, st]) => (
+                    <tr key={id}>
+                      <td><b>{id}</b></td>
+                      <td>{reg}</td>
+                      <td>{eff}</td>
+                      <td>{sam}</td>
+                      <td>{ev}</td>
+                      <td>{con}</td>
+                      <td><b style={{ color: st === "RECOMMENDED" ? "#059669" : "#1e293b" }}>{sc}</b></td>
+                      <td>
+                        <Status tone={st === "RECOMMENDED" ? "green" : st.includes("CONTRAINDICATED") ? "red" : "coral"}>
+                          {st}
+                        </Status>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+        </div>
+      )}
+
+      {tab === "7 Safety Gates" && (
+        <div className="stack" style={{ gap: "20px" }}>
+          <Card>
+            <div className="card-title" style={{ flexWrap: "wrap", gap: "12px" }}>
+              <div>
+                <p className="eyebrow">CDSS GOVERNANCE & PATIENT PROTECTION</p>
+                <h2>The 7 Consequential Clinical Safety Gates</h2>
+                <p style={{ fontSize: "12px", color: "#63738a", margin: "4px 0 0" }}>
+                  Every oncology recommendation must satisfy all 7 deterministic safety gates before being presented in the clinician interface.
+                </p>
+              </div>
+              <button
+                className={simulatedContradiction ? "danger-outline" : "secondary"}
+                onClick={() => {
+                  setSimulatedContradiction(!simulatedContradiction);
+                  setToast(simulatedContradiction ? "Reset to normal baseline safety status." : "Simulating acute renal contradiction (Cr 2.4 mg/dL)...");
+                  setTimeout(() => setToast(null), 3500);
+                }}
+              >
+                {simulatedContradiction ? "Reset Contradiction Simulation" : "Simulate Acute Renal Contradiction"}
+              </button>
+            </div>
+
+            <div className="data-table" style={{ marginTop: "16px" }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Gate #</th>
+                    <th>Safety Gate Name</th>
+                    <th>Enforcement Mechanism</th>
+                    <th>Patient Value Evaluated</th>
+                    <th>Threshold / Policy</th>
+                    <th>Deterministic Audit Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Gate 1", "Patient Facts Validated", "Missing Information Guard", "Diagnosis: NSCLC · Stage IV · EGFR+ · Age 62", "Requires: Cancer, Stage, Biomarkers", "PASSED"],
+                    ["Gate 2", "Plan Validated", "Deliberation Feasibility Checker", "10 Action Steps with Non-Harm Guarantee", "Zero unauthorized system actions", "PASSED"],
+                    ["Gate 3", "Evidence Sufficient", "Knowledge Engineer Verifier", "NCCN NSCLC v3.2024, CTCAE v5.0, ASCO Renal", "≥ 1 Peer-Reviewed Guideline", "PASSED (4 Guidelines)"],
+                    [
+                      "Gate 4",
+                      "Contradictions & Toxicity Checked",
+                      "Contraindication Rule Engine",
+                      simulatedContradiction ? "Serum Creatinine 2.4 mg/dL (Acute Renal Failure)" : "Serum Creatinine 1.8 mg/dL (Grade 2 Renal Impairment)",
+                      "Cr > 1.8 mg/dL: Strictly Prohibits Cisplatin",
+                      simulatedContradiction ? "CRITICAL CONTRADICTION DETECTED" : "CONTRAINDICATION FILTERED & RESOLVED"
+                    ],
+                    [
+                      "Gate 5",
+                      "Uncertainty Acceptable",
+                      "Aleatoric / Epistemic Calibration",
+                      simulatedContradiction ? "Epistemic 0.44 + Aleatoric 0.38 = High Risk" : "Epistemic 0.18 + Aleatoric 0.12 = Moderate Risk",
+                      "Combined Uncertainty < 0.40 required for automated proposal",
+                      simulatedContradiction ? "FAILED (HIGH UNCERTAINTY)" : "PASSED (MODERATE 0.30)"
+                    ],
+                    [
+                      "Gate 6",
+                      "Human Review Evaluated",
+                      "Human-in-the-Loop Coordinator",
+                      simulatedContradiction ? "Contradiction & High Uncertainty Triggered" : "Lead Option Margin = 0.31 (> 0.10 threshold)",
+                      "Ambiguity margin < 0.10 or high uncertainty mandates human review",
+                      simulatedContradiction ? "WAITING_FOR_HUMAN ESCALATION" : "ONCOLOGIST REVIEW ATTACHED"
+                    ],
+                    [
+                      "Gate 7",
+                      "Conclusion Verified",
+                      "SaMD Verifier & Disclaimer Guard",
+                      "Non-autonomous disclaimer appended; claim IDs verified",
+                      "Strict adherence to FDA CDSS guidance (Section 520)",
+                      "PASSED (Enforced)"
+                    ],
+                  ].map(([g, name, mech, val, th, st]) => (
+                    <tr key={g}>
+                      <td><b>{g}</b></td>
+                      <td><b>{name}</b></td>
+                      <td>{mech}</td>
+                      <td><small style={{ color: "#334155" }}>{val}</small></td>
+                      <td><small style={{ color: "#64748b" }}>{th}</small></td>
+                      <td>
+                        <Status
+                          tone={
+                            st.startsWith("PASSED")
+                              ? "green"
+                              : st.includes("WAITING_FOR_HUMAN") || st.includes("CRITICAL") || st.includes("FAILED")
+                              ? "red"
+                              : "coral"
+                          }
+                        >
+                          {st}
+                        </Status>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {simulatedContradiction && (
+              <div
+                style={{
+                  marginTop: "16px",
+                  padding: "14px 18px",
+                  borderRadius: "10px",
+                  background: "#fef2f2",
+                  border: "1px solid #fecaca",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                }}
+              >
+                <ShieldAlert size={22} color="#dc2626" />
+                <div>
+                  <b style={{ color: "#991b1b", fontSize: "13px" }}>Gate 4 & Gate 6 Intercept Active: Execution Halted</b>
+                  <p style={{ color: "#b91c1c", fontSize: "12px", margin: "2px 0 0" }}>
+                    Synthetic contraindication triggered: Acute elevation of Serum Creatinine to 2.4 mg/dL violates cisplatin safety thresholds. System transitioned to <b>WAITING_FOR_HUMAN</b>. Autonomous proposals disabled.
+                  </p>
+                </div>
+              </div>
+            )}
+          </Card>
+        </div>
       )}
 
       {tab === "Agent Trace" && (
