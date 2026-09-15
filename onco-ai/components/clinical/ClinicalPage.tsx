@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Activity, AlertTriangle, ArrowDown, ArrowRight, BadgeCheck, BrainCircuit, Check, CheckCircle2, ChevronRight, CircleDot, ClipboardCheck, Clock3, Dna, Download, ExternalLink, FileSearch, FileText, FlaskConical, Info, Microscope, Play, RefreshCw, Search, ShieldAlert, ShieldCheck, Sparkles, Square, Upload, UserPlus, UserRound, X, XCircle, Zap } from "lucide-react";
+import { Activity, AlertTriangle, ArrowDown, ArrowRight, BadgeCheck, BrainCircuit, Check, CheckCircle2, ChevronRight, CircleDot, ClipboardCheck, Clock3, Dna, Download, ExternalLink, FileSearch, FileText, FlaskConical, Info, Microscope, Play, RefreshCw, Search, ShieldAlert, ShieldCheck, Sparkles, Square, Upload, UserPlus, UserRound, X, XCircle } from "lucide-react";
 import { FactorBars, RiskRing, RocChart, TrendChart } from "@/components/charts/ClinicalCharts";
-import { factors, metrics } from "@/lib/demo-data";
+import { factors } from "@/lib/demo-data";
 import { useDocAI } from "@/components/doc-ai/DocAIProvider";
 import { usePatientStore, Patient } from "@/stores/patient-store";
 import { exportPatientPDF, exportAnalyticsPDF } from "@/lib/export-pdf";
+import { PatientDigitalTwin } from "@/components/three/PatientDigitalTwin";
 
 type PageKind = "overview" | "patients" | "patient" | "ml" | "dl" | "nlp" | "slm" | "safety" | "tumor" | "analytics" | "audit" | "integrated" | "settings";
 type TabProps = { tabs: string[]; active: string; onChange: (tab: string) => void };
@@ -118,10 +119,26 @@ function Status({ tone, children }: { tone: string; children: React.ReactNode })
   return <span className={`status status-${tone}`}><i />{children}</span>;
 }
 
-function MetricGrid() {
+function getPatientSignals(patient: Patient) {
+  const profiles: Record<string, { toxicity: number; progression: number; urgency: string; guidance: string }> = {
+    "ONC-2048": { toxicity: 72, progression: 81, urgency: "HIGH", guidance: "SAFE" },
+    "ONC-2049": { toxicity: 34, progression: 28, urgency: "ROUTINE", guidance: "SAFE" },
+    "ONC-2050": { toxicity: 64, progression: 88, urgency: "HIGH", guidance: "REVIEW" },
+  };
+  return profiles[patient.id] || { toxicity: 48, progression: 52, urgency: "REVIEW", guidance: "REVIEW" };
+}
+
+function MetricGrid({ patient }: { patient: Patient }) {
+  const signal = getPatientSignals(patient);
+  const patientMetrics = [
+    { key: "ML", label: "Toxicity Risk", value: `${signal.toxicity}%`, status: signal.toxicity >= 60 ? "HIGH" : "MONITOR", tone: signal.toxicity >= 60 ? "red" : "green" },
+    { key: "DL", label: "Progression Risk", value: `${signal.progression}%`, status: signal.progression >= 60 ? "HIGH" : "LOW", tone: signal.progression >= 60 ? "violet" : "green" },
+    { key: "NLP", label: "Clinical Urgency", value: signal.urgency, status: signal.urgency === "HIGH" ? "REVIEW" : "ROUTINE", tone: signal.urgency === "HIGH" ? "cyan" : "green" },
+    { key: "SLM", label: "Guidance", value: signal.guidance, status: signal.guidance === "SAFE" ? "GROUNDED" : "REVIEW", tone: signal.guidance === "SAFE" ? "green" : "red" },
+  ];
   return (
     <div className="metric-grid">
-      {metrics.map((m) => (
+      {patientMetrics.map((m) => (
         <Card className={`metric-card tone-${m.tone}`} key={m.key}>
           <div className="metric-top">
             <span>{m.key}</span>
@@ -285,12 +302,13 @@ function ClinicalTrialsModal({ onClose }: { onClose: () => void }) {
 }
 
 function Overview() {
-  const { activePatient } = usePatientStore();
+  const { activePatient, patients, setActivePatient } = usePatientStore();
   const [running, setRunning] = useState(false);
   const [done, setDone] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
+  const [evidence, setEvidence] = useState<string | null>(null);
   const ai = useDocAI();
-  const steps = ["Preparing patient context", "Running toxicity model", "Analyzing pathology + ctDNA", "Processing clinical report", "Generating clinical summary", "Safety validation"];
+  const steps = ["Retrieving patient context", "Running toxicity model", "Analyzing progression", "Extracting clinical entities", "Retrieving evidence", "Running safety checks", "Generating grounded response"];
   
   async function run() {
     setRunning(true);
@@ -319,33 +337,71 @@ function Overview() {
     <>
       <Header kind="overview" action={<button className="secondary" onClick={handleExportPDF}><Download /> Export PDF Brief</button>} />
       <PatientStrip patientData={activePatient} />
-      <MetricGrid />
-      <div className="two-col wide-left">
-        <Card>
+      <MetricGrid patient={activePatient} />
+      <div className="command-center-grid">
+        <PatientDigitalTwin patientId={activePatient.id} />
+        <Card className="patient-profile-card">
           <div className="card-title">
-            <div><p className="eyebrow">PATIENT JOURNEY</p><h2>Six months of connected care</h2></div>
-            <Status tone="blue">Live context</Status>
+            <div><p className="eyebrow">ACTIVE PATIENT</p><h2>{activePatient.id}</h2></div>
+            <Status tone={activePatient.status === "Stable" ? "green" : "red"}>{activePatient.status}</Status>
           </div>
-          <div className="journey">
-            {[["Diagnosis","Jan 2026"],["Treatment start","Feb 2026"],["Toxicity alert","Mar 2026"],["ctDNA increase","Apr 2026"],["AI review","May 2026"],["Latest scan","Jun 2026"]].map(([a,b],i) => (
-              <div key={a}><span className={i > 3 ? "hot" : ""}>{i < 5 ? <Check /> : <Microscope />}</span><b>{a}</b><small>{b}</small></div>
-            ))}
+          <div className="profile-identity"><span><UserRound /></span><div><b>{activePatient.age} years · {activePatient.sex}</b><small>SYNTHETIC DATA</small></div></div>
+          <div className="profile-facts">
+            <div><small>Diagnosis</small><b>{activePatient.cancer}</b></div>
+            <div><small>Stage</small><b>{activePatient.stage}</b></div>
+            <div className="wide"><small>Treatment</small><b>{activePatient.treatment}</b></div>
+            <div><small>Genomics</small><b>{activePatient.id === "ONC-2048" ? "EGFR positive" : "Profile loaded"}</b></div>
+            <div><small>ECOG</small><b>{activePatient.ecog}</b></div>
           </div>
-        </Card>
-        <Card className="insight-card">
-          <div className="insight-icon"><Zap /></div>
-          <p className="eyebrow">KEY INSIGHT</p>
-          <h2>Clinical review recommended</h2>
-          <p>Increasing ctDNA combined with elevated toxicity risk requires clinical review.</p>
-          <button className="primary" onClick={run} disabled={running}>{running ? "Analysis running…" : <>Run complete AI analysis <ArrowRight /></>}</button>
+          <div className="profile-actions">
+            <Link href={`/patients/${activePatient.id}`}>Clinical summary</Link>
+            <Link href={`/patients/${activePatient.id}?tab=Labs`}>Lab reports</Link>
+            <Link href="/dl-progression">Imaging</Link>
+            <Link href={`/patients/${activePatient.id}?tab=Genomics`}>Genomics</Link>
+          </div>
+          <div className="profile-labs"><span>Creatinine <b>{activePatient.creatinine} mg/dL</b></span><span>Hemoglobin <b>{activePatient.hemoglobin} g/dL</b></span></div>
         </Card>
       </div>
+
+      <div className="overview-intelligence-grid">
+        <Card className="progression-card">
+          <div className="card-title"><div><p className="eyebrow">DISEASE PROGRESSION</p><h2>Longitudinal signals</h2></div><div className="range-pills"><button>3M</button><button className="active">6M</button><button>12M</button></div></div>
+          <TrendChart />
+          <div className="chart-event"><AlertTriangle /> Apr 2026 · ctDNA acceleration detected</div>
+        </Card>
+        <Card className="ai-insights-card">
+          <div className="card-title"><div><p className="eyebrow">AI INSIGHTS</p><h2>Physician review queue</h2></div><Status tone="violet">3 insights</Status></div>
+          {[
+            ["Clinical review recommended", "Elevated ctDNA with rising toxicity risk.", "92%", "Fusion v3"],
+            ["Alternative strategy to discuss", "Genomic profile and progression pattern differ.", "87%", "SLM v3"],
+            ["Three potential trial matches", "Eligibility requires clinician confirmation.", "82%", "Trial agent"],
+          ].map(([title, copy, confidence, source], index) => <button className="ranked-insight" key={title} onClick={() => setEvidence(title)}>
+            <span>{index + 1}</span><div><b>{title}</b><p>{copy}</p><small>{confidence} confidence · {source} · just now</small></div><ChevronRight />
+          </button>)}
+          <button className="primary wide" onClick={run} disabled={running}>{running ? "Analysis running…" : <>Run complete AI analysis <ArrowRight /></>}</button>
+        </Card>
+      </div>
+
+      <Card className="recent-patients-card">
+        <div className="card-title"><div><p className="eyebrow">RECENT PATIENTS</p><h2>Switch active clinical context</h2></div><Link href="/patients" className="text-button">View all patients <ArrowRight /></Link></div>
+        <div className="recent-patient-grid">{patients.slice(0,3).map((patient) => <button key={patient.id} className={patient.id === activePatient.id ? "active" : ""} onClick={() => { setActivePatient(patient.id); setToast(`${patient.id} is now the active patient across ONCO.AI.`); setTimeout(() => setToast(null), 2600); }}>
+          <span><UserRound /></span><div><b>{patient.id}</b><small>{patient.cancer} · Stage {patient.stage}</small></div><Status tone={patient.status === "Stable" ? "green" : "red"}>{patient.status}</Status>
+        </button>)}</div>
+      </Card>
       <AnimatePresence>
         {running && (
           <motion.div className="processing-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <Card><p className="eyebrow">COMPLETE ANALYSIS</p><h2>Connecting the patient record</h2><Processing steps={steps} done={done} /></Card>
           </motion.div>
         )}
+        {evidence && <motion.div className="modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setEvidence(null)}>
+          <motion.div className="modal-card evidence-drawer" initial={{ x: 30 }} animate={{ x: 0 }} onClick={(event) => event.stopPropagation()}>
+            <div className="modal-header"><div><p className="eyebrow">EVIDENCE TRACE</p><h2>{evidence}</h2></div><button className="modal-close" onClick={() => setEvidence(null)} aria-label="Close evidence"><X /></button></div>
+            <div className="evidence-source"><ShieldCheck /><div><b>Grounded synthetic patient record</b><p>Cross-checked against the current demo record, model outputs, and configured evidence index. No unsupported treatment directive is included.</p></div></div>
+            <div className="evidence-source"><FileText /><div><b>Model provenance</b><p>Fusion v3 · Candidate v4 · generated for {activePatient.id} · physician verification required.</p></div></div>
+            <Disclaimer />
+          </motion.div>
+        </motion.div>}
       </AnimatePresence>
       <Toast message={toast} />
     </>
@@ -353,7 +409,7 @@ function Overview() {
 }
 
 function Patients({ detail = false }: { detail?: boolean }) {
-  const { patients, activePatient, addPatient, setActivePatient } = usePatientStore();
+  const { patients, activePatient, addPatient, updatePatient, setActivePatient } = usePatientStore();
   const [tab, setTab] = useState("Overview");
   const [search, setSearch] = useState("");
   const [showAddModal, setShowAddModal] = useState(false);
@@ -708,7 +764,7 @@ function Patients({ detail = false }: { detail?: boolean }) {
             <div className="card-title"><h2>Imaging Actions</h2></div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <button className="secondary" onClick={() => handleExportPDF()}><FileText size={15} /> Export CT Radiology Brief</button>
-              <Link className="secondary" href="/dl" style={{ textDecoration: "none", textAlign: "center" }}><Microscope size={15} /> Launch Stage 2 DL Progression</Link>
+              <Link className="secondary" href="/dl-progression" style={{ textDecoration: "none", textAlign: "center" }}><Microscope size={15} /> Launch Stage 2 DL Progression</Link>
             </div>
           </Card>
         </div>
@@ -792,10 +848,12 @@ function Patients({ detail = false }: { detail?: boolean }) {
             <form onSubmit={(e) => {
               e.preventDefault();
               const fd = new FormData(e.currentTarget);
-              p.age = Number(fd.get("age")) || p.age;
-              p.cancer = (fd.get("cancer") as string) || p.cancer;
-              p.stage = (fd.get("stage") as string) || p.stage;
-              p.treatment = (fd.get("treatment") as string) || p.treatment;
+              updatePatient(p.id, {
+                age: Number(fd.get("age")) || p.age,
+                cancer: (fd.get("cancer") as string) || p.cancer,
+                stage: (fd.get("stage") as string) || p.stage,
+                treatment: (fd.get("treatment") as string) || p.treatment,
+              });
               setShowEditModal(false);
               setToast(`Updated patient profile for ${p.id}.`);
               setTimeout(() => setToast(null), 3500);
@@ -822,13 +880,14 @@ function Patients({ detail = false }: { detail?: boolean }) {
 
 function MLPage() {
   const { activePatient } = usePatientStore();
+  const signal = getPatientSignals(activePatient);
   const [tab, setTab] = useState("Overview"), [message, setMessage] = useState("");
   const [toast, setToast] = useState<string | null>(null);
   const ai = useDocAI();
 
   function run(action: string) {
     setMessage(`${action} complete · Calibrated XGBoost inference executed.`);
-    ai.speak(`${action} completed using synthetic data. Creatinine remains the strongest contributing factor to the predicted 72% toxicity risk.`);
+    ai.speak(`${action} completed using synthetic data. The current toxicity risk for ${activePatient.id} is ${signal.toxicity} percent and requires physician interpretation.`);
   }
 
   function handleExportPDF() {
@@ -858,8 +917,8 @@ function MLPage() {
       {tab === "Overview" ? (
         <>
           <div className="three-col ml-grid">
-            <Card><p className="eyebrow">TOXICITY RISK</p><RiskRing value={72} /><div className="confidence">Confidence <b>89%</b></div></Card>
-            <Card className="span-two"><div className="card-title"><div><p className="eyebrow">CONTRIBUTION ANALYSIS</p><h2>Top contributing factors</h2></div><Status tone="red">Elevated risk</Status></div><FactorBars /></Card>
+            <Card><p className="eyebrow">TOXICITY RISK</p><RiskRing value={signal.toxicity} label={signal.toxicity >= 60 ? "High risk" : "Monitor"} tone={signal.toxicity >= 60 ? "#f16d78" : "#5ed6a0"} /><div className="confidence">Confidence <b>{activePatient.id === "ONC-2048" ? "89%" : "86%"}</b></div></Card>
+            <Card className="span-two"><div className="card-title"><div><p className="eyebrow">CONTRIBUTION ANALYSIS</p><h2>Top contributing factors</h2></div><Status tone={signal.toxicity >= 60 ? "red" : "green"}>{signal.toxicity >= 60 ? "Elevated risk" : "Monitor"}</Status></div><FactorBars /></Card>
           </div>
           <div className="two-col">
             <Card><div className="card-title"><h2>Patient inputs</h2><small>Validated synthetic record</small></div><div className="input-grid">{[["Age",`${activePatient.age} years`],["Creatinine",`${activePatient.creatinine} mg/dL`],["Hemoglobin",`${activePatient.hemoglobin} g/dL`],["Platelets",`${activePatient.platelets} K/µL`],["Treatment",activePatient.treatment],["ECOG",String(activePatient.ecog)]].map(([a,b]) => <div key={a}><span>{a}</span><b>{b}</b></div>)}</div></Card>
@@ -898,6 +957,7 @@ function ModelDetails() {
 
 function DLPage() {
   const { activePatient } = usePatientStore();
+  const signal = getPatientSignals(activePatient);
   const [tab, setTab] = useState("Overview"), [view, setView] = useState("Original");
   const [toast, setToast] = useState<string | null>(null);
 
@@ -924,7 +984,7 @@ function DLPage() {
               <div className="card-title"><div><p className="eyebrow">PATHOLOGY IMAGE</p><h2>H&E lung biopsy · demo sample</h2></div><div className="segmented">{["Original","AI Attention","Side-by-Side"].map(v => <button key={v} onClick={() => setView(v)} className={view===v?"active":""}>{v}</button>)}</div></div>
               <div className={`pathology-view view-${view.toLowerCase().replaceAll(" ","-")}`}><div className="tissue tissue-a" /><div className="tissue tissue-b" /><div className="tissue tissue-c" />{view !== "Original" && <div className="heatmap" />}<span>{view} · illustrative visualization</span></div>
             </Card>
-            <Card><p className="eyebrow">PROGRESSION RISK</p><RiskRing value={81} tone="#7657ed" label="High risk" /><div className="confidence">Confidence <b>92%</b></div><div className="split-scores"><span>Spatial<b>77%</b></span><span>Temporal<b>85%</b></span><span>Fusion<b>81%</b></span></div></Card>
+            <Card><p className="eyebrow">PROGRESSION RISK</p><RiskRing value={signal.progression} tone="#8b7cf6" label={signal.progression >= 60 ? "High risk" : "Low risk"} /><div className="confidence">Confidence <b>{activePatient.id === "ONC-2048" ? "92%" : "88%"}</b></div><div className="split-scores"><span>Spatial<b>{Math.max(10, signal.progression - 4)}%</b></span><span>Temporal<b>{Math.min(96, signal.progression + 4)}%</b></span><span>Fusion<b>{signal.progression}%</b></span></div></Card>
           </div>
           <Card><div className="card-title"><div><p className="eyebrow">LONGITUDINAL SIGNALS</p><h2>ctDNA and CEA trend</h2></div><Status tone="red">Increasing</Status></div><TrendChart /></Card>
         </>
@@ -1252,6 +1312,7 @@ function SafetyPage() {
 
 function TumorPage() {
   const { activePatient } = usePatientStore();
+  const signal = getPatientSignals(activePatient);
   const [decision, setDecision] = useState(""), [tab, setTab] = useState("Decision Overview");
   const [showTrialsModal, setShowTrialsModal] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -1325,7 +1386,12 @@ function TumorPage() {
       <PatientStrip patientData={activePatient} />
       
       <div className="intelligence-feed">
-        {metrics.map(m => (
+        {[
+          { key: "ML", value: `${signal.toxicity}%`, label: "Toxicity risk" },
+          { key: "DL", value: `${signal.progression}%`, label: "Progression risk" },
+          { key: "NLP", value: signal.urgency, label: "Clinical urgency" },
+          { key: "SLM", value: signal.guidance, label: "Guidance" },
+        ].map(m => (
           <div key={m.key}><span>{m.key}</span><b>{m.value}</b><small>{m.label}</small></div>
         ))}
         <div><span>STAGE 5</span><b>2</b><small>Blind spots</small></div>

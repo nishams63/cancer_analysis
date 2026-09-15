@@ -32,7 +32,6 @@ export function DocAIProvider({ children, initialMessage }: { children: React.Re
   const [listening, setListening] = useState(false);
 
   useEffect(() => () => window.speechSynthesis?.cancel(), []);
-
   const speak = useCallback((next: string) => {
     setMessage(next); setOpen(true); setEmotion("speaking");
     if (!voiceEnabled || !("speechSynthesis" in window)) {

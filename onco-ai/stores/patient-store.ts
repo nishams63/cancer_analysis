@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export interface Patient {
   id: string;
@@ -68,10 +69,11 @@ interface PatientState {
   patients: Patient[];
   activePatient: Patient;
   addPatient: (newPatient: Patient) => void;
+  updatePatient: (patientId: string, updates: Partial<Patient>) => void;
   setActivePatient: (patientId: string) => void;
 }
 
-export const usePatientStore = create<PatientState>((set, get) => ({
+export const usePatientStore = create<PatientState>()(persist((set, get) => ({
   patients: initialPatients,
   activePatient: initialPatients[0],
   addPatient: (newPatient: Patient) => {
@@ -80,10 +82,20 @@ export const usePatientStore = create<PatientState>((set, get) => ({
       activePatient: newPatient,
     }));
   },
+  updatePatient: (patientId: string, updates: Partial<Patient>) => {
+    set((state) => {
+      const patients = state.patients.map((patient) => patient.id === patientId ? { ...patient, ...updates } : patient);
+      const activePatient = state.activePatient.id === patientId ? { ...state.activePatient, ...updates } : state.activePatient;
+      return { patients, activePatient };
+    });
+  },
   setActivePatient: (patientId: string) => {
     const found = get().patients.find((p) => p.id.toUpperCase() === patientId.toUpperCase());
     if (found) {
       set({ activePatient: found });
     }
   },
+}), {
+  name: "onco-ai-patient-context",
+  version: 1,
 }));

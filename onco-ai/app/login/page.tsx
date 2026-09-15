@@ -14,7 +14,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (status === "authenticated") {
-      router.replace("/overview");
+      router.replace("/dashboard");
     }
   }, [status, router]);
 
@@ -30,11 +30,11 @@ export default function LoginPage() {
         email,
         password,
         redirect: false,
-        callbackUrl: "/overview",
+        callbackUrl: "/dashboard",
       });
       setBusy(false);
       if (result?.ok) {
-        router.push("/overview");
+        router.push("/dashboard");
         router.refresh();
       } else {
         if (result?.error === "Configuration") {
@@ -43,7 +43,7 @@ export default function LoginPage() {
           setError("Invalid credentials. Use the demo credentials shown below.");
         }
       }
-    } catch (err) {
+    } catch {
       setBusy(false);
       setError("An unexpected authentication error occurred. Please try again.");
     }

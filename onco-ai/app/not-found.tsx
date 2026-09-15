@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Dna, ArrowLeft, Users, Home } from "lucide-react";
+import { Dna, Users, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
@@ -85,7 +85,7 @@ export default function NotFound() {
           }}
         >
           <Link
-            href="/overview"
+            href="/dashboard"
             style={{
               minHeight: "42px",
               padding: "0 18px",

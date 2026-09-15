@@ -136,7 +136,7 @@ export default function GlobalError({
           </button>
 
           <Link
-            href="/overview"
+            href="/dashboard"
             style={{
               minHeight: "42px",
               padding: "0 18px",

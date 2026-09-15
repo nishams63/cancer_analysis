@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { Activity, AlertTriangle, BarChart3, Bell, BrainCircuit, Check, ChevronLeft, ClipboardList, Dna, FileSearch, FlaskConical, Info, LayoutDashboard, LogOut, Menu, Microscope, Search, Settings, ShieldAlert, ShieldCheck, Sparkles, Users, X } from "lucide-react";
+import { Activity, AlertTriangle, BarChart3, Bell, BrainCircuit, CalendarDays, ChevronLeft, ClipboardList, Command, Dna, FileSearch, FlaskConical, Info, LayoutDashboard, LogOut, Menu, Microscope, MoonStar, Search, Settings, ShieldAlert, Sparkles, Upload, Users, X } from "lucide-react";
 import { useUIStore } from "@/stores/ui-store";
 import { DocAIProvider } from "@/components/doc-ai/DocAIProvider";
 import { DocAI } from "@/components/doc-ai/DocAI";
+import { usePatientStore } from "@/stores/patient-store";
 
 const groups = [
-  { label: "", items: [{ href: "/overview", label: "Overview", icon: LayoutDashboard }] },
-  { label: "PATIENT", items: [{ href: "/patients", label: "Patients", icon: Users }, { href: "/integrated-analysis/ONC-2048", label: "Integrated Analysis", icon: Activity }] },
-  { label: "AI MODULES", items: [{ href: "/ml", label: "ML · Toxicity", icon: BarChart3 }, { href: "/dl", label: "DL · Progression", icon: Microscope }, { href: "/nlp", label: "NLP · Reports", icon: FileSearch }, { href: "/slm", label: "SLM · Copilot", icon: BrainCircuit }] },
+  { label: "", items: [{ href: "/dashboard", label: "Overview", icon: LayoutDashboard }] },
+  { label: "PATIENT", items: [{ href: "/patients", label: "Patients", icon: Users }, { href: "/integrated-analysis/ACTIVE", label: "Integrated Analysis", icon: Activity }] },
+  { label: "AI MODULES", items: [{ href: "/ml-toxicity", label: "ML · Toxicity", icon: BarChart3 }, { href: "/dl-progression", label: "DL · Progression", icon: Microscope }, { href: "/nlp-reports", label: "NLP · Reports", icon: FileSearch }, { href: "/slm-copilot", label: "SLM · Copilot", icon: BrainCircuit }] },
   { label: "AI SAFETY", items: [{ href: "/safety-lab", label: "Stage 5 · Safety Lab", icon: FlaskConical }] },
-  { label: "AUTONOMOUS INTELLIGENCE", items: [{ href: "/tumor-board/ONC-2048", label: "Stage 6 · Tumor Board", icon: Sparkles }] },
+  { label: "AUTONOMOUS INTELLIGENCE", items: [{ href: "/tumor-board/ACTIVE", label: "Stage 6 · Tumor Board", icon: Sparkles }] },
   { label: "ENGINEERING", items: [{ href: "/analytics", label: "Analytics", icon: BarChart3 }, { href: "/audit", label: "Audit Trail", icon: ClipboardList }] },
 ];
 
@@ -60,11 +61,35 @@ const clinicalAlerts = [
 export function AppShell({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const path = usePathname();
+  const { activePatient } = usePatientStore();
   const { sidebarCollapsed, mobileOpen, toggleSidebar, setMobileOpen } = useUIStore();
-  const key = path.split("/").filter(Boolean)[0] || "overview";
+  const routeKey = path.split("/").filter(Boolean)[0] || "dashboard";
+  const key = ({ dashboard: "overview", "ml-toxicity": "ml", "dl-progression": "dl", "nlp-reports": "nlp", "slm-copilot": "slm" } as Record<string,string>)[routeKey] || routeKey;
   const [showAlerts, setShowAlerts] = useState(false);
   const [unreadAlerts, setUnreadAlerts] = useState(clinicalAlerts);
   const [searchTerm, setSearchTerm] = useState("");
+  const [paletteOpen, setPaletteOpen] = useState(false);
+  const [contrast, setContrast] = useState(false);
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    const initialTimer = window.setTimeout(() => setNow(new Date()), 0);
+    const timer = window.setInterval(() => setNow(new Date()), 30_000);
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setPaletteOpen((open) => !open);
+      }
+      if (event.key === "Escape") setPaletteOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => { window.clearTimeout(initialTimer); window.clearInterval(timer); window.removeEventListener("keydown", onKeyDown); };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("contrast-mode", contrast);
+    return () => document.body.classList.remove("contrast-mode");
+  }, [contrast]);
 
   function handleSearchSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -77,8 +102,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     setUnreadAlerts((prev) => prev.filter((a) => a.id !== id));
   }
 
+  const commands = [
+    { label: `Open ${activePatient.id}`, detail: "Active patient record", icon: Users, href: `/patients/${activePatient.id}` },
+    { label: "Run integrated analysis", detail: "Stages 1–4", icon: Activity, href: `/integrated-analysis/${activePatient.id}` },
+    { label: "Upload clinical report", detail: "PDF or TXT", icon: Upload, href: "/nlp-reports" },
+    { label: "Open toxicity model", detail: "Stage 1", icon: BarChart3, href: "/ml-toxicity" },
+    { label: "Ask Clinical Copilot", detail: "Grounded patient context", icon: BrainCircuit, href: "/slm-copilot" },
+    { label: "Generate safety case", detail: "Stage 5", icon: FlaskConical, href: "/safety-lab" },
+    { label: "Open Tumor Board", detail: "Stage 6", icon: Sparkles, href: `/tumor-board/${activePatient.id}` },
+  ].filter((command) => !searchTerm || `${command.label} ${command.detail}`.toLowerCase().includes(searchTerm.toLowerCase()));
+
   return (
-    <DocAIProvider initialMessage={messages[key] || messages.overview}>
+    <DocAIProvider key={`${key}-${activePatient.id}`} initialMessage={`${messages[key] || messages.overview} Active patient: ${activePatient.id}.`}>
       <div className={`app-shell ${sidebarCollapsed ? "sidebar-collapsed" : ""}`}>
         <aside className={`sidebar ${mobileOpen ? "mobile-open" : ""}`}>
           <div className="sidebar-brand">
@@ -91,12 +126,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <div className="nav-group" key={group.label || "primary"}>
                 {group.label && <p>{group.label}</p>}
                 {group.items.map((item) => {
-                  const active = path === item.href || (item.href !== "/overview" && path.startsWith(item.href));
+                  const href = item.href.replace("ACTIVE", activePatient.id);
+                  const active = path === href || (href !== "/dashboard" && path.startsWith(href.split("/").slice(0,2).join("/")));
                   const Icon = item.icon;
                   return (
                     <Link
-                      key={item.href}
-                      href={item.href}
+                      key={href}
+                      href={href}
                       className={active ? "active" : ""}
                       onClick={() => setMobileOpen(false)}
                     >
@@ -130,14 +166,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Search />
               <input
                 aria-label="Search patients, reports and trials"
-                placeholder="Search patients, reports, trials… (Press Enter)"
+                placeholder="Search patients, reports, trials, or ask ONCO.AI…"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={() => setPaletteOpen(true)}
               />
-              <kbd>↵ Enter</kbd>
+              <kbd>Ctrl K</kbd>
             </form>
 
             <div className="demo-pill"><span /> DEMO DATA</div>
+
+            <div className="topbar-clock" aria-label="Current date and time">
+              <b>{now ? now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) : "--:--"}</b>
+              <span>{now ? now.toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" }) : "Loading date"}</span>
+            </div>
+
+            <button className="theme-toggle" onClick={() => setContrast((value) => !value)} aria-label="Toggle high contrast" title="Contrast"><MoonStar /></button>
 
             {/* Interactive Alerts Button */}
             <div style={{ position: "relative" }}>
@@ -212,6 +256,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
           <main className="content">{children}</main>
         </div>
+        {paletteOpen && <div className="command-backdrop" onMouseDown={() => setPaletteOpen(false)}>
+          <section className="command-palette" onMouseDown={(event) => event.stopPropagation()} aria-label="ONCO.AI command palette">
+            <header><Command /><input autoFocus value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)} placeholder="Search or choose a command…" /><kbd>ESC</kbd></header>
+            <div>{commands.length ? commands.map((command) => { const Icon = command.icon; return <button key={command.label} onClick={() => { router.push(command.href); setPaletteOpen(false); setSearchTerm(""); }}><span><Icon /></span><div><b>{command.label}</b><small>{command.detail}</small></div><ChevronLeft /></button>; }) : <p className="command-empty">No matching command. Search patient IDs from the Patients workspace.</p>}</div>
+            <footer><span><CalendarDays /> Current context</span><b>{activePatient.id} · {activePatient.cancer}</b></footer>
+          </section>
+        </div>}
         <DocAI />
       </div>
     </DocAIProvider>
