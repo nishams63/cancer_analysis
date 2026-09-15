@@ -10,6 +10,7 @@ import { useDocAI } from "@/components/doc-ai/DocAIProvider";
 import { usePatientStore, Patient } from "@/stores/patient-store";
 import { exportPatientPDF, exportAnalyticsPDF } from "@/lib/export-pdf";
 import { PatientDigitalTwin } from "@/components/three/PatientDigitalTwin";
+import { GlobalImpactGlobe } from "@/components/three/GlobalImpactGlobe";
 
 type PageKind = "overview" | "patients" | "patient" | "ml" | "dl" | "nlp" | "slm" | "safety" | "tumor" | "analytics" | "audit" | "integrated" | "settings";
 type TabProps = { tabs: string[]; active: string; onChange: (tab: string) => void };
@@ -131,10 +132,10 @@ function getPatientSignals(patient: Patient) {
 function MetricGrid({ patient }: { patient: Patient }) {
   const signal = getPatientSignals(patient);
   const patientMetrics = [
-    { key: "ML", label: "Toxicity Risk", value: `${signal.toxicity}%`, status: signal.toxicity >= 60 ? "HIGH" : "MONITOR", tone: signal.toxicity >= 60 ? "red" : "green" },
-    { key: "DL", label: "Progression Risk", value: `${signal.progression}%`, status: signal.progression >= 60 ? "HIGH" : "LOW", tone: signal.progression >= 60 ? "violet" : "green" },
-    { key: "NLP", label: "Clinical Urgency", value: signal.urgency, status: signal.urgency === "HIGH" ? "REVIEW" : "ROUTINE", tone: signal.urgency === "HIGH" ? "cyan" : "green" },
-    { key: "SLM", label: "Guidance", value: signal.guidance, status: signal.guidance === "SAFE" ? "GROUNDED" : "REVIEW", tone: signal.guidance === "SAFE" ? "green" : "red" },
+    { key: "ML", label: "Toxicity Risk", value: `${signal.toxicity}%`, status: signal.toxicity >= 60 ? "HIGH" : "MONITOR", tone: signal.toxicity >= 60 ? "red" : "green", trend: "↑ 12%", note: "vs previous cycle" },
+    { key: "DL", label: "Progression Risk", value: `${signal.progression}%`, status: signal.progression >= 60 ? "HIGH" : "LOW", tone: signal.progression >= 60 ? "violet" : "green", trend: "↑ 18%", note: "multimodal signal" },
+    { key: "NLP", label: "Clinical Urgency", value: signal.urgency, status: signal.urgency === "HIGH" ? "REVIEW" : "ROUTINE", tone: signal.urgency === "HIGH" ? "cyan" : "green", trend: "", note: signal.urgency === "HIGH" ? "Requires review" : "Routine monitoring" },
+    { key: "SLM", label: "Guidance Status", value: signal.guidance, status: signal.guidance === "SAFE" ? "GROUNDED" : "REVIEW", tone: signal.guidance === "SAFE" ? "green" : "red", trend: "", note: signal.guidance === "SAFE" ? "Within validated range" : "Safety review needed" },
   ];
   return (
     <div className="metric-grid">
@@ -145,24 +146,24 @@ function MetricGrid({ patient }: { patient: Patient }) {
             <Status tone={m.tone}>{m.status}</Status>
           </div>
           <p>{m.label}</p>
-          <strong>{m.value}</strong>
-          <div className="metric-foot">Synthetic model output <ChevronRight /></div>
+          <div className="metric-value-row"><motion.strong initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }}>{m.value}</motion.strong><svg viewBox="0 0 90 28" aria-hidden="true"><polyline points="1,23 12,20 23,22 34,12 45,16 56,8 67,11 78,4 89,6" /></svg></div>
+          <div className="metric-foot"><span className={m.trend ? "metric-trend" : ""}>{m.trend || m.note}</span>{m.trend && <span>{m.note}</span>}</div>
         </Card>
       ))}
     </div>
   );
 }
 
-function Header({ kind, action }: { kind: PageKind; action?: React.ReactNode }) {
+function Header({ kind, action, subtitle }: { kind: PageKind; action?: React.ReactNode; subtitle?: string }) {
   const meta = pageMeta[kind];
-  const Icon = meta.icon;
+  const Icon = meta.icon as typeof Activity;
   return (
     <div className="page-heading">
       <div className={`heading-icon accent-${meta.accent}`}><Icon /></div>
       <div>
         <p className="eyebrow">{meta.eyebrow}</p>
         <h1>{meta.title}</h1>
-        <p>{meta.subtitle}</p>
+        <p>{subtitle || meta.subtitle}</p>
       </div>
       {action && <div className="heading-action">{action}</div>}
     </div>
@@ -183,7 +184,7 @@ function PatientStrip({ patientData }: { patientData?: Patient }) {
       <div><small>STAGE</small><b>{p.stage}</b></div>
       <div className="patient-treatment"><small>TREATMENT</small><b>{p.treatment}</b></div>
       <div><small>ECOG</small><b>{p.ecog}</b></div>
-      <Link href={`/patients/${p.id}`}>View details <ArrowRight /></Link>
+      <Link href={`/patients/${p.id}`}>View full profile <ArrowRight /></Link>
     </div>
   );
 }
@@ -307,6 +308,7 @@ function Overview() {
   const [done, setDone] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
   const [evidence, setEvidence] = useState<string | null>(null);
+  const [timeframe, setTimeframe] = useState("6M");
   const ai = useDocAI();
   const steps = ["Retrieving patient context", "Running toxicity model", "Analyzing progression", "Extracting clinical entities", "Retrieving evidence", "Running safety checks", "Generating grounded response"];
   
@@ -335,11 +337,10 @@ function Overview() {
 
   return (
     <>
-      <Header kind="overview" action={<button className="secondary" onClick={handleExportPDF}><Download /> Export PDF Brief</button>} />
+      <Header kind="overview" subtitle={`Here's what matters for ${activePatient.id} today.`} action={<button className="secondary" onClick={handleExportPDF}><Download /> Export PDF Brief</button>} />
       <PatientStrip patientData={activePatient} />
       <MetricGrid patient={activePatient} />
-      <div className="command-center-grid">
-        <PatientDigitalTwin patientId={activePatient.id} />
+      <div className="clinical-workspace-grid">
         <Card className="patient-profile-card">
           <div className="card-title">
             <div><p className="eyebrow">ACTIVE PATIENT</p><h2>{activePatient.id}</h2></div>
@@ -361,33 +362,41 @@ function Overview() {
           </div>
           <div className="profile-labs"><span>Creatinine <b>{activePatient.creatinine} mg/dL</b></span><span>Hemoglobin <b>{activePatient.hemoglobin} g/dL</b></span></div>
         </Card>
+        <PatientDigitalTwin patientId={activePatient.id} />
+        <div className="dashboard-side-stack">
+          <Card className="progression-card">
+            <div className="card-title"><div><p className="eyebrow">DISEASE PROGRESSION</p><h2>Longitudinal signals</h2></div><div className="range-pills">{["3M","6M","12M"].map((range) => <button key={range} className={timeframe === range ? "active" : ""} onClick={() => setTimeframe(range)}>{range}</button>)}</div></div>
+            <TrendChart compact />
+            <div className="chart-event"><AlertTriangle /> Apr 2026 · spike detected · ctDNA 68</div>
+          </Card>
+          <Card className="ai-insights-card">
+            <div className="card-title"><div><p className="eyebrow">AI INSIGHTS</p><h2>Physician review queue</h2></div><Status tone="violet">3 insights</Status></div>
+            {[
+              ["Clinical review recommended", "Elevated ctDNA with rising toxicity risk.", "87%", "Evidence"],
+              ["Progression signal detected", "Imaging and ctDNA signals are concordant.", "81%", "Evidence"],
+              ["3 clinical trials match", "Eligibility requires clinician confirmation.", "76%", "View trials"],
+            ].map(([title, copy, confidence, action], index) => <button className="ranked-insight" key={title} onClick={() => setEvidence(title)}>
+              <span>{String(index + 1).padStart(2,"0")}</span><div><b>{title}</b><p>{copy}</p><small>{confidence} confidence · {action}</small></div><ChevronRight />
+            </button>)}
+          </Card>
+        </div>
       </div>
 
-      <div className="overview-intelligence-grid">
-        <Card className="progression-card">
-          <div className="card-title"><div><p className="eyebrow">DISEASE PROGRESSION</p><h2>Longitudinal signals</h2></div><div className="range-pills"><button>3M</button><button className="active">6M</button><button>12M</button></div></div>
-          <TrendChart />
-          <div className="chart-event"><AlertTriangle /> Apr 2026 · ctDNA acceleration detected</div>
+      <div className="dashboard-bottom-grid">
+        <Card className="recent-patients-card">
+          <div className="card-title"><div><p className="eyebrow">RECENT PATIENTS</p><h2>Active clinical context</h2></div><Link href="/patients" className="text-button">View all <ArrowRight /></Link></div>
+          <div className="recent-patient-grid">{patients.slice(0,3).map((patient) => <button key={patient.id} className={patient.id === activePatient.id ? "active" : ""} onClick={() => { setActivePatient(patient.id); setToast(`${patient.id} is now the active patient across ONCO.AI.`); setTimeout(() => setToast(null), 2600); }}>
+            <span><UserRound /></span><div><b>{patient.id}</b><small>{patient.cancer} · Stage {patient.stage}</small></div><Status tone={patient.status === "Stable" ? "green" : "red"}>{patient.status}</Status>
+          </button>)}</div>
         </Card>
-        <Card className="ai-insights-card">
-          <div className="card-title"><div><p className="eyebrow">AI INSIGHTS</p><h2>Physician review queue</h2></div><Status tone="violet">3 insights</Status></div>
-          {[
-            ["Clinical review recommended", "Elevated ctDNA with rising toxicity risk.", "92%", "Fusion v3"],
-            ["Alternative strategy to discuss", "Genomic profile and progression pattern differ.", "87%", "SLM v3"],
-            ["Three potential trial matches", "Eligibility requires clinician confirmation.", "82%", "Trial agent"],
-          ].map(([title, copy, confidence, source], index) => <button className="ranked-insight" key={title} onClick={() => setEvidence(title)}>
-            <span>{index + 1}</span><div><b>{title}</b><p>{copy}</p><small>{confidence} confidence · {source} · just now</small></div><ChevronRight />
-          </button>)}
-          <button className="primary wide" onClick={run} disabled={running}>{running ? "Analysis running…" : <>Run complete AI analysis <ArrowRight /></>}</button>
-        </Card>
+        <GlobalImpactGlobe />
+        <Card className="quick-actions-card"><div className="card-title"><div><p className="eyebrow">QUICK ACTIONS</p><h2>Clinical workspace</h2></div></div><div>
+          <Link href="/nlp-reports"><Upload /><span><b>Upload Report</b><small>PDF, TXT, DICOM</small></span></Link>
+          <button onClick={run} disabled={running}><Activity /><span><b>Run AI Analysis</b><small>Full pipeline</small></span></button>
+          <Link href="/patients?create=true"><UserPlus /><span><b>Generate Patient</b><small>Synthetic case</small></span></Link>
+          <Link href={`/tumor-board/${activePatient.id}`}><Sparkles /><span><b>Open Tumor Board</b><small>Multi-agent review</small></span></Link>
+        </div><Disclaimer /></Card>
       </div>
-
-      <Card className="recent-patients-card">
-        <div className="card-title"><div><p className="eyebrow">RECENT PATIENTS</p><h2>Switch active clinical context</h2></div><Link href="/patients" className="text-button">View all patients <ArrowRight /></Link></div>
-        <div className="recent-patient-grid">{patients.slice(0,3).map((patient) => <button key={patient.id} className={patient.id === activePatient.id ? "active" : ""} onClick={() => { setActivePatient(patient.id); setToast(`${patient.id} is now the active patient across ONCO.AI.`); setTimeout(() => setToast(null), 2600); }}>
-          <span><UserRound /></span><div><b>{patient.id}</b><small>{patient.cancer} · Stage {patient.stage}</small></div><Status tone={patient.status === "Stable" ? "green" : "red"}>{patient.status}</Status>
-        </button>)}</div>
-      </Card>
       <AnimatePresence>
         {running && (
           <motion.div className="processing-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

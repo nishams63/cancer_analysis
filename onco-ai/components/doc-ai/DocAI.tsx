@@ -14,7 +14,7 @@ export function DocAI() {
     <div className={`doc-ai-dock state-${ai.emotion}`}>
       <DocAIBubble />
       <motion.button className="doc-avatar" onClick={ai.toggle} animate={animation} transition={{ repeat: Infinity, duration: ai.emotion === "speaking" ? 1.7 : 4, ease: "easeInOut" }} aria-label="Open Doc AI virtual oncology assistant">
-        <span className="doc-image-slot"><Image src="/doc-ai/doc-ai.png" alt="Doc AI virtual clinical assistant" width={1129} height={1393} priority /></span>
+        <span className="doc-image-slot"><Image src="/doc-ai/doc-ai-cutout.png" alt="Doc AI virtual clinical assistant" width={1129} height={1393} priority /></span>
         <MessageCircle className="doc-status" />
       </motion.button>
     </div>

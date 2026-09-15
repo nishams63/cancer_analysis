@@ -28,13 +28,13 @@ export function DocAIPanel() {
 
   return <AnimatePresence>{ai.open && <motion.aside className={`doc-panel state-${ai.emotion}`} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 24 }} transition={{ duration: .22 }} aria-label="Doc AI virtual oncology information assistant">
     <header>
-      <div className="assistant-avatar"><Image src="/doc-ai/doc-ai.png" alt="" width={1129} height={1393} /></div>
+      <div className="assistant-avatar"><Image src="/doc-ai/doc-ai-cutout.png" alt="" width={1129} height={1393} /></div>
       <div><b>ONCO.AI Clinical Copilot</b><span>Reviewing {activePatient.id} · What would you like to investigate?</span></div>
       <span className="not-physician">Not a physician</span>
       <button onClick={ai.close} aria-label="Close Doc AI"><X /></button>
     </header>
     <div className="assistant-thread">
-      <div className="panel-character" aria-hidden="true"><Image src="/doc-ai/doc-ai.png" alt="" width={1129} height={1393} /></div>
+      <div className="panel-character" aria-hidden="true"><Image src="/doc-ai/doc-ai-cutout.png" alt="" width={1129} height={1393} /></div>
       <div className="assistant-response">
         <div className="assistant-message">{ai.message}</div>
         {ai.emotion === "thinking" && <div className="typing panel-typing" aria-label="Doc AI is thinking"><i /><i /><i /></div>}

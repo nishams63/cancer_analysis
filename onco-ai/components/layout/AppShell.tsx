@@ -8,10 +8,11 @@ import { Activity, AlertTriangle, BarChart3, Bell, BrainCircuit, CalendarDays, C
 import { useUIStore } from "@/stores/ui-store";
 import { DocAIProvider } from "@/components/doc-ai/DocAIProvider";
 import { DocAI } from "@/components/doc-ai/DocAI";
+import { CopilotDock } from "@/components/doc-ai/CopilotDock";
 import { usePatientStore } from "@/stores/patient-store";
 
 const groups = [
-  { label: "", items: [{ href: "/dashboard", label: "Overview", icon: LayoutDashboard }] },
+  { label: "COMMAND CENTER", items: [{ href: "/dashboard", label: "Overview", icon: LayoutDashboard }] },
   { label: "PATIENT", items: [{ href: "/patients", label: "Patients", icon: Users }, { href: "/integrated-analysis/ACTIVE", label: "Integrated Analysis", icon: Activity }] },
   { label: "AI MODULES", items: [{ href: "/ml-toxicity", label: "ML · Toxicity", icon: BarChart3 }, { href: "/dl-progression", label: "DL · Progression", icon: Microscope }, { href: "/nlp-reports", label: "NLP · Reports", icon: FileSearch }, { href: "/slm-copilot", label: "SLM · Copilot", icon: BrainCircuit }] },
   { label: "AI SAFETY", items: [{ href: "/safety-lab", label: "Stage 5 · Safety Lab", icon: FlaskConical }] },
@@ -20,7 +21,7 @@ const groups = [
 ];
 
 const messages: Record<string, string> = {
-  overview: "All AI modules are ready. Review each model or run a complete patient analysis.",
+  overview: "Toxicity risk is elevated and ctDNA is increasing. I can help explain the evidence for review.",
   ml: "This patient has elevated treatment-toxicity risk. I can explain the contributing clinical factors.",
   dl: "I found increasing progression signals across pathology and longitudinal ctDNA.",
   nlp: "Key clinical entities were extracted and high urgency was detected.",
@@ -166,7 +167,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Search />
               <input
                 aria-label="Search patients, reports and trials"
-                placeholder="Search patients, reports, trials, or ask ONCO.AI…"
+                placeholder="Search patients, trials, reports, or ask ONCO.AI…"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFocus={() => setPaletteOpen(true)}
@@ -263,6 +264,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <footer><span><CalendarDays /> Current context</span><b>{activePatient.id} · {activePatient.cancer}</b></footer>
           </section>
         </div>}
+        <CopilotDock />
         <DocAI />
       </div>
     </DocAIProvider>
