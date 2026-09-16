@@ -368,7 +368,11 @@ function Overview() {
           <Card className="progression-card">
             <div className="card-title"><div><p className="eyebrow">DISEASE PROGRESSION</p><h2>Longitudinal signals</h2></div><div className="range-pills">{["3M","6M","12M"].map((range) => <button key={range} className={timeframe === range ? "active" : ""} onClick={() => setTimeframe(range)}>{range}</button>)}</div></div>
             <TrendChart compact months={timeframe === "3M" ? 3 : 6} />
-            <div className="trend-legend"><span>● ctDNA</span><span>● CEA</span><span>● Tumor volume</span></div>
+            <div className="trend-legend">
+              <span className="legend-ctdna"><i /> ctDNA <b>(ng/mL)</b></span>
+              <span className="legend-cea"><i /> CEA <b>(µg/L)</b></span>
+              <span className="legend-tumor"><i /> Tumor Vol <b>(cm³)</b></span>
+            </div>
             {timeframe === "12M" && <small>Only six months of demo data available.</small>}
             <div className="chart-event"><AlertTriangle /> Apr 2026 · spike detected · ctDNA 68</div>
           </Card>
