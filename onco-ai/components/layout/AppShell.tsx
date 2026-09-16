@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
-import { Activity, AlertTriangle, BarChart3, Bell, BrainCircuit, CalendarDays, ChevronLeft, ClipboardList, Command, Dna, FileSearch, FlaskConical, Info, LayoutDashboard, LogOut, Menu, Microscope, MoonStar, Search, Settings, ShieldAlert, Sparkles, Upload, Users, X } from "lucide-react";
+import { Activity, AlertTriangle, BarChart3, Bell, BrainCircuit, CalendarDays, ChevronLeft, ClipboardList, Command, Dna, FileSearch, FlaskConical, Info, LayoutDashboard, LogOut, Menu, Microscope, Search, Settings, ShieldAlert, Sparkles, Upload, Users, X } from "lucide-react";
 import { useUIStore } from "@/stores/ui-store";
 import { DocAIProvider } from "@/components/doc-ai/DocAIProvider";
-import { DocAI } from "@/components/doc-ai/DocAI";
 import { CopilotDock } from "@/components/doc-ai/CopilotDock";
 import { usePatientStore } from "@/stores/patient-store";
 
@@ -51,7 +50,7 @@ const groups = [
 ];
 
 const messages: Record<string, string> = {
-  overview: "Toxicity risk is elevated and ctDNA is increasing. I can help explain the evidence for review.",
+  overview: "I can help organize this synthetic patient record and prepare questions for the oncology team. I'm an AI assistant, not a physician.",
   ml: "This patient has elevated treatment-toxicity risk. I can explain the contributing clinical factors.",
   dl: "I found increasing progression signals across pathology and longitudinal ctDNA.",
   nlp: "Key clinical entities were extracted and high urgency was detected.",
@@ -100,6 +99,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [unreadAlerts, setUnreadAlerts] = useState(clinicalAlerts);
   const [searchTerm, setSearchTerm] = useState("");
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [clock, setClock] = useState<Date | null>(null);
+  useEffect(() => {
+    const timer = window.setInterval(() => setClock(new Date()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -161,7 +165,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 {group.label && <p>{group.label}</p>}
                 {group.items.map((item) => {
                   const href = item.href.replace("ACTIVE", activePatient.id);
-                  const active = path === href || (href !== "/overview" && path.startsWith(href.split("/").slice(0,2).join("/")));
+                  const active = key === href.split("/")[1] || path === href || (href !== "/overview" && path.startsWith(href.split("/").slice(0,2).join("/")));
                   const isOverview = href === "/overview";
                   const Icon = item.icon;
                   return (
@@ -190,6 +194,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <button className="nav-signout" onClick={toggleSidebar} aria-label="Collapse sidebar">
                   <ChevronLeft /><span>Collapse</span>
                 </button>
+                <button className="nav-signout" onClick={() => void signOut({ callbackUrl: "/login" })} aria-label="Sign out"><LogOut /><span>Sign out</span></button>
               </div>
             </div>
           </nav>
@@ -216,8 +221,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <div className="demo-pill"><span className="demo-dot" /> Demo Data</div>
 
             <div className="topbar-clock" aria-label="Current date and time">
-              <span>Thu, Jun 12, 2026</span>
-              <b>09:37 AM</b>
+              <span>{clock?.toLocaleDateString("en-US", { weekday:"short",month:"short",day:"numeric",year:"numeric" }) || "Local time"}</span>
+              <b>{clock?.toLocaleTimeString("en-US", { hour:"2-digit",minute:"2-digit" }) || "—"}</b>
             </div>
 
             {/* Interactive Alerts Button */}
@@ -301,7 +306,6 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </section>
         </div>}
         <CopilotDock />
-        <DocAI />
       </div>
     </DocAIProvider>
   );

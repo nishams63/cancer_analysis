@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Activity, AlertTriangle, ArrowDown, ArrowRight, BadgeCheck, BrainCircuit, Check, CheckCircle2, ChevronRight, CircleDot, ClipboardCheck, Clock3, Dna, Download, ExternalLink, FileSearch, FileText, FlaskConical, Info, Microscope, Play, RefreshCw, Search, ShieldAlert, ShieldCheck, Sparkles, Square, Upload, UserPlus, UserRound, X, XCircle } from "lucide-react";
 import { FactorBars, RiskRing, RocChart, TrendChart } from "@/components/charts/ClinicalCharts";
@@ -308,6 +308,7 @@ function Overview() {
   const [done, setDone] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
   const [evidence, setEvidence] = useState<string | null>(null);
+  const [showTrials, setShowTrials] = useState(false);
   const [timeframe, setTimeframe] = useState("6M");
   const ai = useDocAI();
   const steps = ["Retrieving patient context", "Running toxicity model", "Analyzing progression", "Extracting clinical entities", "Retrieving evidence", "Running safety checks", "Generating grounded response"];
@@ -343,10 +344,10 @@ function Overview() {
       <div className="clinical-workspace-grid">
         <Card className="patient-profile-card">
           <div className="card-title">
-            <div><p className="eyebrow">ACTIVE PATIENT</p><h2>{activePatient.id}</h2></div>
+            <div><p className="eyebrow">Patient Profile</p><h2>{activePatient.id}</h2></div>
             <Status tone={activePatient.status === "Stable" ? "green" : "red"}>{activePatient.status}</Status>
           </div>
-          <div className="profile-identity"><span><UserRound /></span><div><b>{activePatient.age} years · {activePatient.sex}</b><small>SYNTHETIC DATA</small></div></div>
+          <div className="profile-identity"><span><UserRound /></span><div><b>{activePatient.id}</b><small>{activePatient.age} years · {activePatient.sex} · Demo</small></div></div>
           <div className="profile-facts">
             <div><small>Diagnosis</small><b>{activePatient.cancer}</b></div>
             <div><small>Stage</small><b>{activePatient.stage}</b></div>
@@ -366,7 +367,9 @@ function Overview() {
         <div className="dashboard-side-stack">
           <Card className="progression-card">
             <div className="card-title"><div><p className="eyebrow">DISEASE PROGRESSION</p><h2>Longitudinal signals</h2></div><div className="range-pills">{["3M","6M","12M"].map((range) => <button key={range} className={timeframe === range ? "active" : ""} onClick={() => setTimeframe(range)}>{range}</button>)}</div></div>
-            <TrendChart compact />
+            <TrendChart compact months={timeframe === "3M" ? 3 : 6} />
+            <div className="trend-legend"><span>● ctDNA</span><span>● CEA</span><span>● Tumor volume</span></div>
+            {timeframe === "12M" && <small>Only six months of demo data available.</small>}
             <div className="chart-event"><AlertTriangle /> Apr 2026 · spike detected · ctDNA 68</div>
           </Card>
           <Card className="ai-insights-card">
@@ -375,7 +378,7 @@ function Overview() {
               ["Clinical review recommended", "Elevated ctDNA with rising toxicity risk.", "87%", "Evidence"],
               ["Progression signal detected", "Imaging and ctDNA signals are concordant.", "81%", "Evidence"],
               ["3 clinical trials match", "Eligibility requires clinician confirmation.", "76%", "View trials"],
-            ].map(([title, copy, confidence, action], index) => <button className="ranked-insight" key={title} onClick={() => setEvidence(title)}>
+            ].map(([title, copy, confidence, action], index) => <button className="ranked-insight" key={title} onClick={() => action === "View trials" ? setShowTrials(true) : setEvidence(title)}>
               <span>{String(index + 1).padStart(2,"0")}</span><div><b>{title}</b><p>{copy}</p><small>{confidence} confidence · {action}</small></div><ChevronRight />
             </button>)}
           </Card>
@@ -413,6 +416,7 @@ function Overview() {
         </motion.div>}
       </AnimatePresence>
       <Toast message={toast} />
+      {showTrials && <ClinicalTrialsModal onClose={() => setShowTrials(false)} />}
     </>
   );
 }
@@ -423,6 +427,20 @@ function Patients({ detail = false }: { detail?: boolean }) {
   const [search, setSearch] = useState("");
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const timer = window.setTimeout(() => {
+      const requestedPatient = window.location.pathname.split("/")[2];
+      const store = usePatientStore.getState();
+      if (requestedPatient && requestedPatient !== store.activePatient.id && store.patients.some(patient => patient.id === requestedPatient)) store.setActivePatient(requestedPatient);
+      if (params.get("create") === "true") setShowAddModal(true);
+      if (params.get("q")) setSearch(params.get("q")!);
+      const requested = params.get("tab");
+      if (requested === "Labs") setTab("Lab Results");
+      else if (requested && ["Overview", "Clinical History", "Lab Results", "Imaging", "Genomics", "Documents"].includes(requested)) setTab(requested);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
   const [toast, setToast] = useState<string | null>(null);
   const ai = useDocAI();
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Providers } from "@/components/providers";
 import "./globals.css";
+import "./command-center.css";
 
 export const metadata: Metadata = {
   title: { default: "ONCO.AI", template: "%s · ONCO.AI" },

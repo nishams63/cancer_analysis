@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth/options";
 import { callAIBackend } from "@/lib/ai-client";
 import { clinicalInputSchema, decisionSchema, safetyInputSchema, slmInputSchema } from "@/lib/validation";
+import { copilotDemo } from "@/lib/copilot-demo";
 
 const windows = new Map<string, { count: number; reset: number }>();
 function rateLimit(request: NextRequest) {
@@ -39,6 +40,10 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     const body: unknown = await request.json();
     const parsed = route === "slm/chat" ? slmInputSchema.parse(body) : route.startsWith("safety/") ? safetyInputSchema.parse(body) : route === "tumor-board/decision" ? decisionSchema.parse(body) : clinicalInputSchema.parse(body);
     const live = await callAIBackend(route, parsed);
+    if (!live && route === "slm/chat") {
+      const input = slmInputSchema.parse(body);
+      return NextResponse.json({ response: copilotDemo(input.message, input.patientId), demo: true, evidence: [], physician_review_required: true });
+    }
     return NextResponse.json(live || { ...demo(route), demo: true, audit: { action: route, user: session.user?.email, immutable: true } });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Invalid request";

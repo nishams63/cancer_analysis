@@ -44,3 +44,9 @@ stage-3-nlp-slm/scratch/
 .env
 *.env
 stage 5 Gen-AI/**/.env
+
+# Test, browser and showcase artifacts
+.playwright-mcp/
+/*.png
+*.tsbuildinfo
+onco-showcase/
