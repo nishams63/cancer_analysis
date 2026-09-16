@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STAGE 3 & 4 VIVA PREPARATION — CLINICAL NLP & SLM</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+    
+    :root {
+      --primary: #0f2942;
+      --primary-light: #1e3a8a;
+      --secondary: #0d9488;
+      --accent: #2563eb;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --highlight: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background-color: #ffffff;
+      line-height: 1.6;
+      font-size: 13.5px;
+      padding: 30px 45px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm 14mm 12mm;
+    }
+
+    header.viva-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0369a1 100%);
+      color: #ffffff;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+
+    .viva-header h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      color: #ffffff;
+      border: none;
+      padding: 0;
+    }
+
+    .viva-header .subtitle {
+      font-size: 14px;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .badge-dark { background: rgba(255, 255, 255, 0.18); color: #f8fafc; border: 1px solid rgba(255, 255, 255, 0.25); }
+    .badge-green { background: #059669; color: #ffffff; }
+    .badge-blue { background: #2563eb; color: #ffffff; }
+    .badge-amber { background: #d97706; color: #ffffff; }
+    .badge-teal { background: #0d9488; color: #ffffff; }
+
+    h1 {
+      color: var(--primary);
+      font-size: 22px;
+      font-weight: 800;
+      border-bottom: 2.5px solid var(--primary-light);
+      padding-bottom: 6px;
+      margin-top: 36px;
+      margin-bottom: 16px;
+      page-break-after: avoid;
+    }
+
+    h2 {
+      color: var(--primary-light);
+      font-size: 18px;
+      font-weight: 700;
+      border-bottom: 1.5px solid #cbd5e1;
+      padding-bottom: 5px;
+      margin-top: 28px;
+      margin-bottom: 14px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      color: var(--secondary);
+      font-size: 15px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      page-break-after: avoid;
+    }
+
+    h4 {
+      color: #1e293b;
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-top: 16px;
+      margin-bottom: 6px;
+      background: #f1f5f9;
+      padding: 6px 10px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 4px 4px 0;
+      page-break-after: avoid;
+    }
+
+    p, li {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.55;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    strong {
+      color: #0f172a;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e2e8f0;
+      margin: 24px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      padding: 8px 11px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    code {
+      font-family: 'Fira Code', Consolas, monospace;
+      font-size: 11.5px;
+      background-color: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre {
+      background-color: #0f172a;
+      color: #f8fafc;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 11.5px;
+      line-height: 1.45;
+      margin: 14px 0;
+      page-break-inside: avoid;
+    }
+
+    pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--secondary);
+      background-color: #f0fdfa;
+      margin: 14px 0;
+      padding: 10px 16px;
+      border-radius: 0 6px 6px 0;
+      font-size: 12.5px;
+      page-break-inside: avoid;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        font-size: 9.5pt;
+        line-height: 1.42;
+        color: #000;
+      }
+      header.viva-header {
+        background: #0f172a !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 16pt;
+        page-break-before: always;
+        padding-top: 10px;
+      }
+      h1:first-of-type {
+        page-break-before: avoid;
+        padding-top: 0;
+      }
+      h2 {
+        font-size: 12.5pt;
+        margin-top: 16pt;
+      }
+      h3 {
+        font-size: 10.5pt;
+      }
+      h4 {
+        font-size: 9.5pt;
+        background: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      table {
+        font-size: 8pt;
+      }
+      th {
+        background: #e2e8f0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      tr:nth-child(even) {
+        background: #f8fafc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      pre {
+        background: #f8fafc !important;
+        color: #0f172a !important;
+        border: 1px solid #cbd5e1;
+      }
+      hr {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="viva-header">
+  <div class="badge badge-dark">PRECISION ONCOLOGY — CLINICAL NLP &amp; GENERATIVE SLM VIVA</div>
+  <h1>STAGE 3 (NLP) &amp; STAGE 4 (SLM) VIVA MASTER GUIDE</h1>
+  <div class="subtitle">Complete Role-by-Role Concepts, Workflows, Technical Justifications &amp; Exhaustive Examiner Q&amp;A</div>
+  <div class="badge-bar">
+    <span class="badge badge-teal">Stage 3: NegEx &amp; Clinical NLP</span>
+    <span class="badge badge-blue">Stage 4: Qwen2.5-1.5B LoRA SLM</span>
+    <span class="badge badge-green">0.00% Hallucination Proof</span>
+    <span class="badge badge-amber">100% Offline C++ CPU Runtime</span>
+  </div>
+</header>
+
+<h1>PERSONALIZED PRECISION MEDICINE FOR ONCOLOGY TREATMENT OPTIMIZATION</h1>
+<h2>ADVANCED VIVA PREPARATION MASTER GUIDE: STAGE 3 (NLP) &amp; STAGE 4 (SLM)</h2>
+<h3>Complete Role-by-Role Concepts, Architectural Rationales &amp; Comprehensive Viva Q&amp;A</h3>
+<hr />
+<h2>Executive Overview: The NLP &amp; Generative SLM Continuum</h2>
+<p>In our precision oncology system, <strong>Stage 3 (Clinical NLP)</strong> and <strong>Stage 4 (Small Language Models)</strong> form the language comprehension and generative clinical reasoning core:</p>
+<pre><code>[Raw Oncology EHR Notes] 
+         │
+         ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│ STAGE 3: CLINICAL NATURAL LANGUAGE PROCESSING (NLP)                    │
+│ 1. Data Engineering: PII De-Identification &amp; Parquet Storage           │
+│ 2. EDA Engineering: Vocabulary Profiling &amp; 100% Negation Discovery     │
+│ 3. NLP Engineering: Conservative Cleaning, NegEx &amp; Baseline Classifiers│
+│ 4. Evaluation Engineering: Macro F1 &amp; Critical Patient Recall Gate     │
+│ 5. Integration Engineering: Schema Contracts &amp; Immutable Audit Logging │
+└────────────────────────────────────────────────────────────────────────┘
+         │
+         ▼ (Handoff Contract: Urgency F1 &gt;= 0.7557, Recall &gt;= 94.57%, Entity Pres. &gt;= 95%)
+┌────────────────────────────────────────────────────────────────────────┐
+│ STAGE 4: SMALL LANGUAGE MODEL (SLM) &amp; OFFLINE CDSS                     │
+│ 1. Data Engineering: 5,706 Instruction-Triads &amp; Entity Validation Gate │
+│ 2. EDA Engineering: BPE Tokenization, Context Sizing &amp; Subword Audits  │
+│ 3. SLM Engineering: Qwen2.5-1.5B, LoRA on 7 Modules &amp; GGUF Quantization│
+│ 4. Evaluation Engineering: 0.00% Hallucination &amp; 6-Stage Firewall Gate │
+│ 5. Integration Engineering: 100% Offline C++ CPU Runtime &amp; Voice Alerts│
+└────────────────────────────────────────────────────────────────────────┘
+         │
+         ▼
+[Clinician Bedside Triad: Risk Urgency | Key Finding | Actionable Guidance]
+</code></pre>
+<hr />
+<hr />
+<h1>PART 1: STAGE 3 — CLINICAL NLP WORKFLOWS &amp; ROLE-BY-ROLE VIVA</h1>
+<hr />
+<h2>1.1 Data Engineering Role (Stage 3)</h2>
+<h3>1.1.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Corpus Characteristics:</strong> Ingested 6,098 validated clinical oncology records (<code>clinical_nlp_dataset_v1.parquet</code>) representing 1,000 unique patients (<code>PT-000001</code> through <code>PT-001000</code>) across 2,038 clinical encounters.</li>
+<li><strong>Document Taxonomy:</strong> Balanced composition across three core document types:
+<ul>
+<li><em>Consultation Notes (34%):</em> Initial comprehensive oncological workups, baseline staging, performance status (ECOG).</li>
+<li><em>Inpatient Progress Notes (33%):</em> Acute toxicity logs, daily vital monitoring, chemo cycle tolerances.</li>
+<li><em>Discharge Summaries (33%):</em> Terminal hospitalization plans, medication reconciliation, adverse event resolutions.</li>
+</ul>
+</li>
+<li><strong>De-Identification &amp; Privacy (HIPAA Safe Harbor):</strong> All direct identifiers (names, medical record numbers, telephone numbers, hospital facility names) were scrubbed and replaced with deterministic surrogate tokens.</li>
+<li><strong>Storage Serialization:</strong> Serialized in Apache Parquet with Snappy compression. Achieved a 78% reduction in storage footprint compared to CSV while preserving strong schema typing and nested metadata structures.</li>
+<li><strong>Zero-Leakage Cohort Splitting:</strong> Partitioned into 700 Train / 150 Validation (909 docs) / 150 Locked Test (928 docs) patients. Split strictly via <code>GroupKFold</code> on <code>patient_id</code>. Zero patient or encounter overlap across partitions.</li>
+</ul>
+<hr />
+<h3>1.1.2 Data Engineering Viva Questions &amp; Answers (Stage 3)</h3>
+<h4>Q1: &quot;Why did you use Apache Parquet instead of CSV or JSON for storing clinical text?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;We selected Apache Parquet with Snappy compression for three critical engineering reasons:</p>
+<ol>
+<li><em>Columnar Compression:</em> Clinical text is repetitive in vocabulary. Parquet's columnar dictionary encoding and Snappy compression reduced our dataset size by 78% compared to raw CSV (from ~18 MB to under 4 MB), allowing rapid memory mapping.</li>
+<li><em>Schema Enforcement &amp; Type Preservation:</em> Unlike CSV, which treats everything as untyped strings and often corrupts nested structures or missing values, Parquet preserves explicit column datatypes, date formats, and array structures (such as lists of entity offsets).</li>
+<li><em>I/O Performance:</em> Downstream training only needs to load the text and target columns. Parquet supports column projection, reading only the required columns from disk rather than parsing the entire row.&quot;</li>
+</ol>
+<h4>Q2: &quot;How did you guarantee that Protected Health Information (PHI) was eliminated under HIPAA?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;We applied HIPAA Safe Harbor standards. All direct patient identifiers were replaced with synthetic surrogate keys generated via deterministic cryptographic hashing (e.g., <code>PT-000452</code>, <code>ENC-001894</code>). All clinical dates were standardized to relative trial days where applicable, and any provider names or institutional headers were stripped. The source parquet hashes were locked with SHA-256 integrity checksums to ensure provenance without retaining raw identifiable records.&quot;</p>
+<h4>Q3: &quot;Why is a patient-level split mandatory for clinical notes, and what would happen if you used random row splitting?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;In clinical oncology, each patient has an average of 6 documents across multiple visits. If we performed a random row-level split, Document 1 from Patient $A$ would land in the training set and Document 2 from Patient $A$ would land in the test set.
+Clinical notes contain patient-specific stylistic quirks, identical baseline oncological histories, and unique doctor phrasing. A model evaluated on random splits simply memorizes that Patient $A$'s phrasing correlates with their chronic condition—a catastrophic form of <strong>data leakage</strong>. Patient-level grouping (<code>GroupKFold</code> on <code>patient_id</code>) ensures that the test set evaluates true generalization to completely unseen patient biology.&quot;</p>
+<hr />
+<h2>1.2 EDA Engineering Role (Stage 3)</h2>
+<h3>1.2.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Text Length &amp; Sequence Bounds:</strong> Mean word count is <strong>105.90 words</strong> (median 104; min 68; max 143 words). Maximum character length: 988 characters.</li>
+<li><strong>Token-to-Word Analysis:</strong> Evaluated subword expansion using clinical BERT and BPE tokenizers. Under standard medical tokenizers, 100% of documents contain fewer than 210 subword tokens.</li>
+<li><strong>Context Allocation Decision:</strong> Established that setting <code>max_length = 256</code> tokens captures 100% of all clinical documents without a single token of truncation, while reducing self-attention compute by 75% compared to the default 512-token window ($O(N^2)$ complexity where $(\frac{256}{512})^2 = 0.25$).</li>
+<li><strong>Vocabulary &amp; Lexical Profiling:</strong> Total corpus vocabulary comprises 3,181 distinct terms with a Type-Token Ratio (TTR) of 0.0049, reflecting heavy domain-specific repetition of oncology agents and staging terminology.</li>
+<li><strong>The 100% Negation Discovery:</strong> Audited clinical negation cues and discovered that <strong>100.0% of documents contain at least one negation phrase</strong> (mean: 2.30 negation cues per document). Naive Bag-of-Words keyword matching is therefore completely invalid.</li>
+<li><strong>Severe Class Imbalance Auditing:</strong>
+<ul>
+<li><em>Triage Urgency (4 classes):</em> <code>LOW</code> (67.9%), <code>HIGH</code> (13.7%), <code>CRITICAL</code> (9.5%), <code>MEDIUM</code> (8.9%). Imbalance ratio: <strong>7.60 : 1</strong>.</li>
+<li><em>Hazard Type (8 classes):</em> <code>NONE</code> (79.5%), <code>HEPATIC</code> (7.8%), <code>HEMATOLOGIC</code> (4.8%), <code>RENAL</code> (3.2%), <code>PULMONARY</code> (2.1%), <code>INFECTION</code> (1.1%), <code>NEUROLOGIC</code> (0.9%), <code>CARDIAC</code> (0.57%). Imbalance ratio: <strong>138.43 : 1</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>1.2.2 EDA Engineering Viva Questions &amp; Answers (Stage 3)</h3>
+<h4>Q4: &quot;What was the single most impactful finding during Stage 3 EDA, and how did it change your modeling strategy?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;The most critical finding was that <strong>100.0% of clinical notes contain explicit negation cues</strong>, averaging 2.30 negation triggers per document.
+In general NLP, negation is an edge case; in clinical oncology, it is the primary language mode. Oncologists routinely document what the patient <em>does not</em> have (e.g., <em>'denies chest pain, no evidence of dyspnea, negative for EGFR T790M'</em>).
+If an engineer feeds this into a standard TF-IDF or keyword matcher, the note gets high feature weights for <code>chest pain</code>, <code>dyspnea</code>, and <code>EGFR</code>, falsely classifying a stable patient as critical. This EDA insight proved that <strong>negation-aware extraction and contextual modeling were non-negotiable requirements</strong>.&quot;</p>
+<h4>Q5: &quot;How did your word count distribution analysis optimize downstream model compute?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Our analysis showed a mean of 105.9 words and a strict maximum of 143 words across all 6,098 records. Tokenizing this corpus revealed that 100% of notes fit within 210 subword tokens.
+Standard transformer pipelines blindly default to <code>max_length = 512</code>. Because self-attention complexity scales quadratically ($O(L^2)$), running 512 tokens requires $4\times$ more attention computation and memory than 256 tokens. By empirically proving that <code>max_length = 256</code> covers the entire corpus with zero truncation, we cut transformer memory and inference latency by 75%.&quot;</p>
+<h4>Q6: &quot;How did you address the 138:1 class imbalance discovered in Hazard Type classification?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Our EDA revealed that <code>CARDIAC</code> hazard represented only 0.57% of the dataset, while <code>NONE</code> represented 79.5%. Standard cross-entropy loss would simply predict <code>NONE</code> and achieve ~80% accuracy while failing on 100% of life-threatening cardiac toxicities.
+We made two architectural decisions based on this EDA:</p>
+<ol>
+<li>Implemented <strong>Focal Loss ($\gamma = 2.0$)</strong>, which dynamically down-weights easy, well-classified background examples (<code>NONE</code>) and focuses gradient updates on rare, hard hazard classes.</li>
+<li>Mandated <strong>Macro-averaged F1</strong> as the evaluation metric so that performance on rare cardiac and renal toxicities carries equal weight to the majority class.&quot;</li>
+</ol>
+<hr />
+<h2>1.3 NLP Engineering Role (Stage 3)</h2>
+<h3>1.3.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Text Preprocessing Strategy (Conservative vs Aggressive):</strong>
+<ul>
+<li><em>Conservative Cleaning:</em> Preserved all digits, decimal points, medical abbreviations, Latin prefixes, and unit symbols (<code>%</code>, <code>mg</code>, <code>mg/m²</code>, <code>ng/mL</code>).</li>
+<li><em>Why Aggressive Cleaning Fails:</em> Standard cleaning strips numbers and punctuation. In clinical oncology, removing numbers destroys chemotherapy dosing (<em>'Cisplatin 75 mg/m²'</em> $\to$ <em>'Cisplatin mg m'</em>), eliminates staging (<em>'Stage IV'</em> $\to$ <em>'Stage'</em>), and erases lab thresholds (<em>'SpO2 &lt; 90%'</em> $\to$ <em>'SpO2'</em>).</li>
+</ul>
+</li>
+<li><strong>Unicode NFKC Normalization:</strong> Applied NFKC (Compatibility Decomposition followed by Canonical Composition) to normalize clinical EMR typographical ligatures (e.g., converting $\text{ﬁ} \to \text{fi}$, $\mu \to \text{u}$, superscript $² \to 2$).</li>
+<li><strong>Clinical Sentence Boundary Detection:</strong> Built a deterministic clinical sentence tokenizer configured with domain abbreviation guardrails (<code>Dr.</code>, <code>vs.</code>, <code>q.d.</code>, <code>b.i.d.</code>, <code>p.o.</code>, <code>mg.</code>, <code>Pt.</code>) to prevent erroneous sentence splits.</li>
+<li><strong>The NegEx-Style 4-Polarity Rule Algorithm:</strong>
+<ul>
+<li><em>Pre-Negation Triggers (Forward Scope):</em> <code>no</code>, <code>not</code>, <code>denies</code>, <code>without</code>, <code>ruled out</code>, <code>negative for</code>, <code>absence of</code>. Propagates forward up to 6 tokens.</li>
+<li><em>Post-Negation Triggers (Backward Scope):</em> <code>unlikely</code>, <code>absent</code>, <code>resolved</code>, <code>negative</code>, <code>free</code>. Propagates backward up to 4 tokens.</li>
+<li><em>Historical / Anamnestic Triggers:</em> <code>history of</code>, <code>prior</code>, <code>past medical history</code>, <code>status post</code>.</li>
+<li><em>Pseudo-Negation Guards:</em> <code>no change</code>, <code>no increase</code>, <code>not only</code>, <code>no doubt</code>. Blocks false negation propagation.</li>
+<li><em>Scope Terminators:</em> Conjunctions (<code>but</code>, <code>however</code>, <code>although</code>) and semicolons immediately terminate scope.</li>
+<li><em>4 Target Polarity States:</em> <code>AFFIRMED</code>, <code>NEGATED</code>, <code>HISTORICAL</code>, <code>RESOLVED</code>.</li>
+</ul>
+</li>
+<li><strong>Negation-Aware TF-IDF Representation:</strong> Modified the TF-IDF vectorizer so that <code>NEGATED</code> and <code>HISTORICAL</code> entities are zeroed out or assigned negative feature weights, preventing non-existent symptoms from triggering urgency classifiers.</li>
+<li><strong>Statistical Baseline Models:</strong> Built class-weighted Logistic Regression models as empirical baselines for:
+<ul>
+<li><em>Urgency Classification (4 classes):</em> Macro F1 = <strong>0.7557</strong>, Critical Recall = <strong>94.57%</strong>.</li>
+<li><em>Hazard Classification (8 classes):</em> Macro F1 = <strong>0.5214</strong>.</li>
+<li><em>Named Entity Recognition (NER, 4 types):</em> Mean Span F1 = <strong>76.70%</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>1.3.2 NLP Engineering Viva Questions &amp; Answers (Stage 3)</h3>
+<h4>Q7: &quot;Why did you implement a rule-based NegEx algorithm rather than using a pretrained Transformer like ClinicalBERT for negation detection?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;This was a deliberate engineering decision based on three factors:</p>
+<ol>
+<li><em>Deterministic Clinical Explainability:</em> In medical software, every classification decision must be legally and clinically auditable. A rule-based NegEx engine allows an oncologist to inspect the exact trigger word (<code>'denies'</code>) and scope window that flipped an entity to <code>NEGATED</code>. Neural attention weights do not provide deterministic legal guarantees.</li>
+<li><em>Computational Efficiency:</em> NegEx executes via compiled regular expressions in microseconds on a standard CPU. A transformer forward pass takes 50–100ms on CPU.</li>
+<li><em>Zero Training Data Dependency:</em> NegEx does not require thousands of hand-annotated negation span labels to train, avoiding the risk of out-of-distribution catastrophic forgetting.&quot;</li>
+</ol>
+<h4>Q8: &quot;Explain the difference between Pre-Negation, Post-Negation, and Pseudo-Negation with examples.&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;- <strong>Pre-Negation:</strong> The trigger word appears <em>before</em> the clinical entity and projects scope <em>forward</em>. Example: <em>'Patient <strong>denies</strong> [fever]'</em> $\to$ <code>fever</code> is negated.</p>
+<ul>
+<li><strong>Post-Negation:</strong> The trigger appears <em>after</em> the entity and projects scope <em>backward</em>. Example: <em>'[Chest pain] is <strong>unlikely</strong>'</em> or <em>'[Headache] has <strong>resolved</strong>'</em> $\to$ entity is negated/resolved.</li>
+<li><strong>Pseudo-Negation:</strong> Phrases that contain negation tokens (<code>no</code>, <code>not</code>) but express clinical continuity or affirmation rather than negation. Example: <em>'Patient reports <strong>no change</strong> in appetite'</em> or <em>'<strong>not only</strong> dyspnea but also rash'</em>. If a naive parser sees <code>'no'</code> in <code>'no change'</code>, it negates appetite. Our pseudo-negation guard catches these compound idioms and preserves the affirmed status.&quot;</li>
+</ul>
+<h4>Q9: &quot;What is the purpose of establishing a Statistical Baseline (Logistic Regression) in Stage 3?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;In machine learning, you never deploy a complex 1.5-billion parameter generative model (Stage 4) without first quantifying the empirical ceiling of a simple, interpretable linear model.
+Our class-weighted Logistic Regression established the <strong>Handoff Performance Floor</strong>: Urgency Macro F1 of <strong>0.7557</strong> and Critical Recall of <strong>94.57%</strong>. This created a strict contractual requirement: if our Stage 4 SLM could not beat 0.7557 F1 and 94.57% Critical Recall, it would be rejected as an unnecessary computational expense.&quot;</p>
+<hr />
+<h2>1.4 Evaluation Engineering Role (Stage 3)</h2>
+<h3>1.4.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Metric Architecture:</strong>
+<ul>
+<li><em>Primary Metric:</em> <strong>Macro-averaged F1</strong> across the 4 urgency tiers.</li>
+<li><em>Non-Negotiable Safety Constraint:</em> <strong>Critical Patient Recall $\ge 94.57%$</strong>.</li>
+<li><em>NER Evaluation Metric:</em> <strong>Mean Span F1</strong> across four concept categories: <code>DRUG</code>, <code>GENE</code>, <code>DOSAGE</code>, <code>ADVERSE_EVENT</code>.</li>
+</ul>
+</li>
+<li><strong>Locked Test Set Benchmark (N=928 Documents):</strong>
+<ul>
+<li>Urgency Level Macro F1: <strong>0.7557</strong></li>
+<li>Critical Patient Recall: <strong>94.57%</strong> (catches 87 out of 92 emergency cases)</li>
+<li>Named Entity Recognition Span F1: <strong>76.70%</strong> (<code>DRUG</code>: 84.2%, <code>GENE</code>: 81.5%, <code>DOSAGE</code>: 74.1%, <code>ADVERSE_EVENT</code>: 67.0%)</li>
+<li>Hazard Type Macro F1: <strong>0.5214</strong></li>
+</ul>
+</li>
+<li><strong>Error Analysis on False Negatives:</strong> Analyzed the 5 missed <code>CRITICAL</code> cases. Discovered that all 5 involved atypical phrasing with compound conditional clauses (e.g., <em>&quot;If platelet count drops below 20k, admit immediately&quot;</em>), which baseline linear models failed to contextualize. This directly justified Stage 4 generative reasoning.</li>
+</ul>
+<hr />
+<h3>1.4.2 Evaluation Engineering Viva Questions &amp; Answers (Stage 3)</h3>
+<h4>Q10: &quot;Why is Macro F1 preferred over Accuracy or Micro F1 in clinical classification?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;In our corpus, <code>LOW</code> urgency accounts for 67.9% of all documents.</p>
+<ul>
+<li><em>Accuracy Flaw:</em> A trivial model that outputs <code>LOW</code> for every patient achieves <strong>67.9% Accuracy</strong>, but has <strong>0% Recall on Critical patients</strong>, leading to untreated toxic shock and mortality.</li>
+<li><em>Micro F1 Flaw:</em> Micro F1 pools all true positives and false positives globally, meaning majority class performance overwhelmingly dominates the metric.</li>
+<li><em>Macro F1:</em> Calculates Precision and Recall for each class independently, and then computes the unweighted arithmetic mean. A failure on the rare 9.5% <code>CRITICAL</code> class penalizes the overall score just as heavily as a failure on the majority class.&quot;</li>
+</ul>
+<h4>Q11: &quot;What is Mean Span F1 in NER and how does it differ from Token-Level F1?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Token-level F1 evaluates each subword or token independently (e.g., inside/outside B-I-O tagging). If a drug name is <code>'Pembrolizumab 200mg'</code> and the model predicts <code>'Pembrolizumab'</code>, token-level F1 awards partial credit.
+<strong>Span F1</strong> requires exact boundary matching: the model must correctly identify the exact start and end character offsets of the clinical concept. In clinical medicine, partial credit is dangerous (e.g., extracting <code>'Cisplatin'</code> but omitting <code>'100 mg/m²'</code> misses overdose detection). Mean Span F1 averages exact-span matching performance across all entity types.&quot;</p>
+<hr />
+<h2>1.5 Integration Engineering Role (Stage 3)</h2>
+<h3>1.5.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>The Inter-Stage Schema Contract (<code>contract_validation.py</code>):</strong>
+<ul>
+<li>Defines the formal interface between Stage 3 NLP feature extraction and Stage 4 SLM prompt synthesis.</li>
+<li>Enforces <code>SUPPORTED_SCHEMA_VERSION = &quot;1.0.0&quot;</code> with strict SemVer validation.</li>
+<li>Utilizes Pydantic V2 with <code>ConfigDict(extra=&quot;forbid&quot;)</code> to ensure that no malformed, unrecognized, or unvalidated fields pass downstream.</li>
+</ul>
+</li>
+<li><strong>Cryptographic Text Integrity:</strong> Computes a SHA-256 hash over the raw clinical narrative text to establish an immutable audit trail.</li>
+<li><strong>Standardized Payload Schemas:</strong>
+<ul>
+<li><code>TriageUrgencyPayload</code>: <code>predicted_class</code> (<code>LOW</code>, <code>MEDIUM</code>, <code>HIGH</code>, <code>CRITICAL</code>), calibrated <code>confidence</code> $[0.0, 1.0]$, and complete <code>class_probabilities</code> dictionary.</li>
+<li><code>HazardPayload</code>: Validated hazard type out of 8 permitted clinical categories.</li>
+<li><code>EntityPayload</code>: Array of extracted entities with offsets, entity types, and verified 4-way polarities.</li>
+</ul>
+</li>
+<li><strong>Confidence Gating (<code>confidence_gate.py</code>):</strong> Sets an operational threshold $\tau_{\text{NLP}} = 0.65$. If classification confidence is $&lt; 0.65$, the system flags <code>review_required = True</code> and routes the document to an oncologist review queue.</li>
+<li><strong>Defensive Exception Handling (<code>failure_mode_handlers.py</code>):</strong> Catches empty notes, non-UTF8 binary noise, and sequence overflows ($&gt; 256$ tokens) with structured error envelopes.</li>
+<li><strong>Immutable JSONL Transaction Ledger (<code>integration_audit_logger.py</code>):</strong> Appends every transaction with UTC timestamps, input text SHA-256 hash, entity counts, classification outputs, and latency.</li>
+</ul>
+<hr />
+<h3>1.5.2 Integration Engineering Viva Questions &amp; Answers (Stage 3)</h3>
+<h4>Q12: &quot;What is an Inter-Stage Schema Contract and why is <code>extra='forbid'</code> critical?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;An Inter-Stage Schema Contract is a programmatic boundary enforcement mechanism that guarantees data compatibility between independent pipeline stages.
+In Pydantic, the default behavior allows extra dictionary keys to pass through silently. We set <code>ConfigDict(extra='forbid')</code> so that if an upstream data engineer introduces an unannounced column or misnames a field, the contract validation raises an immediate <code>ContractValidationError</code>. In clinical software, silent schema drift can corrupt downstream generative model prompts without raising runtime errors; forbidding extra fields prevents silent corruption.&quot;</p>
+<h4>Q13: &quot;How does the Confidence Gate protect clinical safety in integration?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Our <code>confidence_gate.py</code> evaluates the model's posterior probability:
+$$\max_{c} P(y = c \mid x) \ge 0.65$$
+If the model's confidence falls below 0.65, the case is deemed ambiguous. Rather than passing an uncertain prediction to the Stage 4 SLM, the integration layer sets <code>review_required = True</code> and diverts the payload to an oncologist triage dashboard. This ensures the automated pipeline only processes high-certainty clinical text autonomously.&quot;</p>
+<hr />
+<hr />
+<h1>PART 2: STAGE 4 — SMALL LANGUAGE MODELS (SLM) &amp; OFFLINE CDSS</h1>
+<hr />
+<h2>2.1 Data Engineering Role (Stage 4)</h2>
+<h3>2.1.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Instruction Dataset Construction:</strong> Produced <code>slm_finetune_dataset_v1.parquet</code> containing 5,706 accepted instruction-completion pairs curated from validated Stage 3 notes.</li>
+<li><strong>The 17-Feature Instruction Schema:</strong> Each record contains 17 validated fields:
+<code>patient_id</code>, <code>note_id</code>, <code>document_type</code>, <code>clinical_note</code>, <code>instruction</code>, <code>target_risk</code>, <code>target_key_finding</code>, <code>target_action</code>, <code>ner_genes</code>, <code>ner_drugs</code>, <code>ner_dosages</code>, <code>ner_adverse_events</code>, <code>entity_check_status</code>, <code>entity_coverage</code>, <code>missing_entities</code>, <code>invented_entities</code>, <code>split</code>.</li>
+<li><strong>The Clinical Decision Support Triad Structure:</strong>
+<ul>
+<li><code>target_risk</code>: Quantitative toxicity risk category (<code>Low</code>, <code>Moderate</code>, <code>High</code>).</li>
+<li><code>target_key_finding</code>: Exactly two factual sentences summarizing affirmed clinical findings, vitals, and lab abnormalities.</li>
+<li><code>target_action</code>: Concrete, guideline-adherent oncological recommendations (e.g., <em>&quot;Hold Cisplatin; administer intravenous hydration; re-check serum creatinine in 48 hours&quot;</em>).</li>
+</ul>
+</li>
+<li><strong>Entity Preservation Quality Gate:</strong> Implemented an automated pre-training audit that extracts entities from both the input note and the target completion. Any target completion containing &quot;invented&quot; entities (drugs or mutations not present in the note) is rejected.</li>
+<li><strong>Rejection Circuit Breaker:</strong> If $&gt; 5%$ of instruction pairs in any batch fail entity preservation, the data generation pipeline halts immediately.</li>
+<li><strong>Zero-Leakage Stratified Partitioning:</strong> Strict 700 Train / 150 Validation / 150 Locked Test patient isolation verified across 23 unit tests.</li>
+</ul>
+<hr />
+<h3>2.1.2 Data Engineering Viva Questions &amp; Answers (Stage 4)</h3>
+<h4>Q14: &quot;What is the Clinical Decision Support Triad, and why did you format the target output this way?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;The Clinical Decision Support Triad is a structured three-part response designed for oncologists:</p>
+<ol>
+<li><code>target_risk</code>: High-level triage urgency (<code>Low</code>, <code>Moderate</code>, <code>High</code>).</li>
+<li><code>target_key_finding</code>: Exactly two factual sentences synthesizing verified medical entities.</li>
+<li><code>target_action</code>: Concrete, guideline-adherent medical steps (e.g., drug holds, hydration, lab re-checks).
+We chose this rigid format over open-ended conversational text because oncologists in high-stress clinic environments do not want verbose chat responses. They need immediate risk categorization, the underlying clinical evidence, and actionable next steps formatted identically on every encounter.&quot;</li>
+</ol>
+<h4>Q15: &quot;What is the Entity Preservation Quality Gate and the Rejection Circuit Breaker?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;The Entity Preservation Quality Gate is an automated audit step in our data engineering pipeline. Before any generated instruction pair is accepted into the fine-tuning corpus, a regex and NER validator checks that:</p>
+<ol>
+<li>Every drug and gene mentioned in <code>target_action</code> exists verbatim in the source note.</li>
+<li><code>invented_entities</code> count equals zero.
+The <strong>Rejection Circuit Breaker</strong> is a pipeline-level fail-safe: if more than 5% of candidate pairs fail the entity preservation check, the script raises a fatal error and terminates execution. This prevents corrupted or hallucinated synthetic data from silently entering the SLM training corpus.&quot;</li>
+</ol>
+<hr />
+<h2>2.2 EDA Engineering Role (Stage 4)</h2>
+<h3>2.2.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>BPE Token Distributions (Qwen Tokenizer):</strong>
+<ul>
+<li><em>Source Instruction Length:</em> Mean = 198 tokens; median = 195; 95th percentile = 285; maximum = 488 tokens.</li>
+<li><em>Target Completion Length:</em> Mean = 42 tokens; median = 41; 95th percentile = 56; maximum = 71 tokens.</li>
+<li><em>Total Combined Length:</em> Maximum observed sequence length = 559 tokens.</li>
+</ul>
+</li>
+<li><strong>Context Window Sizing Proof:</strong> A context allocation of <strong>1024 tokens</strong> captures 100% of instruction-completion pairs with a safety buffer of 465 tokens, guaranteeing <strong>0.00% context truncation</strong> while avoiding the memory footprint of 2048/4096 allocations.</li>
+<li><strong>Subword Fragmentation Analysis:</strong> Audited how Qwen's byte-pair encoding tokenizer segments antineoplastic pharmaceuticals:
+<ul>
+<li><code>Pembrolizumab</code> $\to$ <code>['Pem', 'brol', 'izumab']</code> (3 tokens)</li>
+<li><code>Fluorouracil</code> $\to$ <code>['Flu', 'or', 'our', 'acil']</code> (4 tokens)</li>
+<li><code>Osimertinib</code> $\to$ <code>['O', 'sim', 'ert', 'inib']</code> (4 tokens)</li>
+<li><em>Conclusion:</em> Fragmentation did not exceed 4 tokens per drug name, proving that Qwen's 151,643-token vocabulary represents oncology terminology efficiently without character-level degradation.</li>
+</ul>
+</li>
+<li><strong>Negation Polarity Flip Audit:</strong> Verified across all 5,706 pairs that no negated entity in the source note (e.g., <em>&quot;denies nausea&quot;</em>) was transformed into an affirmed symptom in the summary (<em>&quot;patient has nausea&quot;</em>). Zero polarity flips detected.</li>
+</ul>
+<hr />
+<h3>2.2.2 EDA Engineering Viva Questions &amp; Answers (Stage 4)</h3>
+<h4>Q16: &quot;What is Subword Fragmentation in clinical tokenization and why does it matter for SLMs?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Subword fragmentation occurs when a tokenizer's vocabulary lacks domain-specific terms, forcing it to chop complex medical words into numerous arbitrary sub-pieces (e.g., splitting a drug into 10 character-level fragments).
+High fragmentation degrades language models in two ways:</p>
+<ol>
+<li>It artificially inflates token sequence length, consuming context memory.</li>
+<li>It fragments the semantic representation, making it harder for attention heads to link the drug name to its dosage or contraindications.
+Our EDA audited Qwen's BPE vocabulary and confirmed that complex antineoplastic agents (like <code>Pembrolizumab</code> and <code>Osimertinib</code>) fragmented into at most 3 to 4 tokens, preserving morphological affixes like <code>-mab</code> (monoclonal antibody) and <code>-nib</code> (kinase inhibitor).&quot;</li>
+</ol>
+<h4>Q17: &quot;How did target token length analysis inform your inference generation parameters?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Our target token length EDA revealed that gold-standard clinical triads have a mean length of 42 tokens and a strict maximum of 71 tokens.
+In production deployment, we set <code>max_new_tokens = 80</code> and <code>min_new_tokens = 25</code>. Setting <code>max_new_tokens = 80</code> prevents the model from entering repetitive, hallucinated looping behavior (a common SLM failure mode) while ensuring that 100% of valid clinical triads can complete without premature truncation.&quot;</p>
+<hr />
+<h2>2.3 SLM Engineering Role (Stage 4)</h2>
+<h3>2.3.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Why SLM Over Cloud API LLMs (GPT-4 / Claude):</strong>
+<ol>
+<li><em>Patient Data Sovereignty &amp; HIPAA:</em> Hospital compliance strictly prohibits transmitting Protected Health Information (PHI) to external commercial cloud APIs.</li>
+<li><em>Deterministic Zero-Downtime Availability:</em> Cloud APIs suffer from rate-limits, network latency jitter, and silent model deprecation.</li>
+<li><em>Zero Marginal Cost:</em> At thousands of daily encounters, per-token API pricing is cost-prohibitive.</li>
+<li><em>Offline Edge Feasibility:</em> Runs entirely on local hospital workstations.</li>
+</ol>
+</li>
+<li><strong>Base Model Selection: Qwen2.5-1.5B-Instruct:</strong>
+<ul>
+<li>Selected over LLaMA-3-8B and BioMistral-7B (too large for CPU inference; $&gt;16\text{ GB}$ VRAM required).</li>
+<li>Selected over Phi-2 (2.7B) and GPT-2 (124M; lacks multi-hop clinical reasoning capacity).</li>
+<li><em>Architectural Advantages:</em> Utilizes SwiGLU (Swish Gated Linear Unit) activation, Rotary Position Embeddings (RoPE), and Grouped-Query Attention (GQA).</li>
+</ul>
+</li>
+<li><strong>Fine-Tuning Strategy: PEFT LoRA (Low-Rank Adaptation):</strong>
+<ul>
+<li>Freezes base model weights $W_0 \in \mathbb{R}^{d \times k}$ and injects trainable rank decomposition matrices:
+$$W = W_0 + \Delta W = W_0 + \frac{\alpha}{r} (B \cdot A), \quad B \in \mathbb{R}^{d \times r}, A \in \mathbb{R}^{r \times k}, \quad r = 16, \alpha = 32$$</li>
+<li><em>Target Modules:</em> Injected LoRA adapters into <strong>all 7 linear projections</strong>:
+<ul>
+<li>Attention: <code>q_proj</code>, <code>k_proj</code>, <code>v_proj</code>, <code>o_proj</code></li>
+<li>MLP Feed-Forward: <code>gate_proj</code>, <code>up_proj</code>, <code>down_proj</code></li>
+</ul>
+</li>
+<li><em>Why Target All 7 Modules?</em> Domain-specific factual knowledge and clinical reasoning reside primarily in the MLP feed-forward layers. Adapting only attention ($q, v$) yielded inferior clinical entity retention.</li>
+</ul>
+</li>
+<li><strong>Prompt Token Loss Masking:</strong> Set <code>labels = -100</code> for all instruction and note tokens during cross-entropy loss computation. Gradients update solely based on triad completion tokens, preventing the model from wasting parameter capacity memorizing prompt templates.</li>
+<li><strong>Deployment Quantization: GGUF Q4_K_M + llama.cpp:</strong>
+<ul>
+<li>Quantized FP16 weights ($3.1\text{ GB}$) to <strong>986 MB</strong> ($4$-bit <code>Q4_K_M</code>).</li>
+<li>Executed via <code>llama.cpp</code> using native AVX-512 vector CPU intrinsics, achieving $&gt;25\text{ tokens/second}$ on commodity Intel/AMD quad-core hospital CPUs.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3>2.3.2 SLM Engineering Viva Questions &amp; Answers (Stage 4)</h3>
+<h4>Q18: &quot;Explain the mathematics of LoRA and why you chose rank r=16 and alpha=32.&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;LoRA hypothesizes that the weight updates $\Delta W$ during domain adaptation have a low 'intrinsic rank'. For a pre-trained weight matrix $W_0 \in \mathbb{R}^{d \times k}$, LoRA decomposes the update into two low-rank matrices:
+$$\Delta W = \frac{\alpha}{r} (B \cdot A)$$
+where $B \in \mathbb{R}^{d \times r}$ is initialized to zero, and $A \in \mathbb{R}^{r \times k}$ is initialized with Gaussian noise.</p>
+<ul>
+<li><em>Rank $r=16$:</em> Represents the bottleneck dimension. We ablated $r \in {4, 8, 16, 32}$. Rank 4 underfitted on medical dosage patterns; rank 16 provided optimal clinical entity preservation with only ~12 million trainable parameters ($&lt;1%$ of total weights).</li>
+<li><em>Scaling factor $\alpha=32$:</em> Controls the adapter update magnitude ($\frac{\alpha}{r} = 2.0$). Setting $\alpha = 2r$ scales gradient steps smoothly, preventing the LoRA updates from destabilizing the pre-trained weights.&quot;</li>
+</ul>
+<h4>Q19: &quot;Why did you apply LoRA to the MLP feed-forward projections (gate, up, down) in addition to the attention projections?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Early LoRA papers applied adapters only to query and value projections ($q, v$). However, modern mechanistic interpretability research demonstrates that in transformer architectures:</p>
+<ul>
+<li>Multi-head attention routes information between tokens (syntactic parsing and context retrieval).</li>
+<li>MLP feed-forward layers (<code>gate_proj</code>, <code>up_proj</code>, <code>down_proj</code>) act as <strong>key-value associative memories where factual world knowledge is stored</strong>.
+Because our task required specialized oncology knowledge (which drug treats which mutation at what dosage), adapting the MLP layers allowed the model to internalize clinical pharmacology without increasing rank $r$.&quot;</li>
+</ul>
+<h4>Q20: &quot;What is GGUF quantization, and why choose Q4_K_M over AWQ or GPTQ?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;GGUF (GPT-Generated Unified Format) is a binary file format designed by Georgi Gerganov for fast, single-file deployment with <code>llama.cpp</code>.</p>
+<ul>
+<li><em>Why not AWQ or GPTQ?</em> AWQ and GPTQ are optimized for GPU execution using CUDA tensor cores. They have poor runtime performance when executed on pure CPU hardware.</li>
+<li><em>Why Q4_K_M?</em> Standard 4-bit quantization quantizes all layers uniformly, degrading critical attention weights. <code>Q4_K_M</code> uses <strong>k-quantization with mixed precision</strong>: it keeps critical attention normalization and feed-forward gate layers at higher bit precision (5-bit or 6-bit) while quantizing non-critical tensors to 4-bit. This reduced model size from $3.1\text{ GB}$ to <strong>$986\text{ MB}$</strong> with virtually zero perplexity loss on CPU.&quot;</li>
+</ul>
+<hr />
+<h2>2.4 Evaluation Engineering Role (Stage 4)</h2>
+<h3>2.4.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>Locked Test Set Benchmark (N=861 Pairs, 150 Patients):</strong>
+<ul>
+<li><em>Entity Preservation (Span F1):</em> <strong>80.17%</strong> (vs 76.70% Stage 3 baseline; $+3.47%$ improvement)</li>
+<li><em>Critical Patient Recall:</em> <strong>100.00%</strong> (vs 94.57% Stage 3 baseline; $+5.43%$ improvement; zero missed critical cases)</li>
+<li><em>ROUGE-1:</em> <strong>52.42%</strong> | <em>ROUGE-L:</em> <strong>50.83%</strong> | <em>BLEU-4:</em> <strong>28.37%</strong></li>
+<li><em>Hallucination Rate:</em> <strong>0.00%</strong></li>
+</ul>
+</li>
+<li><strong>Mathematical Proof of 0.00% Hallucination Rate:</strong>
+Evaluated across two independent auditing systems:
+<ol>
+<li><em>Entity Overlap Verification:</em> Ingested the generated triad and verified that every extracted entity exists verbatim in the source note or approved institutional oncology formulary. Unsupported entities = 0.</li>
+<li><em>The 6-Stage Clinical Safety Firewall:</em> A deterministic post-inference regex filter enforcing strict medical boundaries.</li>
+</ol>
+</li>
+<li><strong>The 6-Stage Clinical Safety Firewall Gates:</strong>
+<ol>
+<li><em>Gate 1 (Drug Boundary):</em> Verifies recommended drug exists in source text.</li>
+<li><em>Gate 2 (Dosage Bounds):</em> Cross-references dosage against therapeutic oncology ceilings (e.g., Cisplatin $\le 100\text{ mg/m}^2$).</li>
+<li><em>Gate 3 (Mutation Alignment):</em> Confirms targeted therapy matches verified genomic profile.</li>
+<li><em>Gate 4 (Contradiction Detector):</em> Asserts semantic consistency between risk tier and proposed action.</li>
+<li><em>Gate 5 (Non-Clinical Phrase Filter):</em> Eliminates conversational chatter or non-deterministic filler.</li>
+<li><em>Gate 6 (Schema Validator):</em> Confirms exact JSON Triad structure.</li>
+</ol>
+</li>
+<li><strong>Empirical Calibration &amp; Selective Prediction:</strong>
+<ul>
+<li>Evaluated confidence calibration using Expected Calibration Error (ECE) and Brier scores.</li>
+<li>Set empirical threshold $\tau^* = 0.500$. If confidence $&lt; 0.500$, the system abstains and executes automated fallback to Stage 3.</li>
+</ul>
+</li>
+<li><strong>Subgroup Fairness Audit:</strong> Audited across 26 strata (6 cancer types, 4 stages, 2 sexes, 3 smoking histories, 6 mutations). 100% pass rate achieved across all cohorts.</li>
+</ul>
+<hr />
+<h3>2.4.2 Evaluation Engineering Viva Questions &amp; Answers (Stage 4)</h3>
+<h4>Q21: &quot;How can you scientifically defend a 0.00% hallucination rate on an LLM?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;We do not claim that the raw neural network weights are incapable of hallucinating; that would be mathematically untrue for any autoregressive language model.
+Instead, <strong>0.00% hallucination is an architectural system property enforced by Defense-in-Depth</strong>:</p>
+<ol>
+<li><em>Constrained Decoding:</em> Temperature is set to $T=0.1$ with strict prompt token masking.</li>
+<li><em>Post-Inference Regex Firewall:</em> Every generated token string must pass through our 6-Stage Safety Firewall before exiting the service boundary.</li>
+<li><em>Entity Verification Gate:</em> If the model generates a drug name that was not in the input clinical note, Gate 1 immediately intercepts the payload, blocks delivery to the clinician, and trips the fallback circuit breaker to the Stage 3 deterministic baseline.
+Therefore, at the clinical output boundary, zero ungrounded or hallucinated entities ever reach the user.&quot;</li>
+</ol>
+<h4>Q22: &quot;Explain the Selective Prediction Rule and why the threshold was set to tau* = 0.500.&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Selective prediction allows an AI system to know what it does not know—it predicts when confident, and abstains when uncertain.
+We computed the Expected Calibration Error (ECE) on our validation cohort. At $\tau^* = 0.500$, the model's empirical risk of error drops below our clinical safety tolerance ($&lt;0.1%$). If the generation confidence is $&lt; 0.500$, the system invokes the deterministic fallback engine. This converts potential generative errors into safe, rule-based baseline recommendations.&quot;</p>
+<hr />
+<h2>2.5 Integration Engineering Role (Stage 4)</h2>
+<h3>2.5.1 Core Concepts &amp; Engineering Workflow</h3>
+<ul>
+<li><strong>100% Offline Architecture:</strong> The entire Stage 4 application runs locally on standard hospital CPU hardware with <strong>zero network dependencies</strong>.</li>
+<li><strong>Automated Air-Gap Acceptance Testing:</strong> Built unit tests (<code>test_offline_mode.py</code>) that programmatically disable OS socket creation and assert that model loading and inference complete successfully without internet access.</li>
+<li><strong>Pipeline Orchestrator (<code>inference_service.py</code>):</strong>
+Coordinates: <code>PromptBuilder</code> $\to$ <code>ModelManager (llama.cpp)</code> $\to$ <code>OutputParser</code> $\to$ <code>SafetyGateway</code> $\to$ <code>AuditLogger</code>.</li>
+<li><strong>FastAPI Production Service (<code>api.py</code>):</strong> Exposes <code>POST /generate/decision-support</code>, <code>GET /health</code>, <code>GET /metrics</code>, and serves static frontend assets.</li>
+<li><strong>Dual Output Generation (<code>output_parser.py</code>):</strong>
+<ol>
+<li><em>Structured JSON Triad</em> for EMR integration.</li>
+<li><em>3-Line Spoken Summary</em> formatted for oncologist voice interfaces (hands-free dictation in surgical suites via Web Speech API).</li>
+</ol>
+</li>
+<li><strong>Automated Fallback Circuit Breaker:</strong> If any firewall gate fails or confidence $&lt; 0.500$, automatically returns the deterministic Stage 3 baseline.</li>
+<li><strong>Cryptographic Provenance (<code>provenance.py</code>):</strong> Computes SHA-256 hashes of base model weights, LoRA adapters, runtime binaries, input prompts, and output triads, logging immutable records to <code>audit_log.jsonl</code>.</li>
+<li><strong>Air-Gapped Docker Deployment:</strong> Containerized with <code>network_mode: none</code> for strict hospital IT security compliance.</li>
+</ul>
+<hr />
+<h3>2.5.2 Integration Engineering Viva Questions &amp; Answers (Stage 4)</h3>
+<h4>Q23: &quot;How does the system operate 100% offline, and how did you verify air-gapped compliance?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;Our system eliminates all external dependencies:</p>
+<ol>
+<li><em>Local Weights &amp; Runtimes:</em> Qwen2.5-1.5B is merged with LoRA adapters into a single 986 MB GGUF binary and executed by a self-contained C++ <code>llama.cpp</code> runtime.</li>
+<li><em>No Remote API Calls:</em> Zero calls to OpenAI, Hugging Face, or remote CDNs.</li>
+<li><em>Automated Network Block Test:</em> In <code>test_offline_mode.py</code>, we mock <code>socket.socket.connect</code> to raise an <code>IOError</code> and execute the full inference pipeline. The test passes with zero network calls.</li>
+<li><em>Docker Isolation:</em> In production, the container is deployed with <code>network_mode: none</code>, physically preventing the Linux kernel from allocating network interfaces.&quot;</li>
+</ol>
+<h4>Q24: &quot;Describe the Deterministic Fallback Mechanism when the SLM trips a safety gate.&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;If the SLM outputs an unverified dosage or an ambiguous entity, the Safety Gateway intercepts the generation. Rather than returning an HTTP 500 error or a broken message to the doctor, the system invokes the <strong>Deterministic Fallback Engine</strong>:</p>
+<ol>
+<li>It silently calls the Stage 3 baseline (Logistic Regression + NegEx).</li>
+<li>It constructs a structured briefing using rule-based entity extraction.</li>
+<li>It sets <code>review_required = True</code> and displays a yellow warning badge on the dashboard.
+This guarantees high availability: the clinician always receives a safe, guideline-adherent baseline recommendation.&quot;</li>
+</ol>
+<hr />
+<hr />
+<h1>PART 3: CROSS-STAGE ARCHITECTURE &amp; MASTER VIVA RAPID-FIRE</h1>
+<hr />
+<h2>3.1 The Stage 3 to Stage 4 Handoff Contract</h2>
+<pre><code>┌────────────────────────────────────────┐
+│ STAGE 3 NLP PROVENANCE                 │
+│ - Verified Entity Spans (NER)          │
+│ - 4-Way Negation Polarities (NegEx)    │
+│ - Baseline Urgency &amp; Hazard Scores     │
+└───────────────────┬────────────────────┘
+                    │
+                    ▼ Handoff Validation Gate
+┌────────────────────────────────────────┐
+│ CONTRACT CONSTRAINTS                   │
+│ 1. Schema Version: SemVer 1.0.0        │
+│ 2. Pydantic Config: extra=&quot;forbid&quot;     │
+│ 3. Critical Safety Recall &gt;= 94.57%    │
+│ 4. Entity Preservation &gt;= 95.00%       │
+│ 5. Locked Test Set Contamination = 0   │
+└───────────────────┬────────────────────┘
+                    │
+                    ▼
+┌────────────────────────────────────────┐
+│ STAGE 4 SLM INSTRUCTION GENERATOR      │
+│ - Canonical Prompt Formatter v1.0.0    │
+│ - Structured Triad Completion Target   │
+└────────────────────────────────────────┘
+</code></pre>
+<hr />
+<h2>3.2 Top 10 High-Impact Cross-Stage Viva Questions</h2>
+<h4>Q25: &quot;Why did you separate NLP (Stage 3) and SLM (Stage 4) into two distinct stages rather than using an SLM for everything?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;In high-stakes oncology, <strong>modularity is essential for auditability, latency, and safety</strong>:</p>
+<ol>
+<li><em>Separation of Extraction vs Generation:</em> Stage 3 performs deterministic, rule-based extraction (NegEx) and linear classification. Stage 4 performs contextual reasoning and natural language synthesis.</li>
+<li><em>Defensive Fallback:</em> By having an independent Stage 3 baseline, Stage 4 has a reliable, non-generative safety net. If Stage 4 encounters an anomaly, it falls back to Stage 3. Without Stage 3, the system has no fallback.</li>
+<li><em>Computational Efficiency:</em> Triage classification can run in 5ms using Stage 3 without spinning up the SLM.&quot;</li>
+</ol>
+<h4>Q26: &quot;What is Prompt Token Loss Masking and why is it essential for clinical instruction tuning?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;In instruction tuning, a training sample consists of a Prompt (instruction + clinical note) and a Completion (the clinical triad).
+If you compute cross-entropy loss over all tokens, the model expends parameter capacity learning to predict the prompt text and template formatting.
+By setting <code>labels = -100</code> for all prompt tokens, PyTorch ignores prompt tokens during backpropagation. Gradients update solely based on the clinical triad tokens, forcing 100% of LoRA adapter capacity into clinical reasoning.&quot;</p>
+<h4>Q27: &quot;What are the primary failure modes of this NLP + SLM architecture, and how are they mitigated?&quot;</h4>
+<p><strong>Answer:</strong><br />
+&quot;We identified and mitigated three primary failure modes:</p>
+<ol>
+<li><em>Negation Inversion:</em> Addressed via our NegEx rule engine with pseudo-negation guards, audited to have 0.00% negation flips.</li>
+<li><em>Hallucinated Pharmacology:</em> Addressed via the 6-Stage Safety Firewall with drug formulary verification.</li>
+<li><em>Distribution Drift:</em> Addressed via <code>ProductionDriftMonitor</code>, which tracks token length shifts and entity density via Kolmogorov-Smirnov statistical tests.&quot;</li>
+</ol>
+<hr />
+<h2>3.3 Top 15 Rapid-Fire Flashcard Q&amp;A (One-Liner Revision)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">#</th>
+<th style="text-align:left">Rapid-Fire Question</th>
+<th style="text-align:left">One-Liner Examiner Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1</strong></td>
+<td style="text-align:left">What base foundation model was used in Stage 4?</td>
+<td style="text-align:left"><strong>Qwen2.5-1.5B-Instruct</strong>, selected for its SwiGLU architecture and CPU efficiency.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2</strong></td>
+<td style="text-align:left">What fine-tuning method was applied?</td>
+<td style="text-align:left"><strong>PEFT LoRA</strong> with rank $r=16$, $\alpha=32$, and prompt token loss masking.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3</strong></td>
+<td style="text-align:left">Which linear modules were targeted by LoRA?</td>
+<td style="text-align:left"><strong>All 7 linear projections</strong>: <code>q_proj</code>, <code>k_proj</code>, <code>v_proj</code>, <code>o_proj</code>, <code>gate_proj</code>, <code>up_proj</code>, <code>down_proj</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>4</strong></td>
+<td style="text-align:left">What quantization format was used for deployment?</td>
+<td style="text-align:left"><strong>GGUF Q4_K_M</strong>, reducing model size from $3.1\text{ GB}$ to <strong>$986\text{ MB}$</strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5</strong></td>
+<td style="text-align:left">What inference engine runs the SLM?</td>
+<td style="text-align:left">Pure C++ <strong><code>llama.cpp</code></strong> running locally on CPU with AVX-512 vectorization.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>6</strong></td>
+<td style="text-align:left">What is the audited hallucination rate of Stage 4?</td>
+<td style="text-align:left"><strong>0.00%</strong>, mathematically audited and enforced by the 6-Stage Safety Firewall.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>7</strong></td>
+<td style="text-align:left">What is the Critical Patient Recall of Stage 4?</td>
+<td style="text-align:left"><strong>100.00%</strong> on the locked test set (N=861 pairs), missing zero emergency cases.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>8</strong></td>
+<td style="text-align:left">What were the 4 negation polarities in Stage 3?</td>
+<td style="text-align:left"><strong><code>AFFIRMED</code></strong>, <strong><code>NEGATED</code></strong>, <strong><code>HISTORICAL</code></strong>, and <strong><code>RESOLVED</code></strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>9</strong></td>
+<td style="text-align:left">What context window was chosen in Stage 3 and 4?</td>
+<td style="text-align:left"><strong>256 tokens</strong> in Stage 3 (covers 100% of notes); <strong>1024 tokens</strong> in Stage 4.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>10</strong></td>
+<td style="text-align:left">What was the class imbalance ratio in Stage 3 Urgency?</td>
+<td style="text-align:left"><strong>7.60 : 1</strong> (<code>LOW</code> 67.9% vs <code>CRITICAL</code> 9.5%), making Macro F1 mandatory.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>11</strong></td>
+<td style="text-align:left">What was the class imbalance ratio in Stage 3 Hazard?</td>
+<td style="text-align:left"><strong>138.43 : 1</strong> (<code>NONE</code> 79.5% vs <code>CARDIAC</code> 0.57%), handled via Focal Loss.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>12</strong></td>
+<td style="text-align:left">What is the empirical calibration threshold?</td>
+<td style="text-align:left"><em><em>$\tau^</em> = 0.500$</em>*; inferences with confidence $&lt; 0.500$ trigger automatic fallback.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>13</strong></td>
+<td style="text-align:left">What are the three parts of the Stage 4 Triad?</td>
+<td style="text-align:left"><strong><code>target_risk</code></strong> (triage), <strong><code>target_key_finding</code></strong> (evidence), <strong><code>target_action</code></strong> (guidance).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>14</strong></td>
+<td style="text-align:left">How is hospital data privacy guaranteed?</td>
+<td style="text-align:left"><strong>100% offline air-gapped deployment</strong> with Docker <code>network_mode: none</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>15</strong></td>
+<td style="text-align:left">What happens if the SLM trips a safety firewall gate?</td>
+<td style="text-align:left">Automated silent <strong>fallback to the deterministic Stage 3 baseline</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+
+</body>
+</html>
